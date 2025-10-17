@@ -23,12 +23,12 @@ export function ContactSection() {
           <h2 className="text-3xl md:text-5xl font-bold">Ready to Get Your Time Back?</h2>
           <div className="max-w-3xl mx-auto space-y-4 text-lg text-muted-foreground">
             <p>
-              Curious how this could work for your business? Let's have a chat. No pressure, no confusing jargon, 
+              Curious how this could work for your business? Let&apos;s have a chat. No pressure, no confusing jargon, 
               no sales pitch. Just a straight-up conversation about your business and the specific headaches we might be able to solve.
             </p>
             <p>
-              We'll talk about what's eating up your time, what's costing you money, and whether AI can actually help. 
-              If it's a good fit, great. If it's not, we'll tell you honestly.
+              We&apos;ll talk about what&apos;s eating up your time, what&apos;s costing you money, and whether AI can actually help. 
+              If it&apos;s a good fit, great. If it&apos;s not, we&apos;ll tell you honestly.
             </p>
           </div>
         </div>
@@ -46,7 +46,7 @@ export function ContactSection() {
           <CollapsibleContent className="space-y-4">
             <Card className="max-w-2xl mx-auto">
               <CardHeader>
-                <CardTitle>Let's Talk About Your Business</CardTitle>
+                <CardTitle>Let&apos;s Talk About Your Business</CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -76,7 +76,7 @@ export function ContactSection() {
                 </div>
                 
                 <div className="space-y-2">
-                  <Label htmlFor="challenge">What's your biggest time-waster right now?</Label>
+                  <Label htmlFor="challenge">What&apos;s your biggest time-waster right now?</Label>
                   <Textarea 
                     id="challenge" 
                     placeholder="Tell us about the admin tasks or processes that eat up your time..."
@@ -89,7 +89,7 @@ export function ContactSection() {
                 </Button>
                 
                 <p className="text-sm text-muted-foreground text-center">
-                  We'll get back to you within 24 hours to schedule a brief chat.
+                  We&apos;ll get back to you within 24 hours to schedule a brief chat.
                 </p>
               </CardContent>
             </Card>

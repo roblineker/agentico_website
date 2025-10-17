@@ -10,12 +10,12 @@ export function AboutSection() {
 
         <div className="max-w-4xl mx-auto space-y-6 text-lg text-muted-foreground">
           <p>
-            Most AI companies talk in buzzwords and sell you complicated software that takes months to set up. We're different.
+            Most AI companies talk in buzzwords and sell you complicated software that takes months to set up. We&apos;re different.
           </p>
           
           <p>
             We build practical AI tools for real businesses—trades, hospitality, retail, professional services, wholesalers. 
-            The kind of businesses where every hour counts and nobody has time for tech that doesn't just work.
+            The kind of businesses where every hour counts and nobody has time for tech that doesn&apos;t just work.
           </p>
           
           <p>

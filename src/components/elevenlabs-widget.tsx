@@ -2,12 +2,6 @@
 
 import { useEffect } from "react";
 
-declare global {
-  interface Window {
-    ElevenLabsConvAI?: any;
-  }
-}
-
 export function ElevenLabsWidget() {
   useEffect(() => {
     // Load the ElevenLabs ConvAI script
