@@ -18,6 +18,7 @@ export default defineConfig({
   },
   envDir: path.resolve(__dirname),
   root: path.resolve(__dirname, "client"),
+  base: process.env.NODE_ENV === 'production' ? '/agentico_website/' : '/',
   build: {
     outDir: path.resolve(__dirname, "dist/public"),
     emptyOutDir: true,
