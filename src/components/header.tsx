@@ -6,6 +6,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -50,6 +51,7 @@ export function Header() {
               {item.label}
             </Link>
           ))}
+          <ThemeToggle />
         </nav>
 
         {/* CTA Button */}
@@ -57,6 +59,11 @@ export function Header() {
           <Button asChild className="hidden sm:inline-flex">
             <Link href="#contact">Get Started</Link>
           </Button>
+
+          {/* Mobile Theme Toggle */}
+          <div className="md:hidden">
+            <ThemeToggle />
+          </div>
 
           {/* Mobile Menu */}
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
