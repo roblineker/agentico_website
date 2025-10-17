@@ -1,13 +1,22 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { Boxes } from "@/components/ui/background-boxes";
 import { Bot, ArrowRight } from "lucide-react";
 
 export function HeroSection() {
   return (
-    <section className="py-20 md:py-32 bg-gradient-to-b from-background to-muted/30">
-      <div className="container">
-        <div className="max-w-3xl mx-auto text-center space-y-8">
+    <section className="relative py-20 md:py-32 bg-gradient-to-b from-background to-muted/30 overflow-hidden">
+      {/* Animated Background */}
+      <div className="absolute inset-0 w-full h-full bg-slate-900/5 dark:bg-slate-900/20 z-0">
+        <Boxes />
+      </div>
+      
+      {/* Mask overlay - separate from boxes container */}
+      <div className="absolute inset-0 w-full h-full bg-background/80 dark:bg-background/60 z-25 [mask-image:radial-gradient(transparent,white)] pointer-events-none" />
+      
+      <div className="container relative z-20">
+        <div className="max-w-3xl mx-auto text-center space-y-8 pointer-events-none">
           {/* Badge */}
           <Badge variant="secondary" className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium">
             <Bot className="h-4 w-4" />
@@ -28,7 +37,7 @@ export function HeroSection() {
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center pointer-events-auto">
             <Button asChild size="lg" className="text-base">
               <Link href="#contact">
                 See How It Works

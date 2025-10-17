@@ -58,7 +58,7 @@ export function ServicesSection() {
     <section id="services" className="py-20 md:py-32">
       <div className="container">
         <div className="text-center space-y-4 mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold">Your Business, on Autopilot</h2>
+          <h2 className="text-3xl md:text-5xl font-bold">Your Business, Supercharged</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Here are some real-world problems we solve for businesses like yours:
           </p>
@@ -75,15 +75,15 @@ export function ServicesSection() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <div>
-                  <h4 className="font-semibold text-red-600 mb-2">The Problem:</h4>
+                  <h4 className="font-semibold text-destructive mb-2">The Problem:</h4>
                   <p className="text-muted-foreground">{service.problem}</p>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-green-600 mb-2">The Solution:</h4>
+                  <h4 className="font-semibold text-primary mb-2">The Solution:</h4>
                   <p className="text-muted-foreground">{service.solution}</p>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-blue-600 mb-2">Real-World Example:</h4>
+                  <h4 className="font-semibold text-foreground mb-2">Real-World Example:</h4>
                   <p className="text-muted-foreground">{service.example}</p>
                 </div>
               </CardContent>
