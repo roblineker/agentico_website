@@ -1,0 +1,46 @@
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Bot, ArrowRight } from "lucide-react";
+
+export function HeroSection() {
+  return (
+    <section className="py-20 md:py-32 bg-gradient-to-b from-background to-muted/30">
+      <div className="container">
+        <div className="max-w-3xl mx-auto text-center space-y-8">
+          {/* Badge */}
+          <Badge variant="secondary" className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium">
+            <Bot className="h-4 w-4" />
+            AI-Powered Business Automation
+          </Badge>
+
+          {/* Main Headline */}
+          <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
+            Stop Drowning in Paperwork.{" "}
+            <span className="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
+              Start Growing Your Business.
+            </span>
+          </h1>
+
+          {/* Subtitle */}
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            Simple AI tools for small businesses that automate the boring stuff—so you can focus on what actually makes you money.
+          </p>
+
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button asChild size="lg" className="text-base">
+              <Link href="#contact">
+                See How It Works
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+            <Button asChild variant="outline" size="lg" className="text-base">
+              <Link href="#services">Learn More</Link>
+            </Button>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
