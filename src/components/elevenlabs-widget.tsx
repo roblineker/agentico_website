@@ -2,16 +2,6 @@
 
 import { useEffect } from "react";
 
-declare module 'react' {
-  namespace JSX {
-    interface IntrinsicElements {
-      'elevenlabs-convai': {
-        'agent-id': string;
-      };
-    }
-  }
-}
-
 export function ElevenLabsWidget() {
   useEffect(() => {
     // Load the ElevenLabs ConvAI script
