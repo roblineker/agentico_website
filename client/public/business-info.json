@@ -1,0 +1,124 @@
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Agentico",
+  "description": "AI consulting and automation solutions for trades and professional services businesses. We design custom AI solutions that streamline operations, reduce costs, and drive growth for small to medium-sized businesses.",
+  "url": "https://agentico.com.au",
+  "logo": "https://agentico.com.au/logo-black.png",
+  "image": "https://agentico.com.au/logo-black.png",
+  "email": "sales@agentico.com.au",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Sunshine Coast",
+    "addressRegion": "QLD",
+    "addressCountry": "AU"
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": "Australia"
+  },
+  "serviceType": [
+    "AI Consulting",
+    "Process Automation",
+    "Business Automation",
+    "Workflow Automation",
+    "Document Intelligence",
+    "Custom AI Solutions"
+  ],
+  "knowsAbout": [
+    "Artificial Intelligence",
+    "Machine Learning",
+    "Process Automation",
+    "Business Process Optimization",
+    "Document Processing",
+    "Workflow Automation",
+    "Integration Services",
+    "AI Agents"
+  ],
+  "makesOffer": [
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Process Automation",
+        "description": "Automate repetitive tasks like quote generation, invoice processing, and customer communication to save time and reduce errors."
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Document Intelligence",
+        "description": "Extract, analyze, and organize information from documents automatically using AI-powered document processing."
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Custom AI Agents",
+        "description": "Build intelligent agents that handle specific tasks like customer inquiries, data entry, or workflow coordination."
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Workflow Automation",
+        "description": "Connect systems and automate end-to-end business processes from lead capture to project completion."
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Integration Services",
+        "description": "Seamlessly integrate AI solutions with existing tools like Xero, QuickBooks, CRM systems, and project management software."
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Training & Support",
+        "description": "Comprehensive training and ongoing support to ensure successful adoption and maximum value from AI solutions."
+      }
+    }
+  ],
+  "audience": [
+    {
+      "@type": "Audience",
+      "audienceType": "Trades Businesses",
+      "description": "Builders, construction companies, plumbers, electricians, HVAC contractors, and mechanical services providers looking to automate operations and improve efficiency."
+    },
+    {
+      "@type": "Audience",
+      "audienceType": "Professional Services",
+      "description": "Law firms, accounting firms, HR consultancies, and professional service providers seeking to streamline workflows and reduce administrative overhead."
+    }
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "AI Solutions for Business",
+    "itemListElement": [
+      {
+        "@type": "OfferCatalog",
+        "name": "Automation Solutions",
+        "description": "Reduce manual work and human error with intelligent automation"
+      },
+      {
+        "@type": "OfferCatalog",
+        "name": "Document Processing",
+        "description": "Transform document-heavy processes with AI-powered extraction and analysis"
+      },
+      {
+        "@type": "OfferCatalog",
+        "name": "Integration Services",
+        "description": "Connect AI solutions with your existing business systems"
+      }
+    ]
+  },
+  "slogan": "Transform Your Business with Intelligent Automation",
+  "keywords": "AI consulting, business automation, process automation, workflow automation, document intelligence, AI solutions, trades automation, professional services automation, custom AI agents, business process optimization, Australia AI consulting"
+}
+
