@@ -63,6 +63,13 @@ const contactFormSchema = z.object({
   budget: z.enum(["under_10k", "10k-25k", "25k-50k", "50k-100k", "100k+", "not_sure"], {
     message: "Please select a budget range",
   }),
+  
+  // Preferred Contact Time
+  preferredContactTime: z.array(z.string()).min(1, "Please select at least one preferred contact time"),
+  
+  // Location
+  city: z.string().min(1, "Please enter your city").min(2, "Please enter your city"),
+  state: z.string().min(1, "Please enter your state/territory").min(2, "Please enter your state/territory"),
 });
 
 type ContactFormData = z.infer<typeof contactFormSchema>;
@@ -85,6 +92,15 @@ const integrationOptions = [
   { id: "custom_software", label: "Custom/Legacy Software" },
 ];
 
+const preferredContactTimeOptions = [
+  { id: "weekday_morning", label: "Weekday Morning (9am-12pm)" },
+  { id: "weekday_afternoon", label: "Weekday Afternoon (12pm-5pm)" },
+  { id: "weekday_evening", label: "Weekday Evening (5pm-7pm)" },
+  { id: "saturday_morning", label: "Saturday Morning (9am-12pm)" },
+  { id: "saturday_afternoon", label: "Saturday Afternoon (12pm-5pm)" },
+  { id: "anytime", label: "Anytime - I'm flexible" },
+];
+
 export default function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
@@ -103,6 +119,7 @@ export default function ContactForm() {
       automationGoals: [],
       integrationNeeds: [],
       projectIdeas: [],
+      preferredContactTime: [],
     },
   });
 
@@ -113,6 +130,7 @@ export default function ContactForm() {
 
   const selectedAutomationGoals = watch("automationGoals") || [];
   const selectedIntegrations = watch("integrationNeeds") || [];
+  const selectedContactTimes = watch("preferredContactTime") || [];
 
   const onSubmit = async (data: ContactFormData) => {
     setIsSubmitting(true);
@@ -141,6 +159,9 @@ Project Description: ${data.projectDescription}
 Success Metrics: ${data.successMetrics}
 Timeline: ${data.timeline}
 Budget: ${data.budget}
+
+Location: ${data.city}, ${data.state}
+Preferred Contact Times: ${data.preferredContactTime.join(", ")}
 
 ${data.projectIdeas && data.projectIdeas.length > 0 ? 
   `Project Ideas:\n${data.projectIdeas.map(idea => `- ${idea.title} (${idea.priority}): ${idea.description}`).join('\n')}` 
@@ -270,6 +291,32 @@ ${data.projectIdeas && data.projectIdeas.length > 0 ?
                 />
                 {errors.company && isSubmitted && (
                   <p className="text-sm text-destructive">{errors.company.message}</p>
+                )}
+              </div>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-4">
+              <div className="space-y-2">
+                <Label htmlFor="city">City *</Label>
+                <Input
+                  id="city"
+                  placeholder="e.g., Brisbane"
+                  {...register("city")}
+                />
+                {errors.city && isSubmitted && (
+                  <p className="text-sm text-destructive">{errors.city.message}</p>
+                )}
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="state">State/Territory *</Label>
+                <Input
+                  id="state"
+                  placeholder="e.g., QLD"
+                  {...register("state")}
+                />
+                {errors.state && isSubmitted && (
+                  <p className="text-sm text-destructive">{errors.state.message}</p>
                 )}
               </div>
             </div>
@@ -699,6 +746,45 @@ ${data.projectIdeas && data.projectIdeas.length > 0 ?
             </div>
           </div>
 
+          {/* Preferred Contact Time */}
+          <div className="space-y-4">
+            <h3 className="text-lg font-semibold border-b pb-2">Preferred Contact Time</h3>
+            
+            <div className="space-y-2">
+              <Label>When would you prefer us to contact you? * (Select all that apply)</Label>
+              <div className="grid md:grid-cols-2 gap-3">
+                {preferredContactTimeOptions.map((timeOption) => (
+                  <div key={timeOption.id} className="flex items-center space-x-2">
+                    <Checkbox
+                      id={timeOption.id}
+                      checked={selectedContactTimes.includes(timeOption.id)}
+                      onCheckedChange={(checked) => {
+                        const current = selectedContactTimes;
+                        if (checked) {
+                          setValue("preferredContactTime", [...current, timeOption.id]);
+                        } else {
+                          setValue(
+                            "preferredContactTime",
+                            current.filter((id) => id !== timeOption.id)
+                          );
+                        }
+                      }}
+                    />
+                    <Label
+                      htmlFor={timeOption.id}
+                      className="text-sm font-normal cursor-pointer"
+                    >
+                      {timeOption.label}
+                    </Label>
+                  </div>
+                ))}
+              </div>
+              {errors.preferredContactTime && isSubmitted && (
+                <p className="text-sm text-destructive">{errors.preferredContactTime.message}</p>
+              )}
+            </div>
+          </div>
+
           <Button type="submit" size="lg" className="w-full" disabled={isSubmitting}>
             {isSubmitting ? (
               <>
@@ -711,7 +797,7 @@ ${data.projectIdeas && data.projectIdeas.length > 0 ?
           </Button>
           
           <p className="text-xs text-center text-muted-foreground">
-            We'll review your submission and provide a preliminary assessment within 1-2 business days
+            We'll review your requirements and get back to you in the time you requested.
           </p>
         </form>
       </CardContent>
