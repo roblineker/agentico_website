@@ -14,10 +14,10 @@ import { Loader2, Plus, X } from "lucide-react";
 
 const contactFormSchema = z.object({
   // Contact Information
-  fullName: z.string().min(2, "Please enter your full name (at least 2 characters)"),
-  email: z.string().email("Please enter a valid email address"),
-  phone: z.string().min(10, "Please enter a valid phone number"),
-  company: z.string().min(2, "Please enter your company name"),
+  fullName: z.string().min(1, "Please enter your full name").min(2, "Please enter your full name (at least 2 characters)"),
+  email: z.string().min(1, "Please enter your email address").email("Please enter a valid email address"),
+  phone: z.string().min(1, "Please enter your phone number").min(10, "Please enter a valid phone number"),
+  company: z.string().min(1, "Please enter your company name").min(2, "Please enter your company name"),
   
   // Business Information
   industry: z.enum(["trades", "professional_services", "other"], {
@@ -28,7 +28,7 @@ const contactFormSchema = z.object({
   }),
   
   // Current State Assessment
-  currentSystems: z.string().min(10, "Please describe your current systems (at least 10 characters)"),
+  currentSystems: z.string().min(1, "Please describe your current systems").min(10, "Please describe your current systems (at least 10 characters)"),
   monthlyVolume: z.enum(["0-100", "100-500", "500-1000", "1000-5000", "5000+"], {
     message: "Please select your monthly volume",
   }),
@@ -38,25 +38,25 @@ const contactFormSchema = z.object({
   
   // Automation Needs
   automationGoals: z.array(z.string()).min(1, "Please select at least one automation goal"),
-  specificProcesses: z.string().min(20, "Please describe specific processes to automate (at least 20 characters)"),
+  specificProcesses: z.string().min(1, "Please describe specific processes to automate").min(20, "Please describe specific processes to automate (at least 20 characters)"),
   projectIdeas: z.array(z.object({
-    title: z.string().min(3, "Please enter an idea title (at least 3 characters)"),
-    description: z.string().min(10, "Please enter a description (at least 10 characters)"),
+    title: z.string().min(1, "Please enter an idea title").min(3, "Please enter an idea title (at least 3 characters)"),
+    description: z.string().min(1, "Please enter a description").min(10, "Please enter a description (at least 10 characters)"),
     priority: z.enum(["high", "medium", "low"], {
       message: "Please select a priority level",
     }),
   })).optional(),
   
   // Integration Requirements
-  existingTools: z.string().min(5, "Please list your existing tools/software (at least 5 characters)"),
+  existingTools: z.string().min(1, "Please list your existing tools/software").min(5, "Please list your existing tools/software (at least 5 characters)"),
   integrationNeeds: z.array(z.string()),
   dataVolume: z.enum(["minimal", "moderate", "large", "very_large"], {
     message: "Please select data volume",
   }),
   
   // Project Scope
-  projectDescription: z.string().min(30, "Please describe your project (at least 30 characters)"),
-  successMetrics: z.string().min(10, "Please describe how you'll measure success (at least 10 characters)"),
+  projectDescription: z.string().min(1, "Please describe your project").min(30, "Please describe your project (at least 30 characters)"),
+  successMetrics: z.string().min(1, "Please describe how you'll measure success").min(10, "Please describe how you'll measure success (at least 10 characters)"),
   timeline: z.enum(["immediate", "1-3_months", "3-6_months", "6+_months"], {
     message: "Please select a timeline",
   }),
@@ -87,7 +87,7 @@ const integrationOptions = [
 
 export default function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isFormSubmitted, setIsFormSubmitted] = useState(false);
 
   const {
     register,
@@ -95,10 +95,10 @@ export default function ContactForm() {
     setValue,
     watch,
     control,
-    formState: { errors, touchedFields },
+    formState: { errors, isSubmitted },
   } = useForm<ContactFormData>({
     resolver: zodResolver(contactFormSchema),
-    mode: "onTouched",
+    mode: "onSubmit",
     defaultValues: {
       automationGoals: [],
       integrationNeeds: [],
@@ -117,29 +117,59 @@ export default function ContactForm() {
   const onSubmit = async (data: ContactFormData) => {
     setIsSubmitting(true);
     try {
-      // Simulate API call - replace with actual endpoint
-      await new Promise((resolve) => setTimeout(resolve, 1500));
-      
-      console.log("Detailed form submission:", data);
-      
-      // In production, send to your backend or email service
-      // const response = await fetch('/api/contact', {
-      //   method: 'POST',
-      //   headers: { 'Content-Type': 'application/json' },
-      //   body: JSON.stringify(data),
-      // });
-      
-      setIsSubmitted(true);
-      toast.success("Thank you! We'll review your information and be in touch soon.");
+      // Transform form data to match API expectations
+      const formData = {
+        name: data.fullName,
+        email: data.email,
+        company: data.company,
+        phone: data.phone,
+        message: `Industry: ${data.industry}
+Business Size: ${data.businessSize}
+Monthly Volume: ${data.monthlyVolume}
+Team Size: ${data.teamSize}
+
+Current Systems: ${data.currentSystems}
+
+Automation Goals: ${data.automationGoals.join(", ")}
+Specific Processes: ${data.specificProcesses}
+
+Existing Tools: ${data.existingTools}
+Integration Needs: ${data.integrationNeeds.join(", ")}
+Data Volume: ${data.dataVolume}
+
+Project Description: ${data.projectDescription}
+Success Metrics: ${data.successMetrics}
+Timeline: ${data.timeline}
+Budget: ${data.budget}
+
+${data.projectIdeas && data.projectIdeas.length > 0 ? 
+  `Project Ideas:\n${data.projectIdeas.map(idea => `- ${idea.title} (${idea.priority}): ${idea.description}`).join('\n')}` 
+  : ''}`
+      };
+
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setIsFormSubmitted(true);
+        toast.success(result.message || "Thank you! We'll review your information and be in touch soon.");
+      } else {
+        toast.error(result.error || "Something went wrong. Please try again.");
+      }
     } catch (error) {
-      toast.error("Something went wrong. Please try again or email us directly.");
+      toast.error("Something went wrong. Please try again or email us directly at sales@agentico.com.au");
       console.error("Form submission error:", error);
     } finally {
       setIsSubmitting(false);
     }
   };
 
-  if (isSubmitted) {
+  if (isFormSubmitted) {
     return (
       <Card className="max-w-3xl mx-auto">
         <CardContent className="pt-6">
@@ -165,7 +195,7 @@ export default function ContactForm() {
             </p>
             <Button
               variant="outline"
-              onClick={() => setIsSubmitted(false)}
+              onClick={() => setIsFormSubmitted(false)}
               className="mt-4"
             >
               Submit Another Inquiry
@@ -198,7 +228,7 @@ export default function ContactForm() {
                   placeholder="John Smith"
                   {...register("fullName")}
                 />
-                {errors.fullName && (
+                {errors.fullName && isSubmitted && (
                   <p className="text-sm text-destructive">{errors.fullName.message}</p>
                 )}
               </div>
@@ -211,7 +241,7 @@ export default function ContactForm() {
                   placeholder="john@company.com"
                   {...register("email")}
                 />
-                {errors.email && (
+                {errors.email && isSubmitted && (
                   <p className="text-sm text-destructive">{errors.email.message}</p>
                 )}
               </div>
@@ -226,7 +256,7 @@ export default function ContactForm() {
                   placeholder="+61 4XX XXX XXX"
                   {...register("phone")}
                 />
-                {errors.phone && (
+                {errors.phone && isSubmitted && (
                   <p className="text-sm text-destructive">{errors.phone.message}</p>
                 )}
               </div>
@@ -238,7 +268,7 @@ export default function ContactForm() {
                   placeholder="Your Company Pty Ltd"
                   {...register("company")}
                 />
-                {errors.company && (
+                {errors.company && isSubmitted && (
                   <p className="text-sm text-destructive">{errors.company.message}</p>
                 )}
               </div>
@@ -262,7 +292,7 @@ export default function ContactForm() {
                     <SelectItem value="other">Other</SelectItem>
                   </SelectContent>
                 </Select>
-                {errors.industry && (
+                {errors.industry && isSubmitted && (
                   <p className="text-sm text-destructive">{errors.industry.message}</p>
                 )}
               </div>
@@ -281,7 +311,7 @@ export default function ContactForm() {
                     <SelectItem value="200+">200+ employees</SelectItem>
                   </SelectContent>
                 </Select>
-                {errors.businessSize && (
+                {errors.businessSize && isSubmitted && (
                   <p className="text-sm text-destructive">{errors.businessSize.message}</p>
                 )}
               </div>
@@ -305,7 +335,7 @@ export default function ContactForm() {
               <p className="text-xs text-muted-foreground">
                 List software, apps, or manual processes you currently rely on
               </p>
-              {errors.currentSystems && (
+              {errors.currentSystems && isSubmitted && (
                 <p className="text-sm text-destructive">{errors.currentSystems.message}</p>
               )}
             </div>
@@ -328,7 +358,7 @@ export default function ContactForm() {
                 <p className="text-xs text-muted-foreground">
                   Jobs, quotes, invoices, or customer interactions
                 </p>
-                {errors.monthlyVolume && (
+                {errors.monthlyVolume && isSubmitted && (
                   <p className="text-sm text-destructive">{errors.monthlyVolume.message}</p>
                 )}
               </div>
@@ -350,7 +380,7 @@ export default function ContactForm() {
                 <p className="text-xs text-muted-foreground">
                   How many people will use the solution?
                 </p>
-                {errors.teamSize && (
+                {errors.teamSize && isSubmitted && (
                   <p className="text-sm text-destructive">{errors.teamSize.message}</p>
                 )}
               </div>
@@ -390,7 +420,7 @@ export default function ContactForm() {
                   </div>
                 ))}
               </div>
-              {errors.automationGoals && (
+              {errors.automationGoals && isSubmitted && (
                 <p className="text-sm text-destructive">{errors.automationGoals.message}</p>
               )}
             </div>
@@ -408,7 +438,7 @@ export default function ContactForm() {
               <p className="text-xs text-muted-foreground">
                 Be as specific as possible - this helps us estimate scope and cost accurately
               </p>
-              {errors.specificProcesses && (
+              {errors.specificProcesses && isSubmitted && (
                 <p className="text-sm text-destructive">{errors.specificProcesses.message}</p>
               )}
             </div>
@@ -432,7 +462,7 @@ export default function ContactForm() {
               <p className="text-xs text-muted-foreground">
                 Include accounting, CRM, project management, communication tools, etc.
               </p>
-              {errors.existingTools && (
+              {errors.existingTools && isSubmitted && (
                 <p className="text-sm text-destructive">{errors.existingTools.message}</p>
               )}
             </div>
@@ -484,7 +514,7 @@ export default function ContactForm() {
               <p className="text-xs text-muted-foreground">
                 Estimate how much data the AI will need to process
               </p>
-              {errors.dataVolume && (
+              {errors.dataVolume && isSubmitted && (
                 <p className="text-sm text-destructive">{errors.dataVolume.message}</p>
               )}
             </div>
@@ -504,7 +534,7 @@ export default function ContactForm() {
                 rows={4}
                 {...register("projectDescription")}
               />
-              {errors.projectDescription && (
+              {errors.projectDescription && isSubmitted && (
                 <p className="text-sm text-destructive">{errors.projectDescription.message}</p>
               )}
             </div>
@@ -522,7 +552,7 @@ export default function ContactForm() {
               <p className="text-xs text-muted-foreground">
                 What specific outcomes or metrics matter most to you?
               </p>
-              {errors.successMetrics && (
+              {errors.successMetrics && isSubmitted && (
                 <p className="text-sm text-destructive">{errors.successMetrics.message}</p>
               )}
             </div>
@@ -576,7 +606,7 @@ export default function ContactForm() {
                         placeholder="e.g., AI-powered quote generator"
                         {...register(`projectIdeas.${index}.title` as const)}
                       />
-                      {errors.projectIdeas?.[index]?.title && (
+                      {errors.projectIdeas?.[index]?.title && isSubmitted && (
                         <p className="text-sm text-destructive">
                           {errors.projectIdeas[index]?.title?.message}
                         </p>
@@ -593,7 +623,7 @@ export default function ContactForm() {
                         rows={3}
                         {...register(`projectIdeas.${index}.description` as const)}
                       />
-                      {errors.projectIdeas?.[index]?.description && (
+                      {errors.projectIdeas?.[index]?.description && isSubmitted && (
                         <p className="text-sm text-destructive">
                           {errors.projectIdeas[index]?.description?.message}
                         </p>
@@ -617,7 +647,7 @@ export default function ContactForm() {
                           <SelectItem value="low">Low - Nice to have</SelectItem>
                         </SelectContent>
                       </Select>
-                      {errors.projectIdeas?.[index]?.priority && (
+                      {errors.projectIdeas?.[index]?.priority && isSubmitted && (
                         <p className="text-sm text-destructive">
                           {errors.projectIdeas[index]?.priority?.message}
                         </p>
@@ -642,7 +672,7 @@ export default function ContactForm() {
                     <SelectItem value="6+_months">6+ months</SelectItem>
                   </SelectContent>
                 </Select>
-                {errors.timeline && (
+                {errors.timeline && isSubmitted && (
                   <p className="text-sm text-destructive">{errors.timeline.message}</p>
                 )}
               </div>
@@ -662,7 +692,7 @@ export default function ContactForm() {
                     <SelectItem value="not_sure">Not sure yet</SelectItem>
                   </SelectContent>
                 </Select>
-                {errors.budget && (
+                {errors.budget && isSubmitted && (
                   <p className="text-sm text-destructive">{errors.budget.message}</p>
                 )}
               </div>
