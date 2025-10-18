@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import * as NavigationMenuPrimitive from "@radix-ui/react-navigation-menu";
 import { Moon, Sun, Monitor } from "lucide-react";
 import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
@@ -9,8 +10,9 @@ import {
   NavigationMenuContent,
   NavigationMenuItem,
   NavigationMenuList,
-  NavigationMenuTrigger,
+  navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
+import { cn } from "@/lib/utils";
 
 export function ThemeToggle() {
   const { setTheme, theme } = useTheme();
@@ -19,17 +21,17 @@ export function ThemeToggle() {
     <NavigationMenu orientation="vertical">
       <NavigationMenuList>
         <NavigationMenuItem>
-          <NavigationMenuTrigger 
-            className="h-9 w-9 p-0 hover:cursor-pointer"
+          <NavigationMenuPrimitive.Trigger
+            className={cn(navigationMenuTriggerStyle(), "h-9 w-9 p-0 hover:cursor-pointer")}
             onPointerEnter={(e) => e.preventDefault()}
             onPointerLeave={(e) => e.preventDefault()}
           >
             <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
             <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
             <span className="sr-only">Toggle theme</span>
-          </NavigationMenuTrigger>
+          </NavigationMenuPrimitive.Trigger>
           <NavigationMenuContent>
-            <div className="grid gap-1 p-2 w-32">
+            <div className="grid gap-1 p-0 w-32">
               <Button
                 variant="ghost"
                 size="sm"
