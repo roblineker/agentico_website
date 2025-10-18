@@ -1,4 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Carousel } from "@/components/ui/carousel";
 import { 
   FileText, 
   Building2, 
@@ -64,9 +65,14 @@ export function ServicesSection() {
           </p>
         </div>
 
-        <div className="space-y-16">
+        <Carousel 
+          itemsPerView={{ mobile: 1, tablet: 1, desktop: 2 }}
+          showDots={true}
+          autoPlay={false}
+          className="max-w-7xl mx-auto"
+        >
           {services.map((service, index) => (
-            <Card key={index} className="border-2 hover:border-primary/50 transition-colors">
+            <Card key={index} className="border-2 hover:border-primary/50 transition-colors h-full">
               <CardHeader>
                 <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
                   <service.icon className="h-6 w-6 text-primary" />
@@ -79,7 +85,7 @@ export function ServicesSection() {
                   <p className="text-muted-foreground">{service.problem}</p>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-primary mb-2">The Solution:</h4>
+                  <h4 className="font-semibold text-green-600 mb-2">The Solution:</h4>
                   <p className="text-muted-foreground">{service.solution}</p>
                 </div>
                 <div>
@@ -89,7 +95,7 @@ export function ServicesSection() {
               </CardContent>
             </Card>
           ))}
-        </div>
+        </Carousel>
       </div>
     </section>
   );
