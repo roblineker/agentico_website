@@ -20,7 +20,7 @@ export function HeroSection() {
           {/* Badge */}
           <Badge variant="secondary" className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium">
             <Bot className="h-4 w-4" />
-            AI-Powered Business Automation
+            AI Consulting, Engineering & Solutions
           </Badge>
 
           {/* Main Headline */}

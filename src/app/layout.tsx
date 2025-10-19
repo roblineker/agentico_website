@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Agentico - AI-Powered Business Automation",
+  title: "Agentico - AI Consulting, Engineering & Solutions",
   description: "Transform your business with intelligent automation. Custom AI solutions for trades and professional services.",
   keywords: ["AI automation", "business automation", "trades", "professional services", "AI tools", "small business"],
   authors: [{ name: "Agentico" }],
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     ],
   },
   openGraph: {
-    title: "Agentico - AI-Powered Business Automation",
+    title: "Agentico - AI Consulting, Engineering & Solutions",
     description: "Transform your business with intelligent automation. Custom AI solutions for trades and professional services.",
     url: "https://agentico.com.au",
     siteName: "Agentico",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Agentico - AI-Powered Business Automation",
+    title: "Agentico - AI Consulting, Engineering & Solutions",
     description: "Transform your business with intelligent automation. Custom AI solutions for trades and professional services.",
   },
 };

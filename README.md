@@ -1,4 +1,4 @@
-# Agentico - AI-Powered Business Automation
+   # Agentico - AI Consulting, Engineering & Solutions
 
 A modern Next.js website for Agentico, an AI consultancy specializing in business automation for trades and professional services.
 
