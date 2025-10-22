@@ -1,4 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { ScrollAnimation, StaggerContainer } from "@/components/ui/scroll-animation";
 
 const faqs = [
   {
@@ -31,11 +32,11 @@ export function FAQSection() {
   return (
     <section className="py-20 md:py-32">
       <div className="container">
-        <div className="text-center space-y-4 mb-16">
+        <ScrollAnimation direction="up" className="text-center space-y-4 mb-16">
           <h2 className="text-3xl md:text-5xl font-bold">Common Questions</h2>
-        </div>
+        </ScrollAnimation>
 
-        <div className="max-w-4xl mx-auto space-y-8">
+        <StaggerContainer className="max-w-4xl mx-auto space-y-8" staggerDelay={0.1}>
           {faqs.map((faq, index) => (
             <Card key={index} className="border-2">
               <CardHeader>
@@ -46,7 +47,7 @@ export function FAQSection() {
               </CardContent>
             </Card>
           ))}
-        </div>
+        </StaggerContainer>
       </div>
     </section>
   );

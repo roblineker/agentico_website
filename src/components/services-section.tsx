@@ -1,5 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Carousel } from "@/components/ui/carousel";
+import { ScrollAnimation } from "@/components/ui/scroll-animation";
 import { 
   FileText, 
   Building2, 
@@ -58,44 +59,46 @@ export function ServicesSection() {
   return (
     <section id="services" className="py-20 md:py-32">
       <div className="container">
-        <div className="text-center space-y-4 mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold">Your Business, Supercharged</h2>
+        <ScrollAnimation direction="up" className="text-center space-y-4 mb-16">
+          <h2 className="text-3xl md:text-5xl font-bold">Your Business, Agentified</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Here are some real-world problems we solve for businesses like yours:
           </p>
-        </div>
+        </ScrollAnimation>
 
-        <Carousel 
-          itemsPerView={{ mobile: 1, tablet: 1, desktop: 2 }}
-          showDots={true}
-          autoPlay={false}
-          className="max-w-7xl mx-auto"
-        >
-          {services.map((service, index) => (
-            <Card key={index} className="border-2 hover:border-primary/50 transition-colors h-full">
-              <CardHeader>
-                <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                  <service.icon className="h-6 w-6 text-primary" />
-                </div>
-                <CardTitle className="text-2xl">{service.title}</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div>
-                  <h4 className="font-semibold text-destructive mb-2">The Problem:</h4>
-                  <p className="text-muted-foreground">{service.problem}</p>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-green-600 mb-2">The Solution:</h4>
-                  <p className="text-muted-foreground">{service.solution}</p>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-foreground mb-2">Real-World Example:</h4>
-                  <p className="text-muted-foreground">{service.example}</p>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </Carousel>
+        <ScrollAnimation direction="up" delay={0.2}>
+          <Carousel 
+            itemsPerView={{ mobile: 1, tablet: 1, desktop: 2 }}
+            showDots={true}
+            autoPlay={false}
+            className="max-w-7xl mx-auto"
+          >
+            {services.map((service, index) => (
+              <Card key={index} className="border-2 hover:border-primary/50 transition-colors h-full">
+                <CardHeader>
+                  <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                    <service.icon className="h-6 w-6 text-primary" />
+                  </div>
+                  <CardTitle className="text-2xl">{service.title}</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <div>
+                    <h4 className="font-semibold text-destructive mb-2">The Problem:</h4>
+                    <p className="text-muted-foreground">{service.problem}</p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-green-600 mb-2">The Solution:</h4>
+                    <p className="text-muted-foreground">{service.solution}</p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-foreground mb-2">Real-World Example:</h4>
+                    <p className="text-muted-foreground">{service.example}</p>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </Carousel>
+        </ScrollAnimation>
       </div>
     </section>
   );

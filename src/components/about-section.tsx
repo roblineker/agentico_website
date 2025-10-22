@@ -1,14 +1,16 @@
+import { ScrollAnimation, StaggerContainer } from "@/components/ui/scroll-animation";
+
 export function AboutSection() {
   return (
     <section className="py-20 md:py-32">
       <div className="container">
-        <div className="text-center space-y-4 mb-16">
+        <ScrollAnimation direction="up" className="text-center space-y-4 mb-16">
           <h2 className="text-3xl md:text-5xl font-bold">
             AI That Actually Makes Sense for Small Business
           </h2>
-        </div>
+        </ScrollAnimation>
 
-        <div className="max-w-4xl mx-auto space-y-6 text-lg text-muted-foreground">
+        <StaggerContainer className="max-w-4xl mx-auto space-y-6 text-lg text-muted-foreground" staggerDelay={0.2}>
           <p>
             Most AI companies talk in buzzwords and sell you complicated software that takes months to set up. We&apos;re different.
           </p>
@@ -26,7 +28,7 @@ export function AboutSection() {
           <p className="text-xl font-semibold text-foreground">
             No jargon. No six-month implementation timelines. Just tools that work.
           </p>
-        </div>
+        </StaggerContainer>
       </div>
     </section>
   );
