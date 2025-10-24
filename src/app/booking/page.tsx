@@ -1,6 +1,5 @@
 'use client';
 
-import { Metadata } from 'next';
 import { useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -12,7 +11,7 @@ declare global {
   interface Window {
     Koalendar: {
       (action: string, config: { url: string; selector: string }): void;
-      props?: any[];
+      props?: unknown[];
     };
   }
 }
@@ -20,8 +19,8 @@ declare global {
 export default function BookingPage() {
   useEffect(() => {
     // Initialize Koalendar function
-    window.Koalendar = window.Koalendar || function() {
-      (window.Koalendar.props = window.Koalendar.props || []).push(arguments);
+    window.Koalendar = window.Koalendar || function(...args) {
+      (window.Koalendar.props = window.Koalendar.props || []).push(...args);
     };
 
     // Load the Koalendar script
@@ -75,7 +74,7 @@ export default function BookingPage() {
           <Button variant="outline" asChild>
             <Link href="/" className="flex items-center space-x-2">
               <ArrowLeft className="h-4 w-4" />
-              <span>Back to Home</span>
+              <span>Back</span>
             </Link>
           </Button>
         </div>
@@ -92,6 +91,26 @@ export default function BookingPage() {
           </p>
         </div>
 
+        {/* Duration Recommendations */}
+        <div className="max-w-4xl mx-auto mb-8">
+          <div className="rounded-lg border bg-card p-6 shadow-sm">
+            <h2 className="text-lg font-semibold mb-4 text-center">Recommended Call Duration</h2>
+            <div className="grid md:grid-cols-3 gap-4">
+              <div className="space-y-2 text-center p-4 rounded-md bg-muted/50">
+                <div className="font-medium">Small Businesses</div>
+                <div className="text-2xl font-bold text-primary">1 Hour</div>
+                </div>
+              <div className="space-y-2 text-center p-4 rounded-md bg-muted/50">
+                <div className="font-medium">Medium Businesses</div>
+                <div className="text-2xl font-bold text-primary">1.5 Hours</div>
+                </div>
+              <div className="space-y-2 text-center p-4 rounded-md bg-muted/50">
+                <div className="font-medium">Complex Businesses</div>
+                <div className="text-2xl font-bold text-primary">2 Hours</div></div>
+            </div>
+          </div>
+        </div>
+
         {/* Koalendar Widget Container */}
         <div className="max-w-4xl mx-auto">
           <div 
@@ -105,7 +124,7 @@ export default function BookingPage() {
           <h2 className="text-xl font-semibold">What to Expect</h2>
           <div className="grid md:grid-cols-2 gap-6 text-left">
             <div className="space-y-2">
-              <h3 className="font-medium">During the Call (30 minutes)</h3>
+              <h3 className="font-medium">During the Call (60-120 Minutes)</h3>
               <ul className="text-sm text-muted-foreground space-y-1">
                 <li>• Review your specific automation needs</li>
                 <li>• Discuss potential AI solutions</li>
@@ -114,12 +133,12 @@ export default function BookingPage() {
               </ul>
             </div>
             <div className="space-y-2">
-              <h3 className="font-medium">After the Call</h3>
+              <h3 className="font-medium">After the Call (1-3 Business Days)</h3>
               <ul className="text-sm text-muted-foreground space-y-1">
-                <li>• Detailed proposal within 2-3 days</li>
+                <li>• Detailed proposal</li>
                 <li>• Project timeline and milestones</li>
                 <li>• Next steps if we&apos;re a good fit</li>
-                <li>• No obligation to proceed</li>
+                <li>• Kick off the project</li>
               </ul>
             </div>
           </div>

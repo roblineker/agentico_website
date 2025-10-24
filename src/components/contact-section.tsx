@@ -4,17 +4,15 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
 import {
   Field,
-  FieldContent,
   FieldDescription,
   FieldError,
   FieldGroup,
   FieldLabel,
   FieldLegend,
-  FieldSeparator,
   FieldSet,
 } from "@/components/ui/field";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -34,7 +32,56 @@ const contactFormSchema = z.object({
   company: z.string().min(2, "Please enter your company name"),
   
   // Business Information
-  industry: z.enum(["trades", "professional_services", "other"], {
+  industry: z.enum([
+    "construction_trades",
+    "electrical_plumbing",
+    "hvac",
+    "landscaping_gardening",
+    "painting_decorating",
+    "carpentry_joinery",
+    "roofing",
+    "other_trades_construction",
+    "legal_services",
+    "accounting_bookkeeping",
+    "financial_advisory",
+    "consulting",
+    "human_resources",
+    "real_estate",
+    "property_management",
+    "insurance",
+    "other_professional_services",
+    "healthcare_medical",
+    "dental",
+    "veterinary",
+    "fitness_wellness",
+    "beauty_salon",
+    "other_healthcare_wellness",
+    "retail",
+    "ecommerce",
+    "hospitality_hotels",
+    "restaurants_cafes",
+    "catering",
+    "other_retail_hospitality",
+    "event_planning",
+    "marketing_advertising",
+    "it_services",
+    "software_development",
+    "design_creative",
+    "photography_videography",
+    "other_creative_tech",
+    "education_training",
+    "childcare",
+    "cleaning_services",
+    "logistics_transport",
+    "warehousing",
+    "manufacturing",
+    "wholesale_distribution",
+    "automotive_repair",
+    "security_services",
+    "recruitment_staffing",
+    "other_services",
+    "other"
+  ], {
     message: "Please select your industry",
   }),
   businessSize: z.enum(["1-5", "6-20", "21-50", "51-200", "200+"], {
@@ -110,7 +157,7 @@ function ContactForm() {
     setValue,
     watch,
     control,
-    formState: { errors, touchedFields },
+    formState: { errors },
   } = useForm<ContactFormData>({
     resolver: zodResolver(contactFormSchema),
     mode: "onTouched",
@@ -181,7 +228,7 @@ function ContactForm() {
             </div>
             <h3 className="text-2xl font-bold">Thank You!</h3>
             <p className="text-muted-foreground max-w-md mx-auto">
-              We've received your detailed information and will review it carefully. Our team will reach out within 1-2 business days with a preliminary assessment and next steps.
+              We&apos;ve received your detailed information and will review it carefully. Our team will reach out within 1-2 business days with a preliminary assessment and next steps.
             </p>
             <Button
               variant="outline"
@@ -269,14 +316,86 @@ function ContactForm() {
               <div className="grid md:grid-cols-2 gap-4">
                 <Field data-invalid={!!errors.industry}>
                   <FieldLabel htmlFor="industry">Industry *</FieldLabel>
-                  <Select onValueChange={(value) => setValue("industry", value as any)}>
+                  <Select onValueChange={(value) => setValue("industry", value as "construction_trades" | "electrical_plumbing" | "hvac" | "landscaping_gardening" | "painting_decorating" | "carpentry_joinery" | "roofing" | "other_trades_construction" | "legal_services" | "accounting_bookkeeping" | "financial_advisory" | "consulting" | "human_resources" | "real_estate" | "property_management" | "insurance" | "other_professional_services" | "healthcare_medical" | "dental" | "veterinary" | "fitness_wellness" | "beauty_salon" | "other_healthcare_wellness" | "retail" | "ecommerce" | "hospitality_hotels" | "restaurants_cafes" | "catering" | "other_retail_hospitality" | "event_planning" | "marketing_advertising" | "it_services" | "software_development" | "design_creative" | "photography_videography" | "other_creative_tech" | "education_training" | "childcare" | "cleaning_services" | "logistics_transport" | "warehousing" | "manufacturing" | "wholesale_distribution" | "automotive_repair" | "security_services" | "recruitment_staffing" | "other_services" | "other")}>
                     <SelectTrigger id="industry" aria-invalid={!!errors.industry}>
-                      <SelectValue placeholder="Select industry" />
+                      <SelectValue placeholder="Select your industry" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="trades">Trades (Builder, Plumber, Electrician)</SelectItem>
-                      <SelectItem value="professional_services">Professional Services (Law, HR, Accounting)</SelectItem>
-                      <SelectItem value="other">Other</SelectItem>
+                      <SelectGroup>
+                        <SelectLabel>Trades & Construction</SelectLabel>
+                        <SelectItem value="construction_trades">Construction & Building Trades</SelectItem>
+                        <SelectItem value="electrical_plumbing">Electrical & Plumbing</SelectItem>
+                        <SelectItem value="hvac">HVAC & Climate Control</SelectItem>
+                        <SelectItem value="landscaping_gardening">Landscaping & Gardening</SelectItem>
+                        <SelectItem value="painting_decorating">Painting & Decorating</SelectItem>
+                        <SelectItem value="carpentry_joinery">Carpentry & Joinery</SelectItem>
+                        <SelectItem value="roofing">Roofing & Guttering</SelectItem>
+                        <SelectItem value="other_trades_construction">Other - Trades & Construction</SelectItem>
+                      </SelectGroup>
+                      
+                      <SelectGroup>
+                        <SelectLabel>Professional Services</SelectLabel>
+                        <SelectItem value="legal_services">Legal Services</SelectItem>
+                        <SelectItem value="accounting_bookkeeping">Accounting & Bookkeeping</SelectItem>
+                        <SelectItem value="financial_advisory">Financial Advisory & Planning</SelectItem>
+                        <SelectItem value="consulting">Business Consulting</SelectItem>
+                        <SelectItem value="human_resources">Human Resources</SelectItem>
+                        <SelectItem value="real_estate">Real Estate & Property Sales</SelectItem>
+                        <SelectItem value="property_management">Property Management</SelectItem>
+                        <SelectItem value="insurance">Insurance Services</SelectItem>
+                        <SelectItem value="other_professional_services">Other - Professional Services</SelectItem>
+                      </SelectGroup>
+                      
+                      <SelectGroup>
+                        <SelectLabel>Healthcare & Wellness</SelectLabel>
+                        <SelectItem value="healthcare_medical">Healthcare & Medical Services</SelectItem>
+                        <SelectItem value="dental">Dental Services</SelectItem>
+                        <SelectItem value="veterinary">Veterinary Services</SelectItem>
+                        <SelectItem value="fitness_wellness">Fitness & Wellness</SelectItem>
+                        <SelectItem value="beauty_salon">Beauty, Hair & Nail Salon</SelectItem>
+                        <SelectItem value="other_healthcare_wellness">Other - Healthcare & Wellness</SelectItem>
+                      </SelectGroup>
+                      
+                      <SelectGroup>
+                        <SelectLabel>Retail & Hospitality</SelectLabel>
+                        <SelectItem value="retail">Retail & Brick-and-Mortar</SelectItem>
+                        <SelectItem value="ecommerce">E-commerce & Online Retail</SelectItem>
+                        <SelectItem value="hospitality_hotels">Hospitality & Hotels</SelectItem>
+                        <SelectItem value="restaurants_cafes">Restaurants & Cafes</SelectItem>
+                        <SelectItem value="catering">Catering Services</SelectItem>
+                        <SelectItem value="other_retail_hospitality">Other - Retail & Hospitality</SelectItem>
+                      </SelectGroup>
+                      
+                      <SelectGroup>
+                        <SelectLabel>Creative & Tech Services</SelectLabel>
+                        <SelectItem value="event_planning">Event Planning & Management</SelectItem>
+                        <SelectItem value="marketing_advertising">Marketing & Advertising</SelectItem>
+                        <SelectItem value="it_services">IT Services & Support</SelectItem>
+                        <SelectItem value="software_development">Software Development</SelectItem>
+                        <SelectItem value="design_creative">Design & Creative Services</SelectItem>
+                        <SelectItem value="photography_videography">Photography & Videography</SelectItem>
+                        <SelectItem value="other_creative_tech">Other - Creative & Tech Services</SelectItem>
+                      </SelectGroup>
+                      
+                      <SelectGroup>
+                        <SelectLabel>Other Services</SelectLabel>
+                        <SelectItem value="education_training">Education & Training</SelectItem>
+                        <SelectItem value="childcare">Childcare & Early Learning</SelectItem>
+                        <SelectItem value="cleaning_services">Cleaning Services</SelectItem>
+                        <SelectItem value="logistics_transport">Logistics & Transport</SelectItem>
+                        <SelectItem value="warehousing">Warehousing & Storage</SelectItem>
+                        <SelectItem value="manufacturing">Manufacturing</SelectItem>
+                        <SelectItem value="wholesale_distribution">Wholesale & Distribution</SelectItem>
+                        <SelectItem value="automotive_repair">Automotive Repair & Services</SelectItem>
+                        <SelectItem value="security_services">Security Services</SelectItem>
+                        <SelectItem value="recruitment_staffing">Recruitment & Staffing</SelectItem>
+                        <SelectItem value="other_services">Other - Services</SelectItem>
+                      </SelectGroup>
+                      
+                      <SelectGroup>
+                        <SelectLabel>General</SelectLabel>
+                        <SelectItem value="other">Other Industry (Not Listed)</SelectItem>
+                      </SelectGroup>
                     </SelectContent>
                   </Select>
                   <FieldError>{errors.industry?.message}</FieldError>
@@ -284,7 +403,7 @@ function ContactForm() {
 
                 <Field data-invalid={!!errors.businessSize}>
                   <FieldLabel htmlFor="businessSize">Total Employees *</FieldLabel>
-                  <Select onValueChange={(value) => setValue("businessSize", value as any)}>
+                  <Select onValueChange={(value) => setValue("businessSize", value as "1-5" | "6-20" | "21-50" | "51-200" | "200+")}>
                     <SelectTrigger id="businessSize" aria-invalid={!!errors.businessSize}>
                       <SelectValue placeholder="Select size" />
                     </SelectTrigger>
@@ -326,7 +445,7 @@ function ContactForm() {
               <div className="grid md:grid-cols-2 gap-4">
                 <Field data-invalid={!!errors.monthlyVolume}>
                   <FieldLabel htmlFor="monthlyVolume">Monthly Transaction/Job Volume *</FieldLabel>
-                  <Select onValueChange={(value) => setValue("monthlyVolume", value as any)}>
+                  <Select onValueChange={(value) => setValue("monthlyVolume", value as "0-100" | "100-500" | "500-1000" | "1000-5000" | "5000+")}>
                     <SelectTrigger id="monthlyVolume" aria-invalid={!!errors.monthlyVolume}>
                       <SelectValue placeholder="Select volume" />
                     </SelectTrigger>
@@ -346,7 +465,7 @@ function ContactForm() {
 
                 <Field data-invalid={!!errors.teamSize}>
                   <FieldLabel htmlFor="teamSize">Team Members Affected *</FieldLabel>
-                  <Select onValueChange={(value) => setValue("teamSize", value as any)}>
+                  <Select onValueChange={(value) => setValue("teamSize", value as "1-2" | "3-5" | "6-10" | "11-20" | "20+")}>
                     <SelectTrigger id="teamSize" aria-invalid={!!errors.teamSize}>
                       <SelectValue placeholder="Select team size" />
                     </SelectTrigger>
@@ -476,7 +595,7 @@ function ContactForm() {
 
               <Field data-invalid={!!errors.dataVolume}>
                 <FieldLabel htmlFor="dataVolume">Data Volume to Process *</FieldLabel>
-                <Select onValueChange={(value) => setValue("dataVolume", value as any)}>
+                <Select onValueChange={(value) => setValue("dataVolume", value as "minimal" | "moderate" | "large" | "very_large")}>
                   <SelectTrigger id="dataVolume" aria-invalid={!!errors.dataVolume}>
                     <SelectValue placeholder="Select data volume" />
                   </SelectTrigger>
@@ -535,7 +654,7 @@ function ContactForm() {
                   <div>
                     <FieldLabel>Project Ideas (Optional)</FieldLabel>
                     <FieldDescription className="mt-1">
-                      Add specific AI tools or automation ideas you've considered
+                      Add specific AI tools or automation ideas you&apos;ve considered
                     </FieldDescription>
                   </div>
                   <Button
@@ -552,7 +671,7 @@ function ContactForm() {
                 {fields.length === 0 && (
                   <div className="text-center py-8 border-2 border-dashed rounded-lg">
                     <p className="text-sm text-muted-foreground">
-                      No project ideas added yet. Click "Add Idea" to include specific automation concepts.
+                      No project ideas added yet. Click &quot;Add Idea&quot; to include specific automation concepts.
                     </p>
                   </div>
                 )}
@@ -604,7 +723,7 @@ function ContactForm() {
                           </FieldLabel>
                           <Select
                             value={watch(`projectIdeas.${index}.priority`)}
-                            onValueChange={(value) => setValue(`projectIdeas.${index}.priority` as const, value as any)}
+                            onValueChange={(value) => setValue(`projectIdeas.${index}.priority` as const, value as "high" | "medium" | "low")}
                           >
                             <SelectTrigger id={`projectIdeas.${index}.priority`} aria-invalid={!!errors.projectIdeas?.[index]?.priority}>
                               <SelectValue placeholder="Select priority" />
@@ -626,7 +745,7 @@ function ContactForm() {
               <div className="grid md:grid-cols-2 gap-4">
                 <Field data-invalid={!!errors.timeline}>
                   <FieldLabel htmlFor="timeline">Timeline *</FieldLabel>
-                  <Select onValueChange={(value) => setValue("timeline", value as any)}>
+                  <Select onValueChange={(value) => setValue("timeline", value as "immediate" | "1-3_months" | "3-6_months" | "6+_months")}>
                     <SelectTrigger id="timeline" aria-invalid={!!errors.timeline}>
                       <SelectValue placeholder="When do you need this?" />
                     </SelectTrigger>
@@ -642,7 +761,7 @@ function ContactForm() {
 
                 <Field data-invalid={!!errors.budget}>
                   <FieldLabel htmlFor="budget">Budget Range *</FieldLabel>
-                  <Select onValueChange={(value) => setValue("budget", value as any)}>
+                  <Select onValueChange={(value) => setValue("budget", value as "under_10k" | "10k-25k" | "25k-50k" | "50k-100k" | "100k+" | "not_sure")}>
                     <SelectTrigger id="budget" aria-invalid={!!errors.budget}>
                       <SelectValue placeholder="Select budget range" />
                     </SelectTrigger>
@@ -673,7 +792,7 @@ function ContactForm() {
           </Button>
           
           <p className="text-xs text-center text-muted-foreground">
-            We'll review your submission and provide a preliminary assessment within 1-2 business days
+            We&apos;ll review your submission and provide a preliminary assessment within 1-2 business days
           </p>
         </form>
       </CardContent>
