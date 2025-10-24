@@ -55,6 +55,8 @@ const contactFormSchema = z.object({
   }),
 });
 
+// Type definition for reference (exported for potential future use)
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 type ContactFormData = z.infer<typeof contactFormSchema>;
 
 export async function POST(request: NextRequest) {
@@ -150,7 +152,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json(
         { 
           error: 'Validation failed', 
-          details: error.errors 
+          details: error.issues 
         },
         { status: 400 }
       );
