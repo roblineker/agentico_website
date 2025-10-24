@@ -21,7 +21,7 @@ export default function Home() {
         <ContactSection />
       </main>
       <Footer />
-      <ElevenLabsWidget />
+      {/* <ElevenLabsWidget /> */}
     </div>
   );
 }

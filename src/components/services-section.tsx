@@ -60,7 +60,7 @@ export function ServicesSection() {
     <section id="services" className="py-20 md:py-32">
       <div className="container">
         <ScrollAnimation direction="up" className="text-center space-y-4 mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold">Your Business, Agentified</h2>
+          <h2 className="text-3xl md:text-5xl font-bold">Your Business, Agentico&apos;d</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Here are some real-world problems we solve for businesses like yours:
           </p>

@@ -29,9 +29,9 @@ export function HeroSection() {
           {/* Main Headline */}
           <ScrollAnimation delay={0.2} direction="up">
             <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
-              Stop Drowning in Paperwork.{" "}
+              The AI Your Business Needs.{" "}
               <span className="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
-                Start Growing Your Business.
+                Implemented Correctly.
               </span>
             </h1>
           </ScrollAnimation>
@@ -39,7 +39,7 @@ export function HeroSection() {
           {/* Subtitle */}
           <ScrollAnimation delay={0.3} direction="up">
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Simple AI tools for small businesses that automate the boring stuff—so you can focus on what actually makes you money.
+              AI tools for small businesses that automate the boring stuff—so you can focus on what actually matters.
             </p>
           </ScrollAnimation>
 

@@ -64,29 +64,36 @@ export async function POST(request: NextRequest) {
     // Validate the form data
     const validatedData = contactFormSchema.parse(body);
     
-    // Get the webhook URL from environment variables
-    const webhookUrl = process.env.N8N_WEBHOOK_URL;
+    // Get webhook URLs from environment variables
+    const testWebhookUrl = process.env.N8N_TEST_WEBHOOK_URL;
+    const prodWebhookUrl = process.env.N8N_PROD_WEBHOOK_URL;
+    
+    // Determine which environment we're in
+    const isProduction = process.env.NODE_ENV === 'production';
+    const webhookUrl = isProduction ? prodWebhookUrl : testWebhookUrl;
     
     // Check if webhook URL is configured and not a placeholder
-    const isWebhookConfigured = webhookUrl && 
-      !webhookUrl.includes('your-n8n-instance.com') && 
-      !webhookUrl.includes('localhost') &&
-      webhookUrl.startsWith('http');
+    const isValidWebhookUrl = (url: string | undefined): boolean => {
+      return !!(url && 
+        !url.includes('your-n8n-instance.com') && 
+        !url.includes('placeholder') &&
+        url.startsWith('http'));
+    };
     
-    if (isWebhookConfigured) {
+    // Prepare data for webhook(s)
+    const webhookData = {
+      ...validatedData,
+      submittedAt: new Date().toISOString(),
+      source: 'agentico_website',
+      environment: isProduction ? 'production' : 'development',
+      // Add any additional metadata you want to send
+      userAgent: request.headers.get('user-agent'),
+      ip: request.headers.get('x-forwarded-for') || request.headers.get('x-real-ip'),
+    };
+    
+    const sendToWebhook = async (url: string, label: string) => {
       try {
-        // Prepare data for n8n webhook
-        const webhookData = {
-          ...validatedData,
-          submittedAt: new Date().toISOString(),
-          source: 'agentico_website',
-          // Add any additional metadata you want to send
-          userAgent: request.headers.get('user-agent'),
-          ip: request.headers.get('x-forwarded-for') || request.headers.get('x-real-ip'),
-        };
-        
-        // Send data to n8n webhook with timeout
-        const webhookResponse = await fetch(webhookUrl, {
+        const webhookResponse = await fetch(url, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -96,21 +103,37 @@ export async function POST(request: NextRequest) {
         });
         
         if (!webhookResponse.ok) {
-          console.error('Failed to send data to n8n webhook:', webhookResponse.status, webhookResponse.statusText);
+          console.error(`Failed to send data to ${label} webhook:`, webhookResponse.status, webhookResponse.statusText);
+          return false;
         } else {
-          console.log('Successfully sent data to n8n webhook');
+          console.log(`Successfully sent data to ${label} webhook`);
+          return true;
         }
       } catch (webhookError) {
-        console.error('Webhook request failed:', webhookError);
-        // Don't fail the request if webhook fails - we still want to show success to user
+        console.error(`${label} webhook request failed:`, webhookError);
+        return false;
       }
-    } else {
-      // Log form data to console for development/testing
-      console.log('N8N webhook not configured. Form data received:', {
-        ...validatedData,
-        submittedAt: new Date().toISOString(),
-        source: 'agentico_website',
-      });
+    };
+    
+    // Send to appropriate webhook based on environment
+    if (isValidWebhookUrl(webhookUrl)) {
+      const label = isProduction ? 'production' : 'test';
+      await sendToWebhook(webhookUrl!, label);
+    }
+    
+    // Also send to both webhooks if both are configured (useful for testing)
+    const sendToBoth = process.env.N8N_SEND_TO_BOTH === 'true';
+    if (sendToBoth && isValidWebhookUrl(testWebhookUrl) && isValidWebhookUrl(prodWebhookUrl) && testWebhookUrl !== prodWebhookUrl) {
+      console.log('Sending to both test and production webhooks...');
+      await Promise.all([
+        sendToWebhook(testWebhookUrl!, 'test'),
+        sendToWebhook(prodWebhookUrl!, 'production')
+      ]);
+    }
+    
+    // Log to console if no valid webhooks configured
+    if (!isValidWebhookUrl(testWebhookUrl) && !isValidWebhookUrl(prodWebhookUrl)) {
+      console.log('No valid webhooks configured. Form data received:', webhookData);
     }
     
     // Return success response
