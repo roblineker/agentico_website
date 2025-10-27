@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
 import { ScrollAnimation } from "@/components/ui/scroll-animation";
 import * as SimpleIcons from "simple-icons";
@@ -12,7 +13,17 @@ import {
   faOpenid,
 } from "@fortawesome/free-brands-svg-icons";
 
-const techStack = [
+interface TechStackItem {
+  quote: string;
+  name: string;
+  title: string;
+  iconSlug: string | null;
+  faIcon: IconDefinition | null;
+  url: string;
+  customIcon?: boolean;
+}
+
+const techStack: TechStackItem[] = [
     {
       quote: "We leverage OpenAI's advanced models to build custom AI solutions that automate complex workflows, enhance customer engagement through intelligent chatbots, and generate powerful business insights from your data.",
       name: "OpenAI",
@@ -24,7 +35,7 @@ const techStack = [
     {
       quote: "With a focus on safety and reliability, we use Anthropic's Claude AI to develop AI systems that can handle sensitive data, perform nuanced analysis, and provide trustworthy, helpful interactions for your team and customers.",
       name: "Anthropic",
-      title: "AI Safety & Research",
+      title: "AI Platform",
       iconSlug: "anthropic",
       faIcon: null,
       url: "https://www.anthropic.com/claude",
@@ -76,6 +87,56 @@ const techStack = [
       iconSlug: "xero",
       faIcon: null,
       url: "https://www.xero.com/",
+    },
+    {
+      quote: "We use ElevenLabs' cutting-edge voice AI technology to create natural-sounding voice agents and text-to-speech solutions, enabling personalized customer experiences and automated voice interactions that sound remarkably human.",
+      name: "ElevenLabs",
+      title: "Voice AI Platform",
+      iconSlug: "elevenlabs",
+      faIcon: null,
+      url: "https://elevenlabs.io/",
+    },
+    {
+      quote: "We leverage Twilio's communications platform to build robust SMS, voice, and messaging solutions, enabling seamless customer engagement and automated notifications that keep your team and clients connected.",
+      name: "Twilio",
+      title: "Communications Platform",
+      iconSlug: "twilio",
+      faIcon: null,
+      url: "https://www.twilio.com/",
+    },
+    {
+      quote: "We integrate with Procore's construction management platform to automate project workflows, enhance collaboration, and deliver AI-powered insights that help construction teams stay on schedule and under budget.",
+      name: "Procore",
+      title: "Construction Management",
+      iconSlug: "procore",
+      faIcon: null,
+      url: "https://www.procore.com/",
+      customIcon: true,
+    },
+    {
+      quote: "We build custom integrations with Jobpac to streamline job management, automate quoting and invoicing, and provide real-time visibility into your trade business operations.",
+      name: "Jobpac",
+      title: "Job Management",
+      iconSlug: "trimble",
+      faIcon: null,
+      url: "https://www.jobpac.com/",
+    },
+    {
+      quote: "We integrate with Aircall's cloud-based call center solution to create intelligent call routing, automated logging, and AI-powered call analytics that improve your team's productivity and customer satisfaction.",
+      name: "Aircall",
+      title: "Cloud Call Center",
+      iconSlug: "aircall",
+      faIcon: null,
+      url: "https://aircall.io/",
+    },
+    {
+      quote: "We utilize Vapi's voice AI infrastructure to build sophisticated phone agents that can handle customer inquiries, schedule appointments, and perform complex tasks through natural voice conversations.",
+      name: "Vapi",
+      title: "Voice AI Infrastructure",
+      iconSlug: "vapi",
+      faIcon: null,
+      url: "https://vapi.ai/",
+      customIcon: true,
     }
   
 ];
@@ -84,14 +145,31 @@ export function BrandIcon({
   iconSlug, 
   faIcon,
   name, 
-  size = 48 
+  size = 48,
+  customIcon = false
 }: { 
   iconSlug: string | null; 
   faIcon?: IconDefinition | null;
   name: string; 
   size?: number;
+  customIcon?: boolean;
 }) {
-  // Try Simple Icons first (priority)
+  // Try custom local icon first (if customIcon flag is set)
+  if (customIcon && iconSlug) {
+    return (
+      <div className="flex items-center justify-center" style={{ width: size, height: size }}>
+        <Image
+          src={`/icons/${iconSlug}.svg`}
+          alt={`${name} logo`}
+          width={size}
+          height={size}
+          className="object-contain"
+        />
+      </div>
+    );
+  }
+
+  // Try Simple Icons (priority for standard icons)
   if (iconSlug) {
     const icon = SimpleIcons[`si${iconSlug.charAt(0).toUpperCase()}${iconSlug.slice(1)}` as keyof typeof SimpleIcons] as SimpleIcons.SimpleIcon | undefined;
     
@@ -133,19 +211,29 @@ export function BrandIcon({
 }
 
 export function TechStack() {
+  // Split the tech stack into two rows
+  const midPoint = Math.ceil(techStack.length / 2);
+  const firstRow = techStack.slice(0, midPoint);
+  const secondRow = techStack.slice(midPoint);
+
   return (
     <section className="py-20 md:py-32 bg-muted/30">
       <div className="container">
         <ScrollAnimation direction="up" className="text-center space-y-4 mb-16">
           <h2 className="text-3xl md:text-5xl font-bold">
-            Powered by Industry-Leading Technology
+            Powered by <span className="text-primary">Industry-Leading</span> Technology
           </h2>
         </ScrollAnimation>
 
-        <div className="flex flex-col items-center justify-center relative overflow-hidden">
+        <div className="flex flex-col items-center justify-center relative overflow-hidden space-y-8">
           <InfiniteMovingCards
-            items={techStack}
+            items={firstRow}
             direction="right"
+            speed="slow"
+          />
+          <InfiniteMovingCards
+            items={secondRow}
+            direction="left"
             speed="slow"
           />
         </div>

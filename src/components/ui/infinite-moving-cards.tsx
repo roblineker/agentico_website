@@ -19,6 +19,7 @@ export const InfiniteMovingCards = ({
     iconSlug?: string | null;
     faIcon?: IconDefinition | null;
     url?: string;
+    customIcon?: boolean;
   }[];
   direction?: "left" | "right";
   speed?: "fast" | "normal" | "slow";
@@ -118,7 +119,8 @@ export const InfiniteMovingCards = ({
                         iconSlug={item.iconSlug || null} 
                         faIcon={item.faIcon}
                         name={item.name} 
-                        size={48} 
+                        size={48}
+                        customIcon={item.customIcon}
                       />
                     </a>
                   ) : (
@@ -126,7 +128,8 @@ export const InfiniteMovingCards = ({
                       iconSlug={item.iconSlug || null} 
                       faIcon={item.faIcon}
                       name={item.name} 
-                      size={48} 
+                      size={48}
+                      customIcon={item.customIcon}
                     />
                   )}
                 </div>
@@ -139,7 +142,7 @@ export const InfiniteMovingCards = ({
                   <span className="text-sm leading-[1.6] text-foreground font-bold">
                     {item.name}
                   </span>
-                  <span className="text-sm leading-[1.6] text-muted-foreground font-normal">
+                  <span className="text-primary text-sm leading-[1.6] text-muted-foreground font-normal">
                     {item.title}
                   </span>
                 </span>
