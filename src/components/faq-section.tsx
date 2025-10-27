@@ -11,12 +11,16 @@ const faqs = [
     answer: "Not at all. If you can use your phone and email, you can use our tools. We build them to be simple."
   },
   {
+    question: "Wha if I don't have time to implement the tools?",
+    answer: "We'll help you set up the tools so you can start using them right away. We'll also help you train your team to use the tools. We'll also help you troubleshoot any issues that come up."
+  },
+  {
     question: "What if I don't know what I need?",
     answer: "That's totally fine. Most of our clients start with \"I just need more time\" or \"I hate doing quotes.\" We help you figure out what would actually make a difference."
   },
   {
     question: "How much does it cost?",
-    answer: "It depends on what you need. We start with a $399 workshop where we map out your specific challenges and solutions. From there, we give you a clear quote with no surprises."
+    answer: "It depends on what you need. We start with a $399 workshop where we map out your specific challenges and solutions. To build and implement the infrastructure and modest AI capabilities, we recommend a budget of between $2,000 & $8,000."
   },
   {
     question: "Will this replace my staff?",
@@ -25,7 +29,7 @@ const faqs = [
   {
     question: "What if it doesn't work for my industry?",
     answer: "We'll tell you upfront in the workshop if we don't think we can help. We're not here to sell you something that won't work."
-  }
+  },
 ];
 
 export function FAQSection() {

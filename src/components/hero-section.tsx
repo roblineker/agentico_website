@@ -39,7 +39,7 @@ export function HeroSection() {
           {/* Subtitle */}
           <ScrollAnimation delay={0.3} direction="up">
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              AI tools for small businesses that automate the boring stuff—so you can focus on what actually matters.
+              AI tools for small businesses that automate the boring stuff so you can focus on what actually matters.
             </p>
           </ScrollAnimation>
 
