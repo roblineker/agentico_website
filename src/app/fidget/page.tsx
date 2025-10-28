@@ -68,16 +68,24 @@ export default function FidgetPage() {
       const viewportWidth = window.innerWidth;
       const viewportHeight = window.innerHeight;
       
-      // Account for the scale and skew transforms
-      // The grid is scaled down and skewed, so we need to estimate visible area
-      // Adding a buffer factor to account for the skew and rotation
-      const effectiveWidth = viewportWidth / (BOX_WIDTH * SCALE_FACTOR);
-      const effectiveHeight = viewportHeight / (BOX_HEIGHT * SCALE_FACTOR);
+      // After scale, each box is effectively this size in pixels
+      const scaledBoxWidth = BOX_WIDTH * SCALE_FACTOR; // 43.2px
+      const scaledBoxHeight = BOX_HEIGHT * SCALE_FACTOR; // 21.6px
       
-      // Add a multiplier to account for the skew effect (boxes at angles take more space)
-      const skewMultiplier = 1.8; // Empirically adjusted for the skew angles
+      // The skew and rotation make boxes take up more space
+      // The skewX(-48deg) and skewY(14deg) create diagonal patterns
+      // Mobile screens are typically narrower, so fewer boxes fit horizontally
+      const isMobile = viewportWidth < 768;
       
-      const visibleBoxes = Math.ceil(effectiveWidth * effectiveHeight * skewMultiplier);
+      // Calculate approximate visible boxes accounting for the transform
+      // The skew makes the grid stretch diagonally, so we need different calculations
+      const horizontalBoxes = Math.ceil(viewportWidth / scaledBoxWidth);
+      const verticalBoxes = Math.ceil(viewportHeight / scaledBoxHeight);
+      
+      // Skew multiplier is lower for mobile due to narrower viewport
+      const skewMultiplier = isMobile ? 1.2 : 1.8;
+      
+      const visibleBoxes = Math.ceil(horizontalBoxes * verticalBoxes * skewMultiplier);
       setViewableBoxes(visibleBoxes);
     };
 
