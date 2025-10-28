@@ -805,7 +805,7 @@ export function ContactSection() {
     <section id="contact" className="py-20 md:py-32 bg-muted/30">
       <div className="container">
         <ScrollAnimation direction="up" className="text-center space-y-4 mb-12">
-          <h2 className="text-3xl md:text-5xl font-bold">Ready to Get Your Time Back?</h2>
+          <h2 className="text-3xl md:text-5xl font-bold">Ready to Get <span className="text-primary">Your Time</span> Back?</h2>
           <div className="max-w-3xl mx-auto space-y-4 text-lg text-muted-foreground">
             <p>
               Curious how this could work for your business? Let&apos;s have a chat. No pressure, no confusing jargon, 
