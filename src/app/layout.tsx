@@ -20,6 +20,12 @@ export const metadata: Metadata = {
   keywords: ["AI automation", "business automation", "trades", "professional services", "AI tools", "small business"],
   authors: [{ name: "Agentico" }],
   manifest: "/site.webmanifest",
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 1,
+    userScalable: false,
+  },
   icons: {
     icon: [
       { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },

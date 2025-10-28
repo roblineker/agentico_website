@@ -14,7 +14,7 @@ import {
 } from "@/components/ui/dialog";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowLeft, Eye, EyeOff, RotateCcw, Share2 } from "lucide-react";
+import { ArrowLeft, Eye, EyeOff, RotateCcw, Share2, Maximize } from "lucide-react";
 
 // Box dimensions in pixels (Tailwind: h-8 = 32px, w-16 = 64px)
 const BOX_HEIGHT = 32;
@@ -26,12 +26,41 @@ export default function FidgetPage() {
   const [hoveredCount, setHoveredCount] = useState(0);
   const [viewableBoxes, setViewableBoxes] = useState(0);
   const [dialogOpen, setDialogOpen] = useState(false);
+  const [isFullscreen, setIsFullscreen] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
   const hoveredBoxesRef = useRef<Set<string>>(new Set());
 
   // Show dialog on first visit
   useEffect(() => {
     setDialogOpen(true);
   }, []);
+
+  // Handle fullscreen changes
+  useEffect(() => {
+    const handleFullscreenChange = () => {
+      setIsFullscreen(!!document.fullscreenElement);
+    };
+
+    document.addEventListener('fullscreenchange', handleFullscreenChange);
+    return () => document.removeEventListener('fullscreenchange', handleFullscreenChange);
+  }, []);
+
+  // Request fullscreen
+  const toggleFullscreen = async () => {
+    if (!document.fullscreenElement && containerRef.current) {
+      try {
+        await containerRef.current.requestFullscreen();
+      } catch (error) {
+        console.error('Error attempting to enable fullscreen:', error);
+      }
+    } else if (document.fullscreenElement) {
+      try {
+        await document.exitFullscreen();
+      } catch (error) {
+        console.error('Error attempting to exit fullscreen:', error);
+      }
+    }
+  };
 
   // Calculate viewable boxes based on viewport size
   useEffect(() => {
@@ -116,7 +145,18 @@ export default function FidgetPage() {
   };
 
   return (
-    <div className="relative min-h-screen w-full overflow-hidden">
+    <div 
+      ref={containerRef}
+      className="relative min-h-screen w-full overflow-hidden touch-none"
+      style={{ 
+        WebkitUserSelect: 'none',
+        userSelect: 'none',
+        touchAction: 'none',
+        height: '100dvh',
+        overscrollBehavior: 'none',
+        WebkitOverflowScrolling: 'touch'
+      }}
+    >
       {/* Animated Background Boxes */}
       <div className="absolute inset-0 w-full h-full bg-slate-900/5 dark:bg-slate-900/20 z-0">
         <BoxesCore 
@@ -152,16 +192,22 @@ export default function FidgetPage() {
               <DialogDescription asChild>
                 <div className="space-y-3 pt-4">
                   <p>
-                    Hover your mouse over the boxes and watch them light up with random colors.
+                    <strong>Desktop:</strong> Hover your mouse over the boxes and watch them light up with random colors.
                   </p>
                   <p>
-                    Click the <Eye className="inline h-4 w-4 mx-1" /> <strong>Eye button</strong> in the top right to reveal all the boxes you have hovered over.
+                    <strong>Mobile:</strong> Swipe your finger across the screen to light up the boxes.
+                  </p>
+                  <p>
+                    Click the <Eye className="inline h-4 w-4 mx-1" /> <strong>Eye button</strong> in the top right to reveal all the boxes you have touched.
                   </p>
                   <p>
                     Click <EyeOff className="inline h-4 w-4 mx-1" /> again to hide them and clear your history to start fresh.
                   </p>
+                  <p>
+                    Use the <Maximize className="inline h-4 w-4 mx-1" /> <strong>Fullscreen button</strong> for an immersive experience.
+                  </p>
                   <p className="text-primary font-medium pt-2">
-                    It is really is quite pointless.
+                    It really is quite pointless.
                   </p>
                 </div>
               </DialogDescription>
@@ -181,9 +227,17 @@ export default function FidgetPage() {
           variant="default" 
           size="icon"
           onClick={toggleShowHighlighted}
-          title={showHighlighted ? "Hide and clear memory" : "Show all hovered boxes"}
+          title={showHighlighted ? "Hide and clear memory" : "Show all touched boxes"}
         >
           {showHighlighted ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+        </Button>
+        <Button 
+          variant="outline" 
+          size="icon"
+          onClick={toggleFullscreen}
+          title={isFullscreen ? "Exit fullscreen" : "Enter fullscreen"}
+        >
+          <Maximize className="h-4 w-4" />
         </Button>
         <Button asChild variant="outline" size="icon">
           <Link href="/">

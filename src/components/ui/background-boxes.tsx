@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useRef } from "react";
 import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
 
@@ -31,8 +31,50 @@ export const BoxesCore = ({
     return colors[Math.floor(Math.random() * colors.length)];
   };
 
+  const containerRef = useRef<HTMLDivElement>(null);
+  const lastTouchedRef = useRef<string>("");
+
+  // Handle touch events for mobile
+  const handleTouch = (e: React.TouchEvent<HTMLDivElement>) => {
+    if (!containerRef.current) return;
+    
+    const touch = e.touches[0];
+    if (!touch) return;
+
+    // Get the element at the touch point
+    const element = document.elementFromPoint(touch.clientX, touch.clientY);
+    if (!element) return;
+
+    // Find the closest box element
+    const boxElement = element.closest('[data-box-id]');
+    if (boxElement && boxElement instanceof HTMLElement) {
+      const boxId = boxElement.getAttribute('data-box-id');
+      if (boxId && boxId !== lastTouchedRef.current) {
+        lastTouchedRef.current = boxId;
+        const [rowIndex, colIndex] = boxId.split('-').map(Number);
+        onBoxHover?.(rowIndex, colIndex);
+        
+        // Trigger color change manually on touch
+        boxElement.style.backgroundColor = getRandomColor();
+        setTimeout(() => {
+          if (!showHighlighted) {
+            boxElement.style.backgroundColor = 'transparent';
+          }
+        }, 1500);
+      }
+    }
+  };
+
+  const handleTouchEnd = () => {
+    lastTouchedRef.current = "";
+  };
+
   return (
     <div
+      ref={containerRef}
+      onTouchMove={handleTouch}
+      onTouchStart={handleTouch}
+      onTouchEnd={handleTouchEnd}
       style={{
         transform: `translate(-40%,-60%) skewX(-48deg) skewY(14deg) scale(0.675) rotate(0deg) translateZ(0)`,
       }}
@@ -63,6 +105,7 @@ export const BoxesCore = ({
                 }}
                 onMouseEnter={() => onBoxHover?.(i, j)}
                 key={`col` + j}
+                data-box-id={boxKey}
                 className="relative h-8 w-16 border-t border-r border-slate-700 pointer-events-auto"
               >
                 {j % 2 === 0 && i % 2 === 0 ? (
