@@ -56,6 +56,9 @@ export function Header() {
 
         {/* CTA Button */}
         <div className="flex items-center gap-4">
+          <Button asChild variant="outline">
+            <Link href="/fidget">Procrastinate</Link>
+          </Button>
           <Button asChild className="hidden sm:inline-flex">
             <Link href="#contact">Get Started</Link>
           </Button>
@@ -85,7 +88,12 @@ export function Header() {
                     {item.label}
                   </Link>
                 ))}
-                <Button asChild className="mt-4">
+                <Button asChild variant="outline" className="mt-4">
+                  <Link href="/fidget" onClick={() => setIsOpen(false)}>
+                    Procrastinate
+                  </Link>
+                </Button>
+                <Button asChild>
                   <Link href="#contact" onClick={() => setIsOpen(false)}>
                     Get Started
                   </Link>
