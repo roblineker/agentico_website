@@ -72,21 +72,29 @@ export default function FidgetPage() {
       const scaledBoxWidth = BOX_WIDTH * SCALE_FACTOR; // 43.2px
       const scaledBoxHeight = BOX_HEIGHT * SCALE_FACTOR; // 21.6px
       
-      // The skew and rotation make boxes take up more space
-      // The skewX(-48deg) and skewY(14deg) create diagonal patterns
-      // Mobile screens are typically narrower, so fewer boxes fit horizontally
+      // The transform: translate(-40%,-60%) skewX(-48deg) skewY(14deg) scale(0.675)
+      // creates a heavily skewed diagonal grid with much of it off-screen
       const isMobile = viewportWidth < 768;
       
-      // Calculate approximate visible boxes accounting for the transform
-      // The skew makes the grid stretch diagonally, so we need different calculations
-      const horizontalBoxes = Math.ceil(viewportWidth / scaledBoxWidth);
-      const verticalBoxes = Math.ceil(viewportHeight / scaledBoxHeight);
+      // Due to the heavy skew (-48deg X, 14deg Y) and translation offset,
+      // the visible boxes form diagonal stripes across the viewport
+      // The actual visible area is much smaller than the viewport size
       
-      // Skew multiplier is lower for mobile due to narrower viewport
-      const skewMultiplier = isMobile ? 1.2 : 1.8;
-      
-      const visibleBoxes = Math.ceil(horizontalBoxes * verticalBoxes * skewMultiplier);
-      setViewableBoxes(visibleBoxes);
+      if (isMobile) {
+        // Mobile: narrower viewport means fewer diagonal stripes visible
+        // Empirically, mobile shows roughly 8-12 boxes wide and 25-30 boxes tall
+        // when accounting for the diagonal pattern and offset positioning
+        const estimatedVisibleBoxes = Math.ceil(
+          (viewportWidth / 40) * (viewportHeight / 30)
+        );
+        setViewableBoxes(estimatedVisibleBoxes);
+      } else {
+        // Desktop: wider viewport shows more diagonal coverage
+        const horizontalBoxes = Math.ceil(viewportWidth / scaledBoxWidth);
+        const verticalBoxes = Math.ceil(viewportHeight / scaledBoxHeight);
+        const visibleBoxes = Math.ceil(horizontalBoxes * verticalBoxes * 1.5);
+        setViewableBoxes(visibleBoxes);
+      }
     };
 
     calculateViewableBoxes();
