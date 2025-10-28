@@ -26,7 +26,7 @@ export function AboutSection() {
           </p>
           
           <p className="text-xl font-semibold text-foreground">
-            No jargon. No six-month implementation timelines. Just tools that work.
+            No jargon. No six-month implementation timelines. <span className="text-primary">Just tools that work.</span>
           </p>
         </StaggerContainer>
       </div>

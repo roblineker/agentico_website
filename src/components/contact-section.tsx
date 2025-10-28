@@ -787,7 +787,7 @@ function ContactForm() {
                 Submitting...
               </>
             ) : (
-              "Submit Detailed Inquiry"
+              "Submit"
             )}
           </Button>
           
