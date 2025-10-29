@@ -7,7 +7,7 @@ import { AboutSection } from "@/components/about-section";
 import { FAQSection } from "@/components/faq-section";
 import { ContactSection } from "@/components/contact-section";
 import { Footer } from "@/components/footer";
-// import { ElevenLabsWidget } from "@/components/elevenlabs-widget";
+import { ElevenLabsWidget } from "@/components/elevenlabs-widget";
 
 export default function Home() {
   return (
@@ -23,7 +23,7 @@ export default function Home() {
         <ContactSection />
       </main>
       <Footer />
-      {/* <ElevenLabsWidget /> */}
+      <ElevenLabsWidget />
     </div>
   );
 }

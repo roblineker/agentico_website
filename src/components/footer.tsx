@@ -55,14 +55,20 @@ export function Footer() {
             <div>
               <h4 className="font-semibold mb-4">Industries</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>
+                
+              <li>
                   <Link href="#industries" className="hover:text-foreground transition-colors">
-                    Trades Businesses
+                    Professional Services
                   </Link>
                 </li>
                 <li>
                   <Link href="#industries" className="hover:text-foreground transition-colors">
-                    Professional Services
+                    Trades & Manufacturing
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#industries" className="hover:text-foreground transition-colors">
+                    Hospitality & Retail
                   </Link>
                 </li>
               </ul>
@@ -74,10 +80,18 @@ export function Footer() {
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li>
                   <Link 
-                    href="mailto:sales@agentico.com.au" 
+                    href="mailto:info@agentico.com.au" 
                     className="hover:text-foreground transition-colors"
                   >
-                    sales@agentico.com.au
+                    info@agentico.com.au
+                  </Link>
+                </li>
+                <li>
+                  <Link 
+                    href="tel:+61468068882" 
+                    className="hover:text-foreground transition-colors"
+                  >
+                    0468 068 882
                   </Link>
                 </li>
                 <li>Sunshine Coast, QLD, Australia</li>
