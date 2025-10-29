@@ -1,0 +1,1177 @@
+{
+  "company": {
+    "name": "Studio Luxe Hair & Beauty",
+    "abn": "23 456 789 012",
+    "email": "bookings@studioluxe.com.au",
+    "phone": "+61 7 3234 5678",
+    "address": "Shop 12, 156 James Street, New Farm QLD 4005",
+    "website": "www.studioluxe.com.au",
+    "trading_hours": {
+      "monday": "9:00 AM - 5:00 PM",
+      "tuesday": "9:00 AM - 8:00 PM",
+      "wednesday": "9:00 AM - 8:00 PM",
+      "thursday": "9:00 AM - 9:00 PM",
+      "friday": "9:00 AM - 6:00 PM",
+      "saturday": "8:00 AM - 5:00 PM",
+      "sunday": "10:00 AM - 4:00 PM"
+    }
+  },
+  "integrations": {
+    "booking_system": "Fresha",
+    "accounting": "Xero",
+    "pos_system": "Square",
+    "email": "Outlook",
+    "voice_agent": "Custom Voice Agent",
+    "file_storage": "SharePoint/OneDrive",
+    "inventory": "Fresha Inventory"
+  },
+  "clients": [
+    {
+      "client_id": "CLI-001",
+      "name": "Emma Richardson",
+      "email": "emma.rich@email.com",
+      "phone": "+61 412 345 678",
+      "date_of_birth": "1988-06-15",
+      "first_visit": "2022-03-12",
+      "last_visit": "2024-10-18",
+      "total_visits": 28,
+      "total_spent": 4680.00,
+      "preferred_stylist": "Jessica Chen",
+      "hair_type": "Fine, straight",
+      "color_formula": "Wella Koleston 7/0 + 8/0 (50/50) with 20vol",
+      "allergies": "None",
+      "notes": "Prefers appointments on Saturdays. Likes modern, low-maintenance styles.",
+      "loyalty_points": 468
+    },
+    {
+      "client_id": "CLI-002",
+      "name": "Sophie Martinez",
+      "email": "sophie.m@email.com",
+      "phone": "+61 423 456 789",
+      "date_of_birth": "1995-11-22",
+      "first_visit": "2023-08-05",
+      "last_visit": "2024-10-25",
+      "total_visits": 15,
+      "total_spent": 3240.00,
+      "preferred_stylist": "Marcus Lee",
+      "hair_type": "Thick, curly",
+      "color_formula": "Balayage - Natural 6 to 8 progression",
+      "allergies": "Sensitive to ammonia",
+      "notes": "Regular balayage client. Books 12 weeks in advance.",
+      "loyalty_points": 324
+    },
+    {
+      "client_id": "CLI-003",
+      "name": "Jessica Tang",
+      "email": "j.tang@email.com",
+      "phone": "+61 434 567 890",
+      "date_of_birth": "1992-03-08",
+      "first_visit": "2021-11-20",
+      "last_visit": "2024-10-22",
+      "total_visits": 42,
+      "total_spent": 8960.00,
+      "preferred_stylist": "Jessica Chen",
+      "hair_type": "Medium, wavy",
+      "color_formula": "Full head highlights - Wella Blondor with Olaplex",
+      "allergies": "None",
+      "notes": "VIP client. Always books Jessica. Likes to try new treatments.",
+      "loyalty_points": 896
+    },
+    {
+      "client_id": "CLI-004",
+      "name": "Rebecca Walsh",
+      "email": "bec.walsh@email.com",
+      "phone": "+61 445 678 901",
+      "date_of_birth": "1990-07-30",
+      "first_visit": "2024-09-10",
+      "last_visit": "2024-10-15",
+      "total_visits": 2,
+      "total_spent": 420.00,
+      "preferred_stylist": "Any available",
+      "hair_type": "Coarse, straight",
+      "color_formula": null,
+      "allergies": "None noted",
+      "notes": "New client. Referred by Emma Richardson.",
+      "loyalty_points": 42
+    },
+    {
+      "client_id": "CLI-005",
+      "name": "Amanda Foster",
+      "email": "a.foster@email.com",
+      "phone": "+61 456 789 012",
+      "date_of_birth": "1985-12-19",
+      "first_visit": "2023-01-15",
+      "last_visit": "2024-10-28",
+      "total_visits": 22,
+      "total_spent": 5720.00,
+      "preferred_stylist": "Sarah Williams",
+      "hair_type": "Fine, color-treated",
+      "color_formula": "Global color - Schwarzkopf Igora 6-65",
+      "allergies": "None",
+      "notes": "Books color and cut every 8 weeks. Loyal client.",
+      "loyalty_points": 572
+    },
+    {
+      "client_id": "CLI-006",
+      "name": "Charlotte Brown",
+      "email": "char.brown@email.com",
+      "phone": "+61 467 890 123",
+      "date_of_birth": "1998-04-25",
+      "first_visit": "2024-06-22",
+      "last_visit": "2024-10-20",
+      "total_visits": 5,
+      "total_spent": 1150.00,
+      "preferred_stylist": "Marcus Lee",
+      "hair_type": "Medium, straight",
+      "color_formula": "Fashion color - Arctic Fox Purple Rain",
+      "allergies": "None",
+      "notes": "Enjoys fashion colors. Active on Instagram.",
+      "loyalty_points": 115
+    },
+    {
+      "client_id": "CLI-007",
+      "name": "Olivia Chen",
+      "email": "olivia.chen@email.com",
+      "phone": "+61 478 901 234",
+      "date_of_birth": "1987-09-14",
+      "first_visit": "2022-07-08",
+      "last_visit": "2024-10-19",
+      "total_visits": 31,
+      "total_spent": 6820.00,
+      "preferred_stylist": "Jessica Chen",
+      "hair_type": "Thick, straight",
+      "color_formula": "Root touch-up - Natural 4N",
+      "allergies": "None",
+      "notes": "Regular keratin treatment client. Professional career - prefers polished looks.",
+      "loyalty_points": 682
+    },
+    {
+      "client_id": "CLI-008",
+      "name": "Isabella Rodriguez",
+      "email": "bella.rodriguez@email.com",
+      "phone": "+61 489 012 345",
+      "date_of_birth": "1993-01-30",
+      "first_visit": "2023-11-12",
+      "last_visit": "2024-10-27",
+      "total_visits": 12,
+      "total_spent": 2880.00,
+      "preferred_stylist": "Sarah Williams",
+      "hair_type": "Fine, wavy",
+      "color_formula": null,
+      "allergies": "None",
+      "notes": "Cut and style only. Loves blowouts for special events.",
+      "loyalty_points": 288
+    },
+    {
+      "client_id": "CLI-009",
+      "name": "Grace Mitchell",
+      "email": "grace.mitchell@email.com",
+      "phone": "+61 490 123 456",
+      "date_of_birth": "1991-05-17",
+      "first_visit": "2024-08-30",
+      "last_visit": "2024-10-29",
+      "total_visits": 3,
+      "total_spent": 685.00,
+      "preferred_stylist": "Marcus Lee",
+      "hair_type": "Medium, curly",
+      "color_formula": null,
+      "allergies": "Sensitive scalp",
+      "notes": "Enjoys curly cut specialists. Interested in curl treatments.",
+      "loyalty_points": 68
+    }
+  ],
+  "appointments": [
+    {
+      "appointment_id": "APPT-2024-1205",
+      "client_id": "CLI-003",
+      "client_name": "Jessica Tang",
+      "date": "2024-11-02",
+      "time": "10:00 AM",
+      "duration_minutes": 180,
+      "stylist": "Jessica Chen",
+      "services": [
+        {
+          "service_id": "SRV-004",
+          "service_name": "Full Head Highlights",
+          "duration_minutes": 120,
+          "price": 245.00
+        },
+        {
+          "service_id": "SRV-008",
+          "service_name": "Olaplex Treatment",
+          "duration_minutes": 30,
+          "price": 65.00
+        },
+        {
+          "service_id": "SRV-012",
+          "service_name": "Blow Dry & Style",
+          "duration_minutes": 30,
+          "price": 55.00
+        }
+      ],
+      "status": "Confirmed",
+      "total_price": 365.00,
+      "notes": "Regular highlight appointment. Client confirmed via SMS.",
+      "booked_via": "Voice Agent"
+    },
+    {
+      "appointment_id": "APPT-2024-1206",
+      "client_id": "CLI-001",
+      "client_name": "Emma Richardson",
+      "date": "2024-11-02",
+      "time": "2:00 PM",
+      "duration_minutes": 90,
+      "stylist": "Jessica Chen",
+      "services": [
+        {
+          "service_id": "SRV-001",
+          "service_name": "Cut & Finish - Long Hair",
+          "duration_minutes": 60,
+          "price": 95.00
+        },
+        {
+          "service_id": "SRV-007",
+          "service_name": "Deep Conditioning Treatment",
+          "duration_minutes": 30,
+          "price": 45.00
+        }
+      ],
+      "status": "Confirmed",
+      "total_price": 140.00,
+      "notes": "Regular trim. Wants to maintain length.",
+      "booked_via": "Online Booking"
+    },
+    {
+      "appointment_id": "APPT-2024-1207",
+      "client_id": "CLI-005",
+      "client_name": "Amanda Foster",
+      "date": "2024-11-03",
+      "time": "9:00 AM",
+      "duration_minutes": 150,
+      "stylist": "Sarah Williams",
+      "services": [
+        {
+          "service_id": "SRV-003",
+          "service_name": "Global Color",
+          "duration_minutes": 90,
+          "price": 145.00
+        },
+        {
+          "service_id": "SRV-001",
+          "service_name": "Cut & Finish - Long Hair",
+          "duration_minutes": 60,
+          "price": 95.00
+        }
+      ],
+      "status": "Confirmed",
+      "total_price": 240.00,
+      "notes": "Regular 8-week appointment. Same formula as always.",
+      "booked_via": "Phone"
+    },
+    {
+      "appointment_id": "APPT-2024-1208",
+      "client_id": "CLI-007",
+      "client_name": "Olivia Chen",
+      "date": "2024-11-04",
+      "time": "11:00 AM",
+      "duration_minutes": 210,
+      "stylist": "Jessica Chen",
+      "services": [
+        {
+          "service_id": "SRV-010",
+          "service_name": "Keratin Treatment",
+          "duration_minutes": 150,
+          "price": 285.00
+        },
+        {
+          "service_id": "SRV-001",
+          "service_name": "Cut & Finish - Long Hair",
+          "duration_minutes": 60,
+          "price": 95.00
+        }
+      ],
+      "status": "Confirmed",
+      "total_price": 380.00,
+      "notes": "Quarterly keratin treatment. Books well in advance.",
+      "booked_via": "Online Booking"
+    },
+    {
+      "appointment_id": "APPT-2024-1209",
+      "client_id": "CLI-006",
+      "client_name": "Charlotte Brown",
+      "date": "2024-11-05",
+      "time": "3:00 PM",
+      "duration_minutes": 120,
+      "stylist": "Marcus Lee",
+      "services": [
+        {
+          "service_id": "SRV-006",
+          "service_name": "Fashion Color - Full Head",
+          "duration_minutes": 90,
+          "price": 185.00
+        },
+        {
+          "service_id": "SRV-012",
+          "service_name": "Blow Dry & Style",
+          "duration_minutes": 30,
+          "price": 55.00
+        }
+      ],
+      "status": "Confirmed",
+      "total_price": 240.00,
+      "notes": "Refreshing purple color. Client bringing inspiration photos.",
+      "booked_via": "Instagram DM"
+    },
+    {
+      "appointment_id": "APPT-2024-1210",
+      "client_id": "CLI-002",
+      "client_name": "Sophie Martinez",
+      "date": "2024-11-06",
+      "time": "10:00 AM",
+      "duration_minutes": 180,
+      "stylist": "Marcus Lee",
+      "services": [
+        {
+          "service_id": "SRV-005",
+          "service_name": "Balayage",
+          "duration_minutes": 150,
+          "price": 295.00
+        },
+        {
+          "service_id": "SRV-011",
+          "service_name": "Curly Hair Cut",
+          "duration_minutes": 45,
+          "price": 115.00
+        }
+      ],
+      "status": "Confirmed",
+      "total_price": 410.00,
+      "notes": "12-week balayage refresh. Client loves Marcus's work.",
+      "booked_via": "Voice Agent"
+    }
+  ],
+  "services": [
+    {
+      "service_id": "SRV-001",
+      "category": "Cut & Style",
+      "name": "Cut & Finish - Long Hair",
+      "description": "Precision cut with blow dry and style for long hair",
+      "duration_minutes": 60,
+      "price": 95.00
+    },
+    {
+      "service_id": "SRV-002",
+      "category": "Cut & Style",
+      "name": "Cut & Finish - Short Hair",
+      "description": "Precision cut with blow dry and style for short hair",
+      "duration_minutes": 45,
+      "price": 75.00
+    },
+    {
+      "service_id": "SRV-003",
+      "category": "Color",
+      "name": "Global Color",
+      "description": "Full head color application",
+      "duration_minutes": 90,
+      "price": 145.00
+    },
+    {
+      "service_id": "SRV-004",
+      "category": "Color",
+      "name": "Full Head Highlights",
+      "description": "Full head foil highlights",
+      "duration_minutes": 120,
+      "price": 245.00
+    },
+    {
+      "service_id": "SRV-005",
+      "category": "Color",
+      "name": "Balayage",
+      "description": "Hand-painted balayage highlights",
+      "duration_minutes": 150,
+      "price": 295.00
+    },
+    {
+      "service_id": "SRV-006",
+      "category": "Color",
+      "name": "Fashion Color - Full Head",
+      "description": "Creative fashion colors (vivids, pastels)",
+      "duration_minutes": 90,
+      "price": 185.00
+    },
+    {
+      "service_id": "SRV-007",
+      "category": "Treatment",
+      "name": "Deep Conditioning Treatment",
+      "description": "Intensive moisture treatment",
+      "duration_minutes": 30,
+      "price": 45.00
+    },
+    {
+      "service_id": "SRV-008",
+      "category": "Treatment",
+      "name": "Olaplex Treatment",
+      "description": "Bond-building treatment for damaged hair",
+      "duration_minutes": 30,
+      "price": 65.00
+    },
+    {
+      "service_id": "SRV-009",
+      "category": "Treatment",
+      "name": "K18 Treatment",
+      "description": "Molecular repair treatment",
+      "duration_minutes": 20,
+      "price": 75.00
+    },
+    {
+      "service_id": "SRV-010",
+      "category": "Treatment",
+      "name": "Keratin Treatment",
+      "description": "Smoothing keratin treatment",
+      "duration_minutes": 150,
+      "price": 285.00
+    },
+    {
+      "service_id": "SRV-011",
+      "category": "Cut & Style",
+      "name": "Curly Hair Cut",
+      "description": "Specialized dry cutting technique for curls",
+      "duration_minutes": 45,
+      "price": 115.00
+    },
+    {
+      "service_id": "SRV-012",
+      "category": "Styling",
+      "name": "Blow Dry & Style",
+      "description": "Professional blow dry and styling",
+      "duration_minutes": 30,
+      "price": 55.00
+    },
+    {
+      "service_id": "SRV-013",
+      "category": "Styling",
+      "name": "Special Event Styling",
+      "description": "Updo or special occasion styling",
+      "duration_minutes": 60,
+      "price": 135.00
+    },
+    {
+      "service_id": "SRV-014",
+      "category": "Consultation",
+      "name": "Color Consultation",
+      "description": "In-depth color consultation",
+      "duration_minutes": 30,
+      "price": 0.00
+    }
+  ],
+  "invoices": [
+    {
+      "invoice_id": "INV-2024-2847",
+      "client_id": "CLI-003",
+      "client_name": "Jessica Tang",
+      "invoice_date": "2024-10-22",
+      "due_date": "2024-10-22",
+      "status": "Paid",
+      "payment_date": "2024-10-22",
+      "payment_method": "Card",
+      "subtotal": 365.00,
+      "gst": 36.50,
+      "total": 401.50,
+      "stylist": "Jessica Chen",
+      "line_items": [
+        {
+          "service_name": "Full Head Highlights",
+          "quantity": 1,
+          "unit_price": 245.00,
+          "gst": 24.50,
+          "total": 269.50
+        },
+        {
+          "service_name": "Olaplex Treatment",
+          "quantity": 1,
+          "unit_price": 65.00,
+          "gst": 6.50,
+          "total": 71.50
+        },
+        {
+          "service_name": "Blow Dry & Style",
+          "quantity": 1,
+          "unit_price": 55.00,
+          "gst": 5.50,
+          "total": 60.50
+        }
+      ],
+      "products_purchased": [
+        {
+          "product_name": "Olaplex No. 3 Hair Perfector",
+          "quantity": 1,
+          "unit_price": 42.00,
+          "gst": 4.20,
+          "total": 46.20
+        }
+      ],
+      "loyalty_points_earned": 40
+    },
+    {
+      "invoice_id": "INV-2024-2851",
+      "client_id": "CLI-001",
+      "client_name": "Emma Richardson",
+      "invoice_date": "2024-10-18",
+      "due_date": "2024-10-18",
+      "status": "Paid",
+      "payment_date": "2024-10-18",
+      "payment_method": "Card",
+      "subtotal": 140.00,
+      "gst": 14.00,
+      "total": 154.00,
+      "stylist": "Jessica Chen",
+      "line_items": [
+        {
+          "service_name": "Cut & Finish - Long Hair",
+          "quantity": 1,
+          "unit_price": 95.00,
+          "gst": 9.50,
+          "total": 104.50
+        },
+        {
+          "service_name": "Deep Conditioning Treatment",
+          "quantity": 1,
+          "unit_price": 45.00,
+          "gst": 4.50,
+          "total": 49.50
+        }
+      ],
+      "products_purchased": [],
+      "loyalty_points_earned": 15
+    },
+    {
+      "invoice_id": "INV-2024-2855",
+      "client_id": "CLI-002",
+      "client_name": "Sophie Martinez",
+      "invoice_date": "2024-10-25",
+      "due_date": "2024-10-25",
+      "status": "Paid",
+      "payment_date": "2024-10-25",
+      "payment_method": "Card",
+      "subtotal": 410.00,
+      "gst": 41.00,
+      "total": 451.00,
+      "stylist": "Marcus Lee",
+      "line_items": [
+        {
+          "service_name": "Balayage",
+          "quantity": 1,
+          "unit_price": 295.00,
+          "gst": 29.50,
+          "total": 324.50
+        },
+        {
+          "service_name": "Curly Hair Cut",
+          "quantity": 1,
+          "unit_price": 115.00,
+          "gst": 11.50,
+          "total": 126.50
+        }
+      ],
+      "products_purchased": [
+        {
+          "product_name": "Ouai Wave Spray",
+          "quantity": 1,
+          "unit_price": 38.00,
+          "gst": 3.80,
+          "total": 41.80
+        }
+      ],
+      "loyalty_points_earned": 45
+    },
+    {
+      "invoice_id": "INV-2024-2859",
+      "client_id": "CLI-005",
+      "client_name": "Amanda Foster",
+      "invoice_date": "2024-10-28",
+      "due_date": "2024-10-28",
+      "status": "Paid",
+      "payment_date": "2024-10-28",
+      "payment_method": "Card",
+      "subtotal": 240.00,
+      "gst": 24.00,
+      "total": 264.00,
+      "stylist": "Sarah Williams",
+      "line_items": [
+        {
+          "service_name": "Global Color",
+          "quantity": 1,
+          "unit_price": 145.00,
+          "gst": 14.50,
+          "total": 159.50
+        },
+        {
+          "service_name": "Cut & Finish - Long Hair",
+          "quantity": 1,
+          "unit_price": 95.00,
+          "gst": 9.50,
+          "total": 104.50
+        }
+      ],
+      "products_purchased": [],
+      "loyalty_points_earned": 26
+    },
+    {
+      "invoice_id": "INV-2024-2862",
+      "client_id": "CLI-007",
+      "client_name": "Olivia Chen",
+      "invoice_date": "2024-10-19",
+      "due_date": "2024-10-19",
+      "status": "Paid",
+      "payment_date": "2024-10-19",
+      "payment_method": "Card",
+      "subtotal": 380.00,
+      "gst": 38.00,
+      "total": 418.00,
+      "stylist": "Jessica Chen",
+      "line_items": [
+        {
+          "service_name": "Keratin Treatment",
+          "quantity": 1,
+          "unit_price": 285.00,
+          "gst": 28.50,
+          "total": 313.50
+        },
+        {
+          "service_name": "Cut & Finish - Long Hair",
+          "quantity": 1,
+          "unit_price": 95.00,
+          "gst": 9.50,
+          "total": 104.50
+        }
+      ],
+      "products_purchased": [
+        {
+          "product_name": "Moroccan Oil Treatment",
+          "quantity": 1,
+          "unit_price": 54.00,
+          "gst": 5.40,
+          "total": 59.40
+        }
+      ],
+      "loyalty_points_earned": 42
+    },
+    {
+      "invoice_id": "INV-2024-2866",
+      "client_id": "CLI-006",
+      "client_name": "Charlotte Brown",
+      "invoice_date": "2024-10-20",
+      "due_date": "2024-10-20",
+      "status": "Paid",
+      "payment_date": "2024-10-20",
+      "payment_method": "Card",
+      "subtotal": 240.00,
+      "gst": 24.00,
+      "total": 264.00,
+      "stylist": "Marcus Lee",
+      "line_items": [
+        {
+          "service_name": "Fashion Color - Full Head",
+          "quantity": 1,
+          "unit_price": 185.00,
+          "gst": 18.50,
+          "total": 203.50
+        },
+        {
+          "service_name": "Blow Dry & Style",
+          "quantity": 1,
+          "unit_price": 55.00,
+          "gst": 5.50,
+          "total": 60.50
+        }
+      ],
+      "products_purchased": [
+        {
+          "product_name": "Color Depositing Conditioner - Purple",
+          "quantity": 1,
+          "unit_price": 32.00,
+          "gst": 3.20,
+          "total": 35.20
+        }
+      ],
+      "loyalty_points_earned": 27
+    }
+  ],
+  "products": [
+    {
+      "product_id": "PROD-001",
+      "name": "Olaplex No. 3 Hair Perfector",
+      "brand": "Olaplex",
+      "category": "Treatment",
+      "retail_price": 42.00,
+      "cost_price": 24.00,
+      "stock_quantity": 28,
+      "reorder_level": 15,
+      "supplier": "Professional Hair Supplies Pty Ltd"
+    },
+    {
+      "product_id": "PROD-002",
+      "name": "Olaplex No. 4 Bond Maintenance Shampoo",
+      "brand": "Olaplex",
+      "category": "Shampoo",
+      "retail_price": 42.00,
+      "cost_price": 24.00,
+      "stock_quantity": 22,
+      "reorder_level": 15,
+      "supplier": "Professional Hair Supplies Pty Ltd"
+    },
+    {
+      "product_id": "PROD-003",
+      "name": "Olaplex No. 5 Bond Maintenance Conditioner",
+      "brand": "Olaplex",
+      "category": "Conditioner",
+      "retail_price": 42.00,
+      "cost_price": 24.00,
+      "stock_quantity": 19,
+      "reorder_level": 15,
+      "supplier": "Professional Hair Supplies Pty Ltd"
+    },
+    {
+      "product_id": "PROD-004",
+      "name": "Moroccan Oil Treatment",
+      "brand": "Moroccanoil",
+      "category": "Oil/Serum",
+      "retail_price": 54.00,
+      "cost_price": 32.00,
+      "stock_quantity": 35,
+      "reorder_level": 20,
+      "supplier": "Professional Hair Supplies Pty Ltd"
+    },
+    {
+      "product_id": "PROD-005",
+      "name": "Ouai Wave Spray",
+      "brand": "Ouai",
+      "category": "Styling",
+      "retail_price": 38.00,
+      "cost_price": 22.00,
+      "stock_quantity": 18,
+      "reorder_level": 12,
+      "supplier": "Beauty Collective Australia"
+    },
+    {
+      "product_id": "PROD-006",
+      "name": "Kevin Murphy Session Spray",
+      "brand": "Kevin Murphy",
+      "category": "Hairspray",
+      "retail_price": 44.00,
+      "cost_price": 26.00,
+      "stock_quantity": 24,
+      "reorder_level": 15,
+      "supplier": "Kevin Murphy Australia"
+    },
+    {
+      "product_id": "PROD-007",
+      "name": "K18 Leave-In Molecular Repair Hair Mask",
+      "brand": "K18",
+      "category": "Treatment",
+      "retail_price": 98.00,
+      "cost_price": 58.00,
+      "stock_quantity": 12,
+      "reorder_level": 8,
+      "supplier": "Professional Hair Supplies Pty Ltd"
+    },
+    {
+      "product_id": "PROD-008",
+      "name": "Color Depositing Conditioner - Purple",
+      "brand": "Fanola",
+      "category": "Conditioner",
+      "retail_price": 32.00,
+      "cost_price": 18.00,
+      "stock_quantity": 31,
+      "reorder_level": 20,
+      "supplier": "Beauty Collective Australia"
+    }
+  ],
+  "bills": [
+    {
+      "bill_id": "BILL-2024-0892",
+      "supplier": "Professional Hair Supplies Pty Ltd",
+      "bill_date": "2024-10-15",
+      "due_date": "2024-11-14",
+      "status": "Paid",
+      "payment_date": "2024-10-28",
+      "subtotal": 1840.00,
+      "gst": 184.00,
+      "total": 2024.00,
+      "description": "Monthly color supplies and treatments",
+      "xero_bill_id": "XERO-BILL-892",
+      "line_items": [
+        {
+          "description": "Wella Koleston Perfect - Mixed shades (12 tubes)",
+          "quantity": 12,
+          "unit_price": 18.50,
+          "gst": 22.20,
+          "total": 244.20
+        },
+        {
+          "description": "Wella Blondor Lightener - 800g",
+          "quantity": 6,
+          "unit_price": 42.00,
+          "gst": 25.20,
+          "total": 277.20
+        },
+        {
+          "description": "Olaplex Professional treatments (various)",
+          "quantity": 1,
+          "unit_price": 680.00,
+          "gst": 68.00,
+          "total": 748.00
+        },
+        {
+          "description": "Developer 20vol & 30vol - 1L bottles",
+          "quantity": 8,
+          "unit_price": 24.00,
+          "gst": 19.20,
+          "total": 211.20
+        },
+        {
+          "description": "Foils and color accessories",
+          "quantity": 1,
+          "unit_price": 145.00,
+          "gst": 14.50,
+          "total": 159.50
+        },
+        {
+          "description": "K18 Professional Treatment - 5ml vials (box of 12)",
+          "quantity": 3,
+          "unit_price": 135.00,
+          "gst": 40.50,
+          "total": 445.50
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-0905",
+      "supplier": "Beauty Collective Australia",
+      "bill_date": "2024-10-20",
+      "due_date": "2024-11-19",
+      "status": "Unpaid",
+      "payment_date": null,
+      "subtotal": 1240.00,
+      "gst": 124.00,
+      "total": 1364.00,
+      "description": "Retail product restock",
+      "xero_bill_id": "XERO-BILL-905",
+      "line_items": [
+        {
+          "description": "Olaplex No. 3, 4, 5 - Retail units",
+          "quantity": 15,
+          "unit_price": 24.00,
+          "gst": 36.00,
+          "total": 396.00
+        },
+        {
+          "description": "Moroccan Oil Treatment - 100ml retail",
+          "quantity": 10,
+          "unit_price": 32.00,
+          "gst": 32.00,
+          "total": 352.00
+        },
+        {
+          "description": "Ouai Wave Spray - retail units",
+          "quantity": 8,
+          "unit_price": 22.00,
+          "gst": 17.60,
+          "total": 193.60
+        },
+        {
+          "description": "Fanola Purple Conditioner - 350ml",
+          "quantity": 12,
+          "unit_price": 18.00,
+          "gst": 21.60,
+          "total": 237.60
+        },
+        {
+          "description": "Mixed styling products and accessories",
+          "quantity": 1,
+          "unit_price": 168.18,
+          "gst": 16.82,
+          "total": 185.00
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-0918",
+      "supplier": "Kevin Murphy Australia",
+      "bill_date": "2024-10-22",
+      "due_date": "2024-11-21",
+      "status": "Unpaid",
+      "payment_date": null,
+      "subtotal": 890.00,
+      "gst": 89.00,
+      "total": 979.00,
+      "description": "Kevin Murphy product order",
+      "xero_bill_id": "XERO-BILL-918",
+      "line_items": [
+        {
+          "description": "Session Spray - 400ml retail",
+          "quantity": 12,
+          "unit_price": 26.00,
+          "gst": 31.20,
+          "total": 343.20
+        },
+        {
+          "description": "Easy Rider - 100g retail",
+          "quantity": 8,
+          "unit_price": 28.00,
+          "gst": 22.40,
+          "total": 246.40
+        },
+        {
+          "description": "Shimmer Shine - 100ml retail",
+          "quantity": 6,
+          "unit_price": 30.00,
+          "gst": 18.00,
+          "total": 198.00
+        },
+        {
+          "description": "Young Again Wash & Rinse - salon size",
+          "quantity": 2,
+          "unit_price": 86.36,
+          "gst": 17.27,
+          "total": 190.00
+        }
+      ]
+    }
+  ],
+  "leads": [
+    {
+      "lead_id": "LEAD-2024-089",
+      "client_name": "Hannah Peters",
+      "contact_email": "h.peters@email.com",
+      "contact_phone": "+61 421 654 987",
+      "source": "Voice Agent - Inbound Call",
+      "date_created": "2024-10-28",
+      "status": "New Lead",
+      "interested_services": ["Balayage", "Cut & Finish"],
+      "estimated_value": 390.00,
+      "assigned_to": "Jessica Chen",
+      "notes": "Called asking about balayage pricing. Interested in booking for mid-November. Wants natural blonde tones. Mentioned she follows us on Instagram.",
+      "last_contact": "2024-10-28",
+      "next_followup": "2024-10-31"
+    },
+    {
+      "lead_id": "LEAD-2024-090",
+      "client_name": "Megan Foster",
+      "contact_email": "megan.f@email.com",
+      "contact_phone": "+61 432 765 432",
+      "source": "Instagram",
+      "date_created": "2024-10-26",
+      "status": "Consultation Booked",
+      "interested_services": ["Keratin Treatment", "Color Consultation"],
+      "estimated_value": 430.00,
+      "assigned_to": "Sarah Williams",
+      "notes": "DM'd on Instagram asking about keratin for frizzy hair. Free consultation booked for Nov 1st. Interested in global color as well.",
+      "last_contact": "2024-10-27",
+      "next_followup": "2024-11-01"
+    },
+    {
+      "lead_id": "LEAD-2024-091",
+      "client_name": "Rachel Wong",
+      "contact_email": "rachel.wong@email.com",
+      "contact_phone": "+61 443 876 543",
+      "source": "Referral - Emma Richardson",
+      "date_created": "2024-10-25",
+      "status": "Quote Sent",
+      "interested_services": ["Bridal Hair Trial", "Wedding Day Styling"],
+      "estimated_value": 850.00,
+      "assigned_to": "Jessica Chen",
+      "notes": "Bride getting married February 2025. Wants trial and wedding day styling for herself plus 4 bridesmaids. Quote sent via email. Wedding at Customs House Brisbane.",
+      "last_contact": "2024-10-26",
+      "next_followup": "2024-11-02"
+    },
+    {
+      "lead_id": "LEAD-2024-092",
+      "client_name": "Lily Thompson",
+      "contact_email": "lily.thompson@email.com",
+      "contact_phone": "+61 454 987 654",
+      "source": "Google Search",
+      "date_created": "2024-10-29",
+      "status": "New Lead",
+      "interested_services": ["Fashion Color", "Cut & Finish"],
+      "estimated_value": 260.00,
+      "assigned_to": "Marcus Lee",
+      "notes": "Found us on Google. Interested in pastel pink hair. Wants to see Marcus's portfolio. Sent link to Instagram. Awaiting response.",
+      "last_contact": "2024-10-29",
+      "next_followup": "2024-11-01"
+    },
+    {
+      "lead_id": "LEAD-2024-093",
+      "client_name": "Natalie Hughes",
+      "contact_email": "nat.hughes@email.com",
+      "contact_phone": "+61 465 098 765",
+      "source": "Facebook",
+      "date_created": "2024-10-24",
+      "status": "Follow Up Required",
+      "interested_services": ["Extensions Consultation"],
+      "estimated_value": 1200.00,
+      "assigned_to": "Jessica Chen",
+      "notes": "Inquired about tape extensions. Sent information pack but no response. Need to follow up. Potentially high-value client.",
+      "last_contact": "2024-10-25",
+      "next_followup": "2024-10-30"
+    },
+    {
+      "lead_id": "LEAD-2024-094",
+      "client_name": "Amy Patel",
+      "contact_email": "amy.patel@email.com",
+      "contact_phone": "+61 476 109 876",
+      "source": "Voice Agent - Inbound Call",
+      "date_created": "2024-10-27",
+      "status": "Appointment Booked",
+      "interested_services": ["Cut & Finish - Short Hair"],
+      "estimated_value": 75.00,
+      "assigned_to": "Sarah Williams",
+      "notes": "New client. Booked for November 8th. Simple short haircut. Confirmed via SMS.",
+      "last_contact": "2024-10-27",
+      "next_followup": "2024-11-08"
+    }
+  ],
+  "staff": [
+    {
+      "staff_id": "STAFF-001",
+      "name": "Jessica Chen",
+      "role": "Senior Stylist / Colorist",
+      "email": "jessica.chen@studioluxe.com.au",
+      "phone": "+61 421 234 567",
+      "specialties": ["Color Specialist", "Balayage", "Highlights", "Keratin Treatments"],
+      "certifications": ["Wella Color Expert", "Olaplex Certified", "K18 Certified"],
+      "employment_start": "2019-03-15",
+      "hourly_rate": 45.00,
+      "commission_rate": 0.45
+    },
+    {
+      "staff_id": "STAFF-002",
+      "name": "Marcus Lee",
+      "role": "Senior Stylist",
+      "email": "marcus.lee@studioluxe.com.au",
+      "phone": "+61 432 345 678",
+      "specialties": ["Fashion Color", "Curly Hair Specialist", "Balayage", "Creative Cuts"],
+      "certifications": ["Curly Hair Cutting Certified", "Fashion Color Specialist"],
+      "employment_start": "2020-07-01",
+      "hourly_rate": 42.00,
+      "commission_rate": 0.45
+    },
+    {
+      "staff_id": "STAFF-003",
+      "name": "Sarah Williams",
+      "role": "Stylist",
+      "email": "sarah.williams@studioluxe.com.au",
+      "phone": "+61 443 456 789",
+      "specialties": ["Precision Cutting", "Color", "Styling"],
+      "certifications": ["Hairdressing Certificate III"],
+      "employment_start": "2021-11-10",
+      "hourly_rate": 38.00,
+      "commission_rate": 0.40
+    },
+    {
+      "staff_id": "STAFF-004",
+      "name": "Emma Rodriguez",
+      "role": "Salon Manager / Receptionist",
+      "email": "emma.rodriguez@studioluxe.com.au",
+      "phone": "+61 454 567 890",
+      "specialties": ["Salon Management", "Customer Service", "Booking Management"],
+      "certifications": ["Business Management Certificate"],
+      "employment_start": "2019-01-20",
+      "hourly_rate": 32.00,
+      "commission_rate": 0.00
+    }
+  ],
+  "onedrive_files": [
+    {
+      "file_id": "OD-CLI003-001",
+      "client_id": "CLI-003",
+      "file_name": "Jessica_Tang_Color_Formula_History.pdf",
+      "file_type": "Client Record",
+      "file_path": "/Client Records/Jessica Tang/",
+      "upload_date": "2024-10-22",
+      "uploaded_by": "Jessica Chen",
+      "description": "Complete color formula history and photos",
+      "file_size": "2.4 MB"
+    },
+    {
+      "file_id": "OD-CLI003-002",
+      "client_id": "CLI-003",
+      "file_name": "Jessica_Tang_Before_After_Oct2024.jpg",
+      "file_type": "Photos",
+      "file_path": "/Client Records/Jessica Tang/Photos/",
+      "upload_date": "2024-10-22",
+      "uploaded_by": "Jessica Chen",
+      "description": "Before and after highlights October appointment",
+      "file_size": "4.8 MB"
+    },
+    {
+      "file_id": "OD-INV-001",
+      "file_name": "INV-2024-2847.pdf",
+      "file_type": "Invoice",
+      "file_path": "/Invoices/October 2024/",
+      "upload_date": "2024-10-22",
+      "uploaded_by": "System - Square Sync",
+      "description": "Invoice for Jessica Tang appointment",
+      "file_size": "156 KB"
+    },
+    {
+      "file_id": "OD-INV-002",
+      "file_name": "INV-2024-2851.pdf",
+      "file_type": "Invoice",
+      "file_path": "/Invoices/October 2024/",
+      "upload_date": "2024-10-18",
+      "uploaded_by": "System - Square Sync",
+      "description": "Invoice for Emma Richardson appointment",
+      "file_size": "142 KB"
+    },
+    {
+      "file_id": "OD-STAFF-001",
+      "file_name": "Jessica_Chen_Portfolio_2024.pdf",
+      "file_type": "Staff Portfolio",
+      "file_path": "/Staff/Jessica Chen/",
+      "upload_date": "2024-09-01",
+      "uploaded_by": "Emma Rodriguez",
+      "description": "Jessica's client portfolio for marketing",
+      "file_size": "18.6 MB"
+    },
+    {
+      "file_id": "OD-STAFF-002",
+      "file_name": "Marcus_Lee_Fashion_Color_Portfolio.pdf",
+      "file_type": "Staff Portfolio",
+      "file_path": "/Staff/Marcus Lee/",
+      "upload_date": "2024-09-01",
+      "uploaded_by": "Emma Rodriguez",
+      "description": "Marcus's fashion color work portfolio",
+      "file_size": "22.3 MB"
+    },
+    {
+      "file_id": "OD-BRAND-001",
+      "file_name": "Olaplex_Training_Certificate_Studio_Luxe.pdf",
+      "file_type": "Certification",
+      "file_path": "/Training & Certifications/",
+      "upload_date": "2024-08-15",
+      "uploaded_by": "Emma Rodriguez",
+      "description": "Olaplex salon certification",
+      "file_size": "890 KB"
+    },
+    {
+      "file_id": "OD-MARKETING-001",
+      "file_name": "Instagram_Content_October_2024.zip",
+      "file_type": "Marketing Materials",
+      "file_path": "/Marketing/Instagram/2024/",
+      "upload_date": "2024-10-29",
+      "uploaded_by": "Emma Rodriguez",
+      "description": "October Instagram before/after photos and content",
+      "file_size": "67.4 MB"
+    }
+  ],
+  "metadata": {
+    "data_purpose": "11Labs Voice Agent Knowledge Base",
+    "business_type": "Hair Salon",
+    "data_format": "JSON",
+    "last_updated": "2024-10-30",
+    "currency": "AUD",
+    "timezone": "Australia/Brisbane",
+    "notes": "This is dummy data for demonstration purposes. All client names, contact details, and financial information are fictional."
+  }
+}

@@ -25,7 +25,7 @@ export function Footer() {
                 className="h-8 w-auto hidden dark:block"
               />
               <p className="text-sm text-muted-foreground">
-                AI-powered automation for trades and professional services businesses.
+                AI-powered automation for small & medium businesses.
               </p>
             </div>
 

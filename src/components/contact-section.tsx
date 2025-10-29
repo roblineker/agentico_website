@@ -671,7 +671,7 @@ function ContactForm() {
                 {fields.length === 0 && (
                   <div className="text-center py-8 border-2 border-dashed rounded-lg">
                     <p className="text-sm text-muted-foreground">
-                      No project ideas added yet. Click &quot;Add Idea&quot; to include specific automation concepts.
+                      Click &quot;Add Idea&quot; to include specific automation concepts.
                     </p>
                   </div>
                 )}
