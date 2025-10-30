@@ -1,0 +1,641 @@
+{
+  "company": {
+    "name": "SkillBoost Learning Australia",
+    "abn": "78 890 123 456",
+    "email": "info@skillboost.com.au",
+    "phone": "+61 7 3012 3456",
+    "address": "Level 6, 150 Queen Street, Brisbane QLD 4000",
+    "website": "www.skillboost.com.au",
+    "specializations": ["Online Courses", "Professional Development", "Certification Programs", "Corporate Training", "Compliance Training"]
+  },
+  "integrations": {
+    "lms": "Moodle",
+    "payments": "Stripe",
+    "accounting": "Xero",
+    "crm": "HubSpot",
+    "voice_agent": "Custom Voice Agent",
+    "file_storage": "OneDrive",
+    "email_marketing": "Mailchimp",
+    "video_hosting": "Vimeo"
+  },
+  "students": [
+    {
+      "student_id": "STU-2024-1234",
+      "name": "Sarah Mitchell",
+      "email": "sarah.m@email.com",
+      "phone": "+61 412 123 456",
+      "enrollment_date": "2024-08-15",
+      "courses_enrolled": ["Digital Marketing Masterclass", "SEO Fundamentals"],
+      "courses_completed": ["SEO Fundamentals"],
+      "certificates_earned": 1,
+      "total_spent": 798.00,
+      "status": "Active"
+    },
+    {
+      "student_id": "STU-2024-1567",
+      "name": "David Chen",
+      "email": "david.c@email.com",
+      "phone": "+61 423 234 567",
+      "enrollment_date": "2024-09-10",
+      "courses_enrolled": ["Python Programming Complete", "Data Analysis with Python"],
+      "courses_completed": ["Python Programming Complete"],
+      "certificates_earned": 1,
+      "total_spent": 1197.00,
+      "status": "Active"
+    },
+    {
+      "student_id": "STU-2024-1890",
+      "name": "Emma Thompson",
+      "email": "emma.t@email.com",
+      "phone": "+61 434 345 678",
+      "enrollment_date": "2024-07-20",
+      "courses_enrolled": ["Project Management Professional", "Agile Scrum Master"],
+      "courses_completed": ["Project Management Professional", "Agile Scrum Master"],
+      "certificates_earned": 2,
+      "total_spent": 1596.00,
+      "status": "Completed"
+    },
+    {
+      "student_id": "STU-2024-2012",
+      "name": "James Rodriguez",
+      "email": "james.r@email.com",
+      "phone": "+61 445 456 789",
+      "enrollment_date": "2024-10-05",
+      "courses_enrolled": ["Financial Modeling & Analysis"],
+      "courses_completed": [],
+      "certificates_earned": 0,
+      "total_spent": 699.00,
+      "status": "Active"
+    },
+    {
+      "student_id": "CORP-2024-001",
+      "name": "TechFlow Solutions Pty Ltd",
+      "type": "Corporate",
+      "contact_person": "Lisa Chen",
+      "email": "lisa@techflow.com.au",
+      "phone": "+61 456 567 890",
+      "enrollment_date": "2024-06-15",
+      "employees_enrolled": 25,
+      "courses_enrolled": ["Cybersecurity Fundamentals", "Leadership Development"],
+      "total_spent": 18750.00,
+      "status": "Active Corporate"
+    }
+  ],
+  "courses": [
+    {
+      "course_id": "CRS-001",
+      "title": "Digital Marketing Masterclass",
+      "category": "Marketing",
+      "price": 599.00,
+      "duration_hours": 24,
+      "level": "Intermediate",
+      "instructor": "Michael Foster",
+      "modules": 12,
+      "enrolled_students": 456,
+      "avg_rating": 4.7,
+      "certification": true,
+      "status": "Active"
+    },
+    {
+      "course_id": "CRS-002",
+      "title": "Python Programming Complete",
+      "category": "Programming",
+      "price": 699.00,
+      "duration_hours": 40,
+      "level": "Beginner to Advanced",
+      "instructor": "Dr. Jennifer Wong",
+      "modules": 16,
+      "enrolled_students": 1234,
+      "avg_rating": 4.9,
+      "certification": true,
+      "status": "Active"
+    },
+    {
+      "course_id": "CRS-003",
+      "title": "Project Management Professional",
+      "category": "Business",
+      "price": 899.00,
+      "duration_hours": 35,
+      "level": "Intermediate",
+      "instructor": "Tony Rodriguez",
+      "modules": 14,
+      "enrolled_students": 678,
+      "avg_rating": 4.8,
+      "certification": true,
+      "status": "Active"
+    },
+    {
+      "course_id": "CRS-004",
+      "title": "Data Analysis with Python",
+      "category": "Data Science",
+      "price": 749.00,
+      "duration_hours": 32,
+      "level": "Intermediate",
+      "instructor": "Dr. Jennifer Wong",
+      "modules": 14,
+      "enrolled_students": 892,
+      "avg_rating": 4.8,
+      "certification": true,
+      "status": "Active"
+    },
+    {
+      "course_id": "CRS-005",
+      "title": "SEO Fundamentals",
+      "category": "Marketing",
+      "price": 399.00,
+      "duration_hours": 16,
+      "level": "Beginner",
+      "instructor": "Michael Foster",
+      "modules": 8,
+      "enrolled_students": 1567,
+      "avg_rating": 4.6,
+      "certification": true,
+      "status": "Active"
+    },
+    {
+      "course_id": "CRS-006",
+      "title": "Cybersecurity Fundamentals",
+      "category": "IT & Security",
+      "price": 649.00,
+      "duration_hours": 28,
+      "level": "Intermediate",
+      "instructor": "Jake Morrison",
+      "modules": 12,
+      "enrolled_students": 734,
+      "avg_rating": 4.7,
+      "certification": true,
+      "status": "Active"
+    }
+  ],
+  "enrollments": [
+    {
+      "enrollment_id": "ENR-2024-3456",
+      "student_id": "STU-2024-1234",
+      "student_name": "Sarah Mitchell",
+      "course_id": "CRS-001",
+      "course_title": "Digital Marketing Masterclass",
+      "enrollment_date": "2024-08-15",
+      "completion_date": null,
+      "progress_percentage": 65,
+      "status": "In Progress"
+    },
+    {
+      "enrollment_id": "ENR-2024-3789",
+      "student_id": "STU-2024-1567",
+      "student_name": "David Chen",
+      "course_id": "CRS-002",
+      "course_title": "Python Programming Complete",
+      "enrollment_date": "2024-09-10",
+      "completion_date": "2024-10-25",
+      "progress_percentage": 100,
+      "status": "Completed",
+      "certificate_issued": "2024-10-26"
+    },
+    {
+      "enrollment_id": "ENR-2024-4012",
+      "student_id": "STU-2024-2012",
+      "student_name": "James Rodriguez",
+      "course_id": "CRS-007",
+      "course_title": "Financial Modeling & Analysis",
+      "enrollment_date": "2024-10-05",
+      "completion_date": null,
+      "progress_percentage": 35,
+      "status": "In Progress"
+    }
+  ],
+  "invoices": [
+    {
+      "invoice_id": "INV-2024-7890",
+      "student_id": "STU-2024-1234",
+      "student_name": "Sarah Mitchell",
+      "invoice_date": "2024-08-15",
+      "due_date": "2024-08-29",
+      "status": "Paid",
+      "payment_date": "2024-08-15",
+      "subtotal": 599.00,
+      "gst": 59.90,
+      "total": 658.90,
+      "description": "Course enrollment - Digital Marketing Masterclass",
+      "xero_invoice_id": "XERO-INV-7890",
+      "stripe_payment_id": "pi_1234567890",
+      "line_items": [
+        {
+          "description": "Digital Marketing Masterclass - Full Access",
+          "quantity": 1,
+          "unit_price": 599.00,
+          "gst": 59.90,
+          "total": 658.90
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-2024-8123",
+      "student_id": "STU-2024-1234",
+      "student_name": "Sarah Mitchell",
+      "invoice_date": "2024-09-20",
+      "due_date": "2024-10-04",
+      "status": "Paid",
+      "payment_date": "2024-09-20",
+      "subtotal": 399.00,
+      "gst": 39.90,
+      "total": 438.90,
+      "description": "Course enrollment - SEO Fundamentals",
+      "xero_invoice_id": "XERO-INV-8123",
+      "stripe_payment_id": "pi_2345678901",
+      "line_items": [
+        {
+          "description": "SEO Fundamentals - Full Access",
+          "quantity": 1,
+          "unit_price": 399.00,
+          "gst": 39.90,
+          "total": 438.90
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-2024-8345",
+      "student_id": "STU-2024-1567",
+      "student_name": "David Chen",
+      "invoice_date": "2024-09-10",
+      "due_date": "2024-09-24",
+      "status": "Paid",
+      "payment_date": "2024-09-10",
+      "subtotal": 699.00,
+      "gst": 69.90,
+      "total": 768.90,
+      "description": "Course enrollment - Python Programming Complete",
+      "xero_invoice_id": "XERO-INV-8345",
+      "stripe_payment_id": "pi_3456789012",
+      "line_items": [
+        {
+          "description": "Python Programming Complete - Full Access",
+          "quantity": 1,
+          "unit_price": 699.00,
+          "gst": 69.90,
+          "total": 768.90
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-2024-8567",
+      "student_id": "STU-2024-1567",
+      "student_name": "David Chen",
+      "invoice_date": "2024-10-05",
+      "due_date": "2024-10-19",
+      "status": "Paid",
+      "payment_date": "2024-10-05",
+      "subtotal": 749.00,
+      "gst": 74.90,
+      "total": 823.90,
+      "description": "Course enrollment - Data Analysis with Python",
+      "xero_invoice_id": "XERO-INV-8567",
+      "stripe_payment_id": "pi_4567890123",
+      "line_items": [
+        {
+          "description": "Data Analysis with Python - Full Access",
+          "quantity": 1,
+          "unit_price": 749.00,
+          "gst": 74.90,
+          "total": 823.90
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-2024-8789",
+      "student_id": "CORP-2024-001",
+      "student_name": "TechFlow Solutions Pty Ltd",
+      "invoice_date": "2024-06-15",
+      "due_date": "2024-07-15",
+      "status": "Paid",
+      "payment_date": "2024-07-05",
+      "subtotal": 18750.00,
+      "gst": 1875.00,
+      "total": 20625.00,
+      "description": "Corporate training package - 25 employees",
+      "xero_invoice_id": "XERO-INV-8789",
+      "line_items": [
+        {
+          "description": "Cybersecurity Fundamentals - 25 licenses",
+          "quantity": 25,
+          "unit_price": 450.00,
+          "gst": 1125.00,
+          "total": 12375.00
+        },
+        {
+          "description": "Leadership Development - 25 licenses",
+          "quantity": 25,
+          "unit_price": 300.00,
+          "gst": 750.00,
+          "total": 8250.00
+        }
+      ]
+    }
+  ],
+  "bills": [
+    {
+      "bill_id": "BILL-2024-1234",
+      "supplier": "Moodle",
+      "bill_date": "2024-10-01",
+      "due_date": "2024-10-31",
+      "status": "Paid",
+      "payment_date": "2024-10-15",
+      "subtotal": 685.00,
+      "gst": 68.50,
+      "total": 753.50,
+      "description": "LMS hosting - October",
+      "xero_bill_id": "XERO-BILL-1234",
+      "line_items": [
+        {
+          "description": "Moodle cloud hosting - 2000 users",
+          "quantity": 1,
+          "unit_price": 685.00,
+          "gst": 68.50,
+          "total": 753.50
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-1256",
+      "supplier": "Stripe",
+      "bill_date": "2024-10-01",
+      "due_date": "2024-10-31",
+      "status": "Paid",
+      "payment_date": "2024-10-15",
+      "subtotal": 1285.00,
+      "gst": 128.50,
+      "total": 1413.50,
+      "description": "Payment processing fees - September",
+      "xero_bill_id": "XERO-BILL-1256",
+      "line_items": [
+        {
+          "description": "Stripe processing fees (2.9% + $0.30 per transaction)",
+          "quantity": 1,
+          "unit_price": 1285.00,
+          "gst": 128.50,
+          "total": 1413.50
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-1278",
+      "supplier": "Vimeo Business",
+      "bill_date": "2024-10-01",
+      "due_date": "2024-10-31",
+      "status": "Paid",
+      "payment_date": "2024-10-15",
+      "subtotal": 385.00,
+      "gst": 38.50,
+      "total": 423.50,
+      "description": "Video hosting - October",
+      "xero_bill_id": "XERO-BILL-1278",
+      "line_items": [
+        {
+          "description": "Vimeo Business subscription",
+          "quantity": 1,
+          "unit_price": 385.00,
+          "gst": 38.50,
+          "total": 423.50
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-1290",
+      "supplier": "Course Creators Network",
+      "bill_date": "2024-10-15",
+      "due_date": "2024-11-14",
+      "status": "Unpaid",
+      "payment_date": null,
+      "subtotal": 4500.00,
+      "gst": 450.00,
+      "total": 4950.00,
+      "description": "Course content development - Web3 Blockchain course",
+      "xero_bill_id": "XERO-BILL-1290",
+      "line_items": [
+        {
+          "description": "Video production and editing",
+          "quantity": 1,
+          "unit_price": 3200.00,
+          "gst": 320.00,
+          "total": 3520.00
+        },
+        {
+          "description": "Course materials and assessments",
+          "quantity": 1,
+          "unit_price": 1300.00,
+          "gst": 130.00,
+          "total": 1430.00
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-1312",
+      "supplier": "HubSpot",
+      "bill_date": "2024-10-01",
+      "due_date": "2024-10-31",
+      "status": "Paid",
+      "payment_date": "2024-10-15",
+      "subtotal": 485.00,
+      "gst": 48.50,
+      "total": 533.50,
+      "description": "CRM software - October",
+      "xero_bill_id": "XERO-BILL-1312",
+      "line_items": [
+        {
+          "description": "HubSpot Marketing Hub subscription",
+          "quantity": 1,
+          "unit_price": 485.00,
+          "gst": 48.50,
+          "total": 533.50
+        }
+      ]
+    }
+  ],
+  "leads": [
+    {
+      "lead_id": "LEAD-2024-456",
+      "name": "Rebecca Foster",
+      "email": "rebecca.f@email.com",
+      "phone": "+61 421 678 901",
+      "source": "Google Ads",
+      "date_created": "2024-10-25",
+      "status": "Trial Started",
+      "course_interested": "UX/UI Design Bootcamp",
+      "notes": "Started free trial. Following up with welcome email sequence.",
+      "last_contact": "2024-10-25",
+      "next_followup": "2024-10-28"
+    },
+    {
+      "lead_id": "LEAD-2024-457",
+      "name": "Brisbane Consulting Group",
+      "type": "Corporate",
+      "contact_person": "Carlos Martinez",
+      "email": "carlos@consulting.com.au",
+      "phone": "+61 432 789 012",
+      "source": "Referral",
+      "date_created": "2024-10-27",
+      "status": "Proposal Sent",
+      "course_interested": "Custom Leadership Training - 50 employees",
+      "estimated_value": 37500.00,
+      "notes": "Corporate training proposal sent 28/10. Meeting scheduled Nov 5.",
+      "last_contact": "2024-10-28",
+      "next_followup": "2024-11-05"
+    },
+    {
+      "lead_id": "LEAD-2024-458",
+      "name": "Sophie Williams",
+      "email": "sophie.w@email.com",
+      "phone": "+61 443 890 123",
+      "source": "Voice Agent - Inbound Call",
+      "date_created": "2024-10-28",
+      "status": "Initial Contact",
+      "course_interested": "Social Media Marketing",
+      "notes": "Called via voice agent. Interested in social media course. Sent course info.",
+      "last_contact": "2024-10-28",
+      "next_followup": "2024-11-01"
+    },
+    {
+      "lead_id": "LEAD-2024-459",
+      "name": "Tony Nguyen",
+      "email": "tony.n@email.com",
+      "phone": "+61 454 901 234",
+      "source": "Facebook Ad",
+      "date_created": "2024-10-29",
+      "status": "Nurture Campaign",
+      "course_interested": "Financial Planning Certificate",
+      "notes": "Downloaded free guide. In email nurture sequence.",
+      "last_contact": "2024-10-29",
+      "next_followup": "2024-11-05"
+    }
+  ],
+  "staff": [
+    {
+      "staff_id": "STAFF-001",
+      "name": "Dr. Jennifer Wong",
+      "role": "Director / Lead Instructor - Technology",
+      "email": "jennifer@skillboost.com.au",
+      "phone": "+61 421 890 123",
+      "qualifications": ["PhD Computer Science", "Certified Python Instructor", "Data Science Certificate"],
+      "specializations": ["Programming", "Data Science", "AI & Machine Learning"],
+      "courses_created": 8,
+      "employment_start": "2018-01-15"
+    },
+    {
+      "staff_id": "STAFF-002",
+      "name": "Michael Foster",
+      "role": "Senior Instructor - Marketing",
+      "email": "michael@skillboost.com.au",
+      "phone": "+61 432 901 234",
+      "qualifications": ["Marketing Degree", "Google Ads Certified", "HubSpot Certified"],
+      "specializations": ["Digital Marketing", "SEO", "Social Media Marketing"],
+      "courses_created": 6,
+      "employment_start": "2019-06-10"
+    },
+    {
+      "staff_id": "STAFF-003",
+      "name": "Tony Rodriguez",
+      "role": "Instructor - Business & Management",
+      "email": "tony@skillboost.com.au",
+      "phone": "+61 443 012 345",
+      "qualifications": ["MBA", "PMP Certified", "Agile Scrum Master"],
+      "specializations": ["Project Management", "Leadership", "Business Strategy"],
+      "courses_created": 5,
+      "employment_start": "2020-03-15"
+    },
+    {
+      "staff_id": "STAFF-004",
+      "name": "Jake Morrison",
+      "role": "Instructor - IT & Security",
+      "email": "jake@skillboost.com.au",
+      "phone": "+61 454 123 456",
+      "qualifications": ["Cybersecurity Degree", "CISSP Certified", "Ethical Hacker Certified"],
+      "specializations": ["Cybersecurity", "Network Security", "Cloud Security"],
+      "courses_created": 4,
+      "employment_start": "2021-08-01"
+    },
+    {
+      "staff_id": "STAFF-005",
+      "name": "Emma Rodriguez",
+      "role": "Learning Experience Designer",
+      "email": "emma@skillboost.com.au",
+      "phone": "+61 465 234 567",
+      "qualifications": ["Education Degree", "Instructional Design Certificate", "Moodle Certified"],
+      "specializations": ["Course Design", "LMS Management", "Student Experience"],
+      "employment_start": "2020-11-10"
+    },
+    {
+      "staff_id": "STAFF-006",
+      "name": "Sophie Martinez",
+      "role": "Student Success Manager",
+      "email": "sophie@skillboost.com.au",
+      "phone": "+61 476 345 678",
+      "qualifications": ["Business Degree", "Customer Success Certified"],
+      "specializations": ["Student Support", "Client Relations", "Success Coaching"],
+      "employment_start": "2021-02-15"
+    }
+  ],
+  "onedrive_files": [
+    {
+      "file_id": "OD-COURSE-002",
+      "course_id": "CRS-002",
+      "file_name": "Python_Course_Content_Master.zip",
+      "file_type": "Course Content",
+      "file_path": "/Courses/Python Programming/Master Files/",
+      "upload_date": "2024-01-15",
+      "uploaded_by": "Dr. Jennifer Wong",
+      "description": "Master course content and videos",
+      "file_size": "8.4 GB"
+    },
+    {
+      "file_id": "OD-CERT-3789",
+      "enrollment_id": "ENR-2024-3789",
+      "file_name": "David_Chen_Python_Certificate.pdf",
+      "file_type": "Certificate",
+      "file_path": "/Certificates/2024/October/",
+      "upload_date": "2024-10-26",
+      "uploaded_by": "System - Auto Generated",
+      "description": "Course completion certificate",
+      "file_size": "456 KB"
+    },
+    {
+      "file_id": "OD-CORPORATE-001",
+      "student_id": "CORP-2024-001",
+      "file_name": "TechFlow_Corporate_Agreement.pdf",
+      "file_type": "Contract",
+      "file_path": "/Corporate/TechFlow Solutions/",
+      "upload_date": "2024-06-15",
+      "uploaded_by": "Dr. Jennifer Wong",
+      "description": "Corporate training agreement",
+      "file_size": "1.2 MB"
+    },
+    {
+      "file_id": "OD-COMPLIANCE-001",
+      "file_name": "RTO_Registration_2024.pdf",
+      "file_type": "Registration",
+      "file_path": "/Compliance/Registration/",
+      "upload_date": "2024-07-01",
+      "uploaded_by": "Dr. Jennifer Wong",
+      "description": "Registered Training Organisation status",
+      "file_size": "890 KB"
+    },
+    {
+      "file_id": "OD-INSURANCE-001",
+      "file_name": "Professional_Indemnity_Insurance_2024.pdf",
+      "file_type": "Insurance",
+      "file_path": "/Compliance/Insurance/",
+      "upload_date": "2024-07-01",
+      "uploaded_by": "Sophie Martinez",
+      "description": "$10M Professional Indemnity - Expires 30/06/2025",
+      "file_size": "678 KB"
+    }
+  ],
+  "metadata": {
+    "data_purpose": "11Labs Voice Agent Knowledge Base",
+    "business_type": "Online Education Platform",
+    "data_format": "JSON",
+    "last_updated": "2024-10-30",
+    "currency": "AUD",
+    "timezone": "Australia/Brisbane",
+    "notes": "This is dummy data for demonstration purposes. All student names, enrollment data, and financial information are fictional."
+  }
+}
+

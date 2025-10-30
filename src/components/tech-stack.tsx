@@ -71,6 +71,7 @@ const techStack: TechStackItem[] = [
       iconSlug: "openrouter",
       faIcon: null,
       url: "https://openrouter.ai/",
+      customIcon: true,
     },
     {
       quote: "We build reliable and scalable applications with Supabase's modern backend infrastructure, ensuring your AI-powered tools are fast, secure, and ready to grow with your business.",
@@ -136,6 +137,31 @@ const techStack: TechStackItem[] = [
       iconSlug: "vapi",
       faIcon: null,
       url: "https://vapi.ai/",
+      customIcon: true,
+    },
+    {
+      quote: "We build fast, modern, secure, and SEO-friendly web applications using Next.js, React's powerful framework that delivers exceptional user experiences with server-side rendering and optimal performance.",
+      name: "Next.js",
+      title: "Web Framework",
+      iconSlug: "nextdotjs",
+      faIcon: null,
+      url: "https://nextjs.org/",
+    },
+    {
+      quote: "We use Python's extensive ecosystem and powerful libraries to develop robust AI models, data processing pipelines, and backend services that power intelligent automation and analytics solutions.",
+      name: "Python",
+      title: "Programming Language",
+      iconSlug: "python",
+      faIcon: null,
+      url: "https://www.python.org/",
+    },
+    {
+      quote: "We integrate with BuildPass to streamline construction site operations, automate safety compliance, and enhance project management workflows with digital tools that reduce admin tasks and keep projects on track.",
+      name: "BuildPass",
+      title: "Construction Site Management",
+      iconSlug: "buildpass",
+      faIcon: null,
+      url: "https://www.buildpass.ai/",
       customIcon: true,
     }
   

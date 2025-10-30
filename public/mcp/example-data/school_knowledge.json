@@ -1,0 +1,600 @@
+{
+  "company": {
+    "name": "Brisbane Academy of Excellence",
+    "abn": "89 901 234 567",
+    "email": "admin@brisbaneacademy.qld.edu.au",
+    "phone": "+61 7 3123 4567",
+    "address": "45 Education Drive, Kenmore QLD 4069",
+    "website": "www.brisbaneacademy.qld.edu.au",
+    "school_type": "Independent Primary & Secondary School",
+    "grades": "Prep to Year 12",
+    "total_enrollment": 850,
+    "specializations": ["Academic Excellence", "STEM Programs", "Arts & Music", "Sports Programs"]
+  },
+  "integrations": {
+    "student_management": "Compass",
+    "accounting": "Xero",
+    "timetabling": "Edval",
+    "parent_communication": "Compass Portal",
+    "voice_agent": "Custom Voice Agent",
+    "file_storage": "OneDrive",
+    "learning_management": "Google Classroom",
+    "payments": "Qkr by Mastercard"
+  },
+  "students": [
+    {
+      "student_id": "STU-2024-0456",
+      "name": "Emily Henderson",
+      "year_level": "Year 10",
+      "date_of_birth": "2009-04-15",
+      "enrollment_date": "2020-01-27",
+      "parent_guardian": "Sarah & Michael Henderson",
+      "parent_email": "sarah.henderson@email.com",
+      "parent_phone": "+61 412 789 012",
+      "address": "78 Hillside Crescent, Bardon QLD 4065",
+      "subjects": ["English", "Mathematics Advanced", "Physics", "Chemistry", "Japanese", "Music"],
+      "tuition_status": "Current",
+      "fees_paid_ytd": 18500.00
+    },
+    {
+      "student_id": "STU-2024-0789",
+      "name": "Lucas Chen",
+      "year_level": "Year 7",
+      "date_of_birth": "2012-08-22",
+      "enrollment_date": "2024-01-29",
+      "parent_guardian": "David & Lisa Chen",
+      "parent_email": "david.chen@email.com",
+      "parent_phone": "+61 423 890 123",
+      "address": "156 Riverside Drive, Toowong QLD 4066",
+      "subjects": ["English", "Mathematics", "Science", "History", "Geography", "Chinese"],
+      "tuition_status": "Current",
+      "fees_paid_ytd": 16500.00
+    },
+    {
+      "student_id": "STU-2023-1234",
+      "name": "Sophie Rodriguez",
+      "year_level": "Year 12",
+      "date_of_birth": "2007-11-10",
+      "enrollment_date": "2018-01-29",
+      "parent_guardian": "James & Maria Rodriguez",
+      "parent_email": "james.rodriguez@email.com",
+      "parent_phone": "+61 434 901 234",
+      "address": "89 Park Street, Paddington QLD 4064",
+      "subjects": ["English", "Mathematics Methods", "Biology", "Chemistry", "Psychology", "Visual Arts"],
+      "tuition_status": "Current",
+      "fees_paid_ytd": 19500.00
+    },
+    {
+      "student_id": "STU-2022-0567",
+      "name": "Oliver Thompson",
+      "year_level": "Year 5",
+      "date_of_birth": "2014-03-18",
+      "enrollment_date": "2022-01-31",
+      "parent_guardian": "Emma Thompson",
+      "parent_email": "emma.t@email.com",
+      "parent_phone": "+61 445 012 345",
+      "address": "78 Garden Street, Ashgrove QLD 4060",
+      "subjects": ["English", "Mathematics", "Science", "HASS", "Art", "Sport"],
+      "tuition_status": "Current",
+      "fees_paid_ytd": 14500.00
+    },
+    {
+      "student_id": "STU-2021-0890",
+      "name": "Isabella Foster",
+      "year_level": "Year 8",
+      "date_of_birth": "2011-06-25",
+      "enrollment_date": "2021-01-27",
+      "parent_guardian": "Rebecca & Andrew Foster",
+      "parent_email": "rebecca.foster@email.com",
+      "parent_phone": "+61 456 123 456",
+      "address": "89 Hill View Court, Bardon QLD 4065",
+      "subjects": ["English", "Mathematics", "Science", "History", "French", "Drama"],
+      "tuition_status": "Current",
+      "fees_paid_ytd": 17000.00
+    }
+  ],
+  "classes": [
+    {
+      "class_id": "CLASS-2024-Y10-ENG",
+      "year_level": "Year 10",
+      "subject": "English",
+      "teacher": "Sarah Mitchell",
+      "students_enrolled": 24,
+      "room": "B-205",
+      "periods_per_week": 5
+    },
+    {
+      "class_id": "CLASS-2024-Y10-MATH-ADV",
+      "year_level": "Year 10",
+      "subject": "Mathematics Advanced",
+      "teacher": "Dr. Michael Foster",
+      "students_enrolled": 18,
+      "room": "A-102",
+      "periods_per_week": 6
+    },
+    {
+      "class_id": "CLASS-2024-Y12-CHEM",
+      "year_level": "Year 12",
+      "subject": "Chemistry",
+      "teacher": "Dr. Jennifer Wong",
+      "students_enrolled": 22,
+      "room": "C-301 (Science Lab)",
+      "periods_per_week": 6
+    }
+  ],
+  "invoices": [
+    {
+      "invoice_id": "INV-2024-9012",
+      "student_id": "STU-2024-0456",
+      "student_name": "Emily Henderson",
+      "parent_name": "Sarah & Michael Henderson",
+      "invoice_date": "2024-10-15",
+      "due_date": "2024-11-14",
+      "status": "Paid",
+      "payment_date": "2024-11-05",
+      "subtotal": 6166.67,
+      "gst": 0.00,
+      "total": 6166.67,
+      "description": "Term 4 Tuition Fees 2024",
+      "xero_invoice_id": "XERO-INV-9012",
+      "line_items": [
+        {
+          "description": "Year 10 tuition - Term 4",
+          "quantity": 1,
+          "unit_price": 5850.00,
+          "gst": 0.00,
+          "total": 5850.00
+        },
+        {
+          "description": "Music program fees",
+          "quantity": 1,
+          "unit_price": 316.67,
+          "gst": 0.00,
+          "total": 316.67
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-2024-9034",
+      "student_id": "STU-2024-0789",
+      "student_name": "Lucas Chen",
+      "parent_name": "David & Lisa Chen",
+      "invoice_date": "2024-10-15",
+      "due_date": "2024-11-14",
+      "status": "Paid",
+      "payment_date": "2024-10-28",
+      "subtotal": 5500.00,
+      "gst": 0.00,
+      "total": 5500.00,
+      "description": "Term 4 Tuition Fees 2024",
+      "xero_invoice_id": "XERO-INV-9034",
+      "line_items": [
+        {
+          "description": "Year 7 tuition - Term 4",
+          "quantity": 1,
+          "unit_price": 5500.00,
+          "gst": 0.00,
+          "total": 5500.00
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-2024-9056",
+      "student_id": "STU-2023-1234",
+      "student_name": "Sophie Rodriguez",
+      "parent_name": "James & Maria Rodriguez",
+      "invoice_date": "2024-10-15",
+      "due_date": "2024-11-14",
+      "status": "Sent",
+      "payment_date": null,
+      "subtotal": 6500.00,
+      "gst": 0.00,
+      "total": 6500.00,
+      "description": "Term 4 Tuition Fees 2024",
+      "xero_invoice_id": "XERO-INV-9056",
+      "line_items": [
+        {
+          "description": "Year 12 tuition - Term 4",
+          "quantity": 1,
+          "unit_price": 6500.00,
+          "gst": 0.00,
+          "total": 6500.00
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-2024-8901",
+      "student_id": "STU-2022-0567",
+      "student_name": "Oliver Thompson",
+      "parent_name": "Emma Thompson",
+      "invoice_date": "2024-10-15",
+      "due_date": "2024-11-14",
+      "status": "Paid",
+      "payment_date": "2024-11-01",
+      "subtotal": 4833.33,
+      "gst": 0.00,
+      "total": 4833.33,
+      "description": "Term 4 Tuition Fees 2024",
+      "xero_invoice_id": "XERO-INV-8901",
+      "line_items": [
+        {
+          "description": "Year 5 tuition - Term 4",
+          "quantity": 1,
+          "unit_price": 4833.33,
+          "gst": 0.00,
+          "total": 4833.33
+        }
+      ]
+    }
+  ],
+  "bills": [
+    {
+      "bill_id": "BILL-2024-2345",
+      "supplier": "Compass Education",
+      "bill_date": "2024-10-01",
+      "due_date": "2024-10-31",
+      "status": "Paid",
+      "payment_date": "2024-10-15",
+      "subtotal": 2850.00,
+      "gst": 285.00,
+      "total": 3135.00,
+      "description": "Student management system - October",
+      "xero_bill_id": "XERO-BILL-2345",
+      "line_items": [
+        {
+          "description": "Compass subscription - 850 students",
+          "quantity": 1,
+          "unit_price": 2850.00,
+          "gst": 285.00,
+          "total": 3135.00
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-2367",
+      "supplier": "Edval Timetables",
+      "bill_date": "2024-10-01",
+      "due_date": "2024-10-31",
+      "status": "Paid",
+      "payment_date": "2024-10-15",
+      "subtotal": 485.00,
+      "gst": 48.50,
+      "total": 533.50,
+      "description": "Timetabling software - October",
+      "xero_bill_id": "XERO-BILL-2367",
+      "line_items": [
+        {
+          "description": "Edval annual subscription",
+          "quantity": 1,
+          "unit_price": 485.00,
+          "gst": 48.50,
+          "total": 533.50
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-2378",
+      "supplier": "Educational Supplies Brisbane",
+      "bill_date": "2024-10-18",
+      "due_date": "2024-11-17",
+      "status": "Unpaid",
+      "payment_date": null,
+      "subtotal": 8500.00,
+      "gst": 850.00,
+      "total": 9350.00,
+      "description": "Science lab equipment and supplies",
+      "xero_bill_id": "XERO-BILL-2378",
+      "line_items": [
+        {
+          "description": "Chemistry lab equipment",
+          "quantity": 1,
+          "unit_price": 4200.00,
+          "gst": 420.00,
+          "total": 4620.00
+        },
+        {
+          "description": "Physics demonstration equipment",
+          "quantity": 1,
+          "unit_price": 2850.00,
+          "gst": 285.00,
+          "total": 3135.00
+        },
+        {
+          "description": "Lab consumables and chemicals",
+          "quantity": 1,
+          "unit_price": 1450.00,
+          "gst": 145.00,
+          "total": 1595.00
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-2389",
+      "supplier": "Brisbane Sporting Goods",
+      "bill_date": "2024-10-20",
+      "due_date": "2024-11-19",
+      "status": "Unpaid",
+      "payment_date": null,
+      "subtotal": 4850.00,
+      "gst": 485.00,
+      "total": 5335.00,
+      "description": "Sports equipment for winter sports season",
+      "xero_bill_id": "XERO-BILL-2389",
+      "line_items": [
+        {
+          "description": "Rugby balls, training equipment",
+          "quantity": 1,
+          "unit_price": 2400.00,
+          "gst": 240.00,
+          "total": 2640.00
+        },
+        {
+          "description": "Soccer goals and nets",
+          "quantity": 1,
+          "unit_price": 1650.00,
+          "gst": 165.00,
+          "total": 1815.00
+        },
+        {
+          "description": "Training cones, bibs, misc equipment",
+          "quantity": 1,
+          "unit_price": 800.00,
+          "gst": 80.00,
+          "total": 880.00
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-2401",
+      "supplier": "GreenBuild Constructions",
+      "bill_date": "2024-10-31",
+      "due_date": "2024-11-30",
+      "status": "Unpaid",
+      "payment_date": null,
+      "subtotal": 125000.00,
+      "gst": 12500.00,
+      "total": 137500.00,
+      "description": "New classroom block - Progress payment 1",
+      "xero_bill_id": "XERO-BILL-2401",
+      "line_items": [
+        {
+          "description": "New classroom block construction - foundation complete",
+          "quantity": 1,
+          "unit_price": 125000.00,
+          "gst": 12500.00,
+          "total": 137500.00
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-2412",
+      "supplier": "Origin Energy",
+      "bill_date": "2024-10-10",
+      "due_date": "2024-11-09",
+      "status": "Unpaid",
+      "payment_date": null,
+      "subtotal": 12500.00,
+      "gst": 1250.00,
+      "total": 13750.00,
+      "description": "Electricity - September usage",
+      "xero_bill_id": "XERO-BILL-2412",
+      "line_items": [
+        {
+          "description": "Commercial electricity - school campus",
+          "quantity": 1,
+          "unit_price": 12500.00,
+          "gst": 1250.00,
+          "total": 13750.00
+        }
+      ]
+    }
+  ],
+  "staff": [
+    {
+      "staff_id": "STAFF-001",
+      "name": "Principal Margaret Walsh",
+      "role": "Principal",
+      "email": "m.walsh@brisbaneacademy.qld.edu.au",
+      "phone": "+61 421 012 345",
+      "qualifications": ["Master of Education Leadership", "Bachelor of Education", "QLD Teacher Registration"],
+      "specializations": ["School Leadership", "Curriculum Development", "Strategic Planning"],
+      "employment_start": "2015-01-15"
+    },
+    {
+      "staff_id": "STAFF-002",
+      "name": "Dr. Michael Foster",
+      "role": "Head of Mathematics",
+      "email": "m.foster@brisbaneacademy.qld.edu.au",
+      "phone": "+61 432 123 456",
+      "qualifications": ["PhD Mathematics Education", "Bachelor of Science (Maths)", "QLD Teacher Registration"],
+      "specializations": ["Mathematics", "STEM Education", "Curriculum Leadership"],
+      "employment_start": "2016-06-01"
+    },
+    {
+      "staff_id": "STAFF-003",
+      "name": "Sarah Mitchell",
+      "role": "Head of English",
+      "email": "s.mitchell@brisbaneacademy.qld.edu.au",
+      "phone": "+61 443 234 567",
+      "qualifications": ["Master of Education", "Bachelor of Arts (English)", "QLD Teacher Registration"],
+      "specializations": ["English Literature", "Writing", "Senior Assessment"],
+      "employment_start": "2017-01-27"
+    },
+    {
+      "staff_id": "STAFF-004",
+      "name": "Dr. Jennifer Wong",
+      "role": "Head of Science",
+      "email": "j.wong@brisbaneacademy.qld.edu.au",
+      "phone": "+61 454 345 678",
+      "qualifications": ["PhD Chemistry", "Bachelor of Science", "QLD Teacher Registration"],
+      "specializations": ["Chemistry", "Physics", "Science Lab Management"],
+      "employment_start": "2018-07-15"
+    },
+    {
+      "staff_id": "STAFF-005",
+      "name": "Tony Rodriguez",
+      "role": "Sports Coordinator / PE Teacher",
+      "email": "t.rodriguez@brisbaneacademy.qld.edu.au",
+      "phone": "+61 465 456 789",
+      "qualifications": ["Bachelor of Physical Education", "Coaching Certifications", "QLD Teacher Registration"],
+      "specializations": ["Physical Education", "Sports Programs", "Health & Wellbeing"],
+      "employment_start": "2019-01-28"
+    },
+    {
+      "staff_id": "STAFF-006",
+      "name": "Emma Rodriguez",
+      "role": "Primary Teacher - Year 5",
+      "email": "e.rodriguez@brisbaneacademy.qld.edu.au",
+      "phone": "+61 476 567 890",
+      "qualifications": ["Bachelor of Education (Primary)", "QLD Teacher Registration"],
+      "specializations": ["Primary Education", "Literacy", "Numeracy"],
+      "employment_start": "2020-01-27"
+    },
+    {
+      "staff_id": "STAFF-007",
+      "name": "Lisa Park",
+      "role": "School Administrator",
+      "email": "l.park@brisbaneacademy.qld.edu.au",
+      "phone": "+61 487 678 901",
+      "qualifications": ["Cert IV School Administration", "Compass Certified"],
+      "specializations": ["Student Administration", "Enrollment", "Parent Liaison"],
+      "employment_start": "2018-03-15"
+    }
+  ],
+  "onedrive_files": [
+    {
+      "file_id": "OD-STUDENT-0456",
+      "student_id": "STU-2024-0456",
+      "file_name": "Emily_Henderson_Report_Sem2_2024.pdf",
+      "file_type": "Report Card",
+      "file_path": "/Students/2024/Year 10/Henderson Emily/",
+      "upload_date": "2024-09-30",
+      "uploaded_by": "Sarah Mitchell",
+      "description": "Semester 2 2024 report card",
+      "file_size": "456 KB"
+    },
+    {
+      "file_id": "OD-STUDENT-1234",
+      "student_id": "STU-2023-1234",
+      "file_name": "Sophie_Rodriguez_NAPLAN_2024.pdf",
+      "file_type": "Assessment Results",
+      "file_path": "/Students/2023/Year 12/Rodriguez Sophie/",
+      "upload_date": "2024-08-15",
+      "uploaded_by": "Principal Margaret Walsh",
+      "description": "NAPLAN and external assessment results",
+      "file_size": "234 KB"
+    },
+    {
+      "file_id": "OD-ENROLLMENT-001",
+      "file_name": "2025_Enrollment_Applications.xlsx",
+      "file_type": "Enrollments",
+      "file_path": "/Enrollments/2025/",
+      "upload_date": "2024-10-20",
+      "uploaded_by": "Lisa Park",
+      "description": "2025 enrollment applications tracking",
+      "file_size": "567 KB"
+    },
+    {
+      "file_id": "OD-COMPLIANCE-001",
+      "file_name": "School_Registration_Certificate_2024.pdf",
+      "file_type": "Registration",
+      "file_path": "/Compliance/Registration/",
+      "upload_date": "2024-07-01",
+      "uploaded_by": "Principal Margaret Walsh",
+      "description": "QLD School registration certificate",
+      "file_size": "890 KB"
+    },
+    {
+      "file_id": "OD-CURRICULUM-001",
+      "file_name": "Curriculum_Plan_2024.pdf",
+      "file_type": "Curriculum",
+      "file_path": "/Curriculum/2024/",
+      "upload_date": "2024-01-15",
+      "uploaded_by": "Principal Margaret Walsh",
+      "description": "Annual curriculum plan and assessment schedule",
+      "file_size": "3.4 MB"
+    },
+    {
+      "file_id": "OD-INSURANCE-001",
+      "file_name": "School_Insurance_2024.pdf",
+      "file_type": "Insurance",
+      "file_path": "/Compliance/Insurance/",
+      "upload_date": "2024-07-01",
+      "uploaded_by": "Lisa Park",
+      "description": "Comprehensive school insurance - Expires 30/06/2025",
+      "file_size": "1.2 MB"
+    }
+  ],
+  "leads": [
+    {
+      "lead_id": "LEAD-2024-567",
+      "name": "Michael & Sophie Patterson",
+      "type": "Prospective Parents",
+      "email": "michael.p@email.com",
+      "phone": "+61 421 234 567",
+      "child_name": "Jack Patterson",
+      "year_applying": "Year 7 - 2025",
+      "source": "School Tour",
+      "date_created": "2024-10-22",
+      "status": "Application Submitted",
+      "notes": "Completed school tour Oct 20. Application submitted for 2025 Year 7.",
+      "last_contact": "2024-10-22",
+      "next_followup": "2024-11-10"
+    },
+    {
+      "lead_id": "LEAD-2024-568",
+      "name": "Carlos & Maria Martinez",
+      "type": "Prospective Parents",
+      "email": "carlos.m@email.com",
+      "phone": "+61 432 345 678",
+      "child_name": "Isabella Martinez",
+      "year_applying": "Prep - 2025",
+      "source": "Website Inquiry",
+      "date_created": "2024-10-25",
+      "status": "Tour Scheduled",
+      "notes": "Tour scheduled for Nov 5. Interested in arts program.",
+      "last_contact": "2024-10-26",
+      "next_followup": "2024-11-05"
+    },
+    {
+      "lead_id": "LEAD-2024-569",
+      "name": "Rebecca Foster",
+      "type": "Prospective Parent",
+      "email": "rebecca.f@email.com",
+      "phone": "+61 443 456 789",
+      "child_name": "Lucas Foster",
+      "year_applying": "Year 8 - 2025",
+      "source": "Voice Agent - Inbound Call",
+      "date_created": "2024-10-27",
+      "status": "Initial Contact",
+      "notes": "Called via voice agent. Requesting prospectus and tour. Sending information pack.",
+      "last_contact": "2024-10-27",
+      "next_followup": "2024-11-01"
+    },
+    {
+      "lead_id": "LEAD-2024-570",
+      "name": "Tony & Lisa Nguyen",
+      "type": "Prospective Parents",
+      "email": "tony.nguyen@email.com",
+      "phone": "+61 454 567 890",
+      "child_name": "Emily Nguyen",
+      "year_applying": "Year 4 - 2025",
+      "source": "Referral",
+      "date_created": "2024-10-28",
+      "status": "Tour Completed",
+      "notes": "Referred by Henderson family. Tour completed Oct 29. Very positive feedback.",
+      "last_contact": "2024-10-29",
+      "next_followup": "2024-11-06"
+    }
+  ],
+  "metadata": {
+    "data_purpose": "11Labs Voice Agent Knowledge Base",
+    "business_type": "Private School",
+    "data_format": "JSON",
+    "last_updated": "2024-10-30",
+    "currency": "AUD",
+    "timezone": "Australia/Brisbane",
+    "notes": "This is dummy data for demonstration purposes. All student names, family details, and financial information are fictional."
+  }
+}
+

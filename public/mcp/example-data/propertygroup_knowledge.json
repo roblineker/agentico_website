@@ -1,0 +1,624 @@
+{
+  "company": {
+    "name": "Queensland Property Investments",
+    "abn": "67 789 012 345",
+    "email": "info@qpi.com.au",
+    "phone": "+61 7 3901 2345",
+    "address": "Level 8, 200 Queen Street, Brisbane QLD 4000",
+    "website": "www.qpi.com.au",
+    "specializations": ["Investment Properties", "Property Portfolio Management", "Rental Management", "Property Acquisition", "Capital Works"]
+  },
+  "integrations": {
+    "property_management": "PropertyMe",
+    "accounting": "Xero",
+    "maintenance": "ServiceM8 Integration",
+    "trust_accounting": "PropertyMe Trust",
+    "voice_agent": "Custom Voice Agent",
+    "file_storage": "OneDrive",
+    "tenant_portal": "PropertyMe Portal"
+  },
+  "properties": [
+    {
+      "property_id": "PROP-001",
+      "address": "Unit 8/45 Main Street, Greenslopes QLD 4120",
+      "property_type": "Apartment",
+      "bedrooms": 2,
+      "bathrooms": 1,
+      "parking": 1,
+      "purchase_date": "2020-03-15",
+      "purchase_price": 385000.00,
+      "current_value": 485000.00,
+      "weekly_rent": 450.00,
+      "tenant_name": "Sarah Mitchell",
+      "lease_end": "2025-04-30",
+      "status": "Tenanted"
+    },
+    {
+      "property_id": "PROP-002",
+      "address": "78 Garden Street, Ashgrove QLD 4060",
+      "property_type": "House",
+      "bedrooms": 3,
+      "bathrooms": 2,
+      "parking": 2,
+      "land_size": 405,
+      "purchase_date": "2019-08-20",
+      "purchase_price": 650000.00,
+      "current_value": 850000.00,
+      "weekly_rent": 750.00,
+      "tenant_name": "David Chen Family",
+      "lease_end": "2024-12-31",
+      "status": "Tenanted"
+    },
+    {
+      "property_id": "PROP-003",
+      "address": "Unit 12/156 Creek Street, Brisbane City QLD 4000",
+      "property_type": "Apartment",
+      "bedrooms": 1,
+      "bathrooms": 1,
+      "parking": 0,
+      "purchase_date": "2021-05-10",
+      "purchase_price": 420000.00,
+      "current_value": 465000.00,
+      "weekly_rent": 480.00,
+      "tenant_name": "Emma Thompson",
+      "lease_end": "2025-06-15",
+      "status": "Tenanted"
+    },
+    {
+      "property_id": "PROP-004",
+      "address": "23 Parkview Terrace, Chapel Hill QLD 4069",
+      "property_type": "House",
+      "bedrooms": 4,
+      "bathrooms": 2,
+      "parking": 2,
+      "land_size": 520,
+      "purchase_date": "2022-11-15",
+      "purchase_price": 780000.00,
+      "current_value": 920000.00,
+      "weekly_rent": 650.00,
+      "tenant_name": "Carlos & Maria Martinez",
+      "lease_end": "2025-06-14",
+      "status": "Tenanted"
+    },
+    {
+      "property_id": "PROP-005",
+      "address": "45 Commercial Road, Newstead QLD 4006",
+      "property_type": "Commercial Office",
+      "floor_area": 450,
+      "purchase_date": "2018-06-20",
+      "purchase_price": 2200000.00,
+      "current_value": 2850000.00,
+      "weekly_rent": 4500.00,
+      "tenant_name": "TechFlow Solutions Pty Ltd",
+      "lease_end": "2026-06-30",
+      "status": "Tenanted"
+    },
+    {
+      "property_id": "PROP-006",
+      "address": "Unit 5/89 Ferry Road, West End QLD 4101",
+      "property_type": "Apartment",
+      "bedrooms": 2,
+      "bathrooms": 1,
+      "parking": 1,
+      "purchase_date": "2023-02-10",
+      "purchase_price": 445000.00,
+      "current_value": 475000.00,
+      "weekly_rent": 520.00,
+      "tenant_name": "James Rodriguez",
+      "lease_end": "2025-02-28",
+      "status": "Tenanted"
+    },
+    {
+      "property_id": "PROP-007",
+      "address": "156 Riverside Drive, Hamilton QLD 4007",
+      "property_type": "House",
+      "bedrooms": 4,
+      "bathrooms": 2.5,
+      "parking": 2,
+      "land_size": 607,
+      "purchase_date": "2020-09-15",
+      "purchase_price": 1150000.00,
+      "current_value": 1450000.00,
+      "weekly_rent": 950.00,
+      "tenant_name": "Rebecca Foster Family",
+      "lease_end": "2025-09-30",
+      "status": "Tenanted"
+    },
+    {
+      "property_id": "PROP-008",
+      "address": "34 Bushland Drive, The Gap QLD 4061",
+      "property_type": "House",
+      "bedrooms": 3,
+      "bathrooms": 2,
+      "parking": 2,
+      "land_size": 485,
+      "purchase_date": "2021-12-08",
+      "purchase_price": 685000.00,
+      "current_value": 750000.00,
+      "weekly_rent": 650.00,
+      "tenant_name": "Sophie Williams",
+      "lease_end": "2025-05-20",
+      "status": "Tenanted"
+    },
+    {
+      "property_id": "PROP-009",
+      "address": "Unit 3/67 Park Road, Milton QLD 4064",
+      "property_type": "Apartment",
+      "bedrooms": 2,
+      "bathrooms": 2,
+      "parking": 1,
+      "purchase_date": "2024-06-15",
+      "purchase_price": 550000.00,
+      "current_value": 560000.00,
+      "weekly_rent": 0.00,
+      "tenant_name": null,
+      "lease_end": null,
+      "status": "Vacant - Listed for Rent"
+    }
+  ],
+  "rental_income": [
+    {
+      "month": "October 2024",
+      "property_id": "PROP-001",
+      "address": "Unit 8/45 Main Street, Greenslopes",
+      "rent_received": 1950.00,
+      "expenses": 285.00,
+      "net_income": 1665.00
+    },
+    {
+      "month": "October 2024",
+      "property_id": "PROP-002",
+      "address": "78 Garden Street, Ashgrove",
+      "rent_received": 3250.00,
+      "expenses": 450.00,
+      "net_income": 2800.00
+    },
+    {
+      "month": "October 2024",
+      "property_id": "PROP-003",
+      "address": "Unit 12/156 Creek Street, Brisbane City",
+      "rent_received": 2080.00,
+      "expenses": 580.00,
+      "net_income": 1500.00
+    },
+    {
+      "month": "October 2024",
+      "property_id": "PROP-004",
+      "address": "23 Parkview Terrace, Chapel Hill",
+      "rent_received": 2816.67,
+      "expenses": 385.00,
+      "net_income": 2431.67
+    },
+    {
+      "month": "October 2024",
+      "property_id": "PROP-005",
+      "address": "45 Commercial Road, Newstead",
+      "rent_received": 19500.00,
+      "expenses": 2850.00,
+      "net_income": 16650.00
+    },
+    {
+      "month": "October 2024",
+      "property_id": "PROP-006",
+      "address": "Unit 5/89 Ferry Road, West End",
+      "rent_received": 2253.33,
+      "expenses": 320.00,
+      "net_income": 1933.33
+    },
+    {
+      "month": "October 2024",
+      "property_id": "PROP-007",
+      "address": "156 Riverside Drive, Hamilton",
+      "rent_received": 4116.67,
+      "expenses": 580.00,
+      "net_income": 3536.67
+    },
+    {
+      "month": "October 2024",
+      "property_id": "PROP-008",
+      "address": "34 Bushland Drive, The Gap",
+      "rent_received": 2816.67,
+      "expenses": 425.00,
+      "net_income": 2391.67
+    },
+    {
+      "month": "October 2024",
+      "property_id": "PROP-009",
+      "address": "Unit 3/67 Park Road, Milton",
+      "rent_received": 0.00,
+      "expenses": 1285.00,
+      "net_income": -1285.00
+    }
+  ],
+  "invoices": [
+    {
+      "invoice_id": "INV-2024-6789",
+      "tenant_name": "Sarah Mitchell",
+      "property_id": "PROP-001",
+      "invoice_date": "2024-10-15",
+      "due_date": "2024-10-29",
+      "status": "Paid",
+      "payment_date": "2024-10-28",
+      "subtotal": 1950.00,
+      "gst": 0.00,
+      "total": 1950.00,
+      "description": "Rent - Unit 8/45 Main Street, Greenslopes - October 2024",
+      "line_items": [
+        {
+          "description": "Fortnightly rent payment",
+          "quantity": 1,
+          "unit_price": 1950.00,
+          "gst": 0.00,
+          "total": 1950.00
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-2024-6812",
+      "tenant_name": "David Chen Family",
+      "property_id": "PROP-002",
+      "invoice_date": "2024-10-15",
+      "due_date": "2024-10-29",
+      "status": "Paid",
+      "payment_date": "2024-10-25",
+      "subtotal": 3250.00,
+      "gst": 0.00,
+      "total": 3250.00,
+      "description": "Rent - 78 Garden Street, Ashgrove - October 2024",
+      "line_items": [
+        {
+          "description": "Monthly rent payment",
+          "quantity": 1,
+          "unit_price": 3250.00,
+          "gst": 0.00,
+          "total": 3250.00
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-2024-6834",
+      "tenant_name": "TechFlow Solutions Pty Ltd",
+      "property_id": "PROP-005",
+      "invoice_date": "2024-10-01",
+      "due_date": "2024-10-14",
+      "status": "Paid",
+      "payment_date": "2024-10-10",
+      "subtotal": 19500.00,
+      "gst": 1950.00,
+      "total": 21450.00,
+      "description": "Commercial rent - 45 Commercial Road, Newstead - October 2024",
+      "line_items": [
+        {
+          "description": "Monthly commercial rent + GST",
+          "quantity": 1,
+          "unit_price": 19500.00,
+          "gst": 1950.00,
+          "total": 21450.00
+        }
+      ]
+    }
+  ],
+  "bills": [
+    {
+      "bill_id": "BILL-2024-0123",
+      "supplier": "Brisbane City Council - Rates",
+      "property_id": "PROP-002",
+      "bill_date": "2024-10-15",
+      "due_date": "2024-11-14",
+      "status": "Unpaid",
+      "payment_date": null,
+      "subtotal": 1850.00,
+      "gst": 0.00,
+      "total": 1850.00,
+      "description": "Council rates - 78 Garden Street - Q2 2024-25",
+      "xero_bill_id": "XERO-BILL-0123",
+      "line_items": [
+        {
+          "description": "Quarterly council rates",
+          "quantity": 1,
+          "unit_price": 1850.00,
+          "gst": 0.00,
+          "total": 1850.00
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-0145",
+      "supplier": "AllTrade Maintenance Services",
+      "property_id": "Multiple",
+      "bill_date": "2024-10-31",
+      "due_date": "2024-11-30",
+      "status": "Unpaid",
+      "payment_date": null,
+      "subtotal": 6500.00,
+      "gst": 650.00,
+      "total": 7150.00,
+      "description": "Portfolio maintenance - October 2024",
+      "xero_bill_id": "XERO-BILL-0145",
+      "line_items": [
+        {
+          "description": "Monthly portfolio maintenance - 15 properties",
+          "quantity": 1,
+          "unit_price": 6500.00,
+          "gst": 650.00,
+          "total": 7150.00
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-0167",
+      "supplier": "Urban Utilities",
+      "property_id": "PROP-007",
+      "bill_date": "2024-10-20",
+      "due_date": "2024-11-19",
+      "status": "Unpaid",
+      "payment_date": null,
+      "subtotal": 285.00,
+      "gst": 0.00,
+      "total": 285.00,
+      "description": "Water - 156 Riverside Drive - Q3 2024",
+      "xero_bill_id": "XERO-BILL-0167",
+      "line_items": [
+        {
+          "description": "Quarterly water usage and access",
+          "quantity": 1,
+          "unit_price": 285.00,
+          "gst": 0.00,
+          "total": 285.00
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-0189",
+      "supplier": "Brisbane Prestige Realty",
+      "property_id": "PROP-009",
+      "bill_date": "2024-10-25",
+      "due_date": "2024-11-24",
+      "status": "Unpaid",
+      "payment_date": null,
+      "subtotal": 2850.00,
+      "gst": 285.00,
+      "total": 3135.00,
+      "description": "Leasing fee - Unit 3/67 Park Road",
+      "xero_bill_id": "XERO-BILL-0189",
+      "line_items": [
+        {
+          "description": "Leasing fee - 1 week rent + GST",
+          "quantity": 1,
+          "unit_price": 2850.00,
+          "gst": 285.00,
+          "total": 3135.00
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-0201",
+      "supplier": "PropertyMe",
+      "bill_date": "2024-10-01",
+      "due_date": "2024-10-31",
+      "status": "Paid",
+      "payment_date": "2024-10-15",
+      "subtotal": 485.00,
+      "gst": 48.50,
+      "total": 533.50,
+      "description": "Property management software - October",
+      "xero_bill_id": "XERO-BILL-0201",
+      "line_items": [
+        {
+          "description": "PropertyMe subscription - 15 properties",
+          "quantity": 1,
+          "unit_price": 485.00,
+          "gst": 48.50,
+          "total": 533.50
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-0212",
+      "supplier": "Sparkle Clean Services",
+      "property_id": "PROP-009",
+      "bill_date": "2024-10-22",
+      "due_date": "2024-11-21",
+      "status": "Unpaid",
+      "payment_date": null,
+      "subtotal": 450.00,
+      "gst": 45.00,
+      "total": 495.00,
+      "description": "Vacancy clean - Unit 3/67 Park Road",
+      "xero_bill_id": "XERO-BILL-0212",
+      "line_items": [
+        {
+          "description": "Professional vacancy clean",
+          "quantity": 1,
+          "unit_price": 450.00,
+          "gst": 45.00,
+          "total": 495.00
+        }
+      ]
+    }
+  ],
+  "leads": [
+    {
+      "lead_id": "LEAD-2024-234",
+      "opportunity_type": "Property Purchase",
+      "property_address": "89 Hill View Court, Bardon QLD 4065",
+      "asking_price": 1250000.00,
+      "estimated_rental": 850.00,
+      "yield": 3.5,
+      "source": "Off-market Opportunity",
+      "date_created": "2024-10-24",
+      "status": "Due Diligence",
+      "assigned_to": "Sarah Mitchell",
+      "notes": "Premium property, slightly below market yield. Conducting building inspection.",
+      "last_contact": "2024-10-26",
+      "next_followup": "2024-11-02"
+    },
+    {
+      "lead_id": "LEAD-2024-235",
+      "opportunity_type": "Property Purchase",
+      "property_address": "Unit 15/120 Main Street, Kangaroo Point QLD 4169",
+      "asking_price": 485000.00,
+      "estimated_rental": 550.00,
+      "yield": 5.9,
+      "source": "realestate.com.au",
+      "date_created": "2024-10-26",
+      "status": "Inspection Scheduled",
+      "assigned_to": "Tony Nguyen",
+      "notes": "Good investment yield. Inspection scheduled for Nov 1.",
+      "last_contact": "2024-10-27",
+      "next_followup": "2024-11-01"
+    },
+    {
+      "lead_id": "LEAD-2024-236",
+      "opportunity_type": "Property Sale",
+      "property_address": "Unit 8/45 Main Street, Greenslopes",
+      "estimated_value": 485000.00,
+      "source": "Portfolio Review",
+      "date_created": "2024-10-28",
+      "status": "Considering Sale",
+      "assigned_to": "Sarah Mitchell",
+      "notes": "Reviewing portfolio. Considering selling this property to upgrade. Analyzing market conditions.",
+      "last_contact": "2024-10-28",
+      "next_followup": "2024-11-10"
+    }
+  ],
+  "staff": [
+    {
+      "staff_id": "STAFF-001",
+      "name": "Sarah Mitchell",
+      "role": "Director / Portfolio Manager",
+      "email": "sarah@qpi.com.au",
+      "phone": "+61 421 123 456",
+      "qualifications": ["Real Estate Licence QLD", "Property Investment Specialist", "Chartered Accountant"],
+      "specializations": ["Portfolio Management", "Investment Strategy", "Capital Works Planning"],
+      "properties_managed": 15,
+      "employment_start": "2015-06-01"
+    },
+    {
+      "staff_id": "STAFF-002",
+      "name": "Tony Nguyen",
+      "role": "Acquisitions Manager",
+      "email": "tony@qpi.com.au",
+      "phone": "+61 432 234 567",
+      "qualifications": ["Real Estate Licence QLD", "Property Valuation Certificate", "Investment Analysis"],
+      "specializations": ["Property Acquisition", "Market Analysis", "Due Diligence"],
+      "employment_start": "2017-03-15"
+    },
+    {
+      "staff_id": "STAFF-003",
+      "name": "Jennifer Wong",
+      "role": "Property Manager",
+      "email": "jennifer@qpi.com.au",
+      "phone": "+61 443 345 678",
+      "qualifications": ["Real Estate Licence QLD", "Property Management Certification"],
+      "specializations": ["Tenant Management", "Lease Renewals", "Property Inspections"],
+      "employment_start": "2018-08-10"
+    },
+    {
+      "staff_id": "STAFF-004",
+      "name": "David Martinez",
+      "role": "Maintenance Coordinator",
+      "email": "david@qpi.com.au",
+      "phone": "+61 454 456 789",
+      "qualifications": ["Cert IV Property Services"],
+      "specializations": ["Maintenance Coordination", "Contractor Management", "Compliance"],
+      "employment_start": "2020-02-20"
+    },
+    {
+      "staff_id": "STAFF-005",
+      "name": "Emma Rodriguez",
+      "role": "Finance & Administration Manager",
+      "email": "emma@qpi.com.au",
+      "phone": "+61 465 567 890",
+      "qualifications": ["Cert IV Accounting & Bookkeeping", "Xero Certified"],
+      "specializations": ["Financial Reporting", "Trust Accounting", "Administration"],
+      "employment_start": "2019-11-01"
+    }
+  ],
+  "onedrive_files": [
+    {
+      "file_id": "OD-PROP-001-001",
+      "property_id": "PROP-001",
+      "file_name": "Greenslopes_Lease_Agreement.pdf",
+      "file_type": "Lease",
+      "file_path": "/Properties/PROP-001 Greenslopes/Lease/",
+      "upload_date": "2024-05-01",
+      "uploaded_by": "Jennifer Wong",
+      "description": "Current lease agreement",
+      "file_size": "1.8 MB"
+    },
+    {
+      "file_id": "OD-PROP-002-001",
+      "property_id": "PROP-002",
+      "file_name": "Ashgrove_Routine_Inspection_Oct2024.pdf",
+      "file_type": "Inspection Report",
+      "file_path": "/Properties/PROP-002 Ashgrove/Inspections/",
+      "upload_date": "2024-10-22",
+      "uploaded_by": "Jennifer Wong",
+      "description": "Routine property inspection report",
+      "file_size": "4.2 MB"
+    },
+    {
+      "file_id": "OD-PROP-005-001",
+      "property_id": "PROP-005",
+      "file_name": "Newstead_Commercial_Lease.pdf",
+      "file_type": "Lease",
+      "file_path": "/Properties/PROP-005 Newstead Commercial/Lease/",
+      "upload_date": "2023-07-01",
+      "uploaded_by": "Sarah Mitchell",
+      "description": "Commercial lease agreement - 5 year term",
+      "file_size": "2.4 MB"
+    },
+    {
+      "file_id": "OD-PROP-009-001",
+      "property_id": "PROP-009",
+      "file_name": "Milton_Property_Marketing.pdf",
+      "file_type": "Marketing",
+      "file_path": "/Properties/PROP-009 Milton/Rental Marketing/",
+      "upload_date": "2024-10-20",
+      "uploaded_by": "Jennifer Wong",
+      "description": "Rental listing and marketing materials",
+      "file_size": "3.6 MB"
+    },
+    {
+      "file_id": "OD-PORTFOLIO-001",
+      "file_name": "Portfolio_Valuation_Report_2024.pdf",
+      "file_type": "Valuation",
+      "file_path": "/Portfolio/Valuations/",
+      "upload_date": "2024-06-30",
+      "uploaded_by": "Sarah Mitchell",
+      "description": "Annual portfolio valuation - total value $8.8M",
+      "file_size": "5.6 MB"
+    },
+    {
+      "file_id": "OD-PORTFOLIO-002",
+      "file_name": "Capital_Works_Schedule_2024-25.xlsx",
+      "file_type": "Capital Works",
+      "file_path": "/Portfolio/Capital Works/",
+      "upload_date": "2024-07-15",
+      "uploaded_by": "Sarah Mitchell",
+      "description": "Planned capital improvements and depreciation schedule",
+      "file_size": "345 KB"
+    },
+    {
+      "file_id": "OD-FINANCE-001",
+      "file_name": "Portfolio_Performance_Report_Oct2024.pdf",
+      "file_type": "Financial Report",
+      "file_path": "/Financial Reports/2024/",
+      "upload_date": "2024-10-31",
+      "uploaded_by": "Emma Rodriguez",
+      "description": "Monthly portfolio performance and cash flow report",
+      "file_size": "890 KB"
+    }
+  ],
+  "metadata": {
+    "data_purpose": "11Labs Voice Agent Knowledge Base",
+    "business_type": "Property Investment Group",
+    "data_format": "JSON",
+    "last_updated": "2024-10-30",
+    "currency": "AUD",
+    "timezone": "Australia/Brisbane",
+    "notes": "This is dummy data for demonstration purposes. All property details, tenant names, and financial information are fictional."
+  }
+}
+

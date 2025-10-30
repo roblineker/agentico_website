@@ -1,0 +1,658 @@
+{
+  "company": {
+    "name": "Precision Engineering Consultants",
+    "abn": "90 012 345 678",
+    "email": "info@precisioneng.com.au",
+    "phone": "+61 7 3234 5678",
+    "address": "Level 10, 180 Queen Street, Brisbane QLD 4000",
+    "website": "www.precisioneng.com.au",
+    "specializations": ["Structural Engineering", "Civil Engineering", "Certifications (RPEQ)", "Peer Reviews", "Engineering Design"]
+  },
+  "integrations": {
+    "project_management": "Procore",
+    "cad": "AutoCAD, Revit, Civil 3D",
+    "accounting": "Xero",
+    "timesheets": "WorkflowMax",
+    "voice_agent": "Custom Voice Agent",
+    "file_storage": "OneDrive",
+    "collaboration": "Aconex",
+    "calculations": "SPACE GASS"
+  },
+  "clients": [
+    {
+      "client_id": "CLI-001",
+      "name": "GreenBuild Constructions",
+      "type": "Builder",
+      "contact_person": "Steve Wilson",
+      "email": "steve@greenbuild.com.au",
+      "phone": "+61 412 901 234",
+      "address": "12 Industrial Way, Rocklea QLD 4106",
+      "relationship_start": "2020-03-15",
+      "services": ["Structural Design", "Engineering Certifications", "Site Inspections"],
+      "active_projects": 4,
+      "total_invoiced_ytd": 125000.00,
+      "account_manager": "Dr. Michael Foster"
+    },
+    {
+      "client_id": "CLI-002",
+      "name": "Brisbane Property Developments Pty Ltd",
+      "type": "Developer",
+      "contact_person": "James Rodriguez",
+      "email": "j.rodriguez@bpd.com.au",
+      "phone": "+61 423 012 345",
+      "address": "Level 8, 200 Queen Street, Brisbane QLD 4000",
+      "relationship_start": "2019-06-20",
+      "services": ["Civil Engineering", "Structural Design", "Town Planning Support"],
+      "active_projects": 2,
+      "total_invoiced_ytd": 285000.00,
+      "account_manager": "Dr. Sarah Mitchell"
+    },
+    {
+      "client_id": "CLI-003",
+      "name": "Brisbane City Council",
+      "type": "Government",
+      "contact_person": "Tony Nguyen",
+      "email": "tony.nguyen@brisbane.qld.gov.au",
+      "phone": "+61 434 123 456",
+      "address": "GPO Box 1434, Brisbane QLD 4001",
+      "relationship_start": "2021-02-10",
+      "services": ["Bridge Inspections", "Infrastructure Assessment", "Engineering Reports"],
+      "active_projects": 3,
+      "total_invoiced_ytd": 185000.00,
+      "account_manager": "Dr. Jennifer Wong"
+    },
+    {
+      "client_id": "CLI-004",
+      "name": "Thompson Residence",
+      "type": "Residential",
+      "contact_person": "David Thompson",
+      "email": "david.t@email.com",
+      "phone": "+61 445 234 567",
+      "address": "45 Riverside Drive, Indooroopilly QLD 4068",
+      "relationship_start": "2024-03-15",
+      "services": ["Structural Design", "Engineering Certification"],
+      "active_projects": 1,
+      "total_invoiced_ytd": 18500.00,
+      "account_manager": "Dr. Michael Foster"
+    },
+    {
+      "client_id": "CLI-005",
+      "name": "Queensland Infrastructure Group",
+      "type": "Infrastructure",
+      "contact_person": "Lisa Chen",
+      "email": "lisa@qldinfra.com.au",
+      "phone": "+61 456 345 678",
+      "address": "Level 12, 300 Adelaide Street, Brisbane QLD 4000",
+      "relationship_start": "2020-08-05",
+      "services": ["Civil Engineering", "Road Design", "Drainage Design"],
+      "active_projects": 5,
+      "total_invoiced_ytd": 425000.00,
+      "account_manager": "Dr. Sarah Mitchell"
+    },
+    {
+      "client_id": "CLI-006",
+      "name": "Brisbane Academy of Excellence",
+      "type": "Education",
+      "contact_person": "Principal Margaret Walsh",
+      "email": "m.walsh@brisbaneacademy.qld.edu.au",
+      "phone": "+61 467 456 789",
+      "address": "45 Education Drive, Kenmore QLD 4069",
+      "relationship_start": "2024-05-10",
+      "services": ["Structural Design", "Engineering Certification", "BCA Compliance"],
+      "active_projects": 1,
+      "total_invoiced_ytd": 45000.00,
+      "account_manager": "Dr. Michael Foster"
+    },
+    {
+      "client_id": "CLI-007",
+      "name": "Emma Rodriguez - Retaining Wall",
+      "type": "Residential",
+      "email": "emma.r@email.com",
+      "phone": "+61 478 567 890",
+      "address": "23 Hill View Court, Paddington QLD 4064",
+      "relationship_start": "2024-09-05",
+      "services": ["Retaining Wall Design", "Engineering Certification"],
+      "active_projects": 1,
+      "total_invoiced_ytd": 8500.00,
+      "account_manager": "Tom Anderson"
+    },
+    {
+      "client_id": "CLI-008",
+      "name": "Queensland Rail",
+      "type": "Government",
+      "contact_person": "Andrew Foster",
+      "email": "andrew.foster@qr.com.au",
+      "phone": "+61 489 678 901",
+      "address": "Level 15, Central Station, Brisbane QLD 4000",
+      "relationship_start": "2022-11-15",
+      "services": ["Bridge Engineering", "Infrastructure Assessment", "Safety Audits"],
+      "active_projects": 2,
+      "total_invoiced_ytd": 195000.00,
+      "account_manager": "Dr. Jennifer Wong"
+    },
+    {
+      "client_id": "CLI-009",
+      "name": "Sophie Williams Renovation",
+      "type": "Residential",
+      "email": "sophie.w@email.com",
+      "phone": "+61 490 789 012",
+      "address": "156 Seaside Road, Manly QLD 4179",
+      "relationship_start": "2024-10-10",
+      "services": ["Structural Assessment", "Renovation Design"],
+      "active_projects": 1,
+      "total_invoiced_ytd": 0.00,
+      "account_manager": "Tom Anderson"
+    }
+  ],
+  "projects": [
+    {
+      "project_id": "PROJ-2024-234",
+      "client_id": "CLI-001",
+      "client_name": "GreenBuild Constructions",
+      "project_name": "Thompson Residence Structural Design",
+      "project_type": "Residential Structural",
+      "status": "Completed",
+      "start_date": "2024-03-15",
+      "completion_date": "2024-05-20",
+      "contract_value": 18500.00,
+      "hours_spent": 85,
+      "lead_engineer": "Dr. Michael Foster",
+      "description": "Structural design and certification for 2-storey residence"
+    },
+    {
+      "project_id": "PROJ-2024-267",
+      "client_id": "CLI-002",
+      "client_name": "Brisbane Property Developments Pty Ltd",
+      "project_name": "Greenview Townhouses Civil Works",
+      "project_type": "Civil Engineering",
+      "status": "Completed",
+      "start_date": "2023-08-15",
+      "completion_date": "2024-09-30",
+      "contract_value": 185000.00,
+      "hours_spent": 425,
+      "lead_engineer": "Dr. Sarah Mitchell",
+      "description": "Civil engineering design for townhouse development including roads, drainage, and utilities"
+    },
+    {
+      "project_id": "PROJ-2024-289",
+      "client_id": "CLI-006",
+      "client_name": "Brisbane Academy of Excellence",
+      "project_name": "New Classroom Block Design",
+      "project_type": "Commercial Structural",
+      "status": "In Progress - Construction Phase",
+      "start_date": "2024-05-10",
+      "completion_date": null,
+      "contract_value": 45000.00,
+      "hours_spent": 165,
+      "lead_engineer": "Dr. Michael Foster",
+      "description": "Structural design and certification for new 2-storey classroom block"
+    }
+  ],
+  "invoices": [
+    {
+      "invoice_id": "INV-2024-0123",
+      "client_id": "CLI-001",
+      "client_name": "GreenBuild Constructions",
+      "project_id": "PROJ-2024-234",
+      "invoice_date": "2024-05-31",
+      "due_date": "2024-06-30",
+      "status": "Paid",
+      "payment_date": "2024-06-22",
+      "subtotal": 18500.00,
+      "gst": 1850.00,
+      "total": 20350.00,
+      "description": "Structural engineering - Thompson Residence",
+      "xero_invoice_id": "XERO-INV-0123",
+      "line_items": [
+        {
+          "description": "Structural design and calculations",
+          "quantity": 65,
+          "unit_price": 195.00,
+          "gst": 1267.50,
+          "total": 13942.50
+        },
+        {
+          "description": "Engineering certification and documentation",
+          "quantity": 20,
+          "unit_price": 185.00,
+          "gst": 370.00,
+          "total": 4070.00
+        },
+        {
+          "description": "Site inspections and construction support",
+          "quantity": 1,
+          "unit_price": 2200.00,
+          "gst": 220.00,
+          "total": 2420.00
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-2024-0245",
+      "client_id": "CLI-002",
+      "client_name": "Brisbane Property Developments Pty Ltd",
+      "project_id": "PROJ-2024-267",
+      "invoice_date": "2024-09-30",
+      "due_date": "2024-10-30",
+      "status": "Paid",
+      "payment_date": "2024-10-25",
+      "subtotal": 45000.00,
+      "gst": 4500.00,
+      "total": 49500.00,
+      "description": "Civil engineering - Final invoice",
+      "xero_invoice_id": "XERO-INV-0245",
+      "line_items": [
+        {
+          "description": "Civil engineering design and documentation",
+          "quantity": 225,
+          "unit_price": 185.00,
+          "gst": 4162.50,
+          "total": 45787.50
+        },
+        {
+          "description": "Council submission support",
+          "quantity": 1,
+          "unit_price": 3375.00,
+          "gst": 337.50,
+          "total": 3712.50
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-2024-0267",
+      "client_id": "CLI-006",
+      "client_name": "Brisbane Academy of Excellence",
+      "project_id": "PROJ-2024-289",
+      "invoice_date": "2024-10-15",
+      "due_date": "2024-11-14",
+      "status": "Sent",
+      "payment_date": null,
+      "subtotal": 22500.00,
+      "gst": 2250.00,
+      "total": 24750.00,
+      "description": "Classroom block engineering - Progress invoice",
+      "xero_invoice_id": "XERO-INV-0267",
+      "line_items": [
+        {
+          "description": "Structural design and calculations",
+          "quantity": 95,
+          "unit_price": 195.00,
+          "gst": 1852.50,
+          "total": 20377.50
+        },
+        {
+          "description": "BCA compliance review",
+          "quantity": 1,
+          "unit_price": 4000.00,
+          "gst": 400.00,
+          "total": 4400.00
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-2024-0189",
+      "client_id": "CLI-007",
+      "client_name": "Emma Rodriguez - Retaining Wall",
+      "invoice_date": "2024-10-05",
+      "due_date": "2024-11-04",
+      "status": "Paid",
+      "payment_date": "2024-10-28",
+      "subtotal": 8500.00,
+      "gst": 850.00,
+      "total": 9350.00,
+      "description": "Retaining wall engineering design",
+      "xero_invoice_id": "XERO-INV-0189",
+      "line_items": [
+        {
+          "description": "Retaining wall design and calculations",
+          "quantity": 35,
+          "unit_price": 185.00,
+          "gst": 647.50,
+          "total": 7122.50
+        },
+        {
+          "description": "Engineering certification",
+          "quantity": 1,
+          "unit_price": 2025.00,
+          "gst": 202.50,
+          "total": 2227.50
+        }
+      ]
+    }
+  ],
+  "bills": [
+    {
+      "bill_id": "BILL-2024-5678",
+      "supplier": "Autodesk",
+      "bill_date": "2024-10-01",
+      "due_date": "2024-10-31",
+      "status": "Paid",
+      "payment_date": "2024-10-15",
+      "subtotal": 2850.00,
+      "gst": 285.00,
+      "total": 3135.00,
+      "description": "CAD software licenses - October",
+      "xero_bill_id": "XERO-BILL-5678",
+      "line_items": [
+        {
+          "description": "AutoCAD, Revit, Civil 3D licenses - 6 users",
+          "quantity": 1,
+          "unit_price": 2850.00,
+          "gst": 285.00,
+          "total": 3135.00
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-5690",
+      "supplier": "Procore Australia",
+      "bill_date": "2024-10-01",
+      "due_date": "2024-10-31",
+      "status": "Paid",
+      "payment_date": "2024-10-15",
+      "subtotal": 685.00,
+      "gst": 68.50,
+      "total": 753.50,
+      "description": "Project management software - October",
+      "xero_bill_id": "XERO-BILL-5690",
+      "line_items": [
+        {
+          "description": "Procore subscription - 8 users",
+          "quantity": 1,
+          "unit_price": 685.00,
+          "gst": 68.50,
+          "total": 753.50
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-5712",
+      "supplier": "RPEQ - Engineers Australia",
+      "bill_date": "2024-10-10",
+      "due_date": "2024-11-09",
+      "status": "Unpaid",
+      "payment_date": null,
+      "subtotal": 2850.00,
+      "gst": 0.00,
+      "total": 2850.00,
+      "description": "Annual RPEQ registration fees",
+      "xero_bill_id": "XERO-BILL-5712",
+      "line_items": [
+        {
+          "description": "RPEQ registration - Dr. Michael Foster",
+          "quantity": 1,
+          "unit_price": 950.00,
+          "gst": 0.00,
+          "total": 950.00
+        },
+        {
+          "description": "RPEQ registration - Dr. Sarah Mitchell",
+          "quantity": 1,
+          "unit_price": 950.00,
+          "gst": 0.00,
+          "total": 950.00
+        },
+        {
+          "description": "RPEQ registration - Dr. Jennifer Wong",
+          "quantity": 1,
+          "unit_price": 950.00,
+          "gst": 0.00,
+          "total": 950.00
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-5723",
+      "supplier": "Professional Indemnity Insurance",
+      "bill_date": "2024-10-15",
+      "due_date": "2024-11-14",
+      "status": "Unpaid",
+      "payment_date": null,
+      "subtotal": 28500.00,
+      "gst": 0.00,
+      "total": 28500.00,
+      "description": "Annual professional indemnity premium",
+      "xero_bill_id": "XERO-BILL-5723",
+      "line_items": [
+        {
+          "description": "Professional indemnity insurance - $50M coverage",
+          "quantity": 1,
+          "unit_price": 28500.00,
+          "gst": 0.00,
+          "total": 28500.00
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-5734",
+      "supplier": "Engineering CPD Institute",
+      "bill_date": "2024-10-20",
+      "due_date": "2024-11-19",
+      "status": "Unpaid",
+      "payment_date": null,
+      "subtotal": 2450.00,
+      "gst": 245.00,
+      "total": 2695.00,
+      "description": "CPD training - structural engineering updates",
+      "xero_bill_id": "XERO-BILL-5734",
+      "line_items": [
+        {
+          "description": "Advanced structural analysis course",
+          "quantity": 3,
+          "unit_price": 650.00,
+          "gst": 195.00,
+          "total": 2145.00
+        },
+        {
+          "description": "BCA 2024 update seminar",
+          "quantity": 2,
+          "unit_price": 250.00,
+          "gst": 50.00,
+          "total": 550.00
+        }
+      ]
+    }
+  ],
+  "leads": [
+    {
+      "lead_id": "LEAD-2024-678",
+      "name": "Brisbane Commercial Developments",
+      "type": "Developer",
+      "contact_person": "Michael Patterson",
+      "email": "michael@commercial.com.au",
+      "phone": "+61 421 012 345",
+      "source": "Referral",
+      "date_created": "2024-10-24",
+      "status": "Proposal Sent",
+      "project_type": "Office Tower - Structural & Civil",
+      "estimated_value": 385000.00,
+      "notes": "12-storey office development. Proposal sent 25/10. Meeting scheduled Nov 6.",
+      "last_contact": "2024-10-25",
+      "next_followup": "2024-11-06"
+    },
+    {
+      "lead_id": "LEAD-2024-679",
+      "name": "Carlos Martinez - Extension",
+      "type": "Residential",
+      "email": "carlos.m@email.com",
+      "phone": "+61 432 123 456",
+      "source": "Website Inquiry",
+      "date_created": "2024-10-26",
+      "status": "Quote Sent",
+      "project_type": "Second Storey Addition",
+      "estimated_value": 12500.00,
+      "notes": "Second storey addition to existing house. Quote sent 27/10.",
+      "last_contact": "2024-10-27",
+      "next_followup": "2024-11-03"
+    },
+    {
+      "lead_id": "LEAD-2024-680",
+      "name": "Queensland Transport",
+      "type": "Government",
+      "contact_person": "Rebecca Foster",
+      "email": "rebecca@tmr.qld.gov.au",
+      "phone": "+61 443 234 567",
+      "source": "Tender Opportunity",
+      "date_created": "2024-10-28",
+      "status": "Tender Preparation",
+      "project_type": "Bridge Inspection Program",
+      "estimated_value": 450000.00,
+      "notes": "Annual bridge inspection contract. Tender due Nov 20. Preparing submission.",
+      "last_contact": "2024-10-29",
+      "next_followup": "2024-11-20"
+    }
+  ],
+  "staff": [
+    {
+      "staff_id": "STAFF-001",
+      "name": "Dr. Michael Foster",
+      "role": "Director / Principal Engineer (Structural)",
+      "email": "michael@precisioneng.com.au",
+      "phone": "+61 421 123 456",
+      "qualifications": ["PhD Structural Engineering", "RPEQ Chartered", "CPEng", "MIEAust"],
+      "specializations": ["Structural Engineering", "High-rise Buildings", "Seismic Design"],
+      "active_projects": 8,
+      "employment_start": "2014-03-01"
+    },
+    {
+      "staff_id": "STAFF-002",
+      "name": "Dr. Sarah Mitchell",
+      "role": "Principal Engineer (Civil)",
+      "email": "sarah@precisioneng.com.au",
+      "phone": "+61 432 234 567",
+      "qualifications": ["PhD Civil Engineering", "RPEQ Chartered", "CPEng", "MIEAust"],
+      "specializations": ["Civil Engineering", "Road Design", "Drainage Systems"],
+      "active_projects": 7,
+      "employment_start": "2015-08-15"
+    },
+    {
+      "staff_id": "STAFF-003",
+      "name": "Dr. Jennifer Wong",
+      "role": "Senior Engineer (Infrastructure)",
+      "email": "jennifer@precisioneng.com.au",
+      "phone": "+61 443 345 678",
+      "qualifications": ["PhD Infrastructure Engineering", "RPEQ Chartered", "CPEng"],
+      "specializations": ["Bridge Engineering", "Infrastructure Assessment", "Asset Management"],
+      "active_projects": 6,
+      "employment_start": "2017-02-10"
+    },
+    {
+      "staff_id": "STAFF-004",
+      "name": "Tom Anderson",
+      "role": "Engineer (Structural)",
+      "email": "tom@precisioneng.com.au",
+      "phone": "+61 454 456 789",
+      "qualifications": ["Bachelor Engineering (Structural)", "RPEQ Progress"],
+      "specializations": ["Structural Design", "Residential Projects", "Revit Modeling"],
+      "active_projects": 5,
+      "employment_start": "2020-06-15"
+    },
+    {
+      "staff_id": "STAFF-005",
+      "name": "Emma Rodriguez",
+      "role": "Graduate Engineer",
+      "email": "emma@precisioneng.com.au",
+      "phone": "+61 465 567 890",
+      "qualifications": ["Bachelor Engineering (Civil)", "Graduate Engineer"],
+      "specializations": ["Civil Design", "CAD Drafting", "Learning Engineering"],
+      "active_projects": 3,
+      "employment_start": "2023-01-30"
+    },
+    {
+      "staff_id": "STAFF-006",
+      "name": "Sophie Martinez",
+      "role": "CAD Technician",
+      "email": "sophie@precisioneng.com.au",
+      "phone": "+61 476 678 901",
+      "qualifications": ["Diploma Engineering Drafting", "AutoCAD Certified", "Revit Certified"],
+      "specializations": ["Technical Drafting", "3D Modeling", "Documentation"],
+      "employment_start": "2019-09-01"
+    },
+    {
+      "staff_id": "STAFF-007",
+      "name": "Lisa Park",
+      "role": "Practice Manager",
+      "email": "lisa@precisioneng.com.au",
+      "phone": "+61 487 789 012",
+      "qualifications": ["Bachelor Business Management", "Engineering Administration"],
+      "specializations": ["Practice Management", "Client Relations", "Compliance"],
+      "employment_start": "2018-11-15"
+    }
+  ],
+  "onedrive_files": [
+    {
+      "file_id": "OD-PROJ-234-001",
+      "project_id": "PROJ-2024-234",
+      "file_name": "Thompson_Structural_Drawings.pdf",
+      "file_type": "Engineering Drawings",
+      "file_path": "/Projects/2024/Thompson Residence/Drawings/",
+      "upload_date": "2024-05-15",
+      "uploaded_by": "Dr. Michael Foster",
+      "description": "Structural engineering drawings and details",
+      "file_size": "8.4 MB"
+    },
+    {
+      "file_id": "OD-PROJ-234-002",
+      "project_id": "PROJ-2024-234",
+      "file_name": "Thompson_Structural_Calculations.pdf",
+      "file_type": "Calculations",
+      "file_path": "/Projects/2024/Thompson Residence/Calculations/",
+      "upload_date": "2024-05-10",
+      "uploaded_by": "Dr. Michael Foster",
+      "description": "Structural engineering calculations",
+      "file_size": "4.2 MB"
+    },
+    {
+      "file_id": "OD-PROJ-234-003",
+      "project_id": "PROJ-2024-234",
+      "file_name": "Thompson_Engineering_Certificate.pdf",
+      "file_type": "Certification",
+      "file_path": "/Projects/2024/Thompson Residence/Certification/",
+      "upload_date": "2024-05-20",
+      "uploaded_by": "Dr. Michael Foster",
+      "description": "RPEQ engineering certificate",
+      "file_size": "1.2 MB"
+    },
+    {
+      "file_id": "OD-PROJ-289-001",
+      "project_id": "PROJ-2024-289",
+      "file_name": "Academy_Classroom_Block_Drawings.pdf",
+      "file_type": "Engineering Drawings",
+      "file_path": "/Projects/2024/Brisbane Academy/Drawings/",
+      "upload_date": "2024-08-20",
+      "uploaded_by": "Dr. Michael Foster",
+      "description": "Structural drawings for classroom block",
+      "file_size": "12.6 MB"
+    },
+    {
+      "file_id": "OD-RPEQ-001",
+      "file_name": "RPEQ_Registrations_2024.pdf",
+      "file_type": "Registration",
+      "file_path": "/Company/RPEQ/",
+      "upload_date": "2024-07-01",
+      "uploaded_by": "Lisa Park",
+      "description": "Current RPEQ registrations for chartered engineers",
+      "file_size": "890 KB"
+    },
+    {
+      "file_id": "OD-INSURANCE-001",
+      "file_name": "Professional_Indemnity_Insurance_2024.pdf",
+      "file_type": "Insurance",
+      "file_path": "/Company/Insurance/",
+      "upload_date": "2024-07-01",
+      "uploaded_by": "Lisa Park",
+      "description": "$50M Professional Indemnity - Expires 30/06/2025",
+      "file_size": "1.1 MB"
+    }
+  ],
+  "metadata": {
+    "data_purpose": "11Labs Voice Agent Knowledge Base",
+    "business_type": "Engineering Consultancy",
+    "data_format": "JSON",
+    "last_updated": "2024-10-30",
+    "currency": "AUD",
+    "timezone": "Australia/Brisbane",
+    "notes": "This is dummy data for demonstration purposes. All client names, project details, and financial information are fictional."
+  }
+}
+
