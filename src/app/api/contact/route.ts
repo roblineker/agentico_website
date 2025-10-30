@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
 import { Client } from '@notionhq/client';
-import * as postmark from 'postmark';
+import { evaluateAndProcessLead } from '@/lib/lead-evaluation';
 
 // Define the same schema as in the form for validation
 const contactFormSchema = z.object({
@@ -417,241 +417,7 @@ async function saveToNotion(data: ContactFormData) {
   }
 }
 
-// Helper function to send emails via Postmark
-async function sendEmails(data: ContactFormData) {
-  const postmarkToken = process.env.POSTMARK_API_TOKEN;
-  
-  if (!postmarkToken) {
-    console.warn('Postmark API token not configured - skipping emails');
-    return { success: false, reason: 'not_configured' };
-  }
-  
-  try {
-    const client = new postmark.ServerClient(postmarkToken);
-    
-    // Email to sales team
-    const salesEmail = {
-      From: 'noreply@agentico.com.au',
-      To: 'sales@agentico.com.au',
-      Subject: `New Contact Form Submission - ${data.company}`,
-      HtmlBody: `
-        <h2>New Contact Form Submission</h2>
-        <p>You have received a new contact form submission from your website.</p>
-        
-        <h3>Contact Information</h3>
-        <ul>
-          <li><strong>Name:</strong> ${data.fullName}</li>
-          <li><strong>Email:</strong> ${data.email}</li>
-          <li><strong>Phone:</strong> ${data.phone}</li>
-          <li><strong>Company:</strong> ${data.company}</li>
-          ${data.website ? `<li><strong>Website:</strong> <a href="${data.website}">${data.website}</a></li>` : ''}
-        </ul>
-        
-        <h3>Business Details</h3>
-        <ul>
-          <li><strong>Industry:</strong> ${formatIndustry(data.industry)}</li>
-          <li><strong>Business Size:</strong> ${data.businessSize} employees</li>
-          <li><strong>Monthly Volume:</strong> ${data.monthlyVolume} transactions/jobs</li>
-          <li><strong>Team Size:</strong> ${data.teamSize} people will use the solution</li>
-        </ul>
-        
-        <h3>Project Scope</h3>
-        <p><strong>Timeline:</strong> ${data.timeline.replace('_', '-')}</p>
-        <p><strong>Budget:</strong> ${data.budget.replace('_', '-')}</p>
-        
-        <p><strong>Project Description:</strong></p>
-        <p>${data.projectDescription}</p>
-        
-        <p><strong>Success Metrics:</strong></p>
-        <p>${data.successMetrics}</p>
-        
-        <h3>Automation Goals</h3>
-        <ul>
-          ${data.automationGoals.map(goal => `<li>${goal.replace(/_/g, ' ')}</li>`).join('')}
-        </ul>
-        
-        <p><strong>Specific Processes to Automate:</strong></p>
-        <p>${data.specificProcesses}</p>
-        
-        ${data.projectIdeas && data.projectIdeas.length > 0 ? `
-          <h3>Project Ideas</h3>
-          ${data.projectIdeas.map(idea => `
-            <div style="margin-bottom: 15px; padding: 10px; background: #f5f5f5; border-left: 4px solid ${idea.priority === 'high' ? '#e53e3e' : idea.priority === 'medium' ? '#ecc94b' : '#48bb78'};">
-              <strong>${idea.title}</strong> (Priority: ${idea.priority.toUpperCase()})
-              <p>${idea.description}</p>
-            </div>
-          `).join('')}
-        ` : ''}
-        
-        <h3>Integration Requirements</h3>
-        <p><strong>Existing Tools:</strong> ${data.existingTools}</p>
-        <p><strong>Integration Needs:</strong> ${data.integrationNeeds.join(', ') || 'None specified'}</p>
-        <p><strong>Data Volume:</strong> ${data.dataVolume}</p>
-        
-        <hr style="margin: 20px 0;">
-        <p style="color: #666; font-size: 12px;">
-          This submission has been automatically saved to your Notion workspace.
-        </p>
-      `,
-      TextBody: `
-New Contact Form Submission
-
-CONTACT INFORMATION
-Name: ${data.fullName}
-Email: ${data.email}
-Phone: ${data.phone}
-Company: ${data.company}
-${data.website ? `Website: ${data.website}` : ''}
-
-BUSINESS DETAILS
-Industry: ${formatIndustry(data.industry)}
-Business Size: ${data.businessSize} employees
-Monthly Volume: ${data.monthlyVolume}
-Team Size: ${data.teamSize} people
-
-PROJECT SCOPE
-Timeline: ${data.timeline}
-Budget: ${data.budget}
-
-Project Description:
-${data.projectDescription}
-
-Success Metrics:
-${data.successMetrics}
-
-AUTOMATION GOALS
-${data.automationGoals.map(goal => `- ${goal.replace(/_/g, ' ')}`).join('\n')}
-
-Specific Processes:
-${data.specificProcesses}
-
-${data.projectIdeas && data.projectIdeas.length > 0 ? `
-PROJECT IDEAS
-${data.projectIdeas.map(idea => `
-[${idea.priority.toUpperCase()}] ${idea.title}
-${idea.description}
-`).join('\n')}
-` : ''}
-
-INTEGRATION REQUIREMENTS
-Existing Tools: ${data.existingTools}
-Integration Needs: ${data.integrationNeeds.join(', ') || 'None specified'}
-Data Volume: ${data.dataVolume}
-      `,
-      MessageStream: 'outbound',
-    };
-    
-    // Email to user (confirmation)
-    const userEmail = {
-      From: 'noreply@agentico.com.au',
-      To: data.email,
-      Subject: 'Thank you for contacting Agentico - Next Steps',
-      HtmlBody: `
-        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-          <h2 style="color: #2563eb;">Thank you for reaching out, ${data.fullName.split(' ')[0]}!</h2>
-          
-          <p>We've received your inquiry about AI automation for ${data.company}. Our team is excited to learn about your business and explore how we can help.</p>
-          
-          <h3>What happens next?</h3>
-          <ol>
-            <li><strong>Review (1-2 business days):</strong> We'll carefully review your submission and research your industry</li>
-            <li><strong>Discovery Call:</strong> We'll reach out to schedule a no-pressure conversation</li>
-            <li><strong>Assessment:</strong> We'll provide a preliminary assessment and discuss whether AI automation is a good fit</li>
-          </ol>
-          
-          <div style="background: #f0f9ff; padding: 15px; border-left: 4px solid #2563eb; margin: 20px 0;">
-            <h4 style="margin-top: 0;">Your Submission Summary</h4>
-            <p><strong>Company:</strong> ${data.company}</p>
-            <p><strong>Industry:</strong> ${formatIndustry(data.industry)}</p>
-            <p><strong>Timeline:</strong> ${data.timeline.replace('_', '-')}</p>
-            <p><strong>Budget Range:</strong> ${data.budget.replace('_', '-')}</p>
-          </div>
-          
-          <p>In the meantime, feel free to:</p>
-          <ul>
-            <li>📅 <a href="https://agentico.com.au/booking">Book a discovery call directly</a></li>
-            <li>🌐 Visit our website at <a href="https://agentico.com.au">agentico.com.au</a></li>
-            <li>📧 Reply to this email with any questions</li>
-            <li>📱 Call us on 0437 034 998</li>
-          </ul>
-          
-          <p>Looking forward to speaking with you soon!</p>
-          
-          <p style="margin-top: 30px;">
-            <strong>The Agentico Team</strong><br>
-            <a href="mailto:hello@agentico.com.au">hello@agentico.com.au</a><br>
-            <a href="https://agentico.com.au">agentico.com.au</a>
-          </p>
-          
-          <hr style="margin: 30px 0; border: none; border-top: 1px solid #e5e7eb;">
-          <p style="color: #6b7280; font-size: 12px;">
-            You're receiving this email because you submitted a contact form at agentico.com.au.
-            If you didn't submit this form, please let us know by replying to this email.
-          </p>
-        </div>
-      `,
-      TextBody: `
-Thank you for reaching out, ${data.fullName.split(' ')[0]}!
-
-We've received your inquiry about AI automation for ${data.company}. Our team is excited to learn about your business and explore how we can help.
-
-WHAT HAPPENS NEXT?
-
-1. Review (1-2 business days): We'll carefully review your submission and research your industry
-2. Discovery Call: We'll reach out to schedule a no-pressure conversation
-3. Assessment: We'll provide a preliminary assessment and discuss whether AI automation is a good fit
-
-YOUR SUBMISSION SUMMARY
-
-Company: ${data.company}
-Industry: ${formatIndustry(data.industry)}
-Timeline: ${data.timeline}
-Budget Range: ${data.budget}
-
-IN THE MEANTIME
-
-- Book a discovery call: https://agentico.com.au/booking
-- Visit our website: https://agentico.com.au
-- Email us: hello@agentico.com.au
-- Call us: 0437 034 998
-
-Looking forward to speaking with you soon!
-
-The Agentico Team
-hello@agentico.com.au
-agentico.com.au
-      `,
-      MessageStream: 'outbound',
-    };
-    
-    // Send both emails
-    const results = await Promise.allSettled([
-      client.sendEmail(salesEmail),
-      client.sendEmail(userEmail),
-    ]);
-    
-    const salesSent = results[0].status === 'fulfilled';
-    const userSent = results[1].status === 'fulfilled';
-    
-    console.log(`Email results - Sales: ${salesSent}, User: ${userSent}`);
-    
-    if (results[0].status === 'rejected') {
-      console.error('Sales email failed:', results[0].reason);
-    }
-    if (results[1].status === 'rejected') {
-      console.error('User email failed:', results[1].reason);
-    }
-    
-    return { 
-      success: salesSent && userSent,
-      salesSent,
-      userSent
-    };
-  } catch (error) {
-    console.error('Failed to send emails:', error);
-    return { success: false, error };
-  }
-}
+// Note: Email sending is now handled by the evaluateAndProcessLead function
 
 export async function POST(request: NextRequest) {
   try {
@@ -660,14 +426,21 @@ export async function POST(request: NextRequest) {
     // Validate the form data
     const validatedData = contactFormSchema.parse(body);
     
-    // Save to Notion (non-blocking)
-    saveToNotion(validatedData).catch((error) => {
-      console.error('Notion save failed:', error);
-    });
+    // Save to Notion and get client page ID
+    const notionResult = await saveToNotion(validatedData);
+    const clientPageId = notionResult.success ? notionResult.clientPageId : undefined;
     
-    // Send emails (non-blocking)
-    sendEmails(validatedData).catch((error) => {
-      console.error('Email sending failed:', error);
+    // Perform comprehensive lead evaluation and processing
+    // This includes:
+    // - Lead scoring
+    // - Web presence analysis
+    // - AI research (if configured)
+    // - Style guide generation (if configured)
+    // - Sending instant confirmation email
+    // - Sending detailed analysis email with style guides
+    // - Sending sales notification with full evaluation
+    evaluateAndProcessLead(validatedData, clientPageId).catch((error) => {
+      console.error('Lead evaluation failed:', error);
     });
     
     // Get webhook URLs from environment variables

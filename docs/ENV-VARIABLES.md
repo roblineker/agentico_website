@@ -16,6 +16,47 @@ NOTION_API_TOKEN=secret_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 - **See**: [NOTION-SETUP.md](../NOTION-SETUP.md) for setup instructions
 - **Note**: The database is automatically discovered - no need for database ID!
 
+### Postmark Email Integration (for contact form notifications)
+
+```env
+POSTMARK_API_TOKEN=your-postmark-server-api-token
+```
+- **Description**: Your Postmark Server API token
+- **How to get**: Get from your Postmark server settings at https://account.postmarkapp.com/servers
+- **Format**: Alphanumeric string (e.g., `secret_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`)
+- **Required**: Yes (for sending email notifications)
+- **See**: [EMAIL-NOTIFICATION-SETUP.md](EMAIL-NOTIFICATION-SETUP.md) for setup instructions
+- **Note**: Make sure sender domain is verified in Postmark!
+
+### OpenAI Integration (for AI research and style guides)
+
+```env
+OPENAI_API_KEY=sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+```
+- **Description**: Your OpenAI API key for GPT-4 access
+- **How to get**: Create an API key at https://platform.openai.com/api-keys
+- **Format**: Starts with `sk-`
+- **Required**: No, but highly recommended (enables AI research and style guide generation)
+- **Used for**: 
+  - Industry-specific insights and competitive analysis
+  - Automation opportunity identification
+  - ROI estimation
+  - Custom style guide generation for each lead
+- **Note**: Requires GPT-4 access on your OpenAI account
+
+### Notion Style Guide Databases (for storing generated style guides)
+
+```env
+NOTION_COMPANY_STYLE_GUIDES_DB_ID=xxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+NOTION_CONTACT_STYLE_GUIDES_DB_ID=xxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+```
+- **Description**: Database IDs for storing AI-generated style guides
+- **How to get**: Create databases in Notion and extract the ID from the URL
+- **Format**: 32-character alphanumeric string
+- **Required**: No (but needed if you want style guides saved to Notion)
+- **Used for**: Storing customized company and contact style guides for each lead
+- **See**: [LEAD-EVALUATION-SYSTEM.md](LEAD-EVALUATION-SYSTEM.md) for database schema
+
 ## Optional Integrations
 
 ### N8N Webhooks (for automation workflows)
@@ -37,6 +78,15 @@ N8N_PROD_WEBHOOK_URL=https://your-n8n-instance.com/webhook/your-webhook-path
 - **Used when**: `NODE_ENV === 'production'`
 
 ```env
+N8N_ELEVENLABS_WEBHOOK_URL=https://your-n8n-instance.com/webhook/elevenlabs
+```
+- **Description**: Webhook URL specifically for ElevenLabs phone call data
+- **How to get**: Create a webhook node in your N8N workflow
+- **Required**: No (optional automation)
+- **Used when**: ElevenLabs agent submits contact form data
+- **See**: `src/elevenlabs_mcp/` for ElevenLabs integration documentation
+
+```env
 N8N_SEND_TO_BOTH=false
 ```
 - **Description**: Send to both test and production webhooks
@@ -44,6 +94,18 @@ N8N_SEND_TO_BOTH=false
 - **Default**: `false`
 - **Required**: No
 - **Use case**: Testing production workflows in development
+
+### ElevenLabs API Authentication (optional)
+
+```env
+ELEVENLABS_API_KEY=your-secret-api-key
+```
+- **Description**: API key for authenticating ElevenLabs agent requests
+- **How to get**: Generate using `openssl rand -hex 32` or similar
+- **Required**: No (but recommended for production security)
+- **Used for**: Securing the `/api/elevenlabs/*` endpoints
+- **Format**: Any secure random string (32+ characters recommended)
+- **Note**: Configure this same key in your ElevenLabs agent as a request header
 
 ## Next.js Configuration
 
@@ -68,6 +130,16 @@ NODE_ENV=development
 ```env
 # Notion Integration (Required)
 NOTION_API_TOKEN=secret_abcd1234efgh5678ijkl9012mnop3456qrst7890uvwx1234yz567890
+
+# Postmark Email Integration (Required)
+POSTMARK_API_TOKEN=secret_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+# OpenAI Integration (Optional but recommended)
+OPENAI_API_KEY=sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+# Notion Style Guide Databases (Optional)
+NOTION_COMPANY_STYLE_GUIDES_DB_ID=xxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+NOTION_CONTACT_STYLE_GUIDES_DB_ID=xxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 # N8N Webhooks (Optional)
 N8N_TEST_WEBHOOK_URL=https://n8n.example.com/webhook-test/contact-form

@@ -5,9 +5,6 @@ import * as path from 'path';
 // Path to the knowledge base
 const KNOWLEDGE_BASE_PATH = path.join(process.cwd(), 'src', 'elevenlabs_mcp', 'example-data');
 
-// Path to the system prompt
-const SYSTEM_PROMPT_PATH = path.join(process.cwd(), 'src', 'elevenlabs_mcp', 'elevenlabs_system_prompt_updated.md');
-
 // MCP API Secret from environment
 const MCP_API_SECRET = process.env.MCP_API_SECRET;
 
@@ -58,14 +55,6 @@ function listKnowledgeFiles(): string[] {
         return [];
     }
     return fs.readdirSync(KNOWLEDGE_BASE_PATH).filter(file => file.endsWith('.json'));
-}
-
-// Helper function to read the system prompt
-function readSystemPrompt(): string {
-    if (!fs.existsSync(SYSTEM_PROMPT_PATH)) {
-        throw new Error('System prompt file not found');
-    }
-    return fs.readFileSync(SYSTEM_PROMPT_PATH, 'utf-8');
 }
 
 // Helper function to search across all knowledge bases
@@ -214,18 +203,10 @@ const TOOLS = [
                 }
             }
         }
-    },
-    {
-        name: 'get_system_prompt',
-        description: 'Retrieve the ElevenLabs system prompt for the conversational AI agent.',
-        inputSchema: {
-            type: 'object',
-            properties: {}
-        }
     }
 ];
 
-// MCP Resources - dynamically generated to include system prompt and knowledge files
+// MCP Resources - dynamically generated from knowledge files
 function getResources() {
     const knowledgeResources = listKnowledgeFiles().map(file => ({
         uri: `knowledge://${file.replace('.json', '')}`,
@@ -234,15 +215,7 @@ function getResources() {
         mimeType: 'application/json'
     }));
 
-    // Add system prompt resource
-    const systemPromptResource = {
-        uri: 'prompt://elevenlabs-system-prompt',
-        name: 'ElevenLabs System Prompt',
-        description: 'System prompt for ElevenLabs conversational AI agent (Alex the receptionist)',
-        mimeType: 'text/markdown'
-    };
-
-    return [systemPromptResource, ...knowledgeResources];
+    return knowledgeResources;
 }
 
 // Handle MCP Tool Calls
@@ -327,16 +300,6 @@ function handleToolCall(toolName: string, args: Record<string, unknown>) {
             };
         }
 
-        case 'get_system_prompt': {
-            const prompt = readSystemPrompt();
-            return {
-                content: [{
-                    type: 'text',
-                    text: prompt
-                }]
-            };
-        }
-
         default:
             throw new Error(`Unknown tool: ${toolName}`);
     }
@@ -344,18 +307,6 @@ function handleToolCall(toolName: string, args: Record<string, unknown>) {
 
 // Handle MCP Resource Reads
 function handleResourceRead(uri: string) {
-    // Handle system prompt resource
-    if (uri === 'prompt://elevenlabs-system-prompt') {
-        const prompt = readSystemPrompt();
-        return {
-            contents: [{
-                uri,
-                mimeType: 'text/markdown',
-                text: prompt
-            }]
-        };
-    }
-    
     // Handle knowledge base resources
     const match = uri.match(/^knowledge:\/\/(.+)$/);
     if (!match) {
