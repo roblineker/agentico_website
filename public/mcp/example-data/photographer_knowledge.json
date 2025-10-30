@@ -1,0 +1,713 @@
+{
+  "company": {
+    "name": "Capture Moments Photography",
+    "abn": "12 234 567 890",
+    "email": "info@capturemoments.com.au",
+    "phone": "+61 7 3456 7890",
+    "address": "Studio 3, 89 Creative Lane, Fortitude Valley QLD 4006",
+    "website": "www.capturemoments.com.au",
+    "specializations": ["Wedding Photography", "Portrait Sessions", "Commercial Photography", "Event Photography", "Family Photos"]
+  },
+  "integrations": {
+    "booking": "Pixifi",
+    "accounting": "Xero",
+    "gallery": "Pixieset",
+    "editing": "Adobe Creative Cloud",
+    "voice_agent": "Custom Voice Agent",
+    "file_storage": "OneDrive",
+    "crm": "HoneyBook",
+    "invoicing": "Pixifi"
+  },
+  "clients": [
+    {
+      "client_id": "CLI-001",
+      "name": "Sarah & Michael Henderson",
+      "type": "Wedding",
+      "email": "sarah.henderson@email.com",
+      "phone": "+61 412 345 678",
+      "wedding_date": "2025-03-15",
+      "venue": "Summergrove Estate, Gold Coast",
+      "package": "Premium Wedding Package",
+      "contract_value": 4500.00,
+      "deposit_paid": 1350.00,
+      "status": "Booked - Pre-Wedding Shoot Scheduled"
+    },
+    {
+      "client_id": "CLI-002",
+      "name": "Emma Thompson",
+      "type": "Family Portrait",
+      "email": "emma.t@email.com",
+      "phone": "+61 423 456 789",
+      "session_date": "2024-10-15",
+      "location": "Roma Street Parklands",
+      "package": "Family Package",
+      "contract_value": 650.00,
+      "deposit_paid": 650.00,
+      "status": "Completed - Awaiting Print Order"
+    },
+    {
+      "client_id": "CLI-003",
+      "name": "TechFlow Solutions Pty Ltd",
+      "type": "Commercial",
+      "contact_person": "David Chen",
+      "email": "david@techflow.com.au",
+      "phone": "+61 434 567 890",
+      "session_date": "2024-09-20",
+      "location": "Client Office",
+      "package": "Corporate Headshots",
+      "contract_value": 2800.00,
+      "deposit_paid": 2800.00,
+      "status": "Completed - Images Delivered"
+    },
+    {
+      "client_id": "CLI-004",
+      "name": "Lisa & James Rodriguez",
+      "type": "Wedding",
+      "email": "lisa.rodriguez@email.com",
+      "phone": "+61 445 678 901",
+      "wedding_date": "2024-11-22",
+      "venue": "Riverlife, South Bank",
+      "package": "Standard Wedding Package",
+      "contract_value": 3200.00,
+      "deposit_paid": 1600.00,
+      "status": "Booked - Final Payment Due"
+    },
+    {
+      "client_id": "CLI-005",
+      "name": "Brisbane Events Company",
+      "type": "Event",
+      "contact_person": "Tony Nguyen",
+      "email": "tony@brisbaneevents.com.au",
+      "phone": "+61 456 789 012",
+      "session_date": "2024-10-28",
+      "location": "Brisbane Convention Centre",
+      "package": "Event Photography",
+      "contract_value": 1850.00,
+      "deposit_paid": 1850.00,
+      "status": "Completed - Editing in Progress"
+    },
+    {
+      "client_id": "CLI-006",
+      "name": "Rebecca Foster",
+      "type": "Maternity",
+      "email": "rebecca.f@email.com",
+      "phone": "+61 467 890 123",
+      "session_date": "2024-11-10",
+      "location": "Studio",
+      "package": "Maternity Session",
+      "contract_value": 550.00,
+      "deposit_paid": 275.00,
+      "status": "Booked"
+    },
+    {
+      "client_id": "CLI-007",
+      "name": "Carlos Martinez",
+      "type": "Portrait",
+      "email": "carlos.m@email.com",
+      "phone": "+61 478 901 234",
+      "session_date": "2024-09-05",
+      "location": "Studio",
+      "package": "Professional Headshots",
+      "contract_value": 450.00,
+      "deposit_paid": 450.00,
+      "status": "Completed - Images Delivered"
+    },
+    {
+      "client_id": "CLI-008",
+      "name": "Sophie & Mark Williams",
+      "type": "Engagement",
+      "email": "sophie.w@email.com",
+      "phone": "+61 489 012 345",
+      "session_date": "2024-11-02",
+      "location": "Mt Coot-tha Lookout",
+      "package": "Engagement Session",
+      "contract_value": 750.00,
+      "deposit_paid": 375.00,
+      "status": "Booked"
+    },
+    {
+      "client_id": "CLI-009",
+      "name": "Brisbane Real Estate Agency",
+      "type": "Commercial",
+      "contact_person": "Jennifer Wong",
+      "email": "jennifer@realestate.com.au",
+      "phone": "+61 490 123 456",
+      "ongoing": true,
+      "package": "Property Photography Retainer",
+      "monthly_retainer": 1200.00,
+      "status": "Active Client"
+    }
+  ],
+  "packages": [
+    {
+      "package_id": "PKG-001",
+      "name": "Standard Wedding Package",
+      "price": 3200.00,
+      "duration_hours": 8,
+      "inclusions": ["8 hours coverage", "2 photographers", "Online gallery", "300+ edited photos", "Print rights"],
+      "deposit_required": 50
+    },
+    {
+      "package_id": "PKG-002",
+      "name": "Premium Wedding Package",
+      "price": 4500.00,
+      "duration_hours": 10,
+      "inclusions": ["10 hours coverage", "2 photographers", "Engagement shoot", "Online gallery", "500+ edited photos", "Print rights", "Custom USB"],
+      "deposit_required": 30
+    },
+    {
+      "package_id": "PKG-003",
+      "name": "Family Package",
+      "price": 650.00,
+      "duration_hours": 2,
+      "inclusions": ["2 hour session", "Outdoor location", "Online gallery", "50+ edited photos", "Print rights"],
+      "deposit_required": 100
+    },
+    {
+      "package_id": "PKG-004",
+      "name": "Professional Headshots",
+      "price": 450.00,
+      "duration_hours": 1,
+      "inclusions": ["1 hour studio session", "Outfit changes", "10 edited photos", "Print rights"],
+      "deposit_required": 100
+    },
+    {
+      "package_id": "PKG-005",
+      "name": "Event Photography",
+      "price_per_hour": 185.00,
+      "minimum_hours": 4,
+      "inclusions": ["Per hour rate", "Online gallery", "All edited photos", "Print rights"],
+      "deposit_required": 50
+    }
+  ],
+  "shoots": [
+    {
+      "shoot_id": "SHOOT-2024-156",
+      "client_id": "CLI-002",
+      "client_name": "Emma Thompson",
+      "shoot_type": "Family Portrait",
+      "shoot_date": "2024-10-15",
+      "shoot_time": "4:00 PM",
+      "location": "Roma Street Parklands",
+      "duration_hours": 2.0,
+      "photographer": "Jessica Brown",
+      "assistant": "Tom Anderson",
+      "status": "Completed - Delivered",
+      "photos_taken": 285,
+      "photos_delivered": 65,
+      "editing_completed": "2024-10-22"
+    },
+    {
+      "shoot_id": "SHOOT-2024-178",
+      "client_id": "CLI-003",
+      "client_name": "TechFlow Solutions Pty Ltd",
+      "shoot_type": "Corporate Headshots",
+      "shoot_date": "2024-09-20",
+      "shoot_time": "9:00 AM",
+      "location": "Client Office - Level 5, 120 Eagle Street",
+      "duration_hours": 6.0,
+      "photographer": "Jessica Brown",
+      "assistant": "Sophie Martinez",
+      "status": "Completed - Delivered",
+      "photos_taken": 420,
+      "photos_delivered": 72,
+      "editing_completed": "2024-09-27"
+    },
+    {
+      "shoot_id": "SHOOT-2024-189",
+      "client_id": "CLI-005",
+      "client_name": "Brisbane Events Company",
+      "shoot_type": "Event Photography",
+      "shoot_date": "2024-10-28",
+      "shoot_time": "6:00 PM",
+      "location": "Brisbane Convention Centre",
+      "duration_hours": 5.0,
+      "photographer": "Jessica Brown",
+      "assistant": "Tom Anderson",
+      "status": "In Progress - Editing",
+      "photos_taken": 650,
+      "photos_delivered": 0,
+      "editing_completed": null
+    }
+  ],
+  "invoices": [
+    {
+      "invoice_id": "INV-2024-0789",
+      "client_id": "CLI-001",
+      "client_name": "Sarah & Michael Henderson",
+      "invoice_date": "2024-08-15",
+      "due_date": "2024-08-29",
+      "status": "Paid",
+      "payment_date": "2024-08-22",
+      "subtotal": 1350.00,
+      "gst": 135.00,
+      "total": 1485.00,
+      "description": "Wedding photography deposit - 30%",
+      "xero_invoice_id": "XERO-INV-0789",
+      "line_items": [
+        {
+          "description": "Deposit - Premium Wedding Package",
+          "quantity": 1,
+          "unit_price": 1350.00,
+          "gst": 135.00,
+          "total": 1485.00
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-2024-0812",
+      "client_id": "CLI-002",
+      "client_name": "Emma Thompson",
+      "invoice_date": "2024-10-22",
+      "due_date": "2024-11-05",
+      "status": "Sent",
+      "payment_date": null,
+      "subtotal": 285.00,
+      "gst": 28.50,
+      "total": 313.50,
+      "description": "Print order - family photos",
+      "xero_invoice_id": "XERO-INV-0812",
+      "line_items": [
+        {
+          "description": "10x15 prints",
+          "quantity": 15,
+          "unit_price": 8.00,
+          "gst": 12.00,
+          "total": 132.00
+        },
+        {
+          "description": "20x30 canvas print",
+          "quantity": 1,
+          "unit_price": 165.00,
+          "gst": 16.50,
+          "total": 181.50
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-2024-0823",
+      "client_id": "CLI-003",
+      "client_name": "TechFlow Solutions Pty Ltd",
+      "invoice_date": "2024-09-27",
+      "due_date": "2024-10-27",
+      "status": "Paid",
+      "payment_date": "2024-10-15",
+      "subtotal": 2800.00,
+      "gst": 280.00,
+      "total": 3080.00,
+      "description": "Corporate headshots - 12 staff members",
+      "xero_invoice_id": "XERO-INV-0823",
+      "line_items": [
+        {
+          "description": "Corporate headshot photography - full day",
+          "quantity": 1,
+          "unit_price": 2800.00,
+          "gst": 280.00,
+          "total": 3080.00
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-2024-0845",
+      "client_id": "CLI-004",
+      "client_name": "Lisa & James Rodriguez",
+      "invoice_date": "2024-09-10",
+      "due_date": "2024-09-24",
+      "status": "Paid",
+      "payment_date": "2024-09-18",
+      "subtotal": 1600.00,
+      "gst": 160.00,
+      "total": 1760.00,
+      "description": "Wedding photography deposit - 50%",
+      "xero_invoice_id": "XERO-INV-0845",
+      "line_items": [
+        {
+          "description": "Deposit - Standard Wedding Package",
+          "quantity": 1,
+          "unit_price": 1600.00,
+          "gst": 160.00,
+          "total": 1760.00
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-2024-0867",
+      "client_id": "CLI-004",
+      "client_name": "Lisa & James Rodriguez",
+      "invoice_date": "2024-11-01",
+      "due_date": "2024-11-22",
+      "status": "Sent",
+      "payment_date": null,
+      "subtotal": 1600.00,
+      "gst": 160.00,
+      "total": 1760.00,
+      "description": "Wedding photography balance - 50%",
+      "xero_invoice_id": "XERO-INV-0867",
+      "line_items": [
+        {
+          "description": "Balance - Standard Wedding Package",
+          "quantity": 1,
+          "unit_price": 1600.00,
+          "gst": 160.00,
+          "total": 1760.00
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-2024-0878",
+      "client_id": "CLI-005",
+      "client_name": "Brisbane Events Company",
+      "invoice_date": "2024-10-28",
+      "due_date": "2024-11-27",
+      "status": "Sent",
+      "payment_date": null,
+      "subtotal": 1850.00,
+      "gst": 185.00,
+      "total": 2035.00,
+      "description": "Event photography - Corporate Gala",
+      "xero_invoice_id": "XERO-INV-0878",
+      "line_items": [
+        {
+          "description": "Event photography - 5 hours",
+          "quantity": 5,
+          "unit_price": 185.00,
+          "gst": 92.50,
+          "total": 1017.50
+        },
+        {
+          "description": "Rush editing (48hr turnaround)",
+          "quantity": 1,
+          "unit_price": 925.00,
+          "gst": 92.50,
+          "total": 1017.50
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-2024-0889",
+      "client_id": "CLI-009",
+      "client_name": "Brisbane Real Estate Agency",
+      "invoice_date": "2024-10-31",
+      "due_date": "2024-11-30",
+      "status": "Sent",
+      "payment_date": null,
+      "subtotal": 1200.00,
+      "gst": 120.00,
+      "total": 1320.00,
+      "description": "Property photography retainer - October 2024",
+      "xero_invoice_id": "XERO-INV-0889",
+      "line_items": [
+        {
+          "description": "Monthly retainer - property photography services",
+          "quantity": 1,
+          "unit_price": 1200.00,
+          "gst": 120.00,
+          "total": 1320.00
+        }
+      ]
+    }
+  ],
+  "bills": [
+    {
+      "bill_id": "BILL-2024-5678",
+      "supplier": "Adobe Creative Cloud",
+      "bill_date": "2024-10-01",
+      "due_date": "2024-10-31",
+      "status": "Paid",
+      "payment_date": "2024-10-15",
+      "subtotal": 145.00,
+      "gst": 14.50,
+      "total": 159.50,
+      "description": "Adobe subscription - October",
+      "xero_bill_id": "XERO-BILL-5678",
+      "line_items": [
+        {
+          "description": "Adobe Creative Cloud Photography Plan",
+          "quantity": 1,
+          "unit_price": 145.00,
+          "gst": 14.50,
+          "total": 159.50
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-5689",
+      "supplier": "Pixieset",
+      "bill_date": "2024-10-01",
+      "due_date": "2024-10-31",
+      "status": "Paid",
+      "payment_date": "2024-10-15",
+      "subtotal": 85.00,
+      "gst": 8.50,
+      "total": 93.50,
+      "description": "Gallery hosting - October",
+      "xero_bill_id": "XERO-BILL-5689",
+      "line_items": [
+        {
+          "description": "Pixieset gallery hosting subscription",
+          "quantity": 1,
+          "unit_price": 85.00,
+          "gst": 8.50,
+          "total": 93.50
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-5701",
+      "supplier": "Pixifi",
+      "bill_date": "2024-10-01",
+      "due_date": "2024-10-31",
+      "status": "Paid",
+      "payment_date": "2024-10-15",
+      "subtotal": 125.00,
+      "gst": 12.50,
+      "total": 137.50,
+      "description": "Booking system - October",
+      "xero_bill_id": "XERO-BILL-5701",
+      "line_items": [
+        {
+          "description": "Pixifi booking and CRM subscription",
+          "quantity": 1,
+          "unit_price": 125.00,
+          "gst": 12.50,
+          "total": 137.50
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-5712",
+      "supplier": "Camera House Brisbane",
+      "bill_date": "2024-10-18",
+      "due_date": "2024-11-17",
+      "status": "Unpaid",
+      "payment_date": null,
+      "subtotal": 2850.00,
+      "gst": 285.00,
+      "total": 3135.00,
+      "description": "Equipment purchase - backup camera body",
+      "xero_bill_id": "XERO-BILL-5712",
+      "line_items": [
+        {
+          "description": "Canon EOS R5 camera body",
+          "quantity": 1,
+          "unit_price": 2850.00,
+          "gst": 285.00,
+          "total": 3135.00
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-5723",
+      "supplier": "Professional Photo Lab",
+      "bill_date": "2024-10-22",
+      "due_date": "2024-11-21",
+      "status": "Unpaid",
+      "payment_date": null,
+      "subtotal": 485.00,
+      "gst": 48.50,
+      "total": 533.50,
+      "description": "Prints and products - client orders",
+      "xero_bill_id": "XERO-BILL-5723",
+      "line_items": [
+        {
+          "description": "Professional prints various sizes",
+          "quantity": 1,
+          "unit_price": 285.00,
+          "gst": 28.50,
+          "total": 313.50
+        },
+        {
+          "description": "Canvas print 20x30",
+          "quantity": 1,
+          "unit_price": 200.00,
+          "gst": 20.00,
+          "total": 220.00
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-5734",
+      "supplier": "Studio Rental - Fortitude Valley",
+      "bill_date": "2024-10-01",
+      "due_date": "2024-10-14",
+      "status": "Paid",
+      "payment_date": "2024-10-10",
+      "subtotal": 1650.00,
+      "gst": 165.00,
+      "total": 1815.00,
+      "description": "Studio rent - October",
+      "xero_bill_id": "XERO-BILL-5734",
+      "line_items": [
+        {
+          "description": "Studio 3 monthly rent",
+          "quantity": 1,
+          "unit_price": 1650.00,
+          "gst": 165.00,
+          "total": 1815.00
+        }
+      ]
+    }
+  ],
+  "leads": [
+    {
+      "lead_id": "LEAD-2024-567",
+      "name": "Michael & Rebecca Patterson",
+      "type": "Wedding",
+      "email": "michael.p@email.com",
+      "phone": "+61 421 456 789",
+      "source": "Instagram",
+      "date_created": "2024-10-25",
+      "wedding_date": "2025-09-20",
+      "status": "Quote Sent",
+      "package_interested": "Premium Wedding Package",
+      "notes": "Venue TBD. Sent premium package quote. Following up next week.",
+      "last_contact": "2024-10-26",
+      "next_followup": "2024-11-02"
+    },
+    {
+      "lead_id": "LEAD-2024-568",
+      "name": "Brisbane Design Studio",
+      "type": "Commercial",
+      "contact_person": "Sophie Williams",
+      "email": "sophie@designstudio.com.au",
+      "phone": "+61 432 567 890",
+      "source": "Referral",
+      "date_created": "2024-10-27",
+      "status": "Meeting Scheduled",
+      "package_interested": "Product Photography",
+      "notes": "Need product photography for new range. Meeting scheduled Nov 5.",
+      "last_contact": "2024-10-28",
+      "next_followup": "2024-11-05"
+    },
+    {
+      "lead_id": "LEAD-2024-569",
+      "name": "Amanda Foster",
+      "type": "Newborn",
+      "email": "amanda.f@email.com",
+      "phone": "+61 443 678 901",
+      "source": "Voice Agent - Inbound Call",
+      "date_created": "2024-10-28",
+      "baby_due_date": "2024-12-15",
+      "status": "Initial Contact",
+      "package_interested": "Newborn Session",
+      "notes": "Called via voice agent. Due mid-December. Sending newborn package info.",
+      "last_contact": "2024-10-28",
+      "next_followup": "2024-11-10"
+    },
+    {
+      "lead_id": "LEAD-2024-570",
+      "name": "Tony & Lisa Chen",
+      "type": "Family",
+      "email": "tony.chen@email.com",
+      "phone": "+61 454 789 012",
+      "source": "Google Search",
+      "date_created": "2024-10-29",
+      "status": "Quote Sent",
+      "package_interested": "Family Package",
+      "notes": "Family of 5 wanting outdoor shoot. Quote sent for family package.",
+      "last_contact": "2024-10-29",
+      "next_followup": "2024-11-03"
+    }
+  ],
+  "staff": [
+    {
+      "staff_id": "STAFF-001",
+      "name": "Jessica Brown",
+      "role": "Owner / Lead Photographer",
+      "email": "jessica@capturemoments.com.au",
+      "phone": "+61 421 678 901",
+      "qualifications": ["Professional Photography Degree", "AIPP Accredited Professional Photographer"],
+      "specializations": ["Weddings", "Portraits", "Commercial"],
+      "employment_start": "2016-05-01"
+    },
+    {
+      "staff_id": "STAFF-002",
+      "name": "Tom Anderson",
+      "role": "Second Photographer / Assistant",
+      "email": "tom@capturemoments.com.au",
+      "phone": "+61 432 789 012",
+      "qualifications": ["Photography Certificate IV"],
+      "specializations": ["Wedding Assistant", "Events"],
+      "employment_type": "Casual",
+      "day_rate": 450.00,
+      "employment_start": "2019-08-15"
+    },
+    {
+      "staff_id": "STAFF-003",
+      "name": "Sophie Martinez",
+      "role": "Assistant / Studio Manager",
+      "email": "sophie@capturemoments.com.au",
+      "phone": "+61 443 890 123",
+      "qualifications": ["Photography Certificate III", "Business Administration"],
+      "specializations": ["Studio Management", "Client Liaison", "Editing"],
+      "employment_type": "Part Time",
+      "hourly_rate": 28.00,
+      "employment_start": "2021-03-01"
+    }
+  ],
+  "onedrive_files": [
+    {
+      "file_id": "OD-SHOOT-156",
+      "shoot_id": "SHOOT-2024-156",
+      "file_name": "Thompson_Family_Gallery.zip",
+      "file_type": "Client Gallery",
+      "file_path": "/Shoots/2024/October/Thompson Family/",
+      "upload_date": "2024-10-22",
+      "uploaded_by": "Jessica Brown",
+      "description": "Final edited gallery - 65 images",
+      "file_size": "485 MB"
+    },
+    {
+      "file_id": "OD-SHOOT-178",
+      "shoot_id": "SHOOT-2024-178",
+      "file_name": "TechFlow_Headshots_Gallery.zip",
+      "file_type": "Client Gallery",
+      "file_path": "/Shoots/2024/September/TechFlow/",
+      "upload_date": "2024-09-27",
+      "uploaded_by": "Jessica Brown",
+      "description": "Corporate headshots - 72 final images",
+      "file_size": "1.2 GB"
+    },
+    {
+      "file_id": "OD-CONTRACT-001",
+      "client_id": "CLI-001",
+      "file_name": "Henderson_Wedding_Contract_Signed.pdf",
+      "file_type": "Contract",
+      "file_path": "/Contracts/2024/Weddings/",
+      "upload_date": "2024-08-15",
+      "uploaded_by": "Jessica Brown",
+      "description": "Signed wedding photography contract",
+      "file_size": "1.2 MB"
+    },
+    {
+      "file_id": "OD-INSURANCE-001",
+      "file_name": "Professional_Indemnity_Insurance_2024.pdf",
+      "file_type": "Insurance",
+      "file_path": "/Business/Insurance/",
+      "upload_date": "2024-07-01",
+      "uploaded_by": "Jessica Brown",
+      "description": "$20M Professional Indemnity - Expires 30/06/2025",
+      "file_size": "678 KB"
+    },
+    {
+      "file_id": "OD-EQUIPMENT-001",
+      "file_name": "Equipment_Inventory_2024.xlsx",
+      "file_type": "Inventory",
+      "file_path": "/Business/Equipment/",
+      "upload_date": "2024-01-15",
+      "uploaded_by": "Sophie Martinez",
+      "description": "Camera equipment and asset register",
+      "file_size": "145 KB"
+    }
+  ],
+  "metadata": {
+    "data_purpose": "11Labs Voice Agent Knowledge Base",
+    "business_type": "Photography Business",
+    "data_format": "JSON",
+    "last_updated": "2024-10-30",
+    "currency": "AUD",
+    "timezone": "Australia/Brisbane",
+    "notes": "This is dummy data for demonstration purposes. All client names, financial data, and booking information are fictional."
+  }
+}
+
