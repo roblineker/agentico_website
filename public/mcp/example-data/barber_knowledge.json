@@ -1,0 +1,597 @@
+{
+  "company": {
+    "name": "The Gents Barber Shop",
+    "abn": "34 567 890 124",
+    "email": "bookings@thegentsbarber.com.au",
+    "phone": "+61 7 3252 9123",
+    "address": "156 Brunswick Street, Fortitude Valley QLD 4006"
+  },
+  "integrations": {
+    "booking": "Fresha",
+    "pos": "Square",
+    "accounting": "Xero",
+    "email": "Gmail",
+    "voice_agent": "Custom Voice Agent",
+    "website": "Squarespace",
+    "file_storage": "Google Drive"
+  },
+  "shop_hours": {
+    "monday": "Closed",
+    "tuesday_friday": "9:00 AM - 7:00 PM",
+    "saturday": "8:00 AM - 5:00 PM",
+    "sunday": "10:00 AM - 4:00 PM"
+  },
+  "services_pricing": [
+    {
+      "service": "Gentleman's Haircut",
+      "duration": "30 mins",
+      "price": 45.00,
+      "description": "Cut and style with hot towel finish"
+    },
+    {
+      "service": "Buzz Cut",
+      "duration": "15 mins",
+      "price": 25.00,
+      "description": "Clipper all over"
+    },
+    {
+      "service": "Beard Trim",
+      "duration": "15 mins",
+      "price": 25.00,
+      "description": "Shape and style with hot towel"
+    },
+    {
+      "service": "Hot Shave",
+      "duration": "30 mins",
+      "price": 45.00,
+      "description": "Traditional straight razor shave with hot towels"
+    },
+    {
+      "service": "Haircut & Beard Combo",
+      "duration": "45 mins",
+      "price": 65.00,
+      "description": "Full service with hot towel finish"
+    },
+    {
+      "service": "Haircut, Beard & Shave Package",
+      "duration": "60 mins",
+      "price": 85.00,
+      "description": "Complete grooming experience"
+    },
+    {
+      "service": "Kids Cut (Under 12)",
+      "duration": "20 mins",
+      "price": 30.00,
+      "description": "Children's haircut"
+    },
+    {
+      "service": "Hair Color",
+      "duration": "45 mins",
+      "price": 65.00,
+      "description": "Grey coverage or color"
+    }
+  ],
+  "clients": [
+    {
+      "client_id": "CLI-001",
+      "name": "Michael Thompson",
+      "email": "michael.thompson@email.com",
+      "phone": "+61 412 345 678",
+      "first_visit": "2023-06-15",
+      "preferred_barber": "Jake Morrison",
+      "regular_service": "Haircut & Beard Combo",
+      "frequency": "Every 3 weeks",
+      "total_visits": 22,
+      "total_spent": 1430.00
+    },
+    {
+      "client_id": "CLI-002",
+      "name": "David Chen",
+      "email": "david.chen@email.com",
+      "phone": "+61 423 456 789",
+      "first_visit": "2024-02-20",
+      "preferred_barber": "Alex Rodriguez",
+      "regular_service": "Gentleman's Haircut",
+      "frequency": "Every 4 weeks",
+      "total_visits": 8,
+      "total_spent": 360.00
+    },
+    {
+      "client_id": "CLI-003",
+      "name": "Marcus Wilson",
+      "email": "marcus.wilson@email.com",
+      "phone": "+61 434 567 890",
+      "first_visit": "2024-08-10",
+      "preferred_barber": "Jake Morrison",
+      "regular_service": "Buzz Cut",
+      "frequency": "Every 2 weeks",
+      "total_visits": 6,
+      "total_spent": 150.00
+    },
+    {
+      "client_id": "CLI-004",
+      "name": "Robert Park",
+      "email": "robert.park@email.com",
+      "phone": "+61 445 678 901",
+      "first_visit": "2023-09-05",
+      "preferred_barber": "Tony Martinez",
+      "regular_service": "Haircut, Beard & Shave Package",
+      "frequency": "Every 2 weeks",
+      "total_visits": 28,
+      "total_spent": 2380.00
+    },
+    {
+      "client_id": "CLI-005",
+      "name": "James Rodriguez",
+      "email": "james.rodriguez@email.com",
+      "phone": "+61 456 789 012",
+      "first_visit": "2024-06-22",
+      "preferred_barber": "Alex Rodriguez",
+      "regular_service": "Gentleman's Haircut",
+      "frequency": "Every 3 weeks",
+      "total_visits": 7,
+      "total_spent": 315.00
+    },
+    {
+      "client_id": "CLI-006",
+      "name": "Daniel Nguyen",
+      "email": "daniel.nguyen@email.com",
+      "phone": "+61 467 890 123",
+      "first_visit": "2024-10-05",
+      "preferred_barber": "Jake Morrison",
+      "regular_service": "Haircut & Beard Combo",
+      "frequency": "New client",
+      "total_visits": 2,
+      "total_spent": 130.00
+    },
+    {
+      "client_id": "CLI-007",
+      "name": "Thomas Foster",
+      "email": "thomas.foster@email.com",
+      "phone": "+61 478 901 234",
+      "first_visit": "2024-09-15",
+      "preferred_barber": "Tony Martinez",
+      "regular_service": "Hot Shave",
+      "frequency": "Weekly",
+      "total_visits": 6,
+      "total_spent": 270.00
+    },
+    {
+      "client_id": "CLI-008",
+      "name": "Andrew & Oliver Harrison (Father & Son)",
+      "email": "andrew.harrison@email.com",
+      "phone": "+61 489 012 345",
+      "first_visit": "2024-07-10",
+      "preferred_barber": "Alex Rodriguez",
+      "regular_service": "Gentleman's Haircut + Kids Cut",
+      "frequency": "Every 4 weeks",
+      "total_visits": 4,
+      "total_spent": 300.00
+    }
+  ],
+  "appointments": [
+    {
+      "appointment_id": "APT-2024-1456",
+      "client_id": "CLI-001",
+      "client_name": "Michael Thompson",
+      "date": "2024-10-25",
+      "time": "10:00 AM",
+      "service": "Haircut & Beard Combo",
+      "barber": "Jake Morrison",
+      "duration": 45,
+      "status": "Completed",
+      "price": 65.00
+    },
+    {
+      "appointment_id": "APT-2024-1489",
+      "client_id": "CLI-004",
+      "client_name": "Robert Park",
+      "date": "2024-10-28",
+      "time": "2:30 PM",
+      "service": "Haircut, Beard & Shave Package",
+      "barber": "Tony Martinez",
+      "duration": 60,
+      "status": "Completed",
+      "price": 85.00
+    },
+    {
+      "appointment_id": "APT-2024-1512",
+      "client_id": "CLI-006",
+      "client_name": "Daniel Nguyen",
+      "date": "2024-11-08",
+      "time": "11:00 AM",
+      "service": "Haircut & Beard Combo",
+      "barber": "Jake Morrison",
+      "duration": 45,
+      "status": "Scheduled",
+      "price": 65.00
+    }
+  ],
+  "daily_sales": [
+    {
+      "date": "2024-10-25",
+      "day": "Friday",
+      "services_completed": 42,
+      "service_revenue": 2185.00,
+      "retail_products": 285.00,
+      "total_sales": 2470.00,
+      "busiest_time": "5:00 PM - 7:00 PM"
+    },
+    {
+      "date": "2024-10-26",
+      "day": "Saturday",
+      "services_completed": 58,
+      "service_revenue": 2845.00,
+      "retail_products": 385.00,
+      "total_sales": 3230.00,
+      "busiest_time": "10:00 AM - 2:00 PM"
+    },
+    {
+      "date": "2024-10-27",
+      "day": "Sunday",
+      "services_completed": 35,
+      "service_revenue": 1685.00,
+      "retail_products": 195.00,
+      "total_sales": 1880.00,
+      "busiest_time": "11:00 AM - 2:00 PM"
+    }
+  ],
+  "retail_products": [
+    {
+      "product": "Beard Oil - Signature Blend",
+      "brand": "The Gents",
+      "price": 35.00
+    },
+    {
+      "product": "Pomade - Strong Hold",
+      "brand": "The Gents",
+      "price": 28.00
+    },
+    {
+      "product": "Hair Clay - Matte Finish",
+      "brand": "The Gents",
+      "price": 30.00
+    },
+    {
+      "product": "Beard Balm",
+      "brand": "The Gents",
+      "price": 32.00
+    },
+    {
+      "product": "Shampoo - Men's Formula",
+      "brand": "The Gents",
+      "price": 22.00
+    },
+    {
+      "product": "Straight Razor",
+      "brand": "Dovo",
+      "price": 185.00
+    }
+  ],
+  "invoices": [
+    {
+      "invoice_id": "INV-2024-3823",
+      "appointment_id": "APT-2024-1456",
+      "client_id": "CLI-001",
+      "client_name": "Michael Thompson",
+      "issue_date": "2024-10-25",
+      "status": "Paid",
+      "payment_date": "2024-10-25",
+      "payment_method": "Credit card",
+      "line_items": [
+        {
+          "description": "Haircut & Beard Combo",
+          "barber": "Jake Morrison",
+          "amount": 65.00
+        },
+        {
+          "description": "Beard Oil - Signature Blend",
+          "amount": 35.00
+        }
+      ],
+      "subtotal": 100.00,
+      "gst": 10.00,
+      "total": 110.00
+    },
+    {
+      "invoice_id": "INV-2024-3856",
+      "appointment_id": "APT-2024-1489",
+      "client_id": "CLI-004",
+      "client_name": "Robert Park",
+      "issue_date": "2024-10-28",
+      "status": "Paid",
+      "payment_date": "2024-10-28",
+      "payment_method": "Cash",
+      "line_items": [
+        {
+          "description": "Haircut, Beard & Shave Package",
+          "barber": "Tony Martinez",
+          "amount": 85.00
+        }
+      ],
+      "subtotal": 85.00,
+      "gst": 8.50,
+      "total": 93.50
+    },
+    {
+      "invoice_id": "INV-2024-3867",
+      "client_id": "CLI-008",
+      "client_name": "Andrew Harrison",
+      "issue_date": "2024-10-26",
+      "status": "Paid",
+      "payment_date": "2024-10-26",
+      "payment_method": "Credit card",
+      "line_items": [
+        {
+          "description": "Gentleman's Haircut - Andrew",
+          "barber": "Alex Rodriguez",
+          "amount": 45.00
+        },
+        {
+          "description": "Kids Cut - Oliver",
+          "barber": "Alex Rodriguez",
+          "amount": 30.00
+        },
+        {
+          "description": "Hair Clay - Matte Finish",
+          "amount": 30.00
+        }
+      ],
+      "subtotal": 105.00,
+      "gst": 10.50,
+      "total": 115.50
+    }
+  ],
+  "bills": [
+    {
+      "bill_id": "BILL-2024-2934",
+      "supplier": "Barber Supplies Australia",
+      "supplier_contact": "Trade Sales",
+      "supplier_phone": "+61 1300 227 237",
+      "issue_date": "2024-10-18",
+      "due_date": "2024-11-17",
+      "status": "Paid",
+      "line_items": [
+        {
+          "description": "Straight razors - Dovo (6 units)",
+          "quantity": 6,
+          "unit_price": 95.00,
+          "total": 570.00
+        },
+        {
+          "description": "Clipper blades - Wahl (assorted)",
+          "quantity": 12,
+          "unit_price": 28.00,
+          "total": 336.00
+        },
+        {
+          "description": "Scissors - professional grade (3 pairs)",
+          "quantity": 3,
+          "unit_price": 145.00,
+          "total": 435.00
+        },
+        {
+          "description": "Barber cape - black (10 units)",
+          "quantity": 10,
+          "unit_price": 22.00,
+          "total": 220.00
+        },
+        {
+          "description": "Hot towel warmer - replacement",
+          "quantity": 1,
+          "unit_price": 385.00,
+          "total": 385.00
+        }
+      ],
+      "subtotal": 1946.00,
+      "gst": 194.60,
+      "total": 2140.60
+    },
+    {
+      "bill_id": "BILL-2024-2935",
+      "supplier": "The Gents Product Co.",
+      "supplier_contact": "Wholesale Orders",
+      "supplier_phone": "+61 7 3252 8888",
+      "issue_date": "2024-10-20",
+      "due_date": "2024-11-19",
+      "status": "Unpaid",
+      "line_items": [
+        {
+          "description": "Beard Oil - Signature Blend (24 units)",
+          "quantity": 24,
+          "unit_price": 18.00,
+          "total": 432.00
+        },
+        {
+          "description": "Pomade - Strong Hold (30 units)",
+          "quantity": 30,
+          "unit_price": 14.00,
+          "total": 420.00
+        },
+        {
+          "description": "Hair Clay - Matte Finish (30 units)",
+          "quantity": 30,
+          "unit_price": 15.00,
+          "total": 450.00
+        },
+        {
+          "description": "Beard Balm (20 units)",
+          "quantity": 20,
+          "unit_price": 16.00,
+          "total": 320.00
+        }
+      ],
+      "subtotal": 1622.00,
+      "gst": 162.20,
+      "total": 1784.20
+    },
+    {
+      "bill_id": "BILL-2024-2936",
+      "supplier": "Fortitude Valley Properties",
+      "issue_date": "2024-10-01",
+      "due_date": "2024-10-15",
+      "status": "Paid",
+      "line_items": [
+        {
+          "description": "Shop rent - October 2024",
+          "quantity": 1,
+          "unit_price": 3450.00,
+          "total": 3450.00
+        },
+        {
+          "description": "Outgoings",
+          "quantity": 1,
+          "unit_price": 345.00,
+          "total": 345.00
+        }
+      ],
+      "subtotal": 3795.00,
+      "gst": 379.50,
+      "total": 4174.50
+    },
+    {
+      "bill_id": "BILL-2024-2937",
+      "supplier": "Origin Energy",
+      "issue_date": "2024-10-20",
+      "due_date": "2024-11-13",
+      "status": "Unpaid",
+      "line_items": [
+        {
+          "description": "Electricity - September 2024 (950 kWh)",
+          "quantity": 1,
+          "unit_price": 425.00,
+          "total": 425.00
+        }
+      ],
+      "subtotal": 425.00,
+      "gst": 42.50,
+      "total": 467.50
+    }
+  ],
+  "barbers": [
+    {
+      "barber_id": "BARB-001",
+      "name": "Jake Morrison",
+      "role": "Owner / Master Barber",
+      "email": "jake@thegentsbarber.com.au",
+      "phone": "+61 412 678 901",
+      "experience_years": 15,
+      "specialties": ["Classic cuts", "Beard styling", "Hot shaves"],
+      "average_clients_per_day": 15
+    },
+    {
+      "barber_id": "BARB-002",
+      "name": "Tony Martinez",
+      "role": "Senior Barber",
+      "email": "tony@thegentsbarber.com.au",
+      "phone": "+61 423 789 012",
+      "experience_years": 12,
+      "specialties": ["Traditional hot shaves", "Beard sculpting", "Modern fades"],
+      "average_clients_per_day": 14
+    },
+    {
+      "barber_id": "BARB-003",
+      "name": "Alex Rodriguez",
+      "role": "Barber",
+      "email": "alex@thegentsbarber.com.au",
+      "phone": "+61 434 890 123",
+      "experience_years": 7,
+      "specialties": ["Modern cuts", "Fades", "Kids cuts"],
+      "average_clients_per_day": 13
+    },
+    {
+      "barber_id": "BARB-004",
+      "name": "Marcus Chen",
+      "role": "Apprentice Barber",
+      "email": "marcus@thegentsbarber.com.au",
+      "phone": "+61 445 901 234",
+      "experience_years": 2,
+      "specialties": ["Learning all styles"],
+      "average_clients_per_day": 8,
+      "notes": "Third year apprentice"
+    }
+  ],
+  "enquiries": [
+    {
+      "enquiry_id": "ENQ-2024-289",
+      "name": "Daniel Foster",
+      "email": "daniel.foster@email.com",
+      "phone": "+61 467 890 234",
+      "enquiry_date": "2024-10-28",
+      "status": "Appointment Booked",
+      "interest": "First time hot shave experience",
+      "appointment_date": "2024-11-05",
+      "barber": "Tony Martinez"
+    },
+    {
+      "enquiry_id": "ENQ-2024-290",
+      "name": "Brisbane Corporate Group",
+      "contact_person": "Rebecca Foster",
+      "email": "rebecca@brisbanecorp.com.au",
+      "phone": "+61 7 3345 6789",
+      "enquiry_date": "2024-10-27",
+      "status": "Quote Sent",
+      "interest": "Monthly grooming service for 15 executives",
+      "estimated_value": 2250.00,
+      "notes": "Want on-site barber service at their office monthly"
+    },
+    {
+      "enquiry_id": "ENQ-2024-291",
+      "name": "Wedding Party Booking",
+      "contact_person": "Michael Harrison",
+      "email": "michael.harrison@email.com",
+      "phone": "+61 478 901 345",
+      "enquiry_date": "2024-10-29",
+      "status": "Quote Sent",
+      "interest": "Groom + 6 groomsmen - morning of wedding",
+      "wedding_date": "2025-02-14",
+      "estimated_value": 455.00,
+      "notes": "Want group booking before 9am on wedding day"
+    }
+  ],
+  "google_drive_files": [
+    {
+      "file_id": "FILE-001",
+      "file_name": "Barber_Licenses_Certificates.pdf",
+      "file_type": "application/pdf",
+      "upload_date": "2024-01-15",
+      "description": "All barber qualification certificates and licenses"
+    },
+    {
+      "file_id": "FILE-002",
+      "file_name": "Public_Liability_Insurance_2024.pdf",
+      "file_type": "application/pdf",
+      "upload_date": "2024-06-01",
+      "description": "Public liability insurance certificate"
+    },
+    {
+      "file_id": "FILE-003",
+      "file_name": "Hygiene_Standards_Procedures.pdf",
+      "file_type": "application/pdf",
+      "upload_date": "2024-02-01",
+      "description": "Barber shop hygiene and sterilization procedures"
+    },
+    {
+      "file_id": "FILE-004",
+      "file_name": "Product_Catalog_The_Gents.pdf",
+      "file_type": "application/pdf",
+      "upload_date": "2024-08-01",
+      "description": "Retail product catalog and pricing"
+    },
+    {
+      "file_id": "FILE-005",
+      "file_name": "Portfolio_Haircuts_2024.pdf",
+      "file_type": "application/pdf",
+      "upload_date": "2024-09-15",
+      "description": "Portfolio of haircut styles and transformations"
+    },
+    {
+      "file_id": "FILE-006",
+      "file_name": "Staff_Roster_October_2024.pdf",
+      "file_type": "application/pdf",
+      "upload_date": "2024-09-28",
+      "description": "October staff roster and schedule"
+    }
+  ]
+}
+

@@ -1,0 +1,781 @@
+{
+  "company": {
+    "name": "Brisbane Capital Management",
+    "abn": "45 678 901 234",
+    "afsl": "Australian Financial Services License #456789",
+    "email": "admin@brisbanecapital.com.au",
+    "phone": "+61 7 3220 5678",
+    "address": "Level 28, Riverside Centre, 123 Eagle Street, Brisbane QLD 4000"
+  },
+  "integrations": {
+    "portfolio_management": "Xplan",
+    "accounting": "Xero",
+    "crm": "Salesforce Financial Services Cloud",
+    "market_data": "IRESS",
+    "email": "Microsoft 365",
+    "voice_agent": "Custom Voice Agent",
+    "file_storage": "SharePoint/OneDrive",
+    "compliance": "ComplySci"
+  },
+  "clients": [
+    {
+      "client_id": "CLI-001",
+      "name": "Dr. Michael & Patricia Chen",
+      "type": "High Net Worth Individual",
+      "email": "michael.chen@email.com",
+      "phone": "+61 412 234 567",
+      "address": "45 River Terrace, Ascot QLD 4007",
+      "portfolio_value": 4850000.00,
+      "investment_strategy": "Balanced Growth",
+      "risk_profile": "Moderate",
+      "annual_management_fee": 0.85
+    },
+    {
+      "client_id": "CLI-002",
+      "name": "Thompson Family Trust",
+      "type": "Family Trust",
+      "trustee": "David Thompson",
+      "email": "d.thompson@thompsongroup.com.au",
+      "phone": "+61 423 345 678",
+      "address": "88 Fig Tree Pocket Road, Fig Tree Pocket QLD 4069",
+      "portfolio_value": 8200000.00,
+      "investment_strategy": "Conservative Income",
+      "risk_profile": "Conservative",
+      "annual_management_fee": 0.75
+    },
+    {
+      "client_id": "CLI-003",
+      "name": "Sarah Williams",
+      "type": "Individual",
+      "email": "sarah.williams@email.com",
+      "phone": "+61 434 456 789",
+      "address": "12 Marine Parade, Main Beach QLD 4217",
+      "portfolio_value": 1850000.00,
+      "investment_strategy": "Growth",
+      "risk_profile": "Aggressive",
+      "annual_management_fee": 1.00
+    },
+    {
+      "client_id": "CLI-004",
+      "name": "Queensland Medical Super Fund",
+      "type": "Self-Managed Super Fund",
+      "trustee": "Dr. Robert Martinez & Dr. Lisa Martinez",
+      "email": "martinez.smsf@email.com",
+      "phone": "+61 445 567 890",
+      "address": "234 Coronation Drive, Milton QLD 4064",
+      "portfolio_value": 3600000.00,
+      "investment_strategy": "Balanced",
+      "risk_profile": "Moderate",
+      "annual_management_fee": 0.80
+    },
+    {
+      "client_id": "CLI-005",
+      "name": "James Anderson",
+      "type": "Individual",
+      "email": "j.anderson@email.com",
+      "phone": "+61 456 678 901",
+      "address": "67 Park Road, Milton QLD 4064",
+      "portfolio_value": 925000.00,
+      "investment_strategy": "Conservative Growth",
+      "risk_profile": "Moderate-Conservative",
+      "annual_management_fee": 1.10
+    },
+    {
+      "client_id": "CLI-006",
+      "name": "Pacific Property Holdings Pty Ltd",
+      "type": "Corporate",
+      "contact_person": "Rebecca Foster",
+      "email": "rebecca@pacificproperty.com.au",
+      "phone": "+61 7 3456 7890",
+      "address": "Level 5, 200 Adelaide Street, Brisbane QLD 4000",
+      "portfolio_value": 12500000.00,
+      "investment_strategy": "Capital Preservation",
+      "risk_profile": "Conservative",
+      "annual_management_fee": 0.65
+    },
+    {
+      "client_id": "CLI-007",
+      "name": "Emma & Jason Lee",
+      "type": "Individual",
+      "email": "lee.investments@email.com",
+      "phone": "+61 467 789 012",
+      "address": "156 Hawken Drive, St Lucia QLD 4067",
+      "portfolio_value": 2750000.00,
+      "investment_strategy": "Balanced Growth",
+      "risk_profile": "Moderate",
+      "annual_management_fee": 0.90
+    },
+    {
+      "client_id": "CLI-008",
+      "name": "Nguyen Family Super Fund",
+      "type": "Self-Managed Super Fund",
+      "trustee": "Tony Nguyen & Linda Nguyen",
+      "email": "nguyen.smsf@email.com",
+      "phone": "+61 478 890 123",
+      "address": "89 Waterworks Road, Ashgrove QLD 4060",
+      "portfolio_value": 0.00,
+      "investment_strategy": "Not Yet Determined",
+      "risk_profile": "Not Yet Assessed",
+      "annual_management_fee": 0.85
+    },
+    {
+      "client_id": "CLI-009",
+      "name": "Margaret Sullivan",
+      "type": "Individual - Retiree",
+      "email": "margaret.sullivan@email.com",
+      "phone": "+61 489 901 234",
+      "address": "23 Seaside Boulevard, Wynnum QLD 4178",
+      "portfolio_value": 0.00,
+      "investment_strategy": "Not Yet Determined",
+      "risk_profile": "Not Yet Assessed",
+      "annual_management_fee": 0.95
+    }
+  ],
+  "portfolio_management": [
+    {
+      "activity_id": "ACT-2024-1245",
+      "client_id": "CLI-001",
+      "client_name": "Dr. Michael & Patricia Chen",
+      "date": "2024-10-15",
+      "activity_type": "Portfolio Rebalancing",
+      "description": "Quarterly rebalancing - reduced Australian equities, increased international exposure",
+      "transactions": [
+        {
+          "type": "Sell",
+          "security": "Vanguard Australian Shares Index ETF (VAS)",
+          "quantity": 2500,
+          "price": 98.50,
+          "value": 246250.00,
+          "brokerage": 125.00
+        },
+        {
+          "type": "Buy",
+          "security": "Vanguard MSCI Index International Shares ETF (VGS)",
+          "quantity": 2000,
+          "price": 122.75,
+          "value": 245500.00,
+          "brokerage": 125.00
+        }
+      ],
+      "advisor": "Amanda Sterling",
+      "status": "Completed"
+    },
+    {
+      "activity_id": "ACT-2024-1289",
+      "client_id": "CLI-002",
+      "client_name": "Thompson Family Trust",
+      "date": "2024-10-22",
+      "activity_type": "Dividend Reinvestment",
+      "description": "Q3 dividend reinvestment - Australian bank hybrids and fixed income",
+      "transactions": [
+        {
+          "type": "Dividend Received",
+          "security": "Various Australian Bank Hybrids",
+          "value": 42500.00
+        },
+        {
+          "type": "Buy",
+          "security": "Vanguard Australian Fixed Interest Index ETF (VAF)",
+          "quantity": 800,
+          "price": 52.85,
+          "value": 42280.00,
+          "brokerage": 100.00
+        }
+      ],
+      "advisor": "Richard Walsh",
+      "status": "Completed"
+    },
+    {
+      "activity_id": "ACT-2024-1312",
+      "client_id": "CLI-003",
+      "client_name": "Sarah Williams",
+      "date": "2024-10-28",
+      "activity_type": "New Investment",
+      "description": "Additional investment in technology sector exposure",
+      "transactions": [
+        {
+          "type": "Cash Deposit",
+          "value": 150000.00
+        },
+        {
+          "type": "Buy",
+          "security": "BetaShares NASDAQ 100 ETF (NDQ)",
+          "quantity": 4000,
+          "price": 37.25,
+          "value": 149000.00,
+          "brokerage": 150.00
+        }
+      ],
+      "advisor": "Amanda Sterling",
+      "status": "Completed"
+    }
+  ],
+  "invoices": [
+    {
+      "invoice_id": "INV-2024-Q3-001",
+      "client_id": "CLI-001",
+      "client_name": "Dr. Michael & Patricia Chen",
+      "period": "Q3 2024 (Jul-Sep)",
+      "issue_date": "2024-10-01",
+      "due_date": "2024-10-31",
+      "status": "Paid",
+      "payment_date": "2024-10-15",
+      "line_items": [
+        {
+          "description": "Investment Management Fee (0.85% p.a. on $4,850,000)",
+          "calculation": "Quarterly fee: $4,850,000 × 0.85% ÷ 4",
+          "amount": 10306.25
+        },
+        {
+          "description": "Portfolio Administration Fee",
+          "amount": 350.00
+        }
+      ],
+      "subtotal": 10656.25,
+      "gst": 1065.63,
+      "total": 11721.88
+    },
+    {
+      "invoice_id": "INV-2024-Q3-002",
+      "client_id": "CLI-002",
+      "client_name": "Thompson Family Trust",
+      "period": "Q3 2024 (Jul-Sep)",
+      "issue_date": "2024-10-01",
+      "due_date": "2024-10-31",
+      "status": "Paid",
+      "payment_date": "2024-10-12",
+      "line_items": [
+        {
+          "description": "Investment Management Fee (0.75% p.a. on $8,200,000)",
+          "calculation": "Quarterly fee: $8,200,000 × 0.75% ÷ 4",
+          "amount": 15375.00
+        },
+        {
+          "description": "Trust Administration Fee",
+          "amount": 450.00
+        },
+        {
+          "description": "SMSF Compliance Review",
+          "amount": 550.00
+        }
+      ],
+      "subtotal": 16375.00,
+      "gst": 1637.50,
+      "total": 18012.50
+    },
+    {
+      "invoice_id": "INV-2024-Q3-003",
+      "client_id": "CLI-003",
+      "client_name": "Sarah Williams",
+      "period": "Q3 2024 (Jul-Sep)",
+      "issue_date": "2024-10-01",
+      "due_date": "2024-10-31",
+      "status": "Paid",
+      "payment_date": "2024-10-18",
+      "line_items": [
+        {
+          "description": "Investment Management Fee (1.00% p.a. on $1,850,000)",
+          "calculation": "Quarterly fee: $1,850,000 × 1.00% ÷ 4",
+          "amount": 4625.00
+        },
+        {
+          "description": "Portfolio Administration Fee",
+          "amount": 350.00
+        }
+      ],
+      "subtotal": 4975.00,
+      "gst": 497.50,
+      "total": 5472.50
+    },
+    {
+      "invoice_id": "INV-2024-Q3-004",
+      "client_id": "CLI-004",
+      "client_name": "Queensland Medical Super Fund",
+      "period": "Q3 2024 (Jul-Sep)",
+      "issue_date": "2024-10-01",
+      "due_date": "2024-10-31",
+      "status": "Paid",
+      "payment_date": "2024-10-20",
+      "line_items": [
+        {
+          "description": "Investment Management Fee (0.80% p.a. on $3,600,000)",
+          "calculation": "Quarterly fee: $3,600,000 × 0.80% ÷ 4",
+          "amount": 7200.00
+        },
+        {
+          "description": "SMSF Administration and Compliance",
+          "amount": 850.00
+        },
+        {
+          "description": "Annual Tax Return Preparation",
+          "amount": 1250.00
+        }
+      ],
+      "subtotal": 9300.00,
+      "gst": 930.00,
+      "total": 10230.00
+    },
+    {
+      "invoice_id": "INV-2024-Q3-005",
+      "client_id": "CLI-005",
+      "client_name": "James Anderson",
+      "period": "Q3 2024 (Jul-Sep)",
+      "issue_date": "2024-10-01",
+      "due_date": "2024-10-31",
+      "status": "Paid",
+      "payment_date": "2024-10-25",
+      "line_items": [
+        {
+          "description": "Investment Management Fee (1.10% p.a. on $925,000)",
+          "calculation": "Quarterly fee: $925,000 × 1.10% ÷ 4",
+          "amount": 2543.75
+        },
+        {
+          "description": "Portfolio Administration Fee",
+          "amount": 350.00
+        }
+      ],
+      "subtotal": 2893.75,
+      "gst": 289.38,
+      "total": 3183.13
+    },
+    {
+      "invoice_id": "INV-2024-Q3-006",
+      "client_id": "CLI-006",
+      "client_name": "Pacific Property Holdings Pty Ltd",
+      "period": "Q3 2024 (Jul-Sep)",
+      "issue_date": "2024-10-01",
+      "due_date": "2024-10-31",
+      "status": "Paid",
+      "payment_date": "2024-10-08",
+      "line_items": [
+        {
+          "description": "Investment Management Fee (0.65% p.a. on $12,500,000)",
+          "calculation": "Quarterly fee: $12,500,000 × 0.65% ÷ 4",
+          "amount": 20312.50
+        },
+        {
+          "description": "Corporate Portfolio Administration",
+          "amount": 650.00
+        },
+        {
+          "description": "Quarterly Investment Strategy Report",
+          "amount": 1500.00
+        }
+      ],
+      "subtotal": 22462.50,
+      "gst": 2246.25,
+      "total": 24708.75
+    },
+    {
+      "invoice_id": "INV-2024-Q3-007",
+      "client_id": "CLI-007",
+      "client_name": "Emma & Jason Lee",
+      "period": "Q3 2024 (Jul-Sep)",
+      "issue_date": "2024-10-01",
+      "due_date": "2024-10-31",
+      "status": "Paid",
+      "payment_date": "2024-10-22",
+      "line_items": [
+        {
+          "description": "Investment Management Fee (0.90% p.a. on $2,750,000)",
+          "calculation": "Quarterly fee: $2,750,000 × 0.90% ÷ 4",
+          "amount": 6187.50
+        },
+        {
+          "description": "Portfolio Administration Fee",
+          "amount": 350.00
+        }
+      ],
+      "subtotal": 6537.50,
+      "gst": 653.75,
+      "total": 7191.25
+    }
+  ],
+  "bills": [
+    {
+      "bill_id": "BILL-2024-0892",
+      "supplier": "IRESS Market Technology",
+      "supplier_contact": "Accounts",
+      "supplier_phone": "+61 3 9018 5800",
+      "issue_date": "2024-10-01",
+      "due_date": "2024-10-31",
+      "status": "Paid",
+      "line_items": [
+        {
+          "description": "IRESS Pro Platform - Monthly Subscription",
+          "quantity": 3,
+          "unit_price": 485.00,
+          "total": 1455.00
+        },
+        {
+          "description": "Real-time market data feeds",
+          "quantity": 1,
+          "unit_price": 650.00,
+          "total": 650.00
+        }
+      ],
+      "subtotal": 2105.00,
+      "gst": 210.50,
+      "total": 2315.50
+    },
+    {
+      "bill_id": "BILL-2024-0893",
+      "supplier": "Xplan Technology",
+      "supplier_contact": "IRESS",
+      "supplier_phone": "+61 3 9018 5800",
+      "issue_date": "2024-10-01",
+      "due_date": "2024-10-31",
+      "status": "Paid",
+      "line_items": [
+        {
+          "description": "Xplan Portfolio Management - Monthly License",
+          "quantity": 1,
+          "unit_price": 1850.00,
+          "total": 1850.00
+        }
+      ],
+      "subtotal": 1850.00,
+      "gst": 185.00,
+      "total": 2035.00
+    },
+    {
+      "bill_id": "BILL-2024-0894",
+      "supplier": "ComplySci Australia",
+      "supplier_contact": "Compliance Services",
+      "supplier_phone": "+61 2 8316 2900",
+      "issue_date": "2024-10-05",
+      "due_date": "2024-11-04",
+      "status": "Paid",
+      "line_items": [
+        {
+          "description": "Compliance monitoring and reporting - Q3 2024",
+          "quantity": 1,
+          "unit_price": 2450.00,
+          "total": 2450.00
+        }
+      ],
+      "subtotal": 2450.00,
+      "gst": 245.00,
+      "total": 2695.00
+    },
+    {
+      "bill_id": "BILL-2024-0895",
+      "supplier": "Microsoft Australia",
+      "supplier_contact": "Business Services",
+      "supplier_phone": "13 20 58",
+      "issue_date": "2024-10-01",
+      "due_date": "2024-10-31",
+      "status": "Paid",
+      "line_items": [
+        {
+          "description": "Microsoft 365 Business Premium - 8 users",
+          "quantity": 8,
+          "unit_price": 32.00,
+          "total": 256.00
+        },
+        {
+          "description": "SharePoint additional storage - 500GB",
+          "quantity": 1,
+          "unit_price": 125.00,
+          "total": 125.00
+        }
+      ],
+      "subtotal": 381.00,
+      "gst": 38.10,
+      "total": 419.10
+    },
+    {
+      "bill_id": "BILL-2024-0896",
+      "supplier": "Morningstar Australasia",
+      "supplier_contact": "Research Services",
+      "supplier_phone": "+61 2 9276 4446",
+      "issue_date": "2024-10-01",
+      "due_date": "2024-10-31",
+      "status": "Paid",
+      "line_items": [
+        {
+          "description": "Morningstar Direct - Monthly Subscription",
+          "quantity": 1,
+          "unit_price": 1250.00,
+          "total": 1250.00
+        }
+      ],
+      "subtotal": 1250.00,
+      "gst": 125.00,
+      "total": 1375.00
+    },
+    {
+      "bill_id": "BILL-2024-0897",
+      "supplier": "AON Insurance",
+      "supplier_contact": "Professional Indemnity",
+      "supplier_phone": "+61 7 3223 7777",
+      "issue_date": "2024-10-15",
+      "due_date": "2024-11-14",
+      "status": "Unpaid",
+      "line_items": [
+        {
+          "description": "Professional Indemnity Insurance - Annual Premium",
+          "quantity": 1,
+          "unit_price": 28500.00,
+          "total": 28500.00
+        }
+      ],
+      "subtotal": 28500.00,
+      "gst": 2850.00,
+      "total": 31350.00,
+      "notes": "Annual PI insurance - $20M coverage"
+    }
+  ],
+  "leads": [
+    {
+      "lead_id": "LEAD-2024-089",
+      "name": "Catherine Morrison",
+      "email": "catherine.morrison@email.com",
+      "phone": "+61 490 123 456",
+      "source": "Referral - Dr. Chen",
+      "enquiry_date": "2024-10-25",
+      "status": "Hot",
+      "interest": "Investment management for recent business sale proceeds",
+      "estimated_portfolio": 5200000.00,
+      "notes": "Sold medical practice. Looking for diversified portfolio with income focus. Available to meet next week.",
+      "assigned_advisor": "Amanda Sterling",
+      "follow_up_date": "2024-11-01"
+    },
+    {
+      "lead_id": "LEAD-2024-090",
+      "name": "Brisbane Tech Ventures Pty Ltd",
+      "contact_person": "Alex Zhang",
+      "email": "alex@brisbanetechventures.com.au",
+      "phone": "+61 7 3345 8765",
+      "source": "LinkedIn",
+      "enquiry_date": "2024-10-27",
+      "status": "Warm",
+      "interest": "Corporate treasury management",
+      "estimated_portfolio": 3800000.00,
+      "notes": "Tech startup with recent Series B funding. Want to manage cash reserves conservatively while maintaining liquidity.",
+      "assigned_advisor": "Richard Walsh",
+      "follow_up_date": "2024-11-05"
+    },
+    {
+      "lead_id": "LEAD-2024-091",
+      "name": "Mark & Sophie Davidson",
+      "email": "davidson.wealth@email.com",
+      "phone": "+61 401 234 567",
+      "source": "Website enquiry",
+      "enquiry_date": "2024-10-28",
+      "status": "Cold",
+      "interest": "SMSF establishment and management",
+      "estimated_portfolio": 850000.00,
+      "notes": "Considering SMSF setup. Currently with industry fund. Want to understand costs and benefits. Not urgent.",
+      "assigned_advisor": "Amanda Sterling",
+      "follow_up_date": "2024-11-15"
+    },
+    {
+      "lead_id": "LEAD-2024-092",
+      "name": "Heritage Property Trust",
+      "contact_person": "William Foster",
+      "email": "wfoster@heritagepropertytrust.com.au",
+      "phone": "+61 7 3234 9876",
+      "source": "Accountant referral",
+      "enquiry_date": "2024-10-26",
+      "status": "Warm",
+      "interest": "Family trust restructure and investment management",
+      "estimated_portfolio": 6500000.00,
+      "notes": "Multi-generational family trust. Current advisor retiring. Looking for succession planning expertise.",
+      "assigned_advisor": "Richard Walsh",
+      "follow_up_date": "2024-11-03"
+    },
+    {
+      "lead_id": "LEAD-2024-093",
+      "name": "Jennifer Park",
+      "email": "jennifer.park@email.com",
+      "phone": "+61 412 345 098",
+      "source": "Seminar attendee",
+      "enquiry_date": "2024-10-29",
+      "status": "Warm",
+      "interest": "Retirement income strategy",
+      "estimated_portfolio": 1950000.00,
+      "notes": "Attended our retirement planning seminar. Retiring in 6 months. Wants income-focused portfolio with capital preservation.",
+      "assigned_advisor": "Amanda Sterling",
+      "follow_up_date": "2024-11-04"
+    },
+    {
+      "lead_id": "LEAD-2024-094",
+      "name": "Brisbane Medical Specialists Group",
+      "contact_person": "Dr. Sarah Mitchell",
+      "email": "admin@bmsg.com.au",
+      "phone": "+61 7 3456 7890",
+      "source": "Professional network",
+      "enquiry_date": "2024-10-24",
+      "status": "Cold",
+      "interest": "Group investment scheme for 12 specialists",
+      "estimated_portfolio": 4200000.00,
+      "notes": "12 medical specialists want to pool investments. Complex structure needed. Still in discussion phase.",
+      "assigned_advisor": "Richard Walsh",
+      "follow_up_date": "2024-11-12"
+    }
+  ],
+  "staff": [
+    {
+      "staff_id": "STAFF-001",
+      "name": "Richard Walsh",
+      "role": "Managing Director / Senior Portfolio Manager",
+      "email": "richard@brisbanecapital.com.au",
+      "phone": "+61 412 678 901",
+      "qualifications": [
+        "Bachelor of Commerce (Finance)",
+        "Master of Applied Finance",
+        "Chartered Financial Analyst (CFA)",
+        "Registered Tax (Financial) Adviser"
+      ],
+      "licenses": [
+        "AFSL Responsible Manager",
+        "RG146 Compliant"
+      ],
+      "specializations": [
+        "High Net Worth Portfolios",
+        "SMSF Management",
+        "Estate Planning"
+      ]
+    },
+    {
+      "staff_id": "STAFF-002",
+      "name": "Amanda Sterling",
+      "role": "Senior Investment Advisor",
+      "email": "amanda@brisbanecapital.com.au",
+      "phone": "+61 423 789 012",
+      "qualifications": [
+        "Bachelor of Business (Finance)",
+        "Graduate Diploma of Applied Finance",
+        "Certified Financial Planner (CFP)"
+      ],
+      "licenses": [
+        "AFSL Authorised Representative",
+        "RG146 Compliant"
+      ],
+      "specializations": [
+        "Retirement Planning",
+        "Growth Portfolios",
+        "ESG Investing"
+      ]
+    },
+    {
+      "staff_id": "STAFF-003",
+      "name": "Michael Tran",
+      "role": "Investment Analyst",
+      "email": "michael@brisbanecapital.com.au",
+      "phone": "+61 434 890 123",
+      "qualifications": [
+        "Bachelor of Commerce (Finance & Economics)",
+        "CFA Level II Candidate"
+      ],
+      "licenses": [
+        "RG146 Compliant"
+      ],
+      "specializations": [
+        "Market Research",
+        "Portfolio Analysis",
+        "Risk Management"
+      ]
+    },
+    {
+      "staff_id": "STAFF-004",
+      "name": "Rebecca Chen",
+      "role": "Client Services Manager",
+      "email": "rebecca@brisbanecapital.com.au",
+      "phone": "+61 445 901 234",
+      "qualifications": [
+        "Bachelor of Business",
+        "Diploma of Financial Planning"
+      ],
+      "licenses": [
+        "RG146 Compliant"
+      ],
+      "specializations": [
+        "Client Relations",
+        "Portfolio Administration",
+        "Compliance"
+      ]
+    }
+  ],
+  "onedrive_files": [
+    {
+      "file_id": "FILE-001",
+      "file_name": "Chen_Portfolio_Review_Q3_2024.pdf",
+      "file_type": "application/pdf",
+      "client_id": "CLI-001",
+      "upload_date": "2024-10-01",
+      "description": "Quarterly portfolio performance review and market commentary"
+    },
+    {
+      "file_id": "FILE-002",
+      "file_name": "Thompson_Trust_Deed.pdf",
+      "file_type": "application/pdf",
+      "client_id": "CLI-002",
+      "upload_date": "2024-03-15",
+      "description": "Original trust deed and variations"
+    },
+    {
+      "file_id": "FILE-003",
+      "file_name": "Williams_Investment_Strategy.xlsx",
+      "file_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "client_id": "CLI-003",
+      "upload_date": "2024-10-28",
+      "description": "Updated investment strategy and asset allocation model"
+    },
+    {
+      "file_id": "FILE-004",
+      "file_name": "QMSF_Annual_Tax_Return_2024.pdf",
+      "file_type": "application/pdf",
+      "client_id": "CLI-004",
+      "upload_date": "2024-09-30",
+      "description": "SMSF annual tax return and audit report"
+    },
+    {
+      "file_id": "FILE-005",
+      "file_name": "PacificProperty_Investment_Policy_Statement.pdf",
+      "file_type": "application/pdf",
+      "client_id": "CLI-006",
+      "upload_date": "2024-07-01",
+      "description": "Corporate investment policy statement and governance framework"
+    },
+    {
+      "file_id": "FILE-006",
+      "file_name": "Q3_2024_Market_Outlook.pdf",
+      "file_type": "application/pdf",
+      "upload_date": "2024-10-01",
+      "description": "Quarterly market outlook and economic commentary for all clients"
+    },
+    {
+      "file_id": "FILE-007",
+      "file_name": "AFSL_Certificate_2024-2025.pdf",
+      "file_type": "application/pdf",
+      "upload_date": "2024-07-01",
+      "description": "Current AFSL certificate and authorization details"
+    },
+    {
+      "file_id": "FILE-008",
+      "file_name": "Professional_Indemnity_Insurance_Certificate.pdf",
+      "file_type": "application/pdf",
+      "upload_date": "2024-06-15",
+      "description": "PI insurance certificate - $20M coverage"
+    },
+    {
+      "file_id": "FILE-009",
+      "file_name": "Compliance_Manual_2024.pdf",
+      "file_type": "application/pdf",
+      "upload_date": "2024-01-15",
+      "description": "Firm compliance manual and procedures"
+    },
+    {
+      "file_id": "FILE-010",
+      "file_name": "Morrison_Preliminary_Portfolio_Proposal.pdf",
+      "file_type": "application/pdf",
+      "lead_id": "LEAD-2024-089",
+      "upload_date": "2024-10-27",
+      "description": "Draft portfolio proposal for prospective client Catherine Morrison"
+    }
+  ]
+}
+

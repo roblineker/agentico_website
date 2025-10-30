@@ -1,0 +1,653 @@
+{
+  "company": {
+    "name": "Pampered Paws Pet Grooming",
+    "abn": "12 345 678 902",
+    "email": "bookings@pamperedpaws.com.au",
+    "phone": "+61 7 3844 9012",
+    "address": "Shop 5, 189 Boundary Street, West End QLD 4101"
+  },
+  "integrations": {
+    "booking": "Gingr Pet Care Software",
+    "accounting": "Xero",
+    "pos": "Square",
+    "email": "Gmail",
+    "voice_agent": "Custom Voice Agent",
+    "website": "Squarespace",
+    "file_storage": "Google Drive"
+  },
+  "salon_hours": {
+    "tuesday_friday": "8:00 AM - 5:00 PM",
+    "saturday": "8:00 AM - 4:00 PM",
+    "sunday_monday": "Closed"
+  },
+  "clients": [
+    {
+      "client_id": "CLI-001",
+      "name": "Sarah Mitchell",
+      "email": "sarah.mitchell@email.com",
+      "phone": "+61 412 345 678",
+      "address": "23 Park Road, Milton QLD 4064",
+      "pets": [
+        {
+          "pet_id": "PET-001",
+          "name": "Max",
+          "breed": "Golden Retriever",
+          "age": 5,
+          "weight_kg": 32.0,
+          "temperament": "Friendly, calm",
+          "special_notes": "Sensitive around paws"
+        }
+      ],
+      "first_visit": "2023-08-15",
+      "total_visits": 12,
+      "total_spent": 1680.00
+    },
+    {
+      "client_id": "CLI-002",
+      "name": "Emma Chen",
+      "email": "emma.chen@email.com",
+      "phone": "+61 423 456 789",
+      "address": "67 River Terrace, Kangaroo Point QLD 4169",
+      "pets": [
+        {
+          "pet_id": "PET-002",
+          "name": "Bella",
+          "breed": "Poodle (Toy)",
+          "age": 3,
+          "weight_kg": 4.5,
+          "temperament": "Energetic, friendly",
+          "special_notes": "Requires regular clip every 6 weeks"
+        }
+      ],
+      "first_visit": "2024-01-20",
+      "total_visits": 8,
+      "total_spent": 680.00
+    },
+    {
+      "client_id": "CLI-003",
+      "name": "David Wilson",
+      "email": "david.wilson@email.com",
+      "phone": "+61 434 567 890",
+      "address": "89 Stanley Street, East Brisbane QLD 4169",
+      "pets": [
+        {
+          "pet_id": "PET-003",
+          "name": "Charlie",
+          "breed": "Labradoodle",
+          "age": 2,
+          "weight_kg": 18.0,
+          "temperament": "Playful, anxious about grooming",
+          "special_notes": "Needs patient handling, first time grooming experience"
+        }
+      ],
+      "first_visit": "2024-08-10",
+      "total_visits": 3,
+      "total_spent": 375.00
+    },
+    {
+      "client_id": "CLI-004",
+      "name": "Jennifer Park",
+      "email": "jennifer.park@email.com",
+      "phone": "+61 445 678 901",
+      "address": "23 Norman Creek Road, Norman Park QLD 4170",
+      "pets": [
+        {
+          "pet_id": "PET-004",
+          "name": "Whiskers",
+          "breed": "Persian Cat",
+          "age": 6,
+          "weight_kg": 5.5,
+          "temperament": "Calm, tolerant",
+          "special_notes": "Long coat needs de-matting"
+        }
+      ],
+      "first_visit": "2024-06-22",
+      "total_visits": 4,
+      "total_spent": 460.00
+    },
+    {
+      "client_id": "CLI-005",
+      "name": "Robert Rodriguez",
+      "email": "robert.rodriguez@email.com",
+      "phone": "+61 456 789 012",
+      "address": "45 Given Terrace, Paddington QLD 4064",
+      "pets": [
+        {
+          "pet_id": "PET-005",
+          "name": "Rocky",
+          "breed": "Schnauzer (Miniature)",
+          "age": 4,
+          "weight_kg": 8.0,
+          "temperament": "Confident, good with grooming",
+          "special_notes": "Prefers hand stripping"
+        }
+      ],
+      "first_visit": "2023-05-10",
+      "total_visits": 15,
+      "total_spent": 1425.00
+    },
+    {
+      "client_id": "CLI-006",
+      "name": "Sophie Anderson",
+      "email": "sophie.anderson@email.com",
+      "phone": "+61 467 890 123",
+      "address": "156 Stanley Road, Camp Hill QLD 4152",
+      "pets": [
+        {
+          "pet_id": "PET-006",
+          "name": "Coco",
+          "breed": "Cavoodle",
+          "age": 1,
+          "weight_kg": 6.5,
+          "temperament": "Puppy energy, learning",
+          "special_notes": "First grooming appointment"
+        }
+      ],
+      "first_visit": "2024-10-18",
+      "total_visits": 1,
+      "total_spent": 85.00
+    },
+    {
+      "client_id": "CLI-007",
+      "name": "Marcus Nguyen",
+      "email": "marcus.nguyen@email.com",
+      "phone": "+61 478 901 234",
+      "address": "45 Wellington Road, East Brisbane QLD 4169",
+      "pets": [
+        {
+          "pet_id": "PET-007",
+          "name": "Luna",
+          "breed": "Shih Tzu",
+          "age": 7,
+          "weight_kg": 6.0,
+          "temperament": "Sweet, elderly, patient",
+          "special_notes": "Arthritic, needs gentle handling"
+        }
+      ],
+      "first_visit": "2024-09-05",
+      "total_visits": 2,
+      "total_spent": 190.00
+    },
+    {
+      "client_id": "CLI-008",
+      "name": "Rebecca Foster",
+      "email": "rebecca.foster@email.com",
+      "phone": "+61 489 012 345",
+      "address": "78 Hawthorne Road, Hawthorne QLD 4171",
+      "pets": [
+        {
+          "pet_id": "PET-008",
+          "name": "Buddy",
+          "breed": "Beagle",
+          "age": 3,
+          "weight_kg": 12.0,
+          "temperament": "Active, food motivated",
+          "special_notes": "Shedding season - needs de-shedding treatment"
+        }
+      ],
+      "first_visit": "2024-10-05",
+      "total_visits": 1,
+      "total_spent": 95.00
+    }
+  ],
+  "services_pricing": [
+    {
+      "category": "Bath & Brush",
+      "services": [
+        {
+          "service": "Small Dog Bath & Brush",
+          "size": "Under 10kg",
+          "price": 55.00,
+          "duration": "1 hour"
+        },
+        {
+          "service": "Medium Dog Bath & Brush",
+          "size": "10-25kg",
+          "price": 75.00,
+          "duration": "1.5 hours"
+        },
+        {
+          "service": "Large Dog Bath & Brush",
+          "size": "Over 25kg",
+          "price": 95.00,
+          "duration": "2 hours"
+        },
+        {
+          "service": "Cat Bath & Brush",
+          "price": 85.00,
+          "duration": "1 hour"
+        }
+      ]
+    },
+    {
+      "category": "Full Groom",
+      "services": [
+        {
+          "service": "Small Dog Full Groom",
+          "size": "Under 10kg",
+          "price": 85.00,
+          "includes": "Bath, blow dry, clip/scissor, nails, ears",
+          "duration": "2 hours"
+        },
+        {
+          "service": "Medium Dog Full Groom",
+          "size": "10-25kg",
+          "price": 110.00,
+          "includes": "Bath, blow dry, clip/scissor, nails, ears",
+          "duration": "2.5 hours"
+        },
+        {
+          "service": "Large Dog Full Groom",
+          "size": "Over 25kg",
+          "price": 140.00,
+          "includes": "Bath, blow dry, clip/scissor, nails, ears",
+          "duration": "3 hours"
+        },
+        {
+          "service": "Cat Full Groom",
+          "price": 115.00,
+          "includes": "Bath, blow dry, clip, nails",
+          "duration": "2 hours"
+        }
+      ]
+    },
+    {
+      "category": "Add-ons",
+      "services": [
+        {
+          "service": "Nail Trim Only",
+          "price": 20.00
+        },
+        {
+          "service": "De-Shedding Treatment",
+          "price": 25.00
+        },
+        {
+          "service": "Flea Treatment",
+          "price": 15.00
+        },
+        {
+          "service": "Teeth Brushing",
+          "price": 15.00
+        },
+        {
+          "service": "De-Matting (per 15 min)",
+          "price": 25.00
+        }
+      ]
+    }
+  ],
+  "appointments": [
+    {
+      "appointment_id": "APT-2024-1456",
+      "client_id": "CLI-002",
+      "pet_id": "PET-002",
+      "pet_name": "Bella",
+      "breed": "Poodle (Toy)",
+      "date": "2024-10-25",
+      "time": "9:00 AM",
+      "service": "Small Dog Full Groom",
+      "groomer": "Sophie Williams",
+      "status": "Completed",
+      "price": 85.00
+    },
+    {
+      "appointment_id": "APT-2024-1489",
+      "client_id": "CLI-005",
+      "pet_id": "PET-005",
+      "pet_name": "Rocky",
+      "breed": "Schnauzer (Miniature)",
+      "date": "2024-10-28",
+      "time": "10:30 AM",
+      "service": "Small Dog Full Groom + Hand Stripping",
+      "groomer": "Claire Morrison",
+      "status": "Completed",
+      "price": 125.00
+    },
+    {
+      "appointment_id": "APT-2024-1512",
+      "client_id": "CLI-003",
+      "pet_id": "PET-003",
+      "pet_name": "Charlie",
+      "breed": "Labradoodle",
+      "date": "2024-11-08",
+      "time": "2:00 PM",
+      "service": "Medium Dog Full Groom",
+      "groomer": "Sophie Williams",
+      "status": "Scheduled",
+      "price": 110.00
+    }
+  ],
+  "invoices": [
+    {
+      "invoice_id": "INV-2024-1823",
+      "appointment_id": "APT-2024-1456",
+      "client_id": "CLI-002",
+      "client_name": "Emma Chen",
+      "pet_name": "Bella",
+      "issue_date": "2024-10-25",
+      "due_date": "2024-10-25",
+      "status": "Paid",
+      "payment_date": "2024-10-25",
+      "payment_method": "Credit card",
+      "line_items": [
+        {
+          "description": "Small Dog Full Groom - Bella (Poodle)",
+          "amount": 85.00
+        }
+      ],
+      "subtotal": 85.00,
+      "gst": 8.50,
+      "total": 93.50
+    },
+    {
+      "invoice_id": "INV-2024-1856",
+      "appointment_id": "APT-2024-1489",
+      "client_id": "CLI-005",
+      "client_name": "Robert Rodriguez",
+      "pet_name": "Rocky",
+      "issue_date": "2024-10-28",
+      "due_date": "2024-10-28",
+      "status": "Paid",
+      "payment_date": "2024-10-28",
+      "payment_method": "Credit card",
+      "line_items": [
+        {
+          "description": "Small Dog Full Groom - Rocky (Schnauzer)",
+          "amount": 85.00
+        },
+        {
+          "description": "Hand Stripping Service",
+          "amount": 40.00
+        }
+      ],
+      "subtotal": 125.00,
+      "gst": 12.50,
+      "total": 137.50
+    },
+    {
+      "invoice_id": "INV-2024-1867",
+      "client_id": "CLI-006",
+      "client_name": "Sophie Anderson",
+      "pet_name": "Coco",
+      "issue_date": "2024-10-18",
+      "due_date": "2024-10-18",
+      "status": "Paid",
+      "payment_date": "2024-10-18",
+      "payment_method": "Cash",
+      "line_items": [
+        {
+          "description": "Small Dog Full Groom - Coco (Cavoodle)",
+          "amount": 85.00
+        }
+      ],
+      "subtotal": 85.00,
+      "gst": 8.50,
+      "total": 93.50
+    }
+  ],
+  "bills": [
+    {
+      "bill_id": "BILL-2024-2234",
+      "supplier": "Pet Grooming Supplies Australia",
+      "supplier_contact": "Trade Sales",
+      "supplier_phone": "+61 1300 738 476",
+      "issue_date": "2024-10-18",
+      "due_date": "2024-11-17",
+      "status": "Paid",
+      "line_items": [
+        {
+          "description": "Shampoo - hypoallergenic (5L)",
+          "quantity": 3,
+          "unit_price": 65.00,
+          "total": 195.00
+        },
+        {
+          "description": "Conditioner - professional grade (5L)",
+          "quantity": 2,
+          "unit_price": 75.00,
+          "total": 150.00
+        },
+        {
+          "description": "Clipper blades - assorted sizes (set of 6)",
+          "quantity": 1,
+          "unit_price": 185.00,
+          "total": 185.00
+        },
+        {
+          "description": "Scissors - curved (professional)",
+          "quantity": 2,
+          "unit_price": 95.00,
+          "total": 190.00
+        },
+        {
+          "description": "Nail clippers - heavy duty",
+          "quantity": 3,
+          "unit_price": 45.00,
+          "total": 135.00
+        }
+      ],
+      "subtotal": 855.00,
+      "gst": 85.50,
+      "total": 940.50
+    },
+    {
+      "bill_id": "BILL-2024-2235",
+      "supplier": "Wahl Clipper Corporation",
+      "supplier_contact": "Australia Distributor",
+      "supplier_phone": "+61 3 9548 2333",
+      "issue_date": "2024-10-20",
+      "due_date": "2024-11-19",
+      "status": "Unpaid",
+      "line_items": [
+        {
+          "description": "Wahl KM10 Clipper - professional",
+          "quantity": 1,
+          "unit_price": 485.00,
+          "total": 485.00
+        },
+        {
+          "description": "Clipper oil and maintenance kit",
+          "quantity": 2,
+          "unit_price": 35.00,
+          "total": 70.00
+        }
+      ],
+      "subtotal": 555.00,
+      "gst": 55.50,
+      "total": 610.50
+    },
+    {
+      "bill_id": "BILL-2024-2236",
+      "supplier": "West End Commercial Properties",
+      "issue_date": "2024-10-01",
+      "due_date": "2024-10-15",
+      "status": "Paid",
+      "line_items": [
+        {
+          "description": "Shop rent - October 2024",
+          "quantity": 1,
+          "unit_price": 2650.00,
+          "total": 2650.00
+        },
+        {
+          "description": "Outgoings",
+          "quantity": 1,
+          "unit_price": 265.00,
+          "total": 265.00
+        }
+      ],
+      "subtotal": 2915.00,
+      "gst": 291.50,
+      "total": 3206.50
+    },
+    {
+      "bill_id": "BILL-2024-2237",
+      "supplier": "Origin Energy",
+      "issue_date": "2024-10-20",
+      "due_date": "2024-11-13",
+      "status": "Unpaid",
+      "line_items": [
+        {
+          "description": "Electricity - September 2024 (1,150 kWh)",
+          "quantity": 1,
+          "unit_price": 485.00,
+          "total": 485.00
+        }
+      ],
+      "subtotal": 485.00,
+      "gst": 48.50,
+      "total": 533.50
+    },
+    {
+      "bill_id": "BILL-2024-2238",
+      "supplier": "Urban Utilities",
+      "issue_date": "2024-10-18",
+      "due_date": "2024-11-11",
+      "status": "Unpaid",
+      "line_items": [
+        {
+          "description": "Water usage - September 2024",
+          "quantity": 1,
+          "unit_price": 285.00,
+          "total": 285.00
+        }
+      ],
+      "subtotal": 285.00,
+      "gst": 28.50,
+      "total": 313.50
+    }
+  ],
+  "staff": [
+    {
+      "staff_id": "STAFF-001",
+      "name": "Claire Morrison",
+      "role": "Owner / Master Groomer",
+      "email": "claire@pamperedpaws.com.au",
+      "phone": "+61 412 678 901",
+      "qualifications": [
+        "Certificate III in Dog Grooming",
+        "Certificate IV in Veterinary Nursing",
+        "Cat Grooming Specialist Certificate"
+      ],
+      "experience_years": 15
+    },
+    {
+      "staff_id": "STAFF-002",
+      "name": "Sophie Williams",
+      "role": "Senior Groomer",
+      "email": "sophie@pamperedpaws.com.au",
+      "phone": "+61 423 789 012",
+      "qualifications": [
+        "Certificate III in Dog Grooming",
+        "First Aid for Pets Certificate"
+      ],
+      "experience_years": 8
+    },
+    {
+      "staff_id": "STAFF-003",
+      "name": "Emma Chen",
+      "role": "Groomer / Receptionist",
+      "email": "emma@pamperedpaws.com.au",
+      "phone": "+61 434 890 123",
+      "qualifications": [
+        "Certificate III in Dog Grooming"
+      ],
+      "experience_years": 3
+    }
+  ],
+  "enquiries": [
+    {
+      "enquiry_id": "ENQ-2024-234",
+      "name": "Amanda Harrison",
+      "email": "amanda.harrison@email.com",
+      "phone": "+61 467 890 234",
+      "pet_name": "Daisy",
+      "breed": "Cocker Spaniel",
+      "enquiry_date": "2024-10-28",
+      "status": "Appointment Booked",
+      "service_interest": "Full Groom",
+      "appointment_date": "2024-11-12",
+      "notes": "First time client, nervous dog"
+    },
+    {
+      "enquiry_id": "ENQ-2024-235",
+      "name": "Daniel Kim",
+      "email": "daniel.kim@email.com",
+      "phone": "+61 478 901 345",
+      "pet_name": "Milo",
+      "breed": "Ragdoll Cat",
+      "enquiry_date": "2024-10-29",
+      "status": "Information Sent",
+      "service_interest": "Cat Full Groom",
+      "notes": "Long hair cat, heavily matted. Sent pricing for de-matting."
+    },
+    {
+      "enquiry_id": "ENQ-2024-236",
+      "name": "Michael Foster",
+      "email": "michael.foster@email.com",
+      "phone": "+61 489 012 456",
+      "pet_name": "Zeus",
+      "breed": "German Shepherd",
+      "enquiry_date": "2024-10-27",
+      "status": "Appointment Booked",
+      "service_interest": "Large Dog Bath & Brush + De-Shedding",
+      "appointment_date": "2024-11-15",
+      "notes": "Shedding season, needs de-shedding treatment"
+    }
+  ],
+  "google_drive_files": [
+    {
+      "file_id": "FILE-001",
+      "file_name": "Grooming_Qualifications_Staff.pdf",
+      "file_type": "application/pdf",
+      "upload_date": "2024-01-15",
+      "description": "All staff grooming qualification certificates"
+    },
+    {
+      "file_id": "FILE-002",
+      "file_name": "Public_Liability_Insurance_2024.pdf",
+      "file_type": "application/pdf",
+      "upload_date": "2024-06-01",
+      "description": "Public liability insurance certificate"
+    },
+    {
+      "file_id": "FILE-003",
+      "file_name": "Pet_Handling_Safety_Procedures.pdf",
+      "file_type": "application/pdf",
+      "upload_date": "2024-02-01",
+      "description": "Safety procedures for handling pets during grooming"
+    },
+    {
+      "file_id": "FILE-004",
+      "file_name": "Before_After_Gallery_2024.pdf",
+      "file_type": "application/pdf",
+      "upload_date": "2024-09-01",
+      "description": "Before and after grooming photos for marketing"
+    },
+    {
+      "file_id": "FILE-005",
+      "file_name": "Bella_Poodle_Before_After.jpg",
+      "file_type": "image/jpeg",
+      "appointment_id": "APT-2024-1456",
+      "upload_date": "2024-10-25",
+      "description": "Before and after photos of Bella's groom"
+    },
+    {
+      "file_id": "FILE-006",
+      "file_name": "Rocky_Schnauzer_Hand_Stripping.jpg",
+      "file_type": "image/jpeg",
+      "appointment_id": "APT-2024-1489",
+      "upload_date": "2024-10-28",
+      "description": "Rocky's hand stripping groom result"
+    },
+    {
+      "file_id": "FILE-007",
+      "file_name": "Service_Price_List_2024.pdf",
+      "file_type": "application/pdf",
+      "upload_date": "2024-08-01",
+      "description": "Current service pricing list"
+    }
+  ]
+}
+

@@ -1,0 +1,814 @@
+{
+  "company": {
+    "name": "Brisbane Pet Care Veterinary Clinic",
+    "abn": "45 678 901 234",
+    "email": "reception@brisbanepetcare.com.au",
+    "phone": "+61 7 3369 5678",
+    "address": "156 Old Cleveland Road, Coorparoo QLD 4151"
+  },
+  "integrations": {
+    "practice_management": "ezyVet",
+    "accounting": "Xero",
+    "appointment_booking": "ezyVet Online Booking",
+    "email": "Microsoft 365",
+    "voice_agent": "Custom Voice Agent",
+    "pharmacy": "Vet Partners Australia",
+    "file_storage": "OneDrive",
+    "lab_results": "IDEXX VetLab"
+  },
+  "clinic_hours": {
+    "monday_friday": "8:00 AM - 6:00 PM",
+    "saturday": "8:00 AM - 2:00 PM",
+    "sunday": "Closed",
+    "emergency": "After-hours emergency service available"
+  },
+  "clients": [
+    {
+      "client_id": "CLI-001",
+      "name": "Sarah & Michael Thompson",
+      "email": "sarah.thompson@email.com",
+      "phone": "+61 412 345 678",
+      "address": "45 Honour Avenue, Graceville QLD 4075",
+      "pets": [
+        {
+          "pet_id": "PET-001",
+          "name": "Max",
+          "species": "Dog",
+          "breed": "Golden Retriever",
+          "age": 7,
+          "weight_kg": 32.5,
+          "microchip": "991001002345678"
+        },
+        {
+          "pet_id": "PET-002",
+          "name": "Luna",
+          "species": "Cat",
+          "breed": "British Shorthair",
+          "age": 4,
+          "weight_kg": 4.8,
+          "microchip": "991001002345679"
+        }
+      ],
+      "account_balance": 0.00,
+      "total_invoiced": 2845.00
+    },
+    {
+      "client_id": "CLI-002",
+      "name": "Emma Chen",
+      "email": "emma.chen@email.com",
+      "phone": "+61 423 456 789",
+      "address": "12 River Terrace, Kangaroo Point QLD 4169",
+      "pets": [
+        {
+          "pet_id": "PET-003",
+          "name": "Charlie",
+          "species": "Dog",
+          "breed": "Labrador Mix",
+          "age": 3,
+          "weight_kg": 28.0,
+          "microchip": "991001002345680"
+        }
+      ],
+      "account_balance": 0.00,
+      "total_invoiced": 1650.00
+    },
+    {
+      "client_id": "CLI-003",
+      "name": "David & Lisa Martinez",
+      "email": "martinez.family@email.com",
+      "phone": "+61 434 567 890",
+      "address": "89 Ipswich Road, Woolloongabba QLD 4102",
+      "pets": [
+        {
+          "pet_id": "PET-004",
+          "name": "Bella",
+          "species": "Dog",
+          "breed": "French Bulldog",
+          "age": 2,
+          "weight_kg": 11.5,
+          "microchip": "991001002345681"
+        }
+      ],
+      "account_balance": 485.00,
+      "total_invoiced": 3250.00
+    },
+    {
+      "client_id": "CLI-004",
+      "name": "Jennifer Park",
+      "email": "jennifer.park@email.com",
+      "phone": "+61 445 678 901",
+      "address": "23 Norman Creek Road, Norman Park QLD 4170",
+      "pets": [
+        {
+          "pet_id": "PET-005",
+          "name": "Whiskers",
+          "species": "Cat",
+          "breed": "Domestic Shorthair",
+          "age": 8,
+          "weight_kg": 5.2,
+          "microchip": "991001002345682"
+        },
+        {
+          "pet_id": "PET-006",
+          "name": "Shadow",
+          "species": "Cat",
+          "breed": "Domestic Shorthair",
+          "age": 6,
+          "weight_kg": 4.9,
+          "microchip": "991001002345683"
+        }
+      ],
+      "account_balance": 0.00,
+      "total_invoiced": 980.00
+    },
+    {
+      "client_id": "CLI-005",
+      "name": "Robert Wilson",
+      "email": "robert.wilson@email.com",
+      "phone": "+61 456 789 012",
+      "address": "67 Thynne Road, Morningside QLD 4170",
+      "pets": [
+        {
+          "pet_id": "PET-007",
+          "name": "Rocky",
+          "species": "Dog",
+          "breed": "German Shepherd",
+          "age": 5,
+          "weight_kg": 38.0,
+          "microchip": "991001002345684"
+        }
+      ],
+      "account_balance": 0.00,
+      "total_invoiced": 1850.00
+    },
+    {
+      "client_id": "CLI-006",
+      "name": "Sophie Anderson",
+      "email": "sophie.anderson@email.com",
+      "phone": "+61 467 890 123",
+      "address": "156 Stanley Road, Camp Hill QLD 4152",
+      "pets": [
+        {
+          "pet_id": "PET-008",
+          "name": "Coco",
+          "species": "Dog",
+          "breed": "Cavoodle",
+          "age": 1,
+          "weight_kg": 7.5,
+          "microchip": "991001002345685"
+        }
+      ],
+      "account_balance": 0.00,
+      "total_invoiced": 0.00
+    },
+    {
+      "client_id": "CLI-007",
+      "name": "Marcus Nguyen",
+      "email": "marcus.nguyen@email.com",
+      "phone": "+61 478 901 234",
+      "address": "45 Wellington Road, East Brisbane QLD 4169",
+      "pets": [
+        {
+          "pet_id": "PET-009",
+          "name": "Milo",
+          "species": "Cat",
+          "breed": "Ragdoll",
+          "age": 3,
+          "weight_kg": 6.1,
+          "microchip": "991001002345686"
+        }
+      ],
+      "account_balance": 0.00,
+      "total_invoiced": 0.00
+    },
+    {
+      "client_id": "CLI-008",
+      "name": "Rebecca Foster",
+      "email": "rebecca.foster@email.com",
+      "phone": "+61 489 012 345",
+      "address": "78 Hawthorne Road, Hawthorne QLD 4171",
+      "pets": [
+        {
+          "pet_id": "PET-010",
+          "name": "Buddy",
+          "species": "Dog",
+          "breed": "Beagle",
+          "age": 6,
+          "weight_kg": 13.2,
+          "microchip": "991001002345687"
+        }
+      ],
+      "account_balance": 0.00,
+      "total_invoiced": 0.00
+    },
+    {
+      "client_id": "CLI-009",
+      "name": "James Rodriguez",
+      "email": "james.rodriguez@email.com",
+      "phone": "+61 490 123 456",
+      "address": "23 Kookaburra Street, Norman Park QLD 4170",
+      "pets": [
+        {
+          "pet_id": "PET-011",
+          "name": "Daisy",
+          "species": "Dog",
+          "breed": "Border Collie",
+          "age": 4,
+          "weight_kg": 19.0,
+          "microchip": "991001002345688"
+        }
+      ],
+      "account_balance": 0.00,
+      "total_invoiced": 0.00
+    }
+  ],
+  "appointments": [
+    {
+      "appointment_id": "APT-2024-3456",
+      "client_id": "CLI-001",
+      "pet_id": "PET-001",
+      "pet_name": "Max",
+      "date": "2024-10-15",
+      "time": "10:00 AM",
+      "type": "General Consultation",
+      "vet": "Dr. Emily Watson",
+      "reason": "Limping on front right leg",
+      "status": "Completed",
+      "diagnosis": "Soft tissue injury - shoulder strain",
+      "treatment": "Anti-inflammatory medication, rest for 2 weeks"
+    },
+    {
+      "appointment_id": "APT-2024-3512",
+      "client_id": "CLI-003",
+      "pet_id": "PET-004",
+      "pet_name": "Bella",
+      "date": "2024-10-22",
+      "time": "2:30 PM",
+      "type": "Surgery - Desexing",
+      "vet": "Dr. Andrew Morrison",
+      "reason": "Routine desexing",
+      "status": "Completed",
+      "procedure": "Ovariohysterectomy (spay)",
+      "notes": "Surgery successful, discharged same day with post-op instructions"
+    },
+    {
+      "appointment_id": "APT-2024-3589",
+      "client_id": "CLI-002",
+      "pet_id": "PET-003",
+      "pet_name": "Charlie",
+      "date": "2024-11-05",
+      "time": "9:00 AM",
+      "type": "Vaccination",
+      "vet": "Dr. Sarah Kim",
+      "reason": "Annual vaccination",
+      "status": "Scheduled"
+    }
+  ],
+  "services_pricing": [
+    {
+      "category": "Consultations",
+      "services": [
+        {
+          "service": "Standard Consultation",
+          "price": 85.00
+        },
+        {
+          "service": "Extended Consultation (30+ mins)",
+          "price": 125.00
+        },
+        {
+          "service": "After Hours Emergency",
+          "price": 195.00
+        }
+      ]
+    },
+    {
+      "category": "Vaccinations",
+      "services": [
+        {
+          "service": "Dog - C5 Vaccination",
+          "price": 110.00
+        },
+        {
+          "service": "Cat - F3 Vaccination",
+          "price": 95.00
+        },
+        {
+          "service": "Cat - F4 Vaccination",
+          "price": 125.00
+        }
+      ]
+    },
+    {
+      "category": "Surgery",
+      "services": [
+        {
+          "service": "Desexing - Cat (Female)",
+          "price": 285.00
+        },
+        {
+          "service": "Desexing - Cat (Male)",
+          "price": 195.00
+        },
+        {
+          "service": "Desexing - Dog Small (under 10kg)",
+          "price": 385.00
+        },
+        {
+          "service": "Desexing - Dog Medium (10-25kg)",
+          "price": 485.00
+        },
+        {
+          "service": "Desexing - Dog Large (over 25kg)",
+          "price": 585.00
+        },
+        {
+          "service": "Dental Cleaning - Cat",
+          "price": 485.00
+        },
+        {
+          "service": "Dental Cleaning - Dog",
+          "price": 585.00
+        }
+      ]
+    },
+    {
+      "category": "Diagnostics",
+      "services": [
+        {
+          "service": "Blood Test - Basic Panel",
+          "price": 145.00
+        },
+        {
+          "service": "Blood Test - Comprehensive Panel",
+          "price": 285.00
+        },
+        {
+          "service": "X-Ray - Single View",
+          "price": 185.00
+        },
+        {
+          "service": "X-Ray - Multiple Views",
+          "price": 285.00
+        },
+        {
+          "service": "Ultrasound",
+          "price": 385.00
+        }
+      ]
+    }
+  ],
+  "invoices": [
+    {
+      "invoice_id": "INV-2024-4567",
+      "client_id": "CLI-001",
+      "pet_id": "PET-001",
+      "pet_name": "Max",
+      "appointment_id": "APT-2024-3456",
+      "issue_date": "2024-10-15",
+      "due_date": "2024-10-29",
+      "status": "Paid",
+      "payment_date": "2024-10-15",
+      "line_items": [
+        {
+          "description": "Standard Consultation - Dr. Emily Watson",
+          "quantity": 1,
+          "unit_price": 85.00,
+          "total": 85.00
+        },
+        {
+          "description": "X-Ray - Multiple views (shoulder)",
+          "quantity": 1,
+          "unit_price": 285.00,
+          "total": 285.00
+        },
+        {
+          "description": "Metacam (Meloxicam) 15ml",
+          "quantity": 1,
+          "unit_price": 45.00,
+          "total": 45.00
+        },
+        {
+          "description": "Dispensing fee",
+          "quantity": 1,
+          "unit_price": 8.50,
+          "total": 8.50
+        }
+      ],
+      "subtotal": 423.50,
+      "gst": 42.35,
+      "total": 465.85
+    },
+    {
+      "invoice_id": "INV-2024-4723",
+      "client_id": "CLI-003",
+      "pet_id": "PET-004",
+      "pet_name": "Bella",
+      "appointment_id": "APT-2024-3512",
+      "issue_date": "2024-10-22",
+      "due_date": "2024-11-05",
+      "status": "Unpaid",
+      "line_items": [
+        {
+          "description": "Pre-anaesthetic examination",
+          "quantity": 1,
+          "unit_price": 85.00,
+          "total": 85.00
+        },
+        {
+          "description": "Pre-anaesthetic blood test",
+          "quantity": 1,
+          "unit_price": 145.00,
+          "total": 145.00
+        },
+        {
+          "description": "Desexing surgery - Dog Medium (10-25kg)",
+          "quantity": 1,
+          "unit_price": 485.00,
+          "total": 485.00
+        },
+        {
+          "description": "Pain medication - Tramadol 50mg (10 tablets)",
+          "quantity": 1,
+          "unit_price": 28.00,
+          "total": 28.00
+        },
+        {
+          "description": "Antibiotics - Clavulox 250mg (14 tablets)",
+          "quantity": 1,
+          "unit_price": 42.00,
+          "total": 42.00
+        },
+        {
+          "description": "Elizabethan collar",
+          "quantity": 1,
+          "unit_price": 25.00,
+          "total": 25.00
+        },
+        {
+          "description": "Post-operative consultation (complimentary)",
+          "quantity": 1,
+          "unit_price": 0.00,
+          "total": 0.00
+        }
+      ],
+      "subtotal": 810.00,
+      "gst": 81.00,
+      "total": 891.00,
+      "notes": "Post-op check scheduled for 29 Oct 2024"
+    },
+    {
+      "invoice_id": "INV-2024-4658",
+      "client_id": "CLI-002",
+      "pet_id": "PET-003",
+      "pet_name": "Charlie",
+      "issue_date": "2024-10-18",
+      "due_date": "2024-11-01",
+      "status": "Paid",
+      "payment_date": "2024-10-20",
+      "line_items": [
+        {
+          "description": "Standard Consultation - Dr. Sarah Kim",
+          "quantity": 1,
+          "unit_price": 85.00,
+          "total": 85.00
+        },
+        {
+          "description": "Skin scraping and microscopy",
+          "quantity": 1,
+          "unit_price": 65.00,
+          "total": 65.00
+        },
+        {
+          "description": "Aloveen Oatmeal Shampoo 500ml",
+          "quantity": 1,
+          "unit_price": 32.00,
+          "total": 32.00
+        },
+        {
+          "description": "Malaseb Medicated Foam 250ml",
+          "quantity": 1,
+          "unit_price": 48.00,
+          "total": 48.00
+        }
+      ],
+      "subtotal": 230.00,
+      "gst": 23.00,
+      "total": 253.00
+    }
+  ],
+  "bills": [
+    {
+      "bill_id": "BILL-2024-2345",
+      "supplier": "Vet Partners Australia",
+      "supplier_contact": "Trade Sales",
+      "supplier_phone": "+61 1300 838 727",
+      "issue_date": "2024-10-15",
+      "due_date": "2024-11-14",
+      "status": "Paid",
+      "line_items": [
+        {
+          "description": "Metacam (Meloxicam) 15ml - 10 units",
+          "quantity": 10,
+          "unit_price": 28.50,
+          "total": 285.00
+        },
+        {
+          "description": "Clavulox 250mg tablets (14 pack) - 12 units",
+          "quantity": 12,
+          "unit_price": 26.00,
+          "total": 312.00
+        },
+        {
+          "description": "Bravecto Spot-On for Cats - assorted sizes",
+          "quantity": 1,
+          "unit_price": 385.00,
+          "total": 385.00
+        },
+        {
+          "description": "Nexgard Spectra for Dogs - assorted sizes",
+          "quantity": 1,
+          "unit_price": 485.00,
+          "total": 485.00
+        },
+        {
+          "description": "Vaccination supplies - C5 and F3",
+          "quantity": 1,
+          "unit_price": 450.00,
+          "total": 450.00
+        }
+      ],
+      "subtotal": 1917.00,
+      "gst": 191.70,
+      "total": 2108.70
+    },
+    {
+      "bill_id": "BILL-2024-2346",
+      "supplier": "IDEXX Laboratories",
+      "supplier_contact": "Lab Services",
+      "supplier_phone": "+61 1300 433 993",
+      "issue_date": "2024-10-20",
+      "due_date": "2024-11-19",
+      "status": "Unpaid",
+      "line_items": [
+        {
+          "description": "Blood chemistry panels - October 2024 (18 tests)",
+          "quantity": 18,
+          "unit_price": 45.00,
+          "total": 810.00
+        },
+        {
+          "description": "Complete blood count (CBC) - October 2024 (15 tests)",
+          "quantity": 15,
+          "unit_price": 38.00,
+          "total": 570.00
+        },
+        {
+          "description": "Urinalysis - October 2024 (8 tests)",
+          "quantity": 8,
+          "unit_price": 32.00,
+          "total": 256.00
+        }
+      ],
+      "subtotal": 1636.00,
+      "gst": 163.60,
+      "total": 1799.60
+    },
+    {
+      "bill_id": "BILL-2024-2347",
+      "supplier": "Provet Surgical Supplies",
+      "supplier_contact": "Brisbane Branch",
+      "supplier_phone": "+61 7 3252 8765",
+      "issue_date": "2024-10-18",
+      "due_date": "2024-11-17",
+      "status": "Unpaid",
+      "line_items": [
+        {
+          "description": "Surgical gloves - latex (box of 100) size 7.5",
+          "quantity": 3,
+          "unit_price": 28.00,
+          "total": 84.00
+        },
+        {
+          "description": "Surgical suture - PDS II 3-0 (box of 12)",
+          "quantity": 2,
+          "unit_price": 145.00,
+          "total": 290.00
+        },
+        {
+          "description": "Surgical drapes - disposable (pack of 50)",
+          "quantity": 1,
+          "unit_price": 185.00,
+          "total": 185.00
+        },
+        {
+          "description": "Isoflurane anaesthetic gas - 250ml",
+          "quantity": 2,
+          "unit_price": 95.00,
+          "total": 190.00
+        }
+      ],
+      "subtotal": 749.00,
+      "gst": 74.90,
+      "total": 823.90
+    },
+    {
+      "bill_id": "BILL-2024-2348",
+      "supplier": "Paw Print Supplies",
+      "supplier_contact": "General Supplies",
+      "supplier_phone": "+61 7 3369 8765",
+      "issue_date": "2024-10-22",
+      "due_date": "2024-11-21",
+      "status": "Unpaid",
+      "line_items": [
+        {
+          "description": "Elizabethan collars - assorted sizes (20 pack)",
+          "quantity": 1,
+          "unit_price": 145.00,
+          "total": 145.00
+        },
+        {
+          "description": "Microchips - 25mm with applicator (50 pack)",
+          "quantity": 1,
+          "unit_price": 285.00,
+          "total": 285.00
+        },
+        {
+          "description": "Digital thermometers - 10 pack",
+          "quantity": 1,
+          "unit_price": 85.00,
+          "total": 85.00
+        },
+        {
+          "description": "Stainless steel bowls - assorted (10 pack)",
+          "quantity": 1,
+          "unit_price": 65.00,
+          "total": 65.00
+        }
+      ],
+      "subtotal": 580.00,
+      "gst": 58.00,
+      "total": 638.00
+    },
+    {
+      "bill_id": "BILL-2024-2349",
+      "supplier": "Origin Energy",
+      "supplier_contact": "Business Accounts",
+      "supplier_phone": "13 24 61",
+      "issue_date": "2024-10-20",
+      "due_date": "2024-11-13",
+      "status": "Unpaid",
+      "line_items": [
+        {
+          "description": "Electricity usage - September 2024 (1,850 kWh)",
+          "quantity": 1,
+          "unit_price": 685.00,
+          "total": 685.00
+        }
+      ],
+      "subtotal": 685.00,
+      "gst": 68.50,
+      "total": 753.50
+    }
+  ],
+  "staff": [
+    {
+      "staff_id": "STAFF-001",
+      "name": "Dr. Emily Watson",
+      "role": "Senior Veterinarian / Owner",
+      "email": "emily@brisbanepetcare.com.au",
+      "phone": "+61 412 678 901",
+      "qualifications": [
+        "Bachelor of Veterinary Science (BVSc)",
+        "Member of Australian Veterinary Association"
+      ],
+      "specializations": [
+        "Small Animal Medicine",
+        "Internal Medicine",
+        "Emergency Care"
+      ],
+      "registration": "Queensland Veterinary Surgeons Board #12345"
+    },
+    {
+      "staff_id": "STAFF-002",
+      "name": "Dr. Andrew Morrison",
+      "role": "Veterinarian",
+      "email": "andrew@brisbanepetcare.com.au",
+      "phone": "+61 423 789 012",
+      "qualifications": [
+        "Bachelor of Veterinary Science (BVSc)",
+        "Member of Australian Veterinary Association"
+      ],
+      "specializations": [
+        "Surgery",
+        "Orthopaedics",
+        "Dentistry"
+      ],
+      "registration": "Queensland Veterinary Surgeons Board #23456"
+    },
+    {
+      "staff_id": "STAFF-003",
+      "name": "Dr. Sarah Kim",
+      "role": "Veterinarian",
+      "email": "sarah@brisbanepetcare.com.au",
+      "phone": "+61 434 890 123",
+      "qualifications": [
+        "Bachelor of Veterinary Science (BVSc)",
+        "Certificate in Veterinary Behaviour"
+      ],
+      "specializations": [
+        "Dermatology",
+        "Behaviour Medicine",
+        "Preventative Care"
+      ],
+      "registration": "Queensland Veterinary Surgeons Board #34567"
+    },
+    {
+      "staff_id": "STAFF-004",
+      "name": "Jessica Martinez",
+      "role": "Head Veterinary Nurse",
+      "email": "jessica@brisbanepetcare.com.au",
+      "phone": "+61 445 901 234",
+      "qualifications": [
+        "Certificate IV in Veterinary Nursing",
+        "Emergency and Critical Care Certificate"
+      ]
+    },
+    {
+      "staff_id": "STAFF-005",
+      "name": "Rebecca Foster",
+      "role": "Veterinary Nurse",
+      "email": "rebecca.nurse@brisbanepetcare.com.au",
+      "phone": "+61 456 012 345",
+      "qualifications": [
+        "Certificate IV in Veterinary Nursing"
+      ]
+    },
+    {
+      "staff_id": "STAFF-006",
+      "name": "Amy Chen",
+      "role": "Receptionist / Practice Manager",
+      "email": "amy@brisbanepetcare.com.au",
+      "phone": "+61 467 123 456",
+      "qualifications": [
+        "Certificate III in Business Administration"
+      ]
+    }
+  ],
+  "onedrive_files": [
+    {
+      "file_id": "FILE-001",
+      "file_name": "Max_Thompson_Xrays_15Oct2024.jpg",
+      "file_type": "image/jpeg",
+      "pet_id": "PET-001",
+      "appointment_id": "APT-2024-3456",
+      "upload_date": "2024-10-15",
+      "description": "X-rays of Max's shoulder showing soft tissue injury"
+    },
+    {
+      "file_id": "FILE-002",
+      "file_name": "Bella_Martinez_Surgery_Report_22Oct2024.pdf",
+      "file_type": "application/pdf",
+      "pet_id": "PET-004",
+      "appointment_id": "APT-2024-3512",
+      "upload_date": "2024-10-22",
+      "description": "Surgical report for Bella's desexing procedure"
+    },
+    {
+      "file_id": "FILE-003",
+      "file_name": "Staff_Vaccination_Certificates_2024.pdf",
+      "file_type": "application/pdf",
+      "upload_date": "2024-01-15",
+      "description": "All veterinarian registration certificates"
+    },
+    {
+      "file_id": "FILE-004",
+      "file_name": "Clinic_Operating_Procedures.pdf",
+      "file_type": "application/pdf",
+      "upload_date": "2024-02-01",
+      "description": "Standard operating procedures and protocols"
+    },
+    {
+      "file_id": "FILE-005",
+      "file_name": "Professional_Indemnity_Insurance_2024.pdf",
+      "file_type": "application/pdf",
+      "upload_date": "2024-06-01",
+      "description": "Professional indemnity insurance certificate"
+    },
+    {
+      "file_id": "FILE-006",
+      "file_name": "Equipment_Maintenance_Log_2024.xlsx",
+      "file_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "upload_date": "2024-01-05",
+      "description": "Equipment maintenance and calibration records"
+    },
+    {
+      "file_id": "FILE-007",
+      "file_name": "Controlled_Drugs_Register_2024.xlsx",
+      "file_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "upload_date": "2024-01-01",
+      "description": "Controlled drugs register as per QLD regulations"
+    }
+  ]
+}
+

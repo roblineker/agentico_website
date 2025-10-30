@@ -1,0 +1,508 @@
+{
+  "company": {
+    "name": "Paddington Health Pharmacy",
+    "abn": "23 456 789 013",
+    "email": "info@paddingtonpharmacy.com.au",
+    "phone": "+61 7 3369 9123",
+    "address": "234 Given Terrace, Paddington QLD 4064"
+  },
+  "integrations": {
+    "dispensing": "Fred Dispense Plus",
+    "pos": "Fred POS",
+    "accounting": "Xero",
+    "email": "Microsoft 365",
+    "voice_agent": "Custom Voice Agent",
+    "prescriptions": "eRx Script Exchange",
+    "file_storage": "OneDrive"
+  },
+  "trading_hours": {
+    "monday_friday": "8:00 AM - 7:00 PM",
+    "saturday": "9:00 AM - 5:00 PM",
+    "sunday": "9:00 AM - 3:00 PM"
+  },
+  "services": [
+    "Prescription Dispensing",
+    "Over-the-Counter Medications",
+    "Vaccination Services (Flu, COVID-19, Travel)",
+    "Health Checks (Blood Pressure, Cholesterol)",
+    "Medication Reviews",
+    "Compounding",
+    "Webster Packs (Dose Administration Aids)",
+    "Home Medicine Reviews",
+    "Blood Sugar Testing",
+    "Sleep Apnoea Equipment"
+  ],
+  "customers": [
+    {
+      "customer_id": "CUST-001",
+      "name": "Sarah Mitchell",
+      "email": "sarah.mitchell@email.com",
+      "phone": "+61 412 345 678",
+      "address": "23 Park Road, Milton QLD 4064",
+      "date_of_birth": "1978-05-15",
+      "medicare_number": "2345 67890 1",
+      "regular_medications": ["Lipitor 20mg", "Norvasc 5mg"],
+      "allergies": ["Penicillin"],
+      "total_spent": 2850.00
+    },
+    {
+      "customer_id": "CUST-002",
+      "name": "Michael Thompson",
+      "email": "michael.thompson@email.com",
+      "phone": "+61 423 456 789",
+      "address": "67 River Terrace, Kangaroo Point QLD 4169",
+      "date_of_birth": "1965-11-22",
+      "medicare_number": "3456 78901 2",
+      "regular_medications": ["Metformin 1000mg", "Ramipril 10mg"],
+      "allergies": ["None known"],
+      "webster_pack": true,
+      "total_spent": 4250.00
+    },
+    {
+      "customer_id": "CUST-003",
+      "name": "Emma Chen",
+      "email": "emma.chen@email.com",
+      "phone": "+61 434 567 890",
+      "address": "89 Stanley Street, East Brisbane QLD 4169",
+      "date_of_birth": "1990-08-10",
+      "medicare_number": "4567 89012 3",
+      "regular_medications": ["Oral contraceptive"],
+      "allergies": ["None known"],
+      "total_spent": 985.00
+    },
+    {
+      "customer_id": "CUST-004",
+      "name": "Jennifer Park",
+      "email": "jennifer.park@email.com",
+      "phone": "+61 445 678 901",
+      "address": "23 Norman Creek Road, Norman Park QLD 4170",
+      "date_of_birth": "1982-03-28",
+      "medicare_number": "5678 90123 4",
+      "regular_medications": ["Ventolin inhaler", "Seretide inhaler"],
+      "allergies": ["Aspirin"],
+      "total_spent": 1450.00
+    },
+    {
+      "customer_id": "CUST-005",
+      "name": "Robert Wilson",
+      "email": "robert.wilson@email.com",
+      "phone": "+61 456 789 012",
+      "address": "45 Given Terrace, Paddington QLD 4064",
+      "date_of_birth": "1955-12-05",
+      "medicare_number": "6789 01234 5",
+      "regular_medications": ["Warfarin 5mg", "Atorvastatin 40mg", "Aspirin 100mg"],
+      "allergies": ["None known"],
+      "webster_pack": true,
+      "total_spent": 5680.00
+    }
+  ],
+  "daily_sales": [
+    {
+      "date": "2024-10-25",
+      "day": "Friday",
+      "prescriptions_dispensed": 125,
+      "prescription_sales": 3850.00,
+      "otc_sales": 1685.00,
+      "vaccinations": 8,
+      "vaccination_revenue": 480.00,
+      "total_sales": 6015.00,
+      "transactions": 187
+    },
+    {
+      "date": "2024-10-26",
+      "day": "Saturday",
+      "prescriptions_dispensed": 98,
+      "prescription_sales": 2950.00,
+      "otc_sales": 2150.00,
+      "vaccinations": 12,
+      "vaccination_revenue": 720.00,
+      "total_sales": 5820.00,
+      "transactions": 165
+    },
+    {
+      "date": "2024-10-27",
+      "day": "Sunday",
+      "prescriptions_dispensed": 65,
+      "prescription_sales": 1985.00,
+      "otc_sales": 1420.00,
+      "vaccinations": 5,
+      "vaccination_revenue": 300.00,
+      "total_sales": 3705.00,
+      "transactions": 108
+    }
+  ],
+  "invoices": [
+    {
+      "invoice_id": "INV-2024-8923",
+      "customer_id": "CUST-002",
+      "customer_name": "Michael Thompson",
+      "issue_date": "2024-10-25",
+      "status": "Paid",
+      "payment_date": "2024-10-25",
+      "payment_method": "Medicare Claim + Patient Co-payment",
+      "line_items": [
+        {
+          "description": "Metformin 1000mg - 60 tablets",
+          "pbs_code": "2935K",
+          "script_type": "PBS",
+          "quantity": 60,
+          "patient_copay": 31.60,
+          "medicare_benefit": 165.40,
+          "total": 197.00
+        },
+        {
+          "description": "Ramipril 10mg - 30 tablets",
+          "pbs_code": "8521J",
+          "script_type": "PBS",
+          "quantity": 30,
+          "patient_copay": 31.60,
+          "medicare_benefit": 142.80,
+          "total": 174.40
+        }
+      ],
+      "total_patient_paid": 63.20,
+      "total_medicare_claimed": 308.20,
+      "total": 371.40
+    },
+    {
+      "invoice_id": "INV-2024-8945",
+      "customer_id": "CUST-003",
+      "customer_name": "Emma Chen",
+      "issue_date": "2024-10-26",
+      "status": "Paid",
+      "payment_date": "2024-10-26",
+      "payment_method": "Credit card",
+      "line_items": [
+        {
+          "description": "Flu Vaccination",
+          "quantity": 1,
+          "price": 25.00,
+          "total": 25.00
+        },
+        {
+          "description": "Panadol Osteo - 96 tablets",
+          "quantity": 1,
+          "price": 12.99,
+          "total": 12.99
+        },
+        {
+          "description": "Multivitamin - Blackmores",
+          "quantity": 1,
+          "price": 24.95,
+          "total": 24.95
+        }
+      ],
+      "subtotal": 62.94,
+      "gst": 6.29,
+      "total": 69.23
+    }
+  ],
+  "bills": [
+    {
+      "bill_id": "BILL-2024-3456",
+      "supplier": "Sigma Healthcare",
+      "supplier_contact": "Queensland Branch",
+      "supplier_phone": "+61 7 3123 4567",
+      "issue_date": "2024-10-20",
+      "due_date": "2024-11-19",
+      "status": "Paid",
+      "line_items": [
+        {
+          "description": "PBS Pharmaceutical stock - October order",
+          "quantity": 1,
+          "unit_price": 45850.00,
+          "total": 45850.00
+        }
+      ],
+      "subtotal": 45850.00,
+      "gst": 0.00,
+      "total": 45850.00,
+      "notes": "PBS medications - GST not applicable"
+    },
+    {
+      "bill_id": "BILL-2024-3457",
+      "supplier": "API (Australian Pharmaceutical Industries)",
+      "supplier_contact": "Brisbane Distribution",
+      "supplier_phone": "+61 7 3234 5678",
+      "issue_date": "2024-10-22",
+      "due_date": "2024-11-21",
+      "status": "Unpaid",
+      "line_items": [
+        {
+          "description": "Over-the-counter medications and vitamins",
+          "quantity": 1,
+          "unit_price": 8950.00,
+          "total": 8950.00
+        },
+        {
+          "description": "Personal care products",
+          "quantity": 1,
+          "unit_price": 2850.00,
+          "total": 2850.00
+        }
+      ],
+      "subtotal": 11800.00,
+      "gst": 1180.00,
+      "total": 12980.00
+    },
+    {
+      "bill_id": "BILL-2024-3458",
+      "supplier": "CSL Seqirus",
+      "supplier_contact": "Vaccine Supply",
+      "supplier_phone": "+61 3 9389 1911",
+      "issue_date": "2024-10-18",
+      "due_date": "2024-11-17",
+      "status": "Paid",
+      "line_items": [
+        {
+          "description": "Influenza vaccine - Fluad Quad (50 doses)",
+          "quantity": 50,
+          "unit_price": 18.50,
+          "total": 925.00
+        },
+        {
+          "description": "COVID-19 vaccine - Pfizer (30 doses)",
+          "quantity": 30,
+          "unit_price": 0.00,
+          "total": 0.00
+        }
+      ],
+      "subtotal": 925.00,
+      "gst": 92.50,
+      "total": 1017.50,
+      "notes": "COVID vaccines supplied free by government"
+    },
+    {
+      "bill_id": "BILL-2024-3459",
+      "supplier": "Fred IT Group",
+      "supplier_contact": "Subscriptions",
+      "supplier_phone": "+61 1300 373 348",
+      "issue_date": "2024-10-01",
+      "due_date": "2024-10-31",
+      "status": "Paid",
+      "line_items": [
+        {
+          "description": "Fred Dispense Plus - Monthly license",
+          "quantity": 1,
+          "unit_price": 485.00,
+          "total": 485.00
+        },
+        {
+          "description": "Fred POS system - Monthly license",
+          "quantity": 1,
+          "unit_price": 195.00,
+          "total": 195.00
+        }
+      ],
+      "subtotal": 680.00,
+      "gst": 68.00,
+      "total": 748.00
+    },
+    {
+      "bill_id": "BILL-2024-3460",
+      "supplier": "Paddington Commercial Property",
+      "issue_date": "2024-10-01",
+      "due_date": "2024-10-15",
+      "status": "Paid",
+      "line_items": [
+        {
+          "description": "Shop rent - October 2024",
+          "quantity": 1,
+          "unit_price": 5850.00,
+          "total": 5850.00
+        },
+        {
+          "description": "Outgoings",
+          "quantity": 1,
+          "unit_price": 585.00,
+          "total": 585.00
+        }
+      ],
+      "subtotal": 6435.00,
+      "gst": 643.50,
+      "total": 7078.50
+    },
+    {
+      "bill_id": "BILL-2024-3461",
+      "supplier": "Origin Energy",
+      "issue_date": "2024-10-20",
+      "due_date": "2024-11-13",
+      "status": "Unpaid",
+      "line_items": [
+        {
+          "description": "Electricity - September 2024 (1,850 kWh)",
+          "quantity": 1,
+          "unit_price": 785.00,
+          "total": 785.00
+        }
+      ],
+      "subtotal": 785.00,
+      "gst": 78.50,
+      "total": 863.50
+    }
+  ],
+  "staff": [
+    {
+      "staff_id": "STAFF-001",
+      "name": "Dr. Emma Morrison",
+      "role": "Pharmacist Owner",
+      "email": "emma@paddingtonpharmacy.com.au",
+      "phone": "+61 412 678 901",
+      "qualifications": [
+        "Bachelor of Pharmacy",
+        "AHPRA Registered Pharmacist #PHA0012345",
+        "Vaccination Certified"
+      ],
+      "experience_years": 18
+    },
+    {
+      "staff_id": "STAFF-002",
+      "name": "Dr. Michael Chen",
+      "role": "Pharmacist",
+      "email": "michael@paddingtonpharmacy.com.au",
+      "phone": "+61 423 789 012",
+      "qualifications": [
+        "Bachelor of Pharmacy",
+        "AHPRA Registered Pharmacist #PHA0023456",
+        "Vaccination Certified",
+        "Diabetes Educator Certificate"
+      ],
+      "experience_years": 10
+    },
+    {
+      "staff_id": "STAFF-003",
+      "name": "Sophie Williams",
+      "role": "Pharmacy Assistant",
+      "email": "sophie@paddingtonpharmacy.com.au",
+      "phone": "+61 434 890 123",
+      "qualifications": [
+        "Certificate III in Community Pharmacy"
+      ],
+      "experience_years": 5
+    },
+    {
+      "staff_id": "STAFF-004",
+      "name": "Jessica Park",
+      "role": "Pharmacy Assistant",
+      "email": "jessica@paddingtonpharmacy.com.au",
+      "phone": "+61 445 901 234",
+      "qualifications": [
+        "Certificate III in Community Pharmacy"
+      ],
+      "experience_years": 2
+    },
+    {
+      "staff_id": "STAFF-005",
+      "name": "Daniel Kim",
+      "role": "Pharmacy Technician",
+      "email": "daniel@paddingtonpharmacy.com.au",
+      "phone": "+61 456 012 345",
+      "qualifications": [
+        "Certificate IV in Pharmacy Dispensary"
+      ],
+      "experience_years": 6
+    }
+  ],
+  "aged_care_homes": [
+    {
+      "facility_id": "AGED-001",
+      "name": "Paddington Aged Care",
+      "contact_person": "Margaret Foster",
+      "email": "admin@paddingtonagedcare.com.au",
+      "phone": "+61 7 3369 7777",
+      "address": "156 Latrobe Terrace, Paddington QLD 4064",
+      "residents": 45,
+      "service_type": "Webster packs, regular medication supply",
+      "delivery_schedule": "Weekly",
+      "monthly_average": 8500.00
+    },
+    {
+      "facility_id": "AGED-002",
+      "name": "Rosalie Nursing Home",
+      "contact_person": "David Martinez",
+      "email": "nursing@rosalienursing.com.au",
+      "phone": "+61 7 3369 8888",
+      "address": "234 Milton Road, Milton QLD 4064",
+      "residents": 38,
+      "service_type": "Webster packs, regular medication supply, emergency supply",
+      "delivery_schedule": "Weekly",
+      "monthly_average": 7200.00
+    }
+  ],
+  "vaccination_appointments": [
+    {
+      "appointment_id": "VAC-2024-234",
+      "customer_name": "Robert Anderson",
+      "email": "robert.anderson@email.com",
+      "phone": "+61 467 890 234",
+      "date": "2024-11-05",
+      "time": "10:00 AM",
+      "vaccine_type": "Flu",
+      "pharmacist": "Dr. Emma Morrison",
+      "status": "Scheduled"
+    },
+    {
+      "appointment_id": "VAC-2024-235",
+      "customer_name": "Amanda Harrison",
+      "email": "amanda.harrison@email.com",
+      "phone": "+61 478 901 345",
+      "date": "2024-11-08",
+      "time": "2:30 PM",
+      "vaccine_type": "COVID-19 Booster",
+      "pharmacist": "Dr. Michael Chen",
+      "status": "Scheduled"
+    }
+  ],
+  "onedrive_files": [
+    {
+      "file_id": "FILE-001",
+      "file_name": "Pharmacist_AHPRA_Registrations.pdf",
+      "file_type": "application/pdf",
+      "upload_date": "2024-01-15",
+      "description": "All pharmacist AHPRA registration certificates"
+    },
+    {
+      "file_id": "FILE-002",
+      "file_name": "Vaccination_Certifications.pdf",
+      "file_type": "application/pdf",
+      "upload_date": "2024-01-20",
+      "description": "Pharmacist vaccination administration certificates"
+    },
+    {
+      "file_id": "FILE-003",
+      "file_name": "Professional_Indemnity_Insurance_2024.pdf",
+      "file_type": "application/pdf",
+      "upload_date": "2024-06-01",
+      "description": "Professional indemnity insurance certificate"
+    },
+    {
+      "file_id": "FILE-004",
+      "file_name": "Guild_Care_Pharmacy_Accreditation.pdf",
+      "file_type": "application/pdf",
+      "upload_date": "2024-03-01",
+      "description": "Guild Care pharmacy quality assurance accreditation"
+    },
+    {
+      "file_id": "FILE-005",
+      "file_name": "Standard_Operating_Procedures.pdf",
+      "file_type": "application/pdf",
+      "upload_date": "2024-02-01",
+      "description": "Pharmacy standard operating procedures and protocols"
+    },
+    {
+      "file_id": "FILE-006",
+      "file_name": "Controlled_Substances_Register_2024.xlsx",
+      "file_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "upload_date": "2024-01-01",
+      "description": "Schedule 8 controlled substances register"
+    },
+    {
+      "file_id": "FILE-007",
+      "file_name": "Medicare_Provider_Number.pdf",
+      "file_type": "application/pdf",
+      "upload_date": "2024-01-05",
+      "description": "Medicare provider number and PBS approval"
+    }
+  ]
+}
+

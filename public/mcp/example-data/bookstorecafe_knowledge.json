@@ -1,0 +1,595 @@
+{
+  "company": {
+    "name": "Chapter & Coffee",
+    "abn": "67 890 123 456",
+    "email": "hello@chapterandcoffee.com.au",
+    "phone": "+61 7 3252 7890",
+    "address": "89 Latrobe Terrace, Paddington QLD 4064"
+  },
+  "integrations": {
+    "pos": "Square",
+    "accounting": "Xero",
+    "inventory": "Cin7",
+    "email": "Gmail",
+    "voice_agent": "Custom Voice Agent",
+    "website": "WooCommerce",
+    "booking": "OpenTable",
+    "rostering": "Deputy",
+    "file_storage": "Google Drive"
+  },
+  "trading_hours": {
+    "monday": "Closed",
+    "tuesday_friday": "7:30 AM - 5:00 PM",
+    "saturday_sunday": "8:00 AM - 5:00 PM"
+  },
+  "departments": {
+    "books": {
+      "new_books": true,
+      "secondhand_books": true,
+      "genres": ["Fiction", "Non-Fiction", "Children's", "Young Adult", "Biography", "Australian Authors", "Mystery/Thriller", "Romance", "Self-Help", "Cookbooks"]
+    },
+    "cafe": {
+      "coffee": "Single origin beans from local roaster",
+      "food": "All-day breakfast, lunch, cakes, pastries",
+      "seating": 35
+    }
+  },
+  "daily_sales": [
+    {
+      "date": "2024-10-25",
+      "day": "Friday",
+      "cafe_sales": 1245.00,
+      "cafe_transactions": 78,
+      "book_sales": 890.00,
+      "book_transactions": 24,
+      "total_sales": 2135.00,
+      "total_transactions": 102,
+      "top_seller_cafe": "Flat White",
+      "top_seller_books": "The Seven Husbands of Evelyn Hugo"
+    },
+    {
+      "date": "2024-10-26",
+      "day": "Saturday",
+      "cafe_sales": 1685.00,
+      "cafe_transactions": 95,
+      "book_sales": 1450.00,
+      "book_transactions": 38,
+      "total_sales": 3135.00,
+      "total_transactions": 133,
+      "top_seller_cafe": "Avocado Smash",
+      "top_seller_books": "Bookshop on the Beach"
+    },
+    {
+      "date": "2024-10-27",
+      "day": "Sunday",
+      "cafe_sales": 1520.00,
+      "cafe_transactions": 89,
+      "book_sales": 1120.00,
+      "book_transactions": 31,
+      "total_sales": 2640.00,
+      "total_transactions": 120
+    }
+  ],
+  "cafe_menu": [
+    {
+      "category": "Coffee",
+      "items": [
+        {"item": "Espresso", "price": 4.00},
+        {"item": "Long Black", "price": 4.50},
+        {"item": "Flat White", "price": 5.00},
+        {"item": "Latte", "price": 5.00},
+        {"item": "Cappuccino", "price": 5.00},
+        {"item": "Mocha", "price": 5.50},
+        {"item": "Iced Coffee", "price": 6.50}
+      ]
+    },
+    {
+      "category": "Breakfast",
+      "items": [
+        {"item": "Avocado Smash on Sourdough", "price": 18.50},
+        {"item": "Eggs Benedict", "price": 19.00},
+        {"item": "Buttermilk Pancakes", "price": 17.00},
+        {"item": "Big Breakfast", "price": 22.00},
+        {"item": "Granola & Yogurt Bowl", "price": 14.50}
+      ]
+    },
+    {
+      "category": "Lunch",
+      "items": [
+        {"item": "Club Sandwich", "price": 16.50},
+        {"item": "Caesar Salad", "price": 17.00},
+        {"item": "Soup of the Day with Bread", "price": 14.00},
+        {"item": "Quiche & Salad", "price": 16.00}
+      ]
+    },
+    {
+      "category": "Cakes & Pastries",
+      "items": [
+        {"item": "Croissant", "price": 5.50},
+        {"item": "Almond Croissant", "price": 6.50},
+        {"item": "Banana Bread", "price": 6.00},
+        {"item": "Carrot Cake", "price": 7.50},
+        {"item": "Brownie", "price": 6.50}
+      ]
+    }
+  ],
+  "suppliers": [
+    {
+      "supplier_id": "SUP-001",
+      "name": "Dymocks Book Distributors",
+      "contact": "Trade Sales",
+      "phone": "+61 2 9263 9500",
+      "email": "trade@dymocks.com.au",
+      "supplies": "New books - wholesale",
+      "payment_terms": "30 days"
+    },
+    {
+      "supplier_id": "SUP-002",
+      "name": "Allen & Unwin",
+      "contact": "Sales Team",
+      "phone": "+61 2 8425 0100",
+      "email": "orders@allenandunwin.com",
+      "supplies": "Publisher direct - Australian titles",
+      "payment_terms": "30 days"
+    },
+    {
+      "supplier_id": "SUP-003",
+      "name": "West End Coffee Roasters",
+      "contact": "Mark Johnson",
+      "phone": "+61 7 3844 6789",
+      "email": "wholesale@westendcoffee.com.au",
+      "supplies": "Coffee beans - single origin",
+      "delivery_schedule": "Weekly",
+      "payment_terms": "7 days"
+    },
+    {
+      "supplier_id": "SUP-004",
+      "name": "Fresh Harvest Produce",
+      "contact": "Tony Nguyen",
+      "phone": "+61 7 3276 5432",
+      "email": "admin@freshharvestqld.com.au",
+      "supplies": "Fresh produce, bread, milk",
+      "delivery_schedule": "Monday, Wednesday, Friday",
+      "payment_terms": "7 days"
+    },
+    {
+      "supplier_id": "SUP-005",
+      "name": "Brisbane Bakery Supplies",
+      "contact": "Sales Team",
+      "phone": "+61 7 3252 8765",
+      "email": "orders@brisbanebakery.com.au",
+      "supplies": "Croissants, pastries, cakes",
+      "delivery_schedule": "Daily",
+      "payment_terms": "14 days"
+    }
+  ],
+  "bills": [
+    {
+      "bill_id": "BILL-2024-2567",
+      "supplier": "Dymocks Book Distributors",
+      "issue_date": "2024-10-15",
+      "due_date": "2024-11-14",
+      "status": "Paid",
+      "line_items": [
+        {
+          "description": "New book stock - October order (various titles)",
+          "quantity": 1,
+          "unit_price": 2850.00,
+          "total": 2850.00
+        }
+      ],
+      "subtotal": 2850.00,
+      "gst": 285.00,
+      "total": 3135.00
+    },
+    {
+      "bill_id": "BILL-2024-2568",
+      "supplier": "Allen & Unwin",
+      "issue_date": "2024-10-18",
+      "due_date": "2024-11-17",
+      "status": "Unpaid",
+      "line_items": [
+        {
+          "description": "The Seven Husbands of Evelyn Hugo - 10 copies",
+          "quantity": 10,
+          "unit_price": 18.50,
+          "total": 185.00
+        },
+        {
+          "description": "Boy Swallows Universe - 8 copies",
+          "quantity": 8,
+          "unit_price": 19.99,
+          "total": 159.92
+        },
+        {
+          "description": "The Dictionary of Lost Words - 6 copies",
+          "quantity": 6,
+          "unit_price": 21.50,
+          "total": 129.00
+        },
+        {
+          "description": "Freight charge",
+          "quantity": 1,
+          "unit_price": 25.00,
+          "total": 25.00
+        }
+      ],
+      "subtotal": 498.92,
+      "gst": 49.89,
+      "total": 548.81
+    },
+    {
+      "bill_id": "BILL-2024-2569",
+      "supplier": "West End Coffee Roasters",
+      "issue_date": "2024-10-21",
+      "due_date": "2024-10-28",
+      "status": "Paid",
+      "line_items": [
+        {
+          "description": "Single Origin Coffee Beans - 10kg",
+          "quantity": 10,
+          "unit_price": 45.00,
+          "total": 450.00
+        },
+        {
+          "description": "Milk - Full Cream (20L)",
+          "quantity": 4,
+          "unit_price": 28.00,
+          "total": 112.00
+        }
+      ],
+      "subtotal": 562.00,
+      "gst": 56.20,
+      "total": 618.20
+    },
+    {
+      "bill_id": "BILL-2024-2570",
+      "supplier": "Fresh Harvest Produce",
+      "issue_date": "2024-10-23",
+      "due_date": "2024-10-30",
+      "status": "Paid",
+      "line_items": [
+        {
+          "description": "Avocados - Hass (5kg tray)",
+          "quantity": 3,
+          "unit_price": 38.00,
+          "total": 114.00
+        },
+        {
+          "description": "Tomatoes - truss (3kg)",
+          "quantity": 4,
+          "unit_price": 12.50,
+          "total": 50.00
+        },
+        {
+          "description": "Lettuce - mixed greens",
+          "quantity": 10,
+          "unit_price": 3.50,
+          "total": 35.00
+        },
+        {
+          "description": "Sourdough bread loaves",
+          "quantity": 15,
+          "unit_price": 6.50,
+          "total": 97.50
+        },
+        {
+          "description": "Free range eggs (30 dozen)",
+          "quantity": 30,
+          "unit_price": 8.50,
+          "total": 255.00
+        }
+      ],
+      "subtotal": 551.50,
+      "gst": 55.15,
+      "total": 606.65
+    },
+    {
+      "bill_id": "BILL-2024-2571",
+      "supplier": "Brisbane Bakery Supplies",
+      "issue_date": "2024-10-25",
+      "due_date": "2024-11-08",
+      "status": "Unpaid",
+      "line_items": [
+        {
+          "description": "Butter croissants (60 units)",
+          "quantity": 60,
+          "unit_price": 2.80,
+          "total": 168.00
+        },
+        {
+          "description": "Almond croissants (40 units)",
+          "quantity": 40,
+          "unit_price": 3.50,
+          "total": 140.00
+        },
+        {
+          "description": "Carrot cake slices (30 units)",
+          "quantity": 30,
+          "unit_price": 4.20,
+          "total": 126.00
+        },
+        {
+          "description": "Brownies (40 units)",
+          "quantity": 40,
+          "unit_price": 3.80,
+          "total": 152.00
+        },
+        {
+          "description": "Banana bread slices (25 units)",
+          "quantity": 25,
+          "unit_price": 3.50,
+          "total": 87.50
+        }
+      ],
+      "subtotal": 673.50,
+      "gst": 67.35,
+      "total": 740.85
+    },
+    {
+      "bill_id": "BILL-2024-2572",
+      "supplier": "Paddington Property Group",
+      "issue_date": "2024-10-01",
+      "due_date": "2024-10-15",
+      "status": "Paid",
+      "line_items": [
+        {
+          "description": "Shop rent - October 2024",
+          "quantity": 1,
+          "unit_price": 4850.00,
+          "total": 4850.00
+        },
+        {
+          "description": "Outgoings",
+          "quantity": 1,
+          "unit_price": 485.00,
+          "total": 485.00
+        }
+      ],
+      "subtotal": 5335.00,
+      "gst": 533.50,
+      "total": 5868.50
+    },
+    {
+      "bill_id": "BILL-2024-2573",
+      "supplier": "Origin Energy",
+      "issue_date": "2024-10-20",
+      "due_date": "2024-11-13",
+      "status": "Unpaid",
+      "line_items": [
+        {
+          "description": "Electricity - September 2024 (2,150 kWh)",
+          "quantity": 1,
+          "unit_price": 785.00,
+          "total": 785.00
+        }
+      ],
+      "subtotal": 785.00,
+      "gst": 78.50,
+      "total": 863.50
+    }
+  ],
+  "staff": [
+    {
+      "staff_id": "STAFF-001",
+      "name": "Rebecca Morrison",
+      "role": "Owner / Manager",
+      "email": "rebecca@chapterandcoffee.com.au",
+      "phone": "+61 412 678 901"
+    },
+    {
+      "staff_id": "STAFF-002",
+      "name": "Emma Chen",
+      "role": "Head Barista",
+      "email": "emma@chapterandcoffee.com.au",
+      "phone": "+61 423 789 012",
+      "qualifications": [
+        "Barista Certificate",
+        "Food Safety Certificate"
+      ]
+    },
+    {
+      "staff_id": "STAFF-003",
+      "name": "Sophie Williams",
+      "role": "Book Buyer / Barista",
+      "email": "sophie@chapterandcoffee.com.au",
+      "phone": "+61 434 890 123",
+      "qualifications": [
+        "Bachelor of Arts (English Literature)",
+        "Barista Certificate"
+      ]
+    },
+    {
+      "staff_id": "STAFF-004",
+      "name": "Michael Rodriguez",
+      "role": "Chef",
+      "email": "michael@chapterandcoffee.com.au",
+      "phone": "+61 445 901 234",
+      "qualifications": [
+        "Certificate III in Commercial Cookery",
+        "Food Safety Supervisor Certificate"
+      ]
+    },
+    {
+      "staff_id": "STAFF-005",
+      "name": "Jessica Park",
+      "role": "Casual Staff - Barista/Counter",
+      "email": "jessica@chapterandcoffee.com.au",
+      "phone": "+61 456 012 345",
+      "qualifications": [
+        "RSA Certificate",
+        "Food Handler Certificate"
+      ]
+    },
+    {
+      "staff_id": "STAFF-006",
+      "name": "Daniel Kim",
+      "role": "Casual Staff - Kitchen/Counter",
+      "email": "daniel@chapterandcoffee.com.au",
+      "phone": "+61 467 123 456",
+      "qualifications": [
+        "Food Handler Certificate"
+      ]
+    }
+  ],
+  "book_events": [
+    {
+      "event_id": "EVENT-2024-018",
+      "event_name": "Author Talk: Australian Fiction Night",
+      "date": "2024-11-15",
+      "time": "6:30 PM - 8:30 PM",
+      "author": "Local Brisbane author TBA",
+      "genre": "Australian Fiction",
+      "capacity": 40,
+      "bookings": 28,
+      "ticket_price": 15.00,
+      "includes": "Glass of wine and cheese platter",
+      "status": "Bookings Open"
+    },
+    {
+      "event_id": "EVENT-2024-019",
+      "event_name": "Children's Story Time",
+      "date": "2024-11-09",
+      "time": "10:00 AM - 11:00 AM",
+      "age_group": "3-7 years",
+      "capacity": 20,
+      "bookings": 15,
+      "ticket_price": 0.00,
+      "status": "Free Event"
+    },
+    {
+      "event_id": "EVENT-2024-020",
+      "event_name": "Book Club - Monthly Meeting",
+      "date": "2024-11-22",
+      "time": "7:00 PM - 9:00 PM",
+      "book": "The Dictionary of Lost Words",
+      "capacity": 25,
+      "members": 18,
+      "ticket_price": 0.00,
+      "status": "Members Only"
+    }
+  ],
+  "book_club_members": [
+    {
+      "member_id": "BC-001",
+      "name": "Sarah Thompson",
+      "email": "sarah.thompson@email.com",
+      "phone": "+61 412 345 678",
+      "joined": "2023-03-15",
+      "active": true
+    },
+    {
+      "member_id": "BC-002",
+      "name": "Jennifer Park",
+      "email": "jennifer.park@email.com",
+      "phone": "+61 434 567 890",
+      "joined": "2023-06-20",
+      "active": true
+    },
+    {
+      "member_id": "BC-003",
+      "name": "Amanda Foster",
+      "email": "amanda.foster@email.com",
+      "phone": "+61 445 678 901",
+      "joined": "2024-01-10",
+      "active": true
+    }
+  ],
+  "enquiries": [
+    {
+      "enquiry_id": "ENQ-2024-189",
+      "type": "Private Event",
+      "name": "Brisbane Writers Group",
+      "contact_person": "Marcus Chen",
+      "email": "marcus@brisbanewriters.com.au",
+      "phone": "+61 478 901 234",
+      "enquiry_date": "2024-10-26",
+      "status": "Quote Sent",
+      "event_date": "2024-12-10",
+      "time": "6:00 PM - 9:00 PM",
+      "guests": 35,
+      "requirements": "Private venue hire, catering, after-hours",
+      "estimated_value": 1500.00
+    },
+    {
+      "enquiry_id": "ENQ-2024-190",
+      "type": "Author Event",
+      "name": "Publishing House Australia",
+      "contact_person": "Sophie Anderson",
+      "email": "sophie@publishinghouse.com.au",
+      "phone": "+61 7 3234 8765",
+      "enquiry_date": "2024-10-28",
+      "status": "In Discussion",
+      "event_date": "2025-02-20",
+      "author": "Bestselling author book launch",
+      "guests": 60,
+      "requirements": "Evening event, book signing, catering",
+      "estimated_value": 2500.00
+    },
+    {
+      "enquiry_id": "ENQ-2024-191",
+      "type": "Corporate Booking",
+      "name": "Brisbane Tech Company",
+      "contact_person": "Rebecca Foster",
+      "email": "rebecca@bristechio.com.au",
+      "phone": "+61 7 3345 6789",
+      "enquiry_date": "2024-10-29",
+      "status": "Information Sent",
+      "requirements": "Weekly coffee orders for office (10-15 coffees)",
+      "estimated_value": 150.00,
+      "notes": "Corporate account with weekly delivery/pickup"
+    }
+  ],
+  "google_drive_files": [
+    {
+      "file_id": "FILE-001",
+      "file_name": "Book_Inventory_October_2024.xlsx",
+      "file_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "upload_date": "2024-10-31",
+      "description": "Current book inventory and stock levels"
+    },
+    {
+      "file_id": "FILE-002",
+      "file_name": "Cafe_Menu_Current.pdf",
+      "file_type": "application/pdf",
+      "upload_date": "2024-09-01",
+      "description": "Current cafe menu with pricing"
+    },
+    {
+      "file_id": "FILE-003",
+      "file_name": "Food_Safety_Certificates_All_Staff.pdf",
+      "file_type": "application/pdf",
+      "upload_date": "2024-01-15",
+      "description": "Food safety and handling certificates for all staff"
+    },
+    {
+      "file_id": "FILE-004",
+      "file_name": "Public_Liability_Insurance_2024.pdf",
+      "file_type": "application/pdf",
+      "upload_date": "2024-06-01",
+      "description": "Public liability insurance certificate"
+    },
+    {
+      "file_id": "FILE-005",
+      "file_name": "Event_Planning_Template.pdf",
+      "file_type": "application/pdf",
+      "upload_date": "2024-03-10",
+      "description": "Template for planning author events and book launches"
+    },
+    {
+      "file_id": "FILE-006",
+      "file_name": "Book_Club_Reading_List_2024.pdf",
+      "file_type": "application/pdf",
+      "upload_date": "2024-01-05",
+      "description": "Book club annual reading list"
+    },
+    {
+      "file_id": "FILE-007",
+      "file_name": "Supplier_Price_Lists_2024.xlsx",
+      "file_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "upload_date": "2024-01-15",
+      "description": "Current supplier price lists for books and cafe supplies"
+    }
+  ]
+}
+

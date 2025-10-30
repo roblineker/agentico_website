@@ -112,7 +112,7 @@ const contactFormSchema = z.object({
 // Type definition for reference (exported for potential future use)
 type ContactFormData = z.infer<typeof contactFormSchema>;
 
-// Initialize Notion client with latest API version
+// Initialize Notion client
 const initializeNotion = () => {
   const notionToken = process.env.NOTION_API_TOKEN;
   
@@ -123,128 +123,165 @@ const initializeNotion = () => {
   
   return new Client({ 
     auth: notionToken,
-    notionVersion: '2025-09-03', // Use latest API version
+    notionVersion: '2022-06-28',
   });
 };
 
-// Helper function to find the contact form database
-async function findContactDatabase(client: Client) {
+// Helper function to format industry name for display
+const formatIndustry = (industry: string) => {
+  return industry.split('_').map(word => 
+    word.charAt(0).toUpperCase() + word.slice(1)
+  ).join(' ');
+};
+
+// Helper to create or find client
+async function createOrFindClient(notion: Client, data: ContactFormData) {
   try {
-    // Search for databases the integration has access to
-    const response = await client.search({
+    // Database IDs (actual page IDs, not data source IDs)
+    const clientsDatabaseId = '28753ceefab08000a95cea49e7bf1762';
+    
+    // Search for existing client
+    const searchResponse = await notion.search({
+      query: data.company,
       filter: {
         property: 'object',
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        value: 'database' as any,
+        value: 'page' as any,
       },
-      page_size: 100,
     });
     
-    // Look for a database with "Contact" or "Form" or "Submission" in the title
+    // Check if we found an exact match in Clients database
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const databases = response.results.filter((result: any) => {
-      if (result.object !== 'database') return false;
-      
-      const title = result.title?.[0]?.plain_text || '';
-      const lowerTitle = title.toLowerCase();
-      
-      return lowerTitle.includes('contact') || 
-             lowerTitle.includes('form') || 
-             lowerTitle.includes('submission') ||
-             lowerTitle.includes('lead');
+    const existingClient = searchResponse.results.find((page: any) => {
+      const title = page.properties?.Name?.title?.[0]?.plain_text || '';
+      return title === data.company;
     });
     
-    if (databases.length === 0) {
-      console.error('No suitable database found. Please create a database with "Contact", "Form", "Submission", or "Lead" in the title.');
-      return null;
-    }
-    
-    // If multiple found, use the first one and log a message
-    if (databases.length > 1) {
+    if (existingClient) {
+      console.log(`Found existing client: ${data.company}`);
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const titles = databases.map((db: any) => db.title?.[0]?.plain_text || 'Untitled').join(', ');
-      console.log(`Multiple contact databases found (${titles}). Using the first one.`);
+      const clientUrl = (existingClient as any).url || `https://notion.so/${existingClient.id.replace(/-/g, '')}`;
+      return { success: true, pageId: existingClient.id, url: clientUrl };
     }
     
-    return databases[0];
+    // Create new client
+    console.log(`Creating new client: ${data.company}`);
+    const response = await notion.pages.create({
+      parent: {
+        type: 'database_id',
+        database_id: clientsDatabaseId,
+      },
+      properties: {
+        'Name': {
+          title: [{
+            text: { content: data.company },
+          }],
+        },
+        ...(data.website ? {
+          'Website': {
+            url: data.website,
+          },
+        } : {}),
+        'Type': {
+          select: {
+            name: 'Prospect',
+          },
+        },
+      },
+    });
+    
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const clientUrl = (response as any).url || `https://notion.so/${response.id.replace(/-/g, '')}`;
+    return { success: true, pageId: response.id, url: clientUrl };
   } catch (error) {
-    console.error('Error searching for database:', error);
-    return null;
+    console.error('Failed to create/find client:', error);
+    return { success: false, error };
   }
 }
 
-// Helper function to save data to Notion
+// Helper to create contact
+async function createContact(notion: Client, data: ContactFormData, clientPageId?: string) {
+  try {
+    const contactsDatabaseId = '28753ceefab080929025cf188f469668';
+    
+    console.log(`Creating contact: ${data.fullName}`);
+    const response = await notion.pages.create({
+      parent: {
+        type: 'database_id',
+        database_id: contactsDatabaseId,
+      },
+      properties: {
+        'Name': {
+          title: [{
+            text: { content: data.fullName },
+          }],
+        },
+        'Email Address': {
+          email: data.email,
+        },
+        'Phone Number': {
+          phone_number: data.phone,
+        },
+        ...(clientPageId ? {
+          'Company': {
+            relation: [{ id: clientPageId }],
+          },
+        } : {}),
+        'Decision Maker': {
+          checkbox: true,
+        },
+      },
+    });
+    
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const contactUrl = (response as any).url || `https://notion.so/${response.id.replace(/-/g, '')}`;
+    return { success: true, pageId: response.id, url: contactUrl };
+  } catch (error) {
+    console.error('Failed to create contact:', error);
+    return { success: false, error };
+  }
+}
+
+// Main function to save data to Notion
 async function saveToNotion(data: ContactFormData) {
-  const client = initializeNotion();
+  const notion = initializeNotion();
   
-  if (!client) {
+  if (!notion) {
     console.log('Skipping Notion save - not configured');
     return { success: false, reason: 'not_configured' };
   }
   
   try {
-    // Step 1: Find the contact form database automatically
-    const database = await findContactDatabase(client);
+    const intakeFormsDatabaseId = '0b2a39da34914320b1d9e621494ba183';
     
-    if (!database) {
-      console.error('Could not find contact form database');
-      return { success: false, error: 'no_database_found' };
+    // Step 1: Create or find client
+    const clientResult = await createOrFindClient(notion, data);
+    const clientPageId = clientResult.success ? clientResult.pageId : undefined;
+    
+    // Step 2: Create contact (if we have a client)
+    let contactResult = { success: false };
+    if (clientPageId) {
+      contactResult = await createContact(notion, data, clientPageId);
     }
     
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const databaseId = (database as any).id;
+    // Step 3: Create intake form (always, even if client/contact failed)
+    console.log('Creating intake form submission...');
     
-    // Step 2: Get the database to retrieve data source ID (new in API 2025-09-03)
-    const fullDatabase = await client.databases.retrieve({ database_id: databaseId });
-    
-    // Type assertion for data_sources (new in API 2025-09-03)
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const dataSources = (fullDatabase as any).data_sources || [];
-    
-    if (dataSources.length === 0) {
-      console.error('No data sources found for database');
-      return { success: false, error: 'no_data_sources' };
-    }
-    
-    // Use the first data source (for single-source databases)
-    const dataSourceId = dataSources[0].id;
-    
-    // Get database title for logging
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const dbTitle = (database as any).title?.[0]?.plain_text || 'Untitled';
-    console.log(`Using database: "${dbTitle}" (ID: ${databaseId}, Data Source: ${dataSourceId})`);
-    
-    // Format industry name for display
-    const formatIndustry = (industry: string) => {
-      return industry.split('_').map(word => 
-        word.charAt(0).toUpperCase() + word.slice(1)
-      ).join(' ');
-    };
-    
-    // Step 2: Create the page in Notion using data_source_id (new in API 2025-09-03)
-    const response = await client.pages.create({
-      parent: { 
-        type: 'data_source_id',
-        data_source_id: dataSourceId 
+    const response = await notion.pages.create({
+      parent: {
+        type: 'database_id',
+        database_id: intakeFormsDatabaseId,
       },
       properties: {
         'Submission Name': {
-          title: [
-            {
-              text: {
-                content: `${data.company} - ${data.fullName}`,
-              },
-            },
-          ],
+          title: [{
+            text: { content: `${data.company} - ${data.fullName}` },
+          }],
         },
         'Full Name': {
-          rich_text: [
-            {
-              text: {
-                content: data.fullName,
-              },
-            },
-          ],
+          rich_text: [{
+            text: { content: data.fullName },
+          }],
         },
         'Email': {
           email: data.email,
@@ -253,13 +290,9 @@ async function saveToNotion(data: ContactFormData) {
           phone_number: data.phone,
         },
         'Company Name': {
-          rich_text: [
-            {
-              text: {
-                content: data.company,
-              },
-            },
-          ],
+          rich_text: [{
+            text: { content: data.company },
+          }],
         },
         'Industry': {
           select: {
@@ -282,49 +315,29 @@ async function saveToNotion(data: ContactFormData) {
           },
         },
         'Current Systems': {
-          rich_text: [
-            {
-              text: {
-                content: data.currentSystems,
-              },
-            },
-          ],
+          rich_text: [{
+            text: { content: data.currentSystems.substring(0, 2000) },
+          }],
         },
         'Automation Goals': {
-          rich_text: [
-            {
-              text: {
-                content: data.automationGoals.join(', '),
-              },
-            },
-          ],
+          rich_text: [{
+            text: { content: data.automationGoals.join(', ').substring(0, 2000) },
+          }],
         },
         'Specific Processes': {
-          rich_text: [
-            {
-              text: {
-                content: data.specificProcesses,
-              },
-            },
-          ],
+          rich_text: [{
+            text: { content: data.specificProcesses.substring(0, 2000) },
+          }],
         },
         'Existing Tools': {
-          rich_text: [
-            {
-              text: {
-                content: data.existingTools,
-              },
-            },
-          ],
+          rich_text: [{
+            text: { content: data.existingTools.substring(0, 2000) },
+          }],
         },
         'Integration Needs': {
-          rich_text: [
-            {
-              text: {
-                content: data.integrationNeeds.join(', ') || 'None specified',
-              },
-            },
-          ],
+          rich_text: [{
+            text: { content: (data.integrationNeeds.join(', ') || 'None specified').substring(0, 2000) },
+          }],
         },
         'Data Volume': {
           select: {
@@ -337,22 +350,14 @@ async function saveToNotion(data: ContactFormData) {
           },
         },
         'Project Description': {
-          rich_text: [
-            {
-              text: {
-                content: data.projectDescription,
-              },
-            },
-          ],
+          rich_text: [{
+            text: { content: data.projectDescription.substring(0, 2000) },
+          }],
         },
         'Success Metrics': {
-          rich_text: [
-            {
-              text: {
-                content: data.successMetrics,
-              },
-            },
-          ],
+          rich_text: [{
+            text: { content: data.successMetrics.substring(0, 2000) },
+          }],
         },
         'Timeline': {
           select: {
@@ -373,211 +378,38 @@ async function saveToNotion(data: ContactFormData) {
           },
         },
         'Project Ideas': {
-          rich_text: [
-            {
-              text: {
-                content: data.projectIdeas && data.projectIdeas.length > 0
-                  ? data.projectIdeas.map(idea => 
-                      `[${idea.priority.toUpperCase()}] ${idea.title}: ${idea.description}`
-                    ).join('\n\n')
-                  : 'No specific project ideas provided',
-              },
+          rich_text: [{
+            text: {
+              content: data.projectIdeas && data.projectIdeas.length > 0
+                ? data.projectIdeas.map(idea => 
+                    `[${idea.priority.toUpperCase()}] ${idea.title}: ${idea.description}`
+                  ).join('\n\n').substring(0, 2000)
+                : 'No specific project ideas provided',
             },
-          ],
+          }],
         },
-        'Submission Status': {
-          status: {
-            name: 'New',
+        ...(clientPageId ? {
+          'Related Client': {
+            relation: [{ id: clientPageId }],
           },
-        },
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      } as any,
-      children: [
-        {
-          object: 'block',
-          type: 'heading_2',
-          heading_2: {
-            rich_text: [{
-              type: 'text',
-              text: { content: 'Contact Information' },
-            }],
+        } : {}),
+        'Submission Date': {
+          date: {
+            start: new Date().toISOString().split('T')[0],
           },
         },
-        {
-          object: 'block',
-          type: 'paragraph',
-          paragraph: {
-            rich_text: [{
-              type: 'text',
-              text: { content: `Email: ${data.email}\nPhone: ${data.phone}\nCompany: ${data.company}${data.website ? `\nWebsite: ${data.website}` : ''}` },
-            }],
-          },
-        },
-        ...(data.socialLinks && data.socialLinks.length > 0 ? [
-          {
-            object: 'block' as const,
-            type: 'heading_3' as const,
-            heading_3: {
-              rich_text: [{
-                type: 'text' as const,
-                text: { content: 'Social Links' },
-              }],
-            },
-          },
-          {
-            object: 'block' as const,
-            type: 'bulleted_list_item' as const,
-            bulleted_list_item: {
-              rich_text: data.socialLinks.map((link) => ({
-                type: 'text' as const,
-                text: { 
-                  content: link.url,
-                  link: { url: link.url },
-                },
-              })),
-            },
-          },
-        ] : []),
-        {
-          object: 'block',
-          type: 'heading_2',
-          heading_2: {
-            rich_text: [{
-              type: 'text',
-              text: { content: 'Current State Assessment' },
-            }],
-          },
-        },
-        {
-          object: 'block',
-          type: 'paragraph',
-          paragraph: {
-            rich_text: [{
-              type: 'text',
-              text: { content: `Current Systems:\n${data.currentSystems}` },
-            }],
-          },
-        },
-        {
-          object: 'block',
-          type: 'heading_2',
-          heading_2: {
-            rich_text: [{
-              type: 'text',
-              text: { content: 'Automation Goals' },
-            }],
-          },
-        },
-        {
-          object: 'block',
-          type: 'paragraph',
-          paragraph: {
-            rich_text: [{
-              type: 'text',
-              text: { content: `Goals: ${data.automationGoals.join(', ')}` },
-            }],
-          },
-        },
-        {
-          object: 'block',
-          type: 'paragraph',
-          paragraph: {
-            rich_text: [{
-              type: 'text',
-              text: { content: `Specific Processes:\n${data.specificProcesses}` },
-            }],
-          },
-        },
-        ...(data.projectIdeas && data.projectIdeas.length > 0 ? [
-          {
-            object: 'block' as const,
-            type: 'heading_3' as const,
-            heading_3: {
-              rich_text: [{
-                type: 'text' as const,
-                text: { content: 'Project Ideas' },
-              }],
-            },
-          },
-          ...data.projectIdeas.flatMap((idea) => [
-            {
-              object: 'block' as const,
-              type: 'callout' as const,
-              callout: {
-                rich_text: [{
-                  type: 'text' as const,
-                  text: { content: `${idea.title} (${idea.priority.toUpperCase()})\n${idea.description}` },
-                }],
-                icon: { emoji: idea.priority === 'high' ? '🔴' : idea.priority === 'medium' ? '🟡' : '🟢' },
-              },
-            },
-          ]),
-        ] : []),
-        {
-          object: 'block',
-          type: 'heading_2',
-          heading_2: {
-            rich_text: [{
-              type: 'text',
-              text: { content: 'Integration Requirements' },
-            }],
-          },
-        },
-        {
-          object: 'block',
-          type: 'paragraph',
-          paragraph: {
-            rich_text: [{
-              type: 'text',
-              text: { content: `Existing Tools:\n${data.existingTools}` },
-            }],
-          },
-        },
-        {
-          object: 'block',
-          type: 'paragraph',
-          paragraph: {
-            rich_text: [{
-              type: 'text',
-              text: { content: `Integration Needs: ${data.integrationNeeds.join(', ') || 'None specified'}` },
-            }],
-          },
-        },
-        {
-          object: 'block',
-          type: 'heading_2',
-          heading_2: {
-            rich_text: [{
-              type: 'text',
-              text: { content: 'Project Scope' },
-            }],
-          },
-        },
-        {
-          object: 'block',
-          type: 'paragraph',
-          paragraph: {
-            rich_text: [{
-              type: 'text',
-              text: { content: `Project Description:\n${data.projectDescription}` },
-            }],
-          },
-        },
-        {
-          object: 'block',
-          type: 'paragraph',
-          paragraph: {
-            rich_text: [{
-              type: 'text',
-              text: { content: `Success Metrics:\n${data.successMetrics}` },
-            }],
-          },
-        },
-      ],
+      },
     });
     
     console.log('Successfully saved to Notion:', response.id);
-    return { success: true, pageId: response.id };
+    console.log(`Relationships: Client=${clientPageId}, Contact=${contactResult.success ? 'created' : 'failed'}`);
+    
+    return { 
+      success: true, 
+      pageId: response.id,
+      clientPageId,
+      contactCreated: contactResult.success
+    };
   } catch (error) {
     console.error('Failed to save to Notion:', error);
     return { success: false, error };

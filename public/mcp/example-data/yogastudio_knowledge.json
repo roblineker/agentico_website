@@ -1,0 +1,626 @@
+{
+  "company": {
+    "name": "Serenity Yoga Studio",
+    "abn": "78 901 234 567",
+    "email": "hello@serenityyoga.com.au",
+    "phone": "+61 7 3369 8901",
+    "address": "Level 2, 145 Given Terrace, Paddington QLD 4064"
+  },
+  "integrations": {
+    "booking": "Mindbody",
+    "accounting": "Xero",
+    "pos": "Square",
+    "email": "Gmail",
+    "voice_agent": "Custom Voice Agent",
+    "website": "WordPress",
+    "marketing": "Mailchimp",
+    "file_storage": "Google Drive"
+  },
+  "studio_hours": {
+    "monday_friday": "6:00 AM - 8:00 PM",
+    "saturday_sunday": "7:00 AM - 6:00 PM"
+  },
+  "members": [
+    {
+      "member_id": "MEM-001",
+      "name": "Sarah Mitchell",
+      "email": "sarah.mitchell@email.com",
+      "phone": "+61 412 345 678",
+      "membership_type": "Unlimited Monthly",
+      "join_date": "2023-08-15",
+      "status": "Active",
+      "monthly_fee": 159.00,
+      "total_paid": 2067.00
+    },
+    {
+      "member_id": "MEM-002",
+      "name": "Emma Chen",
+      "email": "emma.chen@email.com",
+      "phone": "+61 423 456 789",
+      "membership_type": "10 Class Pass",
+      "join_date": "2024-09-10",
+      "status": "Active",
+      "pass_price": 220.00,
+      "classes_remaining": 6
+    },
+    {
+      "member_id": "MEM-003",
+      "name": "Jennifer Park",
+      "email": "jennifer.park@email.com",
+      "phone": "+61 434 567 890",
+      "membership_type": "Unlimited Monthly",
+      "join_date": "2024-01-20",
+      "status": "Active",
+      "monthly_fee": 159.00,
+      "total_paid": 1431.00
+    },
+    {
+      "member_id": "MEM-004",
+      "name": "Rebecca Foster",
+      "email": "rebecca.foster@email.com",
+      "phone": "+61 445 678 901",
+      "membership_type": "8 Classes Monthly",
+      "join_date": "2024-06-15",
+      "status": "Active",
+      "monthly_fee": 119.00,
+      "total_paid": 595.00
+    },
+    {
+      "member_id": "MEM-005",
+      "name": "David Wilson",
+      "email": "david.wilson@email.com",
+      "phone": "+61 456 789 012",
+      "membership_type": "Casual Pass",
+      "join_date": "2024-10-05",
+      "status": "Active",
+      "total_paid": 75.00
+    },
+    {
+      "member_id": "MEM-006",
+      "name": "Sophie Anderson",
+      "email": "sophie.anderson@email.com",
+      "phone": "+61 467 890 123",
+      "membership_type": "Unlimited Monthly",
+      "join_date": "2024-08-22",
+      "status": "Active",
+      "monthly_fee": 159.00,
+      "total_paid": 477.00
+    },
+    {
+      "member_id": "MEM-007",
+      "name": "Marcus Rodriguez",
+      "email": "marcus.rodriguez@email.com",
+      "phone": "+61 478 901 234",
+      "membership_type": "5 Class Pass",
+      "join_date": "2024-10-18",
+      "status": "Active",
+      "pass_price": 120.00,
+      "classes_remaining": 4
+    },
+    {
+      "member_id": "MEM-008",
+      "name": "Lisa Thompson",
+      "email": "lisa.thompson@email.com",
+      "phone": "+61 489 012 345",
+      "membership_type": "Prenatal Unlimited",
+      "join_date": "2024-07-10",
+      "status": "Active",
+      "monthly_fee": 139.00,
+      "total_paid": 556.00
+    },
+    {
+      "member_id": "MEM-009",
+      "name": "Michael Nguyen",
+      "email": "michael.nguyen@email.com",
+      "phone": "+61 490 123 456",
+      "membership_type": "Corporate 10 Pass",
+      "join_date": "2024-09-05",
+      "status": "Active",
+      "pass_price": 200.00,
+      "classes_remaining": 7,
+      "corporate_account": "Brisbane Tech Company"
+    }
+  ],
+  "class_schedule": [
+    {
+      "class_id": "CLS-MON-001",
+      "day": "Monday",
+      "time": "6:30 AM",
+      "duration": 60,
+      "class_type": "Vinyasa Flow",
+      "instructor": "Claire Morrison",
+      "capacity": 20,
+      "level": "All Levels"
+    },
+    {
+      "class_id": "CLS-MON-002",
+      "day": "Monday",
+      "time": "9:00 AM",
+      "duration": 75,
+      "class_type": "Hatha Yoga",
+      "instructor": "Maya Rodriguez",
+      "capacity": 18,
+      "level": "Beginner/Intermediate"
+    },
+    {
+      "class_id": "CLS-MON-003",
+      "day": "Monday",
+      "time": "12:00 PM",
+      "duration": 60,
+      "class_type": "Yin Yoga",
+      "instructor": "Emma Sterling",
+      "capacity": 16,
+      "level": "All Levels"
+    },
+    {
+      "class_id": "CLS-MON-004",
+      "day": "Monday",
+      "time": "6:00 PM",
+      "duration": 60,
+      "class_type": "Power Yoga",
+      "instructor": "Claire Morrison",
+      "capacity": 20,
+      "level": "Intermediate/Advanced"
+    }
+  ],
+  "membership_options": [
+    {
+      "membership_type": "Casual Class",
+      "price": 28.00,
+      "description": "Drop-in class, no commitment"
+    },
+    {
+      "membership_type": "5 Class Pass",
+      "price": 120.00,
+      "valid_for_days": 60,
+      "description": "5 classes within 60 days"
+    },
+    {
+      "membership_type": "10 Class Pass",
+      "price": 220.00,
+      "valid_for_days": 90,
+      "description": "10 classes within 90 days"
+    },
+    {
+      "membership_type": "8 Classes Monthly",
+      "price": 119.00,
+      "billing": "Monthly recurring",
+      "description": "8 classes per month, rolls over 2 classes"
+    },
+    {
+      "membership_type": "Unlimited Monthly",
+      "price": 159.00,
+      "billing": "Monthly recurring",
+      "description": "Unlimited classes, priority booking"
+    },
+    {
+      "membership_type": "Prenatal Unlimited",
+      "price": 139.00,
+      "billing": "Monthly recurring",
+      "description": "Unlimited prenatal and gentle classes"
+    },
+    {
+      "membership_type": "Student Unlimited",
+      "price": 129.00,
+      "billing": "Monthly recurring",
+      "description": "Unlimited classes with valid student ID"
+    }
+  ],
+  "invoices": [
+    {
+      "invoice_id": "INV-2024-1823",
+      "member_id": "MEM-001",
+      "member_name": "Sarah Mitchell",
+      "issue_date": "2024-10-01",
+      "due_date": "2024-10-01",
+      "status": "Paid",
+      "payment_date": "2024-10-01",
+      "payment_method": "Auto-charge credit card",
+      "line_items": [
+        {
+          "description": "Unlimited Monthly Membership - October 2024",
+          "amount": 159.00
+        }
+      ],
+      "subtotal": 159.00,
+      "gst": 15.90,
+      "total": 174.90
+    },
+    {
+      "invoice_id": "INV-2024-1845",
+      "member_id": "MEM-002",
+      "member_name": "Emma Chen",
+      "issue_date": "2024-10-15",
+      "due_date": "2024-10-15",
+      "status": "Paid",
+      "payment_date": "2024-10-15",
+      "payment_method": "Credit card",
+      "line_items": [
+        {
+          "description": "10 Class Pass (valid 90 days)",
+          "amount": 220.00
+        }
+      ],
+      "subtotal": 220.00,
+      "gst": 22.00,
+      "total": 242.00
+    },
+    {
+      "invoice_id": "INV-2024-1867",
+      "member_id": "MEM-004",
+      "member_name": "Rebecca Foster",
+      "issue_date": "2024-10-01",
+      "due_date": "2024-10-01",
+      "status": "Paid",
+      "payment_date": "2024-10-01",
+      "payment_method": "Auto-charge credit card",
+      "line_items": [
+        {
+          "description": "8 Classes Monthly Membership - October 2024",
+          "amount": 119.00
+        }
+      ],
+      "subtotal": 119.00,
+      "gst": 11.90,
+      "total": 130.90
+    },
+    {
+      "invoice_id": "INV-2024-1889",
+      "member_id": "MEM-007",
+      "member_name": "Marcus Rodriguez",
+      "issue_date": "2024-10-18",
+      "due_date": "2024-10-18",
+      "status": "Paid",
+      "payment_date": "2024-10-18",
+      "payment_method": "Credit card",
+      "line_items": [
+        {
+          "description": "5 Class Pass (valid 60 days)",
+          "amount": 120.00
+        }
+      ],
+      "subtotal": 120.00,
+      "gst": 12.00,
+      "total": 132.00
+    }
+  ],
+  "bills": [
+    {
+      "bill_id": "BILL-2024-1934",
+      "supplier": "Paddington Property Group",
+      "issue_date": "2024-10-01",
+      "due_date": "2024-10-15",
+      "status": "Paid",
+      "line_items": [
+        {
+          "description": "Studio rent - Level 2, 145 Given Terrace - October 2024",
+          "quantity": 1,
+          "unit_price": 3850.00,
+          "total": 3850.00
+        },
+        {
+          "description": "Outgoings and building maintenance",
+          "quantity": 1,
+          "unit_price": 385.00,
+          "total": 385.00
+        }
+      ],
+      "subtotal": 4235.00,
+      "gst": 423.50,
+      "total": 4658.50
+    },
+    {
+      "bill_id": "BILL-2024-1935",
+      "supplier": "Yoga Supplies Australia",
+      "supplier_contact": "Trade Sales",
+      "supplier_phone": "+61 1300 969 246",
+      "issue_date": "2024-10-15",
+      "due_date": "2024-11-14",
+      "status": "Paid",
+      "line_items": [
+        {
+          "description": "Yoga mats - premium 6mm (20 pack)",
+          "quantity": 1,
+          "unit_price": 485.00,
+          "total": 485.00
+        },
+        {
+          "description": "Yoga blocks - cork (30 pack)",
+          "quantity": 1,
+          "unit_price": 285.00,
+          "total": 285.00
+        },
+        {
+          "description": "Yoga straps (20 pack)",
+          "quantity": 1,
+          "unit_price": 145.00,
+          "total": 145.00
+        },
+        {
+          "description": "Bolsters - rectangular (8 units)",
+          "quantity": 1,
+          "unit_price": 385.00,
+          "total": 385.00
+        },
+        {
+          "description": "Blankets - cotton yoga (15 units)",
+          "quantity": 1,
+          "unit_price": 225.00,
+          "total": 225.00
+        }
+      ],
+      "subtotal": 1525.00,
+      "gst": 152.50,
+      "total": 1677.50
+    },
+    {
+      "bill_id": "BILL-2024-1936",
+      "supplier": "Mindbody",
+      "supplier_contact": "Subscriptions",
+      "supplier_phone": "+1 877 755 4279",
+      "issue_date": "2024-10-01",
+      "due_date": "2024-10-15",
+      "status": "Paid",
+      "line_items": [
+        {
+          "description": "Mindbody Software - Monthly Subscription",
+          "quantity": 1,
+          "unit_price": 189.00,
+          "total": 189.00
+        }
+      ],
+      "subtotal": 189.00,
+      "gst": 18.90,
+      "total": 207.90
+    },
+    {
+      "bill_id": "BILL-2024-1937",
+      "supplier": "Origin Energy",
+      "issue_date": "2024-10-20",
+      "due_date": "2024-11-13",
+      "status": "Unpaid",
+      "line_items": [
+        {
+          "description": "Electricity - September 2024 (850 kWh)",
+          "quantity": 1,
+          "unit_price": 425.00,
+          "total": 425.00
+        }
+      ],
+      "subtotal": 425.00,
+      "gst": 42.50,
+      "total": 467.50
+    },
+    {
+      "bill_id": "BILL-2024-1938",
+      "supplier": "Essential Oils Australia",
+      "supplier_contact": "Wholesale",
+      "supplier_phone": "+61 1300 852 687",
+      "issue_date": "2024-10-22",
+      "due_date": "2024-11-21",
+      "status": "Unpaid",
+      "line_items": [
+        {
+          "description": "Lavender essential oil - 100ml",
+          "quantity": 3,
+          "unit_price": 45.00,
+          "total": 135.00
+        },
+        {
+          "description": "Eucalyptus essential oil - 100ml",
+          "quantity": 2,
+          "unit_price": 38.00,
+          "total": 76.00
+        },
+        {
+          "description": "Peppermint essential oil - 100ml",
+          "quantity": 2,
+          "unit_price": 42.00,
+          "total": 84.00
+        },
+        {
+          "description": "Diffusers - ultrasonic (4 units)",
+          "quantity": 1,
+          "unit_price": 185.00,
+          "total": 185.00
+        }
+      ],
+      "subtotal": 480.00,
+      "gst": 48.00,
+      "total": 528.00
+    }
+  ],
+  "instructors": [
+    {
+      "instructor_id": "INST-001",
+      "name": "Claire Morrison",
+      "role": "Owner / Senior Instructor",
+      "email": "claire@serenityyoga.com.au",
+      "phone": "+61 412 678 901",
+      "qualifications": [
+        "RYT 500 (Registered Yoga Teacher - 500 hours)",
+        "Prenatal Yoga Certificate",
+        "Yin Yoga Teacher Training",
+        "First Aid Certificate"
+      ],
+      "specialties": ["Vinyasa", "Power Yoga", "Prenatal"],
+      "experience_years": 12
+    },
+    {
+      "instructor_id": "INST-002",
+      "name": "Maya Rodriguez",
+      "role": "Senior Instructor",
+      "email": "maya@serenityyoga.com.au",
+      "phone": "+61 423 789 012",
+      "qualifications": [
+        "RYT 500 (Registered Yoga Teacher - 500 hours)",
+        "Hatha Yoga Advanced Training",
+        "Meditation Teacher Certificate",
+        "First Aid Certificate"
+      ],
+      "specialties": ["Hatha", "Meditation", "Restorative"],
+      "experience_years": 8
+    },
+    {
+      "instructor_id": "INST-003",
+      "name": "Emma Sterling",
+      "role": "Instructor",
+      "email": "emma@serenityyoga.com.au",
+      "phone": "+61 434 890 123",
+      "qualifications": [
+        "RYT 200 (Registered Yoga Teacher - 200 hours)",
+        "Yin Yoga Teacher Training",
+        "First Aid Certificate"
+      ],
+      "specialties": ["Yin", "Gentle Flow", "Beginners"],
+      "experience_years": 4
+    },
+    {
+      "instructor_id": "INST-004",
+      "name": "James Wilson",
+      "role": "Instructor",
+      "email": "james@serenityyoga.com.au",
+      "phone": "+61 445 901 234",
+      "qualifications": [
+        "RYT 200 (Registered Yoga Teacher - 200 hours)",
+        "Ashtanga Yoga Training",
+        "First Aid Certificate"
+      ],
+      "specialties": ["Ashtanga", "Power Yoga", "Men's Yoga"],
+      "experience_years": 5
+    }
+  ],
+  "workshops": [
+    {
+      "workshop_id": "WS-2024-012",
+      "name": "Introduction to Meditation - 4 Week Course",
+      "instructor": "Maya Rodriguez",
+      "start_date": "2024-11-10",
+      "duration": "4 weeks, Sundays 10:00 AM - 11:30 AM",
+      "price": 180.00,
+      "capacity": 15,
+      "bookings": 12,
+      "status": "Open for bookings"
+    },
+    {
+      "workshop_id": "WS-2024-013",
+      "name": "Yoga for Back Pain Relief",
+      "instructor": "Claire Morrison",
+      "date": "2024-11-23",
+      "time": "2:00 PM - 4:00 PM",
+      "price": 65.00,
+      "capacity": 20,
+      "bookings": 18,
+      "status": "Nearly full"
+    },
+    {
+      "workshop_id": "WS-2024-014",
+      "name": "Prenatal Yoga Series - 6 Weeks",
+      "instructor": "Claire Morrison",
+      "start_date": "2024-12-01",
+      "duration": "6 weeks, Sundays 9:00 AM - 10:30 AM",
+      "price": 240.00,
+      "capacity": 12,
+      "bookings": 8,
+      "status": "Open for bookings"
+    }
+  ],
+  "enquiries": [
+    {
+      "enquiry_id": "ENQ-2024-267",
+      "name": "Brisbane Tech Company",
+      "contact_person": "Rebecca Foster",
+      "email": "rebecca@bristechio.com.au",
+      "phone": "+61 7 3345 6789",
+      "enquiry_date": "2024-10-25",
+      "status": "Proposal Sent",
+      "interest": "Corporate yoga classes - weekly at office",
+      "employees": 30,
+      "estimated_value": 2400.00,
+      "notes": "Want weekly 60min class at their office, 15-20 participants. Proposal sent for 6-month contract."
+    },
+    {
+      "enquiry_id": "ENQ-2024-268",
+      "name": "Amanda Harrison",
+      "email": "amanda.harrison@email.com",
+      "phone": "+61 467 890 234",
+      "enquiry_date": "2024-10-28",
+      "status": "Trial Class Booked",
+      "interest": "Prenatal yoga classes",
+      "notes": "First baby, 18 weeks pregnant. Trial class booked for Nov 2."
+    },
+    {
+      "enquiry_id": "ENQ-2024-269",
+      "name": "Daniel Kim",
+      "email": "daniel.kim@email.com",
+      "phone": "+61 478 901 345",
+      "enquiry_date": "2024-10-29",
+      "status": "Information Sent",
+      "interest": "Private yoga sessions",
+      "notes": "Wants 1-on-1 sessions for injury recovery. Sent pricing and instructor info."
+    },
+    {
+      "enquiry_id": "ENQ-2024-270",
+      "name": "West End Wellness Centre",
+      "contact_person": "Sophie Martinez",
+      "email": "sophie@westendwellness.com.au",
+      "phone": "+61 7 3844 9876",
+      "enquiry_date": "2024-10-27",
+      "status": "Meeting Scheduled",
+      "interest": "Partnership opportunity - shared space/events",
+      "notes": "Meeting scheduled Nov 5 to discuss collaboration opportunities."
+    }
+  ],
+  "google_drive_files": [
+    {
+      "file_id": "FILE-001",
+      "file_name": "Instructor_Qualifications_Certificates.pdf",
+      "file_type": "application/pdf",
+      "upload_date": "2024-01-15",
+      "description": "All instructor yoga teacher training and first aid certificates"
+    },
+    {
+      "file_id": "FILE-002",
+      "file_name": "Public_Liability_Insurance_2024.pdf",
+      "file_type": "application/pdf",
+      "upload_date": "2024-06-01",
+      "description": "Public liability insurance certificate - $20M coverage"
+    },
+    {
+      "file_id": "FILE-003",
+      "file_name": "Safety_Procedures_Manual.pdf",
+      "file_type": "application/pdf",
+      "upload_date": "2024-02-01",
+      "description": "Studio safety procedures and emergency protocols"
+    },
+    {
+      "file_id": "FILE-004",
+      "file_name": "Class_Descriptions_Full.pdf",
+      "file_type": "application/pdf",
+      "upload_date": "2024-08-01",
+      "description": "Detailed descriptions of all class types offered"
+    },
+    {
+      "file_id": "FILE-005",
+      "file_name": "Workshop_Marketing_Materials.pdf",
+      "file_type": "application/pdf",
+      "upload_date": "2024-10-15",
+      "description": "Marketing materials for upcoming workshops"
+    },
+    {
+      "file_id": "FILE-006",
+      "file_name": "Corporate_Yoga_Proposal_Template.pdf",
+      "file_type": "application/pdf",
+      "upload_date": "2024-09-10",
+      "description": "Template for corporate yoga proposals"
+    },
+    {
+      "file_id": "FILE-007",
+      "file_name": "Member_Waiver_Forms.pdf",
+      "file_type": "application/pdf",
+      "upload_date": "2024-01-05",
+      "description": "Standard member waiver and health declaration forms"
+    }
+  ]
+}
+

@@ -1,0 +1,684 @@
+{
+  "company": {
+    "name": "Bloom & Blossom Florist",
+    "abn": "56 789 012 345",
+    "email": "hello@bloomblossom.com.au",
+    "phone": "+61 7 3844 7890",
+    "address": "Shop 3, 178 Boundary Street, West End QLD 4101"
+  },
+  "integrations": {
+    "pos": "Square",
+    "accounting": "Xero",
+    "website": "Shopify",
+    "email": "Gmail",
+    "voice_agent": "Custom Voice Agent",
+    "delivery": "Own delivery + Uber Direct",
+    "booking": "Calendly",
+    "file_storage": "Google Drive"
+  },
+  "trading_hours": {
+    "monday_friday": "8:00 AM - 5:30 PM",
+    "saturday": "8:00 AM - 4:00 PM",
+    "sunday": "9:00 AM - 2:00 PM"
+  },
+  "clients": [
+    {
+      "client_id": "CLI-001",
+      "name": "Sarah Thompson",
+      "type": "Individual",
+      "email": "sarah.thompson@email.com",
+      "phone": "+61 412 345 678",
+      "address": "45 Park Road, Milton QLD 4064",
+      "total_orders": 8,
+      "total_spent": 1450.00,
+      "preferred_flowers": "Roses, peonies"
+    },
+    {
+      "client_id": "CLI-002",
+      "name": "The Grand Hotel Brisbane",
+      "type": "Corporate",
+      "contact_person": "Emma Chen",
+      "email": "events@grandhotelbrisbane.com.au",
+      "phone": "+61 7 3234 5678",
+      "address": "200 George Street, Brisbane QLD 4000",
+      "total_orders": 12,
+      "total_spent": 8950.00,
+      "account_type": "Weekly contract"
+    },
+    {
+      "client_id": "CLI-003",
+      "name": "David & Lisa Martinez",
+      "type": "Wedding Client",
+      "email": "martinez.wedding@email.com",
+      "phone": "+61 423 456 789",
+      "wedding_date": "2024-11-23",
+      "venue": "Riverlife, Kangaroo Point",
+      "total_spent": 6500.00
+    },
+    {
+      "client_id": "CLI-004",
+      "name": "Brisbane City Council - Community Events",
+      "type": "Government",
+      "contact_person": "Michael Wilson",
+      "email": "m.wilson@brisbane.qld.gov.au",
+      "phone": "+61 7 3403 8888",
+      "address": "Brisbane City Hall, 64 Adelaide Street, Brisbane QLD 4000",
+      "total_orders": 4,
+      "total_spent": 3200.00
+    },
+    {
+      "client_id": "CLI-005",
+      "name": "Jennifer Park",
+      "type": "Individual",
+      "email": "jennifer.park@email.com",
+      "phone": "+61 434 567 890",
+      "address": "23 Norman Creek Road, Norman Park QLD 4170",
+      "total_orders": 3,
+      "total_spent": 485.00
+    },
+    {
+      "client_id": "CLI-006",
+      "name": "Riverside Corporate Tower",
+      "type": "Corporate",
+      "contact_person": "Rebecca Foster",
+      "email": "office@riversidecorporate.com.au",
+      "phone": "+61 7 3345 6789",
+      "address": "Level 15, 123 Eagle Street, Brisbane QLD 4000",
+      "total_orders": 0,
+      "total_spent": 0.00,
+      "account_type": "Weekly contract - starting Nov"
+    },
+    {
+      "client_id": "CLI-007",
+      "name": "Marcus Nguyen",
+      "type": "Individual",
+      "email": "marcus.nguyen@email.com",
+      "phone": "+61 445 678 901",
+      "address": "67 Stanley Street, East Brisbane QLD 4169",
+      "total_orders": 0,
+      "total_spent": 0.00
+    },
+    {
+      "client_id": "CLI-008",
+      "name": "Sophie Anderson",
+      "type": "Wedding Client",
+      "email": "sophie.anderson@email.com",
+      "phone": "+61 456 789 012",
+      "wedding_date": "2025-03-15",
+      "venue": "Sirromet Winery, Mount Cotton",
+      "total_spent": 0.00,
+      "notes": "Consultation booked, proposal sent"
+    },
+    {
+      "client_id": "CLI-009",
+      "name": "West End Dental Clinic",
+      "type": "Corporate",
+      "contact_person": "Dr. James Rodriguez",
+      "email": "admin@westenddental.com.au",
+      "phone": "+61 7 3844 9876",
+      "address": "234 Montague Road, West End QLD 4101",
+      "total_orders": 0,
+      "total_spent": 0.00
+    }
+  ],
+  "orders": [
+    {
+      "order_id": "ORD-2024-1234",
+      "client_id": "CLI-002",
+      "client_name": "The Grand Hotel Brisbane",
+      "order_date": "2024-10-18",
+      "delivery_date": "2024-10-21",
+      "delivery_time": "8:00 AM",
+      "status": "Delivered",
+      "order_type": "Corporate Weekly",
+      "items": [
+        {
+          "description": "Lobby arrangement - large statement piece",
+          "flowers": "White lilies, green hydrangeas, eucalyptus",
+          "quantity": 1,
+          "price": 285.00
+        },
+        {
+          "description": "Reception desk arrangement - medium",
+          "flowers": "Mixed seasonal flowers in hotel colors",
+          "quantity": 1,
+          "price": 145.00
+        },
+        {
+          "description": "Restaurant table posies - small",
+          "flowers": "Pink roses and baby's breath",
+          "quantity": 12,
+          "price": 45.00,
+          "total": 540.00
+        }
+      ],
+      "total": 970.00
+    },
+    {
+      "order_id": "ORD-2024-1278",
+      "client_id": "CLI-001",
+      "client_name": "Sarah Thompson",
+      "order_date": "2024-10-22",
+      "delivery_date": "2024-10-23",
+      "delivery_time": "2:00 PM",
+      "delivery_address": "Brisbane Private Hospital, 259 Wickham Terrace, Brisbane QLD 4000",
+      "status": "Delivered",
+      "order_type": "Get Well",
+      "items": [
+        {
+          "description": "Get well bouquet - bright and cheerful",
+          "flowers": "Yellow roses, gerberas, waxflower",
+          "quantity": 1,
+          "price": 95.00
+        }
+      ],
+      "card_message": "Thinking of you and wishing you a speedy recovery! Love, Sarah x",
+      "total": 95.00,
+      "delivery_fee": 15.00
+    },
+    {
+      "order_id": "ORD-2024-1289",
+      "client_id": "CLI-003",
+      "client_name": "David & Lisa Martinez",
+      "order_date": "2024-08-15",
+      "delivery_date": "2024-11-23",
+      "status": "Confirmed",
+      "order_type": "Wedding Package",
+      "items": [
+        {
+          "description": "Bridal bouquet - cascading style",
+          "flowers": "White roses, peonies, ranunculus, trailing greenery",
+          "quantity": 1,
+          "price": 450.00
+        },
+        {
+          "description": "Bridesmaid bouquets",
+          "flowers": "Blush pink roses, white lisianthus, eucalyptus",
+          "quantity": 4,
+          "price": 185.00,
+          "total": 740.00
+        },
+        {
+          "description": "Groom's buttonhole",
+          "flowers": "White rose with eucalyptus",
+          "quantity": 1,
+          "price": 25.00
+        },
+        {
+          "description": "Groomsmen buttonholes",
+          "flowers": "White spray rose with eucalyptus",
+          "quantity": 4,
+          "price": 20.00,
+          "total": 80.00
+        },
+        {
+          "description": "Ceremony arbor installation",
+          "flowers": "White and blush florals with greenery",
+          "quantity": 1,
+          "price": 1200.00
+        },
+        {
+          "description": "Ceremony aisle arrangements",
+          "flowers": "White florals in gold stands",
+          "quantity": 8,
+          "price": 125.00,
+          "total": 1000.00
+        },
+        {
+          "description": "Reception centerpieces - guest tables",
+          "flowers": "Mixed white and blush in gold vases",
+          "quantity": 15,
+          "price": 145.00,
+          "total": 2175.00
+        },
+        {
+          "description": "Bridal table feature arrangement",
+          "flowers": "Luxe white and blush installation",
+          "quantity": 1,
+          "price": 850.00
+        }
+      ],
+      "total": 6520.00,
+      "deposit_paid": 3260.00
+    }
+  ],
+  "invoices": [
+    {
+      "invoice_id": "INV-2024-0945",
+      "order_id": "ORD-2024-1234",
+      "client_id": "CLI-002",
+      "client_name": "The Grand Hotel Brisbane",
+      "issue_date": "2024-10-21",
+      "due_date": "2024-11-20",
+      "status": "Paid",
+      "payment_date": "2024-10-28",
+      "line_items": [
+        {
+          "description": "Weekly floral service - Week of 21 Oct",
+          "amount": 970.00
+        }
+      ],
+      "subtotal": 970.00,
+      "gst": 97.00,
+      "total": 1067.00
+    },
+    {
+      "invoice_id": "INV-2024-0978",
+      "order_id": "ORD-2024-1278",
+      "client_id": "CLI-001",
+      "client_name": "Sarah Thompson",
+      "issue_date": "2024-10-23",
+      "due_date": "2024-11-06",
+      "status": "Paid",
+      "payment_date": "2024-10-23",
+      "payment_method": "Card",
+      "line_items": [
+        {
+          "description": "Get well bouquet",
+          "amount": 95.00
+        },
+        {
+          "description": "Delivery to Brisbane Private Hospital",
+          "amount": 15.00
+        }
+      ],
+      "subtotal": 110.00,
+      "gst": 11.00,
+      "total": 121.00
+    },
+    {
+      "invoice_id": "INV-2024-0712",
+      "order_id": "ORD-2024-1289",
+      "client_id": "CLI-003",
+      "client_name": "David & Lisa Martinez",
+      "issue_date": "2024-08-20",
+      "due_date": "2024-09-03",
+      "status": "Deposit Paid",
+      "payment_date": "2024-08-25",
+      "line_items": [
+        {
+          "description": "Wedding floral package deposit (50%)",
+          "amount": 3260.00
+        }
+      ],
+      "subtotal": 3260.00,
+      "gst": 326.00,
+      "total": 3586.00,
+      "notes": "Balance of $3,260 due by 16 Nov 2024"
+    }
+  ],
+  "bills": [
+    {
+      "bill_id": "BILL-2024-1845",
+      "supplier": "Brisbane Flower Markets",
+      "supplier_contact": "Wholesale Flowers",
+      "supplier_phone": "+61 7 3216 1200",
+      "issue_date": "2024-10-21",
+      "due_date": "2024-10-28",
+      "status": "Paid",
+      "line_items": [
+        {
+          "description": "Roses - white (100 stems)",
+          "quantity": 1,
+          "unit_price": 185.00,
+          "total": 185.00
+        },
+        {
+          "description": "Roses - pink (50 stems)",
+          "quantity": 1,
+          "unit_price": 95.00,
+          "total": 95.00
+        },
+        {
+          "description": "Lilies - white oriental (20 stems)",
+          "quantity": 1,
+          "unit_price": 125.00,
+          "total": 125.00
+        },
+        {
+          "description": "Hydrangeas - mixed colors (15 stems)",
+          "quantity": 1,
+          "unit_price": 145.00,
+          "total": 145.00
+        },
+        {
+          "description": "Gerberas - yellow (40 stems)",
+          "quantity": 1,
+          "unit_price": 65.00,
+          "total": 65.00
+        },
+        {
+          "description": "Eucalyptus - silver dollar (10 bunches)",
+          "quantity": 1,
+          "unit_price": 85.00,
+          "total": 85.00
+        },
+        {
+          "description": "Waxflower - mixed (8 bunches)",
+          "quantity": 1,
+          "unit_price": 55.00,
+          "total": 55.00
+        }
+      ],
+      "subtotal": 755.00,
+      "gst": 75.50,
+      "total": 830.50
+    },
+    {
+      "bill_id": "BILL-2024-1846",
+      "supplier": "Brisbane Flower Markets",
+      "supplier_contact": "Wholesale Flowers",
+      "supplier_phone": "+61 7 3216 1200",
+      "issue_date": "2024-10-24",
+      "due_date": "2024-10-31",
+      "status": "Paid",
+      "line_items": [
+        {
+          "description": "Roses - assorted colors (150 stems)",
+          "quantity": 1,
+          "unit_price": 275.00,
+          "total": 275.00
+        },
+        {
+          "description": "Lisianthus - white and pink (30 stems)",
+          "quantity": 1,
+          "unit_price": 145.00,
+          "total": 145.00
+        },
+        {
+          "description": "Snapdragons - mixed (25 stems)",
+          "quantity": 1,
+          "unit_price": 85.00,
+          "total": 85.00
+        },
+        {
+          "description": "Proteas - king (8 stems)",
+          "quantity": 1,
+          "unit_price": 95.00,
+          "total": 95.00
+        },
+        {
+          "description": "Greenery - mixed foliage (5 bunches)",
+          "quantity": 1,
+          "unit_price": 75.00,
+          "total": 75.00
+        }
+      ],
+      "subtotal": 675.00,
+      "gst": 67.50,
+      "total": 742.50
+    },
+    {
+      "bill_id": "BILL-2024-1847",
+      "supplier": "Floral Supplies Australia",
+      "supplier_contact": "Trade Sales",
+      "supplier_phone": "+61 7 3252 9876",
+      "issue_date": "2024-10-20",
+      "due_date": "2024-11-19",
+      "status": "Unpaid",
+      "line_items": [
+        {
+          "description": "Glass vases - cylinder 20cm (24 pack)",
+          "quantity": 2,
+          "unit_price": 145.00,
+          "total": 290.00
+        },
+        {
+          "description": "Glass vases - bud 15cm (36 pack)",
+          "quantity": 1,
+          "unit_price": 125.00,
+          "total": 125.00
+        },
+        {
+          "description": "Floral foam - bricks (48 pack)",
+          "quantity": 2,
+          "unit_price": 85.00,
+          "total": 170.00
+        },
+        {
+          "description": "Floral tape - green (12 rolls)",
+          "quantity": 1,
+          "unit_price": 28.00,
+          "total": 28.00
+        },
+        {
+          "description": "Ribbon - satin assorted colors",
+          "quantity": 1,
+          "unit_price": 65.00,
+          "total": 65.00
+        },
+        {
+          "description": "Cellophane wrap - clear (2 rolls)",
+          "quantity": 1,
+          "unit_price": 45.00,
+          "total": 45.00
+        }
+      ],
+      "subtotal": 723.00,
+      "gst": 72.30,
+      "total": 795.30
+    },
+    {
+      "bill_id": "BILL-2024-1848",
+      "supplier": "West End Commercial Properties",
+      "supplier_contact": "Property Management",
+      "supplier_phone": "+61 7 3844 5555",
+      "issue_date": "2024-10-01",
+      "due_date": "2024-10-15",
+      "status": "Paid",
+      "line_items": [
+        {
+          "description": "Shop rent - October 2024",
+          "quantity": 1,
+          "unit_price": 3250.00,
+          "total": 3250.00
+        },
+        {
+          "description": "Outgoings",
+          "quantity": 1,
+          "unit_price": 325.00,
+          "total": 325.00
+        }
+      ],
+      "subtotal": 3575.00,
+      "gst": 357.50,
+      "total": 3932.50
+    },
+    {
+      "bill_id": "BILL-2024-1849",
+      "supplier": "Origin Energy",
+      "supplier_contact": "Business Accounts",
+      "supplier_phone": "13 24 61",
+      "issue_date": "2024-10-18",
+      "due_date": "2024-11-11",
+      "status": "Unpaid",
+      "line_items": [
+        {
+          "description": "Electricity - September 2024 (685 kWh)",
+          "quantity": 1,
+          "unit_price": 345.00,
+          "total": 345.00
+        }
+      ],
+      "subtotal": 345.00,
+      "gst": 34.50,
+      "total": 379.50
+    }
+  ],
+  "staff": [
+    {
+      "staff_id": "STAFF-001",
+      "name": "Claire Morrison",
+      "role": "Owner / Head Florist",
+      "email": "claire@bloomblossom.com.au",
+      "phone": "+61 412 678 901",
+      "qualifications": [
+        "Certificate III in Floristry",
+        "Certificate IV in Floristry (Design)",
+        "Wedding Design Specialist Certificate"
+      ],
+      "experience_years": 15
+    },
+    {
+      "staff_id": "STAFF-002",
+      "name": "Emma Rodriguez",
+      "role": "Senior Florist",
+      "email": "emma@bloomblossom.com.au",
+      "phone": "+61 423 789 012",
+      "qualifications": [
+        "Certificate III in Floristry",
+        "Event Floristry Certificate"
+      ],
+      "experience_years": 8
+    },
+    {
+      "staff_id": "STAFF-003",
+      "name": "Sophie Chen",
+      "role": "Florist",
+      "email": "sophie@bloomblossom.com.au",
+      "phone": "+61 434 890 123",
+      "qualifications": [
+        "Certificate III in Floristry"
+      ],
+      "experience_years": 3
+    },
+    {
+      "staff_id": "STAFF-004",
+      "name": "Jessica Williams",
+      "role": "Shop Assistant / Apprentice Florist",
+      "email": "jessica@bloomblossom.com.au",
+      "phone": "+61 445 901 234",
+      "qualifications": [
+        "Currently completing Certificate III in Floristry"
+      ],
+      "experience_years": 1
+    }
+  ],
+  "enquiries": [
+    {
+      "enquiry_id": "ENQ-2024-345",
+      "name": "Sophie Anderson",
+      "email": "sophie.anderson@email.com",
+      "phone": "+61 456 789 012",
+      "enquiry_date": "2024-10-15",
+      "status": "Proposal Sent",
+      "event_type": "Wedding",
+      "event_date": "2025-03-15",
+      "venue": "Sirromet Winery, Mount Cotton",
+      "guest_count": 120,
+      "budget": 8000.00,
+      "style": "Romantic, soft pastels, garden-inspired",
+      "consultation_date": "2024-10-20",
+      "notes": "Loves peonies, roses, and soft greenery. Proposal sent 22 Oct, follow up scheduled."
+    },
+    {
+      "enquiry_id": "ENQ-2024-346",
+      "name": "Riverside Corporate Tower",
+      "contact_person": "Rebecca Foster",
+      "email": "office@riversidecorporate.com.au",
+      "phone": "+61 7 3345 6789",
+      "enquiry_date": "2024-10-22",
+      "status": "Quote Sent",
+      "event_type": "Corporate Weekly Contract",
+      "requirements": "Weekly floral arrangements for reception and meeting rooms",
+      "budget": 800.00,
+      "start_date": "2024-11-04",
+      "notes": "Quote sent for weekly service. Modern, professional style requested."
+    },
+    {
+      "enquiry_id": "ENQ-2024-347",
+      "name": "Amanda Harrison",
+      "email": "amanda.harrison@email.com",
+      "phone": "+61 467 890 234",
+      "enquiry_date": "2024-10-28",
+      "status": "Consultation Requested",
+      "event_type": "Corporate Event",
+      "event_date": "2024-12-15",
+      "venue": "Brisbane Convention Centre",
+      "guest_count": 250,
+      "budget": 5000.00,
+      "notes": "Annual corporate gala. Wants statement pieces in brand colors (navy and gold)."
+    },
+    {
+      "enquiry_id": "ENQ-2024-348",
+      "name": "West End Dental Clinic",
+      "contact_person": "Dr. James Rodriguez",
+      "email": "admin@westenddental.com.au",
+      "phone": "+61 7 3844 9876",
+      "enquiry_date": "2024-10-29",
+      "status": "Information Sent",
+      "event_type": "Weekly Fresh Flowers",
+      "requirements": "Small arrangement for reception area, changed weekly",
+      "budget": 150.00,
+      "notes": "Local business, wants to support local florist. Fresh, modern style."
+    },
+    {
+      "enquiry_id": "ENQ-2024-349",
+      "name": "Daniel Kim",
+      "email": "daniel.kim@email.com",
+      "phone": "+61 478 901 345",
+      "enquiry_date": "2024-10-27",
+      "status": "Follow Up Required",
+      "event_type": "Funeral",
+      "event_date": "2024-11-02",
+      "requirements": "Casket spray and sympathy arrangements",
+      "budget": 1200.00,
+      "notes": "Sensitive timing. Preferences for white lilies and roses. Need to follow up tomorrow."
+    }
+  ],
+  "google_drive_files": [
+    {
+      "file_id": "FILE-001",
+      "file_name": "Martinez_Wedding_Proposal.pdf",
+      "file_type": "application/pdf",
+      "client_id": "CLI-003",
+      "upload_date": "2024-08-18",
+      "description": "Wedding floral proposal with mood boards and pricing"
+    },
+    {
+      "file_id": "FILE-002",
+      "file_name": "Martinez_Wedding_Contract_Signed.pdf",
+      "file_type": "application/pdf",
+      "client_id": "CLI-003",
+      "upload_date": "2024-08-25",
+      "description": "Signed wedding contract and deposit receipt"
+    },
+    {
+      "file_id": "FILE-003",
+      "file_name": "Portfolio_2024_Weddings.pdf",
+      "file_type": "application/pdf",
+      "upload_date": "2024-09-01",
+      "description": "Wedding portfolio for client consultations"
+    },
+    {
+      "file_id": "FILE-004",
+      "file_name": "Portfolio_2024_Corporate.pdf",
+      "file_type": "application/pdf",
+      "upload_date": "2024-09-01",
+      "description": "Corporate floral portfolio"
+    },
+    {
+      "file_id": "FILE-005",
+      "file_name": "Anderson_Wedding_Proposal.pdf",
+      "file_type": "application/pdf",
+      "enquiry_id": "ENQ-2024-345",
+      "upload_date": "2024-10-22",
+      "description": "Wedding proposal for Sophie Anderson - March 2025"
+    },
+    {
+      "file_id": "FILE-006",
+      "file_name": "Public_Liability_Insurance_2024.pdf",
+      "file_type": "application/pdf",
+      "upload_date": "2024-06-01",
+      "description": "Public liability insurance certificate"
+    },
+    {
+      "file_id": "FILE-007",
+      "file_name": "Staff_Floristry_Certificates.pdf",
+      "file_type": "application/pdf",
+      "upload_date": "2024-01-10",
+      "description": "All staff floristry qualification certificates"
+    }
+  ]
+}
+

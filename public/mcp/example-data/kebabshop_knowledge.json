@@ -1,0 +1,691 @@
+{
+  "company": {
+    "name": "Istanbul Kebab House",
+    "abn": "23 456 789 012",
+    "email": "admin@istanbulkebab.com.au",
+    "phone": "+61 7 3844 6789",
+    "address": "Shop 7, 234 Boundary Street, West End QLD 4101"
+  },
+  "integrations": {
+    "pos": "Square",
+    "accounting": "Xero",
+    "delivery": "Uber Eats, Menulog, DoorDash",
+    "email": "Gmail",
+    "voice_agent": "Custom Voice Agent",
+    "rostering": "Deputy",
+    "ordering": "MarketMan",
+    "file_storage": "Google Drive"
+  },
+  "trading_hours": {
+    "monday_thursday": "11:00 AM - 10:00 PM",
+    "friday_saturday": "11:00 AM - 11:00 PM",
+    "sunday": "12:00 PM - 9:00 PM"
+  },
+  "menu_categories": [
+    {
+      "category": "Kebabs",
+      "items": [
+        {
+          "item": "Lamb Doner Kebab",
+          "price": 14.90
+        },
+        {
+          "item": "Chicken Doner Kebab",
+          "price": 13.90
+        },
+        {
+          "item": "Mixed Meat Kebab",
+          "price": 15.90
+        },
+        {
+          "item": "Falafel Kebab (Vegetarian)",
+          "price": 12.90
+        },
+        {
+          "item": "Adana Kebab (Spicy Mince)",
+          "price": 15.90
+        }
+      ]
+    },
+    {
+      "category": "Plates",
+      "items": [
+        {
+          "item": "Mixed Grill Plate",
+          "price": 26.90
+        },
+        {
+          "item": "Lamb Shish Plate",
+          "price": 24.90
+        },
+        {
+          "item": "Chicken Shish Plate",
+          "price": 22.90
+        },
+        {
+          "item": "Falafel Plate",
+          "price": 19.90
+        }
+      ]
+    },
+    {
+      "category": "Sides & Extras",
+      "items": [
+        {
+          "item": "Turkish Bread",
+          "price": 3.50
+        },
+        {
+          "item": "Chips",
+          "price": 5.90
+        },
+        {
+          "item": "Hummus",
+          "price": 7.90
+        },
+        {
+          "item": "Tabouli",
+          "price": 7.90
+        },
+        {
+          "item": "Baklava (2 pieces)",
+          "price": 6.90
+        }
+      ]
+    },
+    {
+      "category": "Drinks",
+      "items": [
+        {
+          "item": "Soft Drink (Can)",
+          "price": 3.50
+        },
+        {
+          "item": "Turkish Tea",
+          "price": 4.00
+        },
+        {
+          "item": "Turkish Coffee",
+          "price": 5.00
+        },
+        {
+          "item": "Ayran (Yogurt Drink)",
+          "price": 4.50
+        }
+      ]
+    }
+  ],
+  "daily_sales": [
+    {
+      "date": "2024-10-25",
+      "day": "Friday",
+      "dine_in_sales": 1450.00,
+      "dine_in_transactions": 52,
+      "takeaway_sales": 980.00,
+      "takeaway_transactions": 38,
+      "uber_eats_sales": 845.00,
+      "menulog_sales": 620.00,
+      "doordash_sales": 385.00,
+      "total_sales": 4280.00,
+      "total_transactions": 135
+    },
+    {
+      "date": "2024-10-26",
+      "day": "Saturday",
+      "dine_in_sales": 1680.00,
+      "dine_in_transactions": 61,
+      "takeaway_sales": 1120.00,
+      "takeaway_transactions": 45,
+      "uber_eats_sales": 925.00,
+      "menulog_sales": 710.00,
+      "doordash_sales": 445.00,
+      "total_sales": 4880.00,
+      "total_transactions": 152
+    },
+    {
+      "date": "2024-10-27",
+      "day": "Sunday",
+      "dine_in_sales": 1250.00,
+      "dine_in_transactions": 48,
+      "takeaway_sales": 820.00,
+      "takeaway_transactions": 34,
+      "uber_eats_sales": 680.00,
+      "menulog_sales": 495.00,
+      "doordash_sales": 320.00,
+      "total_sales": 3565.00,
+      "total_transactions": 112
+    },
+    {
+      "date": "2024-10-28",
+      "day": "Monday",
+      "dine_in_sales": 920.00,
+      "dine_in_transactions": 38,
+      "takeaway_sales": 640.00,
+      "takeaway_transactions": 28,
+      "uber_eats_sales": 545.00,
+      "menulog_sales": 420.00,
+      "doordash_sales": 280.00,
+      "total_sales": 2805.00,
+      "total_transactions": 89
+    },
+    {
+      "date": "2024-10-29",
+      "day": "Tuesday",
+      "dine_in_sales": 890.00,
+      "dine_in_transactions": 35,
+      "takeaway_sales": 610.00,
+      "takeaway_transactions": 26,
+      "uber_eats_sales": 520.00,
+      "menulog_sales": 395.00,
+      "doordash_sales": 265.00,
+      "total_sales": 2680.00,
+      "total_transactions": 84
+    }
+  ],
+  "suppliers": [
+    {
+      "supplier_id": "SUP-001",
+      "name": "Brisbane Halal Meat Suppliers",
+      "contact": "Ahmad Hassan",
+      "phone": "+61 7 3391 2345",
+      "email": "orders@brishalalmeat.com.au",
+      "supplies": "Lamb, chicken, mince meat - all halal certified",
+      "delivery_schedule": "Tuesday, Friday",
+      "payment_terms": "7 days"
+    },
+    {
+      "supplier_id": "SUP-002",
+      "name": "Mediterranean Wholesale Foods",
+      "contact": "Maria Papadopoulos",
+      "phone": "+61 7 3252 8765",
+      "email": "sales@medfoods.com.au",
+      "supplies": "Turkish bread, pita, hummus, tabouli, spices",
+      "delivery_schedule": "Monday, Thursday",
+      "payment_terms": "14 days"
+    },
+    {
+      "supplier_id": "SUP-003",
+      "name": "Fresh Harvest Produce",
+      "contact": "Tony Nguyen",
+      "phone": "+61 7 3276 5432",
+      "email": "admin@freshharvestqld.com.au",
+      "supplies": "Lettuce, tomatoes, onions, parsley, lemon",
+      "delivery_schedule": "Monday, Wednesday, Friday",
+      "payment_terms": "7 days"
+    },
+    {
+      "supplier_id": "SUP-004",
+      "name": "Coca-Cola Amatil",
+      "contact": "Sales Team",
+      "phone": "13 2653",
+      "email": "orders@ccamatil.com",
+      "supplies": "Soft drinks, bottled water",
+      "delivery_schedule": "Weekly",
+      "payment_terms": "30 days"
+    },
+    {
+      "supplier_id": "SUP-005",
+      "name": "Anatolian Imports",
+      "contact": "Mehmet Ozturk",
+      "phone": "+61 7 3844 9876",
+      "email": "mehmet@anatolianimports.com.au",
+      "supplies": "Turkish tea, coffee, ayran, baklava, spices",
+      "delivery_schedule": "Fortnightly",
+      "payment_terms": "14 days"
+    }
+  ],
+  "bills": [
+    {
+      "bill_id": "BILL-2024-1234",
+      "supplier": "Brisbane Halal Meat Suppliers",
+      "issue_date": "2024-10-22",
+      "due_date": "2024-10-29",
+      "status": "Paid",
+      "payment_date": "2024-10-27",
+      "line_items": [
+        {
+          "description": "Lamb shoulder - boneless (15kg)",
+          "quantity": 15,
+          "unit_price": 24.50,
+          "total": 367.50
+        },
+        {
+          "description": "Chicken thigh fillets (20kg)",
+          "quantity": 20,
+          "unit_price": 11.80,
+          "total": 236.00
+        },
+        {
+          "description": "Beef mince - lean (10kg)",
+          "quantity": 10,
+          "unit_price": 15.90,
+          "total": 159.00
+        }
+      ],
+      "subtotal": 762.50,
+      "gst": 76.25,
+      "total": 838.75
+    },
+    {
+      "bill_id": "BILL-2024-1235",
+      "supplier": "Mediterranean Wholesale Foods",
+      "issue_date": "2024-10-24",
+      "due_date": "2024-11-07",
+      "status": "Paid",
+      "payment_date": "2024-10-28",
+      "line_items": [
+        {
+          "description": "Turkish bread loaves",
+          "quantity": 100,
+          "unit_price": 2.80,
+          "total": 280.00
+        },
+        {
+          "description": "Pita bread packets (10 per pack)",
+          "quantity": 30,
+          "unit_price": 6.50,
+          "total": 195.00
+        },
+        {
+          "description": "Hummus - 2kg tubs",
+          "quantity": 8,
+          "unit_price": 18.50,
+          "total": 148.00
+        },
+        {
+          "description": "Tabouli - 2kg tubs",
+          "quantity": 6,
+          "unit_price": 16.80,
+          "total": 100.80
+        },
+        {
+          "description": "Turkish spice mix - bulk",
+          "quantity": 1,
+          "unit_price": 85.00,
+          "total": 85.00
+        }
+      ],
+      "subtotal": 808.80,
+      "gst": 80.88,
+      "total": 889.68
+    },
+    {
+      "bill_id": "BILL-2024-1236",
+      "supplier": "Fresh Harvest Produce",
+      "issue_date": "2024-10-28",
+      "due_date": "2024-11-04",
+      "status": "Unpaid",
+      "line_items": [
+        {
+          "description": "Iceberg lettuce",
+          "quantity": 15,
+          "unit_price": 3.20,
+          "total": 48.00
+        },
+        {
+          "description": "Tomatoes - truss (5kg boxes)",
+          "quantity": 8,
+          "unit_price": 12.50,
+          "total": 100.00
+        },
+        {
+          "description": "Brown onions (10kg bags)",
+          "quantity": 6,
+          "unit_price": 8.90,
+          "total": 53.40
+        },
+        {
+          "description": "Spanish onions (5kg bags)",
+          "quantity": 4,
+          "unit_price": 9.50,
+          "total": 38.00
+        },
+        {
+          "description": "Parsley - fresh bunches",
+          "quantity": 20,
+          "unit_price": 2.80,
+          "total": 56.00
+        },
+        {
+          "description": "Lemons",
+          "quantity": 30,
+          "unit_price": 1.20,
+          "total": 36.00
+        },
+        {
+          "description": "Cucumbers - continental",
+          "quantity": 25,
+          "unit_price": 2.50,
+          "total": 62.50
+        }
+      ],
+      "subtotal": 393.90,
+      "gst": 39.39,
+      "total": 433.29
+    },
+    {
+      "bill_id": "BILL-2024-1237",
+      "supplier": "Anatolian Imports",
+      "issue_date": "2024-10-25",
+      "due_date": "2024-11-08",
+      "status": "Unpaid",
+      "line_items": [
+        {
+          "description": "Turkish tea - 500g packets",
+          "quantity": 12,
+          "unit_price": 14.50,
+          "total": 174.00
+        },
+        {
+          "description": "Turkish coffee - 250g packets",
+          "quantity": 8,
+          "unit_price": 18.90,
+          "total": 151.20
+        },
+        {
+          "description": "Ayran (yogurt drink) - 1L bottles",
+          "quantity": 24,
+          "unit_price": 4.80,
+          "total": 115.20
+        },
+        {
+          "description": "Baklava - assorted (30 piece trays)",
+          "quantity": 6,
+          "unit_price": 45.00,
+          "total": 270.00
+        }
+      ],
+      "subtotal": 710.40,
+      "gst": 71.04,
+      "total": 781.44
+    },
+    {
+      "bill_id": "BILL-2024-1238",
+      "supplier": "Coca-Cola Amatil",
+      "issue_date": "2024-10-23",
+      "due_date": "2024-11-22",
+      "status": "Unpaid",
+      "line_items": [
+        {
+          "description": "Coca-Cola cans (24 pack)",
+          "quantity": 10,
+          "unit_price": 22.50,
+          "total": 225.00
+        },
+        {
+          "description": "Sprite cans (24 pack)",
+          "quantity": 6,
+          "unit_price": 22.50,
+          "total": 135.00
+        },
+        {
+          "description": "Fanta cans (24 pack)",
+          "quantity": 6,
+          "unit_price": 22.50,
+          "total": 135.00
+        },
+        {
+          "description": "Mount Franklin water (24 x 600ml)",
+          "quantity": 8,
+          "unit_price": 18.00,
+          "total": 144.00
+        }
+      ],
+      "subtotal": 639.00,
+      "gst": 63.90,
+      "total": 702.90
+    },
+    {
+      "bill_id": "BILL-2024-1239",
+      "supplier": "Brisbane Halal Meat Suppliers",
+      "issue_date": "2024-10-25",
+      "due_date": "2024-11-01",
+      "status": "Unpaid",
+      "line_items": [
+        {
+          "description": "Lamb shoulder - boneless (18kg)",
+          "quantity": 18,
+          "unit_price": 24.50,
+          "total": 441.00
+        },
+        {
+          "description": "Chicken thigh fillets (25kg)",
+          "quantity": 25,
+          "unit_price": 11.80,
+          "total": 295.00
+        },
+        {
+          "description": "Beef mince - lean (12kg)",
+          "quantity": 12,
+          "unit_price": 15.90,
+          "total": 190.80
+        }
+      ],
+      "subtotal": 926.80,
+      "gst": 92.68,
+      "total": 1019.48
+    },
+    {
+      "bill_id": "BILL-2024-1240",
+      "supplier": "Origin Energy",
+      "issue_date": "2024-10-20",
+      "due_date": "2024-11-13",
+      "status": "Unpaid",
+      "line_items": [
+        {
+          "description": "Electricity usage - September 2024 (2,450 kWh)",
+          "quantity": 1,
+          "unit_price": 845.00,
+          "total": 845.00
+        }
+      ],
+      "subtotal": 845.00,
+      "gst": 84.50,
+      "total": 929.50
+    },
+    {
+      "bill_id": "BILL-2024-1241",
+      "supplier": "Urban Utilities",
+      "issue_date": "2024-10-18",
+      "due_date": "2024-11-11",
+      "status": "Unpaid",
+      "line_items": [
+        {
+          "description": "Water usage - September 2024",
+          "quantity": 1,
+          "unit_price": 285.00,
+          "total": 285.00
+        }
+      ],
+      "subtotal": 285.00,
+      "gst": 28.50,
+      "total": 313.50
+    },
+    {
+      "bill_id": "BILL-2024-1242",
+      "supplier": "West End Shopping Centre",
+      "issue_date": "2024-10-01",
+      "due_date": "2024-10-15",
+      "status": "Paid",
+      "payment_date": "2024-10-12",
+      "line_items": [
+        {
+          "description": "Shop rent - October 2024",
+          "quantity": 1,
+          "unit_price": 4250.00,
+          "total": 4250.00
+        },
+        {
+          "description": "Outgoings and common area maintenance",
+          "quantity": 1,
+          "unit_price": 450.00,
+          "total": 450.00
+        }
+      ],
+      "subtotal": 4700.00,
+      "gst": 470.00,
+      "total": 5170.00
+    }
+  ],
+  "staff": [
+    {
+      "staff_id": "STAFF-001",
+      "name": "Mehmet Yilmaz",
+      "role": "Owner / Head Chef",
+      "email": "mehmet@istanbulkebab.com.au",
+      "phone": "+61 412 345 678",
+      "certifications": [
+        "Food Safety Supervisor Certificate",
+        "Commercial Cookery Certificate III"
+      ]
+    },
+    {
+      "staff_id": "STAFF-002",
+      "name": "Ayşe Yilmaz",
+      "role": "Co-Owner / Manager",
+      "email": "ayse@istanbulkebab.com.au",
+      "phone": "+61 423 456 789",
+      "certifications": [
+        "Food Safety Supervisor Certificate"
+      ]
+    },
+    {
+      "staff_id": "STAFF-003",
+      "name": "Ahmed Hassan",
+      "role": "Chef",
+      "email": "ahmed@istanbulkebab.com.au",
+      "phone": "+61 434 567 890",
+      "certifications": [
+        "Food Handler Certificate"
+      ]
+    },
+    {
+      "staff_id": "STAFF-004",
+      "name": "Sarah Mitchell",
+      "role": "Front Counter Staff",
+      "email": "sarah.mitchell@email.com",
+      "phone": "+61 445 678 901",
+      "certifications": [
+        "Responsible Service of Alcohol (RSA)",
+        "Food Handler Certificate"
+      ]
+    },
+    {
+      "staff_id": "STAFF-005",
+      "name": "Jason Lee",
+      "role": "Kitchen Hand / Delivery Driver",
+      "email": "jason.lee@email.com",
+      "phone": "+61 456 789 012",
+      "certifications": [
+        "Food Handler Certificate",
+        "Queensland Driver's License"
+      ]
+    },
+    {
+      "staff_id": "STAFF-006",
+      "name": "Emma Rodriguez",
+      "role": "Weekend Staff",
+      "email": "emma.rodriguez@email.com",
+      "phone": "+61 467 890 123",
+      "certifications": [
+        "Food Handler Certificate"
+      ]
+    }
+  ],
+  "catering_enquiries": [
+    {
+      "enquiry_id": "CAT-2024-034",
+      "name": "Queensland University Student Union",
+      "contact_person": "Michael Chen",
+      "email": "m.chen@qusu.org.au",
+      "phone": "+61 478 901 234",
+      "enquiry_date": "2024-10-26",
+      "event_date": "2024-11-15",
+      "event_type": "Student Festival",
+      "guests": 150,
+      "status": "Quote Sent",
+      "estimated_value": 2400.00,
+      "notes": "Student festival. Want mixed kebab platters and vegetarian options. Confirmed budget. Waiting for approval."
+    },
+    {
+      "enquiry_id": "CAT-2024-035",
+      "name": "Brisbane Tech Company",
+      "contact_person": "Rebecca Foster",
+      "email": "rebecca@bristechio.com.au",
+      "phone": "+61 7 3234 8765",
+      "enquiry_date": "2024-10-28",
+      "event_date": "2024-11-20",
+      "event_type": "Office Lunch",
+      "guests": 45,
+      "status": "Interested",
+      "estimated_value": 750.00,
+      "notes": "Weekly office catering. Want to trial for team lunch. Could become regular booking."
+    },
+    {
+      "enquiry_id": "CAT-2024-036",
+      "name": "Private Birthday Party",
+      "contact_person": "David Thompson",
+      "email": "d.thompson@email.com",
+      "phone": "+61 489 012 345",
+      "enquiry_date": "2024-10-29",
+      "event_date": "2024-12-07",
+      "event_type": "Birthday Party",
+      "guests": 60,
+      "status": "Quote Requested",
+      "estimated_value": 980.00,
+      "notes": "Home birthday party. Want kebab platters and sides delivered. Need quote by next week."
+    }
+  ],
+  "google_drive_files": [
+    {
+      "file_id": "FILE-001",
+      "file_name": "Food_Safety_Certificate_Mehmet.pdf",
+      "file_type": "application/pdf",
+      "upload_date": "2024-02-15",
+      "description": "Food Safety Supervisor Certificate - Mehmet Yilmaz"
+    },
+    {
+      "file_id": "FILE-002",
+      "file_name": "Halal_Certification_2024.pdf",
+      "file_type": "application/pdf",
+      "upload_date": "2024-01-10",
+      "description": "Halal certification for all meat products"
+    },
+    {
+      "file_id": "FILE-003",
+      "file_name": "Menu_Photos_Professional.zip",
+      "file_type": "application/zip",
+      "upload_date": "2024-08-20",
+      "description": "Professional food photography for menu and social media"
+    },
+    {
+      "file_id": "FILE-004",
+      "file_name": "Insurance_Public_Liability.pdf",
+      "file_type": "application/pdf",
+      "upload_date": "2024-06-01",
+      "description": "Public liability insurance certificate - $10M coverage"
+    },
+    {
+      "file_id": "FILE-005",
+      "file_name": "Staff_Rosters_October_2024.xlsx",
+      "file_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "upload_date": "2024-09-28",
+      "description": "Staff roster schedule for October"
+    },
+    {
+      "file_id": "FILE-006",
+      "file_name": "Catering_Menu_Prices_2024.pdf",
+      "file_type": "application/pdf",
+      "upload_date": "2024-09-01",
+      "description": "Catering menu and pricing for corporate/private events"
+    },
+    {
+      "file_id": "FILE-007",
+      "file_name": "Shop_Lease_Agreement.pdf",
+      "file_type": "application/pdf",
+      "upload_date": "2024-01-05",
+      "description": "Commercial lease agreement - West End Shopping Centre"
+    }
+  ]
+}
+

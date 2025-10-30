@@ -1,0 +1,938 @@
+{
+  "company": {
+    "name": "FlowRight Plumbing Services",
+    "abn": "98 765 432 109",
+    "email": "admin@flowrightplumbing.com.au",
+    "phone": "+61 7 3876 5432",
+    "address": "67 Water Street, Woolloongabba QLD 4102"
+  },
+  "integrations": {
+    "accounting": "Xero",
+    "job_management": "ServiceM8",
+    "email": "Gmail",
+    "voice_agent": "Custom Voice Agent",
+    "file_storage": "OneDrive"
+  },
+  "clients": [
+    {
+      "client_id": "CLI-001",
+      "name": "Jennifer Walsh",
+      "type": "Residential",
+      "email": "jen.walsh@email.com",
+      "phone": "+61 412 987 654",
+      "address": "23 Creek Road, Carina QLD 4152",
+      "account_balance": 0.00,
+      "total_invoiced": 3850.00
+    },
+    {
+      "client_id": "CLI-002",
+      "name": "Brisbane Property Management",
+      "type": "Commercial",
+      "contact_person": "Michael Stevens",
+      "email": "michael@brispm.com.au",
+      "phone": "+61 7 3234 8765",
+      "address": "Suite 5, 89 Stanley Street, South Brisbane QLD 4101",
+      "account_balance": 0.00,
+      "total_invoiced": 18750.00
+    },
+    {
+      "client_id": "CLI-003",
+      "name": "Tom & Lisa Harrison",
+      "type": "Residential",
+      "email": "harrison.family@email.com",
+      "phone": "+61 423 876 543",
+      "address": "14 Riverside Terrace, Bulimba QLD 4171",
+      "account_balance": 1685.00,
+      "total_invoiced": 6950.00
+    },
+    {
+      "client_id": "CLI-004",
+      "name": "Valley Shopping Complex",
+      "type": "Commercial",
+      "contact_person": "Sarah Martinez",
+      "email": "facilities@valleyshopping.com.au",
+      "phone": "+61 7 3852 9876",
+      "address": "350 Brunswick Street, Fortitude Valley QLD 4006",
+      "account_balance": 0.00,
+      "total_invoiced": 32400.00
+    },
+    {
+      "client_id": "CLI-005",
+      "name": "Robert Chen",
+      "type": "Residential",
+      "email": "robert.chen@email.com",
+      "phone": "+61 434 765 432",
+      "address": "92 Mountain View Road, Camp Hill QLD 4152",
+      "account_balance": 0.00,
+      "total_invoiced": 0.00
+    },
+    {
+      "client_id": "CLI-006",
+      "name": "Southside Medical Centre",
+      "type": "Commercial",
+      "contact_person": "Dr. Amanda Foster",
+      "email": "admin@southsidemedical.com.au",
+      "phone": "+61 7 3345 8765",
+      "address": "78 Logan Road, Woolloongabba QLD 4102",
+      "account_balance": 0.00,
+      "total_invoiced": 0.00
+    },
+    {
+      "client_id": "CLI-007",
+      "name": "Patricia Williams",
+      "type": "Residential",
+      "email": "p.williams@email.com",
+      "phone": "+61 445 654 321",
+      "address": "41 Garden Crescent, Norman Park QLD 4170",
+      "account_balance": 0.00,
+      "total_invoiced": 0.00
+    },
+    {
+      "client_id": "CLI-008",
+      "name": "Brisbane City Apartments",
+      "type": "Commercial",
+      "contact_person": "Jason Lee",
+      "email": "jason@bcapartments.com.au",
+      "phone": "+61 7 3123 8765",
+      "address": "Level 2, 155 George Street, Brisbane QLD 4000",
+      "account_balance": 0.00,
+      "total_invoiced": 0.00
+    },
+    {
+      "client_id": "CLI-009",
+      "name": "Andrew & Sophie Morrison",
+      "type": "Residential",
+      "email": "morrison.home@email.com",
+      "phone": "+61 456 789 012",
+      "address": "8 Parkview Drive, Seven Hills QLD 4170",
+      "account_balance": 0.00,
+      "total_invoiced": 0.00
+    }
+  ],
+  "jobs": [
+    {
+      "job_id": "JOB-2024-045",
+      "client_id": "CLI-001",
+      "client_name": "Jennifer Walsh",
+      "description": "Emergency Hot Water System Replacement",
+      "status": "Completed",
+      "start_date": "2024-09-15",
+      "completion_date": "2024-09-16",
+      "assigned_plumber": "Craig Thompson",
+      "total_value": 3850.00,
+      "details": {
+        "scope": "Replace failed Rheem hot water system with new 315L electric system",
+        "old_system": "Rheem 250L electric (15 years old)",
+        "new_system": "Rheem 315L electric hot water system",
+        "additional_work": "Install new tempering valve, replace pressure relief valve, update isolating valves"
+      }
+    },
+    {
+      "job_id": "JOB-2024-062",
+      "client_id": "CLI-002",
+      "client_name": "Brisbane Property Management",
+      "description": "Quarterly Maintenance - 12 Properties",
+      "status": "Completed",
+      "start_date": "2024-10-01",
+      "completion_date": "2024-10-15",
+      "assigned_plumber": "Craig Thompson, Luke Martinez",
+      "total_value": 18750.00,
+      "details": {
+        "scope": "Quarterly plumbing maintenance across 12 rental properties",
+        "services": [
+          "Drain inspections and clearing",
+          "Tap washer replacements",
+          "Toilet cistern repairs",
+          "Hot water system checks",
+          "Gutter and downpipe clearing",
+          "Emergency callout response"
+        ],
+        "properties_serviced": 12,
+        "emergency_callouts": 3
+      }
+    },
+    {
+      "job_id": "JOB-2024-078",
+      "client_id": "CLI-003",
+      "client_name": "Tom & Lisa Harrison",
+      "description": "Bathroom Renovation - Plumbing Works",
+      "status": "In Progress",
+      "start_date": "2024-10-20",
+      "estimated_completion": "2024-11-10",
+      "assigned_plumber": "Craig Thompson",
+      "total_value": 8450.00,
+      "details": {
+        "scope": "Complete bathroom renovation plumbing package",
+        "work_completed": [
+          "Strip out existing fixtures",
+          "Relocate waste pipes for new layout",
+          "Install new water supply lines",
+          "Rough-in for bath, shower, vanity, toilet"
+        ],
+        "work_remaining": [
+          "Install Caroma toilet suite",
+          "Install Methven shower mixer and rail",
+          "Install vanity tapware",
+          "Final testing and compliance certification"
+        ],
+        "compliance": "QLD Plumbing and Drainage Act compliance certificate to be issued"
+      }
+    }
+  ],
+  "invoices": [
+    {
+      "invoice_id": "INV-2024-0189",
+      "job_id": "JOB-2024-045",
+      "client_id": "CLI-001",
+      "client_name": "Jennifer Walsh",
+      "issue_date": "2024-09-16",
+      "due_date": "2024-09-30",
+      "status": "Paid",
+      "payment_date": "2024-09-22",
+      "line_items": [
+        {
+          "description": "Rheem 315L Electric Hot Water System",
+          "quantity": 1,
+          "unit_price": 1850.00,
+          "total": 1850.00
+        },
+        {
+          "description": "Hot water system removal and installation",
+          "quantity": 1,
+          "unit_price": 950.00,
+          "total": 950.00
+        },
+        {
+          "description": "Tempering valve - Caleffi 5213",
+          "quantity": 1,
+          "unit_price": 195.00,
+          "total": 195.00
+        },
+        {
+          "description": "Pressure relief valve replacement",
+          "quantity": 1,
+          "unit_price": 145.00,
+          "total": 145.00
+        },
+        {
+          "description": "Isolating valves (pair)",
+          "quantity": 1,
+          "unit_price": 110.00,
+          "total": 110.00
+        },
+        {
+          "description": "Emergency callout fee (after hours)",
+          "quantity": 1,
+          "unit_price": 350.00,
+          "total": 350.00
+        },
+        {
+          "description": "Testing and compliance certification",
+          "quantity": 1,
+          "unit_price": 250.00,
+          "total": 250.00
+        }
+      ],
+      "subtotal": 3850.00,
+      "gst": 385.00,
+      "total": 4235.00
+    },
+    {
+      "invoice_id": "INV-2024-0214",
+      "job_id": "JOB-2024-062",
+      "client_id": "CLI-002",
+      "client_name": "Brisbane Property Management",
+      "issue_date": "2024-10-15",
+      "due_date": "2024-11-14",
+      "status": "Paid",
+      "payment_date": "2024-10-28",
+      "line_items": [
+        {
+          "description": "Quarterly maintenance - 12 properties",
+          "quantity": 12,
+          "unit_price": 450.00,
+          "total": 5400.00
+        },
+        {
+          "description": "Drain clearing - 8 Queen St (tree roots)",
+          "quantity": 1,
+          "unit_price": 685.00,
+          "total": 685.00
+        },
+        {
+          "description": "Tap washer replacements (various properties)",
+          "quantity": 18,
+          "unit_price": 75.00,
+          "total": 1350.00
+        },
+        {
+          "description": "Toilet cistern repairs - 3 properties",
+          "quantity": 3,
+          "unit_price": 285.00,
+          "total": 855.00
+        },
+        {
+          "description": "Emergency burst pipe repair - 45 Creek Rd",
+          "quantity": 1,
+          "unit_price": 950.00,
+          "total": 950.00
+        },
+        {
+          "description": "Hot water system pressure relief valve replacements",
+          "quantity": 5,
+          "unit_price": 165.00,
+          "total": 825.00
+        },
+        {
+          "description": "Gutter and downpipe clearing - all properties",
+          "quantity": 12,
+          "unit_price": 195.00,
+          "total": 2340.00
+        },
+        {
+          "description": "Materials and consumables",
+          "quantity": 1,
+          "unit_price": 895.00,
+          "total": 895.00
+        },
+        {
+          "description": "After-hours emergency callouts (x3)",
+          "quantity": 3,
+          "unit_price": 350.00,
+          "total": 1050.00
+        },
+        {
+          "description": "Compliance reports and documentation",
+          "quantity": 1,
+          "unit_price": 450.00,
+          "total": 450.00
+        }
+      ],
+      "subtotal": 14800.00,
+      "gst": 1480.00,
+      "total": 16280.00
+    },
+    {
+      "invoice_id": "INV-2024-0215",
+      "job_id": "JOB-2024-062",
+      "client_id": "CLI-002",
+      "client_name": "Brisbane Property Management",
+      "issue_date": "2024-10-15",
+      "due_date": "2024-11-14",
+      "status": "Paid",
+      "payment_date": "2024-10-28",
+      "line_items": [
+        {
+          "description": "Additional emergency works - October",
+          "quantity": 1,
+          "unit_price": 3950.00,
+          "total": 3950.00
+        }
+      ],
+      "subtotal": 3950.00,
+      "gst": 395.00,
+      "total": 4345.00
+    },
+    {
+      "invoice_id": "INV-2024-0243",
+      "job_id": "JOB-2024-078",
+      "client_id": "CLI-003",
+      "client_name": "Tom & Lisa Harrison",
+      "issue_date": "2024-10-25",
+      "due_date": "2024-11-08",
+      "status": "Unpaid",
+      "line_items": [
+        {
+          "description": "Progress Payment 1 - Strip out and rough-in (60%)",
+          "quantity": 1,
+          "unit_price": 5070.00,
+          "total": 5070.00
+        }
+      ],
+      "subtotal": 5070.00,
+      "gst": 507.00,
+      "total": 5577.00,
+      "notes": "Progress payment 1 of 2. Final payment due on completion."
+    }
+  ],
+  "bills": [
+    {
+      "bill_id": "BILL-2024-0456",
+      "supplier": "Reece Plumbing",
+      "supplier_contact": "Brisbane South Branch",
+      "supplier_phone": "+61 7 3456 7890",
+      "job_id": "JOB-2024-045",
+      "issue_date": "2024-09-15",
+      "due_date": "2024-10-15",
+      "status": "Paid",
+      "line_items": [
+        {
+          "description": "Rheem 491315 315L Electric Hot Water System",
+          "quantity": 1,
+          "unit_price": 1420.00,
+          "total": 1420.00
+        },
+        {
+          "description": "Caleffi 5213 Tempering Valve 15mm",
+          "quantity": 1,
+          "unit_price": 145.00,
+          "total": 145.00
+        },
+        {
+          "description": "Pressure relief valve 1000kPa",
+          "quantity": 1,
+          "unit_price": 85.00,
+          "total": 85.00
+        },
+        {
+          "description": "Ball valves 20mm (pair)",
+          "quantity": 1,
+          "unit_price": 65.00,
+          "total": 65.00
+        }
+      ],
+      "subtotal": 1715.00,
+      "gst": 171.50,
+      "total": 1886.50
+    },
+    {
+      "bill_id": "BILL-2024-0457",
+      "supplier": "Tradelink Plumbing Centres",
+      "supplier_contact": "Woolloongabba Store",
+      "supplier_phone": "+61 7 3891 2345",
+      "job_id": "JOB-2024-045",
+      "issue_date": "2024-09-15",
+      "due_date": "2024-10-15",
+      "status": "Paid",
+      "line_items": [
+        {
+          "description": "Copper pipe 20mm x 3m",
+          "quantity": 2,
+          "unit_price": 35.00,
+          "total": 70.00
+        },
+        {
+          "description": "Pipe fittings assorted",
+          "quantity": 1,
+          "unit_price": 45.00,
+          "total": 45.00
+        },
+        {
+          "description": "PTFE tape and flux",
+          "quantity": 1,
+          "unit_price": 18.00,
+          "total": 18.00
+        }
+      ],
+      "subtotal": 133.00,
+      "gst": 13.30,
+      "total": 146.30
+    },
+    {
+      "bill_id": "BILL-2024-0458",
+      "supplier": "Brisbane Waste Services",
+      "supplier_contact": "Customer Service",
+      "supplier_phone": "+61 7 3403 8888",
+      "job_id": "JOB-2024-045",
+      "issue_date": "2024-09-16",
+      "due_date": "2024-10-16",
+      "status": "Paid",
+      "line_items": [
+        {
+          "description": "Hot water system disposal fee",
+          "quantity": 1,
+          "unit_price": 95.00,
+          "total": 95.00
+        }
+      ],
+      "subtotal": 95.00,
+      "gst": 9.50,
+      "total": 104.50
+    },
+    {
+      "bill_id": "BILL-2024-0512",
+      "supplier": "Reece Plumbing",
+      "supplier_contact": "Brisbane South Branch",
+      "supplier_phone": "+61 7 3456 7890",
+      "job_id": "JOB-2024-062",
+      "issue_date": "2024-10-01",
+      "due_date": "2024-10-31",
+      "status": "Paid",
+      "line_items": [
+        {
+          "description": "Tap washers - assorted sizes (bulk pack)",
+          "quantity": 3,
+          "unit_price": 28.00,
+          "total": 84.00
+        },
+        {
+          "description": "Toilet cistern repair kits",
+          "quantity": 5,
+          "unit_price": 42.00,
+          "total": 210.00
+        },
+        {
+          "description": "Pressure relief valves 1000kPa",
+          "quantity": 6,
+          "unit_price": 85.00,
+          "total": 510.00
+        },
+        {
+          "description": "PVC pipe cement and cleaner",
+          "quantity": 2,
+          "unit_price": 35.00,
+          "total": 70.00
+        },
+        {
+          "description": "Plumbers tape and sealants",
+          "quantity": 1,
+          "unit_price": 65.00,
+          "total": 65.00
+        }
+      ],
+      "subtotal": 939.00,
+      "gst": 93.90,
+      "total": 1032.90
+    },
+    {
+      "bill_id": "BILL-2024-0513",
+      "supplier": "Bunnings Warehouse",
+      "supplier_contact": "Virginia Store",
+      "supplier_phone": "+61 7 3865 2200",
+      "job_id": "JOB-2024-062",
+      "issue_date": "2024-10-08",
+      "due_date": "2024-11-07",
+      "status": "Paid",
+      "line_items": [
+        {
+          "description": "PVC pipe 100mm x 3m",
+          "quantity": 4,
+          "unit_price": 28.00,
+          "total": 112.00
+        },
+        {
+          "description": "PVC fittings and joiners",
+          "quantity": 1,
+          "unit_price": 145.00,
+          "total": 145.00
+        },
+        {
+          "description": "Drain cleaner (commercial grade)",
+          "quantity": 3,
+          "unit_price": 32.00,
+          "total": 96.00
+        },
+        {
+          "description": "Work gloves and safety gear",
+          "quantity": 1,
+          "unit_price": 58.00,
+          "total": 58.00
+        }
+      ],
+      "subtotal": 411.00,
+      "gst": 41.10,
+      "total": 452.10
+    },
+    {
+      "bill_id": "BILL-2024-0514",
+      "supplier": "All Drains Brisbane",
+      "supplier_contact": "Equipment Hire",
+      "supplier_phone": "+61 7 3345 9876",
+      "job_id": "JOB-2024-062",
+      "issue_date": "2024-10-02",
+      "due_date": "2024-11-01",
+      "status": "Paid",
+      "line_items": [
+        {
+          "description": "Electric drain snake hire - 3 days",
+          "quantity": 1,
+          "unit_price": 285.00,
+          "total": 285.00
+        },
+        {
+          "description": "CCTV drain camera hire - 1 day",
+          "quantity": 1,
+          "unit_price": 195.00,
+          "total": 195.00
+        }
+      ],
+      "subtotal": 480.00,
+      "gst": 48.00,
+      "total": 528.00
+    },
+    {
+      "bill_id": "BILL-2024-0567",
+      "supplier": "Tradelink Plumbing Centres",
+      "supplier_contact": "Woolloongabba Store",
+      "supplier_phone": "+61 7 3891 2345",
+      "job_id": "JOB-2024-078",
+      "issue_date": "2024-10-20",
+      "due_date": "2024-11-19",
+      "status": "Unpaid",
+      "line_items": [
+        {
+          "description": "Copper pipe 15mm x 3m",
+          "quantity": 8,
+          "unit_price": 28.00,
+          "total": 224.00
+        },
+        {
+          "description": "Copper pipe 20mm x 3m",
+          "quantity": 4,
+          "unit_price": 35.00,
+          "total": 140.00
+        },
+        {
+          "description": "PVC waste pipe 40mm x 3m",
+          "quantity": 6,
+          "unit_price": 18.00,
+          "total": 108.00
+        },
+        {
+          "description": "PVC waste pipe 50mm x 3m",
+          "quantity": 4,
+          "unit_price": 22.00,
+          "total": 88.00
+        },
+        {
+          "description": "Pipe fittings - copper and PVC (bulk)",
+          "quantity": 1,
+          "unit_price": 385.00,
+          "total": 385.00
+        },
+        {
+          "description": "Shower waste 50mm chrome",
+          "quantity": 1,
+          "unit_price": 78.00,
+          "total": 78.00
+        },
+        {
+          "description": "Bath waste and overflow",
+          "quantity": 1,
+          "unit_price": 125.00,
+          "total": 125.00
+        }
+      ],
+      "subtotal": 1148.00,
+      "gst": 114.80,
+      "total": 1262.80
+    },
+    {
+      "bill_id": "BILL-2024-0568",
+      "supplier": "Reece Plumbing",
+      "supplier_contact": "Brisbane South Branch",
+      "supplier_phone": "+61 7 3456 7890",
+      "job_id": "JOB-2024-078",
+      "issue_date": "2024-10-21",
+      "due_date": "2024-11-20",
+      "status": "Unpaid",
+      "line_items": [
+        {
+          "description": "Caroma Luna Wall Faced Toilet Suite",
+          "quantity": 1,
+          "unit_price": 485.00,
+          "total": 485.00
+        },
+        {
+          "description": "Methven Waipori Shower Mixer with Rail",
+          "quantity": 1,
+          "unit_price": 385.00,
+          "total": 385.00
+        },
+        {
+          "description": "Caroma Vanity Basin Mixer Chrome",
+          "quantity": 1,
+          "unit_price": 245.00,
+          "total": 245.00
+        },
+        {
+          "description": "Shower arm and rose holder",
+          "quantity": 1,
+          "unit_price": 95.00,
+          "total": 95.00
+        }
+      ],
+      "subtotal": 1210.00,
+      "gst": 121.00,
+      "total": 1331.00
+    },
+    {
+      "bill_id": "BILL-2024-0569",
+      "supplier": "Plumbing Plus",
+      "supplier_contact": "Trade Sales",
+      "supplier_phone": "+61 7 3252 8888",
+      "job_id": "JOB-2024-078",
+      "issue_date": "2024-10-20",
+      "due_date": "2024-11-19",
+      "status": "Unpaid",
+      "line_items": [
+        {
+          "description": "Waterproofing membrane and tape",
+          "quantity": 1,
+          "unit_price": 285.00,
+          "total": 285.00
+        },
+        {
+          "description": "Tile flanges and seals",
+          "quantity": 1,
+          "unit_price": 125.00,
+          "total": 125.00
+        },
+        {
+          "description": "Silicone and sealants (bathroom grade)",
+          "quantity": 1,
+          "unit_price": 85.00,
+          "total": 85.00
+        }
+      ],
+      "subtotal": 495.00,
+      "gst": 49.50,
+      "total": 544.50
+    }
+  ],
+  "leads": [
+    {
+      "lead_id": "LEAD-2024-123",
+      "name": "Rebecca Foster",
+      "email": "rebecca.foster@email.com",
+      "phone": "+61 467 890 123",
+      "address": "56 Palm Avenue, Cannon Hill QLD 4170",
+      "enquiry_date": "2024-10-28",
+      "status": "Hot",
+      "interest": "Kitchen and laundry renovation - plumbing",
+      "estimated_value": 12500.00,
+      "notes": "Wants quote for complete kitchen and laundry plumbing renovation. Existing 1980s home. Keen to proceed before Christmas.",
+      "follow_up_date": "2024-11-01"
+    },
+    {
+      "lead_id": "LEAD-2024-124",
+      "name": "Westside Apartments",
+      "contact_person": "Daniel Kim",
+      "email": "daniel@westsideapts.com.au",
+      "phone": "+61 7 3234 9876",
+      "address": "88 Grey Street, South Brisbane QLD 4101",
+      "enquiry_date": "2024-10-25",
+      "status": "Warm",
+      "interest": "Quarterly maintenance contract - 45 apartments",
+      "estimated_value": 35000.00,
+      "notes": "Building manager looking for regular plumbing contractor. Current contract ends December. Wants competitive quote for ongoing maintenance.",
+      "follow_up_date": "2024-11-05"
+    },
+    {
+      "lead_id": "LEAD-2024-125",
+      "name": "Kevin O'Brien",
+      "email": "kevin.obrien@email.com",
+      "phone": "+61 478 901 234",
+      "address": "12 Forest Drive, Capalaba QLD 4157",
+      "enquiry_date": "2024-10-26",
+      "status": "Cold",
+      "interest": "Hot water system replacement",
+      "estimated_value": 3800.00,
+      "notes": "Hot water system making noise. Wants quote but not urgent, planning for January.",
+      "follow_up_date": "2024-11-15"
+    },
+    {
+      "lead_id": "LEAD-2024-126",
+      "name": "Gold Coast Retail Park",
+      "contact_person": "Amanda Richardson",
+      "email": "amanda@gcretailpark.com.au",
+      "phone": "+61 7 5532 8765",
+      "address": "200 Southport-Nerang Road, Southport QLD 4215",
+      "enquiry_date": "2024-10-27",
+      "status": "Warm",
+      "interest": "Commercial bathroom upgrade - 6 bathrooms",
+      "estimated_value": 48000.00,
+      "notes": "Major tenant wants bathroom upgrades as part of lease renewal. Need quote by mid-November. Work to be done January during shutdown period.",
+      "follow_up_date": "2024-11-08"
+    },
+    {
+      "lead_id": "LEAD-2024-127",
+      "name": "Michelle and Greg Barnes",
+      "email": "barnes.family@email.com",
+      "phone": "+61 489 012 345",
+      "address": "34 Seaside Boulevard, Wynnum QLD 4178",
+      "enquiry_date": "2024-10-29",
+      "status": "Hot",
+      "interest": "New granny flat - complete plumbing package",
+      "estimated_value": 18500.00,
+      "notes": "Building 60sqm granny flat. Builder approved, plans approved. Need plumber to coordinate with builder. Start date January 2025.",
+      "follow_up_date": "2024-11-02"
+    },
+    {
+      "lead_id": "LEAD-2024-128",
+      "name": "St Andrews Church",
+      "contact_person": "Father Michael O'Connell",
+      "email": "admin@standrewschurch.org.au",
+      "phone": "+61 7 3398 7654",
+      "address": "145 Church Street, Coorparoo QLD 4151",
+      "enquiry_date": "2024-10-24",
+      "status": "Cold",
+      "interest": "Old building - leaking pipes investigation",
+      "estimated_value": 5000.00,
+      "notes": "Historic church building with ongoing leak issues. Limited budget. Want inspection and quote for repairs.",
+      "follow_up_date": "2024-11-12"
+    }
+  ],
+  "staff": [
+    {
+      "staff_id": "STAFF-001",
+      "name": "Craig Thompson",
+      "role": "Owner/Licensed Plumber",
+      "email": "craig@flowrightplumbing.com.au",
+      "phone": "+61 412 345 678",
+      "licenses": [
+        "QLD Plumbing License #123456",
+        "QLD Drainage License #789012",
+        "Backflow Prevention Device Testing License",
+        "White Card Construction Induction"
+      ],
+      "certifications": [
+        "Master Plumbers Association Member",
+        "Rheem Accredited Installer",
+        "Gas Fitting License"
+      ]
+    },
+    {
+      "staff_id": "STAFF-002",
+      "name": "Luke Martinez",
+      "role": "Licensed Plumber",
+      "email": "luke@flowrightplumbing.com.au",
+      "phone": "+61 423 456 789",
+      "licenses": [
+        "QLD Plumbing License #234567",
+        "QLD Drainage License #890123",
+        "White Card Construction Induction"
+      ],
+      "certifications": [
+        "Caroma Product Training Certificate",
+        "Confined Space Entry"
+      ]
+    },
+    {
+      "staff_id": "STAFF-003",
+      "name": "Jake Wilson",
+      "role": "Apprentice Plumber (4th Year)",
+      "email": "jake@flowrightplumbing.com.au",
+      "phone": "+61 434 567 890",
+      "licenses": [
+        "White Card Construction Induction"
+      ],
+      "certifications": [
+        "Certificate III in Plumbing (in progress)",
+        "First Aid Certificate"
+      ]
+    }
+  ],
+  "onedrive_files": [
+    {
+      "file_id": "FILE-001",
+      "file_name": "JOB-2024-045_Walsh_HWS_Before.jpg",
+      "file_type": "image/jpeg",
+      "job_id": "JOB-2024-045",
+      "upload_date": "2024-09-15",
+      "description": "Photo of old failed hot water system before removal"
+    },
+    {
+      "file_id": "FILE-002",
+      "file_name": "JOB-2024-045_Walsh_HWS_After.jpg",
+      "file_type": "image/jpeg",
+      "job_id": "JOB-2024-045",
+      "upload_date": "2024-09-16",
+      "description": "Photo of new Rheem 315L system installed"
+    },
+    {
+      "file_id": "FILE-003",
+      "file_name": "JOB-2024-045_Compliance_Certificate.pdf",
+      "file_type": "application/pdf",
+      "job_id": "JOB-2024-045",
+      "upload_date": "2024-09-16",
+      "description": "QLD Plumbing compliance certificate for hot water installation"
+    },
+    {
+      "file_id": "FILE-004",
+      "file_name": "JOB-2024-062_Property_List.xlsx",
+      "file_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "job_id": "JOB-2024-062",
+      "upload_date": "2024-10-01",
+      "description": "Spreadsheet of 12 properties for quarterly maintenance"
+    },
+    {
+      "file_id": "FILE-005",
+      "file_name": "JOB-2024-062_Drain_CCTV_8QueenSt.mp4",
+      "file_type": "video/mp4",
+      "job_id": "JOB-2024-062",
+      "upload_date": "2024-10-02",
+      "description": "CCTV footage of drain blockage caused by tree roots at 8 Queen St"
+    },
+    {
+      "file_id": "FILE-006",
+      "file_name": "JOB-2024-062_Emergency_Burst_Pipe_45CreekRd.jpg",
+      "file_type": "image/jpeg",
+      "job_id": "JOB-2024-062",
+      "upload_date": "2024-10-08",
+      "description": "Photo of burst copper pipe under house at 45 Creek Rd"
+    },
+    {
+      "file_id": "FILE-007",
+      "file_name": "JOB-2024-078_Harrison_Bathroom_Plans.pdf",
+      "file_type": "application/pdf",
+      "job_id": "JOB-2024-078",
+      "upload_date": "2024-10-18",
+      "description": "Architect's bathroom renovation plans showing plumbing layout"
+    },
+    {
+      "file_id": "FILE-008",
+      "file_name": "JOB-2024-078_Rough_In_Progress.jpg",
+      "file_type": "image/jpeg",
+      "job_id": "JOB-2024-078",
+      "upload_date": "2024-10-25",
+      "description": "Progress photo showing completed rough-in plumbing work"
+    },
+    {
+      "file_id": "FILE-009",
+      "file_name": "JOB-2024-078_Waterproofing_Certificate.pdf",
+      "file_type": "application/pdf",
+      "job_id": "JOB-2024-078",
+      "upload_date": "2024-10-26",
+      "description": "Waterproofing compliance certificate for bathroom renovation"
+    },
+    {
+      "file_id": "FILE-010",
+      "file_name": "LEAD-2024-123_Foster_Kitchen_Photos.zip",
+      "file_type": "application/zip",
+      "lead_id": "LEAD-2024-123",
+      "upload_date": "2024-10-28",
+      "description": "Photos of existing kitchen and laundry for quote preparation"
+    },
+    {
+      "file_id": "FILE-011",
+      "file_name": "Staff_Licenses_2024.pdf",
+      "file_type": "application/pdf",
+      "upload_date": "2024-01-15",
+      "description": "Current plumbing and drainage licenses for all licensed staff"
+    },
+    {
+      "file_id": "FILE-012",
+      "file_name": "Public_Liability_Insurance_2024-2025.pdf",
+      "file_type": "application/pdf",
+      "upload_date": "2024-06-01",
+      "description": "Public liability insurance certificate $20M coverage"
+    },
+    {
+      "file_id": "FILE-013",
+      "file_name": "Rheem_Warranty_Registration.pdf",
+      "file_type": "application/pdf",
+      "job_id": "JOB-2024-045",
+      "upload_date": "2024-09-16",
+      "description": "Rheem 7-year warranty registration for Walsh installation"
+    },
+    {
+      "file_id": "FILE-014",
+      "file_name": "QBCC_License_Certificate.pdf",
+      "file_type": "application/pdf",
+      "upload_date": "2024-07-01",
+      "description": "Queensland Building and Construction Commission license certificate"
+    }
+  ]
+}
+

@@ -1,0 +1,608 @@
+{
+  "company": {
+    "name": "Artisan Bread & Pastry Co.",
+    "abn": "90 123 456 789",
+    "email": "hello@artisanbreadco.com.au",
+    "phone": "+61 7 3844 8901",
+    "address": "234 Given Terrace, Paddington QLD 4064"
+  },
+  "integrations": {
+    "pos": "Square",
+    "accounting": "Xero",
+    "email": "Gmail",
+    "voice_agent": "Custom Voice Agent",
+    "ordering": "MarketMan",
+    "website": "Shopify",
+    "rostering": "Deputy",
+    "file_storage": "Google Drive"
+  },
+  "trading_hours": {
+    "tuesday_saturday": "6:00 AM - 4:00 PM",
+    "sunday": "7:00 AM - 2:00 PM",
+    "monday": "Closed"
+  },
+  "daily_sales": [
+    {
+      "date": "2024-10-25",
+      "day": "Friday",
+      "retail_sales": 1850.00,
+      "retail_transactions": 125,
+      "wholesale_deliveries": 3,
+      "wholesale_sales": 685.00,
+      "total_sales": 2535.00,
+      "top_seller": "Sourdough loaf"
+    },
+    {
+      "date": "2024-10-26",
+      "day": "Saturday",
+      "retail_sales": 2450.00,
+      "retail_transactions": 168,
+      "wholesale_deliveries": 0,
+      "wholesale_sales": 0.00,
+      "total_sales": 2450.00,
+      "top_seller": "Almond croissant"
+    },
+    {
+      "date": "2024-10-27",
+      "day": "Sunday",
+      "retail_sales": 1685.00,
+      "retail_transactions": 142,
+      "wholesale_deliveries": 0,
+      "wholesale_sales": 0.00,
+      "total_sales": 1685.00,
+      "top_seller": "Vanilla slice"
+    }
+  ],
+  "product_menu": [
+    {
+      "category": "Bread",
+      "items": [
+        {"item": "Sourdough Loaf", "price": 8.50},
+        {"item": "Baguette", "price": 5.50},
+        {"item": "Wholemeal Loaf", "price": 7.50},
+        {"item": "Rye Bread", "price": 9.00},
+        {"item": "Ciabatta", "price": 6.50},
+        {"item": "Focaccia", "price": 7.00}
+      ]
+    },
+    {
+      "category": "Pastries",
+      "items": [
+        {"item": "Butter Croissant", "price": 5.50},
+        {"item": "Almond Croissant", "price": 6.50},
+        {"item": "Pain au Chocolat", "price": 6.00},
+        {"item": "Danish - Custard", "price": 6.00},
+        {"item": "Danish - Fruit", "price": 6.00},
+        {"item": "Cinnamon Scroll", "price": 5.50}
+      ]
+    },
+    {
+      "category": "Cakes & Slices",
+      "items": [
+        {"item": "Vanilla Slice", "price": 6.50},
+        {"item": "Lamington", "price": 4.50},
+        {"item": "Carrot Cake Slice", "price": 7.00},
+        {"item": "Brownie", "price": 6.00},
+        {"item": "Lemon Tart", "price": 7.50},
+        {"item": "Fruit Tart", "price": 8.00}
+      ]
+    },
+    {
+      "category": "Savory",
+      "items": [
+        {"item": "Sausage Roll", "price": 5.50},
+        {"item": "Beef Pie", "price": 6.50},
+        {"item": "Chicken & Leek Pie", "price": 6.50},
+        {"item": "Spinach & Feta Roll", "price": 5.50},
+        {"item": "Ham & Cheese Croissant", "price": 7.50},
+        {"item": "Quiche Slice", "price": 7.00}
+      ]
+    }
+  ],
+  "wholesale_clients": [
+    {
+      "client_id": "WHL-001",
+      "name": "Chapter & Coffee",
+      "contact_person": "Rebecca Morrison",
+      "email": "rebecca@chapterandcoffee.com.au",
+      "phone": "+61 7 3252 7890",
+      "address": "89 Latrobe Terrace, Paddington QLD 4064",
+      "delivery_schedule": "Daily (Tue-Sun)",
+      "payment_terms": "14 days",
+      "monthly_average": 2850.00
+    },
+    {
+      "client_id": "WHL-002",
+      "name": "West End Cafe",
+      "contact_person": "Sophie Chen",
+      "email": "sophie@westendcafe.com.au",
+      "phone": "+61 7 3844 5678",
+      "address": "156 Boundary Street, West End QLD 4101",
+      "delivery_schedule": "Daily (Tue-Sun)",
+      "payment_terms": "14 days",
+      "monthly_average": 3200.00
+    },
+    {
+      "client_id": "WHL-003",
+      "name": "Brisbane City Council - Cafe",
+      "contact_person": "Michael Wilson",
+      "email": "catering@brisbane.qld.gov.au",
+      "phone": "+61 7 3403 8888",
+      "address": "Brisbane City Hall, 64 Adelaide Street, Brisbane QLD 4000",
+      "delivery_schedule": "Weekdays only",
+      "payment_terms": "30 days",
+      "monthly_average": 1950.00
+    },
+    {
+      "client_id": "WHL-004",
+      "name": "Paddington Deli",
+      "contact_person": "Emma Rodriguez",
+      "email": "emma@paddingtondeli.com.au",
+      "phone": "+61 7 3369 7890",
+      "address": "189 Given Terrace, Paddington QLD 4064",
+      "delivery_schedule": "Daily (Tue-Sun)",
+      "payment_terms": "7 days",
+      "monthly_average": 1850.00
+    }
+  ],
+  "invoices": [
+    {
+      "invoice_id": "INV-2024-2134",
+      "client_id": "WHL-001",
+      "client_name": "Chapter & Coffee",
+      "issue_date": "2024-10-21",
+      "due_date": "2024-11-04",
+      "status": "Paid",
+      "payment_date": "2024-10-28",
+      "line_items": [
+        {
+          "description": "Daily bread & pastry supply - Week of 21 Oct",
+          "days": "7 days",
+          "amount": 685.00
+        }
+      ],
+      "subtotal": 685.00,
+      "gst": 68.50,
+      "total": 753.50
+    },
+    {
+      "invoice_id": "INV-2024-2156",
+      "client_id": "WHL-002",
+      "client_name": "West End Cafe",
+      "issue_date": "2024-10-21",
+      "due_date": "2024-11-04",
+      "status": "Unpaid",
+      "line_items": [
+        {
+          "description": "Daily bread & pastry supply - Week of 21 Oct",
+          "days": "7 days",
+          "amount": 785.00
+        }
+      ],
+      "subtotal": 785.00,
+      "gst": 78.50,
+      "total": 863.50
+    },
+    {
+      "invoice_id": "INV-2024-2178",
+      "client_id": "WHL-003",
+      "client_name": "Brisbane City Council - Cafe",
+      "issue_date": "2024-10-25",
+      "due_date": "2024-11-24",
+      "status": "Unpaid",
+      "line_items": [
+        {
+          "description": "Bread & pastry supply - Week of 21 Oct (weekdays)",
+          "days": "5 days",
+          "amount": 485.00
+        }
+      ],
+      "subtotal": 485.00,
+      "gst": 48.50,
+      "total": 533.50
+    }
+  ],
+  "bills": [
+    {
+      "bill_id": "BILL-2024-2845",
+      "supplier": "Brisbane Flour Mills",
+      "supplier_contact": "Wholesale Division",
+      "supplier_phone": "+61 7 3216 5555",
+      "issue_date": "2024-10-18",
+      "due_date": "2024-11-17",
+      "status": "Paid",
+      "line_items": [
+        {
+          "description": "Bread flour - Strong white (50kg bags)",
+          "quantity": 20,
+          "unit_price": 42.00,
+          "total": 840.00
+        },
+        {
+          "description": "Wholemeal flour (25kg bags)",
+          "quantity": 10,
+          "unit_price": 38.00,
+          "total": 380.00
+        },
+        {
+          "description": "Rye flour (25kg bags)",
+          "quantity": 5,
+          "unit_price": 45.00,
+          "total": 225.00
+        }
+      ],
+      "subtotal": 1445.00,
+      "gst": 144.50,
+      "total": 1589.50
+    },
+    {
+      "bill_id": "BILL-2024-2846",
+      "supplier": "Queensland Dairy Supplies",
+      "supplier_contact": "Trade Sales",
+      "supplier_phone": "+61 7 3252 7777",
+      "issue_date": "2024-10-20",
+      "due_date": "2024-11-19",
+      "status": "Paid",
+      "line_items": [
+        {
+          "description": "Butter - unsalted (20kg blocks)",
+          "quantity": 15,
+          "unit_price": 185.00,
+          "total": 2775.00
+        },
+        {
+          "description": "Cream - thickened (10L)",
+          "quantity": 8,
+          "unit_price": 65.00,
+          "total": 520.00
+        },
+        {
+          "description": "Milk - full cream (20L)",
+          "quantity": 5,
+          "unit_price": 28.00,
+          "total": 140.00
+        },
+        {
+          "description": "Eggs - free range (30 dozen)",
+          "quantity": 30,
+          "unit_price": 9.50,
+          "total": 285.00
+        }
+      ],
+      "subtotal": 3720.00,
+      "gst": 372.00,
+      "total": 4092.00
+    },
+    {
+      "bill_id": "BILL-2024-2847",
+      "supplier": "Bakery Ingredients Australia",
+      "supplier_contact": "Brisbane Branch",
+      "supplier_phone": "+61 7 3391 8888",
+      "issue_date": "2024-10-22",
+      "due_date": "2024-11-21",
+      "status": "Unpaid",
+      "line_items": [
+        {
+          "description": "Yeast - fresh compressed (5kg)",
+          "quantity": 4,
+          "unit_price": 45.00,
+          "total": 180.00
+        },
+        {
+          "description": "Sugar - caster (25kg bags)",
+          "quantity": 5,
+          "unit_price": 38.00,
+          "total": 190.00
+        },
+        {
+          "description": "Chocolate - dark couverture (5kg)",
+          "quantity": 3,
+          "unit_price": 95.00,
+          "total": 285.00
+        },
+        {
+          "description": "Almond meal (5kg bags)",
+          "quantity": 4,
+          "unit_price": 78.00,
+          "total": 312.00
+        },
+        {
+          "description": "Vanilla extract - pure (1L)",
+          "quantity": 2,
+          "unit_price": 125.00,
+          "total": 250.00
+        }
+      ],
+      "subtotal": 1217.00,
+      "gst": 121.70,
+      "total": 1338.70
+    },
+    {
+      "bill_id": "BILL-2024-2848",
+      "supplier": "Fresh Harvest Produce",
+      "supplier_contact": "Tony Nguyen",
+      "supplier_phone": "+61 7 3276 5432",
+      "issue_date": "2024-10-24",
+      "due_date": "2024-10-31",
+      "status": "Unpaid",
+      "line_items": [
+        {
+          "description": "Lemons - fresh (5kg)",
+          "quantity": 3,
+          "unit_price": 18.00,
+          "total": 54.00
+        },
+        {
+          "description": "Apples - Granny Smith (10kg)",
+          "quantity": 2,
+          "unit_price": 28.00,
+          "total": 56.00
+        },
+        {
+          "description": "Berries - mixed (2kg punnets)",
+          "quantity": 5,
+          "unit_price": 22.00,
+          "total": 110.00
+        }
+      ],
+      "subtotal": 220.00,
+      "gst": 22.00,
+      "total": 242.00
+    },
+    {
+      "bill_id": "BILL-2024-2849",
+      "supplier": "Paddington Commercial Property",
+      "issue_date": "2024-10-01",
+      "due_date": "2024-10-15",
+      "status": "Paid",
+      "line_items": [
+        {
+          "description": "Shop rent - October 2024",
+          "quantity": 1,
+          "unit_price": 4250.00,
+          "total": 4250.00
+        },
+        {
+          "description": "Outgoings",
+          "quantity": 1,
+          "unit_price": 425.00,
+          "total": 425.00
+        }
+      ],
+      "subtotal": 4675.00,
+      "gst": 467.50,
+      "total": 5142.50
+    },
+    {
+      "bill_id": "BILL-2024-2850",
+      "supplier": "Origin Energy",
+      "issue_date": "2024-10-20",
+      "due_date": "2024-11-13",
+      "status": "Unpaid",
+      "line_items": [
+        {
+          "description": "Electricity - September 2024 (3,250 kWh)",
+          "quantity": 1,
+          "unit_price": 1285.00,
+          "total": 1285.00
+        }
+      ],
+      "subtotal": 1285.00,
+      "gst": 128.50,
+      "total": 1413.50,
+      "notes": "High usage due to ovens running daily"
+    }
+  ],
+  "staff": [
+    {
+      "staff_id": "STAFF-001",
+      "name": "Pierre Dubois",
+      "role": "Owner / Head Baker",
+      "email": "pierre@artisanbreadco.com.au",
+      "phone": "+61 412 678 901",
+      "qualifications": [
+        "Certificate IV in Baking",
+        "Artisan Bread Making (France)",
+        "Food Safety Supervisor Certificate"
+      ],
+      "experience_years": 20
+    },
+    {
+      "staff_id": "STAFF-002",
+      "name": "Emma Rodriguez",
+      "role": "Pastry Chef",
+      "email": "emma@artisanbreadco.com.au",
+      "phone": "+61 423 789 012",
+      "qualifications": [
+        "Certificate III in Patisserie",
+        "Food Safety Certificate"
+      ],
+      "experience_years": 10
+    },
+    {
+      "staff_id": "STAFF-003",
+      "name": "Michael Chen",
+      "role": "Baker",
+      "email": "michael@artisanbreadco.com.au",
+      "phone": "+61 434 890 123",
+      "qualifications": [
+        "Certificate III in Baking",
+        "Food Safety Certificate"
+      ],
+      "experience_years": 5
+    },
+    {
+      "staff_id": "STAFF-004",
+      "name": "Sophie Williams",
+      "role": "Retail Manager",
+      "email": "sophie@artisanbreadco.com.au",
+      "phone": "+61 445 901 234",
+      "qualifications": [
+        "Food Safety Certificate",
+        "RSA Certificate"
+      ]
+    },
+    {
+      "staff_id": "STAFF-005",
+      "name": "Jessica Park",
+      "role": "Retail Assistant",
+      "email": "jessica@artisanbreadco.com.au",
+      "phone": "+61 456 012 345",
+      "qualifications": [
+        "Food Handler Certificate"
+      ]
+    },
+    {
+      "staff_id": "STAFF-006",
+      "name": "Daniel Kim",
+      "role": "Baker's Assistant / Delivery Driver",
+      "email": "daniel@artisanbreadco.com.au",
+      "phone": "+61 467 123 456",
+      "qualifications": [
+        "Food Handler Certificate",
+        "Queensland Driver's License"
+      ]
+    }
+  ],
+  "custom_orders": [
+    {
+      "order_id": "CUSTOM-2024-089",
+      "customer_name": "Sarah Thompson",
+      "email": "sarah.thompson@email.com",
+      "phone": "+61 412 345 678",
+      "order_date": "2024-10-20",
+      "required_date": "2024-11-15",
+      "event_type": "Birthday Party",
+      "items": [
+        {
+          "description": "Custom birthday cake - 3 tier vanilla sponge with buttercream",
+          "serves": 40,
+          "price": 285.00
+        },
+        {
+          "description": "Assorted pastries (60 pieces)",
+          "price": 145.00
+        }
+      ],
+      "total": 430.00,
+      "deposit_paid": 215.00,
+      "status": "Confirmed"
+    },
+    {
+      "order_id": "CUSTOM-2024-090",
+      "customer_name": "Brisbane Tech Company",
+      "contact_person": "Rebecca Foster",
+      "email": "rebecca@bristechio.com.au",
+      "phone": "+61 7 3345 6789",
+      "order_date": "2024-10-25",
+      "required_date": "2024-11-08",
+      "event_type": "Corporate Event",
+      "items": [
+        {
+          "description": "Gourmet sandwich platters (serves 50)",
+          "price": 385.00
+        },
+        {
+          "description": "Sweet platter - assorted pastries & slices (serves 50)",
+          "price": 295.00
+        }
+      ],
+      "total": 680.00,
+      "deposit_paid": 0.00,
+      "status": "Quoted"
+    }
+  ],
+  "enquiries": [
+    {
+      "enquiry_id": "ENQ-2024-278",
+      "name": "Amanda Harrison",
+      "email": "amanda.harrison@email.com",
+      "phone": "+61 467 890 234",
+      "enquiry_date": "2024-10-28",
+      "status": "Quote Sent",
+      "event_type": "Wedding",
+      "event_date": "2025-03-20",
+      "requirements": "Wedding cake (3 tier) and 100 mini pastries",
+      "estimated_value": 850.00
+    },
+    {
+      "enquiry_id": "ENQ-2024-279",
+      "name": "West End Primary School",
+      "contact_person": "Jennifer Park",
+      "email": "admin@westendprimary.qld.edu.au",
+      "phone": "+61 7 3844 7777",
+      "enquiry_date": "2024-10-29",
+      "status": "Information Sent",
+      "event_type": "School Fete",
+      "event_date": "2024-11-30",
+      "requirements": "Bread and pastry donation for school fundraiser",
+      "notes": "Community event - sent donation information"
+    },
+    {
+      "enquiry_id": "ENQ-2024-280",
+      "name": "The Grand Hotel Brisbane",
+      "contact_person": "Michael Stevens",
+      "email": "catering@grandhotelbrisbane.com.au",
+      "phone": "+61 7 3234 5678",
+      "enquiry_date": "2024-10-27",
+      "status": "Meeting Scheduled",
+      "event_type": "Wholesale Partnership",
+      "requirements": "Daily bread supply for hotel restaurant",
+      "estimated_value": 5000.00,
+      "notes": "Meeting scheduled Nov 6 to discuss partnership"
+    }
+  ],
+  "google_drive_files": [
+    {
+      "file_id": "FILE-001",
+      "file_name": "Food_Safety_Certificates_All_Staff.pdf",
+      "file_type": "application/pdf",
+      "upload_date": "2024-01-15",
+      "description": "All staff food safety and handling certificates"
+    },
+    {
+      "file_id": "FILE-002",
+      "file_name": "Baking_Qualifications.pdf",
+      "file_type": "application/pdf",
+      "upload_date": "2024-01-20",
+      "description": "Baking and patisserie qualification certificates"
+    },
+    {
+      "file_id": "FILE-003",
+      "file_name": "Public_Liability_Insurance_2024.pdf",
+      "file_type": "application/pdf",
+      "upload_date": "2024-06-01",
+      "description": "Public liability insurance certificate"
+    },
+    {
+      "file_id": "FILE-004",
+      "file_name": "Custom_Cake_Portfolio_2024.pdf",
+      "file_type": "application/pdf",
+      "upload_date": "2024-08-01",
+      "description": "Portfolio of custom cakes for client consultations"
+    },
+    {
+      "file_id": "FILE-005",
+      "file_name": "Wholesale_Price_List_2024.pdf",
+      "file_type": "application/pdf",
+      "upload_date": "2024-01-10",
+      "description": "Current wholesale pricing for cafe partners"
+    },
+    {
+      "file_id": "FILE-006",
+      "file_name": "Thompson_Birthday_Cake_Design.jpg",
+      "file_type": "image/jpeg",
+      "order_id": "CUSTOM-2024-089",
+      "upload_date": "2024-10-22",
+      "description": "Approved design for Sarah Thompson's birthday cake"
+    },
+    {
+      "file_id": "FILE-007",
+      "file_name": "Equipment_Maintenance_Log_2024.xlsx",
+      "file_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "upload_date": "2024-01-05",
+      "description": "Oven and equipment maintenance records"
+    }
+  ]
+}
+

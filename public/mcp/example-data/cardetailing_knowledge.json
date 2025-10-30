@@ -1,0 +1,689 @@
+{
+  "company": {
+    "name": "Prestige Auto Detailing",
+    "abn": "89 012 345 678",
+    "email": "bookings@prestigeautodetailing.com.au",
+    "phone": "+61 7 3391 6789",
+    "address": "Unit 12, 234 Ipswich Road, Woolloongabba QLD 4102"
+  },
+  "integrations": {
+    "booking": "Setmore",
+    "accounting": "Xero",
+    "pos": "Square",
+    "email": "Gmail",
+    "voice_agent": "Custom Voice Agent",
+    "crm": "HubSpot",
+    "file_storage": "Google Drive"
+  },
+  "business_hours": {
+    "monday_friday": "7:00 AM - 5:00 PM",
+    "saturday": "8:00 AM - 4:00 PM",
+    "sunday": "Closed"
+  },
+  "clients": [
+    {
+      "client_id": "CLI-001",
+      "name": "Michael Thompson",
+      "email": "michael.thompson@email.com",
+      "phone": "+61 412 345 678",
+      "address": "45 Park Road, Milton QLD 4064",
+      "vehicle": "2022 BMW X5",
+      "first_visit": "2024-03-15",
+      "total_services": 6,
+      "total_spent": 1850.00
+    },
+    {
+      "client_id": "CLI-002",
+      "name": "Sarah Chen",
+      "email": "sarah.chen@email.com",
+      "phone": "+61 423 456 789",
+      "address": "67 River Terrace, Kangaroo Point QLD 4169",
+      "vehicle": "2023 Mercedes-Benz C-Class",
+      "first_visit": "2024-01-20",
+      "total_services": 8,
+      "total_spent": 2450.00
+    },
+    {
+      "client_id": "CLI-003",
+      "name": "Brisbane Executive Cars",
+      "type": "Corporate Fleet",
+      "contact_person": "David Martinez",
+      "email": "david@brisbaneexecutivecars.com.au",
+      "phone": "+61 7 3234 5678",
+      "address": "Level 3, 120 Edward Street, Brisbane QLD 4000",
+      "fleet_size": 15,
+      "monthly_contract": true,
+      "total_spent": 12500.00
+    },
+    {
+      "client_id": "CLI-004",
+      "name": "Emma Wilson",
+      "email": "emma.wilson@email.com",
+      "phone": "+61 434 567 890",
+      "address": "23 Stanley Street, East Brisbane QLD 4169",
+      "vehicle": "2021 Tesla Model 3",
+      "first_visit": "2024-08-10",
+      "total_services": 3,
+      "total_spent": 895.00
+    },
+    {
+      "client_id": "CLI-005",
+      "name": "Robert Park",
+      "email": "robert.park@email.com",
+      "phone": "+61 445 678 901",
+      "address": "89 Norman Creek Road, Norman Park QLD 4170",
+      "vehicle": "2020 Porsche 911",
+      "first_visit": "2024-06-22",
+      "total_services": 4,
+      "total_spent": 2850.00
+    },
+    {
+      "client_id": "CLI-006",
+      "name": "Jennifer Rodriguez",
+      "email": "jennifer.rodriguez@email.com",
+      "phone": "+61 456 789 012",
+      "address": "45 Given Terrace, Paddington QLD 4064",
+      "vehicle": "2023 Range Rover Sport",
+      "first_visit": "2024-10-05",
+      "total_services": 1,
+      "total_spent": 450.00
+    },
+    {
+      "client_id": "CLI-007",
+      "name": "Marcus Nguyen",
+      "email": "marcus.nguyen@email.com",
+      "phone": "+61 467 890 123",
+      "address": "156 Boundary Street, West End QLD 4101",
+      "vehicle": "2022 Audi Q7",
+      "first_visit": "2024-10-18",
+      "total_services": 0,
+      "total_spent": 0.00
+    },
+    {
+      "client_id": "CLI-008",
+      "name": "Brisbane Prestige Motors",
+      "type": "Car Dealership",
+      "contact_person": "Sophie Anderson",
+      "email": "sophie@brisbaneprestigemotors.com.au",
+      "phone": "+61 7 3252 8765",
+      "address": "567 Logan Road, Greenslopes QLD 4120",
+      "account_type": "Pre-delivery detailing contract",
+      "total_spent": 8950.00
+    },
+    {
+      "client_id": "CLI-009",
+      "name": "Daniel Foster",
+      "email": "daniel.foster@email.com",
+      "phone": "+61 478 901 234",
+      "address": "78 Hawthorne Road, Hawthorne QLD 4171",
+      "vehicle": "2023 Toyota Land Cruiser",
+      "first_visit": "2024-09-15",
+      "total_services": 2,
+      "total_spent": 685.00
+    }
+  ],
+  "services_pricing": [
+    {
+      "category": "Exterior Detailing",
+      "services": [
+        {
+          "service": "Express Wash & Dry",
+          "duration": "30 mins",
+          "price_sedan": 45.00,
+          "price_suv": 55.00
+        },
+        {
+          "service": "Premium Hand Wash",
+          "duration": "60 mins",
+          "price_sedan": 85.00,
+          "price_suv": 95.00
+        },
+        {
+          "service": "Cut & Polish - Stage 1",
+          "duration": "4-5 hours",
+          "price_sedan": 450.00,
+          "price_suv": 550.00
+        },
+        {
+          "service": "Cut & Polish - Stage 2",
+          "duration": "6-8 hours",
+          "price_sedan": 750.00,
+          "price_suv": 950.00
+        },
+        {
+          "service": "Ceramic Coating - 1 Year",
+          "duration": "1 day",
+          "price_sedan": 850.00,
+          "price_suv": 1050.00
+        },
+        {
+          "service": "Ceramic Coating - 5 Year",
+          "duration": "2 days",
+          "price_sedan": 1650.00,
+          "price_suv": 1950.00
+        }
+      ]
+    },
+    {
+      "category": "Interior Detailing",
+      "services": [
+        {
+          "service": "Interior Vacuum & Wipe",
+          "duration": "45 mins",
+          "price_sedan": 75.00,
+          "price_suv": 85.00
+        },
+        {
+          "service": "Full Interior Detail",
+          "duration": "3-4 hours",
+          "price_sedan": 285.00,
+          "price_suv": 350.00
+        },
+        {
+          "service": "Leather Clean & Condition",
+          "duration": "2 hours",
+          "price": 185.00
+        },
+        {
+          "service": "Steam Cleaning",
+          "duration": "2-3 hours",
+          "price_sedan": 225.00,
+          "price_suv": 275.00
+        }
+      ]
+    },
+    {
+      "category": "Protection",
+      "services": [
+        {
+          "service": "Paint Protection Film - Front",
+          "duration": "1 day",
+          "price": 1250.00
+        },
+        {
+          "service": "Paint Protection Film - Full",
+          "duration": "2-3 days",
+          "price": 4500.00
+        },
+        {
+          "service": "Window Tinting",
+          "duration": "3-4 hours",
+          "price": 450.00
+        }
+      ]
+    },
+    {
+      "category": "Packages",
+      "services": [
+        {
+          "service": "Gold Package",
+          "includes": "Premium wash, interior detail, leather treatment",
+          "duration": "5-6 hours",
+          "price_sedan": 450.00,
+          "price_suv": 550.00
+        },
+        {
+          "service": "Platinum Package",
+          "includes": "Stage 1 polish, full interior detail, engine bay clean, ceramic coating 1 year",
+          "duration": "1-2 days",
+          "price_sedan": 1250.00,
+          "price_suv": 1550.00
+        }
+      ]
+    }
+  ],
+  "bookings": [
+    {
+      "booking_id": "BKG-2024-1456",
+      "client_id": "CLI-002",
+      "client_name": "Sarah Chen",
+      "vehicle": "2023 Mercedes-Benz C-Class",
+      "date": "2024-10-25",
+      "service": "Gold Package - Sedan",
+      "duration": "5-6 hours",
+      "status": "Completed",
+      "price": 450.00,
+      "technician": "Jake Morrison"
+    },
+    {
+      "booking_id": "BKG-2024-1489",
+      "client_id": "CLI-005",
+      "client_name": "Robert Park",
+      "vehicle": "2020 Porsche 911",
+      "date": "2024-10-28",
+      "service": "Stage 2 Cut & Polish + Ceramic Coating 5 Year",
+      "duration": "3 days",
+      "status": "Completed",
+      "price": 2400.00,
+      "technician": "Jake Morrison",
+      "notes": "Premium service for high-value vehicle. Customer very satisfied."
+    },
+    {
+      "booking_id": "BKG-2024-1512",
+      "client_id": "CLI-007",
+      "client_name": "Marcus Nguyen",
+      "vehicle": "2022 Audi Q7",
+      "date": "2024-11-08",
+      "service": "Platinum Package - SUV",
+      "duration": "2 days",
+      "status": "Scheduled",
+      "price": 1550.00,
+      "technician": "Jake Morrison",
+      "deposit_paid": 775.00
+    }
+  ],
+  "invoices": [
+    {
+      "invoice_id": "INV-2024-1823",
+      "booking_id": "BKG-2024-1456",
+      "client_id": "CLI-002",
+      "client_name": "Sarah Chen",
+      "issue_date": "2024-10-25",
+      "due_date": "2024-11-08",
+      "status": "Paid",
+      "payment_date": "2024-10-25",
+      "payment_method": "Credit card",
+      "line_items": [
+        {
+          "description": "Gold Package - Mercedes-Benz C-Class (Sedan)",
+          "includes": "Premium wash, full interior detail, leather treatment",
+          "amount": 450.00
+        }
+      ],
+      "subtotal": 450.00,
+      "gst": 45.00,
+      "total": 495.00
+    },
+    {
+      "invoice_id": "INV-2024-1856",
+      "booking_id": "BKG-2024-1489",
+      "client_id": "CLI-005",
+      "client_name": "Robert Park",
+      "issue_date": "2024-10-28",
+      "due_date": "2024-11-11",
+      "status": "Paid",
+      "payment_date": "2024-10-30",
+      "payment_method": "Bank transfer",
+      "line_items": [
+        {
+          "description": "Stage 2 Cut & Polish - Porsche 911 (Sedan)",
+          "amount": 750.00
+        },
+        {
+          "description": "5 Year Ceramic Coating - Sedan",
+          "amount": 1650.00
+        }
+      ],
+      "subtotal": 2400.00,
+      "gst": 240.00,
+      "total": 2640.00
+    },
+    {
+      "invoice_id": "INV-2024-1889",
+      "booking_id": "BKG-2024-1512",
+      "client_id": "CLI-007",
+      "client_name": "Marcus Nguyen",
+      "issue_date": "2024-10-26",
+      "due_date": "2024-11-09",
+      "status": "Deposit Paid",
+      "payment_date": "2024-10-26",
+      "payment_method": "Credit card",
+      "line_items": [
+        {
+          "description": "Deposit - Platinum Package - Audi Q7 (50%)",
+          "amount": 775.00
+        }
+      ],
+      "subtotal": 775.00,
+      "gst": 77.50,
+      "total": 852.50,
+      "notes": "Balance of $775 + GST due on completion"
+    },
+    {
+      "invoice_id": "INV-2024-1834",
+      "client_id": "CLI-003",
+      "client_name": "Brisbane Executive Cars",
+      "issue_date": "2024-10-31",
+      "due_date": "2024-11-30",
+      "status": "Unpaid",
+      "line_items": [
+        {
+          "description": "Monthly fleet detailing - October 2024 (15 vehicles)",
+          "includes": "Premium wash and interior detail for fleet",
+          "amount": 3750.00
+        }
+      ],
+      "subtotal": 3750.00,
+      "gst": 375.00,
+      "total": 4125.00
+    }
+  ],
+  "bills": [
+    {
+      "bill_id": "BILL-2024-2156",
+      "supplier": "Auto Care Products Australia",
+      "supplier_contact": "Trade Sales",
+      "supplier_phone": "+61 1300 228 622",
+      "issue_date": "2024-10-18",
+      "due_date": "2024-11-17",
+      "status": "Paid",
+      "line_items": [
+        {
+          "description": "Ceramic coating kit - 5 year (3 kits)",
+          "quantity": 3,
+          "unit_price": 385.00,
+          "total": 1155.00
+        },
+        {
+          "description": "Compound - Stage 2 (5L)",
+          "quantity": 2,
+          "unit_price": 145.00,
+          "total": 290.00
+        },
+        {
+          "description": "Polish - finishing (5L)",
+          "quantity": 2,
+          "unit_price": 125.00,
+          "total": 250.00
+        },
+        {
+          "description": "Microfiber towels - premium (50 pack)",
+          "quantity": 2,
+          "unit_price": 185.00,
+          "total": 370.00
+        },
+        {
+          "description": "Leather cleaner & conditioner (5L)",
+          "quantity": 1,
+          "unit_price": 95.00,
+          "total": 95.00
+        }
+      ],
+      "subtotal": 2160.00,
+      "gst": 216.00,
+      "total": 2376.00
+    },
+    {
+      "bill_id": "BILL-2024-2157",
+      "supplier": "XPEL Paint Protection Film",
+      "supplier_contact": "Queensland Distributor",
+      "supplier_phone": "+61 7 3252 9876",
+      "issue_date": "2024-10-20",
+      "due_date": "2024-11-19",
+      "status": "Unpaid",
+      "line_items": [
+        {
+          "description": "XPEL Ultimate Plus - Full front kit (sedan)",
+          "quantity": 2,
+          "unit_price": 685.00,
+          "total": 1370.00
+        },
+        {
+          "description": "XPEL Ultimate Plus - Full vehicle kit (SUV)",
+          "quantity": 1,
+          "unit_price": 2450.00,
+          "total": 2450.00
+        }
+      ],
+      "subtotal": 3820.00,
+      "gst": 382.00,
+      "total": 4202.00
+    },
+    {
+      "bill_id": "BILL-2024-2158",
+      "supplier": "Supercheap Auto - Trade",
+      "supplier_contact": "Woolloongabba Store",
+      "supplier_phone": "+61 7 3391 5555",
+      "issue_date": "2024-10-22",
+      "due_date": "2024-11-21",
+      "status": "Unpaid",
+      "line_items": [
+        {
+          "description": "Car wash shampoo - 20L",
+          "quantity": 3,
+          "unit_price": 85.00,
+          "total": 255.00
+        },
+        {
+          "description": "Wheel cleaner - 5L",
+          "quantity": 2,
+          "unit_price": 45.00,
+          "total": 90.00
+        },
+        {
+          "description": "Glass cleaner - 5L",
+          "quantity": 2,
+          "unit_price": 38.00,
+          "total": 76.00
+        },
+        {
+          "description": "All-purpose cleaner - 5L",
+          "quantity": 3,
+          "unit_price": 32.00,
+          "total": 96.00
+        },
+        {
+          "description": "Tire dressing - 5L",
+          "quantity": 1,
+          "unit_price": 55.00,
+          "total": 55.00
+        }
+      ],
+      "subtotal": 572.00,
+      "gst": 57.20,
+      "total": 629.20
+    },
+    {
+      "bill_id": "BILL-2024-2159",
+      "supplier": "Woolloongabba Industrial Estate",
+      "supplier_contact": "Property Management",
+      "supplier_phone": "+61 7 3391 6666",
+      "issue_date": "2024-10-01",
+      "due_date": "2024-10-15",
+      "status": "Paid",
+      "line_items": [
+        {
+          "description": "Unit rent - October 2024",
+          "quantity": 1,
+          "unit_price": 2850.00,
+          "total": 2850.00
+        },
+        {
+          "description": "Outgoings",
+          "quantity": 1,
+          "unit_price": 285.00,
+          "total": 285.00
+        }
+      ],
+      "subtotal": 3135.00,
+      "gst": 313.50,
+      "total": 3448.50
+    },
+    {
+      "bill_id": "BILL-2024-2160",
+      "supplier": "Origin Energy",
+      "issue_date": "2024-10-20",
+      "due_date": "2024-11-13",
+      "status": "Unpaid",
+      "line_items": [
+        {
+          "description": "Electricity - September 2024 (1,450 kWh)",
+          "quantity": 1,
+          "unit_price": 565.00,
+          "total": 565.00
+        }
+      ],
+      "subtotal": 565.00,
+      "gst": 56.50,
+      "total": 621.50
+    },
+    {
+      "bill_id": "BILL-2024-2161",
+      "supplier": "Urban Utilities",
+      "issue_date": "2024-10-18",
+      "due_date": "2024-11-11",
+      "status": "Unpaid",
+      "line_items": [
+        {
+          "description": "Water usage - September 2024",
+          "quantity": 1,
+          "unit_price": 385.00,
+          "total": 385.00
+        }
+      ],
+      "subtotal": 385.00,
+      "gst": 38.50,
+      "total": 423.50
+    }
+  ],
+  "staff": [
+    {
+      "staff_id": "STAFF-001",
+      "name": "Jake Morrison",
+      "role": "Owner / Master Detailer",
+      "email": "jake@prestigeautodetailing.com.au",
+      "phone": "+61 412 678 901",
+      "certifications": [
+        "Ceramic Coating Certified Installer",
+        "Paint Protection Film Certified Installer",
+        "Paint Correction Specialist"
+      ],
+      "experience_years": 15
+    },
+    {
+      "staff_id": "STAFF-002",
+      "name": "Michael Rodriguez",
+      "role": "Senior Detailer",
+      "email": "michael@prestigeautodetailing.com.au",
+      "phone": "+61 423 789 012",
+      "certifications": [
+        "Ceramic Coating Certified Installer",
+        "Interior Detailing Specialist"
+      ],
+      "experience_years": 8
+    },
+    {
+      "staff_id": "STAFF-003",
+      "name": "Daniel Chen",
+      "role": "Detailer",
+      "email": "daniel@prestigeautodetailing.com.au",
+      "phone": "+61 434 890 123",
+      "certifications": [
+        "Paint Correction Training"
+      ],
+      "experience_years": 3
+    },
+    {
+      "staff_id": "STAFF-004",
+      "name": "Sophie Williams",
+      "role": "Receptionist / Bookings Coordinator",
+      "email": "sophie@prestigeautodetailing.com.au",
+      "phone": "+61 445 901 234"
+    }
+  ],
+  "enquiries": [
+    {
+      "enquiry_id": "ENQ-2024-234",
+      "name": "Amanda Harrison",
+      "email": "amanda.harrison@email.com",
+      "phone": "+61 467 890 234",
+      "vehicle": "2023 Porsche Cayenne",
+      "enquiry_date": "2024-10-28",
+      "status": "Quote Sent",
+      "interest": "Full paint protection film and ceramic coating",
+      "estimated_value": 6500.00,
+      "notes": "New vehicle, wants full protection. Quote sent, follow up scheduled."
+    },
+    {
+      "enquiry_id": "ENQ-2024-235",
+      "name": "Brisbane Luxury Car Rentals",
+      "contact_person": "David Kim",
+      "email": "david@brisbaneluxurycars.com.au",
+      "phone": "+61 7 3234 9876",
+      "enquiry_date": "2024-10-27",
+      "status": "Proposal Sent",
+      "interest": "Monthly detailing contract for 20 vehicle fleet",
+      "estimated_value": 5000.00,
+      "notes": "Luxury car rental fleet. Want weekly detailing for high-turnover vehicles."
+    },
+    {
+      "enquiry_id": "ENQ-2024-236",
+      "name": "James Foster",
+      "email": "james.foster@email.com",
+      "phone": "+61 478 901 345",
+      "vehicle": "2019 BMW 3 Series",
+      "enquiry_date": "2024-10-29",
+      "status": "Information Sent",
+      "interest": "Paint correction - heavy swirl marks",
+      "estimated_value": 850.00,
+      "notes": "Vehicle has heavy swirl marks. Sent info on Stage 2 polish and ceramic coating."
+    },
+    {
+      "enquiry_id": "ENQ-2024-237",
+      "name": "Gold Coast Prestige Dealership",
+      "contact_person": "Rebecca Martinez",
+      "email": "rebecca@gcprestige.com.au",
+      "phone": "+61 7 5532 8765",
+      "enquiry_date": "2024-10-26",
+      "status": "Meeting Scheduled",
+      "interest": "Pre-delivery detailing partnership",
+      "estimated_value": 10000.00,
+      "notes": "High-end dealership wants partner for pre-delivery detailing. Meeting Nov 5."
+    }
+  ],
+  "google_drive_files": [
+    {
+      "file_id": "FILE-001",
+      "file_name": "Park_Porsche_Before_Photos.jpg",
+      "file_type": "image/jpeg",
+      "booking_id": "BKG-2024-1489",
+      "upload_date": "2024-10-26",
+      "description": "Before photos of Porsche 911 - paint condition assessment"
+    },
+    {
+      "file_id": "FILE-002",
+      "file_name": "Park_Porsche_After_Photos.jpg",
+      "file_type": "image/jpeg",
+      "booking_id": "BKG-2024-1489",
+      "upload_date": "2024-10-28",
+      "description": "After photos of completed Porsche 911 detail"
+    },
+    {
+      "file_id": "FILE-003",
+      "file_name": "Certification_Ceramic_Coating.pdf",
+      "file_type": "application/pdf",
+      "upload_date": "2024-01-15",
+      "description": "Ceramic coating installer certifications for all technicians"
+    },
+    {
+      "file_id": "FILE-004",
+      "file_name": "Public_Liability_Insurance_2024.pdf",
+      "file_type": "application/pdf",
+      "upload_date": "2024-06-01",
+      "description": "Public liability insurance certificate - $20M coverage"
+    },
+    {
+      "file_id": "FILE-005",
+      "file_name": "Service_Price_List_2024.pdf",
+      "file_type": "application/pdf",
+      "upload_date": "2024-08-01",
+      "description": "Current service pricing and packages"
+    },
+    {
+      "file_id": "FILE-006",
+      "file_name": "Portfolio_High_End_Vehicles.pdf",
+      "file_type": "application/pdf",
+      "upload_date": "2024-09-15",
+      "description": "Portfolio of completed high-end vehicle detailing projects"
+    },
+    {
+      "file_id": "FILE-007",
+      "file_name": "Warranty_Ceramic_Coating_5Year.pdf",
+      "file_type": "application/pdf",
+      "booking_id": "BKG-2024-1489",
+      "upload_date": "2024-10-28",
+      "description": "5-year ceramic coating warranty certificate for Robert Park"
+    }
+  ]
+}
+

@@ -183,6 +183,7 @@ function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const router = useRouter();
+  const isDev = process.env.NODE_ENV === 'development';
 
   const {
     register,
@@ -203,6 +204,69 @@ function ContactForm() {
     },
   });
 
+  // Test data function (only for development)
+  const fillTestData = () => {
+    // Contact Information
+    setValue("fullName", "John Smith");
+    setValue("email", "john.smith@testcompany.com.au");
+    setValue("phone", "+61 412 345 678");
+    setValue("company", "Test Company Pty Ltd");
+    setValue("website", "https://www.testcompany.com.au");
+    setValue("socialLinks", [
+      { url: "https://www.linkedin.com/company/testcompany" },
+      { url: "https://www.facebook.com/testcompany" },
+    ]);
+    
+    // Business Information (using exact enum values)
+    setValue("industry", "construction_trades" as const, { shouldValidate: true });
+    setValue("businessSize", "6-20" as const, { shouldValidate: true });
+    
+    // Current State Assessment
+    setValue("currentSystems", "We currently use Excel for quotes, Gmail for customer communication, and paper-based job tracking. Everything is manual and time-consuming.");
+    setValue("monthlyVolume", "100-500" as const, { shouldValidate: true });
+    setValue("teamSize", "6-10" as const, { shouldValidate: true });
+    
+    // Automation Goals
+    setValue("automationGoals", [
+      "reduce_manual_work",
+      "improve_response_time",
+      "automate_reporting",
+      "workflow_automation"
+    ]);
+    setValue("specificProcesses", "We want to automate our quoting process - when a customer emails a quote request, we'd like the system to extract details, generate a quote using our template, and send it back automatically. We also want to automate job completion photo uploads from field workers into project folders organized by client and job number.");
+    
+    // Project Ideas
+    setValue("projectIdeas", [
+      {
+        title: "AI-powered Quote Generator",
+        description: "Automatically extract details from customer emails and generate professional quotes using our templates. Should integrate with our pricing database and send quotes back to customers.",
+        priority: "high" as const
+      },
+      {
+        title: "Photo Management System",
+        description: "Field workers upload job photos via mobile app, system automatically organizes by client/job, generates completion reports.",
+        priority: "medium" as const
+      }
+    ]);
+    
+    // Integration Requirements
+    setValue("existingTools", "Xero for accounting, Gmail for email, Google Drive for file storage, basic CRM in spreadsheets, QuickBooks for some clients");
+    setValue("integrationNeeds", [
+      "accounting",
+      "communication",
+      "document_storage"
+    ]);
+    setValue("dataVolume", "moderate" as const, { shouldValidate: true });
+    
+    // Project Scope
+    setValue("projectDescription", "We're a growing construction business struggling with manual processes. We spend 10+ hours per week on admin tasks that could be automated. Our main pain points are quote turnaround time (currently 2-3 days) and job documentation. We want to implement AI automation to handle these repetitive tasks so our team can focus on actual construction work.");
+    setValue("successMetrics", "Reduce quote turnaround from 2-3 days to same-day response, save 10+ hours per week on admin work, improve customer satisfaction scores, have all job photos automatically organized and backed up.");
+    setValue("timeline", "1-3_months" as const, { shouldValidate: true });
+    setValue("budget", "25k-50k" as const, { shouldValidate: true });
+    
+    toast.success("Test data filled! Review and submit when ready.");
+  };
+
   const { fields, append, remove } = useFieldArray({
     control,
     name: "projectIdeas",
@@ -215,6 +279,15 @@ function ContactForm() {
 
   const selectedAutomationGoals = watch("automationGoals") || [];
   const selectedIntegrations = watch("integrationNeeds") || [];
+  
+  // Watch all select fields to make them controlled
+  const selectedIndustry = watch("industry");
+  const selectedBusinessSize = watch("businessSize");
+  const selectedMonthlyVolume = watch("monthlyVolume");
+  const selectedTeamSize = watch("teamSize");
+  const selectedDataVolume = watch("dataVolume");
+  const selectedTimeline = watch("timeline");
+  const selectedBudget = watch("budget");
 
   const onSubmit = async (data: ContactFormData) => {
     setIsSubmitting(true);
@@ -286,10 +359,25 @@ function ContactForm() {
   return (
     <Card className="max-w-3xl mx-auto">
       <CardHeader>
-        <CardTitle>Get Started with Agentico</CardTitle>
-        <CardDescription>
-          Help us understand your needs so we can provide an accurate assessment and cost estimate.
-        </CardDescription>
+        <div className="flex items-start justify-between">
+          <div>
+            <CardTitle>Get Started with Agentico</CardTitle>
+            <CardDescription>
+              Help us understand your needs so we can provide an accurate assessment and cost estimate.
+            </CardDescription>
+          </div>
+          {isDev && (
+            <Button
+              type="button"
+              variant="outline"
+              size="sm"
+              onClick={fillTestData}
+              className="ml-4 shrink-0"
+            >
+              🧪 Fill Test Data
+            </Button>
+          )}
+        </div>
       </CardHeader>
       <CardContent>
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
@@ -428,7 +516,7 @@ function ContactForm() {
               <div className="grid md:grid-cols-2 gap-4">
                 <Field data-invalid={!!errors.industry}>
                   <FieldLabel htmlFor="industry">Industry *</FieldLabel>
-                  <Select onValueChange={(value) => setValue("industry", value as "construction_trades" | "electrical_plumbing" | "hvac" | "landscaping_gardening" | "painting_decorating" | "carpentry_joinery" | "roofing" | "other_trades_construction" | "legal_services" | "accounting_bookkeeping" | "financial_advisory" | "consulting" | "human_resources" | "real_estate" | "property_management" | "insurance" | "other_professional_services" | "healthcare_medical" | "dental" | "veterinary" | "fitness_wellness" | "beauty_salon" | "other_healthcare_wellness" | "retail" | "ecommerce" | "hospitality_hotels" | "restaurants_cafes" | "catering" | "other_retail_hospitality" | "event_planning" | "marketing_advertising" | "it_services" | "software_development" | "design_creative" | "photography_videography" | "other_creative_tech" | "education_training" | "childcare" | "cleaning_services" | "logistics_transport" | "warehousing" | "manufacturing" | "wholesale_distribution" | "automotive_repair" | "security_services" | "recruitment_staffing" | "other_services" | "other")}>
+                  <Select value={selectedIndustry} onValueChange={(value) => setValue("industry", value as "construction_trades" | "electrical_plumbing" | "hvac" | "landscaping_gardening" | "painting_decorating" | "carpentry_joinery" | "roofing" | "other_trades_construction" | "legal_services" | "accounting_bookkeeping" | "financial_advisory" | "consulting" | "human_resources" | "real_estate" | "property_management" | "insurance" | "other_professional_services" | "healthcare_medical" | "dental" | "veterinary" | "fitness_wellness" | "beauty_salon" | "other_healthcare_wellness" | "retail" | "ecommerce" | "hospitality_hotels" | "restaurants_cafes" | "catering" | "other_retail_hospitality" | "event_planning" | "marketing_advertising" | "it_services" | "software_development" | "design_creative" | "photography_videography" | "other_creative_tech" | "education_training" | "childcare" | "cleaning_services" | "logistics_transport" | "warehousing" | "manufacturing" | "wholesale_distribution" | "automotive_repair" | "security_services" | "recruitment_staffing" | "other_services" | "other")}>
                     <SelectTrigger id="industry" aria-invalid={!!errors.industry}>
                       <SelectValue placeholder="Select your industry" />
                     </SelectTrigger>
@@ -515,7 +603,7 @@ function ContactForm() {
 
                 <Field data-invalid={!!errors.businessSize}>
                   <FieldLabel htmlFor="businessSize">Total Employees *</FieldLabel>
-                  <Select onValueChange={(value) => setValue("businessSize", value as "1-5" | "6-20" | "21-50" | "51-200" | "200+")}>
+                  <Select value={selectedBusinessSize} onValueChange={(value) => setValue("businessSize", value as "1-5" | "6-20" | "21-50" | "51-200" | "200+")}>
                     <SelectTrigger id="businessSize" aria-invalid={!!errors.businessSize}>
                       <SelectValue placeholder="Select size" />
                     </SelectTrigger>
@@ -557,7 +645,7 @@ function ContactForm() {
               <div className="grid md:grid-cols-2 gap-4">
                 <Field data-invalid={!!errors.monthlyVolume}>
                   <FieldLabel htmlFor="monthlyVolume">Monthly Transaction/Job Volume *</FieldLabel>
-                  <Select onValueChange={(value) => setValue("monthlyVolume", value as "0-100" | "100-500" | "500-1000" | "1000-5000" | "5000+")}>
+                  <Select value={selectedMonthlyVolume} onValueChange={(value) => setValue("monthlyVolume", value as "0-100" | "100-500" | "500-1000" | "1000-5000" | "5000+")}>
                     <SelectTrigger id="monthlyVolume" aria-invalid={!!errors.monthlyVolume}>
                       <SelectValue placeholder="Select volume" />
                     </SelectTrigger>
@@ -577,7 +665,7 @@ function ContactForm() {
 
                 <Field data-invalid={!!errors.teamSize}>
                   <FieldLabel htmlFor="teamSize">Team Members Affected *</FieldLabel>
-                  <Select onValueChange={(value) => setValue("teamSize", value as "1-2" | "3-5" | "6-10" | "11-20" | "20+")}>
+                  <Select value={selectedTeamSize} onValueChange={(value) => setValue("teamSize", value as "1-2" | "3-5" | "6-10" | "11-20" | "20+")}>
                     <SelectTrigger id="teamSize" aria-invalid={!!errors.teamSize}>
                       <SelectValue placeholder="Select team size" />
                     </SelectTrigger>
@@ -707,7 +795,7 @@ function ContactForm() {
 
               <Field data-invalid={!!errors.dataVolume}>
                 <FieldLabel htmlFor="dataVolume">Data Volume to Process *</FieldLabel>
-                <Select onValueChange={(value) => setValue("dataVolume", value as "minimal" | "moderate" | "large" | "very_large")}>
+                <Select value={selectedDataVolume} onValueChange={(value) => setValue("dataVolume", value as "minimal" | "moderate" | "large" | "very_large")}>
                   <SelectTrigger id="dataVolume" aria-invalid={!!errors.dataVolume}>
                     <SelectValue placeholder="Select data volume" />
                   </SelectTrigger>
@@ -857,7 +945,7 @@ function ContactForm() {
               <div className="grid md:grid-cols-2 gap-4">
                 <Field data-invalid={!!errors.timeline}>
                   <FieldLabel htmlFor="timeline">Timeline *</FieldLabel>
-                  <Select onValueChange={(value) => setValue("timeline", value as "immediate" | "1-3_months" | "3-6_months" | "6+_months")}>
+                  <Select value={selectedTimeline} onValueChange={(value) => setValue("timeline", value as "immediate" | "1-3_months" | "3-6_months" | "6+_months")}>
                     <SelectTrigger id="timeline" aria-invalid={!!errors.timeline}>
                       <SelectValue placeholder="When do you need this?" />
                     </SelectTrigger>
@@ -873,7 +961,7 @@ function ContactForm() {
 
                 <Field data-invalid={!!errors.budget}>
                   <FieldLabel htmlFor="budget">Budget Range *</FieldLabel>
-                  <Select onValueChange={(value) => setValue("budget", value as "under_10k" | "10k-25k" | "25k-50k" | "50k-100k" | "100k+" | "not_sure")}>
+                  <Select value={selectedBudget} onValueChange={(value) => setValue("budget", value as "under_10k" | "10k-25k" | "25k-50k" | "50k-100k" | "100k+" | "not_sure")}>
                     <SelectTrigger id="budget" aria-invalid={!!errors.budget}>
                       <SelectValue placeholder="Select budget range" />
                     </SelectTrigger>

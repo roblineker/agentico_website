@@ -1,0 +1,583 @@
+{
+  "company": {
+    "name": "Brisbane Music Academy",
+    "abn": "01 234 567 890",
+    "email": "admin@brisbanemusicacademy.com.au",
+    "phone": "+61 7 3369 9012",
+    "address": "Level 1, 178 Given Terrace, Paddington QLD 4064"
+  },
+  "integrations": {
+    "booking": "My Music Staff",
+    "accounting": "Xero",
+    "pos": "Square",
+    "email": "Gmail",
+    "voice_agent": "Custom Voice Agent",
+    "website": "WordPress",
+    "payment_processing": "Stripe",
+    "file_storage": "Google Drive"
+  },
+  "academy_hours": {
+    "monday_friday": "2:00 PM - 9:00 PM",
+    "saturday": "9:00 AM - 5:00 PM",
+    "sunday": "Closed"
+  },
+  "students": [
+    {
+      "student_id": "STU-001",
+      "name": "Emma Mitchell",
+      "age": 8,
+      "parent_name": "Sarah Mitchell",
+      "parent_email": "sarah.mitchell@email.com",
+      "parent_phone": "+61 412 345 678",
+      "instrument": "Piano",
+      "level": "Grade 2",
+      "teacher": "Claire Morrison",
+      "lesson_type": "30 min private",
+      "weekly_fee": 45.00,
+      "enrolled_date": "2023-06-15"
+    },
+    {
+      "student_id": "STU-002",
+      "name": "Michael Chen",
+      "age": 14,
+      "parent_name": "Emma Chen",
+      "parent_email": "emma.chen@email.com",
+      "parent_phone": "+61 423 456 789",
+      "instrument": "Guitar",
+      "level": "Intermediate",
+      "teacher": "Jake Morrison",
+      "lesson_type": "45 min private",
+      "weekly_fee": 65.00,
+      "enrolled_date": "2024-01-20"
+    },
+    {
+      "student_id": "STU-003",
+      "name": "Sophie Park",
+      "age": 11,
+      "parent_name": "Jennifer Park",
+      "parent_email": "jennifer.park@email.com",
+      "parent_phone": "+61 434 567 890",
+      "instrument": "Violin",
+      "level": "Grade 3",
+      "teacher": "Maya Rodriguez",
+      "lesson_type": "30 min private",
+      "weekly_fee": 45.00,
+      "enrolled_date": "2023-09-05"
+    },
+    {
+      "student_id": "STU-004",
+      "name": "David Wilson",
+      "age": 35,
+      "email": "david.wilson@email.com",
+      "phone": "+61 445 678 901",
+      "instrument": "Drums",
+      "level": "Beginner",
+      "teacher": "Alex Taylor",
+      "lesson_type": "45 min private",
+      "weekly_fee": 65.00,
+      "enrolled_date": "2024-08-10"
+    },
+    {
+      "student_id": "STU-005",
+      "name": "Olivia Rodriguez",
+      "age": 16,
+      "parent_name": "Lisa Rodriguez",
+      "parent_email": "lisa.rodriguez@email.com",
+      "parent_phone": "+61 456 789 012",
+      "instrument": "Voice/Singing",
+      "level": "Advanced",
+      "teacher": "Emma Sterling",
+      "lesson_type": "60 min private",
+      "weekly_fee": 85.00,
+      "enrolled_date": "2023-02-10"
+    },
+    {
+      "student_id": "STU-006",
+      "name": "Lucas Foster",
+      "age": 9,
+      "parent_name": "Rebecca Foster",
+      "parent_email": "rebecca.foster@email.com",
+      "parent_phone": "+61 467 890 123",
+      "instrument": "Piano",
+      "level": "Grade 1",
+      "teacher": "Claire Morrison",
+      "lesson_type": "30 min private",
+      "weekly_fee": 45.00,
+      "enrolled_date": "2024-06-22"
+    },
+    {
+      "student_id": "STU-007",
+      "name": "Aiden Nguyen",
+      "age": 12,
+      "parent_name": "Marcus Nguyen",
+      "parent_email": "marcus.nguyen@email.com",
+      "parent_phone": "+61 478 901 234",
+      "instrument": "Bass Guitar",
+      "level": "Beginner",
+      "teacher": "Jake Morrison",
+      "lesson_type": "30 min private",
+      "weekly_fee": 45.00,
+      "enrolled_date": "2024-09-15"
+    },
+    {
+      "student_id": "STU-008",
+      "name": "Isabella Thompson",
+      "age": 7,
+      "parent_name": "Michael Thompson",
+      "parent_email": "michael.thompson@email.com",
+      "parent_phone": "+61 489 012 345",
+      "instrument": "Piano",
+      "level": "Preparatory",
+      "teacher": "Claire Morrison",
+      "lesson_type": "30 min private",
+      "weekly_fee": 45.00,
+      "enrolled_date": "2024-10-05"
+    }
+  ],
+  "lesson_pricing": [
+    {
+      "lesson_type": "30 min Private Lesson",
+      "instruments": ["Piano", "Guitar", "Violin", "Flute", "Clarinet", "Saxophone", "Bass"],
+      "weekly_fee": 45.00,
+      "term_fee": 450.00,
+      "description": "10 week term"
+    },
+    {
+      "lesson_type": "45 min Private Lesson",
+      "instruments": ["Piano", "Guitar", "Violin", "Drums", "Voice"],
+      "weekly_fee": 65.00,
+      "term_fee": 650.00,
+      "description": "10 week term"
+    },
+    {
+      "lesson_type": "60 min Private Lesson",
+      "instruments": ["Piano", "Guitar", "Drums", "Voice"],
+      "weekly_fee": 85.00,
+      "term_fee": 850.00,
+      "description": "10 week term"
+    },
+    {
+      "lesson_type": "Group Lesson (4-6 students)",
+      "instruments": ["Piano Basics", "Guitar Basics", "Music Theory"],
+      "weekly_fee": 30.00,
+      "term_fee": 300.00,
+      "description": "10 week term, 60 min class"
+    }
+  ],
+  "invoices": [
+    {
+      "invoice_id": "INV-2024-TERM4-001",
+      "student_id": "STU-001",
+      "student_name": "Emma Mitchell",
+      "parent_name": "Sarah Mitchell",
+      "issue_date": "2024-10-01",
+      "due_date": "2024-10-15",
+      "status": "Paid",
+      "payment_date": "2024-10-08",
+      "payment_method": "Credit card",
+      "line_items": [
+        {
+          "description": "Term 4 2024 - Piano lessons (30 min private) - 10 weeks",
+          "teacher": "Claire Morrison",
+          "amount": 450.00
+        }
+      ],
+      "subtotal": 450.00,
+      "gst": 45.00,
+      "total": 495.00
+    },
+    {
+      "invoice_id": "INV-2024-TERM4-002",
+      "student_id": "STU-002",
+      "student_name": "Michael Chen",
+      "parent_name": "Emma Chen",
+      "issue_date": "2024-10-01",
+      "due_date": "2024-10-15",
+      "status": "Paid",
+      "payment_date": "2024-10-12",
+      "payment_method": "Bank transfer",
+      "line_items": [
+        {
+          "description": "Term 4 2024 - Guitar lessons (45 min private) - 10 weeks",
+          "teacher": "Jake Morrison",
+          "amount": 650.00
+        }
+      ],
+      "subtotal": 650.00,
+      "gst": 65.00,
+      "total": 715.00
+    },
+    {
+      "invoice_id": "INV-2024-TERM4-005",
+      "student_id": "STU-005",
+      "student_name": "Olivia Rodriguez",
+      "parent_name": "Lisa Rodriguez",
+      "issue_date": "2024-10-01",
+      "due_date": "2024-10-15",
+      "status": "Paid",
+      "payment_date": "2024-10-10",
+      "payment_method": "Credit card",
+      "line_items": [
+        {
+          "description": "Term 4 2024 - Voice/Singing lessons (60 min private) - 10 weeks",
+          "teacher": "Emma Sterling",
+          "amount": 850.00
+        }
+      ],
+      "subtotal": 850.00,
+      "gst": 85.00,
+      "total": 935.00
+    },
+    {
+      "invoice_id": "INV-2024-TERM4-008",
+      "student_id": "STU-008",
+      "student_name": "Isabella Thompson",
+      "parent_name": "Michael Thompson",
+      "issue_date": "2024-10-08",
+      "due_date": "2024-10-22",
+      "status": "Unpaid",
+      "line_items": [
+        {
+          "description": "Term 4 2024 - Piano lessons (30 min private) - 10 weeks (pro-rated 9 weeks)",
+          "teacher": "Claire Morrison",
+          "amount": 405.00
+        }
+      ],
+      "subtotal": 405.00,
+      "gst": 40.50,
+      "total": 445.50,
+      "notes": "Pro-rated for mid-term enrolment"
+    }
+  ],
+  "bills": [
+    {
+      "bill_id": "BILL-2024-2456",
+      "supplier": "Paddington Property Management",
+      "issue_date": "2024-10-01",
+      "due_date": "2024-10-15",
+      "status": "Paid",
+      "line_items": [
+        {
+          "description": "Level 1 studio rent - October 2024",
+          "quantity": 1,
+          "unit_price": 3650.00,
+          "total": 3650.00
+        },
+        {
+          "description": "Outgoings",
+          "quantity": 1,
+          "unit_price": 365.00,
+          "total": 365.00
+        }
+      ],
+      "subtotal": 4015.00,
+      "gst": 401.50,
+      "total": 4416.50
+    },
+    {
+      "bill_id": "BILL-2024-2457",
+      "supplier": "Yamaha Music Australia",
+      "supplier_contact": "Education Division",
+      "supplier_phone": "+61 3 9693 5111",
+      "issue_date": "2024-10-15",
+      "due_date": "2024-11-14",
+      "status": "Paid",
+      "line_items": [
+        {
+          "description": "Piano maintenance and tuning - 4 pianos",
+          "quantity": 4,
+          "unit_price": 185.00,
+          "total": 740.00
+        },
+        {
+          "description": "Music stand - heavy duty (6 units)",
+          "quantity": 6,
+          "unit_price": 45.00,
+          "total": 270.00
+        }
+      ],
+      "subtotal": 1010.00,
+      "gst": 101.00,
+      "total": 1111.00
+    },
+    {
+      "bill_id": "BILL-2024-2458",
+      "supplier": "Allans Music",
+      "supplier_contact": "Brisbane Store",
+      "supplier_phone": "+61 7 3229 9377",
+      "issue_date": "2024-10-18",
+      "due_date": "2024-11-17",
+      "status": "Unpaid",
+      "line_items": [
+        {
+          "description": "Guitar strings - assorted sets (24 sets)",
+          "quantity": 24,
+          "unit_price": 18.00,
+          "total": 432.00
+        },
+        {
+          "description": "Drum sticks - various sizes (20 pairs)",
+          "quantity": 20,
+          "unit_price": 22.00,
+          "total": 440.00
+        },
+        {
+          "description": "Music books - method books (assorted)",
+          "quantity": 1,
+          "unit_price": 385.00,
+          "total": 385.00
+        },
+        {
+          "description": "Metronomes - digital (8 units)",
+          "quantity": 8,
+          "unit_price": 35.00,
+          "total": 280.00
+        }
+      ],
+      "subtotal": 1537.00,
+      "gst": 153.70,
+      "total": 1690.70
+    },
+    {
+      "bill_id": "BILL-2024-2459",
+      "supplier": "My Music Staff",
+      "supplier_contact": "Subscriptions",
+      "supplier_phone": "+1 877 977 8234",
+      "issue_date": "2024-10-01",
+      "due_date": "2024-10-15",
+      "status": "Paid",
+      "line_items": [
+        {
+          "description": "Music school management software - Monthly subscription",
+          "quantity": 1,
+          "unit_price": 89.00,
+          "total": 89.00
+        }
+      ],
+      "subtotal": 89.00,
+      "gst": 8.90,
+      "total": 97.90
+    },
+    {
+      "bill_id": "BILL-2024-2460",
+      "supplier": "Origin Energy",
+      "issue_date": "2024-10-20",
+      "due_date": "2024-11-13",
+      "status": "Unpaid",
+      "line_items": [
+        {
+          "description": "Electricity - September 2024 (650 kWh)",
+          "quantity": 1,
+          "unit_price": 325.00,
+          "total": 325.00
+        }
+      ],
+      "subtotal": 325.00,
+      "gst": 32.50,
+      "total": 357.50
+    }
+  ],
+  "teachers": [
+    {
+      "teacher_id": "TCHR-001",
+      "name": "Claire Morrison",
+      "email": "claire@brisbanemusicacademy.com.au",
+      "phone": "+61 412 678 901",
+      "instruments": ["Piano"],
+      "qualifications": [
+        "Bachelor of Music (Piano Performance)",
+        "Associate Diploma in Music Australia (AMusA)",
+        "Working with Children Check"
+      ],
+      "experience_years": 15,
+      "rate_30min": 45.00,
+      "current_students": 18
+    },
+    {
+      "teacher_id": "TCHR-002",
+      "name": "Jake Morrison",
+      "email": "jake@brisbanemusicacademy.com.au",
+      "phone": "+61 423 789 012",
+      "instruments": ["Guitar", "Bass Guitar"],
+      "qualifications": [
+        "Diploma of Music (Contemporary)",
+        "Guitar Institute Certificate",
+        "Working with Children Check"
+      ],
+      "experience_years": 12,
+      "rate_30min": 45.00,
+      "current_students": 22
+    },
+    {
+      "teacher_id": "TCHR-003",
+      "name": "Maya Rodriguez",
+      "email": "maya@brisbanemusicacademy.com.au",
+      "phone": "+61 434 890 123",
+      "instruments": ["Violin", "Viola"],
+      "qualifications": [
+        "Bachelor of Music (Violin Performance)",
+        "Queensland Conservatorium Graduate",
+        "Working with Children Check"
+      ],
+      "experience_years": 10,
+      "rate_30min": 45.00,
+      "current_students": 14
+    },
+    {
+      "teacher_id": "TCHR-004",
+      "name": "Alex Taylor",
+      "email": "alex@brisbanemusicacademy.com.au",
+      "phone": "+61 445 901 234",
+      "instruments": ["Drums", "Percussion"],
+      "qualifications": [
+        "Diploma of Music (Drums)",
+        "Contemporary Music Institute Graduate",
+        "Working with Children Check"
+      ],
+      "experience_years": 8,
+      "rate_45min": 65.00,
+      "current_students": 16
+    },
+    {
+      "teacher_id": "TCHR-005",
+      "name": "Emma Sterling",
+      "email": "emma@brisbanemusicacademy.com.au",
+      "phone": "+61 456 012 345",
+      "instruments": ["Voice/Singing"],
+      "qualifications": [
+        "Bachelor of Music (Vocal Performance)",
+        "Speech Level Singing Certified",
+        "Working with Children Check"
+      ],
+      "experience_years": 12,
+      "rate_60min": 85.00,
+      "current_students": 11
+    }
+  ],
+  "concerts_events": [
+    {
+      "event_id": "EVENT-2024-012",
+      "event_name": "End of Year Student Concert",
+      "date": "2024-12-08",
+      "time": "2:00 PM - 5:00 PM",
+      "venue": "Brisbane Conservatorium Recital Hall",
+      "capacity": 200,
+      "students_performing": 45,
+      "ticket_price": 15.00,
+      "status": "Rehearsals underway"
+    },
+    {
+      "event_id": "EVENT-2024-013",
+      "event_name": "Piano Masterclass with Guest Artist",
+      "date": "2024-11-16",
+      "time": "10:00 AM - 12:00 PM",
+      "venue": "Brisbane Music Academy",
+      "capacity": 30,
+      "price": 45.00,
+      "status": "Open for bookings"
+    }
+  ],
+  "enquiries": [
+    {
+      "enquiry_id": "ENQ-2024-189",
+      "parent_name": "Amanda Harrison",
+      "email": "amanda.harrison@email.com",
+      "phone": "+61 467 890 234",
+      "child_name": "Oliver",
+      "child_age": 6,
+      "instrument_interest": "Piano",
+      "enquiry_date": "2024-10-28",
+      "status": "Trial Lesson Booked",
+      "trial_date": "2024-11-05",
+      "teacher": "Claire Morrison"
+    },
+    {
+      "enquiry_id": "ENQ-2024-190",
+      "name": "Daniel Kim",
+      "email": "daniel.kim@email.com",
+      "phone": "+61 478 901 345",
+      "age": 28,
+      "instrument_interest": "Guitar",
+      "enquiry_date": "2024-10-29",
+      "status": "Information Sent",
+      "notes": "Adult beginner, flexible schedule. Sent pricing and availability."
+    },
+    {
+      "enquiry_id": "ENQ-2024-191",
+      "parent_name": "Sophie Martinez",
+      "email": "sophie.martinez@email.com",
+      "phone": "+61 489 012 456",
+      "child_name": "Mia",
+      "child_age": 10,
+      "instrument_interest": "Voice/Singing",
+      "enquiry_date": "2024-10-27",
+      "status": "Trial Lesson Booked",
+      "trial_date": "2024-11-09",
+      "teacher": "Emma Sterling"
+    },
+    {
+      "enquiry_id": "ENQ-2024-192",
+      "parent_name": "Robert Foster",
+      "email": "robert.foster@email.com",
+      "phone": "+61 490 123 567",
+      "child_name": "Twins - Ethan & Noah",
+      "child_age": 8,
+      "instrument_interest": "Drums",
+      "enquiry_date": "2024-10-26",
+      "status": "Quote Sent",
+      "notes": "Twins want to learn drums. Sent sibling discount information."
+    }
+  ],
+  "google_drive_files": [
+    {
+      "file_id": "FILE-001",
+      "file_name": "Teacher_Qualifications_WWC_Checks.pdf",
+      "file_type": "application/pdf",
+      "upload_date": "2024-01-15",
+      "description": "All teacher music qualifications and Working with Children Checks"
+    },
+    {
+      "file_id": "FILE-002",
+      "file_name": "Public_Liability_Insurance_2024.pdf",
+      "file_type": "application/pdf",
+      "upload_date": "2024-06-01",
+      "description": "Public liability insurance certificate"
+    },
+    {
+      "file_id": "FILE-003",
+      "file_name": "Student_Enrolment_Form_Template.pdf",
+      "file_type": "application/pdf",
+      "upload_date": "2024-01-05",
+      "description": "Standard student enrolment form"
+    },
+    {
+      "file_id": "FILE-004",
+      "file_name": "Term_4_2024_Timetable.pdf",
+      "file_type": "application/pdf",
+      "upload_date": "2024-09-20",
+      "description": "Term 4 lesson schedule and timetable"
+    },
+    {
+      "file_id": "FILE-005",
+      "file_name": "End_of_Year_Concert_Program.pdf",
+      "file_type": "application/pdf",
+      "upload_date": "2024-10-25",
+      "description": "Concert program and running order for December concert"
+    },
+    {
+      "file_id": "FILE-006",
+      "file_name": "Student_Progress_Reports_Term3_2024.pdf",
+      "file_type": "application/pdf",
+      "upload_date": "2024-09-30",
+      "description": "Term 3 student progress reports"
+    },
+    {
+      "file_id": "FILE-007",
+      "file_name": "Instrument_Hire_Agreement.pdf",
+      "file_type": "application/pdf",
+      "upload_date": "2024-01-10",
+      "description": "Instrument hire agreement template"
+    }
+  ]
+}
+

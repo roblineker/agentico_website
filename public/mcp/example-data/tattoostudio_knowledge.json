@@ -1,0 +1,634 @@
+{
+  "company": {
+    "name": "Ink & Soul Tattoo Studio",
+    "abn": "34 567 890 123",
+    "email": "bookings@inkandsoul.com.au",
+    "phone": "+61 7 3252 8765",
+    "address": "Level 1, 145 Brunswick Street, Fortitude Valley QLD 4006"
+  },
+  "integrations": {
+    "booking": "Fresha",
+    "accounting": "Xero",
+    "pos": "Square",
+    "email": "Gmail",
+    "voice_agent": "Custom Voice Agent",
+    "file_storage": "Google Drive",
+    "social_media": "Instagram Business"
+  },
+  "studio_hours": {
+    "tuesday_friday": "10:00 AM - 6:00 PM",
+    "saturday": "10:00 AM - 5:00 PM",
+    "sunday_monday": "Closed"
+  },
+  "clients": [
+    {
+      "client_id": "CLI-001",
+      "name": "Sarah Mitchell",
+      "email": "sarah.mitchell@email.com",
+      "phone": "+61 412 345 678",
+      "address": "23 Park Road, Milton QLD 4064",
+      "first_visit": "2023-08-15",
+      "total_sessions": 4,
+      "total_spent": 2850.00,
+      "preferred_artist": "Jake Morrison"
+    },
+    {
+      "client_id": "CLI-002",
+      "name": "Marcus Chen",
+      "email": "marcus.chen@email.com",
+      "phone": "+61 423 456 789",
+      "address": "67 River Terrace, Kangaroo Point QLD 4169",
+      "first_visit": "2024-02-20",
+      "total_sessions": 2,
+      "total_spent": 1650.00,
+      "preferred_artist": "Luna Rodriguez"
+    },
+    {
+      "client_id": "CLI-003",
+      "name": "Emma Thompson",
+      "email": "emma.thompson@email.com",
+      "phone": "+61 434 567 890",
+      "address": "12 Oxford Street, Bulimba QLD 4171",
+      "first_visit": "2024-09-10",
+      "total_sessions": 1,
+      "total_spent": 450.00,
+      "preferred_artist": "Jake Morrison"
+    },
+    {
+      "client_id": "CLI-004",
+      "name": "David Wilson",
+      "email": "david.wilson@email.com",
+      "phone": "+61 445 678 901",
+      "address": "89 Stanley Street, East Brisbane QLD 4169",
+      "first_visit": "2024-10-05",
+      "total_sessions": 1,
+      "total_spent": 850.00,
+      "preferred_artist": "Luna Rodriguez"
+    },
+    {
+      "client_id": "CLI-005",
+      "name": "Jessica Park",
+      "email": "jessica.park@email.com",
+      "phone": "+61 456 789 012",
+      "address": "45 Given Terrace, Paddington QLD 4064",
+      "first_visit": "2024-08-22",
+      "total_sessions": 3,
+      "total_spent": 3200.00,
+      "preferred_artist": "Phoenix Taylor"
+    },
+    {
+      "client_id": "CLI-006",
+      "name": "Tony Nguyen",
+      "email": "tony.nguyen@email.com",
+      "phone": "+61 467 890 123",
+      "address": "156 Boundary Street, West End QLD 4101",
+      "first_visit": "2024-10-18",
+      "total_sessions": 1,
+      "total_spent": 0.00,
+      "preferred_artist": "Jake Morrison",
+      "notes": "Consultation completed, booking first session"
+    },
+    {
+      "client_id": "CLI-007",
+      "name": "Rebecca Foster",
+      "email": "rebecca.foster@email.com",
+      "phone": "+61 478 901 234",
+      "address": "78 Latrobe Terrace, Paddington QLD 4064",
+      "first_visit": "2024-10-25",
+      "total_sessions": 0,
+      "total_spent": 0.00,
+      "notes": "Consultation booked for next week"
+    },
+    {
+      "client_id": "CLI-008",
+      "name": "Michael Rodriguez",
+      "email": "m.rodriguez@email.com",
+      "phone": "+61 489 012 345",
+      "address": "23 Commercial Road, Newstead QLD 4006",
+      "first_visit": "2024-06-12",
+      "total_sessions": 5,
+      "total_spent": 4500.00,
+      "preferred_artist": "Phoenix Taylor"
+    },
+    {
+      "client_id": "CLI-009",
+      "name": "Sophie Anderson",
+      "email": "sophie.anderson@email.com",
+      "phone": "+61 490 123 456",
+      "address": "34 Waterworks Road, Ashgrove QLD 4060",
+      "first_visit": "2024-09-28",
+      "total_sessions": 2,
+      "total_spent": 1400.00,
+      "preferred_artist": "Luna Rodriguez"
+    }
+  ],
+  "appointments": [
+    {
+      "appointment_id": "APT-2024-1456",
+      "client_id": "CLI-005",
+      "client_name": "Jessica Park",
+      "artist": "Phoenix Taylor",
+      "date": "2024-10-15",
+      "start_time": "10:00 AM",
+      "duration_hours": 5,
+      "service": "Sleeve Continuation - Session 3",
+      "status": "Completed",
+      "design": "Japanese style sleeve - cherry blossoms and koi fish",
+      "price": 1250.00,
+      "deposit_paid": 250.00
+    },
+    {
+      "appointment_id": "APT-2024-1489",
+      "client_id": "CLI-003",
+      "client_name": "Emma Thompson",
+      "artist": "Jake Morrison",
+      "date": "2024-10-18",
+      "start_time": "2:00 PM",
+      "duration_hours": 2,
+      "service": "Small Custom Design",
+      "status": "Completed",
+      "design": "Minimalist mountain landscape on forearm",
+      "price": 450.00,
+      "deposit_paid": 100.00
+    },
+    {
+      "appointment_id": "APT-2024-1512",
+      "client_id": "CLI-006",
+      "client_name": "Tony Nguyen",
+      "artist": "Jake Morrison",
+      "date": "2024-11-08",
+      "start_time": "11:00 AM",
+      "duration_hours": 4,
+      "service": "Large Custom Design - First Session",
+      "status": "Scheduled",
+      "design": "Traditional dragon piece - back shoulder",
+      "price": 950.00,
+      "deposit_paid": 200.00
+    }
+  ],
+  "services_pricing": [
+    {
+      "service": "Consultation",
+      "duration": "30 minutes",
+      "price": 0.00,
+      "description": "Free design consultation with artist"
+    },
+    {
+      "service": "Small Tattoo (under 5cm)",
+      "duration": "1-2 hours",
+      "price_from": 200.00,
+      "description": "Simple designs, minimal detail"
+    },
+    {
+      "service": "Medium Tattoo",
+      "duration": "2-4 hours",
+      "price_from": 400.00,
+      "description": "Moderate detail and size"
+    },
+    {
+      "service": "Large Tattoo",
+      "duration": "4-6 hours",
+      "price_from": 800.00,
+      "description": "Detailed custom work, large area coverage"
+    },
+    {
+      "service": "Full Day Session",
+      "duration": "6-8 hours",
+      "price": 1500.00,
+      "description": "Large scale work, sleeve sessions, back pieces"
+    },
+    {
+      "service": "Cover-Up",
+      "duration": "Varies",
+      "price_from": 500.00,
+      "description": "Covering existing tattoo, requires consultation"
+    },
+    {
+      "service": "Touch-Up (within 12 months)",
+      "duration": "1 hour",
+      "price": 0.00,
+      "description": "Free touch-up within 12 months of original work"
+    }
+  ],
+  "invoices": [
+    {
+      "invoice_id": "INV-2024-0823",
+      "client_id": "CLI-005",
+      "client_name": "Jessica Park",
+      "appointment_id": "APT-2024-1456",
+      "issue_date": "2024-10-15",
+      "status": "Paid",
+      "payment_date": "2024-10-15",
+      "payment_method": "Card",
+      "line_items": [
+        {
+          "description": "Sleeve continuation session - 5 hours (Phoenix Taylor)",
+          "amount": 1250.00
+        },
+        {
+          "description": "Less deposit paid",
+          "amount": -250.00
+        }
+      ],
+      "subtotal": 1000.00,
+      "gst": 100.00,
+      "total": 1100.00
+    },
+    {
+      "invoice_id": "INV-2024-0856",
+      "client_id": "CLI-003",
+      "client_name": "Emma Thompson",
+      "appointment_id": "APT-2024-1489",
+      "issue_date": "2024-10-18",
+      "status": "Paid",
+      "payment_date": "2024-10-18",
+      "payment_method": "Card",
+      "line_items": [
+        {
+          "description": "Small custom tattoo - 2 hours (Jake Morrison)",
+          "amount": 450.00
+        },
+        {
+          "description": "Less deposit paid",
+          "amount": -100.00
+        }
+      ],
+      "subtotal": 350.00,
+      "gst": 35.00,
+      "total": 385.00
+    },
+    {
+      "invoice_id": "INV-2024-0889",
+      "client_id": "CLI-006",
+      "client_name": "Tony Nguyen",
+      "appointment_id": "APT-2024-1512",
+      "issue_date": "2024-10-26",
+      "status": "Deposit Paid",
+      "payment_date": "2024-10-26",
+      "payment_method": "Card",
+      "line_items": [
+        {
+          "description": "Deposit for large custom design - Nov 8 session",
+          "amount": 200.00
+        }
+      ],
+      "subtotal": 200.00,
+      "gst": 20.00,
+      "total": 220.00,
+      "notes": "Balance of $750 due on completion"
+    }
+  ],
+  "bills": [
+    {
+      "bill_id": "BILL-2024-1567",
+      "supplier": "Brisbane Tattoo Supplies",
+      "supplier_contact": "Sales Team",
+      "supplier_phone": "+61 7 3252 9876",
+      "issue_date": "2024-10-12",
+      "due_date": "2024-11-11",
+      "status": "Paid",
+      "line_items": [
+        {
+          "description": "Tattoo needles - assorted configurations (50 pack)",
+          "quantity": 3,
+          "unit_price": 145.00,
+          "total": 435.00
+        },
+        {
+          "description": "Disposable grips - black (50 pack)",
+          "quantity": 2,
+          "unit_price": 85.00,
+          "total": 170.00
+        },
+        {
+          "description": "Tattoo ink - Eternal brand black (8oz)",
+          "quantity": 4,
+          "unit_price": 65.00,
+          "total": 260.00
+        },
+        {
+          "description": "Tattoo ink - color set (12 bottles)",
+          "quantity": 1,
+          "unit_price": 280.00,
+          "total": 280.00
+        },
+        {
+          "description": "Transfer paper (100 sheets)",
+          "quantity": 2,
+          "unit_price": 45.00,
+          "total": 90.00
+        }
+      ],
+      "subtotal": 1235.00,
+      "gst": 123.50,
+      "total": 1358.50
+    },
+    {
+      "bill_id": "BILL-2024-1568",
+      "supplier": "MedSupply Australia",
+      "supplier_contact": "Medical Supplies",
+      "supplier_phone": "+61 1300 635 787",
+      "issue_date": "2024-10-15",
+      "due_date": "2024-11-14",
+      "status": "Paid",
+      "line_items": [
+        {
+          "description": "Nitrile gloves - black powder-free (box of 100)",
+          "quantity": 10,
+          "unit_price": 18.50,
+          "total": 185.00
+        },
+        {
+          "description": "Disposable razors (100 pack)",
+          "quantity": 2,
+          "unit_price": 28.00,
+          "total": 56.00
+        },
+        {
+          "description": "Medical grade disinfectant - 5L",
+          "quantity": 2,
+          "unit_price": 45.00,
+          "total": 90.00
+        },
+        {
+          "description": "Sterile gauze pads (200 pack)",
+          "quantity": 3,
+          "unit_price": 32.00,
+          "total": 96.00
+        }
+      ],
+      "subtotal": 427.00,
+      "gst": 42.70,
+      "total": 469.70
+    },
+    {
+      "bill_id": "BILL-2024-1569",
+      "supplier": "Valley Commercial Rentals",
+      "supplier_contact": "Property Management",
+      "supplier_phone": "+61 7 3252 5555",
+      "issue_date": "2024-10-01",
+      "due_date": "2024-10-15",
+      "status": "Paid",
+      "line_items": [
+        {
+          "description": "Studio rent - Level 1, 145 Brunswick St - October 2024",
+          "quantity": 1,
+          "unit_price": 2850.00,
+          "total": 2850.00
+        },
+        {
+          "description": "Outgoings",
+          "quantity": 1,
+          "unit_price": 285.00,
+          "total": 285.00
+        }
+      ],
+      "subtotal": 3135.00,
+      "gst": 313.50,
+      "total": 3448.50
+    },
+    {
+      "bill_id": "BILL-2024-1570",
+      "supplier": "Cheyenne Tattoo Australia",
+      "supplier_contact": "Equipment Sales",
+      "supplier_phone": "+61 1800 828 866",
+      "issue_date": "2024-10-20",
+      "due_date": "2024-11-19",
+      "status": "Unpaid",
+      "line_items": [
+        {
+          "description": "Cheyenne Hawk Spirit Rotary Machine",
+          "quantity": 1,
+          "unit_price": 850.00,
+          "total": 850.00
+        },
+        {
+          "description": "Cheyenne Safety Cartridges - assorted (50 pack)",
+          "quantity": 2,
+          "unit_price": 175.00,
+          "total": 350.00
+        }
+      ],
+      "subtotal": 1200.00,
+      "gst": 120.00,
+      "total": 1320.00
+    },
+    {
+      "bill_id": "BILL-2024-1571",
+      "supplier": "Origin Energy",
+      "supplier_contact": "Business Accounts",
+      "supplier_phone": "13 24 61",
+      "issue_date": "2024-10-18",
+      "due_date": "2024-11-11",
+      "status": "Unpaid",
+      "line_items": [
+        {
+          "description": "Electricity - September 2024 (485 kWh)",
+          "quantity": 1,
+          "unit_price": 285.00,
+          "total": 285.00
+        }
+      ],
+      "subtotal": 285.00,
+      "gst": 28.50,
+      "total": 313.50
+    }
+  ],
+  "artists": [
+    {
+      "artist_id": "ART-001",
+      "name": "Jake Morrison",
+      "role": "Owner / Tattoo Artist",
+      "email": "jake@inkandsoul.com.au",
+      "phone": "+61 412 678 901",
+      "specialties": ["Traditional", "Neo-Traditional", "Black & Grey"],
+      "experience_years": 12,
+      "certifications": [
+        "Skin Penetration Certificate (QLD Health)",
+        "First Aid Certificate",
+        "Bloodborne Pathogens Training"
+      ],
+      "hourly_rate": 200.00
+    },
+    {
+      "artist_id": "ART-002",
+      "name": "Luna Rodriguez",
+      "role": "Tattoo Artist",
+      "email": "luna@inkandsoul.com.au",
+      "phone": "+61 423 789 012",
+      "specialties": ["Fineline", "Watercolor", "Botanical"],
+      "experience_years": 7,
+      "certifications": [
+        "Skin Penetration Certificate (QLD Health)",
+        "First Aid Certificate",
+        "Bloodborne Pathogens Training"
+      ],
+      "hourly_rate": 180.00
+    },
+    {
+      "artist_id": "ART-003",
+      "name": "Phoenix Taylor",
+      "role": "Senior Tattoo Artist",
+      "email": "phoenix@inkandsoul.com.au",
+      "phone": "+61 434 890 123",
+      "specialties": ["Japanese", "Color Realism", "Cover-Ups"],
+      "experience_years": 15,
+      "certifications": [
+        "Skin Penetration Certificate (QLD Health)",
+        "First Aid Certificate",
+        "Bloodborne Pathogens Training",
+        "Advanced Color Theory Certificate"
+      ],
+      "hourly_rate": 250.00
+    },
+    {
+      "artist_id": "ART-004",
+      "name": "Casey Williams",
+      "role": "Apprentice Tattoo Artist",
+      "email": "casey@inkandsoul.com.au",
+      "phone": "+61 445 901 234",
+      "specialties": ["Learning all styles"],
+      "experience_years": 1,
+      "certifications": [
+        "Skin Penetration Certificate (QLD Health)",
+        "First Aid Certificate"
+      ],
+      "hourly_rate": 120.00,
+      "notes": "Second year apprentice under Jake Morrison"
+    }
+  ],
+  "enquiries": [
+    {
+      "enquiry_id": "ENQ-2024-234",
+      "name": "Amanda Chen",
+      "email": "amanda.chen@email.com",
+      "phone": "+61 401 234 567",
+      "enquiry_date": "2024-10-28",
+      "status": "Consultation Booked",
+      "design_interest": "Memorial tattoo - portrait of grandmother",
+      "preferred_artist": "Phoenix Taylor",
+      "size": "Medium - shoulder placement",
+      "consultation_date": "2024-11-05",
+      "estimated_value": 1200.00
+    },
+    {
+      "enquiry_id": "ENQ-2024-235",
+      "name": "Daniel Foster",
+      "email": "daniel.foster@email.com",
+      "phone": "+61 412 345 098",
+      "enquiry_date": "2024-10-29",
+      "status": "Information Sent",
+      "design_interest": "Matching couple tattoos",
+      "preferred_artist": "Luna Rodriguez",
+      "size": "Small - wrist placement",
+      "estimated_value": 400.00,
+      "notes": "Wants minimalist design, sent portfolio examples"
+    },
+    {
+      "enquiry_id": "ENQ-2024-236",
+      "name": "Sophie Martinez",
+      "email": "sophie.martinez@email.com",
+      "phone": "+61 423 456 109",
+      "enquiry_date": "2024-10-27",
+      "status": "Quote Sent",
+      "design_interest": "Full sleeve - floral and geometric",
+      "preferred_artist": "Jake Morrison",
+      "size": "Large - full sleeve",
+      "estimated_value": 4500.00,
+      "notes": "Multi-session project, interested in starting January"
+    },
+    {
+      "enquiry_id": "ENQ-2024-237",
+      "name": "Robert Kim",
+      "email": "robert.kim@email.com",
+      "phone": "+61 434 567 210",
+      "enquiry_date": "2024-10-26",
+      "status": "Follow Up Required",
+      "design_interest": "Cover-up of old tribal tattoo",
+      "preferred_artist": "Phoenix Taylor",
+      "size": "Medium - upper arm",
+      "estimated_value": 850.00,
+      "notes": "Sent photos, waiting for response"
+    },
+    {
+      "enquiry_id": "ENQ-2024-238",
+      "name": "Emily Harrison",
+      "email": "emily.harrison@email.com",
+      "phone": "+61 445 678 321",
+      "enquiry_date": "2024-10-29",
+      "status": "Consultation Requested",
+      "design_interest": "Fine line botanical design",
+      "preferred_artist": "Luna Rodriguez",
+      "size": "Medium - forearm",
+      "estimated_value": 650.00
+    }
+  ],
+  "google_drive_files": [
+    {
+      "file_id": "FILE-001",
+      "file_name": "QLD_Health_Skin_Penetration_Certificates.pdf",
+      "file_type": "application/pdf",
+      "upload_date": "2024-01-15",
+      "description": "All artist skin penetration certificates - QLD Health approved"
+    },
+    {
+      "file_id": "FILE-002",
+      "file_name": "Studio_Hygiene_Procedures.pdf",
+      "file_type": "application/pdf",
+      "upload_date": "2024-01-20",
+      "description": "Studio hygiene and sterilization procedures manual"
+    },
+    {
+      "file_id": "FILE-003",
+      "file_name": "Public_Liability_Insurance_2024.pdf",
+      "file_type": "application/pdf",
+      "upload_date": "2024-06-01",
+      "description": "Public liability insurance certificate - $20M coverage"
+    },
+    {
+      "file_id": "FILE-004",
+      "file_name": "Artist_Portfolio_Jake_Morrison.pdf",
+      "file_type": "application/pdf",
+      "upload_date": "2024-09-01",
+      "description": "Jake Morrison portfolio for client consultations"
+    },
+    {
+      "file_id": "FILE-005",
+      "file_name": "Artist_Portfolio_Luna_Rodriguez.pdf",
+      "file_type": "application/pdf",
+      "upload_date": "2024-09-01",
+      "description": "Luna Rodriguez portfolio for client consultations"
+    },
+    {
+      "file_id": "FILE-006",
+      "file_name": "Artist_Portfolio_Phoenix_Taylor.pdf",
+      "file_type": "application/pdf",
+      "upload_date": "2024-09-01",
+      "description": "Phoenix Taylor portfolio for client consultations"
+    },
+    {
+      "file_id": "FILE-007",
+      "file_name": "Client_Consent_Forms_Template.pdf",
+      "file_type": "application/pdf",
+      "upload_date": "2024-01-10",
+      "description": "Client consent and aftercare forms template"
+    },
+    {
+      "file_id": "FILE-008",
+      "file_name": "Jessica_Park_Sleeve_Progress.jpg",
+      "file_type": "image/jpeg",
+      "client_id": "CLI-005",
+      "upload_date": "2024-10-15",
+      "description": "Progress photo of Jessica Park's Japanese sleeve - session 3"
+    },
+    {
+      "file_id": "FILE-009",
+      "file_name": "Emma_Thompson_Mountain_Tattoo.jpg",
+      "file_type": "image/jpeg",
+      "client_id": "CLI-003",
+      "upload_date": "2024-10-18",
+      "description": "Completed mountain landscape tattoo for Emma Thompson"
+    }
+  ]
+}
+

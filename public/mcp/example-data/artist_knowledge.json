@@ -1,0 +1,674 @@
+{
+  "company": {
+    "name": "Maya Rodriguez Art Studio",
+    "abn": "78 901 234 567",
+    "email": "hello@mayarodriguezart.com.au",
+    "phone": "+61 410 234 567",
+    "address": "Studio 12, The Artisan Collective, 89 Boundary Street, West End QLD 4101"
+  },
+  "integrations": {
+    "accounting": "Xero",
+    "crm": "HubSpot",
+    "email": "Gmail",
+    "voice_agent": "Custom Voice Agent",
+    "file_storage": "Google Drive",
+    "e_commerce": "Shopify",
+    "social_media": "Meta Business Suite"
+  },
+  "clients": [
+    {
+      "client_id": "CLI-001",
+      "name": "Brisbane City Council",
+      "type": "Corporate",
+      "contact_person": "Jennifer Williams",
+      "email": "j.williams@brisbane.qld.gov.au",
+      "phone": "+61 7 3403 8888",
+      "address": "Brisbane City Hall, 64 Adelaide Street, Brisbane QLD 4000",
+      "total_commissions": 3,
+      "total_invoiced": 45000.00
+    },
+    {
+      "client_id": "CLI-002",
+      "name": "David & Emma Chen",
+      "type": "Private Collector",
+      "email": "david.chen@email.com",
+      "phone": "+61 412 345 678",
+      "address": "45 River Terrace, New Farm QLD 4005",
+      "total_purchases": 4,
+      "total_invoiced": 18500.00
+    },
+    {
+      "client_id": "CLI-003",
+      "name": "The Grand Hotel Brisbane",
+      "type": "Commercial",
+      "contact_person": "Michael Stevens",
+      "email": "m.stevens@grandhotelbrisbane.com.au",
+      "phone": "+61 7 3234 5678",
+      "address": "200 George Street, Brisbane QLD 4000",
+      "total_commissions": 1,
+      "total_invoiced": 28000.00
+    },
+    {
+      "client_id": "CLI-004",
+      "name": "Sarah Thompson",
+      "type": "Private Collector",
+      "email": "sarah.thompson@email.com",
+      "phone": "+61 423 456 789",
+      "address": "78 Fig Tree Pocket Road, Fig Tree Pocket QLD 4069",
+      "total_purchases": 6,
+      "total_invoiced": 12800.00
+    },
+    {
+      "client_id": "CLI-005",
+      "name": "Riverside Corporate Tower",
+      "type": "Commercial",
+      "contact_person": "Rebecca Foster",
+      "email": "rebecca@riversidecorporate.com.au",
+      "phone": "+61 7 3345 6789",
+      "address": "Level 15, 123 Eagle Street, Brisbane QLD 4000",
+      "total_commissions": 0,
+      "total_invoiced": 0.00
+    },
+    {
+      "client_id": "CLI-006",
+      "name": "Marcus & Lisa Johnson",
+      "type": "Private Collector",
+      "email": "johnson.family@email.com",
+      "phone": "+61 434 567 890",
+      "address": "12 Scenic Drive, Paddington QLD 4064",
+      "total_purchases": 0,
+      "total_invoiced": 0.00
+    },
+    {
+      "client_id": "CLI-007",
+      "name": "Queensland Art Gallery",
+      "type": "Gallery",
+      "contact_person": "Amanda Richardson",
+      "email": "exhibitions@qag.qld.gov.au",
+      "phone": "+61 7 3840 7303",
+      "address": "Stanley Place, South Brisbane QLD 4101",
+      "total_commissions": 0,
+      "total_invoiced": 0.00
+    },
+    {
+      "client_id": "CLI-008",
+      "name": "Tony Nguyen",
+      "type": "Private Collector",
+      "email": "tony.nguyen@email.com",
+      "phone": "+61 445 678 901",
+      "address": "89 Park Road, Milton QLD 4064",
+      "total_purchases": 0,
+      "total_invoiced": 0.00
+    },
+    {
+      "client_id": "CLI-009",
+      "name": "West End Gallery",
+      "type": "Gallery - Consignment",
+      "contact_person": "Sophie Martinez",
+      "email": "sophie@westendgallery.com.au",
+      "phone": "+61 7 3844 5678",
+      "address": "156 Boundary Street, West End QLD 4101",
+      "consignment_percentage": 40,
+      "total_sales": 24500.00,
+      "total_invoiced": 14700.00
+    }
+  ],
+  "commissions": [
+    {
+      "commission_id": "COM-2024-012",
+      "client_id": "CLI-001",
+      "client_name": "Brisbane City Council",
+      "description": "Public Art Installation - 'River Reflections' Mural",
+      "status": "Completed",
+      "commission_date": "2024-06-15",
+      "completion_date": "2024-09-20",
+      "artwork_details": {
+        "title": "River Reflections",
+        "medium": "Acrylic mural on rendered wall",
+        "dimensions": "8m x 3.5m",
+        "location": "South Bank Parklands pedestrian underpass",
+        "theme": "Brisbane River ecosystem and indigenous connection to waterways"
+      },
+      "total_value": 35000.00
+    },
+    {
+      "commission_id": "COM-2024-018",
+      "client_id": "CLI-003",
+      "client_name": "The Grand Hotel Brisbane",
+      "description": "Abstract Art Series for Hotel Lobby",
+      "status": "Completed",
+      "commission_date": "2024-08-01",
+      "completion_date": "2024-10-15",
+      "artwork_details": {
+        "title": "Urban Fragments Collection",
+        "medium": "Mixed media on canvas",
+        "pieces": 3,
+        "dimensions": "Each piece 2m x 1.5m",
+        "location": "Hotel main lobby",
+        "theme": "Contemporary Brisbane architecture and city energy"
+      },
+      "total_value": 28000.00
+    },
+    {
+      "commission_id": "COM-2024-024",
+      "client_id": "CLI-005",
+      "client_name": "Riverside Corporate Tower",
+      "description": "Corporate Art Collection - 5 Pieces",
+      "status": "In Progress",
+      "commission_date": "2024-10-05",
+      "estimated_completion": "2024-12-15",
+      "artwork_details": {
+        "title": "Brisbane Botanical Series",
+        "medium": "Oil and acrylic on canvas",
+        "pieces": 5,
+        "dimensions": "Each piece 1.5m x 1m",
+        "location": "Level 15 reception and meeting rooms",
+        "theme": "Native Queensland flora in abstract interpretation"
+      },
+      "total_value": 32000.00,
+      "deposit_received": 12800.00
+    }
+  ],
+  "artworks_available": [
+    {
+      "artwork_id": "ART-2024-089",
+      "title": "Moreton Bay Dawn",
+      "medium": "Acrylic on canvas",
+      "dimensions": "120cm x 90cm",
+      "year": 2024,
+      "price": 3800.00,
+      "status": "Available",
+      "location": "Studio",
+      "description": "Sunrise over Moreton Bay with sailboats, vibrant oranges and blues"
+    },
+    {
+      "artwork_id": "ART-2024-095",
+      "title": "Rainforest Whispers",
+      "medium": "Mixed media on canvas",
+      "dimensions": "150cm x 100cm",
+      "year": 2024,
+      "price": 5200.00,
+      "status": "On consignment",
+      "location": "West End Gallery",
+      "description": "Abstract interpretation of Lamington rainforest with layered textures"
+    },
+    {
+      "artwork_id": "ART-2024-101",
+      "title": "City Pulse",
+      "medium": "Acrylic on canvas",
+      "dimensions": "100cm x 100cm",
+      "year": 2024,
+      "price": 2900.00,
+      "status": "Available",
+      "location": "Studio",
+      "description": "Abstract geometric composition inspired by Brisbane CBD at night"
+    },
+    {
+      "artwork_id": "ART-2024-103",
+      "title": "Coral Dreams",
+      "medium": "Oil on canvas",
+      "dimensions": "90cm x 120cm",
+      "year": 2024,
+      "price": 4100.00,
+      "status": "On consignment",
+      "location": "West End Gallery",
+      "description": "Great Barrier Reef underwater scene with vibrant coral and tropical fish"
+    },
+    {
+      "artwork_id": "ART-2023-156",
+      "title": "Jacaranda Season",
+      "medium": "Acrylic on canvas",
+      "dimensions": "80cm x 60cm",
+      "year": 2023,
+      "price": 2200.00,
+      "status": "Available",
+      "location": "Studio",
+      "description": "Purple jacaranda trees lining a Brisbane street in spring"
+    }
+  ],
+  "invoices": [
+    {
+      "invoice_id": "INV-2024-0156",
+      "client_id": "CLI-001",
+      "client_name": "Brisbane City Council",
+      "artwork": "River Reflections Mural",
+      "issue_date": "2024-09-20",
+      "due_date": "2024-10-20",
+      "status": "Paid",
+      "payment_date": "2024-10-05",
+      "line_items": [
+        {
+          "description": "Final payment - River Reflections public mural commission",
+          "amount": 17500.00
+        }
+      ],
+      "subtotal": 17500.00,
+      "gst": 1750.00,
+      "total": 19250.00,
+      "notes": "Final payment (50%). Deposit of $17,500 received June 2024."
+    },
+    {
+      "invoice_id": "INV-2024-0178",
+      "client_id": "CLI-003",
+      "client_name": "The Grand Hotel Brisbane",
+      "artwork": "Urban Fragments Collection (3 pieces)",
+      "issue_date": "2024-10-15",
+      "due_date": "2024-11-14",
+      "status": "Paid",
+      "payment_date": "2024-10-28",
+      "line_items": [
+        {
+          "description": "Urban Fragments Collection - 3 large scale mixed media works",
+          "quantity": 3,
+          "unit_price": 28000.00,
+          "amount": 28000.00
+        }
+      ],
+      "subtotal": 28000.00,
+      "gst": 2800.00,
+      "total": 30800.00,
+      "notes": "Commission completed. Installed in hotel lobby October 15, 2024."
+    },
+    {
+      "invoice_id": "INV-2024-0189",
+      "client_id": "CLI-002",
+      "client_name": "David & Emma Chen",
+      "artwork": "Coastal Serenity",
+      "issue_date": "2024-10-20",
+      "due_date": "2024-11-19",
+      "status": "Paid",
+      "payment_date": "2024-10-25",
+      "line_items": [
+        {
+          "description": "Original artwork: 'Coastal Serenity' - Acrylic on canvas 120cm x 90cm",
+          "amount": 4200.00
+        },
+        {
+          "description": "Professional framing - white ash timber float frame",
+          "amount": 450.00
+        },
+        {
+          "description": "Delivery and installation to residence",
+          "amount": 200.00
+        }
+      ],
+      "subtotal": 4850.00,
+      "gst": 485.00,
+      "total": 5335.00
+    },
+    {
+      "invoice_id": "INV-2024-0195",
+      "client_id": "CLI-005",
+      "client_name": "Riverside Corporate Tower",
+      "artwork": "Brisbane Botanical Series - Deposit",
+      "issue_date": "2024-10-10",
+      "due_date": "2024-10-24",
+      "status": "Paid",
+      "payment_date": "2024-10-18",
+      "line_items": [
+        {
+          "description": "Commission deposit (40%) - Brisbane Botanical Series (5 pieces)",
+          "calculation": "$32,000 × 40%",
+          "amount": 12800.00
+        }
+      ],
+      "subtotal": 12800.00,
+      "gst": 1280.00,
+      "total": 14080.00,
+      "notes": "Deposit for 5-piece commission. Balance of $19,200 due on completion (Dec 2024)."
+    },
+    {
+      "invoice_id": "INV-2024-0201",
+      "client_id": "CLI-009",
+      "client_name": "West End Gallery",
+      "artwork": "Gallery Sales - October 2024",
+      "issue_date": "2024-10-28",
+      "due_date": "2024-11-27",
+      "status": "Unpaid",
+      "line_items": [
+        {
+          "description": "Sale: 'Rainforest Whispers' - Artist share (60%)",
+          "calculation": "$5,200 sale × 60%",
+          "amount": 3120.00
+        },
+        {
+          "description": "Sale: 'Coral Dreams' - Artist share (60%)",
+          "calculation": "$4,100 sale × 60%",
+          "amount": 2460.00
+        }
+      ],
+      "subtotal": 5580.00,
+      "gst": 558.00,
+      "total": 6138.00,
+      "notes": "Gallery commission sales. Gallery retains 40%."
+    }
+  ],
+  "bills": [
+    {
+      "bill_id": "BILL-2024-0678",
+      "supplier": "Art Materials Australia",
+      "supplier_contact": "Brisbane Store",
+      "supplier_phone": "+61 7 3844 5678",
+      "issue_date": "2024-10-05",
+      "due_date": "2024-11-04",
+      "status": "Paid",
+      "line_items": [
+        {
+          "description": "Acrylic paint - Golden Heavy Body (various colors)",
+          "quantity": 12,
+          "unit_price": 35.00,
+          "total": 420.00
+        },
+        {
+          "description": "Stretched canvas - 150cm x 100cm",
+          "quantity": 5,
+          "unit_price": 125.00,
+          "total": 625.00
+        },
+        {
+          "description": "Paintbrushes - Neef professional range",
+          "quantity": 8,
+          "unit_price": 28.00,
+          "total": 224.00
+        },
+        {
+          "description": "Gesso primer - 5L",
+          "quantity": 2,
+          "unit_price": 85.00,
+          "total": 170.00
+        }
+      ],
+      "subtotal": 1439.00,
+      "gst": 143.90,
+      "total": 1582.90
+    },
+    {
+      "bill_id": "BILL-2024-0679",
+      "supplier": "Eckersley's Art & Craft",
+      "supplier_contact": "Fortitude Valley Store",
+      "supplier_phone": "+61 7 3252 5566",
+      "issue_date": "2024-10-12",
+      "due_date": "2024-11-11",
+      "status": "Paid",
+      "line_items": [
+        {
+          "description": "Oil paints - Winsor & Newton (various colors)",
+          "quantity": 8,
+          "unit_price": 42.00,
+          "total": 336.00
+        },
+        {
+          "description": "Linseed oil - 500ml",
+          "quantity": 3,
+          "unit_price": 28.00,
+          "total": 84.00
+        },
+        {
+          "description": "Turpentine - 1L",
+          "quantity": 2,
+          "unit_price": 22.00,
+          "total": 44.00
+        },
+        {
+          "description": "Palette knives - set of 5",
+          "quantity": 1,
+          "unit_price": 65.00,
+          "total": 65.00
+        }
+      ],
+      "subtotal": 529.00,
+      "gst": 52.90,
+      "total": 581.90
+    },
+    {
+      "bill_id": "BILL-2024-0680",
+      "supplier": "Brisbane Canvas & Stretcher",
+      "supplier_contact": "Custom Orders",
+      "supplier_phone": "+61 7 3891 2345",
+      "issue_date": "2024-10-15",
+      "due_date": "2024-11-14",
+      "status": "Paid",
+      "line_items": [
+        {
+          "description": "Custom stretched canvas - 200cm x 150cm (for commission)",
+          "quantity": 3,
+          "unit_price": 285.00,
+          "total": 855.00
+        }
+      ],
+      "subtotal": 855.00,
+      "gst": 85.50,
+      "total": 940.50
+    },
+    {
+      "bill_id": "BILL-2024-0681",
+      "supplier": "The Artisan Collective",
+      "supplier_contact": "Studio Rentals",
+      "supplier_phone": "+61 7 3844 7890",
+      "issue_date": "2024-10-01",
+      "due_date": "2024-10-15",
+      "status": "Paid",
+      "line_items": [
+        {
+          "description": "Studio 12 - Monthly rent",
+          "quantity": 1,
+          "unit_price": 950.00,
+          "total": 950.00
+        },
+        {
+          "description": "Utilities and building maintenance",
+          "quantity": 1,
+          "unit_price": 125.00,
+          "total": 125.00
+        }
+      ],
+      "subtotal": 1075.00,
+      "gst": 107.50,
+      "total": 1182.50
+    },
+    {
+      "bill_id": "BILL-2024-0682",
+      "supplier": "Brisbane Picture Framing",
+      "supplier_contact": "Commercial Framing",
+      "supplier_phone": "+61 7 3369 8765",
+      "issue_date": "2024-10-18",
+      "due_date": "2024-11-17",
+      "status": "Unpaid",
+      "line_items": [
+        {
+          "description": "Custom white ash float frame - 120cm x 90cm",
+          "quantity": 1,
+          "unit_price": 450.00,
+          "total": 450.00
+        }
+      ],
+      "subtotal": 450.00,
+      "gst": 45.00,
+      "total": 495.00
+    },
+    {
+      "bill_id": "BILL-2024-0683",
+      "supplier": "Adobe Creative Cloud",
+      "supplier_contact": "Subscriptions",
+      "supplier_phone": "1800 676 623",
+      "issue_date": "2024-10-01",
+      "due_date": "2024-10-15",
+      "status": "Paid",
+      "line_items": [
+        {
+          "description": "Adobe Creative Cloud - Photography Plan (Photoshop + Lightroom)",
+          "quantity": 1,
+          "unit_price": 14.29,
+          "total": 14.29
+        }
+      ],
+      "subtotal": 14.29,
+      "gst": 1.43,
+      "total": 15.72
+    }
+  ],
+  "leads": [
+    {
+      "lead_id": "LEAD-2024-145",
+      "name": "Queensland University of Technology",
+      "contact_person": "Dr. Helen Parker",
+      "email": "h.parker@qut.edu.au",
+      "phone": "+61 7 3138 2000",
+      "enquiry_date": "2024-10-26",
+      "status": "Hot",
+      "interest": "Public art installation for new campus building",
+      "estimated_value": 42000.00,
+      "notes": "New science building opening March 2025. Want feature wall mural in main atrium. Decision committee meeting mid-November. Strong interest.",
+      "follow_up_date": "2024-11-05"
+    },
+    {
+      "lead_id": "LEAD-2024-146",
+      "name": "Marcus & Lisa Johnson",
+      "email": "johnson.family@email.com",
+      "phone": "+61 434 567 890",
+      "enquiry_date": "2024-10-28",
+      "status": "Warm",
+      "interest": "Original artwork for new home",
+      "estimated_value": 8500.00,
+      "notes": "Recently moved to Paddington. Looking for 2-3 large original pieces for living areas. Interested in coastal and botanical themes. Want to visit studio.",
+      "follow_up_date": "2024-11-02"
+    },
+    {
+      "lead_id": "LEAD-2024-147",
+      "name": "Queensland Art Gallery",
+      "contact_person": "Amanda Richardson",
+      "email": "exhibitions@qag.qld.gov.au",
+      "phone": "+61 7 3840 7303",
+      "enquiry_date": "2024-10-24",
+      "status": "Warm",
+      "interest": "Group exhibition - Emerging Queensland Artists 2025",
+      "estimated_value": 15000.00,
+      "notes": "Curating group show for April 2025. Interested in including 3-4 pieces from botanical series. Gallery takes 30% commission. Prestigious opportunity.",
+      "follow_up_date": "2024-11-10"
+    },
+    {
+      "lead_id": "LEAD-2024-148",
+      "name": "Fortitude Valley Cafe & Wine Bar",
+      "contact_person": "Sophie Chen",
+      "email": "sophie@valleycafe.com.au",
+      "phone": "+61 489 012 345",
+      "enquiry_date": "2024-10-29",
+      "status": "Cold",
+      "interest": "Rotating art display in cafe",
+      "estimated_value": 3000.00,
+      "notes": "Want to display local artists' work. Wall space for 4-6 pieces. 50/50 split on sales. Small budget but good exposure to clientele.",
+      "follow_up_date": "2024-11-15"
+    },
+    {
+      "lead_id": "LEAD-2024-149",
+      "name": "Gold Coast Luxury Apartments",
+      "contact_person": "Daniel Kim",
+      "email": "daniel@gcluxuryapts.com.au",
+      "phone": "+61 7 5532 8765",
+      "enquiry_date": "2024-10-27",
+      "status": "Warm",
+      "interest": "Art package for 8 display apartments",
+      "estimated_value": 35000.00,
+      "notes": "New development opening January. Need coastal-themed artwork for display apartments. Budget $4k-5k per apartment. Want cohesive collection.",
+      "follow_up_date": "2024-11-08"
+    },
+    {
+      "lead_id": "LEAD-2024-150",
+      "name": "Tony Nguyen",
+      "email": "tony.nguyen@email.com",
+      "phone": "+61 445 678 901",
+      "enquiry_date": "2024-10-25",
+      "status": "Cold",
+      "interest": "Portrait commission",
+      "estimated_value": 5000.00,
+      "notes": "Wants family portrait commission. Saw work on Instagram. Exploring options and timing. Not immediate priority.",
+      "follow_up_date": "2024-11-20"
+    }
+  ],
+  "exhibitions_and_events": [
+    {
+      "event_id": "EVENT-2024-012",
+      "name": "West End Open Studios Weekend",
+      "type": "Open Studio",
+      "date": "2024-11-16 to 2024-11-17",
+      "location": "The Artisan Collective, West End",
+      "status": "Upcoming",
+      "expected_visitors": 200,
+      "costs": 125.00,
+      "notes": "Annual open studios event. Good for networking and direct sales."
+    },
+    {
+      "event_id": "EVENT-2024-015",
+      "name": "Brisbane Art Fair 2024",
+      "type": "Art Fair",
+      "date": "2024-12-08 to 2024-12-10",
+      "location": "Brisbane Convention Centre",
+      "status": "Confirmed",
+      "booth_cost": 2850.00,
+      "expected_visitors": 5000,
+      "notes": "Sharing booth with two other local artists. Major selling opportunity."
+    }
+  ],
+  "google_drive_files": [
+    {
+      "file_id": "FILE-001",
+      "file_name": "RiverReflections_Mural_Final.jpg",
+      "file_type": "image/jpeg",
+      "commission_id": "COM-2024-012",
+      "upload_date": "2024-09-20",
+      "description": "Completed River Reflections public mural at South Bank"
+    },
+    {
+      "file_id": "FILE-002",
+      "file_name": "UrbanFragments_Installation_GrandHotel.jpg",
+      "file_type": "image/jpeg",
+      "commission_id": "COM-2024-018",
+      "upload_date": "2024-10-15",
+      "description": "Urban Fragments collection installed in hotel lobby"
+    },
+    {
+      "file_id": "FILE-003",
+      "file_name": "BrisbaneBotanical_Sketches.pdf",
+      "file_type": "application/pdf",
+      "commission_id": "COM-2024-024",
+      "upload_date": "2024-10-08",
+      "description": "Preliminary sketches for Riverside Corporate commission"
+    },
+    {
+      "file_id": "FILE-004",
+      "file_name": "Portfolio_2024.pdf",
+      "file_type": "application/pdf",
+      "upload_date": "2024-09-01",
+      "description": "Current portfolio of works for client presentations"
+    },
+    {
+      "file_id": "FILE-005",
+      "file_name": "Studio_Workspace.jpg",
+      "file_type": "image/jpeg",
+      "upload_date": "2024-08-15",
+      "description": "Studio workspace photos for social media and website"
+    },
+    {
+      "file_id": "FILE-006",
+      "file_name": "Available_Works_Catalog_Oct2024.pdf",
+      "file_type": "application/pdf",
+      "upload_date": "2024-10-01",
+      "description": "Catalog of available works with prices and dimensions"
+    },
+    {
+      "file_id": "FILE-007",
+      "file_name": "Commission_Agreement_Template.docx",
+      "file_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "upload_date": "2024-03-12",
+      "description": "Standard commission agreement template"
+    },
+    {
+      "file_id": "FILE-008",
+      "file_name": "Public_Liability_Insurance_2024.pdf",
+      "file_type": "application/pdf",
+      "upload_date": "2024-06-01",
+      "description": "Public liability insurance certificate for public installations"
+    }
+  ]
+}
+
