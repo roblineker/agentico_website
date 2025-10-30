@@ -1,33 +1,6 @@
 {
-  "mcpServers": {
-    "Notion_Agentico": {
+  "mcpServers": {"Notion": {
       "url": "https://mcp.notion.com/mcp",
       "headers": {}
-    },
-    "n8n-mcp-docker": {
-      "command": "docker",
-      "args": [
-        "run",
-        "-i",
-        "--rm",
-        "--init",
-        "-e",
-        "N8N_API_URL=https://agentico.app.n8n.cloud/api/v1",
-        "-e",
-        "N8N_API_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI3YTk0ZTZlMi0zM2NhLTQ5ZDQtOTRiYi0wODVmZGY1NWQ2YTIiLCJpc3MiOiJuOG4iLCJhdWQiOiJwdWJsaWMtYXBpIiwiaWF0IjoxNzYxNTM0MDAwfQ.pe7srVVYx2oiW2BmTeBKyb5GcZcQOCKKtGJXTtuUvw4",
-        "ghcr.io/czlonkowski/n8n-mcp:latest"
-      ]
-    },
-    "n8n-mcp": {
-      "command": "npx",
-      "args": ["-y", "n8n-mcp"],
-      "env": {
-        "MCP_MODE": "stdio",
-        "LOG_LEVEL": "debug",
-        "DISABLE_CONSOLE_OUTPUT": "false",
-        "N8N_API_URL": "https://agentico.app.n8n.cloud/api/v1",
-        "N8N_API_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI3YTk0ZTZlMi0zM2NhLTQ5ZDQtOTRiYi0wODVmZGY1NWQ2YTIiLCJpc3MiOiJuOG4iLCJhdWQiOiJwdWJsaWMtYXBpIiwiaWF0IjoxNzYxNTM0MDAwfQ.pe7srVVYx2oiW2BmTeBKyb5GcZcQOCKKtGJXTtuUvw4"
-      }
-    }
-  }
+    }}
 }

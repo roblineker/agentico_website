@@ -9,7 +9,7 @@ A modern Next.js website for Agentico, an AI consultancy specializing in busines
 - **Responsive Design**: Mobile-first approach with proper breakpoints
 - **AI Integration**: ElevenLabs conversational AI widget embedded
 - **SEO Optimized**: Proper meta tags, sitemap, and robots.txt
-- **Form Ready**: Contact form structure prepared for backend integration
+- **Form Integration**: Contact form with Notion database and N8N webhook integration
 - **Performance**: Optimized images and lazy loading
 
 ## Sections
@@ -82,7 +82,11 @@ All content is defined within the components. Update the arrays and text directl
 
 ### Form Integration
 
-The contact form in `contact-section.tsx` is ready for backend integration. Add your form handling logic to the form submission.
+The contact form in `contact-section.tsx` integrates with:
+- **Notion Database**: Automatically saves all form submissions to a Notion database for lead tracking
+- **N8N Webhooks**: Sends form data to N8N workflows for automation
+
+See [NOTION-SETUP.md](./NOTION-SETUP.md) for detailed setup instructions.
 
 ## Deployment
 
@@ -96,7 +100,23 @@ npm run build
 
 ### Environment Variables
 
-Add any required environment variables for form handling or API integrations.
+Create a `.env.local` file in the root directory with the following variables:
+
+```env
+# Notion Configuration (Required for form submissions to Notion)
+NOTION_API_TOKEN=secret_your_notion_integration_token
+# Note: Database is auto-discovered - no database ID needed!
+
+# N8N Webhook Configuration (Optional)
+N8N_TEST_WEBHOOK_URL=https://your-n8n-instance.com/webhook-test/path
+N8N_PROD_WEBHOOK_URL=https://your-n8n-instance.com/webhook/path
+N8N_SEND_TO_BOTH=false
+
+# Next.js
+NODE_ENV=development
+```
+
+See [NOTION-SETUP.md](./NOTION-SETUP.md) for detailed configuration instructions.
 
 ## Technologies Used
 
@@ -106,6 +126,9 @@ Add any required environment variables for form handling or API integrations.
 - **shadcn/ui** - Component library
 - **Lucide React** - Icon library
 - **ElevenLabs** - Conversational AI widget
+- **Notion API** - Database integration for lead tracking (API v2025-09-03)
+- **Notion MCP** - Model Context Protocol for AI workspace access
+- **Zod** - Schema validation
 
 ## License
 

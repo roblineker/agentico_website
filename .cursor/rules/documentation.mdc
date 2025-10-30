@@ -1,0 +1,5 @@
+---
+alwaysApply: true
+---
+
+When creating documentation, please review existing documentation files (.md and .mdc) to ensure we are not doubling up or creating redunant files. We should maintain a well documented app that is not conficting.
