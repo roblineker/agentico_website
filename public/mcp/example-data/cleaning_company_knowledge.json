@@ -1,0 +1,689 @@
+{
+  "company": {
+    "name": "Sparkle Clean Services",
+    "abn": "90 123 456 789",
+    "email": "info@sparkleclean.com.au",
+    "phone": "+61 7 3345 6789",
+    "address": "Unit 5, 78 Industrial Drive, Salisbury QLD 4107",
+    "website": "www.sparkleclean.com.au",
+    "specializations": ["Residential Cleaning", "Commercial Cleaning", "End of Lease", "Carpet Cleaning", "Window Cleaning"]
+  },
+  "integrations": {
+    "scheduling": "Jobber",
+    "accounting": "Xero",
+    "staff_management": "Deputy",
+    "quality_control": "YourTradebase",
+    "voice_agent": "Custom Voice Agent",
+    "file_storage": "OneDrive",
+    "invoicing": "Jobber"
+  },
+  "clients": [
+    {
+      "client_id": "CLI-001",
+      "name": "Sarah Mitchell",
+      "type": "Residential",
+      "email": "sarah.m@email.com",
+      "phone": "+61 412 234 567",
+      "address": "45 Hillside Crescent, Bardon QLD 4065",
+      "service_frequency": "Fortnightly",
+      "service_type": "Regular House Clean",
+      "relationship_start": "2023-03-15",
+      "total_invoiced_ytd": 1560.00,
+      "account_manager": "Maria Garcia"
+    },
+    {
+      "client_id": "CLI-002",
+      "name": "Brisbane Commercial Plaza",
+      "type": "Commercial",
+      "contact_person": "David Chen",
+      "email": "david.c@commercialplaza.com.au",
+      "phone": "+61 423 345 678",
+      "address": "123 Queen Street, Brisbane City QLD 4000",
+      "service_frequency": "Daily",
+      "service_type": "Office Cleaning",
+      "relationship_start": "2021-06-01",
+      "total_invoiced_ytd": 24500.00,
+      "account_manager": "Tony Rodriguez"
+    },
+    {
+      "client_id": "CLI-003",
+      "name": "Emma Thompson",
+      "type": "Residential",
+      "email": "emma.t@email.com",
+      "phone": "+61 434 456 789",
+      "address": "78 Garden Street, Ashgrove QLD 4060",
+      "service_frequency": "Weekly",
+      "service_type": "Regular House Clean",
+      "relationship_start": "2024-01-20",
+      "total_invoiced_ytd": 3120.00,
+      "account_manager": "Maria Garcia"
+    },
+    {
+      "client_id": "CLI-004",
+      "name": "Brisbane Medical Centre",
+      "type": "Commercial",
+      "contact_person": "Dr. Rebecca Walsh",
+      "email": "r.walsh@medicalcentre.com.au",
+      "phone": "+61 445 567 890",
+      "address": "67 Medical Drive, Chermside QLD 4032",
+      "service_frequency": "5 days/week",
+      "service_type": "Medical Facility Cleaning",
+      "relationship_start": "2022-09-10",
+      "total_invoiced_ytd": 18500.00,
+      "account_manager": "Tony Rodriguez"
+    },
+    {
+      "client_id": "CLI-005",
+      "name": "James Rodriguez",
+      "type": "Residential",
+      "email": "james.r@email.com",
+      "phone": "+61 456 678 901",
+      "address": "156 Riverside Drive, Hamilton QLD 4007",
+      "service_frequency": "Monthly Deep Clean",
+      "service_type": "Deep Clean",
+      "relationship_start": "2023-11-05",
+      "total_invoiced_ytd": 1200.00,
+      "account_manager": "Maria Garcia"
+    },
+    {
+      "client_id": "CLI-006",
+      "name": "FitZone Gym & Fitness",
+      "type": "Commercial",
+      "contact_person": "Tony Wilson",
+      "email": "tony@fitzone.com.au",
+      "phone": "+61 467 789 012",
+      "address": "Unit 1-2, 200 Commercial Road, Newstead QLD 4006",
+      "service_frequency": "Daily",
+      "service_type": "Gym Cleaning",
+      "relationship_start": "2022-01-15",
+      "total_invoiced_ytd": 18500.00,
+      "account_manager": "Tony Rodriguez"
+    },
+    {
+      "client_id": "CLI-007",
+      "name": "Lisa Park - End of Lease",
+      "type": "One-Off",
+      "email": "lisa.p@email.com",
+      "phone": "+61 478 890 123",
+      "address": "Unit 15/89 Ferry Road, West End QLD 4101",
+      "service_frequency": "One-Off",
+      "service_type": "End of Lease Clean",
+      "relationship_start": "2024-10-15",
+      "total_invoiced_ytd": 450.00,
+      "account_manager": "Maria Garcia"
+    },
+    {
+      "client_id": "CLI-008",
+      "name": "Napoli Pizza Kitchen",
+      "type": "Commercial",
+      "contact_person": "Marco Rossi",
+      "email": "marco@napolipizza.com.au",
+      "phone": "+61 489 901 234",
+      "address": "Shop 12, 145 Main Road, Clayfield QLD 4011",
+      "service_frequency": "3 times/week",
+      "service_type": "Restaurant Cleaning",
+      "relationship_start": "2023-04-10",
+      "total_invoiced_ytd": 9360.00,
+      "account_manager": "Tony Rodriguez"
+    },
+    {
+      "client_id": "CLI-009",
+      "name": "Carlos Martinez",
+      "type": "Residential",
+      "email": "carlos.m@email.com",
+      "phone": "+61 490 012 345",
+      "address": "23 Parkview Terrace, Chapel Hill QLD 4069",
+      "service_frequency": "Fortnightly",
+      "service_type": "Regular House Clean",
+      "relationship_start": "2024-08-20",
+      "total_invoiced_ytd": 520.00,
+      "account_manager": "Maria Garcia"
+    }
+  ],
+  "jobs": [
+    {
+      "job_id": "JOB-2024-3456",
+      "client_id": "CLI-001",
+      "client_name": "Sarah Mitchell",
+      "job_type": "Regular House Clean",
+      "status": "Completed",
+      "scheduled_date": "2024-10-28",
+      "scheduled_time": "9:00 AM",
+      "duration_hours": 3.0,
+      "assigned_cleaners": ["Maria Garcia", "Sophie Williams"],
+      "job_value": 120.00,
+      "notes": "Standard fortnightly clean. Client very happy with service."
+    },
+    {
+      "job_id": "JOB-2024-3478",
+      "client_id": "CLI-002",
+      "client_name": "Brisbane Commercial Plaza",
+      "job_type": "Office Cleaning",
+      "status": "Completed",
+      "scheduled_date": "2024-10-29",
+      "scheduled_time": "6:00 PM",
+      "duration_hours": 4.5,
+      "assigned_cleaners": ["Tony Rodriguez", "Luke Stevens", "Jake Morrison"],
+      "job_value": 285.00,
+      "notes": "Daily office clean. All floors and bathrooms completed."
+    },
+    {
+      "job_id": "JOB-2024-3490",
+      "client_id": "CLI-007",
+      "client_name": "Lisa Park - End of Lease",
+      "job_type": "End of Lease Clean",
+      "status": "Completed",
+      "scheduled_date": "2024-10-18",
+      "scheduled_time": "8:00 AM",
+      "duration_hours": 6.0,
+      "assigned_cleaners": ["Maria Garcia", "Sophie Williams", "Emma Rodriguez"],
+      "job_value": 450.00,
+      "notes": "Full end of lease clean including carpet steam clean. Passed inspection."
+    }
+  ],
+  "invoices": [
+    {
+      "invoice_id": "INV-2024-2456",
+      "client_id": "CLI-001",
+      "client_name": "Sarah Mitchell",
+      "invoice_date": "2024-10-31",
+      "due_date": "2024-11-14",
+      "status": "Sent",
+      "payment_date": null,
+      "subtotal": 240.00,
+      "gst": 24.00,
+      "total": 264.00,
+      "description": "Fortnightly cleaning - October 2024",
+      "xero_invoice_id": "XERO-INV-2456",
+      "line_items": [
+        {
+          "description": "House cleaning service - 14th October",
+          "quantity": 1,
+          "unit_price": 120.00,
+          "gst": 12.00,
+          "total": 132.00
+        },
+        {
+          "description": "House cleaning service - 28th October",
+          "quantity": 1,
+          "unit_price": 120.00,
+          "gst": 12.00,
+          "total": 132.00
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-2024-2478",
+      "client_id": "CLI-002",
+      "client_name": "Brisbane Commercial Plaza",
+      "invoice_date": "2024-10-31",
+      "due_date": "2024-11-30",
+      "status": "Sent",
+      "payment_date": null,
+      "subtotal": 6270.00,
+      "gst": 627.00,
+      "total": 6897.00,
+      "description": "Daily office cleaning - October 2024",
+      "xero_invoice_id": "XERO-INV-2478",
+      "line_items": [
+        {
+          "description": "Daily office cleaning service - October (22 working days)",
+          "quantity": 22,
+          "unit_price": 285.00,
+          "gst": 627.00,
+          "total": 6897.00
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-2024-2490",
+      "client_id": "CLI-003",
+      "client_name": "Emma Thompson",
+      "invoice_date": "2024-10-31",
+      "due_date": "2024-11-14",
+      "status": "Sent",
+      "payment_date": null,
+      "subtotal": 520.00,
+      "gst": 52.00,
+      "total": 572.00,
+      "description": "Weekly cleaning - October 2024",
+      "xero_invoice_id": "XERO-INV-2490",
+      "line_items": [
+        {
+          "description": "Weekly house cleaning service - October (4 services)",
+          "quantity": 4,
+          "unit_price": 130.00,
+          "gst": 52.00,
+          "total": 572.00
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-2024-2412",
+      "client_id": "CLI-007",
+      "client_name": "Lisa Park - End of Lease",
+      "invoice_date": "2024-10-18",
+      "due_date": "2024-10-25",
+      "status": "Paid",
+      "payment_date": "2024-10-22",
+      "subtotal": 450.00,
+      "gst": 45.00,
+      "total": 495.00,
+      "description": "End of lease clean",
+      "xero_invoice_id": "XERO-INV-2412",
+      "line_items": [
+        {
+          "description": "End of lease cleaning - 2 bedroom apartment",
+          "quantity": 1,
+          "unit_price": 350.00,
+          "gst": 35.00,
+          "total": 385.00
+        },
+        {
+          "description": "Carpet steam cleaning",
+          "quantity": 1,
+          "unit_price": 100.00,
+          "gst": 10.00,
+          "total": 110.00
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-2024-2501",
+      "client_id": "CLI-004",
+      "client_name": "Brisbane Medical Centre",
+      "invoice_date": "2024-10-31",
+      "due_date": "2024-11-30",
+      "status": "Sent",
+      "payment_date": null,
+      "subtotal": 4675.00,
+      "gst": 467.50,
+      "total": 5142.50,
+      "description": "Medical facility cleaning - October 2024",
+      "xero_invoice_id": "XERO-INV-2501",
+      "line_items": [
+        {
+          "description": "Medical facility cleaning - October (22 days)",
+          "quantity": 22,
+          "unit_price": 212.50,
+          "gst": 467.50,
+          "total": 5142.50
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-2024-2523",
+      "client_id": "CLI-006",
+      "client_name": "FitZone Gym & Fitness",
+      "invoice_date": "2024-10-31",
+      "due_date": "2024-11-30",
+      "status": "Sent",
+      "payment_date": null,
+      "subtotal": 1850.00,
+      "gst": 185.00,
+      "total": 2035.00,
+      "description": "Daily gym cleaning - October 2024",
+      "xero_invoice_id": "XERO-INV-2523",
+      "line_items": [
+        {
+          "description": "Daily gym cleaning service - October (31 days)",
+          "quantity": 31,
+          "unit_price": 59.68,
+          "gst": 185.00,
+          "total": 2035.00
+        }
+      ]
+    }
+  ],
+  "bills": [
+    {
+      "bill_id": "BILL-2024-4567",
+      "supplier": "Bunnings - Rocklea",
+      "bill_date": "2024-10-15",
+      "due_date": "2024-11-14",
+      "status": "Unpaid",
+      "payment_date": null,
+      "subtotal": 1285.00,
+      "gst": 128.50,
+      "total": 1413.50,
+      "description": "Cleaning supplies - October stock",
+      "xero_bill_id": "XERO-BILL-4567",
+      "line_items": [
+        {
+          "description": "Commercial cleaning chemicals",
+          "quantity": 1,
+          "unit_price": 685.00,
+          "gst": 68.50,
+          "total": 753.50
+        },
+        {
+          "description": "Microfibre cloths, mop heads, gloves",
+          "quantity": 1,
+          "unit_price": 385.00,
+          "gst": 38.50,
+          "total": 423.50
+        },
+        {
+          "description": "Vacuum bags and consumables",
+          "quantity": 1,
+          "unit_price": 215.00,
+          "gst": 21.50,
+          "total": 236.50
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-4589",
+      "supplier": "Cleanroom Supplies",
+      "bill_date": "2024-10-20",
+      "due_date": "2024-11-19",
+      "status": "Unpaid",
+      "payment_date": null,
+      "subtotal": 850.00,
+      "gst": 85.00,
+      "total": 935.00,
+      "description": "Specialized cleaning equipment",
+      "xero_bill_id": "XERO-BILL-4589",
+      "line_items": [
+        {
+          "description": "Hospital-grade disinfectant - 20L",
+          "quantity": 4,
+          "unit_price": 125.00,
+          "gst": 50.00,
+          "total": 550.00
+        },
+        {
+          "description": "Commercial window cleaning solution",
+          "quantity": 6,
+          "unit_price": 58.33,
+          "gst": 35.00,
+          "total": 385.00
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-4601",
+      "supplier": "Jobber Software",
+      "bill_date": "2024-10-01",
+      "due_date": "2024-10-31",
+      "status": "Paid",
+      "payment_date": "2024-10-15",
+      "subtotal": 285.00,
+      "gst": 28.50,
+      "total": 313.50,
+      "description": "Scheduling software - October",
+      "xero_bill_id": "XERO-BILL-4601",
+      "line_items": [
+        {
+          "description": "Jobber subscription - 8 users",
+          "quantity": 1,
+          "unit_price": 285.00,
+          "gst": 28.50,
+          "total": 313.50
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-4612",
+      "supplier": "Deputy",
+      "bill_date": "2024-10-01",
+      "due_date": "2024-10-31",
+      "status": "Paid",
+      "payment_date": "2024-10-15",
+      "subtotal": 195.00,
+      "gst": 19.50,
+      "total": 214.50,
+      "description": "Staff management software - October",
+      "xero_bill_id": "XERO-BILL-4612",
+      "line_items": [
+        {
+          "description": "Deputy subscription - 12 staff",
+          "quantity": 1,
+          "unit_price": 195.00,
+          "gst": 19.50,
+          "total": 214.50
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-4623",
+      "supplier": "Commercial Vehicle Insurance",
+      "bill_date": "2024-10-10",
+      "due_date": "2024-11-09",
+      "status": "Unpaid",
+      "payment_date": null,
+      "subtotal": 385.00,
+      "gst": 38.50,
+      "total": 423.50,
+      "description": "Vehicle insurance - monthly premium",
+      "xero_bill_id": "XERO-BILL-4623",
+      "line_items": [
+        {
+          "description": "Commercial vehicle insurance - 3 vans",
+          "quantity": 1,
+          "unit_price": 385.00,
+          "gst": 38.50,
+          "total": 423.50
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-4634",
+      "supplier": "BP Fuel Card",
+      "bill_date": "2024-10-25",
+      "due_date": "2024-11-24",
+      "status": "Unpaid",
+      "payment_date": null,
+      "subtotal": 1285.00,
+      "gst": 128.50,
+      "total": 1413.50,
+      "description": "Fuel - October",
+      "xero_bill_id": "XERO-BILL-4634",
+      "line_items": [
+        {
+          "description": "Fuel for company vehicles - October",
+          "quantity": 1,
+          "unit_price": 1285.00,
+          "gst": 128.50,
+          "total": 1413.50
+        }
+      ]
+    }
+  ],
+  "leads": [
+    {
+      "lead_id": "LEAD-2024-890",
+      "name": "Michael Patterson",
+      "type": "Residential",
+      "email": "m.patterson@email.com",
+      "phone": "+61 421 345 678",
+      "source": "Website Inquiry",
+      "date_created": "2024-10-25",
+      "status": "Quote Sent",
+      "service_interested": "Fortnightly House Clean",
+      "estimated_value": 2880.00,
+      "location": "Paddington QLD",
+      "notes": "4 bed, 2 bath house. Quote sent for fortnightly service.",
+      "last_contact": "2024-10-26",
+      "next_followup": "2024-11-02"
+    },
+    {
+      "lead_id": "LEAD-2024-891",
+      "name": "Brisbane Real Estate Agency",
+      "type": "Commercial",
+      "contact_person": "Sophie Williams",
+      "email": "sophie@realestate.com.au",
+      "phone": "+61 432 456 789",
+      "source": "Referral",
+      "date_created": "2024-10-26",
+      "status": "Meeting Scheduled",
+      "service_interested": "End of Lease Cleaning Contract",
+      "estimated_value": 15000.00,
+      "location": "Multiple locations",
+      "notes": "Real estate agency needs regular end of lease cleaners. Meeting scheduled Nov 4.",
+      "last_contact": "2024-10-27",
+      "next_followup": "2024-11-04"
+    },
+    {
+      "lead_id": "LEAD-2024-892",
+      "name": "Tony Chen",
+      "type": "Commercial",
+      "email": "tony@businesspark.com.au",
+      "phone": "+61 443 567 890",
+      "source": "Voice Agent - Inbound Call",
+      "date_created": "2024-10-28",
+      "status": "Quote Preparation",
+      "service_interested": "Office Cleaning - Weekly",
+      "estimated_value": 8400.00,
+      "location": "South Brisbane QLD",
+      "notes": "Small office building, 3 floors. Preparing quote for weekly service.",
+      "last_contact": "2024-10-28",
+      "next_followup": "2024-10-31"
+    },
+    {
+      "lead_id": "LEAD-2024-893",
+      "name": "Rebecca Foster",
+      "type": "Residential",
+      "email": "rebecca.f@email.com",
+      "phone": "+61 454 678 901",
+      "source": "Google Search",
+      "date_created": "2024-10-29",
+      "status": "Initial Contact",
+      "service_interested": "One-off Deep Clean",
+      "estimated_value": 380.00,
+      "location": "Bardon QLD",
+      "notes": "Needs one-off deep clean before hosting family. Sending quote.",
+      "last_contact": "2024-10-29",
+      "next_followup": "2024-11-01"
+    }
+  ],
+  "staff": [
+    {
+      "staff_id": "STAFF-001",
+      "name": "Tony Rodriguez",
+      "role": "Owner / Operations Manager",
+      "email": "tony@sparkleclean.com.au",
+      "phone": "+61 421 567 890",
+      "qualifications": ["Business Management", "OH&S Certificate"],
+      "employment_type": "Full Time",
+      "employment_start": "2019-01-15"
+    },
+    {
+      "staff_id": "STAFF-002",
+      "name": "Maria Garcia",
+      "role": "Team Leader / Cleaner",
+      "email": "maria@sparkleclean.com.au",
+      "phone": "+61 432 678 901",
+      "qualifications": ["Commercial Cleaning Certificate", "First Aid"],
+      "employment_type": "Full Time",
+      "hourly_rate": 28.50,
+      "employment_start": "2019-06-01"
+    },
+    {
+      "staff_id": "STAFF-003",
+      "name": "Sophie Williams",
+      "role": "Cleaner",
+      "email": "sophie@sparkleclean.com.au",
+      "phone": "+61 443 789 012",
+      "qualifications": ["Commercial Cleaning Certificate"],
+      "employment_type": "Full Time",
+      "hourly_rate": 26.00,
+      "employment_start": "2020-03-15"
+    },
+    {
+      "staff_id": "STAFF-004",
+      "name": "Luke Stevens",
+      "role": "Cleaner",
+      "email": "luke@sparkleclean.com.au",
+      "phone": "+61 454 890 123",
+      "qualifications": ["Commercial Cleaning Certificate"],
+      "employment_type": "Part Time",
+      "hourly_rate": 25.50,
+      "employment_start": "2021-08-10"
+    },
+    {
+      "staff_id": "STAFF-005",
+      "name": "Emma Rodriguez",
+      "role": "Cleaner",
+      "email": "emma@sparkleclean.com.au",
+      "phone": "+61 465 901 234",
+      "qualifications": ["Commercial Cleaning Certificate"],
+      "employment_type": "Part Time",
+      "hourly_rate": 25.00,
+      "employment_start": "2022-02-20"
+    },
+    {
+      "staff_id": "STAFF-006",
+      "name": "Jake Morrison",
+      "role": "Cleaner",
+      "email": "jake@sparkleclean.com.au",
+      "phone": "+61 476 012 345",
+      "qualifications": [],
+      "employment_type": "Casual",
+      "hourly_rate": 24.50,
+      "employment_start": "2023-06-01"
+    }
+  ],
+  "onedrive_files": [
+    {
+      "file_id": "OD-LICENSE-001",
+      "file_name": "Business_Licence_2024.pdf",
+      "file_type": "Licence",
+      "file_path": "/Compliance/Licences/",
+      "upload_date": "2024-07-01",
+      "uploaded_by": "Tony Rodriguez",
+      "description": "Business licence - Expires 30/06/2025",
+      "file_size": "456 KB"
+    },
+    {
+      "file_id": "OD-INSURANCE-001",
+      "file_name": "Public_Liability_Insurance_2024.pdf",
+      "file_type": "Insurance",
+      "file_path": "/Compliance/Insurance/",
+      "upload_date": "2024-07-01",
+      "uploaded_by": "Tony Rodriguez",
+      "description": "$20M Public Liability - Expires 30/06/2025",
+      "file_size": "678 KB"
+    },
+    {
+      "file_id": "OD-SAFETY-001",
+      "file_name": "Safety_Management_Plan_2024.pdf",
+      "file_type": "Safety Documentation",
+      "file_path": "/Compliance/Safety/",
+      "upload_date": "2024-01-15",
+      "uploaded_by": "Tony Rodriguez",
+      "description": "Company safety management plan and procedures",
+      "file_size": "1.2 MB"
+    },
+    {
+      "file_id": "OD-TRAINING-001",
+      "file_name": "Staff_Training_Certificates.pdf",
+      "file_type": "Training Records",
+      "file_path": "/Staff/Training/",
+      "upload_date": "2024-09-01",
+      "uploaded_by": "Maria Garcia",
+      "description": "Staff cleaning and safety certificates",
+      "file_size": "890 KB"
+    },
+    {
+      "file_id": "OD-CHECKLIST-001",
+      "file_name": "Standard_Cleaning_Checklists.pdf",
+      "file_type": "Procedures",
+      "file_path": "/Procedures/",
+      "upload_date": "2024-03-01",
+      "uploaded_by": "Tony Rodriguez",
+      "description": "Standard cleaning checklists for all service types",
+      "file_size": "645 KB"
+    }
+  ],
+  "metadata": {
+    "data_purpose": "11Labs Voice Agent Knowledge Base",
+    "business_type": "Cleaning Services Company",
+    "data_format": "JSON",
+    "last_updated": "2024-10-30",
+    "currency": "AUD",
+    "timezone": "Australia/Brisbane",
+    "notes": "This is dummy data for demonstration purposes. All client names, financial data, and job information are fictional."
+  }
+}
+

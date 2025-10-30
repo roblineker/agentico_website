@@ -6,13 +6,13 @@ import * as path from 'path';
 const KNOWLEDGE_BASE_PATH = path.join(process.cwd(), 'public', 'mcp', 'example-data');
 
 // Helper function to read JSON files
-function readKnowledgeFile(filename: string): any {
+function readKnowledgeFile(filename: string): Record<string, unknown> {
     const filePath = path.join(KNOWLEDGE_BASE_PATH, filename);
     if (!fs.existsSync(filePath)) {
         throw new Error(`Knowledge file not found: ${filename}`);
     }
     const content = fs.readFileSync(filePath, 'utf-8');
-    return JSON.parse(content);
+    return JSON.parse(content) as Record<string, unknown>;
 }
 
 // Helper function to list all knowledge files
@@ -24,9 +24,19 @@ function listKnowledgeFiles(): string[] {
 }
 
 // Helper function to search across all knowledge bases
-function searchKnowledgeBase(query: string, maxResults: number = 5): any[] {
+function searchKnowledgeBase(query: string, maxResults: number = 5): Array<{
+    source: string;
+    relevanceScore: number;
+    data: Record<string, unknown>;
+    matchedTerms: number;
+}> {
     const files = listKnowledgeFiles();
-    const results: any[] = [];
+    const results: Array<{
+        source: string;
+        relevanceScore: number;
+        data: Record<string, unknown>;
+        matchedTerms: number;
+    }> = [];
     const searchTerms = query.toLowerCase().split(' ').filter(term => term.length > 2);
 
     for (const file of files) {
@@ -60,11 +70,11 @@ function searchKnowledgeBase(query: string, maxResults: number = 5): any[] {
 }
 
 // Helper function to extract specific data from knowledge base
-function extractDataByPath(filename: string, jsonPath: string): any {
+function extractDataByPath(filename: string, jsonPath: string): unknown {
     const data = readKnowledgeFile(filename);
     const pathParts = jsonPath.split('.');
     
-    let current = data;
+    let current: unknown = data;
     for (const part of pathParts) {
         if (current === null || current === undefined) {
             return null;
@@ -74,9 +84,12 @@ function extractDataByPath(filename: string, jsonPath: string): any {
         const arrayMatch = part.match(/^(.+)\[(\d+)\]$/);
         if (arrayMatch) {
             const [, key, index] = arrayMatch;
-            current = current[key]?.[parseInt(index)];
+            current = (current as Record<string, unknown>)[key];
+            if (Array.isArray(current)) {
+                current = current[parseInt(index)];
+            }
         } else {
-            current = current[part];
+            current = (current as Record<string, unknown>)[part];
         }
     }
     
@@ -226,17 +239,18 @@ export async function POST(request: NextRequest) {
             result
         });
 
-    } catch (error: any) {
+    } catch (error) {
         console.error('MCP Error:', error);
+        const errorMessage = error instanceof Error ? error.message : 'Internal server error';
         return NextResponse.json({
             success: false,
-            error: error.message || 'Internal server error'
+            error: errorMessage
         }, { status: 500 });
     }
 }
 
 // OPTIONS endpoint - for CORS
-export async function OPTIONS(request: NextRequest) {
+export async function OPTIONS() {
     return new NextResponse(null, {
         status: 200,
         headers: {
