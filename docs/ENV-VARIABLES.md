@@ -44,17 +44,26 @@ OPENAI_API_KEY=sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
   - Custom style guide generation for each lead
 - **Note**: Requires GPT-4 access on your OpenAI account
 
-### Notion Style Guide Databases (for storing generated style guides)
+### Notion Database IDs (for lead evaluation and proposal generation)
 
 ```env
-NOTION_COMPANY_STYLE_GUIDES_DB_ID=xxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-NOTION_CONTACT_STYLE_GUIDES_DB_ID=xxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+# Style Guide Databases
+NOTION_COMPANY_STYLE_GUIDES_DB_ID=b919f771bec746dd8ebdc956ec618176
+NOTION_CONTACT_STYLE_GUIDES_DB_ID=2f196f71d920429e9a7318f43b154954
+
+# Proposal & Estimate Databases  
+NOTION_PROPOSALS_DB_ID=9bdf517b89d147a89963628d398870cc
+NOTION_ESTIMATES_DB_ID=28753ceefab080e2842ccd40eaf73efe
+NOTION_CLIENTS_DB_ID=28753ceefab08000a95cea49e7bf1762
 ```
-- **Description**: Database IDs for storing AI-generated style guides
-- **How to get**: Create databases in Notion and extract the ID from the URL
-- **Format**: 32-character alphanumeric string
-- **Required**: No (but needed if you want style guides saved to Notion)
-- **Used for**: Storing customized company and contact style guides for each lead
+- **Description**: Database IDs for storing AI-generated style guides, proposals, and estimates
+- **How to get**: These are your existing Notion database IDs (already configured)
+- **Format**: 32-character alphanumeric string (with dashes)
+- **Required**: No (but needed for full lead evaluation features)
+- **Used for**: 
+  - Storing customized company and contact style guides for each lead
+  - Auto-generating proposals and estimates from contact form submissions
+  - Linking contacts to clients for relationship management
 - **See**: [LEAD-EVALUATION-SYSTEM.md](LEAD-EVALUATION-SYSTEM.md) for database schema
 
 ## Optional Integrations

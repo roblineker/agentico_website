@@ -2,7 +2,7 @@
 
 import { cn } from "@/lib/utils";
 import React, { useEffect, useState, useCallback } from "react";
-import { BrandIcon } from "@/components/tech-stack";
+import { BrandIcon } from "@/app/components/tech-stack";
 import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 
 export const InfiniteMovingCards = ({

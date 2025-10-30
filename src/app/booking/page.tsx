@@ -18,6 +18,64 @@ declare global {
 
 export default function BookingPage() {
   useEffect(() => {
+    // Get pre-filled contact info from sessionStorage BEFORE loading script
+    const contactInfoStr = sessionStorage.getItem('bookingContactInfo');
+    let koalendarUrl = 'https://koalendar.com/e/discovery-call-with-agentico';
+    
+    console.log('🔍 Checking for contact info in sessionStorage:', contactInfoStr);
+    
+    if (contactInfoStr) {
+      try {
+        const contactInfo = JSON.parse(contactInfoStr);
+        console.log('✅ Parsed contact info:', contactInfo);
+        
+        const params = new URLSearchParams();
+        
+        if (contactInfo.name) {
+          params.append('name', contactInfo.name);
+          console.log('📝 Added name:', contactInfo.name);
+        }
+        if (contactInfo.email) {
+          params.append('email', contactInfo.email);
+          console.log('📧 Added email:', contactInfo.email);
+        }
+        if (contactInfo.phone) {
+          // Clean phone number: remove spaces, parentheses, dashes
+          let cleanPhone = contactInfo.phone.replace(/[\s()-]/g, '');
+          
+          // Convert to international format if it starts with 0 (Australian local format)
+          if (cleanPhone.startsWith('0')) {
+            // Remove leading 0 and add +61
+            cleanPhone = '+61' + cleanPhone.substring(1);
+            console.log('📞 Converted Australian local number to international format:', cleanPhone);
+          } else if (cleanPhone.startsWith('61') && !cleanPhone.startsWith('+')) {
+            // Handle case where it's 61 without the +
+            cleanPhone = '+' + cleanPhone;
+            console.log('📞 Added + to Australian number:', cleanPhone);
+          } else if (!cleanPhone.startsWith('+')) {
+            // If no country code, assume Australian and add +61
+            cleanPhone = '+61' + cleanPhone;
+            console.log('📞 Added +61 to number:', cleanPhone);
+          }
+          
+          params.append('phone', cleanPhone);
+          console.log('📞 Final phone parameter:', cleanPhone);
+        }
+        
+        if (params.toString()) {
+          koalendarUrl += '?' + params.toString();
+          console.log('🔗 Final Koalendar URL:', koalendarUrl);
+        }
+        
+        // Clear the stored data after using it
+        sessionStorage.removeItem('bookingContactInfo');
+      } catch (error) {
+        console.error('❌ Error parsing contact info:', error);
+      }
+    } else {
+      console.log('ℹ️ No contact info found in sessionStorage');
+    }
+    
     // Initialize Koalendar function
     window.Koalendar = window.Koalendar || function(...args) {
       (window.Koalendar.props = window.Koalendar.props || []).push(...args);
@@ -29,10 +87,12 @@ export default function BookingPage() {
     script.async = true;
     
     script.onload = () => {
+      console.log('📅 Koalendar script loaded, initializing widget with URL:', koalendarUrl);
+      
       // Initialize the widget after script loads
       if (window.Koalendar) {
         window.Koalendar('inline', {
-          url: 'https://koalendar.com/e/discovery-call-with-agentico',
+          url: koalendarUrl,
           selector: '#inline-widget-discovery-call-with-agentico'
         });
       }
@@ -60,14 +120,16 @@ export default function BookingPage() {
               alt="Agentico Logo"
               width={120}
               height={40}
-              className="h-8 w-auto dark:hidden"
+              className="dark:hidden"
+              style={{ height: '2rem', width: 'auto' }}
             />
             <Image
               src="/images/logo-white.png"
               alt="Agentico Logo"
               width={120}
               height={40}
-              className="h-8 w-auto hidden dark:block"
+              className="hidden dark:block"
+              style={{ height: '2rem', width: 'auto' }}
             />
           </Link>
           

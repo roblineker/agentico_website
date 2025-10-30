@@ -15,9 +15,11 @@ import { evaluateLead } from './scoring';
 import { evaluateWebPresence } from './web-research';
 import { performDeepResearch, generateStyleGuides } from './ai-research';
 import { saveCompanyStyleGuide, saveContactStyleGuide } from './notion-style-guides';
+import { createOrFindClient, createProposal } from './notion-proposals';
+import { generateStyleGuidePDFs } from '../utils/pdf-generator';
 import * as postmark from 'postmark';
 import { getInstantConfirmationEmail } from '../email-templates/instant-confirmation';
-import { getDetailedAnalysisEmail } from '../email-templates/detailed-analysis';
+// import { getDetailedAnalysisEmail } from '../email-templates/detailed-analysis-clean'; // DISABLED
 import { getSalesNotificationEmail } from '../email-templates/sales-notification';
 
 export interface EvaluationResult {
@@ -28,6 +30,17 @@ export interface EvaluationResult {
   styleGuides?: {
     companyGuideUrl?: string;
     contactGuideUrl?: string;
+    companyGuidePDF?: string;  // base64-encoded PDF
+    contactGuidePDF?: string;  // base64-encoded PDF
+  };
+  client?: {
+    clientId?: string;
+    clientUrl?: string;
+  };
+  proposal?: {
+    proposalId?: string;
+    proposalUrl?: string;
+    estimateIds?: string[];
   };
   errors?: string[];
 }
@@ -57,35 +70,62 @@ async function sendInstantConfirmation(data: ContactFormData): Promise<boolean> 
 
 /**
  * Send detailed analysis email with all insights and style guides
+ * CURRENTLY DISABLED - Uncomment to re-enable
  */
-async function sendDetailedAnalysis(
-  data: ContactFormData,
-  result: EvaluationResult
-): Promise<boolean> {
-  const postmarkToken = process.env.POSTMARK_API_TOKEN;
-  
-  if (!postmarkToken) {
-    console.warn('Postmark not configured - skipping detailed analysis');
-    return false;
-  }
+// async function sendDetailedAnalysis(
+//   data: ContactFormData,
+//   result: EvaluationResult
+// ): Promise<boolean> {
+//   const postmarkToken = process.env.POSTMARK_API_TOKEN;
+//   
+//   if (!postmarkToken) {
+//     console.warn('Postmark not configured - skipping detailed analysis');
+//     return false;
+//   }
 
-  try {
-    const client = new postmark.ServerClient(postmarkToken);
-    const email = getDetailedAnalysisEmail(
-      data,
-      result.leadScore,
-      result.webPresence,
-      result.aiResearch ?? undefined,
-      result.styleGuides
-    );
-    await client.sendEmail(email);
-    console.log('Detailed analysis email sent');
-    return true;
-  } catch (error) {
-    console.error('Failed to send detailed analysis:', error);
-    return false;
-  }
-}
+//   try {
+//     const client = new postmark.ServerClient(postmarkToken);
+//     const email = getDetailedAnalysisEmail(
+//       data,
+//       result.leadScore,
+//       result.webPresence,
+//       result.aiResearch ?? undefined,
+//       result.styleGuides
+//     );
+//     
+//     // Add PDF attachments if available
+//     // eslint-disable-next-line @typescript-eslint/no-explicit-any
+//     const attachments: any[] = [];
+//     
+//     if (result.styleGuides?.companyGuidePDF) {
+//       attachments.push({
+//         Name: `${data.company} - Company Style Guide.pdf`,
+//         Content: result.styleGuides.companyGuidePDF,
+//         ContentType: 'application/pdf',
+//       });
+//     }
+//     
+//     if (result.styleGuides?.contactGuidePDF) {
+//       attachments.push({
+//         Name: `${data.company} - Contact Style Guide.pdf`,
+//         Content: result.styleGuides.contactGuidePDF,
+//         ContentType: 'application/pdf',
+//       });
+//     }
+//     
+//     // Send email with attachments
+//     await client.sendEmail({
+//       ...email,
+//       Attachments: attachments.length > 0 ? attachments : undefined,
+//     });
+//     
+//     console.log(`Detailed analysis email sent${attachments.length > 0 ? ` with ${attachments.length} PDF attachments` : ''}`);
+//     return true;
+//   } catch (error) {
+//     console.error('Failed to send detailed analysis:', error);
+//     return false;
+//   }
+// }
 
 /**
  * Send sales notification email with full evaluation
@@ -124,7 +164,8 @@ async function sendSalesNotification(
  */
 export async function evaluateAndProcessLead(
   data: ContactFormData,
-  clientPageId?: string
+  existingClientId?: string,
+  existingContactId?: string
 ): Promise<EvaluationResult> {
   const errors: string[] = [];
   const result: EvaluationResult = { success: false, errors };
@@ -178,31 +219,75 @@ export async function evaluateAndProcessLead(
       errors.push('AI research failed');
     }
 
-    // Step 5: Generate style guides (if OpenAI is configured)
+    // Step 5: Use existing client/contact IDs or create new ones
+    console.log('Preparing client and contact references...');
+    let clientId: string | undefined = existingClientId;
+    const contactId: string | undefined = existingContactId;
+    
+    // Only create client if we don't have one from route.ts
+    if (!clientId) {
+      try {
+        const clientResult = await createOrFindClient(data);
+        if (clientResult.success && clientResult.clientId) {
+          clientId = clientResult.clientId;
+          result.client = {
+            clientId: clientResult.clientId,
+            clientUrl: clientResult.url,
+          };
+          console.log(`Client ready: ${data.company}`);
+        } else {
+          console.warn('Client creation/lookup skipped or failed');
+        }
+      } catch (error) {
+        console.error('Client creation/lookup failed:', error);
+        errors.push('Client creation/lookup failed');
+      }
+    } else {
+      console.log(`Using existing client ID: ${clientId}`);
+      result.client = { clientId };
+    }
+
+    // Step 6: Generate style guides (if OpenAI is configured)
     console.log('Generating style guides...');
     try {
       const styleGuides = await generateStyleGuides(data, result.aiResearch || null);
       
       if (styleGuides) {
-        console.log('Style guides generated, saving to Notion...');
+        console.log('Style guides generated, creating PDFs and saving to Notion...');
         
-        // Save company style guide
+        // Generate PDFs for email attachments
+        let pdfResults: { companyPDF: string; contactPDF: string } | null = null;
+        try {
+          pdfResults = await generateStyleGuidePDFs(
+            data.company,
+            styleGuides.companyStyleGuide,
+            styleGuides.contactStyleGuide
+          );
+          console.log('Style guide PDFs generated');
+        } catch (pdfError) {
+          console.error('PDF generation failed:', pdfError);
+          errors.push('PDF generation failed');
+        }
+        
+        // Save company style guide (link to Client)
         const companyGuideResult = await saveCompanyStyleGuide(
           data,
           styleGuides.companyStyleGuide,
-          clientPageId
+          clientId  // Link to Client
         );
         
-        // Save contact style guide
+        // Save contact style guide (link to Contact)
         const contactGuideResult = await saveContactStyleGuide(
           data,
           styleGuides.contactStyleGuide,
-          clientPageId
+          contactId  // Link to Contact (not Client!)
         );
         
         result.styleGuides = {
           companyGuideUrl: companyGuideResult.url,
           contactGuideUrl: contactGuideResult.url,
+          companyGuidePDF: pdfResults?.companyPDF,
+          contactGuidePDF: pdfResults?.contactPDF,
         };
         
         console.log('Style guides saved to Notion');
@@ -214,16 +299,42 @@ export async function evaluateAndProcessLead(
       errors.push('Style guide generation failed');
     }
 
-    // Step 6: Send detailed analysis email to customer
-    console.log('Sending detailed analysis email...');
+    // Step 7: Create proposal with estimates
+    console.log('Creating proposal and estimates...');
     try {
-      await sendDetailedAnalysis(data, result);
+      const proposalResult = await createProposal(
+        data,
+        clientId,
+        result.leadScore,
+        result.aiResearch ?? undefined
+      );
+      
+      if (proposalResult.success) {
+        result.proposal = {
+          proposalId: proposalResult.proposalId,
+          proposalUrl: proposalResult.url,
+          estimateIds: proposalResult.estimateIds,
+        };
+        console.log(`Proposal created: ${proposalResult.url}`);
+        console.log(`Estimates created: ${proposalResult.estimateIds?.length || 0} estimates`);
+      } else {
+        console.warn('Proposal creation skipped or failed');
+      }
     } catch (error) {
-      console.error('Failed to send detailed analysis:', error);
-      errors.push('Failed to send detailed analysis');
+      console.error('Proposal creation failed:', error);
+      errors.push('Proposal creation failed');
     }
 
-    // Step 7: Send sales notification
+    // Step 8: Send detailed analysis email to customer (DISABLED)
+    console.log('Detailed analysis email is currently disabled');
+    // try {
+    //   await sendDetailedAnalysis(data, result);
+    // } catch (error) {
+    //   console.error('Failed to send detailed analysis:', error);
+    //   errors.push('Failed to send detailed analysis');
+    // }
+
+    // Step 9: Send sales notification
     console.log('Sending sales notification...');
     try {
       await sendSalesNotification(data, result);

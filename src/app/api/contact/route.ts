@@ -135,6 +135,27 @@ const formatIndustry = (industry: string) => {
   ).join(' ');
 };
 
+// Calculate follow-up date based on timeline urgency
+const calculateFollowUpDate = (timeline: string): string => {
+  const today = new Date();
+  let daysToAdd = 2; // Default: 2 business days
+  
+  if (timeline === 'immediate') {
+    daysToAdd = 1; // Next business day
+  } else if (timeline === '1-3_months') {
+    daysToAdd = 2; // 2 business days
+  } else if (timeline === '3-6_months') {
+    daysToAdd = 5; // 1 week
+  } else {
+    daysToAdd = 7; // 1 week for longer timelines
+  }
+  
+  const followUpDate = new Date(today);
+  followUpDate.setDate(today.getDate() + daysToAdd);
+  
+  return followUpDate.toISOString().split('T')[0];
+};
+
 // Helper to create or find client
 async function createOrFindClient(notion: Client, data: ContactFormData) {
   try {
@@ -201,7 +222,11 @@ async function createOrFindClient(notion: Client, data: ContactFormData) {
 }
 
 // Helper to create contact
-async function createContact(notion: Client, data: ContactFormData, clientPageId?: string) {
+async function createContact(
+  notion: Client, 
+  data: ContactFormData, 
+  clientPageId?: string
+): Promise<{ success: boolean; pageId?: string; url?: string; error?: unknown }> {
   try {
     const contactsDatabaseId = '28753ceefab080929025cf188f469668';
     
@@ -260,7 +285,7 @@ async function saveToNotion(data: ContactFormData) {
     const clientPageId = clientResult.success ? clientResult.pageId : undefined;
     
     // Step 2: Create contact (if we have a client)
-    let contactResult = { success: false };
+    let contactResult: { success: boolean; pageId?: string; url?: string; error?: unknown } = { success: false };
     if (clientPageId) {
       contactResult = await createContact(notion, data, clientPageId);
     }
@@ -368,16 +393,8 @@ async function saveToNotion(data: ContactFormData) {
                   '6+ months',
           },
         },
-        'Budget Range': {
-          select: {
-            name: data.budget === 'under_10k' ? 'Under $10,000' :
-                  data.budget === '10k-25k' ? '$10,000 - $25,000' :
-                  data.budget === '25k-50k' ? '$25,000 - $50,000' :
-                  data.budget === '50k-100k' ? '$50,000 - $100,000' :
-                  data.budget === '100k+' ? '$100,000+' :
-                  'Not sure yet',
-          },
-        },
+        // Budget Range is intentionally omitted - Notion SDK has issues with this select field
+        // We'll update it separately after page creation
         'Project Ideas': {
           rich_text: [{
             text: {
@@ -399,16 +416,51 @@ async function saveToNotion(data: ContactFormData) {
             start: new Date().toISOString().split('T')[0],
           },
         },
+        'Follow-up Date': {
+          date: {
+            start: calculateFollowUpDate(data.timeline),
+          },
+        },
       },
     });
     
+    const contactPageId = contactResult.success ? contactResult.pageId : undefined;
+    
     console.log('Successfully saved to Notion:', response.id);
-    console.log(`Relationships: Client=${clientPageId}, Contact=${contactResult.success ? 'created' : 'failed'}`);
+    console.log(`Relationships: Client=${clientPageId}, Contact=${contactPageId || 'failed'}`);
+    
+    // Update Budget Range separately (Notion SDK select field workaround)
+    try {
+      const budgetMap: Record<string, string> = {
+        'under_10k': 'Under $10,000',
+        '10k-25k': '$10,000 - $25,000',
+        '25k-50k': '$25,000 - $50,000',
+        '50k-100k': '$50,000 - $100,000',
+        '100k+': '$100,000+',
+        'not_sure': 'Not sure yet',
+      };
+      
+      await notion.pages.update({
+        page_id: response.id,
+        properties: {
+          'Budget Range': {
+            select: {
+              name: budgetMap[data.budget] || 'Not sure yet',
+            },
+          },
+        },
+      });
+      console.log(`Updated Budget Range: ${budgetMap[data.budget]}`);
+    } catch (budgetError) {
+      console.error('Failed to update Budget Range:', budgetError);
+      // Don't fail the whole operation for this
+    }
     
     return { 
       success: true, 
       pageId: response.id,
       clientPageId,
+      contactPageId,
       contactCreated: contactResult.success
     };
   } catch (error) {
@@ -426,20 +478,22 @@ export async function POST(request: NextRequest) {
     // Validate the form data
     const validatedData = contactFormSchema.parse(body);
     
-    // Save to Notion and get client page ID
+    // Save to Notion (contact intake form) and get IDs
     const notionResult = await saveToNotion(validatedData);
-    const clientPageId = notionResult.success ? notionResult.clientPageId : undefined;
+    const clientId = notionResult.success ? notionResult.clientPageId : undefined;
+    const contactId = notionResult.success ? notionResult.contactPageId : undefined;
     
     // Perform comprehensive lead evaluation and processing
     // This includes:
     // - Lead scoring
     // - Web presence analysis
     // - AI research (if configured)
-    // - Style guide generation (if configured)
+    // - Proposal and estimate creation (using existing client ID)
+    // - Style guide generation (linked to client and contact)
     // - Sending instant confirmation email
     // - Sending detailed analysis email with style guides
     // - Sending sales notification with full evaluation
-    evaluateAndProcessLead(validatedData, clientPageId).catch((error) => {
+    evaluateAndProcessLead(validatedData, clientId, contactId).catch((error) => {
       console.error('Lead evaluation failed:', error);
     });
     

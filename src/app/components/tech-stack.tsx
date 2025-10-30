@@ -188,7 +188,7 @@ export function BrandIcon({
           alt={`${name} logo`}
           width={size}
           height={size}
-          className="object-contain"
+          style={{ maxWidth: '100%', maxHeight: '100%', width: 'auto', height: 'auto' }}
         />
       </div>
     );

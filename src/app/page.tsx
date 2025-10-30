@@ -1,13 +1,13 @@
-import { Header } from "@/components/header";
-import { HeroSection } from "@/components/hero-section";
-import { ServicesSection } from "@/components/services-section";
-import { IndustriesSection } from "@/components/industries-section";
-import { TechStack } from "@/components/tech-stack";
-import { AboutSection } from "@/components/about-section";
-import { FAQSection } from "@/components/faq-section";
-import { ContactSection } from "@/components/contact-section";
-import { Footer } from "@/components/footer";
-import { ElevenLabsWidget } from "@/components/elevenlabs-widget";
+import { Header } from "@/app/components/header";
+import { HeroSection } from "@/app/components/hero-section";
+import { ServicesSection } from "@/app/components/services-section";
+import { IndustriesSection } from "@/app/components/industries-section";
+import { TechStack } from "@/app/components/tech-stack";
+import { AboutSection } from "@/app/components/about-section";
+import { FAQSection } from "@/app/components/faq-section";
+import { ContactSection } from "@/app/components/contact-section";
+import { Footer } from "@/app/components/footer";
+import { ElevenLabsWidget } from "@/app/components/elevenlabs-widget";
 
 export default function Home() {
   return (

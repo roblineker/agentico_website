@@ -196,51 +196,101 @@ export async function generateStyleGuides(
 
   try {
     // Generate Company Style Guide
-    const companyGuidePrompt = `Create a comprehensive Company Style Guide for ${data.company}.
+    const companyGuidePrompt = `Create a comprehensive Company Style Guide for ${data.company} that captures their unique brand voice and communication preferences.
 
 COMPANY DETAILS:
 - Company: ${data.company}
 - Industry: ${data.industry}
 - Business Size: ${data.businessSize} employees
 - Website: ${data.website || 'Not provided'}
+- Target Audience: ${data.industry} sector businesses
+- Current Systems: ${data.currentSystems}
 
 ${aiResearch?.styleGuideTopics ? `
-RELEVANT TOPICS TO COVER:
+KEY TOPICS TO ADDRESS:
 ${aiResearch.styleGuideTopics.join('\n')}
 ` : ''}
 
-Create a professional company style guide that includes:
-1. Voice & Tone Guidelines
-2. Brand Personality Traits
-3. Industry-Specific Language Considerations
-4. Communication Dos and Don'ts
-5. Example Phrases and Templates
-6. Target Audience Communication Style
+Create a detailed, actionable style guide following this structure:
 
-Format as a professional document with clear sections. Make it specific and actionable for their industry.`;
+## 1. VOICE & TONE PROFILE
+- Primary Voice (describe in 2-3 sentences)
+- Key Voice Characteristics (list 4-5 specific traits)
+- Tone Spectrum (how tone varies by content type: formal communications, marketing, social media, customer support)
 
-    const contactGuidePrompt = `Create a comprehensive Contact Style Guide for how to communicate with potential customers in the ${data.industry} industry.
+## 2. CONTENT STRUCTURE
+- Preferred Opening Styles (how communications typically start)
+- Paragraph Structure (preferred length, bullet point usage)
+- Visual Elements (emoji usage, bold/italics, headings)
+- Closing/Call to Action patterns
 
-CONTEXT:
+## 3. KEY PHRASES & VOCABULARY
+- Frequently Used Phrases (industry-appropriate)
+- Industry-Specific Terms they use
+- Words/Phrases to AVOID (generic corporate jargon)
+
+## 4. CONTENT THEMES & PILLARS
+Identify 3-4 primary content pillars relevant to ${data.industry} industry:
+- Pillar name, purpose, typical angle, example topics
+
+## 5. AI TELLS TO AVOID
+List specific corporate jargon, generic phrases, and AI-sounding language to avoid. Provide authentic alternatives.
+
+## 6. PRACTICAL EXAMPLES
+Provide 3 example pieces of content (emails, social posts, etc.) that demonstrate their voice.
+
+Make this SPECIFIC and ACTIONABLE, not generic. Base recommendations on ${data.industry} industry best practices and their business context.`;
+
+    const contactGuidePrompt = `Create a comprehensive Contact Style Guide for communicating with decision-makers in the ${data.industry} industry.
+
+CONTACT PROFILE (INFERRED FROM FORM):
+- Name: ${data.fullName}
+- Role: Decision maker at ${data.company}
 - Industry: ${data.industry}
-- Target Business Size: ${data.businessSize} employees
-- Common Pain Points: ${data.specificProcesses.substring(0, 500)}
+- Company Size: ${data.businessSize} employees
+- Pain Points: ${data.specificProcesses.substring(0, 400)}
+- Goals: ${data.automationGoals.join(', ')}
+- Communication Channels: Email, phone, ${data.socialLinks && data.socialLinks.length > 0 ? 'social media' : 'traditional channels'}
 
 ${aiResearch?.styleGuideTopics ? `
-RELEVANT TOPICS TO COVER:
+KEY TOPICS TO ADDRESS:
 ${aiResearch.styleGuideTopics.join('\n')}
 ` : ''}
 
-Create a professional contact style guide that includes:
-1. First Contact Best Practices
-2. Discovery Call Framework
-3. Email Communication Templates
-4. Objection Handling Scripts
-5. Follow-up Sequences
-6. Industry-Specific Terminology to Use/Avoid
-7. Value Proposition Framing
+Create a detailed, actionable contact style guide following this structure:
 
-Format as a professional document with clear sections and actionable examples.`;
+## 1. VOICE & TONE PROFILE
+- Communication Style (formal, casual, direct, diplomatic based on ${data.industry} norms)
+- Key Characteristics (how this type of professional typically communicates)
+- Tone by Channel (Email, LinkedIn, Phone/Video, Text)
+
+## 2. CONTENT STRUCTURE
+- Opening Style (how to start messages with this type of contact)
+- Closing Style (how to end messages)
+- Signature Phrases (common in ${data.industry})
+
+## 3. KEY PHRASES & VOCABULARY
+- Frequently Used Words/Phrases in ${data.industry}
+- Industry Jargon (technical terms vs plain language preferences)
+- Communication Preferences
+
+## 4. CONTENT THEMES & PILLARS
+Professional topics and interests common to ${data.industry} decision-makers:
+- Professional Topics
+- Values & Causes
+- Business Priorities
+
+## 5. AI TELLS TO AVOID
+Corporate jargon and generic sales language that doesn't resonate with ${data.industry} professionals. Provide authentic alternatives.
+
+## 6. PRACTICAL EXAMPLES
+Provide 3 example communications (email, LinkedIn message, follow-up) demonstrating effective engagement with ${data.industry} decision-makers.
+
+## 7. DO'S AND DON'TS
+- Specific do's for engaging ${data.industry} professionals
+- Specific don'ts that turn off this audience
+
+Make this HIGHLY SPECIFIC to ${data.industry} decision-makers, not generic sales advice. Base on industry best practices and professional communication norms.`;
 
     // Generate both guides in parallel
     const [companyGuideResponse, contactGuideResponse] = await Promise.all([

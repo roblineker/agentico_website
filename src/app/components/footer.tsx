@@ -15,14 +15,16 @@ export function Footer() {
                 alt="Agentico"
                 width={120}
                 height={32}
-                className="h-8 w-auto dark:hidden"
+                className="dark:hidden"
+                style={{ height: '2rem', width: 'auto' }}
               />
               <Image
                 src="/images/logo-white.png"
                 alt="Agentico"
                 width={120}
                 height={32}
-                className="h-8 w-auto hidden dark:block"
+                className="hidden dark:block"
+                style={{ height: '2rem', width: 'auto' }}
               />
               <p className="text-sm text-muted-foreground">
                 AI-powered automation for small & medium businesses.

@@ -17,138 +17,12 @@ import {
 } from "@/components/ui/field";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm, useFieldArray } from "react-hook-form";
-import { z } from "zod";
 import { useState } from "react";
 import { toast } from "sonner";
 import { Loader2, Plus, X, Facebook, Twitter, Linkedin, Instagram, Youtube, Globe } from "lucide-react";
-import { ScrollAnimation } from "@/components/ui/scroll-animation";
 import { useRouter } from "next/navigation";
-
-const contactFormSchema = z.object({
-  // Contact Information
-  fullName: z.string().min(2, "Please enter your full name (at least 2 characters)"),
-  email: z.string().email("Please enter a valid email address"),
-  phone: z.string().min(10, "Please enter a valid phone number"),
-  company: z.string().min(2, "Please enter your company name"),
-  website: z.string().url("Please enter a valid URL").optional().or(z.literal("")),
-  socialLinks: z.array(z.object({
-    url: z.string().url("Please enter a valid URL"),
-  })).optional(),
-  
-  // Business Information
-  industry: z.enum([
-    "construction_trades",
-    "electrical_plumbing",
-    "hvac",
-    "landscaping_gardening",
-    "painting_decorating",
-    "carpentry_joinery",
-    "roofing",
-    "other_trades_construction",
-    "legal_services",
-    "accounting_bookkeeping",
-    "financial_advisory",
-    "consulting",
-    "human_resources",
-    "real_estate",
-    "property_management",
-    "insurance",
-    "other_professional_services",
-    "healthcare_medical",
-    "dental",
-    "veterinary",
-    "fitness_wellness",
-    "beauty_salon",
-    "other_healthcare_wellness",
-    "retail",
-    "ecommerce",
-    "hospitality_hotels",
-    "restaurants_cafes",
-    "catering",
-    "other_retail_hospitality",
-    "event_planning",
-    "marketing_advertising",
-    "it_services",
-    "software_development",
-    "design_creative",
-    "photography_videography",
-    "other_creative_tech",
-    "education_training",
-    "childcare",
-    "cleaning_services",
-    "logistics_transport",
-    "warehousing",
-    "manufacturing",
-    "wholesale_distribution",
-    "automotive_repair",
-    "security_services",
-    "recruitment_staffing",
-    "other_services",
-    "other"
-  ], {
-    message: "Please select your industry",
-  }),
-  businessSize: z.enum(["1-5", "6-20", "21-50", "51-200", "200+"], {
-    message: "Please select your business size",
-  }),
-  
-  // Current State Assessment
-  currentSystems: z.string().min(1, "Please describe your current systems"),
-  monthlyVolume: z.enum(["0-100", "100-500", "500-1000", "1000-5000", "5000+"], {
-    message: "Please select your monthly volume",
-  }),
-  teamSize: z.enum(["1-2", "3-5", "6-10", "11-20", "20+"], {
-    message: "Please select team size",
-  }),
-  
-  // Automation Needs
-  automationGoals: z.array(z.string()).min(1, "Please select at least one automation goal"),
-  specificProcesses: z.string().min(1, "Please describe specific processes to automate"),
-  projectIdeas: z.array(z.object({
-    title: z.string().min(3, "Please enter an idea title (at least 3 characters)"),
-    description: z.string().min(1, "Please enter a description"),
-    priority: z.enum(["high", "medium", "low"], {
-      message: "Please select a priority level",
-    }),
-  })).optional(),
-  
-  // Integration Requirements
-  existingTools: z.string().min(1, "Please list your existing tools/software"),
-  integrationNeeds: z.array(z.string()),
-  dataVolume: z.enum(["minimal", "moderate", "large", "very_large"], {
-    message: "Please select data volume",
-  }),
-  
-  // Project Scope
-  projectDescription: z.string().min(1, "Please describe your project"),
-  successMetrics: z.string().min(1, "Please describe how you'll measure success"),
-  timeline: z.enum(["immediate", "1-3_months", "3-6_months", "6+_months"], {
-    message: "Please select a timeline",
-  }),
-  budget: z.enum(["under_10k", "10k-25k", "25k-50k", "50k-100k", "100k+", "not_sure"], {
-    message: "Please select a budget range",
-  }),
-});
-
-type ContactFormData = z.infer<typeof contactFormSchema>;
-
-const automationGoalOptions = [
-  { id: "reduce_manual_work", label: "Reduce manual data entry and paperwork" },
-  { id: "improve_response_time", label: "Improve customer response times" },
-  { id: "automate_reporting", label: "Automate reporting and analytics" },
-  { id: "document_processing", label: "Automate document processing" },
-  { id: "workflow_automation", label: "Streamline internal workflows" },
-  { id: "customer_service", label: "Enhance customer service with AI" },
-];
-
-const integrationOptions = [
-  { id: "crm", label: "CRM System" },
-  { id: "accounting", label: "Accounting Software" },
-  { id: "project_management", label: "Project Management Tools" },
-  { id: "communication", label: "Email/Communication Platforms" },
-  { id: "document_storage", label: "Document Storage (Google Drive, Dropbox, etc.)" },
-  { id: "custom_software", label: "Custom/Legacy Software" },
-];
+import { contactFormSchema, type ContactFormData, automationGoalOptions, integrationOptions } from "./types";
+import { testCases, type TestCaseKey } from "./test-data";
 
 // Helper function to detect social network from URL
 function detectSocialNetwork(url: string): { name: string; icon: React.ComponentType<{ className?: string }> } {
@@ -179,7 +53,7 @@ function detectSocialNetwork(url: string): { name: string; icon: React.Component
   return { name: 'Social Link', icon: Globe };
 }
 
-function ContactForm() {
+export function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const router = useRouter();
@@ -201,229 +75,18 @@ function ContactForm() {
       projectIdeas: [],
       socialLinks: [],
       website: "",
+      industry: "" as ContactFormData["industry"],
+      businessSize: "" as ContactFormData["businessSize"],
+      monthlyVolume: "" as ContactFormData["monthlyVolume"],
+      teamSize: "" as ContactFormData["teamSize"],
+      dataVolume: "" as ContactFormData["dataVolume"],
+      timeline: "" as ContactFormData["timeline"],
+      budget: "" as ContactFormData["budget"],
     },
   });
 
-  // Test data cases (only for development)
-  const testCases = {
-    construction_small: {
-      name: "Small Construction Business",
-      data: {
-        fullName: "Mike Johnson",
-        email: "dev@agentico.com.au",
-        phone: "+61 412 345 678",
-        company: "BuildRight Constructions",
-        website: "https://www.buildrightconstructions.com.au",
-        socialLinks: [
-          { url: "https://www.facebook.com/buildrightconstructions" },
-        ],
-        industry: "construction_trades" as const,
-        businessSize: "6-20" as const,
-        currentSystems: "Excel for quotes, Gmail, paper-based job tracking. We're drowning in paperwork and our quote response time is too slow.",
-        monthlyVolume: "100-500" as const,
-        teamSize: "6-10" as const,
-        automationGoals: ["reduce_manual_work", "improve_response_time", "automate_reporting", "workflow_automation"],
-        specificProcesses: "Automate quote generation from customer emails, auto-organize job completion photos, create weekly progress reports for clients.",
-        projectIdeas: [
-          {
-            title: "AI Quote Generator",
-            description: "Extract details from email inquiries and generate quotes automatically using our pricing templates.",
-            priority: "high" as const
-          },
-          {
-            title: "Job Photo Management",
-            description: "Field workers upload photos, system auto-organizes by job and generates completion reports.",
-            priority: "medium" as const
-          }
-        ],
-        existingTools: "Xero, Gmail, Google Drive, spreadsheet CRM",
-        integrationNeeds: ["accounting", "communication", "document_storage"],
-        dataVolume: "moderate" as const,
-        projectDescription: "Growing construction business struggling with manual admin processes. Spending 10+ hours/week on paperwork. Want to automate quoting and job documentation.",
-        successMetrics: "Reduce quote turnaround from 2-3 days to same-day, save 10+ hours/week on admin, improve customer satisfaction.",
-        timeline: "1-3_months" as const,
-        budget: "25k-50k" as const,
-      }
-    },
-    healthcare_medium: {
-      name: "Medical Practice",
-      data: {
-        fullName: "Dr. Sarah Chen",
-        email: "dev@agentico.com.au",
-        phone: "+61 423 456 789",
-        company: "Sunshine Coast Medical Centre",
-        website: "https://www.sunshinecoastmedical.com.au",
-        socialLinks: [
-          { url: "https://www.linkedin.com/company/sunshinecoastmedical" },
-          { url: "https://www.facebook.com/sunshinecoastmedical" },
-        ],
-        industry: "healthcare_medical" as const,
-        businessSize: "21-50" as const,
-        currentSystems: "Practice management software (old system), manual appointment reminders, paper-based patient forms, email for communication.",
-        monthlyVolume: "1000-5000" as const,
-        teamSize: "11-20" as const,
-        automationGoals: ["improve_response_time", "customer_service", "document_processing", "workflow_automation"],
-        specificProcesses: "Automate appointment reminders and confirmations, process patient intake forms digitally, AI-powered triage for phone inquiries, auto-generate referral letters.",
-        projectIdeas: [
-          {
-            title: "AI Patient Triage System",
-            description: "AI handles initial phone calls, collects symptoms, schedules appropriate appointments, and flags urgent cases.",
-            priority: "high" as const
-          },
-          {
-            title: "Digital Intake Forms",
-            description: "Patients complete forms online before visit, data auto-populates into practice software.",
-            priority: "high" as const
-          },
-          {
-            title: "Automated Referrals",
-            description: "Generate referral letters automatically from patient records and doctor notes.",
-            priority: "medium" as const
-          }
-        ],
-        existingTools: "Best Practice software, Hotdoc for bookings, Gmail, Microsoft 365, Medicare claiming system",
-        integrationNeeds: ["crm", "communication", "document_storage", "custom_software"],
-        dataVolume: "large" as const,
-        projectDescription: "Busy medical practice with 5 doctors handling 200+ patients daily. Reception team overwhelmed with calls and admin. Need to streamline patient intake and reduce wait times.",
-        successMetrics: "Reduce phone wait time from 15min to under 2min, automate 80% of appointment confirmations, eliminate paper forms, save 20+ admin hours per week.",
-        timeline: "immediate" as const,
-        budget: "50k-100k" as const,
-      }
-    },
-    legal_enterprise: {
-      name: "Law Firm - Enterprise",
-      data: {
-        fullName: "Jennifer Martinez",
-        email: "dev@agentico.com.au",
-        phone: "+61 434 567 890",
-        company: "Martinez & Associates Legal",
-        website: "https://www.martinezlegal.com.au",
-        socialLinks: [
-          { url: "https://www.linkedin.com/company/martinezlegal" },
-          { url: "https://twitter.com/martinezlegal" },
-        ],
-        industry: "legal_services" as const,
-        businessSize: "51-200" as const,
-        currentSystems: "LEAP legal software, DocuSign for signatures, Outlook, SharePoint for document management, manual client intake process.",
-        monthlyVolume: "500-1000" as const,
-        teamSize: "20+" as const,
-        automationGoals: ["document_processing", "customer_service", "workflow_automation", "reduce_manual_work"],
-        specificProcesses: "Automate client intake and conflict checks, AI-powered document review and summarization, auto-generate initial legal documents from templates, intelligent case assignment to appropriate lawyers.",
-        projectIdeas: [
-          {
-            title: "AI Document Review Assistant",
-            description: "Automatically review contracts and legal documents, highlight key clauses, risks, and unusual terms for lawyer review.",
-            priority: "high" as const
-          },
-          {
-            title: "Automated Client Intake",
-            description: "AI chatbot collects initial client information, performs conflict checks, and routes to appropriate department.",
-            priority: "high" as const
-          },
-          {
-            title: "Legal Document Generator",
-            description: "Generate standard legal documents from approved templates based on client information and case type.",
-            priority: "medium" as const
-          }
-        ],
-        existingTools: "LEAP, DocuSign, Microsoft 365, SharePoint, custom billing system, LawMaster",
-        integrationNeeds: ["crm", "document_storage", "communication", "custom_software"],
-        dataVolume: "very_large" as const,
-        projectDescription: "Large legal practice with 15 lawyers across multiple practice areas. Handling high volume of documents and client inquiries. Need to improve efficiency while maintaining quality and compliance.",
-        successMetrics: "Reduce document review time by 40%, improve client intake speed by 60%, automate 70% of routine document generation, save partners 15+ hours/week.",
-        timeline: "3-6_months" as const,
-        budget: "100k+" as const,
-      }
-    },
-    retail_startup: {
-      name: "E-commerce Startup",
-      data: {
-        fullName: "Alex Thompson",
-        email: "dev@agentico.com.au",
-        phone: "+61 445 678 901",
-        company: "EcoStyle Australia",
-        website: "https://www.ecostyle.com.au",
-        socialLinks: [
-          { url: "https://www.instagram.com/ecostyleaustralia" },
-          { url: "https://www.facebook.com/ecostyleaustralia" },
-          { url: "https://www.tiktok.com/@ecostyleaustralia" },
-        ],
-        industry: "ecommerce" as const,
-        businessSize: "1-5" as const,
-        currentSystems: "Shopify for store, basic email marketing, manual customer service via email and Instagram DMs, spreadsheets for inventory.",
-        monthlyVolume: "500-1000" as const,
-        teamSize: "1-2" as const,
-        automationGoals: ["customer_service", "improve_response_time", "automate_reporting"],
-        specificProcesses: "Automate customer service inquiries, personalized product recommendations, automated order status updates, social media response automation.",
-        projectIdeas: [
-          {
-            title: "AI Customer Service Chatbot",
-            description: "24/7 chatbot for order tracking, product questions, returns, and general inquiries with seamless handoff to human when needed.",
-            priority: "high" as const
-          },
-          {
-            title: "Personalized Recommendations",
-            description: "AI analyzes customer browsing and purchase history to provide personalized product suggestions.",
-            priority: "low" as const
-          }
-        ],
-        existingTools: "Shopify, Mailchimp, Instagram, Facebook, Google Analytics",
-        integrationNeeds: ["crm", "communication"],
-        dataVolume: "moderate" as const,
-        projectDescription: "Fast-growing e-commerce startup selling sustainable fashion. Overwhelmed with customer service inquiries. Need to scale support without hiring a big team.",
-        successMetrics: "Automate 60% of customer inquiries, respond to all messages within 2 hours, increase repeat customer rate by 20%.",
-        timeline: "immediate" as const,
-        budget: "under_10k" as const,
-      }
-    },
-    accounting_firm: {
-      name: "Accounting Firm",
-      data: {
-        fullName: "Robert Williams",
-        email: "dev@agentico.com.au",
-        phone: "+61 456 789 012",
-        company: "Williams & Co Chartered Accountants",
-        website: "https://www.williamsaccounting.com.au",
-        socialLinks: [
-          { url: "https://www.linkedin.com/company/williamsaccounting" },
-        ],
-        industry: "accounting_bookkeeping" as const,
-        businessSize: "6-20" as const,
-        currentSystems: "Xero for client bookkeeping, MYOB for some clients, Practice Manager software, email for client communication, manual document collection.",
-        monthlyVolume: "1000-5000" as const,
-        teamSize: "11-20" as const,
-        automationGoals: ["reduce_manual_work", "document_processing", "workflow_automation", "automate_reporting"],
-        specificProcesses: "Automate collection of client documents (receipts, invoices, bank statements), intelligent data entry from documents into accounting software, automated BAS preparation, client reporting automation.",
-        projectIdeas: [
-          {
-            title: "Document Processing AI",
-            description: "Clients upload receipts/invoices via portal, AI extracts data, categorizes, and enters into Xero/MYOB automatically.",
-            priority: "high" as const
-          },
-          {
-            title: "Automated BAS Preparation",
-            description: "AI prepares BAS statements from client data, highlights anomalies for accountant review before lodgement.",
-            priority: "high" as const
-          },
-          {
-            title: "Client Portal with AI Assistant",
-            description: "Clients can ask questions about their financials, get instant answers from AI trained on their data.",
-            priority: "medium" as const
-          }
-        ],
-        existingTools: "Xero, MYOB, APS Practice Manager, Microsoft 365, Hubdoc, Receipt Bank",
-        integrationNeeds: ["accounting", "document_storage", "communication"],
-        dataVolume: "very_large" as const,
-        projectDescription: "Established accounting firm with 50+ SMB clients. Spending too much time on manual data entry and document processing. Want to offer better service while reducing costs.",
-        successMetrics: "Reduce data entry time by 75%, process documents within 24 hours (currently 3-5 days), handle 30% more clients with same team size.",
-        timeline: "3-6_months" as const,
-        budget: "50k-100k" as const,
-      }
-    }
-  };
-
   // Fill test data based on selected case
-  const fillTestData = (testCase: keyof typeof testCases) => {
+  const fillTestData = (testCase: TestCaseKey) => {
     const caseData = testCases[testCase].data;
     
     // Contact Information
@@ -501,6 +164,20 @@ function ContactForm() {
         throw new Error(result.error || 'Failed to submit form');
       }
       
+      // Store contact info for pre-filling booking form
+      const bookingInfo = {
+        name: data.fullName,
+        email: data.email,
+        phone: data.phone
+      };
+      
+      console.log('💾 Saving contact info to sessionStorage:', bookingInfo);
+      sessionStorage.setItem('bookingContactInfo', JSON.stringify(bookingInfo));
+      
+      // Verify it was saved
+      const saved = sessionStorage.getItem('bookingContactInfo');
+      console.log('✔️ Verified saved data:', saved);
+      
       toast.success("Thank you! Redirecting to booking page...");
       
       // Redirect to booking page after a short delay
@@ -564,16 +241,16 @@ function ContactForm() {
             </CardDescription>
           </div>
           {isDev && (
-            <Select onValueChange={(value) => fillTestData(value as keyof typeof testCases)}>
+            <Select onValueChange={(value) => fillTestData(value as TestCaseKey)}>
               <SelectTrigger className="w-[220px] ml-4 shrink-0">
                 <SelectValue placeholder="🧪 Load Test Data" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="construction_small">🏗️ Construction (Small)</SelectItem>
-                <SelectItem value="healthcare_medium">🏥 Medical Practice</SelectItem>
-                <SelectItem value="legal_enterprise">⚖️ Law Firm (Enterprise)</SelectItem>
-                <SelectItem value="retail_startup">🛍️ E-commerce Startup</SelectItem>
-                <SelectItem value="accounting_firm">📊 Accounting Firm</SelectItem>
+                {Object.entries(testCases).map(([key, { name }]) => (
+                  <SelectItem key={key} value={key}>
+                    {name}
+                  </SelectItem>
+                ))}
               </SelectContent>
             </Select>
           )}
@@ -716,7 +393,7 @@ function ContactForm() {
               <div className="grid md:grid-cols-2 gap-4">
                 <Field data-invalid={!!errors.industry}>
                   <FieldLabel htmlFor="industry">Industry *</FieldLabel>
-                  <Select value={selectedIndustry} onValueChange={(value) => setValue("industry", value as "construction_trades" | "electrical_plumbing" | "hvac" | "landscaping_gardening" | "painting_decorating" | "carpentry_joinery" | "roofing" | "other_trades_construction" | "legal_services" | "accounting_bookkeeping" | "financial_advisory" | "consulting" | "human_resources" | "real_estate" | "property_management" | "insurance" | "other_professional_services" | "healthcare_medical" | "dental" | "veterinary" | "fitness_wellness" | "beauty_salon" | "other_healthcare_wellness" | "retail" | "ecommerce" | "hospitality_hotels" | "restaurants_cafes" | "catering" | "other_retail_hospitality" | "event_planning" | "marketing_advertising" | "it_services" | "software_development" | "design_creative" | "photography_videography" | "other_creative_tech" | "education_training" | "childcare" | "cleaning_services" | "logistics_transport" | "warehousing" | "manufacturing" | "wholesale_distribution" | "automotive_repair" | "security_services" | "recruitment_staffing" | "other_services" | "other")}>
+                  <Select value={selectedIndustry} onValueChange={(value) => setValue("industry", value as ContactFormData["industry"])}>
                     <SelectTrigger id="industry" aria-invalid={!!errors.industry}>
                       <SelectValue placeholder="Select your industry" />
                     </SelectTrigger>
@@ -803,7 +480,7 @@ function ContactForm() {
 
                 <Field data-invalid={!!errors.businessSize}>
                   <FieldLabel htmlFor="businessSize">Total Employees *</FieldLabel>
-                  <Select value={selectedBusinessSize} onValueChange={(value) => setValue("businessSize", value as "1-5" | "6-20" | "21-50" | "51-200" | "200+")}>
+                  <Select value={selectedBusinessSize} onValueChange={(value) => setValue("businessSize", value as ContactFormData["businessSize"])}>
                     <SelectTrigger id="businessSize" aria-invalid={!!errors.businessSize}>
                       <SelectValue placeholder="Select size" />
                     </SelectTrigger>
@@ -845,7 +522,7 @@ function ContactForm() {
               <div className="grid md:grid-cols-2 gap-4">
                 <Field data-invalid={!!errors.monthlyVolume}>
                   <FieldLabel htmlFor="monthlyVolume">Monthly Transaction/Job Volume *</FieldLabel>
-                  <Select value={selectedMonthlyVolume} onValueChange={(value) => setValue("monthlyVolume", value as "0-100" | "100-500" | "500-1000" | "1000-5000" | "5000+")}>
+                  <Select value={selectedMonthlyVolume} onValueChange={(value) => setValue("monthlyVolume", value as ContactFormData["monthlyVolume"])}>
                     <SelectTrigger id="monthlyVolume" aria-invalid={!!errors.monthlyVolume}>
                       <SelectValue placeholder="Select volume" />
                     </SelectTrigger>
@@ -865,7 +542,7 @@ function ContactForm() {
 
                 <Field data-invalid={!!errors.teamSize}>
                   <FieldLabel htmlFor="teamSize">Team Members Affected *</FieldLabel>
-                  <Select value={selectedTeamSize} onValueChange={(value) => setValue("teamSize", value as "1-2" | "3-5" | "6-10" | "11-20" | "20+")}>
+                  <Select value={selectedTeamSize} onValueChange={(value) => setValue("teamSize", value as ContactFormData["teamSize"])}>
                     <SelectTrigger id="teamSize" aria-invalid={!!errors.teamSize}>
                       <SelectValue placeholder="Select team size" />
                     </SelectTrigger>
@@ -995,7 +672,7 @@ function ContactForm() {
 
               <Field data-invalid={!!errors.dataVolume}>
                 <FieldLabel htmlFor="dataVolume">Data Volume to Process *</FieldLabel>
-                <Select value={selectedDataVolume} onValueChange={(value) => setValue("dataVolume", value as "minimal" | "moderate" | "large" | "very_large")}>
+                <Select value={selectedDataVolume} onValueChange={(value) => setValue("dataVolume", value as ContactFormData["dataVolume"])}>
                   <SelectTrigger id="dataVolume" aria-invalid={!!errors.dataVolume}>
                     <SelectValue placeholder="Select data volume" />
                   </SelectTrigger>
@@ -1145,7 +822,7 @@ function ContactForm() {
               <div className="grid md:grid-cols-2 gap-4">
                 <Field data-invalid={!!errors.timeline}>
                   <FieldLabel htmlFor="timeline">Timeline *</FieldLabel>
-                  <Select value={selectedTimeline} onValueChange={(value) => setValue("timeline", value as "immediate" | "1-3_months" | "3-6_months" | "6+_months")}>
+                  <Select value={selectedTimeline} onValueChange={(value) => setValue("timeline", value as ContactFormData["timeline"])}>
                     <SelectTrigger id="timeline" aria-invalid={!!errors.timeline}>
                       <SelectValue placeholder="When do you need this?" />
                     </SelectTrigger>
@@ -1161,7 +838,7 @@ function ContactForm() {
 
                 <Field data-invalid={!!errors.budget}>
                   <FieldLabel htmlFor="budget">Budget Range *</FieldLabel>
-                  <Select value={selectedBudget} onValueChange={(value) => setValue("budget", value as "under_10k" | "10k-25k" | "25k-50k" | "50k-100k" | "100k+" | "not_sure")}>
+                  <Select value={selectedBudget} onValueChange={(value) => setValue("budget", value as ContactFormData["budget"])}>
                     <SelectTrigger id="budget" aria-invalid={!!errors.budget}>
                       <SelectValue placeholder="Select budget range" />
                     </SelectTrigger>
@@ -1200,28 +877,3 @@ function ContactForm() {
   );
 }
 
-export function ContactSection() {
-  return (
-    <section id="contact" className="py-20 md:py-32 bg-muted/30">
-      <div className="container">
-        <ScrollAnimation direction="up" className="text-center space-y-4 mb-12">
-          <h2 className="text-3xl md:text-5xl font-bold">Ready to Get <span className="text-primary">Your Time</span> Back?</h2>
-          <div className="max-w-3xl mx-auto space-y-4 text-lg text-muted-foreground">
-            <p>
-              Curious how this could work for your business? Let&apos;s have a chat. No pressure, no confusing jargon, 
-              no sales pitch. Just a straight-up conversation about your business and the specific headaches we might be able to solve.
-            </p>
-            <p>
-              We&apos;ll talk about what&apos;s eating up your time, what&apos;s costing you money, and whether AI can actually help. 
-              If it&apos;s a good fit, great. If it&apos;s not, we&apos;ll tell you honestly.
-            </p>
-          </div>
-        </ScrollAnimation>
-
-        <ScrollAnimation direction="up" delay={0.2}>
-          <ContactForm />
-        </ScrollAnimation>
-      </div>
-    </section>
-  );
-}

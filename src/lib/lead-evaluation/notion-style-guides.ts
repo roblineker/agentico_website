@@ -237,6 +237,78 @@ any> = [];
 }
 
 /**
+ * Parse style guide content into structured sections
+ */
+function parseStyleGuideContent(content: string): {
+  voiceTone?: string;
+  keyPhrases?: string;
+  contentStructure?: string;
+  contentThemes?: string;
+  practicalExamples?: string;
+  aiTellsToAvoid?: string;
+} {
+  const sections: Record<string, string> = {};
+  
+  // Common section headers to look for
+  const sectionHeaders = [
+    { key: 'voiceTone', patterns: ['voice & tone', 'voice and tone', 'tone guidelines', 'brand personality'] },
+    { key: 'keyPhrases', patterns: ['key phrases', 'vocabulary', 'language', 'terminology'] },
+    { key: 'contentStructure', patterns: ['content structure', 'structure', 'format', 'organization'] },
+    { key: 'contentThemes', patterns: ['content themes', 'themes', 'pillars', 'topics'] },
+    { key: 'practicalExamples', patterns: ['examples', 'practical examples', 'sample'] },
+    { key: 'aiTellsToAvoid', patterns: ['avoid', 'don\'t', 'what not to', 'tells to avoid'] },
+  ];
+  
+  const lines = content.split('\n');
+  let currentSection = '';
+  let currentContent: string[] = [];
+  
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i].trim();
+    const lowerLine = line.toLowerCase();
+    
+    // Check if this is a section header
+    let matchedSection = '';
+    for (const section of sectionHeaders) {
+      if (section.patterns.some(pattern => lowerLine.includes(pattern))) {
+        matchedSection = section.key;
+        break;
+      }
+    }
+    
+    if (matchedSection) {
+      // Save previous section if exists
+      if (currentSection && currentContent.length > 0) {
+        sections[currentSection] = currentContent.join('\n').trim();
+      }
+      
+      // Start new section
+      currentSection = matchedSection;
+      currentContent = [];
+    } else if (currentSection && line) {
+      // Add content to current section (skip empty lines at start)
+      if (currentContent.length > 0 || line) {
+        currentContent.push(line);
+      }
+    }
+  }
+  
+  // Save last section
+  if (currentSection && currentContent.length > 0) {
+    sections[currentSection] = currentContent.join('\n').trim();
+  }
+  
+  return {
+    voiceTone: sections.voiceTone,
+    keyPhrases: sections.keyPhrases,
+    contentStructure: sections.contentStructure,
+    contentThemes: sections.contentThemes,
+    practicalExamples: sections.practicalExamples,
+    aiTellsToAvoid: sections.aiTellsToAvoid,
+  };
+}
+
+/**
  * Save company style guide to Notion
  */
 export async function saveCompanyStyleGuide(
@@ -251,7 +323,7 @@ export async function saveCompanyStyleGuide(
   }
 
   try {
-    // Company Style Guides database ID (you'll need to provide the actual ID)
+    // Company Style Guides database ID
     const styleGuidesDatabaseId = process.env.NOTION_COMPANY_STYLE_GUIDES_DB_ID;
     
     if (!styleGuidesDatabaseId) {
@@ -261,37 +333,96 @@ export async function saveCompanyStyleGuide(
 
     console.log(`Creating company style guide for ${data.company}...`);
     
-    // Create the page
+    // Parse the content into structured sections
+    const parsed = parseStyleGuideContent(styleGuideContent);
+    
+    // Create the page with properties matching the database schema
+    const properties: Record<string, // eslint-disable-next-line @typescript-eslint/no-explicit-any
+any> = {
+      'Style Guide Name': {
+        title: [{
+          text: { content: `${data.company} - Company Style Guide` },
+        }],
+      },
+      'Status': {
+        select: {
+          name: 'Draft',
+        },
+      },
+    };
+    
+    // Add optional relation to client if provided
+    if (clientPageId) {
+      properties['Client'] = {
+        relation: [{ id: clientPageId }],
+      };
+    }
+    
+    // Add structured content to properties
+    if (parsed.voiceTone) {
+      properties['Voice & Tone Profile'] = {
+        rich_text: [{
+          text: { content: parsed.voiceTone.substring(0, 2000) }, // Notion limit
+        }],
+      };
+    }
+    
+    if (parsed.keyPhrases) {
+      properties['Key Phrases & Vocabulary'] = {
+        rich_text: [{
+          text: { content: parsed.keyPhrases.substring(0, 2000) },
+        }],
+      };
+    }
+    
+    if (parsed.contentStructure) {
+      properties['Content Structure'] = {
+        rich_text: [{
+          text: { content: parsed.contentStructure.substring(0, 2000) },
+        }],
+      };
+    }
+    
+    if (parsed.contentThemes) {
+      properties['Content Themes & Pillars'] = {
+        rich_text: [{
+          text: { content: parsed.contentThemes.substring(0, 2000) },
+        }],
+      };
+    }
+    
+    if (parsed.practicalExamples) {
+      properties['Practical Examples'] = {
+        rich_text: [{
+          text: { content: parsed.practicalExamples.substring(0, 2000) },
+        }],
+      };
+    }
+    
+    if (parsed.aiTellsToAvoid) {
+      properties['AI Tells to Avoid'] = {
+        rich_text: [{
+          text: { content: parsed.aiTellsToAvoid.substring(0, 2000) },
+        }],
+      };
+    }
+    
+    // Add source materials (website if available)
+    if (data.website) {
+      properties['Source Materials'] = {
+        url: data.website,
+      };
+    }
+    
     const response = await notion.pages.create({
       parent: {
         type: 'database_id',
         database_id: styleGuidesDatabaseId,
       },
-      properties: {
-        'Name': {
-          title: [{
-            text: { content: `${data.company} - Company Style Guide` },
-          }],
-        },
-        ...(clientPageId ? {
-          'Client': {
-            relation: [{ id: clientPageId }],
-          },
-        } : {}),
-        'Status': {
-          select: {
-            name: 'Draft',
-          },
-        },
-        'Created Date': {
-          date: {
-            start: new Date().toISOString().split('T')[0],
-          },
-        },
-      },
+      properties,
     });
 
-    // Add content as blocks (Notion has a limit, so we'll add in batches)
+    // Add full content as page blocks for reference
     const contentBlocks = textToNotionBlocks(styleGuideContent);
     const maxBlocksPerRequest = 100;
     
@@ -320,7 +451,7 @@ export async function saveCompanyStyleGuide(
 export async function saveContactStyleGuide(
   data: ContactFormData,
   styleGuideContent: string,
-  clientPageId?: string
+  contactPageId?: string
 ): Promise<{ success: boolean; pageId?: string; url?: string; error?: unknown }> {
   const notion = initializeNotion();
   
@@ -329,7 +460,7 @@ export async function saveContactStyleGuide(
   }
 
   try {
-    // Contact Style Guides database ID (you'll need to provide the actual ID)
+    // Contact Style Guides database ID
     const styleGuidesDatabaseId = process.env.NOTION_CONTACT_STYLE_GUIDES_DB_ID;
     
     if (!styleGuidesDatabaseId) {
@@ -339,37 +470,96 @@ export async function saveContactStyleGuide(
 
     console.log(`Creating contact style guide for ${data.company}...`);
     
-    // Create the page
+    // Parse the content into structured sections
+    const parsed = parseStyleGuideContent(styleGuideContent);
+    
+    // Create the page with properties matching the database schema
+    const properties: Record<string, // eslint-disable-next-line @typescript-eslint/no-explicit-any
+any> = {
+      'Style Guide Name': {
+        title: [{
+          text: { content: `${data.company} - Contact Style Guide` },
+        }],
+      },
+      'Status': {
+        select: {
+          name: 'Draft',
+        },
+      },
+    };
+    
+    // Add optional relation to contact if provided
+    if (contactPageId) {
+      properties['Contact'] = {
+        relation: [{ id: contactPageId }],
+      };
+    }
+    
+    // Add structured content to properties
+    if (parsed.voiceTone) {
+      properties['Voice & Tone Profile'] = {
+        rich_text: [{
+          text: { content: parsed.voiceTone.substring(0, 2000) }, // Notion limit
+        }],
+      };
+    }
+    
+    if (parsed.keyPhrases) {
+      properties['Key Phrases & Vocabulary'] = {
+        rich_text: [{
+          text: { content: parsed.keyPhrases.substring(0, 2000) },
+        }],
+      };
+    }
+    
+    if (parsed.contentStructure) {
+      properties['Content Structure'] = {
+        rich_text: [{
+          text: { content: parsed.contentStructure.substring(0, 2000) },
+        }],
+      };
+    }
+    
+    if (parsed.contentThemes) {
+      properties['Content Themes & Pillars'] = {
+        rich_text: [{
+          text: { content: parsed.contentThemes.substring(0, 2000) },
+        }],
+      };
+    }
+    
+    if (parsed.practicalExamples) {
+      properties['Practical Examples'] = {
+        rich_text: [{
+          text: { content: parsed.practicalExamples.substring(0, 2000) },
+        }],
+      };
+    }
+    
+    if (parsed.aiTellsToAvoid) {
+      properties['AI Tells to Avoid'] = {
+        rich_text: [{
+          text: { content: parsed.aiTellsToAvoid.substring(0, 2000) },
+        }],
+      };
+    }
+    
+    // Add source materials (website if available)
+    if (data.website) {
+      properties['Source Materials'] = {
+        url: data.website,
+      };
+    }
+    
     const response = await notion.pages.create({
       parent: {
         type: 'database_id',
         database_id: styleGuidesDatabaseId,
       },
-      properties: {
-        'Name': {
-          title: [{
-            text: { content: `${data.company} - Contact Style Guide` },
-          }],
-        },
-        ...(clientPageId ? {
-          'Client': {
-            relation: [{ id: clientPageId }],
-          },
-        } : {}),
-        'Status': {
-          select: {
-            name: 'Draft',
-          },
-        },
-        'Created Date': {
-          date: {
-            start: new Date().toISOString().split('T')[0],
-          },
-        },
-      },
+      properties,
     });
 
-    // Add content as blocks
+    // Add full content as page blocks for reference
     const contentBlocks = textToNotionBlocks(styleGuideContent);
     const maxBlocksPerRequest = 100;
     

@@ -22,9 +22,11 @@ const { leadScore, webPresence } = await quickEvaluate(formData);
 1. **Scores the lead** (0-140 points, categorized as Low/Medium/High)
 2. **Analyzes web presence** (website accessibility, social media, digital maturity)
 3. **Performs AI research** (industry insights, ROI estimation, opportunities)
-4. **Generates style guides** (company & contact communication guides)
-5. **Saves to Notion** (stores style guides in databases)
-6. **Sends emails** (instant confirmation + detailed analysis)
+4. **Creates/finds client** (in Notion Clients database)
+5. **Generates style guides** (company & contact communication guides)
+6. **Creates proposal with estimates** (auto-generates proposal and estimate entries)
+7. **Saves to Notion** (stores everything in linked databases)
+8. **Sends emails** (instant confirmation + detailed analysis)
 
 ### Features
 
@@ -57,16 +59,57 @@ const { leadScore, webPresence } = await quickEvaluate(formData);
 - **Company Style Guide**: Voice, tone, brand personality
 - **Contact Style Guide**: Communication best practices, templates
 
+#### Proposal & Estimate Creation (Automatic)
+- **Client Creation**: Automatically creates or finds client in Notion
+- **Proposal Generation**: Creates draft proposal with AI insights
+- **Estimate Creation**: Generates estimate for overall project + each project idea
+- **Automatic Linking**: All entities properly linked in Notion
+
 ### Configuration
 
 Required environment variables:
 ```env
-NOTION_API_TOKEN=secret_xxx          # Required for Notion integration
-POSTMARK_API_TOKEN=xxx              # Required for emails
-OPENAI_API_KEY=sk-xxx               # Optional, enables AI features
-NOTION_COMPANY_STYLE_GUIDES_DB_ID=xxx  # Optional, for style guides
-NOTION_CONTACT_STYLE_GUIDES_DB_ID=xxx  # Optional, for style guides
+NOTION_API_TOKEN=secret_xxx                           # Required for Notion integration
+POSTMARK_API_TOKEN=xxx                               # Required for emails
+OPENAI_API_KEY=sk-xxx                                # Optional, enables AI features
+
+# Database IDs (Optional but recommended)
+NOTION_COMPANY_STYLE_GUIDES_DB_ID=b919f771bec746dd8ebdc956ec618176
+NOTION_CONTACT_STYLE_GUIDES_DB_ID=2f196f71d920429e9a7318f43b154954
+NOTION_PROPOSALS_DB_ID=9bdf517b89d147a89963628d398870cc
+NOTION_ESTIMATES_DB_ID=28753ceefab080e2842ccd40eaf73efe
+NOTION_CLIENTS_DB_ID=28753ceefab08000a95cea49e7bf1762
 ```
+
+### Notion Database Schema Requirements
+
+The style guide databases should have the following properties:
+
+**Client Style Guides Database** (`NOTION_COMPANY_STYLE_GUIDES_DB_ID`):
+- `Style Guide Name` (Title) - Required
+- `Status` (Select) - Options: Draft, In Progress, Complete, Needs Review
+- `Client` (Relation) - Link to Clients database (optional)
+- `Voice & Tone Profile` (Rich Text)
+- `Key Phrases & Vocabulary` (Rich Text)
+- `Content Structure` (Rich Text)
+- `Content Themes & Pillars` (Rich Text)
+- `Practical Examples` (Rich Text)
+- `AI Tells to Avoid` (Rich Text)
+- `Source Materials` (URL)
+
+**Contact Style Guides Database** (`NOTION_CONTACT_STYLE_GUIDES_DB_ID`):
+- `Style Guide Name` (Title) - Required
+- `Status` (Select) - Options: Draft, In Progress, Complete, Needs Review
+- `Contact` (Relation) - Link to Contacts database (optional)
+- `Voice & Tone Profile` (Rich Text)
+- `Key Phrases & Vocabulary` (Rich Text)
+- `Content Structure` (Rich Text)
+- `Content Themes & Pillars` (Rich Text)
+- `Practical Examples` (Rich Text)
+- `AI Tells to Avoid` (Rich Text)
+- `Source Materials` (URL)
+
+The system will automatically parse AI-generated style guide content and populate these structured fields. The full content is also saved as page blocks for reference.
 
 ### Module Structure
 

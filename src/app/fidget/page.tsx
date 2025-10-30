@@ -190,6 +190,7 @@ export default function FidgetPage() {
           width={120} 
           height={40}
           className="dark:block hidden"
+          style={{ height: '2.5rem', width: 'auto' }}
         />
         <Image 
           src="/images/logo-black.png" 
@@ -197,6 +198,7 @@ export default function FidgetPage() {
           width={120} 
           height={40}
           className="dark:hidden block"
+          style={{ height: '2.5rem', width: 'auto' }}
         />
         <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
           <DialogTrigger asChild>

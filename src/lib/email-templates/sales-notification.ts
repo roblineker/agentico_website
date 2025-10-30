@@ -304,8 +304,9 @@ Data Volume: ${data.dataVolume}
   `;
 
   return {
-    From: 'noreply@agentico.com.au',
+    From: 'Alex from Agentico <alex@agentico.com.au>',
     To: 'sales@agentico.com.au',
+    Cc: 'rob@agentico.com.au',
     Subject: `${leadScore ? `${leadScore.rating === 'High' ? '🔥 HIGH' : leadScore.rating === 'Medium' ? '👍 MEDIUM' : '👀 LOW'} Priority - ` : ''}New Lead: ${data.company} (${data.budget})`,
     HtmlBody: htmlBody,
     TextBody: textBody,

@@ -6,6 +6,7 @@
  * - Web presence analysis
  * - AI-powered deep research
  * - Style guide generation
+ * - Proposal and estimate creation
  * - Automated email workflows
  */
 
@@ -19,6 +20,8 @@ export { performDeepResearch, generateStyleGuides, formatAIResearchForEmail } fr
 export type { AIResearchResult } from './ai-research';
 
 export { saveCompanyStyleGuide, saveContactStyleGuide } from './notion-style-guides';
+
+export { createOrFindClient, createProposal, createEstimates } from './notion-proposals';
 
 export { evaluateAndProcessLead, quickEvaluate } from './orchestrator';
 export type { EvaluationResult } from './orchestrator';

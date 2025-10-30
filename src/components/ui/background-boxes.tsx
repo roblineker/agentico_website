@@ -58,7 +58,7 @@ export const BoxesCore = ({
         boxElement.style.backgroundColor = getRandomColor();
         setTimeout(() => {
           if (!showHighlighted) {
-            boxElement.style.backgroundColor = 'transparent';
+            boxElement.style.backgroundColor = 'rgba(0, 0, 0, 0)';
           }
         }, 1500);
       }
@@ -100,7 +100,7 @@ export const BoxesCore = ({
                   transition: { duration: 0 },
                 }}
                 animate={{
-                  backgroundColor: isHighlighted ? "oklch(0.696 0.17 162.48)" : "transparent",
+                  backgroundColor: isHighlighted ? "oklch(0.696 0.17 162.48)" : "rgba(0, 0, 0, 0)",
                   transition: { duration: 5 },
                 }}
                 onMouseEnter={() => onBoxHover?.(i, j)}

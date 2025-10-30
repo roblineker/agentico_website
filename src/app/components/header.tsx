@@ -27,7 +27,8 @@ export function Header() {
             alt="Agentico"
             width={120}
             height={32}
-            className="h-8 w-auto dark:hidden"
+            className="dark:hidden"
+            style={{ height: '2rem', width: 'auto' }}
             priority
           />
           <Image
@@ -35,7 +36,8 @@ export function Header() {
             alt="Agentico"
             width={120}
             height={32}
-            className="h-8 w-auto hidden dark:block"
+            className="hidden dark:block"
+            style={{ height: '2rem', width: 'auto' }}
             priority
           />
         </div>
@@ -54,11 +56,14 @@ export function Header() {
           <ThemeToggle />
         </nav>
 
-        {/* CTA Button */}
+        {/* Buttons */}
         <div className="flex items-center gap-4">
           <Button asChild variant="outline">
             <Link href="/fidget">Procrastinate</Link>
           </Button>
+          {/* <Button asChild variant="primary_outline">
+            <Link href="/demo">Demo</Link>
+          </Button> */}
           <Button asChild className="hidden sm:inline-flex">
             <Link href="#contact">Get Started</Link>
           </Button>
