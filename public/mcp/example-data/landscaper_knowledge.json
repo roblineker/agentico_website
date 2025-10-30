@@ -1,0 +1,1014 @@
+{
+  "company": {
+    "name": "Queensland Garden Designs",
+    "abn": "56 234 901 567",
+    "email": "info@qldgardendesigns.com.au",
+    "phone": "+61 7 3678 9012",
+    "address": "45 Nursery Road, Pullenvale QLD 4069",
+    "website": "www.qldgardendesigns.com.au",
+    "specializations": ["Garden Design", "Turf Installation", "Retaining Walls", "Irrigation Systems", "Native Gardens"]
+  },
+  "integrations": {
+    "job_management": "ServiceM8",
+    "accounting": "Xero",
+    "design": "SketchUp Pro",
+    "scheduling": "ServiceM8",
+    "voice_agent": "Custom Voice Agent",
+    "file_storage": "OneDrive",
+    "quoting": "ServiceM8"
+  },
+  "clients": [
+    {
+      "client_id": "CLI-001",
+      "name": "Henderson Family",
+      "type": "Residential",
+      "contact_person": "Sarah Henderson",
+      "email": "s.henderson@email.com",
+      "phone": "+61 412 456 789",
+      "address": "78 Waterfront Drive, Hamilton QLD 4007",
+      "relationship_start": "2024-04-12",
+      "project_type": "Complete Garden Design & Installation",
+      "total_contract_value": 68500.00,
+      "total_invoiced": 68500.00,
+      "account_manager": "Michael Lee"
+    },
+    {
+      "client_id": "CLI-002",
+      "name": "Riverside Corporate Park",
+      "type": "Commercial",
+      "contact_person": "James Rodriguez",
+      "email": "j.rodriguez@riversidecorp.com.au",
+      "phone": "+61 423 567 890",
+      "address": "200 Commercial Road, Newstead QLD 4006",
+      "relationship_start": "2023-08-20",
+      "project_type": "Landscaping & Maintenance Contract",
+      "total_contract_value": 145000.00,
+      "total_invoiced": 112000.00,
+      "account_manager": "Michael Lee"
+    },
+    {
+      "client_id": "CLI-003",
+      "name": "Thompson Residence",
+      "type": "Residential",
+      "contact_person": "Emma Thompson",
+      "email": "emma.t@email.com",
+      "phone": "+61 434 678 901",
+      "address": "23 Hill View Court, Paddington QLD 4064",
+      "relationship_start": "2024-09-05",
+      "project_type": "Retaining Walls & Terracing",
+      "total_contract_value": 42000.00,
+      "total_invoiced": 21000.00,
+      "account_manager": "Steph Wilson"
+    },
+    {
+      "client_id": "CLI-004",
+      "name": "Brisbane Botanical Gardens Cafe",
+      "type": "Commercial",
+      "contact_person": "Lisa Chen",
+      "email": "l.chen@botanicalcafe.com.au",
+      "phone": "+61 445 789 012",
+      "address": "67 Gardens Point Road, Brisbane City QLD 4000",
+      "relationship_start": "2024-06-15",
+      "project_type": "Outdoor Dining Area Landscaping",
+      "total_contract_value": 28500.00,
+      "total_invoiced": 28500.00,
+      "account_manager": "Steph Wilson"
+    },
+    {
+      "client_id": "CLI-005",
+      "name": "Mitchell New Build",
+      "type": "Residential",
+      "contact_person": "David Mitchell",
+      "email": "d.mitchell@email.com",
+      "phone": "+61 456 890 123",
+      "address": "156 Riverbank Terrace, Fig Tree Pocket QLD 4069",
+      "relationship_start": "2024-03-08",
+      "project_type": "New House Landscaping",
+      "total_contract_value": 95000.00,
+      "total_invoiced": 95000.00,
+      "account_manager": "Michael Lee"
+    },
+    {
+      "client_id": "CLI-006",
+      "name": "Sunnybank Plaza",
+      "type": "Commercial",
+      "contact_person": "Tony Nguyen",
+      "email": "tony.n@sunnybankplaza.com.au",
+      "phone": "+61 467 901 234",
+      "address": "358 Mains Road, Sunnybank QLD 4109",
+      "relationship_start": "2024-10-01",
+      "project_type": "Shopping Centre Landscape Refresh",
+      "total_contract_value": 78000.00,
+      "total_invoiced": 0.00,
+      "account_manager": "Michael Lee"
+    },
+    {
+      "client_id": "CLI-007",
+      "name": "Foster Pool & Garden",
+      "type": "Residential",
+      "contact_person": "Rebecca Foster",
+      "email": "rebecca.f@email.com",
+      "phone": "+61 478 012 345",
+      "address": "89 Pool Street, Bardon QLD 4065",
+      "relationship_start": "2024-08-18",
+      "project_type": "Pool Landscaping",
+      "total_contract_value": 52000.00,
+      "total_invoiced": 26000.00,
+      "account_manager": "Steph Wilson"
+    },
+    {
+      "client_id": "CLI-008",
+      "name": "St Joseph's Primary School",
+      "type": "Commercial",
+      "contact_person": "Principal Margaret Walsh",
+      "email": "m.walsh@stjosephs.qld.edu.au",
+      "phone": "+61 489 123 456",
+      "address": "45 School Lane, Bracken Ridge QLD 4017",
+      "relationship_start": "2024-07-10",
+      "project_type": "School Garden & Play Area",
+      "total_contract_value": 65000.00,
+      "total_invoiced": 48750.00,
+      "account_manager": "Michael Lee"
+    },
+    {
+      "client_id": "CLI-009",
+      "name": "Williams Native Garden",
+      "type": "Residential",
+      "contact_person": "Sophie Williams",
+      "email": "sophie.w@email.com",
+      "phone": "+61 490 234 567",
+      "address": "34 Bushland Drive, The Gap QLD 4061",
+      "relationship_start": "2024-09-20",
+      "project_type": "Native Garden Restoration",
+      "total_contract_value": 31500.00,
+      "total_invoiced": 15750.00,
+      "account_manager": "Steph Wilson"
+    }
+  ],
+  "projects": [
+    {
+      "project_id": "PROJ-2024-156",
+      "client_id": "CLI-001",
+      "client_name": "Henderson Family",
+      "project_name": "Henderson Waterfront Garden",
+      "project_type": "Complete Garden Design & Installation",
+      "status": "Completed",
+      "start_date": "2024-05-15",
+      "estimated_completion": "2024-08-30",
+      "actual_completion": "2024-08-28",
+      "contract_value": 68500.00,
+      "costs_to_date": 52000.00,
+      "invoiced_to_date": 68500.00,
+      "project_manager": "Michael Lee",
+      "crew_leader": "Jack Morrison",
+      "address": "78 Waterfront Drive, Hamilton QLD 4007",
+      "description": "Complete garden redesign including tropical plants, irrigation system, deck area planting, and feature water fountain",
+      "completion_percentage": 100
+    },
+    {
+      "project_id": "PROJ-2023-234",
+      "client_id": "CLI-002",
+      "client_name": "Riverside Corporate Park",
+      "project_name": "Corporate Park Landscaping - Ongoing",
+      "project_type": "Commercial Maintenance",
+      "status": "In Progress - Monthly Maintenance",
+      "start_date": "2023-09-01",
+      "estimated_completion": "2025-08-31",
+      "actual_completion": null,
+      "contract_value": 145000.00,
+      "costs_to_date": 89000.00,
+      "invoiced_to_date": 112000.00,
+      "project_manager": "Michael Lee",
+      "crew_leader": "Carlos Rodriguez",
+      "address": "200 Commercial Road, Newstead QLD 4006",
+      "description": "Initial landscaping installation plus 2-year monthly maintenance contract including mowing, pruning, mulching, and seasonal planting",
+      "completion_percentage": 75
+    },
+    {
+      "project_id": "PROJ-2024-189",
+      "client_id": "CLI-003",
+      "client_name": "Thompson Residence",
+      "project_name": "Thompson Retaining Walls",
+      "project_type": "Retaining Walls & Terracing",
+      "status": "In Progress - Stage 2",
+      "start_date": "2024-09-23",
+      "estimated_completion": "2024-11-30",
+      "actual_completion": null,
+      "contract_value": 42000.00,
+      "costs_to_date": 22000.00,
+      "invoiced_to_date": 21000.00,
+      "project_manager": "Steph Wilson",
+      "crew_leader": "Jack Morrison",
+      "address": "23 Hill View Court, Paddington QLD 4064",
+      "description": "Three-tier retaining wall system with sandstone blocks, terraced garden beds, and drainage solutions",
+      "completion_percentage": 50
+    }
+  ],
+  "jobs": [
+    {
+      "job_id": "JOB-2024-4567",
+      "project_id": "PROJ-2024-156",
+      "project_name": "Henderson Waterfront Garden",
+      "description": "Site preparation and irrigation installation",
+      "status": "Completed",
+      "scheduled_start": "2024-05-15",
+      "scheduled_end": "2024-06-05",
+      "actual_start": "2024-05-15",
+      "actual_end": "2024-06-03",
+      "assigned_crew": ["Jack Morrison", "Luke Stevens", "Maria Garcia"],
+      "materials_used": ["Irrigation pipes", "Sprinkler heads", "Garden soil", "Mulch"]
+    },
+    {
+      "job_id": "JOB-2024-4789",
+      "project_id": "PROJ-2024-156",
+      "project_name": "Henderson Waterfront Garden",
+      "description": "Planting and hardscaping",
+      "status": "Completed",
+      "scheduled_start": "2024-06-06",
+      "scheduled_end": "2024-08-15",
+      "actual_start": "2024-06-04",
+      "actual_end": "2024-08-10",
+      "assigned_crew": ["Jack Morrison", "Luke Stevens", "Maria Garcia", "Tom Anderson"],
+      "materials_used": ["Tropical plants", "Palms", "Garden edging", "Decorative stones", "Pavers"]
+    },
+    {
+      "job_id": "JOB-2024-4890",
+      "project_id": "PROJ-2024-156",
+      "project_name": "Henderson Waterfront Garden",
+      "description": "Water feature and final touches",
+      "status": "Completed",
+      "scheduled_start": "2024-08-16",
+      "scheduled_end": "2024-08-30",
+      "actual_start": "2024-08-11",
+      "actual_end": "2024-08-28",
+      "assigned_crew": ["Jack Morrison", "Luke Stevens"],
+      "materials_used": ["Water fountain", "Lighting", "Feature stones", "Final plantings"]
+    }
+  ],
+  "invoices": [
+    {
+      "invoice_id": "INV-2024-2345",
+      "client_id": "CLI-001",
+      "client_name": "Henderson Family",
+      "project_id": "PROJ-2024-156",
+      "invoice_date": "2024-06-10",
+      "due_date": "2024-07-10",
+      "status": "Paid",
+      "payment_date": "2024-07-02",
+      "subtotal": 22500.00,
+      "gst": 2250.00,
+      "total": 24750.00,
+      "description": "Progress Payment 1 - Site Prep & Irrigation",
+      "xero_invoice_id": "XERO-INV-2345",
+      "line_items": [
+        {
+          "description": "Site preparation and soil works",
+          "quantity": 1,
+          "unit_price": 8500.00,
+          "gst": 850.00,
+          "total": 9350.00
+        },
+        {
+          "description": "Irrigation system installation",
+          "quantity": 1,
+          "unit_price": 14000.00,
+          "gst": 1400.00,
+          "total": 15400.00
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-2024-2567",
+      "client_id": "CLI-001",
+      "client_name": "Henderson Family",
+      "project_id": "PROJ-2024-156",
+      "invoice_date": "2024-08-15",
+      "due_date": "2024-09-14",
+      "status": "Paid",
+      "payment_date": "2024-09-08",
+      "subtotal": 32000.00,
+      "gst": 3200.00,
+      "total": 35200.00,
+      "description": "Progress Payment 2 - Planting & Hardscaping",
+      "xero_invoice_id": "XERO-INV-2567",
+      "line_items": [
+        {
+          "description": "Plant supply and installation",
+          "quantity": 1,
+          "unit_price": 18500.00,
+          "gst": 1850.00,
+          "total": 20350.00
+        },
+        {
+          "description": "Hardscaping - pavers and edging",
+          "quantity": 1,
+          "unit_price": 13500.00,
+          "gst": 1350.00,
+          "total": 14850.00
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-2024-2789",
+      "client_id": "CLI-001",
+      "client_name": "Henderson Family",
+      "project_id": "PROJ-2024-156",
+      "invoice_date": "2024-08-30",
+      "due_date": "2024-09-29",
+      "status": "Paid",
+      "payment_date": "2024-09-22",
+      "subtotal": 14000.00,
+      "gst": 1400.00,
+      "total": 15400.00,
+      "description": "Final Payment - Water Feature & Completion",
+      "xero_invoice_id": "XERO-INV-2789",
+      "line_items": [
+        {
+          "description": "Water feature installation",
+          "quantity": 1,
+          "unit_price": 9500.00,
+          "gst": 950.00,
+          "total": 10450.00
+        },
+        {
+          "description": "Garden lighting and final plantings",
+          "quantity": 1,
+          "unit_price": 4500.00,
+          "gst": 450.00,
+          "total": 4950.00
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-2024-2456",
+      "client_id": "CLI-002",
+      "client_name": "Riverside Corporate Park",
+      "project_id": "PROJ-2023-234",
+      "invoice_date": "2024-09-30",
+      "due_date": "2024-10-30",
+      "status": "Paid",
+      "payment_date": "2024-10-25",
+      "subtotal": 4500.00,
+      "gst": 450.00,
+      "total": 4950.00,
+      "description": "Monthly Maintenance - September 2024",
+      "xero_invoice_id": "XERO-INV-2456",
+      "line_items": [
+        {
+          "description": "Monthly grounds maintenance",
+          "quantity": 1,
+          "unit_price": 4500.00,
+          "gst": 450.00,
+          "total": 4950.00
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-2024-2890",
+      "client_id": "CLI-002",
+      "client_name": "Riverside Corporate Park",
+      "project_id": "PROJ-2023-234",
+      "invoice_date": "2024-10-31",
+      "due_date": "2024-11-30",
+      "status": "Sent",
+      "payment_date": null,
+      "subtotal": 4500.00,
+      "gst": 450.00,
+      "total": 4950.00,
+      "description": "Monthly Maintenance - October 2024",
+      "xero_invoice_id": "XERO-INV-2890",
+      "line_items": [
+        {
+          "description": "Monthly grounds maintenance",
+          "quantity": 1,
+          "unit_price": 4500.00,
+          "gst": 450.00,
+          "total": 4950.00
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-2024-2678",
+      "client_id": "CLI-003",
+      "client_name": "Thompson Residence",
+      "project_id": "PROJ-2024-189",
+      "invoice_date": "2024-10-15",
+      "due_date": "2024-11-14",
+      "status": "Paid",
+      "payment_date": "2024-11-05",
+      "subtotal": 21000.00,
+      "gst": 2100.00,
+      "total": 23100.00,
+      "description": "Progress Payment 1 - Retaining Wall Stage 1",
+      "xero_invoice_id": "XERO-INV-2678",
+      "line_items": [
+        {
+          "description": "Retaining wall tier 1 - materials and labour",
+          "quantity": 1,
+          "unit_price": 21000.00,
+          "gst": 2100.00,
+          "total": 23100.00
+        }
+      ]
+    }
+  ],
+  "bills": [
+    {
+      "bill_id": "BILL-2024-3456",
+      "supplier": "Stratco - Virginia",
+      "project_id": "PROJ-2024-156",
+      "bill_date": "2024-05-20",
+      "due_date": "2024-06-19",
+      "status": "Paid",
+      "payment_date": "2024-06-10",
+      "subtotal": 8950.00,
+      "gst": 895.00,
+      "total": 9845.00,
+      "description": "Irrigation supplies and materials",
+      "xero_bill_id": "XERO-BILL-3456",
+      "line_items": [
+        {
+          "description": "Irrigation pipes and fittings",
+          "quantity": 1,
+          "unit_price": 4200.00,
+          "gst": 420.00,
+          "total": 4620.00
+        },
+        {
+          "description": "Pop-up sprinkler heads",
+          "quantity": 24,
+          "unit_price": 32.50,
+          "gst": 78.00,
+          "total": 858.00
+        },
+        {
+          "description": "Irrigation controller",
+          "quantity": 1,
+          "unit_price": 890.00,
+          "gst": 89.00,
+          "total": 979.00
+        },
+        {
+          "description": "Garden edging and stakes",
+          "quantity": 1,
+          "unit_price": 3660.00,
+          "gst": 366.00,
+          "total": 4026.00
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-3567",
+      "supplier": "Bunnings - Newmarket",
+      "project_id": "PROJ-2024-156",
+      "bill_date": "2024-06-15",
+      "due_date": "2024-07-15",
+      "status": "Paid",
+      "payment_date": "2024-07-08",
+      "subtotal": 5680.00,
+      "gst": 568.00,
+      "total": 6248.00,
+      "description": "Garden supplies and mulch",
+      "xero_bill_id": "XERO-BILL-3567",
+      "line_items": [
+        {
+          "description": "Premium garden soil - 1 cubic metre bags",
+          "quantity": 18,
+          "unit_price": 145.00,
+          "gst": 261.00,
+          "total": 2871.00
+        },
+        {
+          "description": "Hardwood mulch - bulk",
+          "quantity": 8,
+          "unit_price": 185.00,
+          "gst": 148.00,
+          "total": 1628.00
+        },
+        {
+          "description": "Various garden tools and supplies",
+          "quantity": 1,
+          "unit_price": 1620.00,
+          "gst": 162.00,
+          "total": 1782.00
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-3678",
+      "supplier": "Flemings Nurseries - Yatala",
+      "project_id": "PROJ-2024-156",
+      "bill_date": "2024-07-10",
+      "due_date": "2024-08-09",
+      "status": "Paid",
+      "payment_date": "2024-08-02",
+      "subtotal": 12450.00,
+      "gst": 1245.00,
+      "total": 13695.00,
+      "description": "Plants - tropical selection",
+      "xero_bill_id": "XERO-BILL-3678",
+      "line_items": [
+        {
+          "description": "Golden Cane Palms - 2m",
+          "quantity": 12,
+          "unit_price": 285.00,
+          "gst": 342.00,
+          "total": 3762.00
+        },
+        {
+          "description": "Cordylines - assorted 500mm",
+          "quantity": 28,
+          "unit_price": 65.00,
+          "gst": 182.00,
+          "total": 2002.00
+        },
+        {
+          "description": "Bromeliads - mixed varieties",
+          "quantity": 45,
+          "unit_price": 38.00,
+          "gst": 171.00,
+          "total": 1881.00
+        },
+        {
+          "description": "Heliconia and gingers",
+          "quantity": 35,
+          "unit_price": 42.00,
+          "gst": 147.00,
+          "total": 1617.00
+        },
+        {
+          "description": "Ground covers and ferns - assorted",
+          "quantity": 1,
+          "unit_price": 3830.00,
+          "gst": 383.00,
+          "total": 4213.00
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-3789",
+      "supplier": "Landscape Supplies QLD",
+      "project_id": "PROJ-2024-189",
+      "bill_date": "2024-10-05",
+      "due_date": "2024-11-04",
+      "status": "Unpaid",
+      "payment_date": null,
+      "subtotal": 8900.00,
+      "gst": 890.00,
+      "total": 9790.00,
+      "description": "Sandstone blocks for retaining wall",
+      "xero_bill_id": "XERO-BILL-3789",
+      "line_items": [
+        {
+          "description": "Sandstone blocks - random pitch",
+          "quantity": 15,
+          "unit_price": 485.00,
+          "gst": 727.50,
+          "total": 8002.50
+        },
+        {
+          "description": "Drainage aggregate",
+          "quantity": 1,
+          "unit_price": 1625.00,
+          "gst": 162.50,
+          "total": 1787.50
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-3890",
+      "supplier": "Brisbane Turf Supplies",
+      "project_id": "PROJ-2023-234",
+      "bill_date": "2024-10-10",
+      "due_date": "2024-11-09",
+      "status": "Unpaid",
+      "payment_date": null,
+      "subtotal": 2450.00,
+      "gst": 245.00,
+      "total": 2695.00,
+      "description": "Turf repair - corporate park",
+      "xero_bill_id": "XERO-BILL-3890",
+      "line_items": [
+        {
+          "description": "Sir Walter buffalo turf",
+          "quantity": 35,
+          "unit_price": 70.00,
+          "gst": 245.00,
+          "total": 2695.00
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-3901",
+      "supplier": "Garden City Plastics",
+      "project_id": "PROJ-2024-189",
+      "bill_date": "2024-10-12",
+      "due_date": "2024-11-11",
+      "status": "Unpaid",
+      "payment_date": null,
+      "subtotal": 1850.00,
+      "gst": 185.00,
+      "total": 2035.00,
+      "description": "Drainage supplies",
+      "xero_bill_id": "XERO-BILL-3901",
+      "line_items": [
+        {
+          "description": "Agricultural drainage pipe 100mm",
+          "quantity": 50,
+          "unit_price": 18.50,
+          "gst": 92.50,
+          "total": 1017.50
+        },
+        {
+          "description": "Drainage fittings and connectors",
+          "quantity": 1,
+          "unit_price": 925.00,
+          "gst": 92.50,
+          "total": 1017.50
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-3912",
+      "supplier": "Mitre 10 - Ashgrove",
+      "project_id": "PROJ-2023-234",
+      "bill_date": "2024-10-18",
+      "due_date": "2024-11-17",
+      "status": "Unpaid",
+      "payment_date": null,
+      "subtotal": 890.00,
+      "gst": 89.00,
+      "total": 979.00,
+      "description": "Maintenance supplies",
+      "xero_bill_id": "XERO-BILL-3912",
+      "line_items": [
+        {
+          "description": "Fertiliser - commercial grade",
+          "quantity": 8,
+          "unit_price": 52.50,
+          "gst": 42.00,
+          "total": 462.00
+        },
+        {
+          "description": "Weed control and pest spray",
+          "quantity": 1,
+          "unit_price": 470.00,
+          "gst": 47.00,
+          "total": 517.00
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-3923",
+      "supplier": "ServiceM8",
+      "bill_date": "2024-10-01",
+      "due_date": "2024-10-31",
+      "status": "Paid",
+      "payment_date": "2024-10-15",
+      "subtotal": 195.00,
+      "gst": 19.50,
+      "total": 214.50,
+      "description": "Job management software - October",
+      "xero_bill_id": "XERO-BILL-3923",
+      "line_items": [
+        {
+          "description": "ServiceM8 monthly subscription - 5 users",
+          "quantity": 1,
+          "unit_price": 195.00,
+          "gst": 19.50,
+          "total": 214.50
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-3934",
+      "supplier": "Fuel Card - BP",
+      "bill_date": "2024-10-20",
+      "due_date": "2024-11-19",
+      "status": "Unpaid",
+      "payment_date": null,
+      "subtotal": 1450.00,
+      "gst": 145.00,
+      "total": 1595.00,
+      "description": "Fuel - October",
+      "xero_bill_id": "XERO-BILL-3934",
+      "line_items": [
+        {
+          "description": "Diesel and petrol - company vehicles",
+          "quantity": 1,
+          "unit_price": 1450.00,
+          "gst": 145.00,
+          "total": 1595.00
+        }
+      ]
+    }
+  ],
+  "leads": [
+    {
+      "lead_id": "LEAD-2024-234",
+      "name": "Martinez Pool Project",
+      "type": "Residential",
+      "contact_person": "Carlos Martinez",
+      "email": "carlos.m@email.com",
+      "phone": "+61 421 678 901",
+      "source": "Website Inquiry",
+      "date_created": "2024-10-24",
+      "status": "Quote Sent",
+      "project_type": "Pool Landscaping",
+      "estimated_value": 45000.00,
+      "location": "Kenmore QLD",
+      "assigned_to": "Steph Wilson",
+      "notes": "New pool installation, needs surrounding landscaping. Quote sent 26/10. Awaiting response.",
+      "last_contact": "2024-10-26",
+      "next_followup": "2024-11-05"
+    },
+    {
+      "lead_id": "LEAD-2024-235",
+      "name": "Brisbane City Council - Park Upgrade",
+      "type": "Commercial",
+      "contact_person": "Amanda Taylor",
+      "email": "a.taylor@brisbane.qld.gov.au",
+      "phone": "+61 432 789 012",
+      "source": "Tender Opportunity",
+      "date_created": "2024-10-26",
+      "status": "Tender Preparation",
+      "project_type": "Public Park Landscaping",
+      "estimated_value": 285000.00,
+      "location": "New Farm QLD",
+      "assigned_to": "Michael Lee",
+      "notes": "Council tender for park upgrade. Submission due Nov 20. Preparing detailed proposal.",
+      "last_contact": "2024-10-27",
+      "next_followup": "2024-11-20"
+    },
+    {
+      "lead_id": "LEAD-2024-236",
+      "name": "Patel Native Garden",
+      "type": "Residential",
+      "contact_person": "Priya Patel",
+      "email": "priya.p@email.com",
+      "phone": "+61 443 890 123",
+      "source": "Voice Agent - Inbound Call",
+      "date_created": "2024-10-28",
+      "status": "Site Visit Scheduled",
+      "project_type": "Native Garden Design",
+      "estimated_value": 28000.00,
+      "location": "Mount Coot-tha QLD",
+      "assigned_to": "Steph Wilson",
+      "notes": "Wants low-maintenance native garden. Site visit scheduled for Nov 2.",
+      "last_contact": "2024-10-28",
+      "next_followup": "2024-11-02"
+    },
+    {
+      "lead_id": "LEAD-2024-237",
+      "name": "Westfield Shopping Centre",
+      "type": "Commercial",
+      "contact_person": "James Robertson",
+      "email": "j.robertson@westfield.com.au",
+      "phone": "+61 454 901 234",
+      "source": "Referral",
+      "date_created": "2024-10-29",
+      "status": "Meeting Scheduled",
+      "project_type": "Shopping Centre Landscaping",
+      "estimated_value": 125000.00,
+      "location": "Carindale QLD",
+      "assigned_to": "Michael Lee",
+      "notes": "Referred by Sunnybank Plaza. Discussion about ongoing maintenance contract. Meeting Nov 7.",
+      "last_contact": "2024-10-29",
+      "next_followup": "2024-11-07"
+    },
+    {
+      "lead_id": "LEAD-2024-238",
+      "name": "Chen Bamboo Garden",
+      "type": "Residential",
+      "contact_person": "Wei Chen",
+      "email": "wei.c@email.com",
+      "phone": "+61 465 012 345",
+      "source": "Instagram",
+      "date_created": "2024-10-27",
+      "status": "Initial Contact",
+      "project_type": "Asian-Inspired Garden",
+      "estimated_value": 38000.00,
+      "location": "St Lucia QLD",
+      "assigned_to": "Michael Lee",
+      "notes": "Wants bamboo screening and Japanese-inspired garden. Sending portfolio examples.",
+      "last_contact": "2024-10-27",
+      "next_followup": "2024-11-01"
+    },
+    {
+      "lead_id": "LEAD-2024-239",
+      "name": "Springfield Lakes Estate",
+      "type": "Commercial",
+      "contact_person": "Tony Wilson",
+      "email": "t.wilson@springfieldlakes.com.au",
+      "phone": "+61 476 123 456",
+      "source": "Cold Outreach",
+      "date_created": "2024-10-25",
+      "status": "Proposal Requested",
+      "project_type": "Estate Common Areas",
+      "estimated_value": 195000.00,
+      "location": "Springfield Lakes QLD",
+      "assigned_to": "Michael Lee",
+      "notes": "New housing estate needs common area landscaping. Proposal requested by Nov 10.",
+      "last_contact": "2024-10-26",
+      "next_followup": "2024-11-10"
+    }
+  ],
+  "staff": [
+    {
+      "staff_id": "STAFF-001",
+      "name": "Michael Lee",
+      "role": "Owner / Landscape Designer",
+      "email": "michael@qldgardendesigns.com.au",
+      "phone": "+61 421 345 678",
+      "qualifications": ["Diploma of Landscape Design", "Horticulture Certificate IV", "SketchUp Certified"],
+      "specializations": ["Garden Design", "Project Management", "Client Relations"],
+      "active_projects": 5,
+      "employment_start": "2016-05-01"
+    },
+    {
+      "staff_id": "STAFF-002",
+      "name": "Stephanie Wilson",
+      "role": "Landscape Designer / Project Manager",
+      "email": "steph@qldgardendesigns.com.au",
+      "phone": "+61 432 456 789",
+      "qualifications": ["Bachelor of Landscape Architecture", "Horticulture Certificate III"],
+      "specializations": ["Residential Design", "Native Gardens", "Sustainable Landscaping"],
+      "active_projects": 4,
+      "employment_start": "2019-03-15"
+    },
+    {
+      "staff_id": "STAFF-003",
+      "name": "Jack Morrison",
+      "role": "Crew Leader",
+      "email": "jack@qldgardendesigns.com.au",
+      "phone": "+61 443 567 890",
+      "qualifications": ["Horticulture Certificate III", "Irrigation Design Certificate", "Chemical Handling Licence"],
+      "specializations": ["Construction Supervision", "Irrigation", "Hard Landscaping"],
+      "active_projects": 3,
+      "employment_start": "2018-07-20"
+    },
+    {
+      "staff_id": "STAFF-004",
+      "name": "Carlos Rodriguez",
+      "role": "Crew Leader",
+      "email": "carlos@qldgardendesigns.com.au",
+      "phone": "+61 454 678 901",
+      "qualifications": ["Horticulture Certificate II", "Bobcat Licence", "Chemical Handling Licence"],
+      "specializations": ["Commercial Maintenance", "Turf Installation", "Equipment Operation"],
+      "active_projects": 2,
+      "employment_start": "2020-01-10"
+    },
+    {
+      "staff_id": "STAFF-005",
+      "name": "Luke Stevens",
+      "role": "Landscaper",
+      "email": "luke@qldgardendesigns.com.au",
+      "phone": "+61 465 789 012",
+      "qualifications": ["Horticulture Certificate II", "White Card"],
+      "specializations": ["Planting", "Mulching", "General Landscaping"],
+      "active_projects": 3,
+      "employment_start": "2021-06-01"
+    },
+    {
+      "staff_id": "STAFF-006",
+      "name": "Maria Garcia",
+      "role": "Landscaper",
+      "email": "maria@qldgardendesigns.com.au",
+      "phone": "+61 476 890 123",
+      "qualifications": ["Horticulture Certificate II", "White Card"],
+      "specializations": ["Planting", "Garden Maintenance", "Soft Landscaping"],
+      "active_projects": 3,
+      "employment_start": "2021-11-15"
+    },
+    {
+      "staff_id": "STAFF-007",
+      "name": "Tom Anderson",
+      "role": "Apprentice Landscaper",
+      "email": "tom.a@qldgardendesigns.com.au",
+      "phone": "+61 487 901 234",
+      "qualifications": ["White Card", "Currently completing Horticulture Certificate III"],
+      "specializations": ["General Labour", "Learning Landscaping"],
+      "active_projects": 2,
+      "employment_start": "2023-02-01"
+    },
+    {
+      "staff_id": "STAFF-008",
+      "name": "Jennifer Kim",
+      "role": "Office Administrator",
+      "email": "jennifer@qldgardendesigns.com.au",
+      "phone": "+61 498 012 345",
+      "qualifications": ["Cert III Business Administration", "Xero Certified"],
+      "specializations": ["Administration", "Quotes", "Client Scheduling"],
+      "active_projects": 0,
+      "employment_start": "2020-09-01"
+    }
+  ],
+  "onedrive_files": [
+    {
+      "file_id": "OD-PROJ-156-001",
+      "project_id": "PROJ-2024-156",
+      "file_name": "Henderson_Garden_Design_Plan.pdf",
+      "file_type": "Design Plan",
+      "file_path": "/Projects/2024/Henderson/Design/",
+      "upload_date": "2024-04-20",
+      "uploaded_by": "Michael Lee",
+      "description": "Approved garden design with planting plan",
+      "file_size": "6.2 MB"
+    },
+    {
+      "file_id": "OD-PROJ-156-002",
+      "project_id": "PROJ-2024-156",
+      "file_name": "Henderson_Irrigation_Layout.pdf",
+      "file_type": "Technical Drawing",
+      "file_path": "/Projects/2024/Henderson/Technical/",
+      "upload_date": "2024-05-10",
+      "uploaded_by": "Jack Morrison",
+      "description": "Irrigation system layout and zones",
+      "file_size": "1.8 MB"
+    },
+    {
+      "file_id": "OD-PROJ-156-003",
+      "project_id": "PROJ-2024-156",
+      "file_name": "Henderson_Completion_Photos.zip",
+      "file_type": "Photos",
+      "file_path": "/Projects/2024/Henderson/Photos/",
+      "upload_date": "2024-08-30",
+      "uploaded_by": "Jack Morrison",
+      "description": "Project completion photography",
+      "file_size": "38.4 MB"
+    },
+    {
+      "file_id": "OD-PROJ-234-001",
+      "project_id": "PROJ-2023-234",
+      "file_name": "Riverside_Maintenance_Schedule.xlsx",
+      "file_type": "Schedule",
+      "file_path": "/Projects/2023/Riverside Corporate/Maintenance/",
+      "upload_date": "2023-09-01",
+      "uploaded_by": "Carlos Rodriguez",
+      "description": "Monthly maintenance task schedule",
+      "file_size": "245 KB"
+    },
+    {
+      "file_id": "OD-PROJ-189-001",
+      "project_id": "PROJ-2024-189",
+      "file_name": "Thompson_Retaining_Wall_Engineering.pdf",
+      "file_type": "Engineering Report",
+      "file_path": "/Projects/2024/Thompson/Engineering/",
+      "upload_date": "2024-09-10",
+      "uploaded_by": "Steph Wilson",
+      "description": "Structural engineering report for retaining walls",
+      "file_size": "3.4 MB"
+    },
+    {
+      "file_id": "OD-PROJ-189-002",
+      "project_id": "PROJ-2024-189",
+      "file_name": "Thompson_Progress_Photos_Oct.zip",
+      "file_type": "Photos",
+      "file_path": "/Projects/2024/Thompson/Photos/",
+      "upload_date": "2024-10-20",
+      "uploaded_by": "Jack Morrison",
+      "description": "Stage 1 completion photos",
+      "file_size": "24.6 MB"
+    },
+    {
+      "file_id": "OD-COMPANY-001",
+      "file_name": "Portfolio_2024.pdf",
+      "file_type": "Marketing",
+      "file_path": "/Company/Marketing/",
+      "upload_date": "2024-01-15",
+      "uploaded_by": "Michael Lee",
+      "description": "Company portfolio for client presentations",
+      "file_size": "12.8 MB"
+    },
+    {
+      "file_id": "OD-INSURANCE-001",
+      "file_name": "Public_Liability_Insurance_2024.pdf",
+      "file_type": "Insurance",
+      "file_path": "/Company/Insurance/",
+      "upload_date": "2024-07-01",
+      "uploaded_by": "Jennifer Kim",
+      "description": "$10M Public Liability - Expires 30/06/2025",
+      "file_size": "567 KB"
+    },
+    {
+      "file_id": "OD-STAFF-001",
+      "file_name": "Chemical_Handling_Licences.pdf",
+      "file_type": "Licences",
+      "file_path": "/Staff/Licences/",
+      "upload_date": "2024-03-01",
+      "uploaded_by": "Jennifer Kim",
+      "description": "Staff chemical handling licences",
+      "file_size": "890 KB"
+    }
+  ],
+  "metadata": {
+    "data_purpose": "11Labs Voice Agent Knowledge Base",
+    "business_type": "Landscaping Company",
+    "data_format": "JSON",
+    "last_updated": "2024-10-30",
+    "currency": "AUD",
+    "timezone": "Australia/Brisbane",
+    "notes": "This is dummy data for demonstration purposes. All client names, contact details, and financial information are fictional."
+  }
+}
+

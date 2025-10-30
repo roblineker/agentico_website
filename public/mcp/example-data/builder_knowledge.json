@@ -1,0 +1,1035 @@
+{
+  "company": {
+    "name": "GreenBuild Constructions",
+    "abn": "45 123 890 456",
+    "email": "info@greenbuild.com.au",
+    "phone": "+61 7 3567 8901",
+    "address": "12 Industrial Way, Rocklea QLD 4106",
+    "website": "www.greenbuild.com.au",
+    "specializations": ["Residential Construction", "Commercial Buildings", "Renovations", "Sustainable Building"]
+  },
+  "integrations": {
+    "job_management": "SimPro",
+    "accounting": "Xero",
+    "project_management": "Procore Australia",
+    "timesheets": "Deputy",
+    "voice_agent": "Custom Voice Agent",
+    "file_storage": "OneDrive",
+    "estimating": "Buildxact",
+    "compliance": "SafetyCulture"
+  },
+  "clients": [
+    {
+      "client_id": "CLI-001",
+      "name": "Thompson Family",
+      "type": "Residential",
+      "contact_person": "Michael Thompson",
+      "email": "m.thompson@email.com",
+      "phone": "+61 412 345 678",
+      "address": "45 Riverside Drive, Indooroopilly QLD 4068",
+      "relationship_start": "2024-03-15",
+      "project_type": "New House Build",
+      "total_contract_value": 785000.00,
+      "total_invoiced": 550000.00,
+      "account_manager": "Steve Wilson"
+    },
+    {
+      "client_id": "CLI-002",
+      "name": "Brisbane Property Developments Pty Ltd",
+      "type": "Commercial",
+      "contact_person": "Sarah Mitchell",
+      "email": "sarah@bpd.com.au",
+      "phone": "+61 423 456 789",
+      "address": "Level 8, 200 Queen Street, Brisbane QLD 4000",
+      "relationship_start": "2023-09-10",
+      "project_type": "Townhouse Development",
+      "total_contract_value": 3450000.00,
+      "total_invoiced": 2850000.00,
+      "account_manager": "Steve Wilson"
+    },
+    {
+      "client_id": "CLI-003",
+      "name": "Johnson Renovation Project",
+      "type": "Residential",
+      "contact_person": "Emma Johnson",
+      "email": "emma.johnson@email.com",
+      "phone": "+61 434 567 890",
+      "address": "78 Hamilton Road, Wavell Heights QLD 4012",
+      "relationship_start": "2024-08-01",
+      "project_type": "Major Renovation",
+      "total_contract_value": 285000.00,
+      "total_invoiced": 142500.00,
+      "account_manager": "David Martinez"
+    },
+    {
+      "client_id": "CLI-004",
+      "name": "St Mary's Primary School",
+      "type": "Commercial",
+      "contact_person": "Father Patrick O'Brien",
+      "email": "pobrien@stmarys.qld.edu.au",
+      "phone": "+61 445 678 901",
+      "address": "156 School Road, Kenmore QLD 4069",
+      "relationship_start": "2024-06-20",
+      "project_type": "New Classroom Block",
+      "total_contract_value": 1250000.00,
+      "total_invoiced": 625000.00,
+      "account_manager": "Steve Wilson"
+    },
+    {
+      "client_id": "CLI-005",
+      "name": "Chen Family",
+      "type": "Residential",
+      "contact_person": "David Chen",
+      "email": "david.chen@email.com",
+      "phone": "+61 456 789 012",
+      "address": "23 Parkview Terrace, Chapel Hill QLD 4069",
+      "relationship_start": "2023-11-15",
+      "project_type": "New House Build",
+      "total_contract_value": 920000.00,
+      "total_invoiced": 920000.00,
+      "account_manager": "David Martinez"
+    },
+    {
+      "client_id": "CLI-006",
+      "name": "Westfield Medical Centre",
+      "type": "Commercial",
+      "contact_person": "Dr. Rebecca Walsh",
+      "email": "r.walsh@westfieldmedical.com.au",
+      "phone": "+61 467 890 123",
+      "address": "45 Medical Drive, Chermside QLD 4032",
+      "relationship_start": "2024-09-05",
+      "project_type": "Medical Fitout",
+      "total_contract_value": 485000.00,
+      "total_invoiced": 0.00,
+      "account_manager": "Steve Wilson"
+    },
+    {
+      "client_id": "CLI-007",
+      "name": "Martinez Extension Project",
+      "type": "Residential",
+      "contact_person": "Carlos Martinez",
+      "email": "carlos.m@email.com",
+      "phone": "+61 478 901 234",
+      "address": "92 Garden Street, Ashgrove QLD 4060",
+      "relationship_start": "2024-07-12",
+      "project_type": "Home Extension",
+      "total_contract_value": 165000.00,
+      "total_invoiced": 82500.00,
+      "account_manager": "David Martinez"
+    },
+    {
+      "client_id": "CLI-008",
+      "name": "Brisbane Warehouse Solutions",
+      "type": "Commercial",
+      "contact_person": "Tony Nguyen",
+      "email": "tony@warehousesolutions.com.au",
+      "phone": "+61 489 012 345",
+      "address": "88 Industrial Estate Road, Yatala QLD 4207",
+      "relationship_start": "2024-04-18",
+      "project_type": "Warehouse Expansion",
+      "total_contract_value": 1850000.00,
+      "total_invoiced": 1295000.00,
+      "account_manager": "Steve Wilson"
+    },
+    {
+      "client_id": "CLI-009",
+      "name": "Williams Granny Flat",
+      "type": "Residential",
+      "contact_person": "Jennifer Williams",
+      "email": "jen.williams@email.com",
+      "phone": "+61 490 123 456",
+      "address": "34 Suburban Court, Coorparoo QLD 4151",
+      "relationship_start": "2024-10-01",
+      "project_type": "Granny Flat",
+      "total_contract_value": 145000.00,
+      "total_invoiced": 0.00,
+      "account_manager": "David Martinez"
+    }
+  ],
+  "projects": [
+    {
+      "project_id": "PROJ-2024-045",
+      "client_id": "CLI-001",
+      "client_name": "Thompson Family",
+      "project_name": "Thompson Residence - New Build",
+      "project_type": "Residential - New House",
+      "status": "In Progress - Lockup Stage",
+      "start_date": "2024-05-01",
+      "estimated_completion": "2025-01-15",
+      "actual_completion": null,
+      "contract_value": 785000.00,
+      "costs_to_date": 485000.00,
+      "invoiced_to_date": 550000.00,
+      "project_manager": "Steve Wilson",
+      "site_supervisor": "Mark Anderson",
+      "address": "45 Riverside Drive, Indooroopilly QLD 4068",
+      "description": "4 bedroom, 2.5 bathroom double storey home with sustainable features including solar panels and rainwater tanks",
+      "council_approval": "BCC-2024-15678",
+      "completion_percentage": 65
+    },
+    {
+      "project_id": "PROJ-2023-089",
+      "client_id": "CLI-002",
+      "client_name": "Brisbane Property Developments Pty Ltd",
+      "project_name": "Greenview Townhouses",
+      "project_type": "Commercial - Townhouse Development",
+      "status": "In Progress - Final Fixes",
+      "start_date": "2023-11-15",
+      "estimated_completion": "2024-12-20",
+      "actual_completion": null,
+      "contract_value": 3450000.00,
+      "costs_to_date": 2920000.00,
+      "invoiced_to_date": 2850000.00,
+      "project_manager": "Steve Wilson",
+      "site_supervisor": "Tom Richardson",
+      "address": "12-24 Greenview Street, Kedron QLD 4031",
+      "description": "Development of 8 three-bedroom townhouses with modern finishes and double garages",
+      "council_approval": "BCC-2023-09456",
+      "completion_percentage": 92
+    },
+    {
+      "project_id": "PROJ-2024-067",
+      "client_id": "CLI-003",
+      "client_name": "Johnson Renovation Project",
+      "project_name": "Johnson House Renovation",
+      "project_type": "Residential - Major Renovation",
+      "status": "In Progress - Internal Fit-out",
+      "start_date": "2024-09-02",
+      "estimated_completion": "2024-12-15",
+      "actual_completion": null,
+      "contract_value": 285000.00,
+      "costs_to_date": 145000.00,
+      "invoiced_to_date": 142500.00,
+      "project_manager": "David Martinez",
+      "site_supervisor": "Mark Anderson",
+      "address": "78 Hamilton Road, Wavell Heights QLD 4012",
+      "description": "Complete renovation including new kitchen, bathrooms, flooring, and deck extension",
+      "council_approval": "BCC-2024-21345",
+      "completion_percentage": 50
+    }
+  ],
+  "jobs": [
+    {
+      "job_id": "JOB-2024-1234",
+      "project_id": "PROJ-2024-045",
+      "project_name": "Thompson Residence - New Build",
+      "description": "Foundation and base construction stage",
+      "status": "Completed",
+      "scheduled_start": "2024-05-01",
+      "scheduled_end": "2024-06-15",
+      "actual_start": "2024-05-01",
+      "actual_end": "2024-06-10",
+      "assigned_crew": ["Mark Anderson", "Tony Patel", "Luke Stevens"],
+      "materials_used": ["Concrete", "Rebar", "Timber formwork"],
+      "subcontractors": ["QLD Concrete Pumping", "Brisbane Earthworks"]
+    },
+    {
+      "job_id": "JOB-2024-1456",
+      "project_id": "PROJ-2024-045",
+      "project_name": "Thompson Residence - New Build",
+      "description": "Frame construction and roof installation",
+      "status": "Completed",
+      "scheduled_start": "2024-06-16",
+      "scheduled_end": "2024-08-30",
+      "actual_start": "2024-06-11",
+      "actual_end": "2024-08-25",
+      "assigned_crew": ["Mark Anderson", "Tony Patel", "Luke Stevens", "James Wilson"],
+      "materials_used": ["Timber frames", "Steel beams", "Roof tiles", "Fascia"],
+      "subcontractors": ["Brisbane Roof Tiling", "Elite Carpentry"]
+    },
+    {
+      "job_id": "JOB-2024-1678",
+      "project_id": "PROJ-2024-045",
+      "project_name": "Thompson Residence - New Build",
+      "description": "Electrical, plumbing, and internal fit-out",
+      "status": "In Progress",
+      "scheduled_start": "2024-09-01",
+      "scheduled_end": "2024-12-20",
+      "actual_start": "2024-09-02",
+      "actual_end": null,
+      "assigned_crew": ["Mark Anderson", "Luke Stevens", "James Wilson"],
+      "materials_used": ["Gyprock", "Insulation", "Electrical fittings", "Plumbing fixtures"],
+      "subcontractors": ["Lights On Electrical", "FlowRight Plumbing", "Brisbane Plastering Co"]
+    }
+  ],
+  "invoices": [
+    {
+      "invoice_id": "INV-2024-0856",
+      "client_id": "CLI-001",
+      "client_name": "Thompson Family",
+      "project_id": "PROJ-2024-045",
+      "invoice_date": "2024-05-31",
+      "due_date": "2024-06-30",
+      "status": "Paid",
+      "payment_date": "2024-06-25",
+      "subtotal": 125000.00,
+      "gst": 12500.00,
+      "total": 137500.00,
+      "description": "Progress Payment 1 - Foundation Complete",
+      "xero_invoice_id": "XERO-INV-856",
+      "line_items": [
+        {
+          "description": "Base and foundation works - Thompson Residence",
+          "quantity": 1,
+          "unit_price": 125000.00,
+          "gst": 12500.00,
+          "total": 137500.00
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-2024-0923",
+      "client_id": "CLI-001",
+      "client_name": "Thompson Family",
+      "project_id": "PROJ-2024-045",
+      "invoice_date": "2024-07-31",
+      "due_date": "2024-08-30",
+      "status": "Paid",
+      "payment_date": "2024-08-22",
+      "subtotal": 185000.00,
+      "gst": 18500.00,
+      "total": 203500.00,
+      "description": "Progress Payment 2 - Frame Stage Complete",
+      "xero_invoice_id": "XERO-INV-923",
+      "line_items": [
+        {
+          "description": "Frame construction and roof installation - Thompson Residence",
+          "quantity": 1,
+          "unit_price": 185000.00,
+          "gst": 18500.00,
+          "total": 203500.00
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-2024-1045",
+      "client_id": "CLI-001",
+      "client_name": "Thompson Family",
+      "project_id": "PROJ-2024-045",
+      "invoice_date": "2024-09-30",
+      "due_date": "2024-10-30",
+      "status": "Paid",
+      "payment_date": "2024-10-15",
+      "subtotal": 140000.00,
+      "gst": 14000.00,
+      "total": 154000.00,
+      "description": "Progress Payment 3 - Lockup Stage",
+      "xero_invoice_id": "XERO-INV-1045",
+      "line_items": [
+        {
+          "description": "Lockup stage works including windows, doors, and weatherproofing",
+          "quantity": 1,
+          "unit_price": 140000.00,
+          "gst": 14000.00,
+          "total": 154000.00
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-2024-0967",
+      "client_id": "CLI-002",
+      "client_name": "Brisbane Property Developments Pty Ltd",
+      "project_id": "PROJ-2023-089",
+      "invoice_date": "2024-08-31",
+      "due_date": "2024-09-30",
+      "status": "Paid",
+      "payment_date": "2024-09-28",
+      "subtotal": 450000.00,
+      "gst": 45000.00,
+      "total": 495000.00,
+      "description": "Progress Payment 9 - Townhouses 6-8 Lockup",
+      "xero_invoice_id": "XERO-INV-967",
+      "line_items": [
+        {
+          "description": "Townhouses 6-8 lockup stage complete",
+          "quantity": 1,
+          "unit_price": 450000.00,
+          "gst": 45000.00,
+          "total": 495000.00
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-2024-1089",
+      "client_id": "CLI-002",
+      "client_name": "Brisbane Property Developments Pty Ltd",
+      "project_id": "PROJ-2023-089",
+      "invoice_date": "2024-10-15",
+      "due_date": "2024-11-14",
+      "status": "Sent",
+      "payment_date": null,
+      "subtotal": 285000.00,
+      "gst": 28500.00,
+      "total": 313500.00,
+      "description": "Progress Payment 10 - Final Fit-out Townhouses 6-8",
+      "xero_invoice_id": "XERO-INV-1089",
+      "line_items": [
+        {
+          "description": "Internal fit-out and final finishes townhouses 6-8",
+          "quantity": 1,
+          "unit_price": 285000.00,
+          "gst": 28500.00,
+          "total": 313500.00
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-2024-1112",
+      "client_id": "CLI-003",
+      "client_name": "Johnson Renovation Project",
+      "project_id": "PROJ-2024-067",
+      "invoice_date": "2024-09-15",
+      "due_date": "2024-10-15",
+      "status": "Paid",
+      "payment_date": "2024-10-08",
+      "subtotal": 85500.00,
+      "gst": 8550.00,
+      "total": 94050.00,
+      "description": "Progress Payment 1 - Demolition and Structural Works",
+      "xero_invoice_id": "XERO-INV-1112",
+      "line_items": [
+        {
+          "description": "Demolition and structural modifications",
+          "quantity": 1,
+          "unit_price": 85500.00,
+          "gst": 8550.00,
+          "total": 94050.00
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-2024-1156",
+      "client_id": "CLI-003",
+      "client_name": "Johnson Renovation Project",
+      "project_id": "PROJ-2024-067",
+      "invoice_date": "2024-10-20",
+      "due_date": "2024-11-19",
+      "status": "Sent",
+      "payment_date": null,
+      "subtotal": 57000.00,
+      "gst": 5700.00,
+      "total": 62700.00,
+      "description": "Progress Payment 2 - Framing and Services",
+      "xero_invoice_id": "XERO-INV-1156",
+      "line_items": [
+        {
+          "description": "New framing, electrical rough-in, plumbing rough-in",
+          "quantity": 1,
+          "unit_price": 57000.00,
+          "gst": 5700.00,
+          "total": 62700.00
+        }
+      ]
+    }
+  ],
+  "bills": [
+    {
+      "bill_id": "BILL-2024-1234",
+      "supplier": "Bunnings Trade - Rocklea",
+      "project_id": "PROJ-2024-045",
+      "bill_date": "2024-09-25",
+      "due_date": "2024-10-25",
+      "status": "Paid",
+      "payment_date": "2024-10-18",
+      "subtotal": 8450.00,
+      "gst": 845.00,
+      "total": 9295.00,
+      "description": "Building materials - September",
+      "xero_bill_id": "XERO-BILL-1234",
+      "line_items": [
+        {
+          "description": "Gyprock sheets - 90mm",
+          "quantity": 85,
+          "unit_price": 22.50,
+          "gst": 191.25,
+          "total": 2103.75
+        },
+        {
+          "description": "Insulation batts R2.5",
+          "quantity": 45,
+          "unit_price": 38.90,
+          "gst": 175.05,
+          "total": 1925.55
+        },
+        {
+          "description": "Timber - 90x45mm treated pine",
+          "quantity": 120,
+          "unit_price": 12.80,
+          "gst": 153.60,
+          "total": 1689.60
+        },
+        {
+          "description": "Various screws, nails, and fixings",
+          "quantity": 1,
+          "unit_price": 3625.00,
+          "gst": 362.50,
+          "total": 3987.50
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-1267",
+      "supplier": "Lights On Electrical",
+      "project_id": "PROJ-2024-045",
+      "bill_date": "2024-10-05",
+      "due_date": "2024-11-04",
+      "status": "Unpaid",
+      "payment_date": null,
+      "subtotal": 24500.00,
+      "gst": 2450.00,
+      "total": 26950.00,
+      "description": "Electrical rough-in and first fix",
+      "xero_bill_id": "XERO-BILL-1267",
+      "line_items": [
+        {
+          "description": "Electrical rough-in labour and materials",
+          "quantity": 1,
+          "unit_price": 18500.00,
+          "gst": 1850.00,
+          "total": 20350.00
+        },
+        {
+          "description": "Switchboard and safety switches",
+          "quantity": 1,
+          "unit_price": 3800.00,
+          "gst": 380.00,
+          "total": 4180.00
+        },
+        {
+          "description": "Solar panel pre-wiring",
+          "quantity": 1,
+          "unit_price": 2200.00,
+          "gst": 220.00,
+          "total": 2420.00
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-1289",
+      "supplier": "FlowRight Plumbing Services",
+      "project_id": "PROJ-2024-045",
+      "bill_date": "2024-10-08",
+      "due_date": "2024-11-07",
+      "status": "Unpaid",
+      "payment_date": null,
+      "subtotal": 19800.00,
+      "gst": 1980.00,
+      "total": 21780.00,
+      "description": "Plumbing rough-in and drainage",
+      "xero_bill_id": "XERO-BILL-1289",
+      "line_items": [
+        {
+          "description": "Internal plumbing rough-in",
+          "quantity": 1,
+          "unit_price": 12500.00,
+          "gst": 1250.00,
+          "total": 13750.00
+        },
+        {
+          "description": "Drainage and stormwater",
+          "quantity": 1,
+          "unit_price": 4800.00,
+          "gst": 480.00,
+          "total": 5280.00
+        },
+        {
+          "description": "Rainwater tank installation",
+          "quantity": 1,
+          "unit_price": 2500.00,
+          "gst": 250.00,
+          "total": 2750.00
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-1298",
+      "supplier": "Mitre 10 - Stafford",
+      "project_id": "PROJ-2024-067",
+      "bill_date": "2024-10-12",
+      "due_date": "2024-11-11",
+      "status": "Unpaid",
+      "payment_date": null,
+      "subtotal": 5680.00,
+      "gst": 568.00,
+      "total": 6248.00,
+      "description": "Renovation materials",
+      "xero_bill_id": "XERO-BILL-1298",
+      "line_items": [
+        {
+          "description": "Paint - premium interior",
+          "quantity": 45,
+          "unit_price": 68.50,
+          "gst": 308.25,
+          "total": 3390.75
+        },
+        {
+          "description": "Laminate flooring",
+          "quantity": 65,
+          "unit_price": 28.90,
+          "gst": 187.85,
+          "total": 2066.35
+        },
+        {
+          "description": "Hardware and door furniture",
+          "quantity": 1,
+          "unit_price": 791.00,
+          "gst": 79.10,
+          "total": 870.10
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-1312",
+      "supplier": "Brisbane Concrete Supplies",
+      "project_id": "PROJ-2023-089",
+      "bill_date": "2024-10-15",
+      "due_date": "2024-11-14",
+      "status": "Unpaid",
+      "payment_date": null,
+      "subtotal": 12450.00,
+      "gst": 1245.00,
+      "total": 13695.00,
+      "description": "Concrete for pathways and driveways",
+      "xero_bill_id": "XERO-BILL-1312",
+      "line_items": [
+        {
+          "description": "Concrete - 32MPa",
+          "quantity": 35,
+          "unit_price": 285.00,
+          "gst": 997.50,
+          "total": 10972.50
+        },
+        {
+          "description": "Steel reinforcement mesh",
+          "quantity": 1,
+          "unit_price": 2250.00,
+          "gst": 225.00,
+          "total": 2475.00
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-1323",
+      "supplier": "Brisbane Roof Tiling",
+      "project_id": "PROJ-2023-089",
+      "bill_date": "2024-10-18",
+      "due_date": "2024-11-17",
+      "status": "Unpaid",
+      "payment_date": null,
+      "subtotal": 28500.00,
+      "gst": 2850.00,
+      "total": 31350.00,
+      "description": "Roof repairs and flashing - Townhouses 6-8",
+      "xero_bill_id": "XERO-BILL-1323",
+      "line_items": [
+        {
+          "description": "Roof tile repairs and replacements",
+          "quantity": 1,
+          "unit_price": 18500.00,
+          "gst": 1850.00,
+          "total": 20350.00
+        },
+        {
+          "description": "Flashing and gutter repairs",
+          "quantity": 1,
+          "unit_price": 10000.00,
+          "gst": 1000.00,
+          "total": 11000.00
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-1334",
+      "supplier": "Brisbane Plastering Co",
+      "project_id": "PROJ-2024-067",
+      "bill_date": "2024-10-22",
+      "due_date": "2024-11-21",
+      "status": "Unpaid",
+      "payment_date": null,
+      "subtotal": 14500.00,
+      "gst": 1450.00,
+      "total": 15950.00,
+      "description": "Plastering and cornice - Johnson Renovation",
+      "xero_bill_id": "XERO-BILL-1334",
+      "line_items": [
+        {
+          "description": "Wall and ceiling plastering",
+          "quantity": 1,
+          "unit_price": 12000.00,
+          "gst": 1200.00,
+          "total": 13200.00
+        },
+        {
+          "description": "Cornice installation",
+          "quantity": 1,
+          "unit_price": 2500.00,
+          "gst": 250.00,
+          "total": 2750.00
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-1345",
+      "supplier": "Deputy",
+      "bill_date": "2024-10-01",
+      "due_date": "2024-10-31",
+      "status": "Paid",
+      "payment_date": "2024-10-15",
+      "subtotal": 245.00,
+      "gst": 24.50,
+      "total": 269.50,
+      "description": "Timesheet software - October",
+      "xero_bill_id": "XERO-BILL-1345",
+      "line_items": [
+        {
+          "description": "Deputy subscription - 12 staff members",
+          "quantity": 1,
+          "unit_price": 245.00,
+          "gst": 24.50,
+          "total": 269.50
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-1356",
+      "supplier": "SimPro Software",
+      "bill_date": "2024-10-05",
+      "due_date": "2024-11-04",
+      "status": "Paid",
+      "payment_date": "2024-10-20",
+      "subtotal": 580.00,
+      "gst": 58.00,
+      "total": 638.00,
+      "description": "Job management software - October",
+      "xero_bill_id": "XERO-BILL-1356",
+      "line_items": [
+        {
+          "description": "SimPro monthly subscription - 5 users",
+          "quantity": 1,
+          "unit_price": 580.00,
+          "gst": 58.00,
+          "total": 638.00
+        }
+      ]
+    }
+  ],
+  "leads": [
+    {
+      "lead_id": "LEAD-2024-089",
+      "name": "Patterson Family",
+      "type": "Residential",
+      "contact_person": "Mark Patterson",
+      "email": "mark.p@email.com",
+      "phone": "+61 421 567 890",
+      "source": "Website Inquiry",
+      "date_created": "2024-10-22",
+      "status": "Quote Sent",
+      "project_type": "New House Build",
+      "estimated_value": 850000.00,
+      "location": "Pullenvale QLD",
+      "assigned_to": "Steve Wilson",
+      "notes": "4 bed, 3 bath house on large block. Looking for sustainable builder. Quote sent 24/10. Follow-up scheduled.",
+      "last_contact": "2024-10-24",
+      "next_followup": "2024-11-05"
+    },
+    {
+      "lead_id": "LEAD-2024-090",
+      "name": "Brisbane Childcare Centres",
+      "type": "Commercial",
+      "contact_person": "Lisa Chen",
+      "email": "l.chen@bcccentres.com.au",
+      "phone": "+61 432 678 901",
+      "source": "Referral",
+      "date_created": "2024-10-25",
+      "status": "Meeting Scheduled",
+      "project_type": "New Childcare Centre",
+      "estimated_value": 2100000.00,
+      "location": "Carindale QLD",
+      "assigned_to": "Steve Wilson",
+      "notes": "Referred by St Mary's Primary. Need specialist childcare builder. Site meeting scheduled for Nov 8.",
+      "last_contact": "2024-10-26",
+      "next_followup": "2024-11-08"
+    },
+    {
+      "lead_id": "LEAD-2024-091",
+      "name": "Rodriguez Extension",
+      "type": "Residential",
+      "contact_person": "Maria Rodriguez",
+      "email": "maria.r@email.com",
+      "phone": "+61 443 789 012",
+      "source": "Voice Agent - Inbound Call",
+      "date_created": "2024-10-27",
+      "status": "Initial Contact",
+      "project_type": "Second Storey Addition",
+      "estimated_value": 385000.00,
+      "location": "Paddington QLD",
+      "assigned_to": "David Martinez",
+      "notes": "Inbound call via voice agent. Wants second storey on existing house. Scheduled site inspection for Nov 3.",
+      "last_contact": "2024-10-27",
+      "next_followup": "2024-11-03"
+    },
+    {
+      "lead_id": "LEAD-2024-092",
+      "name": "Westside Medical Group",
+      "type": "Commercial",
+      "contact_person": "Dr. Andrew Foster",
+      "email": "afoster@westsidemedical.com.au",
+      "phone": "+61 454 890 123",
+      "source": "Cold Outreach",
+      "date_created": "2024-10-28",
+      "status": "Proposal Requested",
+      "project_type": "Medical Fitout",
+      "estimated_value": 620000.00,
+      "location": "Indooroopilly QLD",
+      "assigned_to": "Steve Wilson",
+      "notes": "Expanding practice, need experienced medical fitout team. Requested detailed proposal by Nov 12.",
+      "last_contact": "2024-10-29",
+      "next_followup": "2024-11-12"
+    },
+    {
+      "lead_id": "LEAD-2024-093",
+      "name": "Singh Granny Flat",
+      "type": "Residential",
+      "contact_person": "Raj Singh",
+      "email": "raj.singh@email.com",
+      "phone": "+61 465 901 234",
+      "source": "Google Search",
+      "date_created": "2024-10-29",
+      "status": "Quote Preparation",
+      "project_type": "Granny Flat",
+      "estimated_value": 165000.00,
+      "location": "Sunnybank QLD",
+      "assigned_to": "David Martinez",
+      "notes": "2 bed granny flat with kitchenette. Preparing quote based on council requirements.",
+      "last_contact": "2024-10-29",
+      "next_followup": "2024-11-02"
+    },
+    {
+      "lead_id": "LEAD-2024-094",
+      "name": "Brisbane Retail Developments",
+      "type": "Commercial",
+      "contact_person": "Sophie Mitchell",
+      "email": "s.mitchell@brd.com.au",
+      "phone": "+61 476 012 345",
+      "source": "Industry Event",
+      "date_created": "2024-10-26",
+      "status": "Tender Process",
+      "project_type": "Retail Fitout",
+      "estimated_value": 980000.00,
+      "location": "Chermside QLD",
+      "assigned_to": "Steve Wilson",
+      "notes": "Tender for retail space fitout at Chermside shopping centre. Submission due Nov 15.",
+      "last_contact": "2024-10-28",
+      "next_followup": "2024-11-15"
+    }
+  ],
+  "staff": [
+    {
+      "staff_id": "STAFF-001",
+      "name": "Steve Wilson",
+      "role": "Director / Project Manager",
+      "email": "steve@greenbuild.com.au",
+      "phone": "+61 421 234 567",
+      "qualifications": ["Queensland Building Licence QBCC 1234567", "Cert IV Building & Construction", "White Card"],
+      "specializations": ["Project Management", "Commercial Construction", "Client Relations"],
+      "active_projects": 4,
+      "employment_start": "2018-03-01"
+    },
+    {
+      "staff_id": "STAFF-002",
+      "name": "David Martinez",
+      "role": "Project Manager",
+      "email": "david@greenbuild.com.au",
+      "phone": "+61 432 345 678",
+      "qualifications": ["Queensland Building Licence QBCC 2345678", "Cert IV Building & Construction", "White Card"],
+      "specializations": ["Residential Construction", "Renovations", "Project Coordination"],
+      "active_projects": 3,
+      "employment_start": "2019-07-15"
+    },
+    {
+      "staff_id": "STAFF-003",
+      "name": "Mark Anderson",
+      "role": "Site Supervisor",
+      "email": "mark@greenbuild.com.au",
+      "phone": "+61 443 456 789",
+      "qualifications": ["Cert III Carpentry", "White Card", "First Aid Certificate"],
+      "specializations": ["Carpentry", "Site Management", "Quality Control"],
+      "active_projects": 2,
+      "employment_start": "2020-01-20"
+    },
+    {
+      "staff_id": "STAFF-004",
+      "name": "Tom Richardson",
+      "role": "Site Supervisor",
+      "email": "tom@greenbuild.com.au",
+      "phone": "+61 454 567 890",
+      "qualifications": ["Cert III Construction", "White Card", "Elevated Work Platform"],
+      "specializations": ["Commercial Projects", "Team Leadership", "Safety Compliance"],
+      "active_projects": 1,
+      "employment_start": "2020-06-10"
+    },
+    {
+      "staff_id": "STAFF-005",
+      "name": "Tony Patel",
+      "role": "Lead Carpenter",
+      "email": "tony@greenbuild.com.au",
+      "phone": "+61 465 678 901",
+      "qualifications": ["Cert III Carpentry", "White Card"],
+      "specializations": ["Framing", "Finishing Carpentry", "Custom Joinery"],
+      "active_projects": 2,
+      "employment_start": "2021-02-15"
+    },
+    {
+      "staff_id": "STAFF-006",
+      "name": "Luke Stevens",
+      "role": "Carpenter",
+      "email": "luke@greenbuild.com.au",
+      "phone": "+61 476 789 012",
+      "qualifications": ["Cert III Carpentry", "White Card"],
+      "specializations": ["Framing", "Decking", "General Carpentry"],
+      "active_projects": 2,
+      "employment_start": "2021-09-01"
+    },
+    {
+      "staff_id": "STAFF-007",
+      "name": "James Wilson",
+      "role": "Apprentice Carpenter",
+      "email": "james.w@greenbuild.com.au",
+      "phone": "+61 487 890 123",
+      "qualifications": ["White Card", "Currently completing Cert III Carpentry"],
+      "specializations": ["General Labour", "Learning Carpentry"],
+      "active_projects": 1,
+      "employment_start": "2023-01-30"
+    },
+    {
+      "staff_id": "STAFF-008",
+      "name": "Rebecca Foster",
+      "role": "Office Manager",
+      "email": "rebecca@greenbuild.com.au",
+      "phone": "+61 498 901 234",
+      "qualifications": ["Cert IV Business Administration", "Xero Certified"],
+      "specializations": ["Administration", "Bookkeeping", "Client Liaison"],
+      "active_projects": 0,
+      "employment_start": "2019-11-01"
+    }
+  ],
+  "onedrive_files": [
+    {
+      "file_id": "OD-PROJ-045-001",
+      "project_id": "PROJ-2024-045",
+      "file_name": "Thompson_Residence_Plans_Approved.pdf",
+      "file_type": "Architectural Plans",
+      "file_path": "/Projects/2024/Thompson Residence/Plans/",
+      "upload_date": "2024-04-10",
+      "uploaded_by": "Steve Wilson",
+      "description": "Council approved building plans",
+      "file_size": "8.4 MB"
+    },
+    {
+      "file_id": "OD-PROJ-045-002",
+      "project_id": "PROJ-2024-045",
+      "file_name": "Thompson_Construction_Contract_Signed.pdf",
+      "file_type": "Contract",
+      "file_path": "/Projects/2024/Thompson Residence/Contracts/",
+      "upload_date": "2024-04-25",
+      "uploaded_by": "Steve Wilson",
+      "description": "Signed building contract",
+      "file_size": "1.2 MB"
+    },
+    {
+      "file_id": "OD-PROJ-045-003",
+      "project_id": "PROJ-2024-045",
+      "file_name": "Site_Progress_Photos_October.zip",
+      "file_type": "Photos",
+      "file_path": "/Projects/2024/Thompson Residence/Photos/",
+      "upload_date": "2024-10-28",
+      "uploaded_by": "Mark Anderson",
+      "description": "October progress photos - lockup stage",
+      "file_size": "45.6 MB"
+    },
+    {
+      "file_id": "OD-PROJ-089-001",
+      "project_id": "PROJ-2023-089",
+      "file_name": "Greenview_Development_Approval.pdf",
+      "file_type": "Council Approval",
+      "file_path": "/Projects/2023/Greenview Townhouses/Approvals/",
+      "upload_date": "2023-10-20",
+      "uploaded_by": "Steve Wilson",
+      "description": "Council development approval",
+      "file_size": "3.8 MB"
+    },
+    {
+      "file_id": "OD-PROJ-089-002",
+      "project_id": "PROJ-2023-089",
+      "file_name": "Townhouse_Defects_List_Final.xlsx",
+      "file_type": "Defects List",
+      "file_path": "/Projects/2023/Greenview Townhouses/Quality/",
+      "upload_date": "2024-10-20",
+      "uploaded_by": "Tom Richardson",
+      "description": "Final defects list for practical completion",
+      "file_size": "234 KB"
+    },
+    {
+      "file_id": "OD-PROJ-067-001",
+      "project_id": "PROJ-2024-067",
+      "file_name": "Johnson_Renovation_Scope.pdf",
+      "file_type": "Scope of Works",
+      "file_path": "/Projects/2024/Johnson Renovation/Documentation/",
+      "upload_date": "2024-08-15",
+      "uploaded_by": "David Martinez",
+      "description": "Detailed scope of works",
+      "file_size": "890 KB"
+    },
+    {
+      "file_id": "OD-PROJ-067-002",
+      "project_id": "PROJ-2024-067",
+      "file_name": "Johnson_Kitchen_Selections.pdf",
+      "file_type": "Selections",
+      "file_path": "/Projects/2024/Johnson Renovation/Selections/",
+      "upload_date": "2024-09-05",
+      "uploaded_by": "Emma Johnson",
+      "description": "Kitchen and bathroom selections",
+      "file_size": "2.1 MB"
+    },
+    {
+      "file_id": "OD-STAFF-001",
+      "file_name": "Steve_Wilson_QBCC_Licence.pdf",
+      "file_type": "Licence",
+      "file_path": "/Staff/Licences/",
+      "upload_date": "2024-01-15",
+      "uploaded_by": "Rebecca Foster",
+      "description": "QBCC Builder Licence - Expires 2026",
+      "file_size": "456 KB"
+    },
+    {
+      "file_id": "OD-INSURANCE-001",
+      "file_name": "Public_Liability_Insurance_2024.pdf",
+      "file_type": "Insurance",
+      "file_path": "/Company/Insurance/",
+      "upload_date": "2024-07-01",
+      "uploaded_by": "Rebecca Foster",
+      "description": "$20M Public Liability - Expires 30/06/2025",
+      "file_size": "678 KB"
+    },
+    {
+      "file_id": "OD-COMPLIANCE-001",
+      "file_name": "Safety_Management_Plan_2024.pdf",
+      "file_type": "Safety Documentation",
+      "file_path": "/Company/Safety/",
+      "upload_date": "2024-01-10",
+      "uploaded_by": "Steve Wilson",
+      "description": "Company safety management plan",
+      "file_size": "1.8 MB"
+    }
+  ],
+  "metadata": {
+    "data_purpose": "11Labs Voice Agent Knowledge Base",
+    "business_type": "Building and Construction Company",
+    "data_format": "JSON",
+    "last_updated": "2024-10-30",
+    "currency": "AUD",
+    "timezone": "Australia/Brisbane",
+    "notes": "This is dummy data for demonstration purposes. All client names, contact details, and financial information are fictional."
+  }
+}
+

@@ -1,0 +1,1029 @@
+{
+  "company": {
+    "name": "CoolAir Climate Solutions",
+    "abn": "67 345 012 678",
+    "email": "info@coolairclimate.com.au",
+    "phone": "+61 7 3789 0123",
+    "address": "Unit 7, 89 Industrial Drive, Eagle Farm QLD 4009",
+    "website": "www.coolairclimate.com.au",
+    "specializations": ["Air Conditioning Installation", "HVAC Maintenance", "Commercial Systems", "Refrigeration", "Split Systems"]
+  },
+  "integrations": {
+    "job_management": "SimPRO",
+    "accounting": "Xero",
+    "maintenance_scheduling": "Uptick",
+    "timesheets": "Deputy",
+    "voice_agent": "Custom Voice Agent",
+    "file_storage": "OneDrive",
+    "parts_ordering": "SimPRO Inventory"
+  },
+  "clients": [
+    {
+      "client_id": "CLI-001",
+      "name": "Henderson Residence",
+      "type": "Residential",
+      "contact_person": "Mark Henderson",
+      "email": "mark.h@email.com",
+      "phone": "+61 412 567 890",
+      "address": "45 Hillside Crescent, Bardon QLD 4065",
+      "relationship_start": "2024-02-15",
+      "system_type": "Ducted Air Conditioning",
+      "equipment": "Daikin Premium Inverter Ducted 14kW",
+      "maintenance_contract": "Annual Service",
+      "total_invoiced": 18500.00,
+      "account_manager": "Tom Richardson"
+    },
+    {
+      "client_id": "CLI-002",
+      "name": "Brisbane Commercial Plaza",
+      "type": "Commercial",
+      "contact_person": "Sarah Mitchell",
+      "email": "s.mitchell@commercialplaza.com.au",
+      "phone": "+61 423 678 901",
+      "address": "123 Queen Street, Brisbane City QLD 4000",
+      "relationship_start": "2022-05-10",
+      "system_type": "VRV Commercial System",
+      "equipment": "Daikin VRV IV Multiple Units",
+      "maintenance_contract": "Quarterly Service Package",
+      "total_invoiced": 185000.00,
+      "account_manager": "Tom Richardson"
+    },
+    {
+      "client_id": "CLI-003",
+      "name": "Chen Family Home",
+      "type": "Residential",
+      "contact_person": "David Chen",
+      "email": "david.chen@email.com",
+      "phone": "+61 434 789 012",
+      "address": "78 Riverside Drive, Toowong QLD 4066",
+      "relationship_start": "2024-08-22",
+      "system_type": "Multi-Split System",
+      "equipment": "Mitsubishi Electric Multi-Split 4 Zones",
+      "maintenance_contract": "No Contract",
+      "total_invoiced": 14800.00,
+      "account_manager": "Lisa Park"
+    },
+    {
+      "client_id": "CLI-004",
+      "name": "Sunshine Coast Medical Centre",
+      "type": "Commercial",
+      "contact_person": "Dr. Rebecca Walsh",
+      "email": "r.walsh@scmedical.com.au",
+      "phone": "+61 445 890 123",
+      "address": "67 Medical Drive, Maroochydore QLD 4558",
+      "relationship_start": "2023-11-05",
+      "system_type": "Precision Medical HVAC",
+      "equipment": "Actron Medical Grade System",
+      "maintenance_contract": "Monthly Maintenance",
+      "total_invoiced": 95000.00,
+      "account_manager": "Tom Richardson"
+    },
+    {
+      "client_id": "CLI-005",
+      "name": "Rodriguez Apartment",
+      "type": "Residential",
+      "contact_person": "Maria Rodriguez",
+      "email": "maria.r@email.com",
+      "phone": "+61 456 901 234",
+      "address": "Unit 15/89 Ferry Road, West End QLD 4101",
+      "relationship_start": "2024-09-10",
+      "system_type": "Wall Split System",
+      "equipment": "Daikin Cora 7.1kW Split System",
+      "maintenance_contract": "No Contract",
+      "total_invoiced": 3200.00,
+      "account_manager": "Lisa Park"
+    },
+    {
+      "client_id": "CLI-006",
+      "name": "Brisbane Data Centre",
+      "type": "Commercial",
+      "contact_person": "James Foster",
+      "email": "j.foster@bnedata.com.au",
+      "phone": "+61 467 012 345",
+      "address": "200 Technology Drive, Eight Mile Plains QLD 4113",
+      "relationship_start": "2021-03-15",
+      "system_type": "Precision Cooling System",
+      "equipment": "APC InRow Cooling Multiple Units",
+      "maintenance_contract": "24/7 Priority Maintenance",
+      "total_invoiced": 245000.00,
+      "account_manager": "Tom Richardson"
+    },
+    {
+      "client_id": "CLI-007",
+      "name": "Thompson Extension",
+      "type": "Residential",
+      "contact_person": "Emma Thompson",
+      "email": "emma.t@email.com",
+      "phone": "+61 478 123 456",
+      "address": "23 Garden Road, Kenmore QLD 4069",
+      "relationship_start": "2024-07-08",
+      "system_type": "Add-on Split System",
+      "equipment": "Mitsubishi Heavy Industries 5.0kW",
+      "maintenance_contract": "No Contract",
+      "total_invoiced": 4500.00,
+      "account_manager": "Lisa Park"
+    },
+    {
+      "client_id": "CLI-008",
+      "name": "Gold Coast Hotel",
+      "type": "Commercial",
+      "contact_person": "Tony Nguyen",
+      "email": "tony.n@gchotel.com.au",
+      "phone": "+61 489 234 567",
+      "address": "45 Esplanade, Surfers Paradise QLD 4217",
+      "relationship_start": "2023-06-20",
+      "system_type": "Chilled Water System",
+      "equipment": "Trane Chiller System 250kW",
+      "maintenance_contract": "Monthly Service Contract",
+      "total_invoiced": 385000.00,
+      "account_manager": "Tom Richardson"
+    },
+    {
+      "client_id": "CLI-009",
+      "name": "Williams Renovation",
+      "type": "Residential",
+      "contact_person": "Sophie Williams",
+      "email": "sophie.w@email.com",
+      "phone": "+61 490 345 678",
+      "address": "156 Hill Street, Paddington QLD 4064",
+      "relationship_start": "2024-10-05",
+      "system_type": "Ducted System Upgrade",
+      "equipment": "Daikin Ducted 12kW",
+      "maintenance_contract": "No Contract",
+      "total_invoiced": 0.00,
+      "account_manager": "Lisa Park"
+    }
+  ],
+  "projects": [
+    {
+      "project_id": "PROJ-2024-445",
+      "client_id": "CLI-001",
+      "client_name": "Henderson Residence",
+      "project_name": "Henderson Ducted System Install",
+      "project_type": "Residential Installation",
+      "status": "Completed",
+      "start_date": "2024-03-10",
+      "estimated_completion": "2024-03-25",
+      "actual_completion": "2024-03-23",
+      "contract_value": 18500.00,
+      "costs_to_date": 14200.00,
+      "invoiced_to_date": 18500.00,
+      "project_manager": "Tom Richardson",
+      "lead_technician": "Mark Stevens",
+      "address": "45 Hillside Crescent, Bardon QLD 4065",
+      "description": "Supply and install Daikin Premium Inverter ducted system 14kW with 6 zones, including ductwork and smart control",
+      "completion_percentage": 100
+    },
+    {
+      "project_id": "PROJ-2024-512",
+      "client_id": "CLI-002",
+      "client_name": "Brisbane Commercial Plaza",
+      "project_name": "Plaza VRV System Maintenance Q4",
+      "project_type": "Commercial Maintenance",
+      "status": "In Progress - Quarterly Service",
+      "start_date": "2024-10-01",
+      "estimated_completion": "2024-10-31",
+      "actual_completion": null,
+      "contract_value": 8500.00,
+      "costs_to_date": 6200.00,
+      "invoiced_to_date": 8500.00,
+      "project_manager": "Tom Richardson",
+      "lead_technician": "Jake Wilson",
+      "address": "123 Queen Street, Brisbane City QLD 4000",
+      "description": "Q4 2024 quarterly maintenance of 15 indoor units and 3 outdoor VRV units including filter cleaning, refrigerant checks, and system optimization",
+      "completion_percentage": 85
+    },
+    {
+      "project_id": "PROJ-2024-598",
+      "client_id": "CLI-003",
+      "client_name": "Chen Family Home",
+      "project_name": "Chen Multi-Split Installation",
+      "project_type": "Residential Installation",
+      "status": "Completed",
+      "start_date": "2024-09-05",
+      "estimated_completion": "2024-09-12",
+      "actual_completion": "2024-09-11",
+      "contract_value": 14800.00,
+      "costs_to_date": 11200.00,
+      "invoiced_to_date": 14800.00,
+      "project_manager": "Lisa Park",
+      "lead_technician": "Mark Stevens",
+      "address": "78 Riverside Drive, Toowong QLD 4066",
+      "description": "Supply and install Mitsubishi Electric multi-split system with 4 indoor units (3 bedrooms + living area) and 1 outdoor unit",
+      "completion_percentage": 100
+    }
+  ],
+  "jobs": [
+    {
+      "job_id": "JOB-2024-7890",
+      "project_id": "PROJ-2024-445",
+      "project_name": "Henderson Ducted System Install",
+      "description": "Outdoor unit installation and refrigerant line run",
+      "status": "Completed",
+      "scheduled_start": "2024-03-10",
+      "scheduled_end": "2024-03-11",
+      "actual_start": "2024-03-10",
+      "actual_end": "2024-03-11",
+      "assigned_crew": ["Mark Stevens", "Luke Johnson"],
+      "equipment_used": ["Daikin 14kW Outdoor Unit", "Refrigerant R32", "Copper pipes", "Insulation"]
+    },
+    {
+      "job_id": "JOB-2024-7912",
+      "project_id": "PROJ-2024-445",
+      "project_name": "Henderson Ducted System Install",
+      "description": "Ductwork installation and zone damper setup",
+      "status": "Completed",
+      "scheduled_start": "2024-03-12",
+      "scheduled_end": "2024-03-18",
+      "actual_start": "2024-03-12",
+      "actual_end": "2024-03-17",
+      "assigned_crew": ["Mark Stevens", "Luke Johnson", "Carlos Martinez"],
+      "equipment_used": ["Insulated ductwork", "Zone dampers", "Diffusers", "Return air grilles"]
+    },
+    {
+      "job_id": "JOB-2024-7934",
+      "project_id": "PROJ-2024-445",
+      "project_name": "Henderson Ducted System Install",
+      "description": "Indoor unit installation, electrical connection, and commissioning",
+      "status": "Completed",
+      "scheduled_start": "2024-03-19",
+      "scheduled_end": "2024-03-25",
+      "actual_start": "2024-03-18",
+      "actual_end": "2024-03-23",
+      "assigned_crew": ["Mark Stevens", "Jake Wilson"],
+      "equipment_used": ["Daikin Indoor Unit", "Smart controller", "Electrical wiring", "Testing equipment"]
+    }
+  ],
+  "invoices": [
+    {
+      "invoice_id": "INV-2024-5678",
+      "client_id": "CLI-001",
+      "client_name": "Henderson Residence",
+      "project_id": "PROJ-2024-445",
+      "invoice_date": "2024-03-25",
+      "due_date": "2024-04-24",
+      "status": "Paid",
+      "payment_date": "2024-04-15",
+      "subtotal": 18500.00,
+      "gst": 1850.00,
+      "total": 20350.00,
+      "description": "Complete ducted air conditioning installation",
+      "xero_invoice_id": "XERO-INV-5678",
+      "line_items": [
+        {
+          "description": "Daikin Premium Inverter 14kW ducted system supply and install",
+          "quantity": 1,
+          "unit_price": 15500.00,
+          "gst": 1550.00,
+          "total": 17050.00
+        },
+        {
+          "description": "6-zone damper system and smart controller",
+          "quantity": 1,
+          "unit_price": 2800.00,
+          "gst": 280.00,
+          "total": 3080.00
+        },
+        {
+          "description": "Electrical connection and commissioning",
+          "quantity": 1,
+          "unit_price": 200.00,
+          "gst": 20.00,
+          "total": 220.00
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-2024-5890",
+      "client_id": "CLI-002",
+      "client_name": "Brisbane Commercial Plaza",
+      "project_id": "PROJ-2024-512",
+      "invoice_date": "2024-10-15",
+      "due_date": "2024-11-14",
+      "status": "Sent",
+      "payment_date": null,
+      "subtotal": 8500.00,
+      "gst": 850.00,
+      "total": 9350.00,
+      "description": "Q4 2024 Quarterly Maintenance",
+      "xero_invoice_id": "XERO-INV-5890",
+      "line_items": [
+        {
+          "description": "Quarterly maintenance - 15 indoor units",
+          "quantity": 15,
+          "unit_price": 450.00,
+          "gst": 675.00,
+          "total": 7425.00
+        },
+        {
+          "description": "Outdoor VRV unit servicing - 3 units",
+          "quantity": 3,
+          "unit_price": 350.00,
+          "gst": 105.00,
+          "total": 1155.00
+        },
+        {
+          "description": "Refrigerant top-up and system optimization",
+          "quantity": 1,
+          "unit_price": 700.00,
+          "gst": 70.00,
+          "total": 770.00
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-2024-6012",
+      "client_id": "CLI-003",
+      "client_name": "Chen Family Home",
+      "project_id": "PROJ-2024-598",
+      "invoice_date": "2024-09-12",
+      "due_date": "2024-10-12",
+      "status": "Paid",
+      "payment_date": "2024-10-05",
+      "subtotal": 14800.00,
+      "gst": 1480.00,
+      "total": 16280.00,
+      "description": "Multi-split air conditioning installation",
+      "xero_invoice_id": "XERO-INV-6012",
+      "line_items": [
+        {
+          "description": "Mitsubishi Electric 10kW outdoor unit supply and install",
+          "quantity": 1,
+          "unit_price": 6500.00,
+          "gst": 650.00,
+          "total": 7150.00
+        },
+        {
+          "description": "Indoor wall units - 4 zones (2.5kW + 2.5kW + 3.5kW + 5.0kW)",
+          "quantity": 4,
+          "unit_price": 1850.00,
+          "gst": 740.00,
+          "total": 8140.00
+        },
+        {
+          "description": "Refrigerant lines and electrical connection",
+          "quantity": 1,
+          "unit_price": 900.00,
+          "gst": 90.00,
+          "total": 990.00
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-2024-5734",
+      "client_id": "CLI-004",
+      "client_name": "Sunshine Coast Medical Centre",
+      "project_id": null,
+      "invoice_date": "2024-09-30",
+      "due_date": "2024-10-30",
+      "status": "Paid",
+      "payment_date": "2024-10-22",
+      "subtotal": 3200.00,
+      "gst": 320.00,
+      "total": 3520.00,
+      "description": "Monthly maintenance - September 2024",
+      "xero_invoice_id": "XERO-INV-5734",
+      "line_items": [
+        {
+          "description": "Monthly HVAC system maintenance and filter replacement",
+          "quantity": 1,
+          "unit_price": 3200.00,
+          "gst": 320.00,
+          "total": 3520.00
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-2024-6089",
+      "client_id": "CLI-004",
+      "client_name": "Sunshine Coast Medical Centre",
+      "project_id": null,
+      "invoice_date": "2024-10-31",
+      "due_date": "2024-11-30",
+      "status": "Sent",
+      "payment_date": null,
+      "subtotal": 3200.00,
+      "gst": 320.00,
+      "total": 3520.00,
+      "description": "Monthly maintenance - October 2024",
+      "xero_invoice_id": "XERO-INV-6089",
+      "line_items": [
+        {
+          "description": "Monthly HVAC system maintenance and filter replacement",
+          "quantity": 1,
+          "unit_price": 3200.00,
+          "gst": 320.00,
+          "total": 3520.00
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-2024-5923",
+      "client_id": "CLI-005",
+      "client_name": "Rodriguez Apartment",
+      "project_id": null,
+      "invoice_date": "2024-09-18",
+      "due_date": "2024-10-18",
+      "status": "Paid",
+      "payment_date": "2024-10-10",
+      "subtotal": 3200.00,
+      "gst": 320.00,
+      "total": 3520.00,
+      "description": "Split system supply and install",
+      "xero_invoice_id": "XERO-INV-5923",
+      "line_items": [
+        {
+          "description": "Daikin Cora 7.1kW split system supply and install",
+          "quantity": 1,
+          "unit_price": 3200.00,
+          "gst": 320.00,
+          "total": 3520.00
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-2024-5812",
+      "client_id": "CLI-006",
+      "client_name": "Brisbane Data Centre",
+      "project_id": null,
+      "invoice_date": "2024-09-30",
+      "due_date": "2024-10-30",
+      "status": "Paid",
+      "payment_date": "2024-10-25",
+      "subtotal": 12500.00,
+      "gst": 1250.00,
+      "total": 13750.00,
+      "description": "24/7 Priority maintenance - September 2024",
+      "xero_invoice_id": "XERO-INV-5812",
+      "line_items": [
+        {
+          "description": "Monthly priority maintenance contract",
+          "quantity": 1,
+          "unit_price": 8500.00,
+          "gst": 850.00,
+          "total": 9350.00
+        },
+        {
+          "description": "Emergency callout - cooling unit fault repair",
+          "quantity": 1,
+          "unit_price": 4000.00,
+          "gst": 400.00,
+          "total": 4400.00
+        }
+      ]
+    }
+  ],
+  "bills": [
+    {
+      "bill_id": "BILL-2024-6789",
+      "supplier": "Daikin Australia",
+      "project_id": "PROJ-2024-445",
+      "bill_date": "2024-03-08",
+      "due_date": "2024-04-07",
+      "status": "Paid",
+      "payment_date": "2024-04-01",
+      "subtotal": 11250.00,
+      "gst": 1125.00,
+      "total": 12375.00,
+      "description": "Equipment supply - Henderson project",
+      "xero_bill_id": "XERO-BILL-6789",
+      "line_items": [
+        {
+          "description": "Daikin Premium Inverter 14kW outdoor unit",
+          "quantity": 1,
+          "unit_price": 7800.00,
+          "gst": 780.00,
+          "total": 8580.00
+        },
+        {
+          "description": "Daikin ducted indoor unit",
+          "quantity": 1,
+          "unit_price": 2850.00,
+          "gst": 285.00,
+          "total": 3135.00
+        },
+        {
+          "description": "6-zone controller and dampers",
+          "quantity": 1,
+          "unit_price": 600.00,
+          "gst": 60.00,
+          "total": 660.00
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-6890",
+      "supplier": "Reece Plumbing - Eagle Farm",
+      "project_id": "PROJ-2024-445",
+      "bill_date": "2024-03-12",
+      "due_date": "2024-04-11",
+      "status": "Paid",
+      "payment_date": "2024-04-05",
+      "subtotal": 1850.00,
+      "gst": 185.00,
+      "total": 2035.00,
+      "description": "Ducting and installation materials",
+      "xero_bill_id": "XERO-BILL-6890",
+      "line_items": [
+        {
+          "description": "Insulated flexible ductwork 250mm",
+          "quantity": 45,
+          "unit_price": 28.50,
+          "gst": 128.25,
+          "total": 1410.75
+        },
+        {
+          "description": "Diffusers and return air grilles",
+          "quantity": 1,
+          "unit_price": 565.00,
+          "gst": 56.50,
+          "total": 621.50
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-6912",
+      "supplier": "BOC Gases",
+      "project_id": "PROJ-2024-445",
+      "bill_date": "2024-03-15",
+      "due_date": "2024-04-14",
+      "status": "Paid",
+      "payment_date": "2024-04-08",
+      "subtotal": 285.00,
+      "gst": 28.50,
+      "total": 313.50,
+      "description": "Refrigerant gas R32",
+      "xero_bill_id": "XERO-BILL-6912",
+      "line_items": [
+        {
+          "description": "R32 Refrigerant - 10kg cylinder",
+          "quantity": 1,
+          "unit_price": 285.00,
+          "gst": 28.50,
+          "total": 313.50
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-7023",
+      "supplier": "Mitsubishi Electric Australia",
+      "project_id": "PROJ-2024-598",
+      "bill_date": "2024-09-02",
+      "due_date": "2024-10-02",
+      "status": "Paid",
+      "payment_date": "2024-09-28",
+      "subtotal": 8950.00,
+      "gst": 895.00,
+      "total": 9845.00,
+      "description": "Equipment supply - Chen project",
+      "xero_bill_id": "XERO-BILL-7023",
+      "line_items": [
+        {
+          "description": "Mitsubishi Electric 10kW multi-split outdoor unit",
+          "quantity": 1,
+          "unit_price": 4850.00,
+          "gst": 485.00,
+          "total": 5335.00
+        },
+        {
+          "description": "Wall mounted indoor units - assorted sizes",
+          "quantity": 4,
+          "unit_price": 975.00,
+          "gst": 390.00,
+          "total": 4290.00
+        },
+        {
+          "description": "Wi-Fi controllers",
+          "quantity": 4,
+          "unit_price": 50.00,
+          "gst": 20.00,
+          "total": 220.00
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-7045",
+      "supplier": "Actronair",
+      "project_id": "PROJ-2024-512",
+      "bill_date": "2024-10-08",
+      "due_date": "2024-11-07",
+      "status": "Unpaid",
+      "payment_date": null,
+      "subtotal": 1850.00,
+      "gst": 185.00,
+      "total": 2035.00,
+      "description": "Replacement filters and parts",
+      "xero_bill_id": "XERO-BILL-7045",
+      "line_items": [
+        {
+          "description": "VRV system filters",
+          "quantity": 15,
+          "unit_price": 85.00,
+          "gst": 127.50,
+          "total": 1402.50
+        },
+        {
+          "description": "Replacement sensors and parts",
+          "quantity": 1,
+          "unit_price": 575.00,
+          "gst": 57.50,
+          "total": 632.50
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-7067",
+      "supplier": "BOC Gases",
+      "project_id": "PROJ-2024-512",
+      "bill_date": "2024-10-12",
+      "due_date": "2024-11-11",
+      "status": "Unpaid",
+      "payment_date": null,
+      "subtotal": 450.00,
+      "gst": 45.00,
+      "total": 495.00,
+      "description": "Refrigerant gas R410A",
+      "xero_bill_id": "XERO-BILL-7067",
+      "line_items": [
+        {
+          "description": "R410A Refrigerant for top-up",
+          "quantity": 1,
+          "unit_price": 450.00,
+          "gst": 45.00,
+          "total": 495.00
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-7089",
+      "supplier": "Reece Plumbing - Eagle Farm",
+      "project_id": "PROJ-2024-598",
+      "bill_date": "2024-09-05",
+      "due_date": "2024-10-05",
+      "status": "Paid",
+      "payment_date": "2024-09-30",
+      "subtotal": 680.00,
+      "gst": 68.00,
+      "total": 748.00,
+      "description": "Copper pipes and insulation",
+      "xero_bill_id": "XERO-BILL-7089",
+      "line_items": [
+        {
+          "description": "Copper refrigerant lines",
+          "quantity": 1,
+          "unit_price": 485.00,
+          "gst": 48.50,
+          "total": 533.50
+        },
+        {
+          "description": "Line insulation",
+          "quantity": 1,
+          "unit_price": 195.00,
+          "gst": 19.50,
+          "total": 214.50
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-7112",
+      "supplier": "SimPRO Software",
+      "bill_date": "2024-10-01",
+      "due_date": "2024-10-31",
+      "status": "Paid",
+      "payment_date": "2024-10-15",
+      "subtotal": 495.00,
+      "gst": 49.50,
+      "total": 544.50,
+      "description": "Job management software - October",
+      "xero_bill_id": "XERO-BILL-7112",
+      "line_items": [
+        {
+          "description": "SimPRO monthly subscription - 6 users",
+          "quantity": 1,
+          "unit_price": 495.00,
+          "gst": 49.50,
+          "total": 544.50
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-7123",
+      "supplier": "Uptick",
+      "bill_date": "2024-10-01",
+      "due_date": "2024-10-31",
+      "status": "Paid",
+      "payment_date": "2024-10-15",
+      "subtotal": 285.00,
+      "gst": 28.50,
+      "total": 313.50,
+      "description": "Maintenance scheduling software - October",
+      "xero_bill_id": "XERO-BILL-7123",
+      "line_items": [
+        {
+          "description": "Uptick monthly subscription",
+          "quantity": 1,
+          "unit_price": 285.00,
+          "gst": 28.50,
+          "total": 313.50
+        }
+      ]
+    }
+  ],
+  "leads": [
+    {
+      "lead_id": "LEAD-2024-456",
+      "name": "Patterson Commercial Building",
+      "type": "Commercial",
+      "contact_person": "Michael Patterson",
+      "email": "m.patterson@commercial.com.au",
+      "phone": "+61 421 789 012",
+      "source": "Website Inquiry",
+      "date_created": "2024-10-23",
+      "status": "Quote Sent",
+      "project_type": "VRV System Installation",
+      "estimated_value": 125000.00,
+      "location": "Fortitude Valley QLD",
+      "assigned_to": "Tom Richardson",
+      "notes": "5-storey office building needs new VRV system. Quote sent 25/10. Follow-up scheduled.",
+      "last_contact": "2024-10-25",
+      "next_followup": "2024-11-06"
+    },
+    {
+      "lead_id": "LEAD-2024-457",
+      "name": "Foster New Build",
+      "type": "Residential",
+      "contact_person": "Rebecca Foster",
+      "email": "rebecca.f@email.com",
+      "phone": "+61 432 890 123",
+      "source": "Builder Referral",
+      "date_created": "2024-10-25",
+      "status": "Site Visit Scheduled",
+      "project_type": "Ducted Air Conditioning",
+      "estimated_value": 22000.00,
+      "location": "Pullenvale QLD",
+      "assigned_to": "Lisa Park",
+      "notes": "New house build, referred by GreenBuild Constructions. Site visit scheduled for Nov 4.",
+      "last_contact": "2024-10-26",
+      "next_followup": "2024-11-04"
+    },
+    {
+      "lead_id": "LEAD-2024-458",
+      "name": "Brisbane Gym Expansion",
+      "type": "Commercial",
+      "contact_person": "Tony Wilson",
+      "email": "tony.w@bneqym.com.au",
+      "phone": "+61 443 901 234",
+      "source": "Voice Agent - Inbound Call",
+      "date_created": "2024-10-27",
+      "status": "Initial Contact",
+      "project_type": "Commercial Split Systems",
+      "estimated_value": 45000.00,
+      "location": "Newstead QLD",
+      "assigned_to": "Tom Richardson",
+      "notes": "Gym expansion needs 8 commercial split systems. Scheduling site inspection.",
+      "last_contact": "2024-10-27",
+      "next_followup": "2024-11-01"
+    },
+    {
+      "lead_id": "LEAD-2024-459",
+      "name": "Martinez Maintenance Contract",
+      "type": "Commercial",
+      "contact_person": "Lisa Martinez",
+      "email": "l.martinez@properties.com.au",
+      "phone": "+61 454 012 345",
+      "source": "Cold Outreach",
+      "date_created": "2024-10-28",
+      "status": "Proposal Sent",
+      "project_type": "Maintenance Contract",
+      "estimated_value": 36000.00,
+      "location": "Multiple Properties - Brisbane",
+      "assigned_to": "Tom Richardson",
+      "notes": "Property management company with 15 properties. Maintenance proposal sent 29/10.",
+      "last_contact": "2024-10-29",
+      "next_followup": "2024-11-08"
+    },
+    {
+      "lead_id": "LEAD-2024-460",
+      "name": "Lee Restaurant Fitout",
+      "type": "Commercial",
+      "contact_person": "David Lee",
+      "email": "david.l@restaurant.com.au",
+      "phone": "+61 465 123 456",
+      "source": "Referral",
+      "date_created": "2024-10-29",
+      "status": "Meeting Scheduled",
+      "project_type": "Commercial Kitchen Cooling",
+      "estimated_value": 28000.00,
+      "location": "South Brisbane QLD",
+      "assigned_to": "Lisa Park",
+      "notes": "New restaurant needs kitchen cooling and dining area AC. Meeting scheduled Nov 6.",
+      "last_contact": "2024-10-29",
+      "next_followup": "2024-11-06"
+    },
+    {
+      "lead_id": "LEAD-2024-461",
+      "name": "Williams Annual Service",
+      "type": "Residential",
+      "contact_person": "James Williams",
+      "email": "james.w@email.com",
+      "phone": "+61 476 234 567",
+      "source": "Previous Customer",
+      "date_created": "2024-10-24",
+      "status": "Quote Sent",
+      "project_type": "System Service",
+      "estimated_value": 450.00,
+      "location": "Ashgrove QLD",
+      "assigned_to": "Lisa Park",
+      "notes": "Annual service due on ducted system. Quote sent, awaiting confirmation.",
+      "last_contact": "2024-10-24",
+      "next_followup": "2024-11-02"
+    }
+  ],
+  "staff": [
+    {
+      "staff_id": "STAFF-001",
+      "name": "Tom Richardson",
+      "role": "Owner / Senior Technician",
+      "email": "tom@coolairclimate.com.au",
+      "phone": "+61 421 456 789",
+      "qualifications": ["ARC Refrigerant Handling Licence", "Electrical Licence QLD", "Cert IV Air Conditioning", "Daikin Specialist Certification"],
+      "specializations": ["Commercial HVAC", "VRV Systems", "Project Management"],
+      "active_projects": 6,
+      "employment_start": "2015-08-01"
+    },
+    {
+      "staff_id": "STAFF-002",
+      "name": "Lisa Park",
+      "role": "Project Manager / Technician",
+      "email": "lisa@coolairclimate.com.au",
+      "phone": "+61 432 567 890",
+      "qualifications": ["ARC Refrigerant Handling Licence", "Electrical Licence QLD", "Cert III Air Conditioning"],
+      "specializations": ["Residential Systems", "Multi-Split Systems", "Customer Service"],
+      "active_projects": 4,
+      "employment_start": "2018-02-15"
+    },
+    {
+      "staff_id": "STAFF-003",
+      "name": "Mark Stevens",
+      "role": "Lead Technician",
+      "email": "mark@coolairclimate.com.au",
+      "phone": "+61 443 678 901",
+      "qualifications": ["ARC Refrigerant Handling Licence", "Electrical Licence QLD", "Cert III Air Conditioning", "Mitsubishi Certified"],
+      "specializations": ["Ducted Systems", "Installation", "Fault Finding"],
+      "active_projects": 3,
+      "employment_start": "2019-06-10"
+    },
+    {
+      "staff_id": "STAFF-004",
+      "name": "Jake Wilson",
+      "role": "Technician",
+      "email": "jake@coolairclimate.com.au",
+      "phone": "+61 454 789 012",
+      "qualifications": ["ARC Refrigerant Handling Licence", "Electrical Licence QLD", "Cert III Air Conditioning"],
+      "specializations": ["Maintenance", "Service", "Commercial Systems"],
+      "active_projects": 4,
+      "employment_start": "2020-03-22"
+    },
+    {
+      "staff_id": "STAFF-005",
+      "name": "Luke Johnson",
+      "role": "Technician",
+      "email": "luke@coolairclimate.com.au",
+      "phone": "+61 465 890 123",
+      "qualifications": ["ARC Refrigerant Handling Licence", "Restricted Electrical Licence", "Cert III Air Conditioning"],
+      "specializations": ["Installation", "Residential Systems", "Ductwork"],
+      "active_projects": 2,
+      "employment_start": "2021-09-01"
+    },
+    {
+      "staff_id": "STAFF-006",
+      "name": "Carlos Martinez",
+      "role": "Apprentice",
+      "email": "carlos@coolairclimate.com.au",
+      "phone": "+61 476 901 234",
+      "qualifications": ["Currently completing Cert III Air Conditioning", "White Card"],
+      "specializations": ["Installation Support", "Learning Trade"],
+      "active_projects": 2,
+      "employment_start": "2023-01-15"
+    },
+    {
+      "staff_id": "STAFF-007",
+      "name": "Sarah Chen",
+      "role": "Office Manager",
+      "email": "sarah@coolairclimate.com.au",
+      "phone": "+61 487 012 345",
+      "qualifications": ["Cert IV Business Administration", "Xero Certified"],
+      "specializations": ["Administration", "Scheduling", "Customer Service"],
+      "active_projects": 0,
+      "employment_start": "2019-11-01"
+    }
+  ],
+  "onedrive_files": [
+    {
+      "file_id": "OD-PROJ-445-001",
+      "project_id": "PROJ-2024-445",
+      "file_name": "Henderson_Installation_Plans.pdf",
+      "file_type": "Technical Plans",
+      "file_path": "/Projects/2024/Henderson/Plans/",
+      "upload_date": "2024-03-05",
+      "uploaded_by": "Tom Richardson",
+      "description": "Ductwork layout and equipment placement plans",
+      "file_size": "2.4 MB"
+    },
+    {
+      "file_id": "OD-PROJ-445-002",
+      "project_id": "PROJ-2024-445",
+      "file_name": "Henderson_Installation_Photos.zip",
+      "file_type": "Photos",
+      "file_path": "/Projects/2024/Henderson/Photos/",
+      "upload_date": "2024-03-25",
+      "uploaded_by": "Mark Stevens",
+      "description": "Installation progress and completion photos",
+      "file_size": "28.6 MB"
+    },
+    {
+      "file_id": "OD-PROJ-445-003",
+      "project_id": "PROJ-2024-445",
+      "file_name": "Henderson_Warranty_Documentation.pdf",
+      "file_type": "Warranty",
+      "file_path": "/Projects/2024/Henderson/Warranty/",
+      "upload_date": "2024-03-25",
+      "uploaded_by": "Sarah Chen",
+      "description": "Equipment warranty and user manuals",
+      "file_size": "1.8 MB"
+    },
+    {
+      "file_id": "OD-PROJ-512-001",
+      "project_id": "PROJ-2024-512",
+      "file_name": "Plaza_Maintenance_Checklist_Q4.pdf",
+      "file_type": "Maintenance Report",
+      "file_path": "/Projects/2024/Commercial Plaza/Maintenance/",
+      "upload_date": "2024-10-20",
+      "uploaded_by": "Jake Wilson",
+      "description": "Q4 maintenance checklist and findings",
+      "file_size": "845 KB"
+    },
+    {
+      "file_id": "OD-PROJ-598-001",
+      "project_id": "PROJ-2024-598",
+      "file_name": "Chen_Equipment_Specifications.pdf",
+      "file_type": "Specifications",
+      "file_path": "/Projects/2024/Chen/Documentation/",
+      "upload_date": "2024-09-01",
+      "uploaded_by": "Lisa Park",
+      "description": "Equipment specifications and performance data",
+      "file_size": "1.2 MB"
+    },
+    {
+      "file_id": "OD-PROJ-598-002",
+      "project_id": "PROJ-2024-598",
+      "file_name": "Chen_Commissioning_Report.pdf",
+      "file_type": "Commissioning",
+      "file_path": "/Projects/2024/Chen/Reports/",
+      "upload_date": "2024-09-12",
+      "uploaded_by": "Mark Stevens",
+      "description": "System commissioning and testing report",
+      "file_size": "956 KB"
+    },
+    {
+      "file_id": "OD-STAFF-001",
+      "file_name": "ARC_Licences_All_Staff.pdf",
+      "file_type": "Licences",
+      "file_path": "/Staff/Licences/",
+      "upload_date": "2024-02-01",
+      "uploaded_by": "Sarah Chen",
+      "description": "Current ARC refrigerant handling licences",
+      "file_size": "2.1 MB"
+    },
+    {
+      "file_id": "OD-INSURANCE-001",
+      "file_name": "Public_Liability_Insurance_2024.pdf",
+      "file_type": "Insurance",
+      "file_path": "/Company/Insurance/",
+      "upload_date": "2024-07-01",
+      "uploaded_by": "Sarah Chen",
+      "description": "$20M Public Liability - Expires 30/06/2025",
+      "file_size": "678 KB"
+    },
+    {
+      "file_id": "OD-COMPLIANCE-001",
+      "file_name": "Refrigerant_Gas_Handling_Logs.xlsx",
+      "file_type": "Compliance",
+      "file_path": "/Company/Compliance/",
+      "upload_date": "2024-10-28",
+      "uploaded_by": "Sarah Chen",
+      "description": "Refrigerant gas usage and disposal logs",
+      "file_size": "345 KB"
+    }
+  ],
+  "metadata": {
+    "data_purpose": "11Labs Voice Agent Knowledge Base",
+    "business_type": "Air Conditioning and HVAC Company",
+    "data_format": "JSON",
+    "last_updated": "2024-10-30",
+    "currency": "AUD",
+    "timezone": "Australia/Brisbane",
+    "notes": "This is dummy data for demonstration purposes. All client names, contact details, and financial information are fictional."
+  }
+}
+

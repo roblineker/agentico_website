@@ -1,0 +1,824 @@
+{
+  "company": {
+    "name": "Brisbane Accounting Partners",
+    "abn": "78 456 123 789",
+    "email": "info@brisbaneaccounting.com.au",
+    "phone": "+61 7 3890 1234",
+    "address": "Level 12, 250 Queen Street, Brisbane QLD 4000",
+    "website": "www.brisbaneaccounting.com.au",
+    "specializations": ["BAS Preparation", "Tax Returns", "Bookkeeping", "Payroll Services", "Financial Planning"]
+  },
+  "integrations": {
+    "practice_management": "MYOB Practice",
+    "accounting": "Xero",
+    "tax_lodgement": "ATO Portal",
+    "document_management": "SharePoint",
+    "voice_agent": "Custom Voice Agent",
+    "file_storage": "OneDrive",
+    "client_portal": "MYOB Practice",
+    "payroll": "Xero Payroll"
+  },
+  "clients": [
+    {
+      "client_id": "CLI-001",
+      "name": "TechFlow Solutions Pty Ltd",
+      "type": "Corporate",
+      "contact_person": "Sarah Mitchell",
+      "email": "sarah@techflow.com.au",
+      "phone": "+61 412 678 901",
+      "address": "Level 5, 120 Eagle Street, Brisbane QLD 4000",
+      "abn": "12 345 678 901",
+      "relationship_start": "2021-07-15",
+      "services": ["Monthly BAS", "Annual Tax Return", "Bookkeeping", "Payroll"],
+      "annual_revenue": 2800000.00,
+      "total_fees_ytd": 18500.00,
+      "account_manager": "Jennifer Wong"
+    },
+    {
+      "client_id": "CLI-002",
+      "name": "David Chen",
+      "type": "Individual",
+      "contact_person": "David Chen",
+      "email": "david.chen@email.com",
+      "phone": "+61 423 789 012",
+      "address": "45 Residential Street, Indooroopilly QLD 4068",
+      "tfn": "123 456 789",
+      "relationship_start": "2019-09-20",
+      "services": ["Annual Tax Return", "Rental Property Tax"],
+      "annual_income": 185000.00,
+      "total_fees_ytd": 850.00,
+      "account_manager": "Marcus Lee"
+    },
+    {
+      "client_id": "CLI-003",
+      "name": "Brisbane Property Investments Pty Ltd",
+      "type": "Corporate",
+      "contact_person": "James Rodriguez",
+      "email": "j.rodriguez@bpi.com.au",
+      "phone": "+61 434 890 123",
+      "address": "Suite 8, 156 Commercial Road, Newstead QLD 4006",
+      "abn": "23 456 789 012",
+      "relationship_start": "2020-03-10",
+      "services": ["Monthly BAS", "Annual Tax Return", "Financial Statements", "Tax Planning"],
+      "annual_revenue": 4500000.00,
+      "total_fees_ytd": 28500.00,
+      "account_manager": "Jennifer Wong"
+    },
+    {
+      "client_id": "CLI-004",
+      "name": "Emma Thompson",
+      "type": "Individual",
+      "contact_person": "Emma Thompson",
+      "email": "emma.t@email.com",
+      "phone": "+61 445 901 234",
+      "address": "78 Garden Street, Ashgrove QLD 4060",
+      "tfn": "234 567 890",
+      "relationship_start": "2022-06-15",
+      "services": ["Annual Tax Return"],
+      "annual_income": 92000.00,
+      "total_fees_ytd": 385.00,
+      "account_manager": "Marcus Lee"
+    },
+    {
+      "client_id": "CLI-005",
+      "name": "GreenBuild Constructions Pty Ltd",
+      "type": "Corporate",
+      "contact_person": "Steve Wilson",
+      "email": "steve@greenbuild.com.au",
+      "phone": "+61 456 012 345",
+      "address": "12 Industrial Way, Rocklea QLD 4106",
+      "abn": "45 123 890 456",
+      "relationship_start": "2018-11-05",
+      "services": ["Monthly BAS", "Annual Tax Return", "Payroll", "Tax Planning"],
+      "annual_revenue": 5200000.00,
+      "total_fees_ytd": 32500.00,
+      "account_manager": "Jennifer Wong"
+    },
+    {
+      "client_id": "CLI-006",
+      "name": "Rebecca Foster",
+      "type": "Individual",
+      "contact_person": "Rebecca Foster",
+      "email": "rebecca.f@email.com",
+      "phone": "+61 467 123 456",
+      "address": "89 Hill View Court, Bardon QLD 4065",
+      "tfn": "345 678 901",
+      "relationship_start": "2023-08-22",
+      "services": ["Annual Tax Return", "Investment Tax"],
+      "annual_income": 145000.00,
+      "total_fees_ytd": 650.00,
+      "account_manager": "Marcus Lee"
+    },
+    {
+      "client_id": "CLI-007",
+      "name": "Daily Grind Espresso Bar Pty Ltd",
+      "type": "Corporate",
+      "contact_person": "Tony Nguyen",
+      "email": "tony@dailygrind.com.au",
+      "phone": "+61 478 234 567",
+      "address": "Shop 3, 67 Main Street, West End QLD 4101",
+      "abn": "67 890 123 456",
+      "relationship_start": "2022-02-18",
+      "services": ["Monthly BAS", "Annual Tax Return", "Bookkeeping"],
+      "annual_revenue": 650000.00,
+      "total_fees_ytd": 8500.00,
+      "account_manager": "Marcus Lee"
+    },
+    {
+      "client_id": "CLI-008",
+      "name": "Queensland Garden Designs Pty Ltd",
+      "type": "Corporate",
+      "contact_person": "Michael Lee",
+      "email": "michael@qldgardendesigns.com.au",
+      "phone": "+61 489 345 678",
+      "address": "45 Nursery Road, Pullenvale QLD 4069",
+      "abn": "56 234 901 567",
+      "relationship_start": "2020-09-12",
+      "services": ["Quarterly BAS", "Annual Tax Return", "Payroll"],
+      "annual_revenue": 1200000.00,
+      "total_fees_ytd": 12500.00,
+      "account_manager": "Jennifer Wong"
+    },
+    {
+      "client_id": "CLI-009",
+      "name": "Sophie Williams",
+      "type": "Individual",
+      "contact_person": "Sophie Williams",
+      "email": "sophie.w@email.com",
+      "phone": "+61 490 456 789",
+      "address": "34 Bushland Drive, The Gap QLD 4061",
+      "tfn": "456 789 012",
+      "relationship_start": "2024-09-05",
+      "services": ["Annual Tax Return"],
+      "annual_income": 78000.00,
+      "total_fees_ytd": 0.00,
+      "account_manager": "Marcus Lee"
+    }
+  ],
+  "jobs": [
+    {
+      "job_id": "JOB-2024-8901",
+      "client_id": "CLI-001",
+      "client_name": "TechFlow Solutions Pty Ltd",
+      "job_type": "Monthly BAS",
+      "status": "Completed",
+      "period": "September 2024",
+      "due_date": "2024-10-28",
+      "lodgement_date": "2024-10-22",
+      "assigned_to": "Jennifer Wong",
+      "hours_spent": 4.5,
+      "gst_payable": 32500.00
+    },
+    {
+      "job_id": "JOB-2024-8912",
+      "client_id": "CLI-001",
+      "client_name": "TechFlow Solutions Pty Ltd",
+      "job_type": "Monthly BAS",
+      "status": "In Progress",
+      "period": "October 2024",
+      "due_date": "2024-11-28",
+      "lodgement_date": null,
+      "assigned_to": "Jennifer Wong",
+      "hours_spent": 2.0,
+      "gst_payable": null
+    },
+    {
+      "job_id": "JOB-2024-8789",
+      "client_id": "CLI-003",
+      "client_name": "Brisbane Property Investments Pty Ltd",
+      "job_type": "Annual Tax Return",
+      "status": "Completed",
+      "period": "FY 2023-24",
+      "due_date": "2024-10-31",
+      "lodgement_date": "2024-10-15",
+      "assigned_to": "Jennifer Wong",
+      "hours_spent": 12.5,
+      "tax_payable": 285000.00
+    }
+  ],
+  "invoices": [
+    {
+      "invoice_id": "INV-2024-8901",
+      "client_id": "CLI-001",
+      "client_name": "TechFlow Solutions Pty Ltd",
+      "invoice_date": "2024-09-30",
+      "due_date": "2024-10-30",
+      "status": "Paid",
+      "payment_date": "2024-10-22",
+      "subtotal": 1650.00,
+      "gst": 165.00,
+      "total": 1815.00,
+      "description": "Monthly services - September 2024",
+      "xero_invoice_id": "XERO-INV-8901",
+      "line_items": [
+        {
+          "description": "Monthly BAS preparation and lodgement",
+          "quantity": 1,
+          "unit_price": 850.00,
+          "gst": 85.00,
+          "total": 935.00
+        },
+        {
+          "description": "Monthly bookkeeping services",
+          "quantity": 1,
+          "unit_price": 650.00,
+          "gst": 65.00,
+          "total": 715.00
+        },
+        {
+          "description": "Payroll processing - 12 employees",
+          "quantity": 1,
+          "unit_price": 150.00,
+          "gst": 15.00,
+          "total": 165.00
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-2024-8923",
+      "client_id": "CLI-002",
+      "client_name": "David Chen",
+      "invoice_date": "2024-08-15",
+      "due_date": "2024-09-14",
+      "status": "Paid",
+      "payment_date": "2024-09-05",
+      "subtotal": 650.00,
+      "gst": 65.00,
+      "total": 715.00,
+      "description": "Tax return FY 2023-24",
+      "xero_invoice_id": "XERO-INV-8923",
+      "line_items": [
+        {
+          "description": "Individual tax return preparation and lodgement",
+          "quantity": 1,
+          "unit_price": 385.00,
+          "gst": 38.50,
+          "total": 423.50
+        },
+        {
+          "description": "Rental property tax schedule",
+          "quantity": 2,
+          "unit_price": 132.50,
+          "gst": 26.50,
+          "total": 291.50
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-2024-8945",
+      "client_id": "CLI-003",
+      "client_name": "Brisbane Property Investments Pty Ltd",
+      "invoice_date": "2024-09-30",
+      "due_date": "2024-10-30",
+      "status": "Paid",
+      "payment_date": "2024-10-28",
+      "subtotal": 2450.00,
+      "gst": 245.00,
+      "total": 2695.00,
+      "description": "Monthly services - September 2024",
+      "xero_invoice_id": "XERO-INV-8945",
+      "line_items": [
+        {
+          "description": "Monthly BAS preparation and lodgement",
+          "quantity": 1,
+          "unit_price": 1250.00,
+          "gst": 125.00,
+          "total": 1375.00
+        },
+        {
+          "description": "Management accounts and financial statements",
+          "quantity": 1,
+          "unit_price": 1200.00,
+          "gst": 120.00,
+          "total": 1320.00
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-2024-8967",
+      "client_id": "CLI-003",
+      "client_name": "Brisbane Property Investments Pty Ltd",
+      "invoice_date": "2024-10-20",
+      "due_date": "2024-11-19",
+      "status": "Sent",
+      "payment_date": null,
+      "subtotal": 4500.00,
+      "gst": 450.00,
+      "total": 4950.00,
+      "description": "Company tax return FY 2023-24",
+      "xero_invoice_id": "XERO-INV-8967",
+      "line_items": [
+        {
+          "description": "Company tax return preparation and lodgement",
+          "quantity": 1,
+          "unit_price": 3200.00,
+          "gst": 320.00,
+          "total": 3520.00
+        },
+        {
+          "description": "Tax planning consultation",
+          "quantity": 1,
+          "unit_price": 1300.00,
+          "gst": 130.00,
+          "total": 1430.00
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-2024-8834",
+      "client_id": "CLI-004",
+      "client_name": "Emma Thompson",
+      "invoice_date": "2024-07-25",
+      "due_date": "2024-08-24",
+      "status": "Paid",
+      "payment_date": "2024-08-15",
+      "subtotal": 385.00,
+      "gst": 38.50,
+      "total": 423.50,
+      "description": "Tax return FY 2023-24",
+      "xero_invoice_id": "XERO-INV-8834",
+      "line_items": [
+        {
+          "description": "Individual tax return preparation and lodgement",
+          "quantity": 1,
+          "unit_price": 385.00,
+          "gst": 38.50,
+          "total": 423.50
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-2024-8978",
+      "client_id": "CLI-005",
+      "client_name": "GreenBuild Constructions Pty Ltd",
+      "invoice_date": "2024-10-31",
+      "due_date": "2024-11-30",
+      "status": "Sent",
+      "payment_date": null,
+      "subtotal": 2850.00,
+      "gst": 285.00,
+      "total": 3135.00,
+      "description": "Monthly services - October 2024",
+      "xero_invoice_id": "XERO-INV-8978",
+      "line_items": [
+        {
+          "description": "Monthly BAS preparation and lodgement",
+          "quantity": 1,
+          "unit_price": 950.00,
+          "gst": 95.00,
+          "total": 1045.00
+        },
+        {
+          "description": "Bookkeeping services",
+          "quantity": 1,
+          "unit_price": 1200.00,
+          "gst": 120.00,
+          "total": 1320.00
+        },
+        {
+          "description": "Payroll processing - 8 employees",
+          "quantity": 1,
+          "unit_price": 700.00,
+          "gst": 70.00,
+          "total": 770.00
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-2024-8856",
+      "client_id": "CLI-006",
+      "client_name": "Rebecca Foster",
+      "invoice_date": "2024-09-10",
+      "due_date": "2024-10-10",
+      "status": "Paid",
+      "payment_date": "2024-10-02",
+      "subtotal": 650.00,
+      "gst": 65.00,
+      "total": 715.00,
+      "description": "Tax return FY 2023-24",
+      "xero_invoice_id": "XERO-INV-8856",
+      "line_items": [
+        {
+          "description": "Individual tax return with investment income",
+          "quantity": 1,
+          "unit_price": 485.00,
+          "gst": 48.50,
+          "total": 533.50
+        },
+        {
+          "description": "Capital gains tax calculation",
+          "quantity": 1,
+          "unit_price": 165.00,
+          "gst": 16.50,
+          "total": 181.50
+        }
+      ]
+    }
+  ],
+  "bills": [
+    {
+      "bill_id": "BILL-2024-9012",
+      "supplier": "MYOB",
+      "bill_date": "2024-10-01",
+      "due_date": "2024-10-31",
+      "status": "Paid",
+      "payment_date": "2024-10-15",
+      "subtotal": 895.00,
+      "gst": 89.50,
+      "total": 984.50,
+      "description": "MYOB Practice subscription - October",
+      "xero_bill_id": "XERO-BILL-9012",
+      "line_items": [
+        {
+          "description": "MYOB Practice - 8 users",
+          "quantity": 1,
+          "unit_price": 895.00,
+          "gst": 89.50,
+          "total": 984.50
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-9023",
+      "supplier": "Xero",
+      "bill_date": "2024-10-01",
+      "due_date": "2024-10-31",
+      "status": "Paid",
+      "payment_date": "2024-10-15",
+      "subtotal": 450.00,
+      "gst": 45.00,
+      "total": 495.00,
+      "description": "Xero Partner subscription - October",
+      "xero_bill_id": "XERO-BILL-9023",
+      "line_items": [
+        {
+          "description": "Xero Partner Edition",
+          "quantity": 1,
+          "unit_price": 450.00,
+          "gst": 45.00,
+          "total": 495.00
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-9034",
+      "supplier": "Microsoft 365",
+      "bill_date": "2024-10-05",
+      "due_date": "2024-11-04",
+      "status": "Paid",
+      "payment_date": "2024-10-20",
+      "subtotal": 285.00,
+      "gst": 28.50,
+      "total": 313.50,
+      "description": "Microsoft 365 subscription - October",
+      "xero_bill_id": "XERO-BILL-9034",
+      "line_items": [
+        {
+          "description": "Microsoft 365 Business - 8 users",
+          "quantity": 8,
+          "unit_price": 35.63,
+          "gst": 28.50,
+          "total": 313.50
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-9045",
+      "supplier": "CPD Training Institute",
+      "bill_date": "2024-10-12",
+      "due_date": "2024-11-11",
+      "status": "Unpaid",
+      "payment_date": null,
+      "subtotal": 1450.00,
+      "gst": 145.00,
+      "total": 1595.00,
+      "description": "CPD training courses - staff development",
+      "xero_bill_id": "XERO-BILL-9045",
+      "line_items": [
+        {
+          "description": "Tax updates seminar - 3 attendees",
+          "quantity": 3,
+          "unit_price": 385.00,
+          "gst": 115.50,
+          "total": 1270.50
+        },
+        {
+          "description": "SMSF compliance workshop",
+          "quantity": 1,
+          "unit_price": 295.00,
+          "gst": 29.50,
+          "total": 324.50
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-9056",
+      "supplier": "CPA Australia",
+      "bill_date": "2024-10-15",
+      "due_date": "2024-11-14",
+      "status": "Unpaid",
+      "payment_date": null,
+      "subtotal": 1850.00,
+      "gst": 0.00,
+      "total": 1850.00,
+      "description": "Annual membership fees",
+      "xero_bill_id": "XERO-BILL-9056",
+      "line_items": [
+        {
+          "description": "CPA membership - Jennifer Wong",
+          "quantity": 1,
+          "unit_price": 925.00,
+          "gst": 0.00,
+          "total": 925.00
+        },
+        {
+          "description": "CPA membership - Marcus Lee",
+          "quantity": 1,
+          "unit_price": 925.00,
+          "gst": 0.00,
+          "total": 925.00
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-9067",
+      "supplier": "Officeworks",
+      "bill_date": "2024-10-18",
+      "due_date": "2024-11-17",
+      "status": "Unpaid",
+      "payment_date": null,
+      "subtotal": 385.00,
+      "gst": 38.50,
+      "total": 423.50,
+      "description": "Office supplies",
+      "xero_bill_id": "XERO-BILL-9067",
+      "line_items": [
+        {
+          "description": "Stationery and printer supplies",
+          "quantity": 1,
+          "unit_price": 385.00,
+          "gst": 38.50,
+          "total": 423.50
+        }
+      ]
+    }
+  ],
+  "leads": [
+    {
+      "lead_id": "LEAD-2024-678",
+      "name": "Brisbane Tech Startup Pty Ltd",
+      "type": "Corporate",
+      "contact_person": "Lisa Martinez",
+      "email": "lisa@techstartup.com.au",
+      "phone": "+61 421 890 123",
+      "source": "Referral",
+      "date_created": "2024-10-22",
+      "status": "Meeting Scheduled",
+      "services_interested": ["Monthly BAS", "Bookkeeping", "Payroll", "CFO Services"],
+      "estimated_annual_value": 24000.00,
+      "assigned_to": "Jennifer Wong",
+      "notes": "Referred by TechFlow Solutions. Growing startup needs full accounting support. Meeting scheduled Nov 5.",
+      "last_contact": "2024-10-23",
+      "next_followup": "2024-11-05"
+    },
+    {
+      "lead_id": "LEAD-2024-679",
+      "name": "Carlos Rodriguez",
+      "type": "Individual",
+      "contact_person": "Carlos Rodriguez",
+      "email": "carlos.r@email.com",
+      "phone": "+61 432 901 234",
+      "source": "Website Inquiry",
+      "date_created": "2024-10-24",
+      "status": "Quote Sent",
+      "services_interested": ["Tax Return", "Tax Planning"],
+      "estimated_annual_value": 850.00,
+      "assigned_to": "Marcus Lee",
+      "notes": "High income earner with investment properties. Quote sent 25/10.",
+      "last_contact": "2024-10-25",
+      "next_followup": "2024-11-03"
+    },
+    {
+      "lead_id": "LEAD-2024-680",
+      "name": "Sunshine Cafe Pty Ltd",
+      "type": "Corporate",
+      "contact_person": "Tony Chen",
+      "email": "tony@sunshinecafe.com.au",
+      "phone": "+61 443 012 345",
+      "source": "Voice Agent - Inbound Call",
+      "date_created": "2024-10-26",
+      "status": "Initial Contact",
+      "services_interested": ["BAS", "Bookkeeping"],
+      "estimated_annual_value": 9000.00,
+      "assigned_to": "Marcus Lee",
+      "notes": "New cafe owner needs help with BAS and bookkeeping. Following up with information pack.",
+      "last_contact": "2024-10-26",
+      "next_followup": "2024-11-01"
+    },
+    {
+      "lead_id": "LEAD-2024-681",
+      "name": "Brisbane Consulting Group",
+      "type": "Corporate",
+      "contact_person": "Rebecca Walsh",
+      "email": "r.walsh@bcg.com.au",
+      "phone": "+61 454 123 456",
+      "source": "Networking Event",
+      "date_created": "2024-10-27",
+      "status": "Proposal Sent",
+      "services_interested": ["Monthly BAS", "Tax Return", "Financial Statements"],
+      "estimated_annual_value": 18000.00,
+      "assigned_to": "Jennifer Wong",
+      "notes": "Met at Brisbane Business Expo. Unhappy with current accountant. Proposal sent 28/10.",
+      "last_contact": "2024-10-28",
+      "next_followup": "2024-11-06"
+    },
+    {
+      "lead_id": "LEAD-2024-682",
+      "name": "Andrew Foster",
+      "type": "Individual",
+      "contact_person": "Andrew Foster",
+      "email": "andrew.f@email.com",
+      "phone": "+61 465 234 567",
+      "source": "Google Search",
+      "date_created": "2024-10-28",
+      "status": "Initial Contact",
+      "services_interested": ["Tax Return"],
+      "estimated_annual_value": 385.00,
+      "assigned_to": "Marcus Lee",
+      "notes": "Standard PAYG employee. Sent welcome email and pricing.",
+      "last_contact": "2024-10-28",
+      "next_followup": "2024-11-04"
+    },
+    {
+      "lead_id": "LEAD-2024-683",
+      "name": "Queensland Property Developments",
+      "type": "Corporate",
+      "contact_person": "James Wilson",
+      "email": "j.wilson@qpd.com.au",
+      "phone": "+61 476 345 678",
+      "source": "Cold Outreach",
+      "date_created": "2024-10-25",
+      "status": "Follow Up Required",
+      "services_interested": ["BAS", "Tax Planning", "Structure Advice"],
+      "estimated_annual_value": 32000.00,
+      "assigned_to": "Jennifer Wong",
+      "notes": "Property development company. Left voicemail, awaiting callback.",
+      "last_contact": "2024-10-25",
+      "next_followup": "2024-11-01"
+    }
+  ],
+  "staff": [
+    {
+      "staff_id": "STAFF-001",
+      "name": "Jennifer Wong",
+      "role": "Senior Accountant / Partner",
+      "email": "jennifer@brisbaneaccounting.com.au",
+      "phone": "+61 421 567 890",
+      "qualifications": ["CPA", "Bachelor of Commerce", "Registered Tax Agent"],
+      "specializations": ["Corporate Accounting", "Tax Planning", "Business Advisory"],
+      "active_clients": 45,
+      "employment_start": "2015-03-01"
+    },
+    {
+      "staff_id": "STAFF-002",
+      "name": "Marcus Lee",
+      "role": "Accountant",
+      "email": "marcus@brisbaneaccounting.com.au",
+      "phone": "+61 432 678 901",
+      "qualifications": ["CPA", "Bachelor of Accounting", "Registered Tax Agent"],
+      "specializations": ["Individual Tax", "Small Business", "Bookkeeping"],
+      "active_clients": 65,
+      "employment_start": "2018-07-15"
+    },
+    {
+      "staff_id": "STAFF-003",
+      "name": "Sarah Chen",
+      "role": "Bookkeeper",
+      "email": "sarah@brisbaneaccounting.com.au",
+      "phone": "+61 443 789 012",
+      "qualifications": ["Cert IV Bookkeeping", "Registered BAS Agent"],
+      "specializations": ["Bookkeeping", "BAS", "Xero"],
+      "active_clients": 35,
+      "employment_start": "2020-02-10"
+    },
+    {
+      "staff_id": "STAFF-004",
+      "name": "David Martinez",
+      "role": "Junior Accountant",
+      "email": "david@brisbaneaccounting.com.au",
+      "phone": "+61 454 890 123",
+      "qualifications": ["Bachelor of Accounting", "CPA Program in progress"],
+      "specializations": ["Tax Returns", "BAS", "Financial Statements"],
+      "active_clients": 25,
+      "employment_start": "2022-01-20"
+    },
+    {
+      "staff_id": "STAFF-005",
+      "name": "Emma Thompson",
+      "role": "Client Services Manager",
+      "email": "emma@brisbaneaccounting.com.au",
+      "phone": "+61 465 901 234",
+      "qualifications": ["Cert IV Business Administration"],
+      "specializations": ["Client Relations", "Administration", "Reception"],
+      "active_clients": 0,
+      "employment_start": "2019-09-01"
+    }
+  ],
+  "onedrive_files": [
+    {
+      "file_id": "OD-CLI-001-001",
+      "client_id": "CLI-001",
+      "file_name": "TechFlow_BAS_Sep2024.pdf",
+      "file_type": "BAS Return",
+      "file_path": "/Clients/TechFlow Solutions/BAS/2024/",
+      "upload_date": "2024-10-22",
+      "uploaded_by": "Jennifer Wong",
+      "description": "September 2024 BAS lodgement",
+      "file_size": "245 KB"
+    },
+    {
+      "file_id": "OD-CLI-002-001",
+      "client_id": "CLI-002",
+      "file_name": "David_Chen_Tax_Return_2024.pdf",
+      "file_type": "Tax Return",
+      "file_path": "/Clients/David Chen/Tax Returns/",
+      "upload_date": "2024-08-15",
+      "uploaded_by": "Marcus Lee",
+      "description": "FY 2023-24 individual tax return",
+      "file_size": "456 KB"
+    },
+    {
+      "file_id": "OD-CLI-003-001",
+      "client_id": "CLI-003",
+      "file_name": "BPI_Company_Tax_Return_2024.pdf",
+      "file_type": "Tax Return",
+      "file_path": "/Clients/Brisbane Property Investments/Tax Returns/",
+      "upload_date": "2024-10-15",
+      "uploaded_by": "Jennifer Wong",
+      "description": "FY 2023-24 company tax return",
+      "file_size": "1.2 MB"
+    },
+    {
+      "file_id": "OD-CLI-003-002",
+      "client_id": "CLI-003",
+      "file_name": "BPI_Financial_Statements_2024.pdf",
+      "file_type": "Financial Statements",
+      "file_path": "/Clients/Brisbane Property Investments/Financial Statements/",
+      "upload_date": "2024-10-15",
+      "uploaded_by": "Jennifer Wong",
+      "description": "Audited financial statements FY 2023-24",
+      "file_size": "890 KB"
+    },
+    {
+      "file_id": "OD-CLI-005-001",
+      "client_id": "CLI-005",
+      "file_name": "GreenBuild_Payroll_Summary_Oct2024.xlsx",
+      "file_type": "Payroll Report",
+      "file_path": "/Clients/GreenBuild/Payroll/2024/",
+      "upload_date": "2024-10-31",
+      "uploaded_by": "Sarah Chen",
+      "description": "October 2024 payroll processing summary",
+      "file_size": "145 KB"
+    },
+    {
+      "file_id": "OD-PRACTICE-001",
+      "file_name": "Tax_Agent_Registrations.pdf",
+      "file_type": "Registration",
+      "file_path": "/Practice/Registrations/",
+      "upload_date": "2024-07-01",
+      "uploaded_by": "Emma Thompson",
+      "description": "Current tax agent registrations for all staff",
+      "file_size": "567 KB"
+    },
+    {
+      "file_id": "OD-PRACTICE-002",
+      "file_name": "Professional_Indemnity_Insurance_2024.pdf",
+      "file_type": "Insurance",
+      "file_path": "/Practice/Insurance/",
+      "upload_date": "2024-06-15",
+      "uploaded_by": "Jennifer Wong",
+      "description": "$20M Professional Indemnity - Expires 30/06/2025",
+      "file_size": "789 KB"
+    },
+    {
+      "file_id": "OD-PRACTICE-003",
+      "file_name": "CPD_Records_2024.xlsx",
+      "file_type": "CPD Records",
+      "file_path": "/Practice/CPD/",
+      "upload_date": "2024-10-20",
+      "uploaded_by": "Emma Thompson",
+      "description": "Staff CPD hours tracking 2024",
+      "file_size": "234 KB"
+    }
+  ],
+  "metadata": {
+    "data_purpose": "11Labs Voice Agent Knowledge Base",
+    "business_type": "Accounting Practice",
+    "data_format": "JSON",
+    "last_updated": "2024-10-30",
+    "currency": "AUD",
+    "timezone": "Australia/Brisbane",
+    "notes": "This is dummy data for demonstration purposes. All client names, contact details, and financial information are fictional."
+  }
+}
+
