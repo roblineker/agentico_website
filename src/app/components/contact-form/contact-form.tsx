@@ -171,12 +171,7 @@ export function ContactForm() {
         phone: data.phone
       };
       
-      console.log('💾 Saving contact info to sessionStorage:', bookingInfo);
       sessionStorage.setItem('bookingContactInfo', JSON.stringify(bookingInfo));
-      
-      // Verify it was saved
-      const saved = sessionStorage.getItem('bookingContactInfo');
-      console.log('✔️ Verified saved data:', saved);
       
       toast.success("Thank you! Redirecting to booking page...");
       
@@ -187,7 +182,6 @@ export function ContactForm() {
       
     } catch (error) {
       toast.error("Something went wrong. Please try again or email us directly.");
-      console.error("Form submission error:", error);
     } finally {
       setIsSubmitting(false);
     }

@@ -10,7 +10,6 @@ function initializeNotion(): Client | null {
   const notionToken = process.env.NOTION_API_TOKEN;
   
   if (!notionToken) {
-    console.warn('Notion API token not configured');
     return null;
   }
   

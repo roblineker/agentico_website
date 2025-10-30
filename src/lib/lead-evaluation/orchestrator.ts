@@ -52,7 +52,6 @@ async function sendInstantConfirmation(data: ContactFormData): Promise<boolean> 
   const postmarkToken = process.env.POSTMARK_API_TOKEN;
   
   if (!postmarkToken) {
-    console.warn('Postmark not configured - skipping instant confirmation');
     return false;
   }
 
@@ -60,10 +59,8 @@ async function sendInstantConfirmation(data: ContactFormData): Promise<boolean> 
     const client = new postmark.ServerClient(postmarkToken);
     const email = getInstantConfirmationEmail(data);
     await client.sendEmail(email);
-    console.log('Instant confirmation email sent');
     return true;
   } catch (error) {
-    console.error('Failed to send instant confirmation:', error);
     return false;
   }
 }
@@ -137,7 +134,6 @@ async function sendSalesNotification(
   const postmarkToken = process.env.POSTMARK_API_TOKEN;
   
   if (!postmarkToken) {
-    console.warn('Postmark not configured - skipping sales notification');
     return false;
   }
 
@@ -150,10 +146,8 @@ async function sendSalesNotification(
       result.aiResearch ?? undefined
     );
     await client.sendEmail(email);
-    console.log('Sales notification email sent');
     return true;
   } catch (error) {
-    console.error('Failed to send sales notification:', error);
     return false;
   }
 }
@@ -170,37 +164,27 @@ export async function evaluateAndProcessLead(
   const errors: string[] = [];
   const result: EvaluationResult = { success: false, errors };
 
-  console.log(`Starting lead evaluation for ${data.company}...`);
-
   try {
     // Step 1: Send instant confirmation (non-blocking)
-    sendInstantConfirmation(data).catch(err => {
-      console.error('Instant confirmation failed:', err);
+    sendInstantConfirmation(data).catch(() => {
       errors.push('Failed to send instant confirmation');
     });
 
     // Step 2: Evaluate lead score
-    console.log('Evaluating lead score...');
     try {
       result.leadScore = evaluateLead(data);
-      console.log(`Lead score: ${result.leadScore.rating} (${result.leadScore.totalScore}/140)`);
     } catch (error) {
-      console.error('Lead scoring failed:', error);
       errors.push('Lead scoring failed');
     }
 
     // Step 3: Evaluate web presence
-    console.log('Evaluating web presence...');
     try {
       result.webPresence = await evaluateWebPresence(data);
-      console.log(`Web presence: ${result.webPresence.digitalMaturity} (${result.webPresence.overallScore}/100)`);
     } catch (error) {
-      console.error('Web presence evaluation failed:', error);
       errors.push('Web presence evaluation failed');
     }
 
     // Step 4: Perform AI research (if OpenAI is configured)
-    console.log('Performing AI research...');
     try {
       if (result.leadScore && result.webPresence) {
         result.aiResearch = await performDeepResearch(
@@ -208,19 +192,12 @@ export async function evaluateAndProcessLead(
           result.leadScore,
           result.webPresence
         );
-        if (result.aiResearch) {
-          console.log('AI research completed');
-        } else {
-          console.log('AI research skipped (OpenAI not configured)');
-        }
       }
     } catch (error) {
-      console.error('AI research failed:', error);
       errors.push('AI research failed');
     }
 
     // Step 5: Use existing client/contact IDs or create new ones
-    console.log('Preparing client and contact references...');
     let clientId: string | undefined = existingClientId;
     const contactId: string | undefined = existingContactId;
     
@@ -234,27 +211,19 @@ export async function evaluateAndProcessLead(
             clientId: clientResult.clientId,
             clientUrl: clientResult.url,
           };
-          console.log(`Client ready: ${data.company}`);
-        } else {
-          console.warn('Client creation/lookup skipped or failed');
         }
       } catch (error) {
-        console.error('Client creation/lookup failed:', error);
         errors.push('Client creation/lookup failed');
       }
     } else {
-      console.log(`Using existing client ID: ${clientId}`);
       result.client = { clientId };
     }
 
     // Step 6: Generate style guides (if OpenAI is configured)
-    console.log('Generating style guides...');
     try {
       const styleGuides = await generateStyleGuides(data, result.aiResearch || null);
       
       if (styleGuides) {
-        console.log('Style guides generated, creating PDFs and saving to Notion...');
-        
         // Generate PDFs for email attachments
         let pdfResults: { companyPDF: string; contactPDF: string } | null = null;
         try {
@@ -263,9 +232,7 @@ export async function evaluateAndProcessLead(
             styleGuides.companyStyleGuide,
             styleGuides.contactStyleGuide
           );
-          console.log('Style guide PDFs generated');
         } catch (pdfError) {
-          console.error('PDF generation failed:', pdfError);
           errors.push('PDF generation failed');
         }
         
@@ -289,18 +256,12 @@ export async function evaluateAndProcessLead(
           companyGuidePDF: pdfResults?.companyPDF,
           contactGuidePDF: pdfResults?.contactPDF,
         };
-        
-        console.log('Style guides saved to Notion');
-      } else {
-        console.log('Style guide generation skipped (OpenAI not configured)');
       }
     } catch (error) {
-      console.error('Style guide generation failed:', error);
       errors.push('Style guide generation failed');
     }
 
     // Step 7: Create proposal with estimates
-    console.log('Creating proposal and estimates...');
     try {
       const proposalResult = await createProposal(
         data,
@@ -315,40 +276,29 @@ export async function evaluateAndProcessLead(
           proposalUrl: proposalResult.url,
           estimateIds: proposalResult.estimateIds,
         };
-        console.log(`Proposal created: ${proposalResult.url}`);
-        console.log(`Estimates created: ${proposalResult.estimateIds?.length || 0} estimates`);
-      } else {
-        console.warn('Proposal creation skipped or failed');
       }
     } catch (error) {
-      console.error('Proposal creation failed:', error);
       errors.push('Proposal creation failed');
     }
 
     // Step 8: Send detailed analysis email to customer (DISABLED)
-    console.log('Detailed analysis email is currently disabled');
     // try {
     //   await sendDetailedAnalysis(data, result);
     // } catch (error) {
-    //   console.error('Failed to send detailed analysis:', error);
     //   errors.push('Failed to send detailed analysis');
     // }
 
     // Step 9: Send sales notification
-    console.log('Sending sales notification...');
     try {
       await sendSalesNotification(data, result);
     } catch (error) {
-      console.error('Failed to send sales notification:', error);
       errors.push('Failed to send sales notification');
     }
 
     result.success = errors.length === 0;
-    console.log(`Lead evaluation completed. Success: ${result.success}, Errors: ${errors.length}`);
     
     return result;
   } catch (error) {
-    console.error('Lead evaluation failed:', error);
     errors.push('Lead evaluation failed');
     result.success = false;
     return result;
@@ -360,8 +310,6 @@ export async function evaluateAndProcessLead(
  * Returns just the scores without sending emails or generating content
  */
 export async function quickEvaluate(data: ContactFormData) {
-  console.log(`Quick evaluation for ${data.company}...`);
-  
   const leadScore = evaluateLead(data);
   const webPresence = await evaluateWebPresence(data);
   

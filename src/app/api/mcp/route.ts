@@ -18,7 +18,7 @@ const SERVER_INFO = {
 function validateAuth(request: NextRequest): { valid: boolean; error?: string } {
     // If MCP_API_SECRET is not set, warn but allow (for development)
     if (!MCP_API_SECRET) {
-        console.warn('WARNING: MCP_API_SECRET is not set. Authentication is disabled.');
+        // WARNING: MCP_API_SECRET is not set. Authentication is disabled.
         return { valid: true };
     }
 
@@ -93,7 +93,6 @@ function searchKnowledgeBase(query: string, maxResults: number = 5): Array<{
                 });
             }
         } catch (error) {
-            console.error(`Error reading ${file}:`, error);
         }
     }
 
@@ -288,7 +287,6 @@ function handleToolCall(toolName: string, args: Record<string, unknown>) {
                         });
                     }
                 } catch (error) {
-                    console.error(`Error reading ${file}:`, error);
                 }
             }
             
@@ -394,7 +392,6 @@ function handleJsonRpcRequest(request: {
             result
         };
     } catch (error) {
-        console.error('MCP Error:', error);
         return {
             jsonrpc: '2.0',
             id,
@@ -491,7 +488,6 @@ export async function POST(request: NextRequest) {
         return NextResponse.json(response);
 
     } catch (error) {
-        console.error('MCP POST Error:', error);
         return NextResponse.json({
             jsonrpc: '2.0',
             id: null,

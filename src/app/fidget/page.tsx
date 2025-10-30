@@ -51,13 +51,13 @@ export default function FidgetPage() {
       try {
         await containerRef.current.requestFullscreen();
       } catch (error) {
-        console.error('Error attempting to enable fullscreen:', error);
+        // Fullscreen request failed
       }
     } else if (document.fullscreenElement) {
       try {
         await document.exitFullscreen();
       } catch (error) {
-        console.error('Error attempting to exit fullscreen:', error);
+        // Fullscreen exit failed
       }
     }
   };
@@ -146,7 +146,6 @@ export default function FidgetPage() {
         });
       } catch (error) {
         // User cancelled or error occurred
-        console.log("Share cancelled or failed", error);
       }
     } else {
       // Fallback: copy to clipboard
@@ -155,7 +154,7 @@ export default function FidgetPage() {
         await navigator.clipboard.writeText(fullMessage);
         alert("Link and score copied to clipboard!");
       } catch (error) {
-        console.error("Failed to copy link", error);
+        // Failed to copy link
       }
     }
   };

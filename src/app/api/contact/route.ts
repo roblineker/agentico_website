@@ -118,7 +118,6 @@ const initializeNotion = () => {
   const notionToken = process.env.NOTION_API_TOKEN;
   
   if (!notionToken) {
-    console.warn('Notion API token not configured');
     return null;
   }
   
@@ -180,14 +179,12 @@ async function createOrFindClient(notion: Client, data: ContactFormData) {
     });
     
     if (existingClient) {
-      console.log(`Found existing client: ${data.company}`);
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const clientUrl = (existingClient as any).url || `https://notion.so/${existingClient.id.replace(/-/g, '')}`;
       return { success: true, pageId: existingClient.id, url: clientUrl };
     }
     
     // Create new client
-    console.log(`Creating new client: ${data.company}`);
     const response = await notion.pages.create({
       parent: {
         type: 'database_id',
@@ -216,7 +213,6 @@ async function createOrFindClient(notion: Client, data: ContactFormData) {
     const clientUrl = (response as any).url || `https://notion.so/${response.id.replace(/-/g, '')}`;
     return { success: true, pageId: response.id, url: clientUrl };
   } catch (error) {
-    console.error('Failed to create/find client:', error);
     return { success: false, error };
   }
 }
@@ -230,7 +226,6 @@ async function createContact(
   try {
     const contactsDatabaseId = '28753ceefab080929025cf188f469668';
     
-    console.log(`Creating contact: ${data.fullName}`);
     const response = await notion.pages.create({
       parent: {
         type: 'database_id',
@@ -263,7 +258,6 @@ async function createContact(
     const contactUrl = (response as any).url || `https://notion.so/${response.id.replace(/-/g, '')}`;
     return { success: true, pageId: response.id, url: contactUrl };
   } catch (error) {
-    console.error('Failed to create contact:', error);
     return { success: false, error };
   }
 }
@@ -273,7 +267,6 @@ async function saveToNotion(data: ContactFormData) {
   const notion = initializeNotion();
   
   if (!notion) {
-    console.log('Skipping Notion save - not configured');
     return { success: false, reason: 'not_configured' };
   }
   
@@ -291,7 +284,6 @@ async function saveToNotion(data: ContactFormData) {
     }
     
     // Step 3: Create intake form (always, even if client/contact failed)
-    console.log('Creating intake form submission...');
     
     const response = await notion.pages.create({
       parent: {
@@ -426,9 +418,6 @@ async function saveToNotion(data: ContactFormData) {
     
     const contactPageId = contactResult.success ? contactResult.pageId : undefined;
     
-    console.log('Successfully saved to Notion:', response.id);
-    console.log(`Relationships: Client=${clientPageId}, Contact=${contactPageId || 'failed'}`);
-    
     // Update Budget Range separately (Notion SDK select field workaround)
     try {
       const budgetMap: Record<string, string> = {
@@ -450,9 +439,7 @@ async function saveToNotion(data: ContactFormData) {
           },
         },
       });
-      console.log(`Updated Budget Range: ${budgetMap[data.budget]}`);
     } catch (budgetError) {
-      console.error('Failed to update Budget Range:', budgetError);
       // Don't fail the whole operation for this
     }
     
@@ -464,7 +451,6 @@ async function saveToNotion(data: ContactFormData) {
       contactCreated: contactResult.success
     };
   } catch (error) {
-    console.error('Failed to save to Notion:', error);
     return { success: false, error };
   }
 }
@@ -493,8 +479,8 @@ export async function POST(request: NextRequest) {
     // - Sending instant confirmation email
     // - Sending detailed analysis email with style guides
     // - Sending sales notification with full evaluation
-    evaluateAndProcessLead(validatedData, clientId, contactId).catch((error) => {
-      console.error('Lead evaluation failed:', error);
+    evaluateAndProcessLead(validatedData, clientId, contactId).catch(() => {
+      // Lead evaluation runs in background, errors logged internally
     });
     
     // Get webhook URLs from environment variables
@@ -536,14 +522,11 @@ export async function POST(request: NextRequest) {
         });
         
         if (!webhookResponse.ok) {
-          console.error(`Failed to send data to ${label} webhook:`, webhookResponse.status, webhookResponse.statusText);
           return false;
         } else {
-          console.log(`Successfully sent data to ${label} webhook`);
           return true;
         }
       } catch (webhookError) {
-        console.error(`${label} webhook request failed:`, webhookError);
         return false;
       }
     };
@@ -557,16 +540,10 @@ export async function POST(request: NextRequest) {
     // Also send to both webhooks if both are configured (useful for testing)
     const sendToBoth = process.env.N8N_SEND_TO_BOTH === 'true';
     if (sendToBoth && isValidWebhookUrl(testWebhookUrl) && isValidWebhookUrl(prodWebhookUrl) && testWebhookUrl !== prodWebhookUrl) {
-      console.log('Sending to both test and production webhooks...');
       await Promise.all([
         sendToWebhook(testWebhookUrl!, 'test'),
         sendToWebhook(prodWebhookUrl!, 'production')
       ]);
-    }
-    
-    // Log to console if no valid webhooks configured
-    if (!isValidWebhookUrl(testWebhookUrl) && !isValidWebhookUrl(prodWebhookUrl)) {
-      console.log('No valid webhooks configured. Form data received:', webhookData);
     }
     
     // Return success response
@@ -577,8 +554,6 @@ export async function POST(request: NextRequest) {
     });
     
   } catch (error) {
-    console.error('Contact form submission error:', error);
-    
     if (error instanceof z.ZodError) {
       return NextResponse.json(
         { 

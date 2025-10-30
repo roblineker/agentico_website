@@ -8,7 +8,6 @@ function initializeNotion(): Client | null {
   const notionToken = process.env.NOTION_API_TOKEN;
   
   if (!notionToken) {
-    console.warn('Notion API token not configured');
     return null;
   }
   
@@ -327,11 +326,8 @@ export async function saveCompanyStyleGuide(
     const styleGuidesDatabaseId = process.env.NOTION_COMPANY_STYLE_GUIDES_DB_ID;
     
     if (!styleGuidesDatabaseId) {
-      console.warn('Company Style Guides database ID not configured');
       return { success: false, error: 'Database not configured' };
     }
-
-    console.log(`Creating company style guide for ${data.company}...`);
     
     // Parse the content into structured sections
     const parsed = parseStyleGuideContent(styleGuideContent);
@@ -437,10 +433,8 @@ any> = {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const pageUrl = (response as any).url || `https://notion.so/${response.id.replace(/-/g, '')}`;
     
-    console.log(`Company style guide created: ${pageUrl}`);
     return { success: true, pageId: response.id, url: pageUrl };
   } catch (error) {
-    console.error('Failed to save company style guide:', error);
     return { success: false, error };
   }
 }
@@ -464,11 +458,8 @@ export async function saveContactStyleGuide(
     const styleGuidesDatabaseId = process.env.NOTION_CONTACT_STYLE_GUIDES_DB_ID;
     
     if (!styleGuidesDatabaseId) {
-      console.warn('Contact Style Guides database ID not configured');
       return { success: false, error: 'Database not configured' };
     }
-
-    console.log(`Creating contact style guide for ${data.company}...`);
     
     // Parse the content into structured sections
     const parsed = parseStyleGuideContent(styleGuideContent);
@@ -574,10 +565,8 @@ any> = {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const pageUrl = (response as any).url || `https://notion.so/${response.id.replace(/-/g, '')}`;
     
-    console.log(`Contact style guide created: ${pageUrl}`);
     return { success: true, pageId: response.id, url: pageUrl };
   } catch (error) {
-    console.error('Failed to save contact style guide:', error);
     return { success: false, error };
   }
 }
