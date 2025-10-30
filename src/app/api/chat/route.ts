@@ -3,10 +3,12 @@ import OpenAI from 'openai';
 import fs from 'fs';
 import path from 'path';
 
-// Initialize OpenAI client
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-});
+// Lazy initialize OpenAI client only when needed
+function getOpenAIClient() {
+  return new OpenAI({
+    apiKey: process.env.OPENAI_API_KEY,
+  });
+}
 
 // Load example data from JSON files
 function loadExampleData(industry?: string) {
@@ -83,6 +85,7 @@ Always ground your answers in the actual data provided above.`
     const allMessages = [systemMessage, ...messages];
 
     // Create chat completion
+    const openai = getOpenAIClient();
     const completion = await openai.chat.completions.create({
       model,
       messages: allMessages,
