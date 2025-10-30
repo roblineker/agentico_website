@@ -204,67 +204,264 @@ function ContactForm() {
     },
   });
 
-  // Test data function (only for development)
-  const fillTestData = () => {
-    // Contact Information
-    setValue("fullName", "John Smith");
-    setValue("email", "john.smith@testcompany.com.au");
-    setValue("phone", "+61 412 345 678");
-    setValue("company", "Test Company Pty Ltd");
-    setValue("website", "https://www.testcompany.com.au");
-    setValue("socialLinks", [
-      { url: "https://www.linkedin.com/company/testcompany" },
-      { url: "https://www.facebook.com/testcompany" },
-    ]);
+  // Test data cases (only for development)
+  const testCases = {
+    construction_small: {
+      name: "Small Construction Business",
+      data: {
+        fullName: "Mike Johnson",
+        email: "dev@agentico.com.au",
+        phone: "+61 412 345 678",
+        company: "BuildRight Constructions",
+        website: "https://www.buildrightconstructions.com.au",
+        socialLinks: [
+          { url: "https://www.facebook.com/buildrightconstructions" },
+        ],
+        industry: "construction_trades" as const,
+        businessSize: "6-20" as const,
+        currentSystems: "Excel for quotes, Gmail, paper-based job tracking. We're drowning in paperwork and our quote response time is too slow.",
+        monthlyVolume: "100-500" as const,
+        teamSize: "6-10" as const,
+        automationGoals: ["reduce_manual_work", "improve_response_time", "automate_reporting", "workflow_automation"],
+        specificProcesses: "Automate quote generation from customer emails, auto-organize job completion photos, create weekly progress reports for clients.",
+        projectIdeas: [
+          {
+            title: "AI Quote Generator",
+            description: "Extract details from email inquiries and generate quotes automatically using our pricing templates.",
+            priority: "high" as const
+          },
+          {
+            title: "Job Photo Management",
+            description: "Field workers upload photos, system auto-organizes by job and generates completion reports.",
+            priority: "medium" as const
+          }
+        ],
+        existingTools: "Xero, Gmail, Google Drive, spreadsheet CRM",
+        integrationNeeds: ["accounting", "communication", "document_storage"],
+        dataVolume: "moderate" as const,
+        projectDescription: "Growing construction business struggling with manual admin processes. Spending 10+ hours/week on paperwork. Want to automate quoting and job documentation.",
+        successMetrics: "Reduce quote turnaround from 2-3 days to same-day, save 10+ hours/week on admin, improve customer satisfaction.",
+        timeline: "1-3_months" as const,
+        budget: "25k-50k" as const,
+      }
+    },
+    healthcare_medium: {
+      name: "Medical Practice",
+      data: {
+        fullName: "Dr. Sarah Chen",
+        email: "dev@agentico.com.au",
+        phone: "+61 423 456 789",
+        company: "Sunshine Coast Medical Centre",
+        website: "https://www.sunshinecoastmedical.com.au",
+        socialLinks: [
+          { url: "https://www.linkedin.com/company/sunshinecoastmedical" },
+          { url: "https://www.facebook.com/sunshinecoastmedical" },
+        ],
+        industry: "healthcare_medical" as const,
+        businessSize: "21-50" as const,
+        currentSystems: "Practice management software (old system), manual appointment reminders, paper-based patient forms, email for communication.",
+        monthlyVolume: "1000-5000" as const,
+        teamSize: "11-20" as const,
+        automationGoals: ["improve_response_time", "customer_service", "document_processing", "workflow_automation"],
+        specificProcesses: "Automate appointment reminders and confirmations, process patient intake forms digitally, AI-powered triage for phone inquiries, auto-generate referral letters.",
+        projectIdeas: [
+          {
+            title: "AI Patient Triage System",
+            description: "AI handles initial phone calls, collects symptoms, schedules appropriate appointments, and flags urgent cases.",
+            priority: "high" as const
+          },
+          {
+            title: "Digital Intake Forms",
+            description: "Patients complete forms online before visit, data auto-populates into practice software.",
+            priority: "high" as const
+          },
+          {
+            title: "Automated Referrals",
+            description: "Generate referral letters automatically from patient records and doctor notes.",
+            priority: "medium" as const
+          }
+        ],
+        existingTools: "Best Practice software, Hotdoc for bookings, Gmail, Microsoft 365, Medicare claiming system",
+        integrationNeeds: ["crm", "communication", "document_storage", "custom_software"],
+        dataVolume: "large" as const,
+        projectDescription: "Busy medical practice with 5 doctors handling 200+ patients daily. Reception team overwhelmed with calls and admin. Need to streamline patient intake and reduce wait times.",
+        successMetrics: "Reduce phone wait time from 15min to under 2min, automate 80% of appointment confirmations, eliminate paper forms, save 20+ admin hours per week.",
+        timeline: "immediate" as const,
+        budget: "50k-100k" as const,
+      }
+    },
+    legal_enterprise: {
+      name: "Law Firm - Enterprise",
+      data: {
+        fullName: "Jennifer Martinez",
+        email: "dev@agentico.com.au",
+        phone: "+61 434 567 890",
+        company: "Martinez & Associates Legal",
+        website: "https://www.martinezlegal.com.au",
+        socialLinks: [
+          { url: "https://www.linkedin.com/company/martinezlegal" },
+          { url: "https://twitter.com/martinezlegal" },
+        ],
+        industry: "legal_services" as const,
+        businessSize: "51-200" as const,
+        currentSystems: "LEAP legal software, DocuSign for signatures, Outlook, SharePoint for document management, manual client intake process.",
+        monthlyVolume: "500-1000" as const,
+        teamSize: "20+" as const,
+        automationGoals: ["document_processing", "customer_service", "workflow_automation", "reduce_manual_work"],
+        specificProcesses: "Automate client intake and conflict checks, AI-powered document review and summarization, auto-generate initial legal documents from templates, intelligent case assignment to appropriate lawyers.",
+        projectIdeas: [
+          {
+            title: "AI Document Review Assistant",
+            description: "Automatically review contracts and legal documents, highlight key clauses, risks, and unusual terms for lawyer review.",
+            priority: "high" as const
+          },
+          {
+            title: "Automated Client Intake",
+            description: "AI chatbot collects initial client information, performs conflict checks, and routes to appropriate department.",
+            priority: "high" as const
+          },
+          {
+            title: "Legal Document Generator",
+            description: "Generate standard legal documents from approved templates based on client information and case type.",
+            priority: "medium" as const
+          }
+        ],
+        existingTools: "LEAP, DocuSign, Microsoft 365, SharePoint, custom billing system, LawMaster",
+        integrationNeeds: ["crm", "document_storage", "communication", "custom_software"],
+        dataVolume: "very_large" as const,
+        projectDescription: "Large legal practice with 15 lawyers across multiple practice areas. Handling high volume of documents and client inquiries. Need to improve efficiency while maintaining quality and compliance.",
+        successMetrics: "Reduce document review time by 40%, improve client intake speed by 60%, automate 70% of routine document generation, save partners 15+ hours/week.",
+        timeline: "3-6_months" as const,
+        budget: "100k+" as const,
+      }
+    },
+    retail_startup: {
+      name: "E-commerce Startup",
+      data: {
+        fullName: "Alex Thompson",
+        email: "dev@agentico.com.au",
+        phone: "+61 445 678 901",
+        company: "EcoStyle Australia",
+        website: "https://www.ecostyle.com.au",
+        socialLinks: [
+          { url: "https://www.instagram.com/ecostyleaustralia" },
+          { url: "https://www.facebook.com/ecostyleaustralia" },
+          { url: "https://www.tiktok.com/@ecostyleaustralia" },
+        ],
+        industry: "ecommerce" as const,
+        businessSize: "1-5" as const,
+        currentSystems: "Shopify for store, basic email marketing, manual customer service via email and Instagram DMs, spreadsheets for inventory.",
+        monthlyVolume: "500-1000" as const,
+        teamSize: "1-2" as const,
+        automationGoals: ["customer_service", "improve_response_time", "automate_reporting"],
+        specificProcesses: "Automate customer service inquiries, personalized product recommendations, automated order status updates, social media response automation.",
+        projectIdeas: [
+          {
+            title: "AI Customer Service Chatbot",
+            description: "24/7 chatbot for order tracking, product questions, returns, and general inquiries with seamless handoff to human when needed.",
+            priority: "high" as const
+          },
+          {
+            title: "Personalized Recommendations",
+            description: "AI analyzes customer browsing and purchase history to provide personalized product suggestions.",
+            priority: "low" as const
+          }
+        ],
+        existingTools: "Shopify, Mailchimp, Instagram, Facebook, Google Analytics",
+        integrationNeeds: ["crm", "communication"],
+        dataVolume: "moderate" as const,
+        projectDescription: "Fast-growing e-commerce startup selling sustainable fashion. Overwhelmed with customer service inquiries. Need to scale support without hiring a big team.",
+        successMetrics: "Automate 60% of customer inquiries, respond to all messages within 2 hours, increase repeat customer rate by 20%.",
+        timeline: "immediate" as const,
+        budget: "under_10k" as const,
+      }
+    },
+    accounting_firm: {
+      name: "Accounting Firm",
+      data: {
+        fullName: "Robert Williams",
+        email: "dev@agentico.com.au",
+        phone: "+61 456 789 012",
+        company: "Williams & Co Chartered Accountants",
+        website: "https://www.williamsaccounting.com.au",
+        socialLinks: [
+          { url: "https://www.linkedin.com/company/williamsaccounting" },
+        ],
+        industry: "accounting_bookkeeping" as const,
+        businessSize: "6-20" as const,
+        currentSystems: "Xero for client bookkeeping, MYOB for some clients, Practice Manager software, email for client communication, manual document collection.",
+        monthlyVolume: "1000-5000" as const,
+        teamSize: "11-20" as const,
+        automationGoals: ["reduce_manual_work", "document_processing", "workflow_automation", "automate_reporting"],
+        specificProcesses: "Automate collection of client documents (receipts, invoices, bank statements), intelligent data entry from documents into accounting software, automated BAS preparation, client reporting automation.",
+        projectIdeas: [
+          {
+            title: "Document Processing AI",
+            description: "Clients upload receipts/invoices via portal, AI extracts data, categorizes, and enters into Xero/MYOB automatically.",
+            priority: "high" as const
+          },
+          {
+            title: "Automated BAS Preparation",
+            description: "AI prepares BAS statements from client data, highlights anomalies for accountant review before lodgement.",
+            priority: "high" as const
+          },
+          {
+            title: "Client Portal with AI Assistant",
+            description: "Clients can ask questions about their financials, get instant answers from AI trained on their data.",
+            priority: "medium" as const
+          }
+        ],
+        existingTools: "Xero, MYOB, APS Practice Manager, Microsoft 365, Hubdoc, Receipt Bank",
+        integrationNeeds: ["accounting", "document_storage", "communication"],
+        dataVolume: "very_large" as const,
+        projectDescription: "Established accounting firm with 50+ SMB clients. Spending too much time on manual data entry and document processing. Want to offer better service while reducing costs.",
+        successMetrics: "Reduce data entry time by 75%, process documents within 24 hours (currently 3-5 days), handle 30% more clients with same team size.",
+        timeline: "3-6_months" as const,
+        budget: "50k-100k" as const,
+      }
+    }
+  };
+
+  // Fill test data based on selected case
+  const fillTestData = (testCase: keyof typeof testCases) => {
+    const caseData = testCases[testCase].data;
     
-    // Business Information (using exact enum values)
-    setValue("industry", "construction_trades" as const, { shouldValidate: true });
-    setValue("businessSize", "6-20" as const, { shouldValidate: true });
+    // Contact Information
+    setValue("fullName", caseData.fullName);
+    setValue("email", caseData.email);
+    setValue("phone", caseData.phone);
+    setValue("company", caseData.company);
+    setValue("website", caseData.website);
+    setValue("socialLinks", caseData.socialLinks);
+    
+    // Business Information
+    setValue("industry", caseData.industry, { shouldValidate: true });
+    setValue("businessSize", caseData.businessSize, { shouldValidate: true });
     
     // Current State Assessment
-    setValue("currentSystems", "We currently use Excel for quotes, Gmail for customer communication, and paper-based job tracking. Everything is manual and time-consuming.");
-    setValue("monthlyVolume", "100-500" as const, { shouldValidate: true });
-    setValue("teamSize", "6-10" as const, { shouldValidate: true });
+    setValue("currentSystems", caseData.currentSystems);
+    setValue("monthlyVolume", caseData.monthlyVolume, { shouldValidate: true });
+    setValue("teamSize", caseData.teamSize, { shouldValidate: true });
     
     // Automation Goals
-    setValue("automationGoals", [
-      "reduce_manual_work",
-      "improve_response_time",
-      "automate_reporting",
-      "workflow_automation"
-    ]);
-    setValue("specificProcesses", "We want to automate our quoting process - when a customer emails a quote request, we'd like the system to extract details, generate a quote using our template, and send it back automatically. We also want to automate job completion photo uploads from field workers into project folders organized by client and job number.");
+    setValue("automationGoals", caseData.automationGoals);
+    setValue("specificProcesses", caseData.specificProcesses);
     
     // Project Ideas
-    setValue("projectIdeas", [
-      {
-        title: "AI-powered Quote Generator",
-        description: "Automatically extract details from customer emails and generate professional quotes using our templates. Should integrate with our pricing database and send quotes back to customers.",
-        priority: "high" as const
-      },
-      {
-        title: "Photo Management System",
-        description: "Field workers upload job photos via mobile app, system automatically organizes by client/job, generates completion reports.",
-        priority: "medium" as const
-      }
-    ]);
+    setValue("projectIdeas", caseData.projectIdeas);
     
     // Integration Requirements
-    setValue("existingTools", "Xero for accounting, Gmail for email, Google Drive for file storage, basic CRM in spreadsheets, QuickBooks for some clients");
-    setValue("integrationNeeds", [
-      "accounting",
-      "communication",
-      "document_storage"
-    ]);
-    setValue("dataVolume", "moderate" as const, { shouldValidate: true });
+    setValue("existingTools", caseData.existingTools);
+    setValue("integrationNeeds", caseData.integrationNeeds);
+    setValue("dataVolume", caseData.dataVolume, { shouldValidate: true });
     
     // Project Scope
-    setValue("projectDescription", "We're a growing construction business struggling with manual processes. We spend 10+ hours per week on admin tasks that could be automated. Our main pain points are quote turnaround time (currently 2-3 days) and job documentation. We want to implement AI automation to handle these repetitive tasks so our team can focus on actual construction work.");
-    setValue("successMetrics", "Reduce quote turnaround from 2-3 days to same-day response, save 10+ hours per week on admin work, improve customer satisfaction scores, have all job photos automatically organized and backed up.");
-    setValue("timeline", "1-3_months" as const, { shouldValidate: true });
-    setValue("budget", "25k-50k" as const, { shouldValidate: true });
+    setValue("projectDescription", caseData.projectDescription);
+    setValue("successMetrics", caseData.successMetrics);
+    setValue("timeline", caseData.timeline, { shouldValidate: true });
+    setValue("budget", caseData.budget, { shouldValidate: true });
     
-    toast.success("Test data filled! Review and submit when ready.");
+    toast.success(`${testCases[testCase].name} test data loaded!`);
   };
 
   const { fields, append, remove } = useFieldArray({
@@ -367,15 +564,18 @@ function ContactForm() {
             </CardDescription>
           </div>
           {isDev && (
-            <Button
-              type="button"
-              variant="outline"
-              size="sm"
-              onClick={fillTestData}
-              className="ml-4 shrink-0"
-            >
-              🧪 Fill Test Data
-            </Button>
+            <Select onValueChange={(value) => fillTestData(value as keyof typeof testCases)}>
+              <SelectTrigger className="w-[220px] ml-4 shrink-0">
+                <SelectValue placeholder="🧪 Load Test Data" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="construction_small">🏗️ Construction (Small)</SelectItem>
+                <SelectItem value="healthcare_medium">🏥 Medical Practice</SelectItem>
+                <SelectItem value="legal_enterprise">⚖️ Law Firm (Enterprise)</SelectItem>
+                <SelectItem value="retail_startup">🛍️ E-commerce Startup</SelectItem>
+                <SelectItem value="accounting_firm">📊 Accounting Firm</SelectItem>
+              </SelectContent>
+            </Select>
           )}
         </div>
       </CardHeader>

@@ -1,22 +1,78 @@
-# Test Data Feature
+# Test Data Feature - Multiple Test Cases
 
 **Date**: October 30, 2025  
-**Status**: ✅ Implemented
+**Status**: ✅ Implemented & Enhanced
 
 ## Overview
 
-Added a "Fill Test Data" button to the contact form that automatically populates all fields with realistic test data. This button is **only visible in development mode** and will not appear in production.
+Added a test data dropdown to the contact form that allows selecting from 5 different realistic test scenarios. This dropdown is **only visible in development mode** and will not appear in production.
 
 ## Features
 
 ### Development Mode Only
-- Button only renders when `NODE_ENV === 'development'`
+- Dropdown only renders when `NODE_ENV === 'development'`
 - Automatically hidden in production builds
 - No risk of test data accidentally being used in production
 
+### 5 Realistic Test Cases
+
+Choose from diverse business scenarios:
+
+#### 1. 🏗️ Construction (Small Business)
+- **Company**: BuildRight Constructions
+- **Industry**: Construction & Building Trades
+- **Size**: 6-20 employees
+- **Budget**: $25k-50k
+- **Timeline**: 1-3 months
+- **Focus**: Quote automation, job photo management
+- **Use Case**: Typical tradies business looking to reduce paperwork
+
+#### 2. 🏥 Medical Practice (Medium)
+- **Company**: Sunshine Coast Medical Centre
+- **Industry**: Healthcare & Medical
+- **Size**: 21-50 employees
+- **Budget**: $50k-100k
+- **Timeline**: Immediate
+- **Focus**: Patient triage, appointment automation, digital forms
+- **Use Case**: Busy practice overwhelmed with phone calls and admin
+
+#### 3. ⚖️ Law Firm (Enterprise)
+- **Company**: Martinez & Associates Legal
+- **Industry**: Legal Services
+- **Size**: 51-200 employees
+- **Budget**: $100k+
+- **Timeline**: 3-6 months
+- **Focus**: Document review, client intake, legal document generation
+- **Use Case**: Large firm needing document automation and efficiency
+
+#### 4. 🛍️ E-commerce Startup
+- **Company**: EcoStyle Australia
+- **Industry**: E-commerce & Online Retail
+- **Size**: 1-5 employees
+- **Budget**: Under $10k
+- **Timeline**: Immediate
+- **Focus**: Customer service chatbot, order automation
+- **Use Case**: Fast-growing startup needing to scale support cheaply
+
+#### 5. 📊 Accounting Firm
+- **Company**: Williams & Co Chartered Accountants
+- **Industry**: Accounting & Bookkeeping
+- **Size**: 6-20 employees
+- **Budget**: $50k-100k
+- **Timeline**: 3-6 months
+- **Focus**: Document processing, BAS automation, client portal
+- **Use Case**: Established firm wanting to handle more clients efficiently
+
+### Email Address for Testing
+
+All test cases use `dev@agentico.com.au` so:
+- ✅ Confirmation emails go to your dev inbox
+- ✅ No risk of emailing fake/test addresses
+- ✅ Perfect for testing email integration
+
 ### Comprehensive Test Data
 
-The test button fills all form fields with realistic data:
+Each test case fills ALL form fields with realistic data:
 
 #### Contact Information
 - Full Name: John Smith
@@ -68,14 +124,16 @@ Realistic description of quote automation and photo management needs
 
 ### In Development
 1. Navigate to the contact form page
-2. Look for the "🧪 Fill Test Data" button in the top-right of the form card
-3. Click the button
-4. All fields will be populated instantly
-5. Review the data (you can still edit any field)
-6. Submit the form to test the complete flow
+2. Look for the "🧪 Load Test Data" dropdown in the top-right of the form card
+3. Click the dropdown to see 5 test case options
+4. Select a scenario (Construction, Medical, Law, E-commerce, or Accounting)
+5. All fields will be populated instantly with scenario-specific data
+6. Review the data (you can still edit any field)
+7. Submit the form to test the complete flow
+8. Check emails at `dev@agentico.com.au` and `sales@agentico.com.au`
 
 ### In Production
-- Button is automatically hidden
+- Dropdown is automatically hidden
 - No code changes needed when deploying
 - Uses `process.env.NODE_ENV` to detect environment
 
@@ -83,9 +141,10 @@ Realistic description of quote automation and photo management needs
 
 ### For Development
 - ✅ **Fast Testing**: Fill entire form in one click
-- ✅ **Realistic Data**: Uses actual use-case scenarios
-- ✅ **Complete Coverage**: Tests all form fields
+- ✅ **5 Realistic Scenarios**: Test different industries and business sizes
+- ✅ **Complete Coverage**: Each scenario tests all form fields
 - ✅ **Saves Time**: No manual data entry for each test
+- ✅ **Safe Email Testing**: All use dev@agentico.com.au
 
 ### For Testing Notion Integration
 - ✅ Test Client creation with realistic company name
@@ -110,23 +169,43 @@ const isDev = process.env.NODE_ENV === 'development';
 ### Conditional Rendering
 ```typescript
 {isDev && (
-  <Button
-    type="button"
-    variant="outline"
-    size="sm"
-    onClick={fillTestData}
-    className="ml-4 shrink-0"
-  >
-    🧪 Fill Test Data
-  </Button>
+  <Select onValueChange={(value) => fillTestData(value as keyof typeof testCases)}>
+    <SelectTrigger className="w-[220px] ml-4 shrink-0">
+      <SelectValue placeholder="🧪 Load Test Data" />
+    </SelectTrigger>
+    <SelectContent>
+      <SelectItem value="construction_small">🏗️ Construction (Small)</SelectItem>
+      <SelectItem value="healthcare_medium">🏥 Medical Practice</SelectItem>
+      <SelectItem value="legal_enterprise">⚖️ Law Firm (Enterprise)</SelectItem>
+      <SelectItem value="retail_startup">🛍️ E-commerce Startup</SelectItem>
+      <SelectItem value="accounting_firm">📊 Accounting Firm</SelectItem>
+    </SelectContent>
+  </Select>
 )}
+```
+
+### Test Case Data Structure
+```typescript
+const testCases = {
+  construction_small: {
+    name: "Small Construction Business",
+    data: {
+      fullName: "Mike Johnson",
+      email: "dev@agentico.com.au", // All test cases use dev email
+      // ... all form fields
+    }
+  },
+  // ... 4 more test cases
+};
 ```
 
 ### Data Population
 Uses React Hook Form's `setValue()` to programmatically populate all fields:
 ```typescript
-setValue("fullName", "John Smith");
-setValue("email", "john.smith@testcompany.com.au");
+const caseData = testCases[selectedCase].data;
+setValue("fullName", caseData.fullName);
+setValue("email", caseData.email);
+setValue("industry", caseData.industry, { shouldValidate: true });
 // ... etc
 ```
 
@@ -135,20 +214,30 @@ setValue("email", "john.smith@testcompany.com.au");
 ### Verify Development Mode
 1. Run `npm run dev`
 2. Navigate to contact form
-3. Confirm button is visible
+3. Confirm dropdown is visible in top-right
 
 ### Verify Production Mode
 1. Run `npm run build && npm run start`
 2. Navigate to contact form
-3. Confirm button is NOT visible
+3. Confirm dropdown is NOT visible
 
-### Test Data Quality
-1. Click "Fill Test Data" button
+### Test Each Scenario
+For each of the 5 test cases:
+1. Select from dropdown (e.g., "🏗️ Construction (Small)")
 2. Verify all fields are populated
 3. Check that select dropdowns show correct values
 4. Verify arrays (social links, project ideas) render correctly
-5. Confirm toast notification appears
-6. Submit form and check Notion pages are created correctly
+5. Confirm toast notification shows scenario name
+6. Submit form
+7. Check Notion pages created (Client, Contact, Intake Form)
+8. Check emails received at `dev@agentico.com.au` and `sales@agentico.com.au`
+
+### Test Diversity
+- ✅ Test different industries (construction, healthcare, legal, retail, accounting)
+- ✅ Test different business sizes (1-5 up to 200+)
+- ✅ Test different budgets ($10k to $100k+)
+- ✅ Test different timelines (immediate to 6+ months)
+- ✅ Test different data volumes (minimal to very large)
 
 ## Future Enhancements
 

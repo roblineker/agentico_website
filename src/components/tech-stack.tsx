@@ -10,7 +10,6 @@ import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import {
   faMicrosoft,
   faGoogle,
-  faOpenid,
 } from "@fortawesome/free-brands-svg-icons";
 
 interface TechStackItem {

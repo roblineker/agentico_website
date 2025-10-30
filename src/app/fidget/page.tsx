@@ -241,11 +241,10 @@ export default function FidgetPage() {
       <div className="absolute top-4 right-4 z-10 flex gap-2">
         <Button 
           variant="default" 
-          size="icon"
           onClick={toggleShowHighlighted}
           title={showHighlighted ? "Hide and clear memory" : "Show all touched boxes"}
         >
-          {showHighlighted ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+          {showHighlighted ? "Restart" : "Finish"}
         </Button>
         <Button 
           variant="outline" 
@@ -255,9 +254,9 @@ export default function FidgetPage() {
         >
           <Maximize className="h-4 w-4" />
         </Button>
-        <Button asChild variant="outline" size="icon">
+        <Button asChild variant="destructive">
           <Link href="/">
-            <ArrowLeft className="h-4 w-4" />
+            <ArrowLeft className="h-4 w-4" /> Exit
           </Link>
         </Button>
       </div>

@@ -23,7 +23,7 @@ function loadExampleData(industry?: string) {
   
   // Load all example data
   const files = fs.readdirSync(exampleDataPath);
-  const allData: Record<string, any> = {};
+  const allData: Record<string, unknown> = {};
   
   for (const file of files) {
     if (file.endsWith('_knowledge.json')) {
@@ -95,13 +95,18 @@ Always ground your answers in the actual data provided above.`
       usage: completion.usage,
     });
 
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('Chat API Error:', error);
+    
+    const errorMessage = error instanceof Error ? error.message : 'An error occurred while processing your request';
+    const errorDetails = error && typeof error === 'object' && 'response' in error 
+      ? (error as { response?: { data?: unknown } }).response?.data || null
+      : null;
     
     return NextResponse.json(
       { 
-        error: error?.message || 'An error occurred while processing your request',
-        details: error?.response?.data || null 
+        error: errorMessage,
+        details: errorDetails 
       },
       { status: 500 }
     );

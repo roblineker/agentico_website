@@ -74,9 +74,10 @@ export function ChatInterface({ config }: ChatInterfaceProps) {
       };
 
       setMessages((prev) => [...prev, assistantMessage]);
-    } catch (err: any) {
+    } catch (err: unknown) {
       console.error('Chat error:', err);
-      setError(err.message || 'An error occurred while sending your message');
+      const errorMessage = err instanceof Error ? err.message : 'An error occurred while sending your message';
+      setError(errorMessage);
     } finally {
       setIsLoading(false);
     }

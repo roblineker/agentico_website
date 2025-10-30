@@ -3,13 +3,44 @@ import * as fs from 'fs';
 import * as path from 'path';
 
 // Path to the knowledge base
-const KNOWLEDGE_BASE_PATH = path.join(process.cwd(), 'public', 'mcp', 'example-data');
+const KNOWLEDGE_BASE_PATH = path.join(process.cwd(), 'src', 'elevenlabs_mcp', 'example-data');
+
+// Path to the system prompt
+const SYSTEM_PROMPT_PATH = path.join(process.cwd(), 'src', 'elevenlabs_mcp', 'elevenlabs_system_prompt_updated.md');
+
+// MCP API Secret from environment
+const MCP_API_SECRET = process.env.MCP_API_SECRET;
 
 // MCP Server Info
 const SERVER_INFO = {
     name: 'agentico-knowledge-server',
     version: '1.0.0'
 };
+
+// Helper function to validate API authentication
+function validateAuth(request: NextRequest): { valid: boolean; error?: string } {
+    // If MCP_API_SECRET is not set, warn but allow (for development)
+    if (!MCP_API_SECRET) {
+        console.warn('WARNING: MCP_API_SECRET is not set. Authentication is disabled.');
+        return { valid: true };
+    }
+
+    const authHeader = request.headers.get('authorization');
+    if (!authHeader) {
+        return { valid: false, error: 'Missing Authorization header' };
+    }
+
+    // Support both "Bearer TOKEN" and just "TOKEN" formats
+    const token = authHeader.startsWith('Bearer ') 
+        ? authHeader.slice(7) 
+        : authHeader;
+
+    if (token !== MCP_API_SECRET) {
+        return { valid: false, error: 'Invalid API secret' };
+    }
+
+    return { valid: true };
+}
 
 // Helper function to read JSON files
 function readKnowledgeFile(filename: string): Record<string, unknown> {
@@ -27,6 +58,14 @@ function listKnowledgeFiles(): string[] {
         return [];
     }
     return fs.readdirSync(KNOWLEDGE_BASE_PATH).filter(file => file.endsWith('.json'));
+}
+
+// Helper function to read the system prompt
+function readSystemPrompt(): string {
+    if (!fs.existsSync(SYSTEM_PROMPT_PATH)) {
+        throw new Error('System prompt file not found');
+    }
+    return fs.readFileSync(SYSTEM_PROMPT_PATH, 'utf-8');
 }
 
 // Helper function to search across all knowledge bases
@@ -175,16 +214,36 @@ const TOOLS = [
                 }
             }
         }
+    },
+    {
+        name: 'get_system_prompt',
+        description: 'Retrieve the ElevenLabs system prompt for the conversational AI agent.',
+        inputSchema: {
+            type: 'object',
+            properties: {}
+        }
     }
 ];
 
-// MCP Resources
-const RESOURCES = listKnowledgeFiles().map(file => ({
-    uri: `knowledge://${file.replace('.json', '')}`,
-    name: file.replace('.json', '').replace(/_/g, ' '),
-    description: `Direct access to ${file} knowledge base`,
-    mimeType: 'application/json'
-}));
+// MCP Resources - dynamically generated to include system prompt and knowledge files
+function getResources() {
+    const knowledgeResources = listKnowledgeFiles().map(file => ({
+        uri: `knowledge://${file.replace('.json', '')}`,
+        name: file.replace('.json', '').replace(/_/g, ' '),
+        description: `Direct access to ${file} knowledge base`,
+        mimeType: 'application/json'
+    }));
+
+    // Add system prompt resource
+    const systemPromptResource = {
+        uri: 'prompt://elevenlabs-system-prompt',
+        name: 'ElevenLabs System Prompt',
+        description: 'System prompt for ElevenLabs conversational AI agent (Alex the receptionist)',
+        mimeType: 'text/markdown'
+    };
+
+    return [systemPromptResource, ...knowledgeResources];
+}
 
 // Handle MCP Tool Calls
 function handleToolCall(toolName: string, args: Record<string, unknown>) {
@@ -268,6 +327,16 @@ function handleToolCall(toolName: string, args: Record<string, unknown>) {
             };
         }
 
+        case 'get_system_prompt': {
+            const prompt = readSystemPrompt();
+            return {
+                content: [{
+                    type: 'text',
+                    text: prompt
+                }]
+            };
+        }
+
         default:
             throw new Error(`Unknown tool: ${toolName}`);
     }
@@ -275,6 +344,19 @@ function handleToolCall(toolName: string, args: Record<string, unknown>) {
 
 // Handle MCP Resource Reads
 function handleResourceRead(uri: string) {
+    // Handle system prompt resource
+    if (uri === 'prompt://elevenlabs-system-prompt') {
+        const prompt = readSystemPrompt();
+        return {
+            contents: [{
+                uri,
+                mimeType: 'text/markdown',
+                text: prompt
+            }]
+        };
+    }
+    
+    // Handle knowledge base resources
     const match = uri.match(/^knowledge:\/\/(.+)$/);
     if (!match) {
         throw new Error(`Invalid resource URI: ${uri}`);
@@ -331,7 +413,7 @@ function handleJsonRpcRequest(request: {
 
             case 'resources/list':
                 result = {
-                    resources: RESOURCES
+                    resources: getResources()
                 };
                 break;
 
@@ -375,6 +457,15 @@ function handleJsonRpcRequest(request: {
 
 // GET endpoint - for health checks and SSE
 export async function GET(request: NextRequest) {
+    // Validate authentication
+    const auth = validateAuth(request);
+    if (!auth.valid) {
+        return NextResponse.json({
+            error: 'Unauthorized',
+            message: auth.error
+        }, { status: 401 });
+    }
+
     // Check if this is an SSE request
     const accept = request.headers.get('accept');
     if (accept?.includes('text/event-stream')) {
@@ -416,12 +507,25 @@ export async function GET(request: NextRequest) {
         endpoint: 'https://www.agentico.com.au/api/mcp',
         knowledgeFiles: listKnowledgeFiles(),
         tools: TOOLS.map(t => t.name),
-        resources: RESOURCES.map(r => r.uri)
+        resources: getResources().map(r => r.uri)
     });
 }
 
 // POST endpoint - for JSON-RPC 2.0 requests
 export async function POST(request: NextRequest) {
+    // Validate authentication
+    const auth = validateAuth(request);
+    if (!auth.valid) {
+        return NextResponse.json({
+            jsonrpc: '2.0',
+            id: null,
+            error: {
+                code: -32000,
+                message: 'Unauthorized: ' + auth.error
+            }
+        }, { status: 401 });
+    }
+
     try {
         const body = await request.json();
 
