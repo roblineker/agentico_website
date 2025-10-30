@@ -5,6 +5,12 @@ import * as path from 'path';
 // Path to the knowledge base
 const KNOWLEDGE_BASE_PATH = path.join(process.cwd(), 'public', 'mcp', 'example-data');
 
+// MCP Server Info
+const SERVER_INFO = {
+    name: 'agentico-knowledge-server',
+    version: '1.0.0'
+};
+
 // Helper function to read JSON files
 function readKnowledgeFile(filename: string): Record<string, unknown> {
     const filePath = path.join(KNOWLEDGE_BASE_PATH, filename);
@@ -96,156 +102,349 @@ function extractDataByPath(filename: string, jsonPath: string): unknown {
     return current;
 }
 
-// MCP Tool Handlers
-const tools = {
-    search_knowledge: ({ query, maxResults = 5 }: { query: string; maxResults?: number }) => {
-        const results = searchKnowledgeBase(query, maxResults);
-        return {
-            results,
-            totalFound: results.length,
-            message: `Found ${results.length} matching knowledge base entries.`
-        };
-    },
-
-    get_knowledge_file: ({ filename }: { filename: string }) => {
-        const data = readKnowledgeFile(filename);
-        return {
-            filename,
-            data,
-            message: `Retrieved knowledge file: ${filename}`
-        };
-    },
-
-    list_knowledge_files: () => {
-        const files = listKnowledgeFiles();
-        return {
-            files,
-            count: files.length,
-            message: `Available knowledge files: ${files.length}`
-        };
-    },
-
-    extract_data: ({ filename, path: jsonPath }: { filename: string; path: string }) => {
-        const data = extractDataByPath(filename, jsonPath);
-        return {
-            filename,
-            path: jsonPath,
-            data,
-            message: `Extracted data from ${filename} at path "${jsonPath}"`
-        };
-    },
-
-    get_company_info: ({ filename }: { filename?: string } = {}) => {
-        let filesToCheck: string[];
-        
-        if (filename) {
-            filesToCheck = [filename];
-        } else {
-            filesToCheck = listKnowledgeFiles();
-        }
-        
-        const companies = [];
-        
-        for (const file of filesToCheck) {
-            try {
-                const data = readKnowledgeFile(file);
-                if (data.company) {
-                    companies.push({
-                        source: file,
-                        company: data.company
-                    });
+// MCP Tools Definitions
+const TOOLS = [
+    {
+        name: 'search_knowledge',
+        description: 'Search across all knowledge base files for relevant information. Returns matching data sorted by relevance.',
+        inputSchema: {
+            type: 'object',
+            properties: {
+                query: {
+                    type: 'string',
+                    description: 'Search query terms'
+                },
+                maxResults: {
+                    type: 'number',
+                    description: 'Maximum number of results to return',
+                    default: 5
                 }
-            } catch (error) {
-                console.error(`Error reading ${file}:`, error);
+            },
+            required: ['query']
+        }
+    },
+    {
+        name: 'get_knowledge_file',
+        description: 'Retrieve complete contents of a specific knowledge base file.',
+        inputSchema: {
+            type: 'object',
+            properties: {
+                filename: {
+                    type: 'string',
+                    description: 'Name of the knowledge file (e.g., "recruiting_company_knowledge.json")'
+                }
+            },
+            required: ['filename']
+        }
+    },
+    {
+        name: 'list_knowledge_files',
+        description: 'List all available knowledge base files.',
+        inputSchema: {
+            type: 'object',
+            properties: {}
+        }
+    },
+    {
+        name: 'extract_data',
+        description: 'Extract specific data from a knowledge file using a JSON path (e.g., "company.name" or "clients[0].company_name").',
+        inputSchema: {
+            type: 'object',
+            properties: {
+                filename: {
+                    type: 'string',
+                    description: 'Name of the knowledge file'
+                },
+                path: {
+                    type: 'string',
+                    description: 'JSON path to the data (e.g., "company.name" or "clients[0]")'
+                }
+            },
+            required: ['filename', 'path']
+        }
+    },
+    {
+        name: 'get_company_info',
+        description: 'Get basic company information from any knowledge base file.',
+        inputSchema: {
+            type: 'object',
+            properties: {
+                filename: {
+                    type: 'string',
+                    description: 'Specific knowledge file to query, or omit to search all files'
+                }
             }
         }
-        
-        return {
-            companies,
-            message: `Found ${companies.length} company information entries.`
-        };
     }
-};
+];
 
-// GET endpoint - for health checks and info
-export async function GET(request: NextRequest) {
-    const { searchParams } = new URL(request.url);
-    const tool = searchParams.get('tool');
+// MCP Resources
+const RESOURCES = listKnowledgeFiles().map(file => ({
+    uri: `knowledge://${file.replace('.json', '')}`,
+    name: file.replace('.json', '').replace(/_/g, ' '),
+    description: `Direct access to ${file} knowledge base`,
+    mimeType: 'application/json'
+}));
 
-    // Health check
-    if (!tool) {
-        return NextResponse.json({
-            status: 'ok',
-            message: 'Agentico MCP Knowledge Server',
-            version: '1.0.0',
-            endpoint: 'https://www.agentico.com.au/api/mcp',
-            knowledgeFiles: listKnowledgeFiles(),
-            availableTools: Object.keys(tools),
-            usage: {
-                search: 'POST /api/mcp with {"tool": "search_knowledge", "params": {"query": "your search"}}',
-                getFile: 'POST /api/mcp with {"tool": "get_knowledge_file", "params": {"filename": "file.json"}}',
-                list: 'POST /api/mcp with {"tool": "list_knowledge_files", "params": {}}',
-                extract: 'POST /api/mcp with {"tool": "extract_data", "params": {"filename": "file.json", "path": "company.name"}}',
-                company: 'POST /api/mcp with {"tool": "get_company_info", "params": {}}'
+// Handle MCP Tool Calls
+function handleToolCall(toolName: string, args: Record<string, unknown>) {
+    switch (toolName) {
+        case 'search_knowledge': {
+            const query = args.query as string;
+            const maxResults = (args.maxResults as number) || 5;
+            const results = searchKnowledgeBase(query, maxResults);
+            return {
+                content: [{
+                    type: 'text',
+                    text: `Found ${results.length} matching knowledge base entries.\n\n${JSON.stringify(results, null, 2)}`
+                }]
+            };
+        }
+
+        case 'get_knowledge_file': {
+            const filename = args.filename as string;
+            const data = readKnowledgeFile(filename);
+            return {
+                content: [{
+                    type: 'text',
+                    text: `Knowledge file: ${filename}\n\n${JSON.stringify(data, null, 2)}`
+                }]
+            };
+        }
+
+        case 'list_knowledge_files': {
+            const files = listKnowledgeFiles();
+            return {
+                content: [{
+                    type: 'text',
+                    text: `Available knowledge files (${files.length}):\n${files.map(f => `- ${f}`).join('\n')}`
+                }]
+            };
+        }
+
+        case 'extract_data': {
+            const filename = args.filename as string;
+            const jsonPath = args.path as string;
+            const data = extractDataByPath(filename, jsonPath);
+            return {
+                content: [{
+                    type: 'text',
+                    text: `Extracted from ${filename} at path "${jsonPath}":\n\n${JSON.stringify(data, null, 2)}`
+                }]
+            };
+        }
+
+        case 'get_company_info': {
+            const filename = args.filename as string | undefined;
+            let filesToCheck: string[];
+            
+            if (filename) {
+                filesToCheck = [filename];
+            } else {
+                filesToCheck = listKnowledgeFiles();
             }
-        });
-    }
+            
+            const companies = [];
+            
+            for (const file of filesToCheck) {
+                try {
+                    const data = readKnowledgeFile(file);
+                    if (data.company) {
+                        companies.push({
+                            source: file,
+                            company: data.company
+                        });
+                    }
+                } catch (error) {
+                    console.error(`Error reading ${file}:`, error);
+                }
+            }
+            
+            return {
+                content: [{
+                    type: 'text',
+                    text: `Found ${companies.length} company information entries:\n\n${JSON.stringify(companies, null, 2)}`
+                }]
+            };
+        }
 
-    return NextResponse.json({ error: 'Use POST for tool calls' }, { status: 405 });
+        default:
+            throw new Error(`Unknown tool: ${toolName}`);
+    }
 }
 
-// POST endpoint - for MCP tool calls
-export async function POST(request: NextRequest) {
+// Handle MCP Resource Reads
+function handleResourceRead(uri: string) {
+    const match = uri.match(/^knowledge:\/\/(.+)$/);
+    if (!match) {
+        throw new Error(`Invalid resource URI: ${uri}`);
+    }
+    
+    const resourceName = match[1];
+    const filename = `${resourceName}.json`;
+    const data = readKnowledgeFile(filename);
+    
+    return {
+        contents: [{
+            uri,
+            mimeType: 'application/json',
+            text: JSON.stringify(data, null, 2)
+        }]
+    };
+}
+
+// Handle JSON-RPC 2.0 requests
+function handleJsonRpcRequest(request: {
+    jsonrpc: string;
+    id?: string | number | null;
+    method: string;
+    params?: Record<string, unknown>;
+}) {
+    const { method, params = {}, id } = request;
+
     try {
-        // Check for API secret
-        const authHeader = request.headers.get('authorization');
-        const expectedSecret = process.env.MCP_API_SECRET;
-        
-        // Only enforce auth if MCP_API_SECRET is set
-        if (expectedSecret) {
-            if (!authHeader) {
-                return NextResponse.json({
-                    error: 'Unauthorized - Missing authorization header',
-                    hint: 'Include Authorization header with Bearer token'
-                }, { status: 401 });
-            }
+        let result;
 
-            const token = authHeader.replace('Bearer ', '');
-            if (token !== expectedSecret) {
-                return NextResponse.json({
-                    error: 'Unauthorized - Invalid API secret'
-                }, { status: 401 });
-            }
+        switch (method) {
+            case 'initialize':
+                result = {
+                    protocolVersion: '2024-11-05',
+                    capabilities: {
+                        tools: {},
+                        resources: {}
+                    },
+                    serverInfo: SERVER_INFO
+                };
+                break;
+
+            case 'tools/list':
+                result = {
+                    tools: TOOLS
+                };
+                break;
+
+            case 'tools/call':
+                const toolName = params.name as string;
+                const args = (params.arguments as Record<string, unknown>) || {};
+                result = handleToolCall(toolName, args);
+                break;
+
+            case 'resources/list':
+                result = {
+                    resources: RESOURCES
+                };
+                break;
+
+            case 'resources/read':
+                const uri = params.uri as string;
+                result = handleResourceRead(uri);
+                break;
+
+            case 'ping':
+                result = {};
+                break;
+
+            default:
+                return {
+                    jsonrpc: '2.0',
+                    id,
+                    error: {
+                        code: -32601,
+                        message: `Method not found: ${method}`
+                    }
+                };
         }
 
-        const body = await request.json();
-        const { tool, params = {} } = body;
-
-        // Validate tool exists
-        if (!tool || !(tool in tools)) {
-            return NextResponse.json({
-                error: 'Invalid tool',
-                availableTools: Object.keys(tools)
-            }, { status: 400 });
-        }
-
-        // Execute tool
-        const toolFunction = tools[tool as keyof typeof tools];
-        const result = toolFunction(params);
-
-        return NextResponse.json({
-            success: true,
-            tool,
+        return {
+            jsonrpc: '2.0',
+            id,
             result
-        });
-
+        };
     } catch (error) {
         console.error('MCP Error:', error);
-        const errorMessage = error instanceof Error ? error.message : 'Internal server error';
+        return {
+            jsonrpc: '2.0',
+            id,
+            error: {
+                code: -32603,
+                message: error instanceof Error ? error.message : 'Internal error'
+            }
+        };
+    }
+}
+
+// GET endpoint - for health checks and SSE
+export async function GET(request: NextRequest) {
+    // Check if this is an SSE request
+    const accept = request.headers.get('accept');
+    if (accept?.includes('text/event-stream')) {
+        // For now, return a simple SSE stream for notifications
+        const encoder = new TextEncoder();
+        const stream = new ReadableStream({
+            start(controller) {
+                // Send initial comment to establish connection
+                controller.enqueue(encoder.encode(': connected\n\n'));
+                
+                // Keep connection alive with periodic ping
+                const intervalId = setInterval(() => {
+                    controller.enqueue(encoder.encode(': ping\n\n'));
+                }, 30000);
+                
+                // Cleanup on close
+                request.signal.addEventListener('abort', () => {
+                    clearInterval(intervalId);
+                    controller.close();
+                });
+            }
+        });
+        
+        return new Response(stream, {
+            headers: {
+                'Content-Type': 'text/event-stream',
+                'Cache-Control': 'no-cache',
+                'Connection': 'keep-alive',
+            },
+        });
+    }
+
+    // Regular health check
+    return NextResponse.json({
+        status: 'ok',
+        message: 'Agentico MCP Knowledge Server',
+        version: SERVER_INFO.version,
+        protocol: 'JSON-RPC 2.0',
+        endpoint: 'https://www.agentico.com.au/api/mcp',
+        knowledgeFiles: listKnowledgeFiles(),
+        tools: TOOLS.map(t => t.name),
+        resources: RESOURCES.map(r => r.uri)
+    });
+}
+
+// POST endpoint - for JSON-RPC 2.0 requests
+export async function POST(request: NextRequest) {
+    try {
+        const body = await request.json();
+
+        // Handle batch requests
+        if (Array.isArray(body)) {
+            const responses = body.map(req => handleJsonRpcRequest(req));
+            return NextResponse.json(responses);
+        }
+
+        // Handle single request
+        const response = handleJsonRpcRequest(body);
+        return NextResponse.json(response);
+
+    } catch (error) {
+        console.error('MCP POST Error:', error);
         return NextResponse.json({
-            success: false,
-            error: errorMessage
-        }, { status: 500 });
+            jsonrpc: '2.0',
+            id: null,
+            error: {
+                code: -32700,
+                message: 'Parse error'
+            }
+        }, { status: 400 });
     }
 }
 

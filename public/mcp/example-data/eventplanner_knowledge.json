@@ -1,0 +1,680 @@
+{
+  "company": {
+    "name": "Celebration Events Brisbane",
+    "abn": "23 345 678 901",
+    "email": "info@celebrationevents.com.au",
+    "phone": "+61 7 3567 8901",
+    "address": "Suite 5, 120 Commercial Road, Newstead QLD 4006",
+    "website": "www.celebrationevents.com.au",
+    "specializations": ["Wedding Planning", "Corporate Events", "Birthday Parties", "Conference Planning", "Event Styling"]
+  },
+  "integrations": {
+    "event_management": "Planning Pod",
+    "accounting": "Xero",
+    "proposals": "Better Proposals",
+    "bookings": "Acuity Scheduling",
+    "voice_agent": "Custom Voice Agent",
+    "file_storage": "OneDrive",
+    "crm": "HubSpot",
+    "project_management": "Asana"
+  },
+  "clients": [
+    {
+      "client_id": "CLI-001",
+      "name": "Sarah & Michael Henderson",
+      "type": "Wedding",
+      "email": "sarah.henderson@email.com",
+      "phone": "+61 412 456 789",
+      "event_date": "2025-03-15",
+      "venue": "Summergrove Estate, Gold Coast",
+      "guest_count": 150,
+      "package": "Full Service Wedding Planning",
+      "contract_value": 8500.00,
+      "deposit_paid": 2550.00,
+      "status": "Planning - Vendor Bookings"
+    },
+    {
+      "client_id": "CLI-002",
+      "name": "TechFlow Solutions Pty Ltd",
+      "type": "Corporate",
+      "contact_person": "David Chen",
+      "email": "david@techflow.com.au",
+      "phone": "+61 423 567 890",
+      "event_date": "2024-12-10",
+      "venue": "Brisbane Convention Centre",
+      "guest_count": 200,
+      "package": "Annual Conference Planning",
+      "contract_value": 12500.00,
+      "deposit_paid": 6250.00,
+      "status": "Planning - Final Details"
+    },
+    {
+      "client_id": "CLI-003",
+      "name": "Emma Thompson - 50th Birthday",
+      "type": "Birthday Party",
+      "contact_person": "James Thompson",
+      "email": "james.t@email.com",
+      "phone": "+61 434 678 901",
+      "event_date": "2024-11-30",
+      "venue": "Private Residence - Bardon",
+      "guest_count": 80,
+      "package": "Birthday Party Planning & Styling",
+      "contract_value": 4500.00,
+      "deposit_paid": 2250.00,
+      "status": "Planning - Vendor Confirmations"
+    },
+    {
+      "client_id": "CLI-004",
+      "name": "Brisbane Medical Association",
+      "type": "Corporate",
+      "contact_person": "Dr. Rebecca Walsh",
+      "email": "r.walsh@medassoc.com.au",
+      "phone": "+61 445 789 012",
+      "event_date": "2024-11-15",
+      "venue": "Howard Smith Wharves",
+      "guest_count": 120,
+      "package": "Annual Gala Dinner",
+      "contract_value": 9500.00,
+      "deposit_paid": 9500.00,
+      "status": "Completed - Post Event"
+    },
+    {
+      "client_id": "CLI-005",
+      "name": "Lisa & Carlos Rodriguez",
+      "type": "Wedding",
+      "email": "lisa.rodriguez@email.com",
+      "phone": "+61 456 890 123",
+      "event_date": "2024-12-20",
+      "venue": "Riverlife, South Bank",
+      "guest_count": 100,
+      "package": "Wedding Day Coordination",
+      "contract_value": 3500.00,
+      "deposit_paid": 1750.00,
+      "status": "Planning - Timeline Creation"
+    },
+    {
+      "client_id": "CLI-006",
+      "name": "Queensland Law Society",
+      "type": "Corporate",
+      "contact_person": "Jennifer Wong",
+      "email": "jennifer@lawsociety.com.au",
+      "phone": "+61 467 901 234",
+      "event_date": "2025-02-28",
+      "venue": "Brisbane City Hall",
+      "guest_count": 300,
+      "package": "Industry Awards Night",
+      "contract_value": 15000.00,
+      "deposit_paid": 5000.00,
+      "status": "Planning - Initial Planning"
+    },
+    {
+      "client_id": "CLI-007",
+      "name": "Sophie Williams - Engagement Party",
+      "type": "Private Event",
+      "email": "sophie.w@email.com",
+      "phone": "+61 478 012 345",
+      "event_date": "2024-11-16",
+      "venue": "Cloudland",
+      "guest_count": 60,
+      "package": "Event Styling & Coordination",
+      "contract_value": 2800.00,
+      "deposit_paid": 1400.00,
+      "status": "Planning - Styling Confirmed"
+    },
+    {
+      "client_id": "CLI-008",
+      "name": "Brisbane Property Group",
+      "type": "Corporate",
+      "contact_person": "Tony Nguyen",
+      "email": "tony@propertygroup.com.au",
+      "phone": "+61 489 123 456",
+      "event_date": "2024-11-08",
+      "venue": "The Calile Hotel",
+      "guest_count": 50,
+      "package": "Product Launch Event",
+      "contract_value": 5500.00,
+      "deposit_paid": 5500.00,
+      "status": "Completed - Post Event"
+    },
+    {
+      "client_id": "CLI-009",
+      "name": "Rebecca & Andrew Foster",
+      "type": "Wedding",
+      "email": "rebecca.foster@email.com",
+      "phone": "+61 490 234 567",
+      "event_date": "2025-05-24",
+      "venue": "Boomerang Farm",
+      "guest_count": 180,
+      "package": "Full Service Wedding Planning",
+      "contract_value": 9500.00,
+      "deposit_paid": 2850.00,
+      "status": "Planning - Venue Contract Signed"
+    }
+  ],
+  "events": [
+    {
+      "event_id": "EVT-2024-045",
+      "client_id": "CLI-004",
+      "client_name": "Brisbane Medical Association",
+      "event_type": "Corporate Gala Dinner",
+      "event_date": "2024-11-15",
+      "event_time": "6:00 PM",
+      "venue": "Howard Smith Wharves",
+      "guest_count": 120,
+      "status": "Completed",
+      "budget": 9500.00,
+      "vendors": ["Grazing Table Catering", "DJ Mike Stevens", "Floral Designs Brisbane", "AV Solutions"],
+      "coordinator": "Amanda Wilson",
+      "notes": "Successful event. Client very happy. Received thank you note."
+    },
+    {
+      "event_id": "EVT-2024-052",
+      "client_id": "CLI-008",
+      "client_name": "Brisbane Property Group",
+      "event_type": "Product Launch",
+      "event_date": "2024-11-08",
+      "event_time": "5:30 PM",
+      "venue": "The Calile Hotel",
+      "guest_count": 50,
+      "status": "Completed",
+      "budget": 5500.00,
+      "vendors": ["Calile In-house Catering", "Event Lighting Brisbane", "Capture Moments Photography"],
+      "coordinator": "Lisa Park",
+      "notes": "Smooth execution. All vendors performed well."
+    },
+    {
+      "event_id": "EVT-2024-063",
+      "client_id": "CLI-002",
+      "client_name": "TechFlow Solutions Pty Ltd",
+      "event_type": "Annual Conference",
+      "event_date": "2024-12-10",
+      "event_time": "8:00 AM",
+      "venue": "Brisbane Convention Centre",
+      "guest_count": 200,
+      "status": "Planning - 80% Complete",
+      "budget": 12500.00,
+      "vendors": ["BCEC In-house Catering", "AV Pro Brisbane", "Conference Printing Co", "Registration Systems"],
+      "coordinator": "Amanda Wilson",
+      "notes": "Final run-through scheduled for Dec 3. All major vendors confirmed."
+    }
+  ],
+  "invoices": [
+    {
+      "invoice_id": "INV-2024-1123",
+      "client_id": "CLI-001",
+      "client_name": "Sarah & Michael Henderson",
+      "invoice_date": "2024-09-15",
+      "due_date": "2024-09-29",
+      "status": "Paid",
+      "payment_date": "2024-09-22",
+      "subtotal": 2550.00,
+      "gst": 255.00,
+      "total": 2805.00,
+      "description": "Wedding planning deposit - 30%",
+      "xero_invoice_id": "XERO-INV-1123",
+      "line_items": [
+        {
+          "description": "Deposit - Full Service Wedding Planning",
+          "quantity": 1,
+          "unit_price": 2550.00,
+          "gst": 255.00,
+          "total": 2805.00
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-2024-1145",
+      "client_id": "CLI-002",
+      "client_name": "TechFlow Solutions Pty Ltd",
+      "invoice_date": "2024-08-20",
+      "due_date": "2024-09-19",
+      "status": "Paid",
+      "payment_date": "2024-09-10",
+      "subtotal": 6250.00,
+      "gst": 625.00,
+      "total": 6875.00,
+      "description": "Conference planning deposit - 50%",
+      "xero_invoice_id": "XERO-INV-1145",
+      "line_items": [
+        {
+          "description": "Deposit - Annual Conference Planning",
+          "quantity": 1,
+          "unit_price": 6250.00,
+          "gst": 625.00,
+          "total": 6875.00
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-2024-1167",
+      "client_id": "CLI-002",
+      "client_name": "TechFlow Solutions Pty Ltd",
+      "invoice_date": "2024-11-20",
+      "due_date": "2024-12-10",
+      "status": "Sent",
+      "payment_date": null,
+      "subtotal": 6250.00,
+      "gst": 625.00,
+      "total": 6875.00,
+      "description": "Conference planning balance - 50%",
+      "xero_invoice_id": "XERO-INV-1167",
+      "line_items": [
+        {
+          "description": "Balance - Annual Conference Planning",
+          "quantity": 1,
+          "unit_price": 6250.00,
+          "gst": 625.00,
+          "total": 6875.00
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-2024-1178",
+      "client_id": "CLI-003",
+      "client_name": "Emma Thompson - 50th Birthday",
+      "invoice_date": "2024-10-15",
+      "due_date": "2024-10-29",
+      "status": "Paid",
+      "payment_date": "2024-10-25",
+      "subtotal": 2250.00,
+      "gst": 225.00,
+      "total": 2475.00,
+      "description": "Birthday party planning deposit - 50%",
+      "xero_invoice_id": "XERO-INV-1178",
+      "line_items": [
+        {
+          "description": "Deposit - Birthday Party Planning & Styling",
+          "quantity": 1,
+          "unit_price": 2250.00,
+          "gst": 225.00,
+          "total": 2475.00
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-2024-1089",
+      "client_id": "CLI-004",
+      "client_name": "Brisbane Medical Association",
+      "invoice_date": "2024-11-20",
+      "due_date": "2024-12-20",
+      "status": "Sent",
+      "payment_date": null,
+      "subtotal": 9500.00,
+      "gst": 950.00,
+      "total": 10450.00,
+      "description": "Annual Gala Dinner - Final Invoice",
+      "xero_invoice_id": "XERO-INV-1089",
+      "line_items": [
+        {
+          "description": "Event planning and coordination services",
+          "quantity": 1,
+          "unit_price": 9500.00,
+          "gst": 950.00,
+          "total": 10450.00
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-2024-1134",
+      "client_id": "CLI-008",
+      "client_name": "Brisbane Property Group",
+      "invoice_date": "2024-11-12",
+      "due_date": "2024-12-12",
+      "status": "Sent",
+      "payment_date": null,
+      "subtotal": 5500.00,
+      "gst": 550.00,
+      "total": 6050.00,
+      "description": "Product Launch Event - Final Invoice",
+      "xero_invoice_id": "XERO-INV-1134",
+      "line_items": [
+        {
+          "description": "Event planning and coordination services",
+          "quantity": 1,
+          "unit_price": 5500.00,
+          "gst": 550.00,
+          "total": 6050.00
+        }
+      ]
+    }
+  ],
+  "bills": [
+    {
+      "bill_id": "BILL-2024-6789",
+      "supplier": "Floral Designs Brisbane",
+      "event_id": "EVT-2024-045",
+      "bill_date": "2024-11-18",
+      "due_date": "2024-12-18",
+      "status": "Unpaid",
+      "payment_date": null,
+      "subtotal": 2850.00,
+      "gst": 285.00,
+      "total": 3135.00,
+      "description": "Floral arrangements - Medical Association Gala",
+      "xero_bill_id": "XERO-BILL-6789",
+      "line_items": [
+        {
+          "description": "Table centerpieces x 15",
+          "quantity": 15,
+          "unit_price": 145.00,
+          "gst": 217.50,
+          "total": 2392.50
+        },
+        {
+          "description": "Entrance feature arrangement",
+          "quantity": 1,
+          "unit_price": 675.00,
+          "gst": 67.50,
+          "total": 742.50
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-6801",
+      "supplier": "Grazing Table Catering",
+      "event_id": "EVT-2024-045",
+      "bill_date": "2024-11-18",
+      "due_date": "2024-12-18",
+      "status": "Unpaid",
+      "payment_date": null,
+      "subtotal": 4800.00,
+      "gst": 480.00,
+      "total": 5280.00,
+      "description": "Catering - Medical Association Gala",
+      "xero_bill_id": "XERO-BILL-6801",
+      "line_items": [
+        {
+          "description": "3-course dinner - 120 guests",
+          "quantity": 120,
+          "unit_price": 40.00,
+          "gst": 480.00,
+          "total": 5280.00
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-6812",
+      "supplier": "AV Solutions",
+      "event_id": "EVT-2024-045",
+      "bill_date": "2024-11-18",
+      "due_date": "2024-12-18",
+      "status": "Unpaid",
+      "payment_date": null,
+      "subtotal": 1450.00,
+      "gst": 145.00,
+      "total": 1595.00,
+      "description": "AV equipment - Medical Association Gala",
+      "xero_bill_id": "XERO-BILL-6812",
+      "line_items": [
+        {
+          "description": "Sound system and microphones",
+          "quantity": 1,
+          "unit_price": 850.00,
+          "gst": 85.00,
+          "total": 935.00
+        },
+        {
+          "description": "Projector and screen",
+          "quantity": 1,
+          "unit_price": 600.00,
+          "gst": 60.00,
+          "total": 660.00
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-6823",
+      "supplier": "Event Lighting Brisbane",
+      "event_id": "EVT-2024-052",
+      "bill_date": "2024-11-10",
+      "due_date": "2024-12-10",
+      "status": "Unpaid",
+      "payment_date": null,
+      "subtotal": 1850.00,
+      "gst": 185.00,
+      "total": 2035.00,
+      "description": "Lighting - Product Launch",
+      "xero_bill_id": "XERO-BILL-6823",
+      "line_items": [
+        {
+          "description": "Feature lighting and uplighting",
+          "quantity": 1,
+          "unit_price": 1850.00,
+          "gst": 185.00,
+          "total": 2035.00
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-6834",
+      "supplier": "Planning Pod",
+      "bill_date": "2024-10-01",
+      "due_date": "2024-10-31",
+      "status": "Paid",
+      "payment_date": "2024-10-15",
+      "subtotal": 195.00,
+      "gst": 19.50,
+      "total": 214.50,
+      "description": "Event management software - October",
+      "xero_bill_id": "XERO-BILL-6834",
+      "line_items": [
+        {
+          "description": "Planning Pod monthly subscription",
+          "quantity": 1,
+          "unit_price": 195.00,
+          "gst": 19.50,
+          "total": 214.50
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-6845",
+      "supplier": "Better Proposals",
+      "bill_date": "2024-10-01",
+      "due_date": "2024-10-31",
+      "status": "Paid",
+      "payment_date": "2024-10-15",
+      "subtotal": 85.00,
+      "gst": 8.50,
+      "total": 93.50,
+      "description": "Proposal software - October",
+      "xero_bill_id": "XERO-BILL-6845",
+      "line_items": [
+        {
+          "description": "Better Proposals monthly subscription",
+          "quantity": 1,
+          "unit_price": 85.00,
+          "gst": 8.50,
+          "total": 93.50
+        }
+      ]
+    }
+  ],
+  "leads": [
+    {
+      "lead_id": "LEAD-2024-678",
+      "name": "Michael & Sophie Patterson",
+      "type": "Wedding",
+      "email": "michael.p@email.com",
+      "phone": "+61 421 567 890",
+      "source": "Instagram",
+      "date_created": "2024-10-25",
+      "wedding_date": "2025-10-18",
+      "status": "Proposal Sent",
+      "estimated_value": 9000.00,
+      "notes": "Looking for full service wedding planning. Sent proposal 26/10. Following up next week.",
+      "last_contact": "2024-10-26",
+      "next_followup": "2024-11-02"
+    },
+    {
+      "lead_id": "LEAD-2024-679",
+      "name": "Brisbane Tech Conference",
+      "type": "Corporate",
+      "contact_person": "Lisa Chen",
+      "email": "lisa@techconf.com.au",
+      "phone": "+61 432 678 901",
+      "source": "Referral",
+      "date_created": "2024-10-27",
+      "event_date": "2025-06-15",
+      "status": "Meeting Scheduled",
+      "estimated_value": 25000.00,
+      "notes": "3-day tech conference, 500+ attendees. Meeting scheduled Nov 6 to discuss requirements.",
+      "last_contact": "2024-10-28",
+      "next_followup": "2024-11-06"
+    },
+    {
+      "lead_id": "LEAD-2024-680",
+      "name": "Tony Rodriguez - 60th Birthday",
+      "type": "Private Event",
+      "email": "tony.r@email.com",
+      "phone": "+61 443 789 012",
+      "source": "Voice Agent - Inbound Call",
+      "date_created": "2024-10-28",
+      "event_date": "2025-02-14",
+      "status": "Initial Contact",
+      "estimated_value": 5500.00,
+      "notes": "60th birthday party, approx 100 guests. Sending information pack and pricing.",
+      "last_contact": "2024-10-28",
+      "next_followup": "2024-11-01"
+    },
+    {
+      "lead_id": "LEAD-2024-681",
+      "name": "Queensland Business Awards",
+      "type": "Corporate",
+      "contact_person": "Jennifer Wong",
+      "email": "j.wong@qldawards.com.au",
+      "phone": "+61 454 890 123",
+      "source": "Tender Opportunity",
+      "date_created": "2024-10-29",
+      "event_date": "2025-08-22",
+      "status": "Tender Preparation",
+      "estimated_value": 35000.00,
+      "notes": "Large awards ceremony. Tender submission due Nov 20. Preparing detailed proposal.",
+      "last_contact": "2024-10-29",
+      "next_followup": "2024-11-20"
+    }
+  ],
+  "staff": [
+    {
+      "staff_id": "STAFF-001",
+      "name": "Amanda Wilson",
+      "role": "Owner / Senior Event Planner",
+      "email": "amanda@celebrationevents.com.au",
+      "phone": "+61 421 789 012",
+      "qualifications": ["Event Management Degree", "Wedding Planner Certification"],
+      "specializations": ["Weddings", "Corporate Events", "Large Scale Events"],
+      "active_events": 8,
+      "employment_start": "2015-03-01"
+    },
+    {
+      "staff_id": "STAFF-002",
+      "name": "Lisa Park",
+      "role": "Event Coordinator",
+      "email": "lisa@celebrationevents.com.au",
+      "phone": "+61 432 890 123",
+      "qualifications": ["Event Management Diploma", "Wedding Coordinator Certificate"],
+      "specializations": ["Corporate Events", "Product Launches", "Coordination"],
+      "active_events": 5,
+      "employment_start": "2017-08-15"
+    },
+    {
+      "staff_id": "STAFF-003",
+      "name": "Sophie Martinez",
+      "role": "Event Stylist",
+      "email": "sophie@celebrationevents.com.au",
+      "phone": "+61 443 901 234",
+      "qualifications": ["Interior Design Certificate", "Event Styling Diploma"],
+      "specializations": ["Event Styling", "Theme Development", "Vendor Liaison"],
+      "active_events": 6,
+      "employment_start": "2018-05-10"
+    },
+    {
+      "staff_id": "STAFF-004",
+      "name": "Emma Rodriguez",
+      "role": "Event Assistant",
+      "email": "emma@celebrationevents.com.au",
+      "phone": "+61 454 012 345",
+      "qualifications": ["Event Management Certificate III"],
+      "specializations": ["Event Setup", "Vendor Coordination", "Guest Services"],
+      "employment_type": "Part Time",
+      "hourly_rate": 32.00,
+      "employment_start": "2022-01-20"
+    }
+  ],
+  "onedrive_files": [
+    {
+      "file_id": "OD-EVT-045-001",
+      "event_id": "EVT-2024-045",
+      "file_name": "Medical_Association_Gala_Runsheet.pdf",
+      "file_type": "Event Runsheet",
+      "file_path": "/Events/2024/November/Medical Association Gala/",
+      "upload_date": "2024-11-10",
+      "uploaded_by": "Amanda Wilson",
+      "description": "Detailed event timeline and runsheet",
+      "file_size": "1.2 MB"
+    },
+    {
+      "file_id": "OD-EVT-045-002",
+      "event_id": "EVT-2024-045",
+      "file_name": "Medical_Association_Floor_Plan.pdf",
+      "file_type": "Floor Plan",
+      "file_path": "/Events/2024/November/Medical Association Gala/",
+      "upload_date": "2024-11-05",
+      "uploaded_by": "Sophie Martinez",
+      "description": "Seating chart and floor layout",
+      "file_size": "890 KB"
+    },
+    {
+      "file_id": "OD-CONTRACT-001",
+      "client_id": "CLI-001",
+      "file_name": "Henderson_Wedding_Contract_Signed.pdf",
+      "file_type": "Contract",
+      "file_path": "/Contracts/2024/Weddings/",
+      "upload_date": "2024-09-15",
+      "uploaded_by": "Amanda Wilson",
+      "description": "Signed event planning contract",
+      "file_size": "1.5 MB"
+    },
+    {
+      "file_id": "OD-PROPOSAL-679",
+      "lead_id": "LEAD-2024-679",
+      "file_name": "Tech_Conference_Proposal.pdf",
+      "file_type": "Proposal",
+      "file_path": "/Proposals/2024/October/",
+      "upload_date": "2024-10-28",
+      "uploaded_by": "Amanda Wilson",
+      "description": "Detailed proposal for Brisbane Tech Conference",
+      "file_size": "2.8 MB"
+    },
+    {
+      "file_id": "OD-VENDOR-001",
+      "file_name": "Preferred_Vendor_List_2024.xlsx",
+      "file_type": "Vendor Database",
+      "file_path": "/Vendors/",
+      "upload_date": "2024-01-15",
+      "uploaded_by": "Lisa Park",
+      "description": "Preferred vendor list with contacts and pricing",
+      "file_size": "456 KB"
+    },
+    {
+      "file_id": "OD-INSURANCE-001",
+      "file_name": "Public_Liability_Insurance_2024.pdf",
+      "file_type": "Insurance",
+      "file_path": "/Business/Insurance/",
+      "upload_date": "2024-07-01",
+      "uploaded_by": "Amanda Wilson",
+      "description": "$20M Public Liability - Expires 30/06/2025",
+      "file_size": "678 KB"
+    }
+  ],
+  "metadata": {
+    "data_purpose": "11Labs Voice Agent Knowledge Base",
+    "business_type": "Event Planning Company",
+    "data_format": "JSON",
+    "last_updated": "2024-10-30",
+    "currency": "AUD",
+    "timezone": "Australia/Brisbane",
+    "notes": "This is dummy data for demonstration purposes. All client names, event details, and financial information are fictional."
+  }
+}
+
