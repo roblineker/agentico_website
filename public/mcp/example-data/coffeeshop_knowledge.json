@@ -1,0 +1,553 @@
+{
+  "company": {
+    "name": "Daily Grind Espresso Bar",
+    "abn": "67 890 123 456",
+    "email": "info@dailygrind.com.au",
+    "phone": "+61 7 3012 3456",
+    "address": "Shop 3, 67 Boundary Street, West End QLD 4101",
+    "website": "www.dailygrind.com.au",
+    "specializations": ["Specialty Coffee", "Breakfast", "Lunch", "Catering", "Takeaway"]
+  },
+  "integrations": {
+    "pos": "Square",
+    "accounting": "Xero",
+    "rostering": "Deputy",
+    "ordering": "MarketMan",
+    "voice_agent": "Custom Voice Agent",
+    "file_storage": "OneDrive",
+    "online_ordering": "Square Online",
+    "loyalty": "Square Loyalty"
+  },
+  "customers": [
+    {
+      "customer_id": "CUST-001",
+      "name": "Sarah Mitchell",
+      "email": "sarah.m@email.com",
+      "phone": "+61 412 901 234",
+      "loyalty_member": true,
+      "loyalty_points": 1850,
+      "total_visits": 145,
+      "total_spent": 2175.00,
+      "favorite_items": ["Flat White", "Smashed Avo on Toast"],
+      "dietary_preferences": ["Gluten Free available"]
+    },
+    {
+      "customer_id": "CUST-002",
+      "name": "David Chen",
+      "email": "david.c@email.com",
+      "phone": "+61 423 012 345",
+      "loyalty_member": true,
+      "loyalty_points": 2450,
+      "total_visits": 198,
+      "total_spent": 2940.00,
+      "favorite_items": ["Long Black", "BLT Sandwich"],
+      "dietary_preferences": []
+    },
+    {
+      "customer_id": "CUST-003",
+      "name": "Emma Thompson",
+      "email": "emma.t@email.com",
+      "phone": "+61 434 123 456",
+      "loyalty_member": true,
+      "loyalty_points": 1250,
+      "total_visits": 89,
+      "total_spent": 1335.00,
+      "favorite_items": ["Cappuccino", "Banana Bread"],
+      "dietary_preferences": ["Lactose Intolerant", "Oat Milk"]
+    },
+    {
+      "customer_id": "CUST-004",
+      "name": "TechFlow Solutions Pty Ltd",
+      "type": "Corporate",
+      "email": "admin@techflow.com.au",
+      "phone": "+61 445 234 567",
+      "loyalty_member": false,
+      "account_customer": true,
+      "total_orders": 45,
+      "total_spent": 8950.00,
+      "preferred_delivery_time": "8:30 AM",
+      "dietary_preferences": ["Mixed dietary requirements"]
+    }
+  ],
+  "daily_sales": [
+    {
+      "date": "2024-10-28",
+      "day_of_week": "Monday",
+      "total_transactions": 245,
+      "gross_sales": 3680.50,
+      "discounts": 185.00,
+      "net_sales": 3495.50,
+      "cash": 450.00,
+      "card": 2980.50,
+      "online": 65.00,
+      "top_selling_items": ["Flat White", "Cappuccino", "Smashed Avo on Toast"],
+      "staff_on_duty": ["Tony Nguyen", "Lisa Park", "Jake Morrison"]
+    },
+    {
+      "date": "2024-10-29",
+      "day_of_week": "Tuesday",
+      "total_transactions": 268,
+      "gross_sales": 4125.00,
+      "discounts": 205.00,
+      "net_sales": 3920.00,
+      "cash": 520.00,
+      "card": 3280.00,
+      "online": 120.00,
+      "top_selling_items": ["Flat White", "Long Black", "Bacon & Egg Roll"],
+      "staff_on_duty": ["Tony Nguyen", "Lisa Park", "Emma Rodriguez"]
+    },
+    {
+      "date": "2024-10-30",
+      "day_of_week": "Wednesday",
+      "total_transactions": 289,
+      "gross_sales": 4455.50,
+      "discounts": 220.00,
+      "net_sales": 4235.50,
+      "cash": 580.50,
+      "card": 3535.00,
+      "online": 120.00,
+      "top_selling_items": ["Cappuccino", "Flat White", "Chicken Schnitzel Burger"],
+      "staff_on_duty": ["Tony Nguyen", "Lisa Park", "Jake Morrison", "Emma Rodriguez"]
+    }
+  ],
+  "menu": [
+    {
+      "item_id": "MENU-001",
+      "category": "Coffee",
+      "name": "Flat White",
+      "description": "Double shot espresso with microfoam milk",
+      "price": 5.00,
+      "cost": 1.20,
+      "available": true,
+      "dietary_tags": ["Vegetarian", "Gluten Free"]
+    },
+    {
+      "item_id": "MENU-002",
+      "category": "Coffee",
+      "name": "Cappuccino",
+      "description": "Espresso with foamed milk and chocolate dust",
+      "price": 5.00,
+      "cost": 1.20,
+      "available": true,
+      "dietary_tags": ["Vegetarian", "Gluten Free"]
+    },
+    {
+      "item_id": "MENU-003",
+      "category": "Coffee",
+      "name": "Long Black",
+      "description": "Double shot espresso with hot water",
+      "price": 4.50,
+      "cost": 0.90,
+      "available": true,
+      "dietary_tags": ["Vegan", "Gluten Free"]
+    },
+    {
+      "item_id": "MENU-004",
+      "category": "Coffee",
+      "name": "Latte",
+      "description": "Espresso with steamed milk",
+      "price": 5.00,
+      "cost": 1.20,
+      "available": true,
+      "dietary_tags": ["Vegetarian", "Gluten Free"]
+    },
+    {
+      "item_id": "MENU-010",
+      "category": "Breakfast",
+      "name": "Smashed Avo on Toast",
+      "description": "Smashed avocado, feta, cherry tomatoes, on sourdough",
+      "price": 18.50,
+      "cost": 5.50,
+      "available": true,
+      "dietary_tags": ["Vegetarian", "Gluten Free option"]
+    },
+    {
+      "item_id": "MENU-011",
+      "category": "Breakfast",
+      "name": "Bacon & Egg Roll",
+      "description": "Free-range eggs, bacon, on Turkish roll",
+      "price": 12.00,
+      "cost": 3.80,
+      "available": true,
+      "dietary_tags": []
+    },
+    {
+      "item_id": "MENU-012",
+      "category": "Breakfast",
+      "name": "Eggs Benedict",
+      "description": "Poached eggs, bacon, hollandaise, on sourdough",
+      "price": 22.00,
+      "cost": 6.50,
+      "available": true,
+      "dietary_tags": []
+    },
+    {
+      "item_id": "MENU-020",
+      "category": "Lunch",
+      "name": "BLT Sandwich",
+      "description": "Bacon, lettuce, tomato, aioli, on sourdough",
+      "price": 15.00,
+      "cost": 4.20,
+      "available": true,
+      "dietary_tags": []
+    },
+    {
+      "item_id": "MENU-021",
+      "category": "Lunch",
+      "name": "Chicken Schnitzel Burger",
+      "description": "Crumbed chicken, lettuce, tomato, cheese, chips",
+      "price": 19.50,
+      "cost": 5.80,
+      "available": true,
+      "dietary_tags": []
+    },
+    {
+      "item_id": "MENU-030",
+      "category": "Cakes & Treats",
+      "name": "Banana Bread",
+      "description": "House-made banana bread with butter",
+      "price": 6.50,
+      "cost": 1.80,
+      "available": true,
+      "dietary_tags": ["Vegetarian"]
+    }
+  ],
+  "invoices": [
+    {
+      "invoice_id": "INV-2024-0134",
+      "customer_id": "CUST-004",
+      "customer_name": "TechFlow Solutions Pty Ltd",
+      "invoice_date": "2024-10-15",
+      "due_date": "2024-10-29",
+      "status": "Paid",
+      "payment_date": "2024-10-25",
+      "subtotal": 1850.00,
+      "gst": 185.00,
+      "total": 2035.00,
+      "description": "Corporate catering - October 1-15",
+      "xero_invoice_id": "XERO-INV-0134",
+      "line_items": [
+        {
+          "description": "Daily coffee delivery service (10 days)",
+          "quantity": 10,
+          "unit_price": 125.00,
+          "gst": 125.00,
+          "total": 1375.00
+        },
+        {
+          "description": "Meeting catering (2 occasions)",
+          "quantity": 2,
+          "unit_price": 325.00,
+          "gst": 65.00,
+          "total": 715.00
+        }
+      ]
+    }
+  ],
+  "bills": [
+    {
+      "bill_id": "BILL-2024-1456",
+      "supplier": "Brisbane Coffee Roasters",
+      "bill_date": "2024-10-15",
+      "due_date": "2024-11-14",
+      "status": "Unpaid",
+      "payment_date": null,
+      "subtotal": 2450.00,
+      "gst": 245.00,
+      "total": 2695.00,
+      "description": "Coffee beans - October delivery",
+      "xero_bill_id": "XERO-BILL-1456",
+      "line_items": [
+        {
+          "description": "House blend coffee beans - 20kg",
+          "quantity": 20,
+          "unit_price": 95.00,
+          "gst": 190.00,
+          "total": 2090.00
+        },
+        {
+          "description": "Single origin premium beans - 5kg",
+          "quantity": 5,
+          "unit_price": 125.00,
+          "gst": 62.50,
+          "total": 687.50
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-1478",
+      "supplier": "Norco Dairy",
+      "bill_date": "2024-10-22",
+      "due_date": "2024-11-21",
+      "status": "Unpaid",
+      "payment_date": null,
+      "subtotal": 1285.00,
+      "gst": 128.50,
+      "total": 1413.50,
+      "description": "Milk supply - weekly delivery",
+      "xero_bill_id": "XERO-BILL-1478",
+      "line_items": [
+        {
+          "description": "Full cream milk 2L",
+          "quantity": 85,
+          "unit_price": 4.50,
+          "gst": 38.25,
+          "total": 420.75
+        },
+        {
+          "description": "Oat milk 1L",
+          "quantity": 45,
+          "unit_price": 5.80,
+          "gst": 26.10,
+          "total": 287.10
+        },
+        {
+          "description": "Almond milk 1L",
+          "quantity": 30,
+          "unit_price": 6.20,
+          "gst": 18.60,
+          "total": 204.60
+        },
+        {
+          "description": "Cream and butter",
+          "quantity": 1,
+          "unit_price": 455.00,
+          "gst": 45.50,
+          "total": 500.50
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-1489",
+      "supplier": "Brisbane Fresh Foods",
+      "bill_date": "2024-10-25",
+      "due_date": "2024-11-24",
+      "status": "Unpaid",
+      "payment_date": null,
+      "subtotal": 1850.00,
+      "gst": 185.00,
+      "total": 2035.00,
+      "description": "Fresh produce weekly delivery",
+      "xero_bill_id": "XERO-BILL-1489",
+      "line_items": [
+        {
+          "description": "Fresh bread and rolls",
+          "quantity": 1,
+          "unit_price": 485.00,
+          "gst": 48.50,
+          "total": 533.50
+        },
+        {
+          "description": "Eggs, bacon, vegetables",
+          "quantity": 1,
+          "unit_price": 895.00,
+          "gst": 89.50,
+          "total": 984.50
+        },
+        {
+          "description": "Avocados, tomatoes, salad greens",
+          "quantity": 1,
+          "unit_price": 470.00,
+          "gst": 47.00,
+          "total": 517.00
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-1501",
+      "supplier": "Square",
+      "bill_date": "2024-10-01",
+      "due_date": "2024-10-31",
+      "status": "Paid",
+      "payment_date": "2024-10-15",
+      "subtotal": 285.00,
+      "gst": 28.50,
+      "total": 313.50,
+      "description": "POS system subscription - October",
+      "xero_bill_id": "XERO-BILL-1501",
+      "line_items": [
+        {
+          "description": "Square POS monthly subscription",
+          "quantity": 1,
+          "unit_price": 285.00,
+          "gst": 28.50,
+          "total": 313.50
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-1512",
+      "supplier": "Deputy",
+      "bill_date": "2024-10-01",
+      "due_date": "2024-10-31",
+      "status": "Paid",
+      "payment_date": "2024-10-15",
+      "subtotal": 125.00,
+      "gst": 12.50,
+      "total": 137.50,
+      "description": "Rostering software - October",
+      "xero_bill_id": "XERO-BILL-1512",
+      "line_items": [
+        {
+          "description": "Deputy subscription - 6 staff",
+          "quantity": 1,
+          "unit_price": 125.00,
+          "gst": 12.50,
+          "total": 137.50
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-1523",
+      "supplier": "Origin Energy",
+      "bill_date": "2024-10-10",
+      "due_date": "2024-11-09",
+      "status": "Unpaid",
+      "payment_date": null,
+      "subtotal": 1285.00,
+      "gst": 128.50,
+      "total": 1413.50,
+      "description": "Electricity - September usage",
+      "xero_bill_id": "XERO-BILL-1523",
+      "line_items": [
+        {
+          "description": "Commercial electricity usage",
+          "quantity": 1,
+          "unit_price": 1285.00,
+          "gst": 128.50,
+          "total": 1413.50
+        }
+      ]
+    }
+  ],
+  "staff": [
+    {
+      "staff_id": "STAFF-001",
+      "name": "Tony Nguyen",
+      "role": "Owner / Manager",
+      "email": "tony@dailygrind.com.au",
+      "phone": "+61 421 234 567",
+      "qualifications": ["Food Safety Supervisor", "Barista Certified", "RSA"],
+      "employment_type": "Full Time",
+      "hourly_rate": null,
+      "employment_start": "2020-06-01"
+    },
+    {
+      "staff_id": "STAFF-002",
+      "name": "Lisa Park",
+      "role": "Head Barista",
+      "email": "lisa@dailygrind.com.au",
+      "phone": "+61 432 345 678",
+      "qualifications": ["Advanced Barista Certified", "Food Safety", "RSA"],
+      "employment_type": "Full Time",
+      "hourly_rate": 28.50,
+      "employment_start": "2020-08-15"
+    },
+    {
+      "staff_id": "STAFF-003",
+      "name": "Jake Morrison",
+      "role": "Barista / Chef",
+      "email": "jake@dailygrind.com.au",
+      "phone": "+61 443 456 789",
+      "qualifications": ["Barista Certified", "Cert III Commercial Cookery", "Food Safety", "RSA"],
+      "employment_type": "Full Time",
+      "hourly_rate": 27.00,
+      "employment_start": "2021-03-20"
+    },
+    {
+      "staff_id": "STAFF-004",
+      "name": "Emma Rodriguez",
+      "role": "Barista",
+      "email": "emma@dailygrind.com.au",
+      "phone": "+61 454 567 890",
+      "qualifications": ["Barista Certified", "Food Safety", "RSA"],
+      "employment_type": "Part Time",
+      "hourly_rate": 25.50,
+      "employment_start": "2022-01-10"
+    },
+    {
+      "staff_id": "STAFF-005",
+      "name": "Carlos Martinez",
+      "role": "Kitchen Hand / Dishwasher",
+      "email": "carlos@dailygrind.com.au",
+      "phone": "+61 465 678 901",
+      "qualifications": ["Food Safety"],
+      "employment_type": "Part Time",
+      "hourly_rate": 23.50,
+      "employment_start": "2023-06-01"
+    },
+    {
+      "staff_id": "STAFF-006",
+      "name": "Sophie Williams",
+      "role": "Weekend Barista",
+      "email": "sophie@dailygrind.com.au",
+      "phone": "+61 476 789 012",
+      "qualifications": ["Barista Certified", "Food Safety", "RSA"],
+      "employment_type": "Casual",
+      "hourly_rate": 26.50,
+      "employment_start": "2024-02-15"
+    }
+  ],
+  "onedrive_files": [
+    {
+      "file_id": "OD-LICENSE-001",
+      "file_name": "Food_Business_Licence_2024.pdf",
+      "file_type": "Licence",
+      "file_path": "/Compliance/Licences/",
+      "upload_date": "2024-07-01",
+      "uploaded_by": "Tony Nguyen",
+      "description": "Food business licence - Expires 30/06/2025",
+      "file_size": "456 KB"
+    },
+    {
+      "file_id": "OD-MENU-001",
+      "file_name": "Current_Menu_October_2024.pdf",
+      "file_type": "Menu",
+      "file_path": "/Menus/",
+      "upload_date": "2024-10-01",
+      "uploaded_by": "Tony Nguyen",
+      "description": "Current menu with prices",
+      "file_size": "2.1 MB"
+    },
+    {
+      "file_id": "OD-STAFF-001",
+      "file_name": "Staff_Food_Safety_Certificates.pdf",
+      "file_type": "Certificates",
+      "file_path": "/Staff/Training/",
+      "upload_date": "2024-08-15",
+      "uploaded_by": "Tony Nguyen",
+      "description": "All staff food safety certificates",
+      "file_size": "1.2 MB"
+    },
+    {
+      "file_id": "OD-INSURANCE-001",
+      "file_name": "Public_Liability_Insurance_2024.pdf",
+      "file_type": "Insurance",
+      "file_path": "/Compliance/Insurance/",
+      "upload_date": "2024-07-01",
+      "uploaded_by": "Tony Nguyen",
+      "description": "$20M Public Liability - Expires 30/06/2025",
+      "file_size": "678 KB"
+    },
+    {
+      "file_id": "OD-LEASE-001",
+      "file_name": "Shop_Lease_Agreement.pdf",
+      "file_type": "Lease",
+      "file_path": "/Property/",
+      "upload_date": "2023-06-01",
+      "uploaded_by": "Tony Nguyen",
+      "description": "Commercial lease - 5 year term",
+      "file_size": "1.8 MB"
+    }
+  ],
+  "metadata": {
+    "data_purpose": "11Labs Voice Agent Knowledge Base",
+    "business_type": "Coffee Shop / Cafe",
+    "data_format": "JSON",
+    "last_updated": "2024-10-30",
+    "currency": "AUD",
+    "timezone": "Australia/Brisbane",
+    "notes": "This is dummy data for demonstration purposes. All customer names, sales data, and financial information are fictional."
+  }
+}
+

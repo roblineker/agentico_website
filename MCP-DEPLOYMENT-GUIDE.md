@@ -255,25 +255,57 @@ curl https://www.agentico.com.au/api/mcp
 
 ---
 
-## 🔒 Security Considerations
+## 🔒 Security (IMPORTANT!)
 
-### Current Setup:
-- Public API endpoint (no authentication required)
-- Suitable for public knowledge base data
-- Rate limiting handled by Vercel/your hosting
+### Authentication is REQUIRED:
 
-### If You Need Authentication:
-Add authentication headers in the route handler:
+The MCP API uses Bearer token authentication to protect your knowledge base.
 
-```typescript
-// In route.ts
-const authHeader = request.headers.get('authorization');
-if (authHeader !== `Bearer ${process.env.MCP_API_KEY}`) {
-  return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
-}
+### Setup Instructions:
+
+#### 1. **Local Development:**
+
+Your `.env.local` file already contains:
+```bash
+MCP_API_SECRET=uTAG7qAwCcV5jPo/8vRYupxNJPnzOt5+KzmEQ3ERd8U=
 ```
 
-Then set `MCP_API_KEY` in your environment variables.
+#### 2. **Production (Vercel):**
+
+Add the environment variable in Vercel:
+1. Go to: **Vercel Dashboard** → **Your Project** → **Settings** → **Environment Variables**
+2. Add new variable:
+   - **Name**: `MCP_API_SECRET`
+   - **Value**: `uTAG7qAwCcV5jPo/8vRYupxNJPnzOt5+KzmEQ3ERd8U=`
+   - **Environments**: Production, Preview, Development
+3. **Redeploy** your application
+
+### How to Use with Authentication:
+
+All requests must include the `Authorization` header:
+
+```bash
+curl -X POST https://www.agentico.com.au/api/mcp \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer uTAG7qAwCcV5jPo/8vRYupxNJPnzOt5+KzmEQ3ERd8U=" \
+  -d '{"tool": "list_knowledge_files", "params": {}}'
+```
+
+### ElevenLabs Configuration:
+
+When configuring ElevenLabs to use your MCP server:
+- **URL**: `https://www.agentico.com.au/api/mcp`
+- **Headers**: Add custom header
+  - **Key**: `Authorization`
+  - **Value**: `Bearer uTAG7qAwCcV5jPo/8vRYupxNJPnzOt5+KzmEQ3ERd8U=`
+
+### Generate a New Secret (if needed):
+
+```bash
+node -e "console.log(require('crypto').randomBytes(32).toString('base64'))"
+```
+
+**⚠️ IMPORTANT**: Never commit `.env.local` to git. It's already in `.gitignore`.
 
 ---
 

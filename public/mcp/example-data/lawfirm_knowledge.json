@@ -1,0 +1,859 @@
+{
+  "company": {
+    "name": "Mitchell & Associates Legal",
+    "abn": "89 567 234 890",
+    "email": "info@mitchelllegal.com.au",
+    "phone": "+61 7 3901 2345",
+    "address": "Level 15, 300 Adelaide Street, Brisbane QLD 4000",
+    "website": "www.mitchelllegal.com.au",
+    "specializations": ["Conveyancing", "Family Law", "Wills & Estates", "Commercial Law", "Litigation"]
+  },
+  "integrations": {
+    "practice_management": "LEAP",
+    "accounting": "Xero",
+    "document_management": "NetDocuments",
+    "trust_accounting": "LEAP Trust",
+    "voice_agent": "Custom Voice Agent",
+    "file_storage": "OneDrive",
+    "court_filing": "eCourtser QLD"
+  },
+  "clients": [
+    {
+      "client_id": "CLI-001",
+      "name": "David & Emma Henderson",
+      "type": "Conveyancing",
+      "contact_person": "David Henderson",
+      "email": "d.henderson@email.com",
+      "phone": "+61 412 890 123",
+      "address": "78 Hillside Crescent, Bardon QLD 4065",
+      "relationship_start": "2024-08-15",
+      "matter_type": "Property Purchase",
+      "property_address": "78 Hillside Crescent, Bardon QLD 4065",
+      "total_fees": 2850.00,
+      "account_manager": "Sarah Mitchell"
+    },
+    {
+      "client_id": "CLI-002",
+      "name": "Lisa Chen",
+      "type": "Family Law",
+      "contact_person": "Lisa Chen",
+      "email": "lisa.c@email.com",
+      "phone": "+61 423 901 234",
+      "address": "Unit 45/89 River Street, South Brisbane QLD 4101",
+      "relationship_start": "2023-11-20",
+      "matter_type": "Divorce Settlement",
+      "property_address": null,
+      "total_fees": 18500.00,
+      "account_manager": "James Rodriguez"
+    },
+    {
+      "client_id": "CLI-003",
+      "name": "Robert Thompson Estate",
+      "type": "Wills & Estates",
+      "contact_person": "Margaret Thompson (Executor)",
+      "email": "margaret.t@email.com",
+      "phone": "+61 434 012 345",
+      "address": "156 Garden Road, Paddington QLD 4064",
+      "relationship_start": "2024-05-10",
+      "matter_type": "Estate Administration",
+      "property_address": null,
+      "total_fees": 12500.00,
+      "account_manager": "Jennifer Wong"
+    },
+    {
+      "client_id": "CLI-004",
+      "name": "TechFlow Solutions Pty Ltd",
+      "type": "Commercial",
+      "contact_person": "Sarah Mitchell",
+      "email": "sarah@techflow.com.au",
+      "phone": "+61 445 123 456",
+      "address": "Level 5, 120 Eagle Street, Brisbane QLD 4000",
+      "relationship_start": "2022-03-15",
+      "matter_type": "Commercial Contracts",
+      "property_address": null,
+      "total_fees": 24500.00,
+      "account_manager": "Michael Foster"
+    },
+    {
+      "client_id": "CLI-005",
+      "name": "Tony & Maria Nguyen",
+      "type": "Conveyancing",
+      "contact_person": "Tony Nguyen",
+      "email": "tony.n@email.com",
+      "phone": "+61 456 234 567",
+      "address": "23 Riverside Drive, Hamilton QLD 4007",
+      "relationship_start": "2024-09-20",
+      "matter_type": "Property Sale",
+      "property_address": "45 Old Street, Woolloongabba QLD 4102",
+      "total_fees": 1950.00,
+      "account_manager": "Sarah Mitchell"
+    },
+    {
+      "client_id": "CLI-006",
+      "name": "Brisbane Property Developments Pty Ltd",
+      "type": "Commercial",
+      "contact_person": "James Rodriguez",
+      "email": "j.rodriguez@bpd.com.au",
+      "phone": "+61 467 345 678",
+      "address": "Level 8, 200 Queen Street, Brisbane QLD 4000",
+      "relationship_start": "2021-07-08",
+      "matter_type": "Development Contracts",
+      "property_address": null,
+      "total_fees": 45000.00,
+      "account_manager": "Michael Foster"
+    },
+    {
+      "client_id": "CLI-007",
+      "name": "Rebecca Foster",
+      "type": "Wills & Estates",
+      "contact_person": "Rebecca Foster",
+      "email": "rebecca.f@email.com",
+      "phone": "+61 478 456 789",
+      "address": "89 Hill View Court, Bardon QLD 4065",
+      "relationship_start": "2024-06-15",
+      "matter_type": "Will Preparation",
+      "property_address": null,
+      "total_fees": 850.00,
+      "account_manager": "Jennifer Wong"
+    },
+    {
+      "client_id": "CLI-008",
+      "name": "Andrew Martinez",
+      "type": "Family Law",
+      "contact_person": "Andrew Martinez",
+      "email": "andrew.m@email.com",
+      "phone": "+61 489 567 890",
+      "address": "67 Suburban Street, Coorparoo QLD 4151",
+      "relationship_start": "2024-08-05",
+      "matter_type": "Custody Arrangement",
+      "property_address": null,
+      "total_fees": 8500.00,
+      "account_manager": "James Rodriguez"
+    },
+    {
+      "client_id": "CLI-009",
+      "name": "Sophie & Carlos Williams",
+      "type": "Conveyancing",
+      "contact_person": "Sophie Williams",
+      "email": "sophie.w@email.com",
+      "phone": "+61 490 678 901",
+      "address": "156 Seaside Road, Manly QLD 4179",
+      "relationship_start": "2024-10-10",
+      "matter_type": "Property Purchase",
+      "property_address": "156 Seaside Road, Manly QLD 4179",
+      "total_fees": 0.00,
+      "account_manager": "Sarah Mitchell"
+    }
+  ],
+  "matters": [
+    {
+      "matter_id": "MAT-2024-234",
+      "client_id": "CLI-001",
+      "client_name": "David & Emma Henderson",
+      "matter_type": "Conveyancing - Purchase",
+      "status": "Completed",
+      "start_date": "2024-08-15",
+      "completion_date": "2024-09-25",
+      "property_address": "78 Hillside Crescent, Bardon QLD 4065",
+      "purchase_price": 1250000.00,
+      "responsible_solicitor": "Sarah Mitchell",
+      "settlement_date": "2024-09-25",
+      "description": "Contract review, searches, and settlement for residential property purchase"
+    },
+    {
+      "matter_id": "MAT-2023-456",
+      "client_id": "CLI-002",
+      "client_name": "Lisa Chen",
+      "matter_type": "Family Law - Divorce",
+      "status": "In Progress - Final Orders",
+      "start_date": "2023-11-20",
+      "completion_date": null,
+      "property_address": null,
+      "purchase_price": null,
+      "responsible_solicitor": "James Rodriguez",
+      "settlement_date": null,
+      "description": "Divorce proceedings including property settlement and spousal maintenance"
+    },
+    {
+      "matter_id": "MAT-2024-156",
+      "client_id": "CLI-003",
+      "client_name": "Robert Thompson Estate",
+      "matter_type": "Estate Administration",
+      "status": "In Progress - Asset Distribution",
+      "start_date": "2024-05-10",
+      "completion_date": null,
+      "property_address": null,
+      "purchase_price": null,
+      "responsible_solicitor": "Jennifer Wong",
+      "settlement_date": null,
+      "description": "Administration of deceased estate including probate application and asset distribution"
+    }
+  ],
+  "jobs": [
+    {
+      "job_id": "JOB-2024-9012",
+      "matter_id": "MAT-2024-234",
+      "client_name": "David & Emma Henderson",
+      "description": "Contract review and property searches",
+      "status": "Completed",
+      "scheduled_start": "2024-08-15",
+      "scheduled_end": "2024-08-30",
+      "actual_start": "2024-08-15",
+      "actual_end": "2024-08-28",
+      "assigned_to": "Sarah Mitchell",
+      "hours_spent": 6.5
+    },
+    {
+      "job_id": "JOB-2024-9034",
+      "matter_id": "MAT-2024-234",
+      "client_name": "David & Emma Henderson",
+      "description": "Finance conditions and pre-settlement",
+      "status": "Completed",
+      "scheduled_start": "2024-09-01",
+      "scheduled_end": "2024-09-20",
+      "actual_start": "2024-09-01",
+      "actual_end": "2024-09-22",
+      "assigned_to": "Sarah Mitchell",
+      "hours_spent": 4.5
+    },
+    {
+      "job_id": "JOB-2024-9056",
+      "matter_id": "MAT-2024-234",
+      "client_name": "David & Emma Henderson",
+      "description": "Settlement and registration",
+      "status": "Completed",
+      "scheduled_start": "2024-09-23",
+      "scheduled_end": "2024-09-25",
+      "actual_start": "2024-09-23",
+      "actual_end": "2024-09-25",
+      "assigned_to": "Sarah Mitchell",
+      "hours_spent": 3.0
+    }
+  ],
+  "invoices": [
+    {
+      "invoice_id": "INV-2024-9123",
+      "client_id": "CLI-001",
+      "client_name": "David & Emma Henderson",
+      "matter_id": "MAT-2024-234",
+      "invoice_date": "2024-09-30",
+      "due_date": "2024-10-30",
+      "status": "Paid",
+      "payment_date": "2024-10-22",
+      "subtotal": 2850.00,
+      "gst": 285.00,
+      "total": 3135.00,
+      "description": "Conveyancing services - property purchase",
+      "xero_invoice_id": "XERO-INV-9123",
+      "line_items": [
+        {
+          "description": "Professional fees - conveyancing",
+          "quantity": 14,
+          "unit_price": 180.00,
+          "gst": 252.00,
+          "total": 2772.00
+        },
+        {
+          "description": "Search fees and disbursements",
+          "quantity": 1,
+          "unit_price": 330.00,
+          "gst": 33.00,
+          "total": 363.00
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-2024-9145",
+      "client_id": "CLI-002",
+      "client_name": "Lisa Chen",
+      "matter_id": "MAT-2023-456",
+      "invoice_date": "2024-09-30",
+      "due_date": "2024-10-30",
+      "status": "Paid",
+      "payment_date": "2024-10-25",
+      "subtotal": 4500.00,
+      "gst": 450.00,
+      "total": 4950.00,
+      "description": "Family law services - September 2024",
+      "xero_invoice_id": "XERO-INV-9145",
+      "line_items": [
+        {
+          "description": "Professional fees - family law matters",
+          "quantity": 18,
+          "unit_price": 250.00,
+          "gst": 450.00,
+          "total": 4950.00
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-2024-9167",
+      "client_id": "CLI-003",
+      "client_name": "Robert Thompson Estate",
+      "matter_id": "MAT-2024-156",
+      "invoice_date": "2024-10-15",
+      "due_date": "2024-11-14",
+      "status": "Sent",
+      "payment_date": null,
+      "subtotal": 5500.00,
+      "gst": 550.00,
+      "total": 6050.00,
+      "description": "Estate administration services - progress invoice",
+      "xero_invoice_id": "XERO-INV-9167",
+      "line_items": [
+        {
+          "description": "Probate application preparation and lodgement",
+          "quantity": 1,
+          "unit_price": 3200.00,
+          "gst": 320.00,
+          "total": 3520.00
+        },
+        {
+          "description": "Estate asset review and valuation coordination",
+          "quantity": 1,
+          "unit_price": 1800.00,
+          "gst": 180.00,
+          "total": 1980.00
+        },
+        {
+          "description": "Court fees and disbursements",
+          "quantity": 1,
+          "unit_price": 500.00,
+          "gst": 50.00,
+          "total": 550.00
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-2024-9089",
+      "client_id": "CLI-004",
+      "client_name": "TechFlow Solutions Pty Ltd",
+      "matter_id": null,
+      "invoice_date": "2024-09-30",
+      "due_date": "2024-10-30",
+      "status": "Paid",
+      "payment_date": "2024-10-28",
+      "subtotal": 6500.00,
+      "gst": 650.00,
+      "total": 7150.00,
+      "description": "Commercial legal services - September 2024",
+      "xero_invoice_id": "XERO-INV-9089",
+      "line_items": [
+        {
+          "description": "Contract review and advice - supplier agreements",
+          "quantity": 1,
+          "unit_price": 4200.00,
+          "gst": 420.00,
+          "total": 4620.00
+        },
+        {
+          "description": "Employment contract preparation",
+          "quantity": 1,
+          "unit_price": 2300.00,
+          "gst": 230.00,
+          "total": 2530.00
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-2024-9178",
+      "client_id": "CLI-005",
+      "client_name": "Tony & Maria Nguyen",
+      "matter_id": null,
+      "invoice_date": "2024-10-20",
+      "due_date": "2024-11-19",
+      "status": "Sent",
+      "payment_date": null,
+      "subtotal": 1950.00,
+      "gst": 195.00,
+      "total": 2145.00,
+      "description": "Conveyancing services - property sale",
+      "xero_invoice_id": "XERO-INV-9178",
+      "line_items": [
+        {
+          "description": "Professional fees - vendor conveyancing",
+          "quantity": 9.5,
+          "unit_price": 180.00,
+          "gst": 171.00,
+          "total": 1881.00
+        },
+        {
+          "description": "Title search and disbursements",
+          "quantity": 1,
+          "unit_price": 240.00,
+          "gst": 24.00,
+          "total": 264.00
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-2024-9056",
+      "client_id": "CLI-007",
+      "client_name": "Rebecca Foster",
+      "matter_id": null,
+      "invoice_date": "2024-07-10",
+      "due_date": "2024-08-09",
+      "status": "Paid",
+      "payment_date": "2024-07-28",
+      "subtotal": 850.00,
+      "gst": 85.00,
+      "total": 935.00,
+      "description": "Will and enduring power of attorney preparation",
+      "xero_invoice_id": "XERO-INV-9056",
+      "line_items": [
+        {
+          "description": "Will preparation and advice",
+          "quantity": 1,
+          "unit_price": 650.00,
+          "gst": 65.00,
+          "total": 715.00
+        },
+        {
+          "description": "Enduring power of attorney",
+          "quantity": 1,
+          "unit_price": 200.00,
+          "gst": 20.00,
+          "total": 220.00
+        }
+      ]
+    }
+  ],
+  "bills": [
+    {
+      "bill_id": "BILL-2024-9234",
+      "supplier": "LEAP Legal Software",
+      "bill_date": "2024-10-01",
+      "due_date": "2024-10-31",
+      "status": "Paid",
+      "payment_date": "2024-10-15",
+      "subtotal": 1450.00,
+      "gst": 145.00,
+      "total": 1595.00,
+      "description": "LEAP practice management - October",
+      "xero_bill_id": "XERO-BILL-9234",
+      "line_items": [
+        {
+          "description": "LEAP subscription - 6 users",
+          "quantity": 1,
+          "unit_price": 1450.00,
+          "gst": 145.00,
+          "total": 1595.00
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-9245",
+      "supplier": "NetDocuments",
+      "bill_date": "2024-10-01",
+      "due_date": "2024-10-31",
+      "status": "Paid",
+      "payment_date": "2024-10-15",
+      "subtotal": 585.00,
+      "gst": 58.50,
+      "total": 643.50,
+      "description": "Document management - October",
+      "xero_bill_id": "XERO-BILL-9245",
+      "line_items": [
+        {
+          "description": "NetDocuments cloud storage and management",
+          "quantity": 1,
+          "unit_price": 585.00,
+          "gst": 58.50,
+          "total": 643.50
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-9256",
+      "supplier": "Queensland Law Society",
+      "bill_date": "2024-10-05",
+      "due_date": "2024-11-04",
+      "status": "Unpaid",
+      "payment_date": null,
+      "subtotal": 2850.00,
+      "gst": 0.00,
+      "total": 2850.00,
+      "description": "Annual practicing certificate fees",
+      "xero_bill_id": "XERO-BILL-9256",
+      "line_items": [
+        {
+          "description": "Practicing certificate - Sarah Mitchell",
+          "quantity": 1,
+          "unit_price": 950.00,
+          "gst": 0.00,
+          "total": 950.00
+        },
+        {
+          "description": "Practicing certificate - James Rodriguez",
+          "quantity": 1,
+          "unit_price": 950.00,
+          "gst": 0.00,
+          "total": 950.00
+        },
+        {
+          "description": "Practicing certificate - Jennifer Wong",
+          "quantity": 1,
+          "unit_price": 950.00,
+          "gst": 0.00,
+          "total": 950.00
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-9267",
+      "supplier": "InfoTrack",
+      "bill_date": "2024-10-10",
+      "due_date": "2024-11-09",
+      "status": "Unpaid",
+      "payment_date": null,
+      "subtotal": 845.00,
+      "gst": 84.50,
+      "total": 929.50,
+      "description": "Property searches and reports - October",
+      "xero_bill_id": "XERO-BILL-9267",
+      "line_items": [
+        {
+          "description": "Title searches",
+          "quantity": 12,
+          "unit_price": 28.50,
+          "gst": 34.20,
+          "total": 376.20
+        },
+        {
+          "description": "Planning and zoning certificates",
+          "quantity": 8,
+          "unit_price": 45.00,
+          "gst": 36.00,
+          "total": 396.00
+        },
+        {
+          "description": "Water and rates searches",
+          "quantity": 6,
+          "unit_price": 22.50,
+          "gst": 13.50,
+          "total": 148.50
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-9278",
+      "supplier": "Professional Indemnity Insurance",
+      "bill_date": "2024-10-15",
+      "due_date": "2024-11-14",
+      "status": "Unpaid",
+      "payment_date": null,
+      "subtotal": 18500.00,
+      "gst": 0.00,
+      "total": 18500.00,
+      "description": "Annual professional indemnity premium",
+      "xero_bill_id": "XERO-BILL-9278",
+      "line_items": [
+        {
+          "description": "Professional indemnity insurance - annual premium",
+          "quantity": 1,
+          "unit_price": 18500.00,
+          "gst": 0.00,
+          "total": 18500.00
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-9289",
+      "supplier": "Legal CPD Centre",
+      "bill_date": "2024-10-18",
+      "due_date": "2024-11-17",
+      "status": "Unpaid",
+      "payment_date": null,
+      "subtotal": 1285.00,
+      "gst": 128.50,
+      "total": 1413.50,
+      "description": "CPD seminars - staff development",
+      "xero_bill_id": "XERO-BILL-9289",
+      "line_items": [
+        {
+          "description": "Family law updates seminar",
+          "quantity": 1,
+          "unit_price": 485.00,
+          "gst": 48.50,
+          "total": 533.50
+        },
+        {
+          "description": "Conveyancing best practices workshop",
+          "quantity": 2,
+          "unit_price": 400.00,
+          "gst": 80.00,
+          "total": 880.00
+        }
+      ]
+    }
+  ],
+  "leads": [
+    {
+      "lead_id": "LEAD-2024-789",
+      "name": "Brisbane Construction Group",
+      "type": "Commercial",
+      "contact_person": "Michael Patterson",
+      "email": "m.patterson@construction.com.au",
+      "phone": "+61 421 012 345",
+      "source": "Referral",
+      "date_created": "2024-10-22",
+      "status": "Meeting Scheduled",
+      "matter_type": "Contract Review",
+      "estimated_value": 15000.00,
+      "assigned_to": "Michael Foster",
+      "notes": "Need review of subcontractor agreements. Meeting scheduled Nov 4.",
+      "last_contact": "2024-10-23",
+      "next_followup": "2024-11-04"
+    },
+    {
+      "lead_id": "LEAD-2024-790",
+      "name": "Carlos & Maria Martinez",
+      "type": "Conveyancing",
+      "contact_person": "Carlos Martinez",
+      "email": "carlos.m@email.com",
+      "phone": "+61 432 123 456",
+      "source": "Website Inquiry",
+      "date_created": "2024-10-24",
+      "status": "Quote Sent",
+      "matter_type": "Property Purchase",
+      "estimated_value": 2850.00,
+      "assigned_to": "Sarah Mitchell",
+      "notes": "First home buyer purchasing in Kenmore. Quote sent 25/10.",
+      "last_contact": "2024-10-25",
+      "next_followup": "2024-11-02"
+    },
+    {
+      "lead_id": "LEAD-2024-791",
+      "name": "Jennifer Foster",
+      "type": "Wills & Estates",
+      "contact_person": "Jennifer Foster",
+      "email": "jennifer.f@email.com",
+      "phone": "+61 443 234 567",
+      "source": "Voice Agent - Inbound Call",
+      "date_created": "2024-10-26",
+      "status": "Initial Contact",
+      "matter_type": "Will Update",
+      "estimated_value": 650.00,
+      "assigned_to": "Jennifer Wong",
+      "notes": "Wants to update will after marriage. Sending information pack.",
+      "last_contact": "2024-10-26",
+      "next_followup": "2024-11-01"
+    },
+    {
+      "lead_id": "LEAD-2024-792",
+      "name": "Andrew Wilson",
+      "type": "Family Law",
+      "contact_person": "Andrew Wilson",
+      "email": "andrew.w@email.com",
+      "phone": "+61 454 345 678",
+      "source": "Google Search",
+      "date_created": "2024-10-27",
+      "status": "Consultation Booked",
+      "matter_type": "Property Settlement",
+      "estimated_value": 12000.00,
+      "assigned_to": "James Rodriguez",
+      "notes": "Separation property settlement. Initial consultation booked Nov 5.",
+      "last_contact": "2024-10-27",
+      "next_followup": "2024-11-05"
+    },
+    {
+      "lead_id": "LEAD-2024-793",
+      "name": "Brisbane Tech Startup",
+      "type": "Commercial",
+      "contact_person": "Lisa Chen",
+      "email": "lisa@techstartup.com.au",
+      "phone": "+61 465 456 789",
+      "source": "Networking Event",
+      "date_created": "2024-10-28",
+      "status": "Proposal Sent",
+      "matter_type": "Company Setup & Agreements",
+      "estimated_value": 8500.00,
+      "assigned_to": "Michael Foster",
+      "notes": "Startup needs company structure advice and shareholder agreements. Proposal sent 29/10.",
+      "last_contact": "2024-10-29",
+      "next_followup": "2024-11-07"
+    },
+    {
+      "lead_id": "LEAD-2024-794",
+      "name": "Robert & Sophie Lee",
+      "type": "Conveyancing",
+      "contact_person": "Sophie Lee",
+      "email": "sophie.lee@email.com",
+      "phone": "+61 476 567 890",
+      "source": "Referral",
+      "date_created": "2024-10-29",
+      "status": "Initial Contact",
+      "matter_type": "Property Sale",
+      "estimated_value": 1950.00,
+      "assigned_to": "Sarah Mitchell",
+      "notes": "Referred by Henderson family. Selling investment property. Following up.",
+      "last_contact": "2024-10-29",
+      "next_followup": "2024-11-03"
+    }
+  ],
+  "staff": [
+    {
+      "staff_id": "STAFF-001",
+      "name": "Sarah Mitchell",
+      "role": "Principal Solicitor / Conveyancing",
+      "email": "sarah@mitchelllegal.com.au",
+      "phone": "+61 421 123 456",
+      "qualifications": ["Bachelor of Laws (LLB)", "Admitted Solicitor QLD", "Registered Conveyancer"],
+      "specializations": ["Residential Conveyancing", "Property Law", "Contract Law"],
+      "active_matters": 42,
+      "employment_start": "2012-03-01"
+    },
+    {
+      "staff_id": "STAFF-002",
+      "name": "James Rodriguez",
+      "role": "Senior Associate / Family Law",
+      "email": "james@mitchelllegal.com.au",
+      "phone": "+61 432 234 567",
+      "qualifications": ["Bachelor of Laws (LLB)", "Admitted Solicitor QLD", "Family Law Accreditation"],
+      "specializations": ["Family Law", "Divorce", "Property Settlements", "Custody Matters"],
+      "active_matters": 28,
+      "employment_start": "2015-07-15"
+    },
+    {
+      "staff_id": "STAFF-003",
+      "name": "Jennifer Wong",
+      "role": "Associate / Wills & Estates",
+      "email": "jennifer@mitchelllegal.com.au",
+      "phone": "+61 443 345 678",
+      "qualifications": ["Bachelor of Laws (LLB)", "Admitted Solicitor QLD", "TEP (Trust and Estate Practitioner)"],
+      "specializations": ["Wills", "Estate Planning", "Probate", "Estate Administration"],
+      "active_matters": 35,
+      "employment_start": "2017-02-10"
+    },
+    {
+      "staff_id": "STAFF-004",
+      "name": "Michael Foster",
+      "role": "Senior Associate / Commercial Law",
+      "email": "michael@mitchelllegal.com.au",
+      "phone": "+61 454 456 789",
+      "qualifications": ["Bachelor of Laws (LLB)", "Bachelor of Commerce", "Admitted Solicitor QLD"],
+      "specializations": ["Commercial Contracts", "Business Law", "Employment Law", "Litigation"],
+      "active_matters": 32,
+      "employment_start": "2016-09-01"
+    },
+    {
+      "staff_id": "STAFF-005",
+      "name": "Emily Chen",
+      "role": "Paralegal",
+      "email": "emily@mitchelllegal.com.au",
+      "phone": "+61 465 567 890",
+      "qualifications": ["Diploma of Legal Services"],
+      "specializations": ["Conveyancing Support", "Document Preparation", "Client Liaison"],
+      "active_matters": 0,
+      "employment_start": "2021-06-15"
+    },
+    {
+      "staff_id": "STAFF-006",
+      "name": "David Martinez",
+      "role": "Practice Manager",
+      "email": "david@mitchelllegal.com.au",
+      "phone": "+61 476 678 901",
+      "qualifications": ["Bachelor of Business", "Trust Account Management Certified"],
+      "specializations": ["Practice Management", "Trust Accounting", "Client Services"],
+      "active_matters": 0,
+      "employment_start": "2018-11-01"
+    }
+  ],
+  "onedrive_files": [
+    {
+      "file_id": "OD-MAT-234-001",
+      "matter_id": "MAT-2024-234",
+      "file_name": "Henderson_Contract_of_Sale.pdf",
+      "file_type": "Contract",
+      "file_path": "/Matters/2024/Henderson Purchase/Contracts/",
+      "upload_date": "2024-08-20",
+      "uploaded_by": "Sarah Mitchell",
+      "description": "Signed contract of sale",
+      "file_size": "1.2 MB"
+    },
+    {
+      "file_id": "OD-MAT-234-002",
+      "matter_id": "MAT-2024-234",
+      "file_name": "Henderson_Title_Search.pdf",
+      "file_type": "Search",
+      "file_path": "/Matters/2024/Henderson Purchase/Searches/",
+      "upload_date": "2024-08-22",
+      "uploaded_by": "Emily Chen",
+      "description": "Title and planning searches",
+      "file_size": "456 KB"
+    },
+    {
+      "file_id": "OD-MAT-234-003",
+      "matter_id": "MAT-2024-234",
+      "file_name": "Henderson_Settlement_Statement.pdf",
+      "file_type": "Settlement",
+      "file_path": "/Matters/2024/Henderson Purchase/Settlement/",
+      "upload_date": "2024-09-25",
+      "uploaded_by": "Sarah Mitchell",
+      "description": "Final settlement statement",
+      "file_size": "234 KB"
+    },
+    {
+      "file_id": "OD-MAT-456-001",
+      "matter_id": "MAT-2023-456",
+      "file_name": "Chen_Family_Court_Application.pdf",
+      "file_type": "Court Document",
+      "file_path": "/Matters/2023/Chen Family Law/Court/",
+      "upload_date": "2024-02-15",
+      "uploaded_by": "James Rodriguez",
+      "description": "Family Court application and affidavits",
+      "file_size": "2.8 MB"
+    },
+    {
+      "file_id": "OD-MAT-156-001",
+      "matter_id": "MAT-2024-156",
+      "file_name": "Thompson_Estate_Grant_of_Probate.pdf",
+      "file_type": "Court Document",
+      "file_path": "/Matters/2024/Thompson Estate/Probate/",
+      "upload_date": "2024-09-20",
+      "uploaded_by": "Jennifer Wong",
+      "description": "Grant of probate application",
+      "file_size": "1.5 MB"
+    },
+    {
+      "file_id": "OD-PRACTICE-001",
+      "file_name": "Practicing_Certificates_2024.pdf",
+      "file_type": "Registration",
+      "file_path": "/Practice/Registrations/",
+      "upload_date": "2024-07-01",
+      "uploaded_by": "David Martinez",
+      "description": "Current practicing certificates for all solicitors",
+      "file_size": "890 KB"
+    },
+    {
+      "file_id": "OD-PRACTICE-002",
+      "file_name": "Professional_Indemnity_Insurance_2024.pdf",
+      "file_type": "Insurance",
+      "file_path": "/Practice/Insurance/",
+      "upload_date": "2024-06-15",
+      "uploaded_by": "David Martinez",
+      "description": "$50M Professional Indemnity - Expires 30/06/2025",
+      "file_size": "1.1 MB"
+    },
+    {
+      "file_id": "OD-PRACTICE-003",
+      "file_name": "Trust_Account_Audit_2024.pdf",
+      "file_type": "Audit",
+      "file_path": "/Practice/Trust/",
+      "upload_date": "2024-08-30",
+      "uploaded_by": "David Martinez",
+      "description": "Annual trust account audit report",
+      "file_size": "678 KB"
+    }
+  ],
+  "metadata": {
+    "data_purpose": "11Labs Voice Agent Knowledge Base",
+    "business_type": "Law Firm",
+    "data_format": "JSON",
+    "last_updated": "2024-10-30",
+    "currency": "AUD",
+    "timezone": "Australia/Brisbane",
+    "notes": "This is dummy data for demonstration purposes. All client names, contact details, and legal matters are fictional."
+  }
+}
+

@@ -184,6 +184,27 @@ export async function GET(request: NextRequest) {
 // POST endpoint - for MCP tool calls
 export async function POST(request: NextRequest) {
     try {
+        // Check for API secret
+        const authHeader = request.headers.get('authorization');
+        const expectedSecret = process.env.MCP_API_SECRET;
+        
+        // Only enforce auth if MCP_API_SECRET is set
+        if (expectedSecret) {
+            if (!authHeader) {
+                return NextResponse.json({
+                    error: 'Unauthorized - Missing authorization header',
+                    hint: 'Include Authorization header with Bearer token'
+                }, { status: 401 });
+            }
+
+            const token = authHeader.replace('Bearer ', '');
+            if (token !== expectedSecret) {
+                return NextResponse.json({
+                    error: 'Unauthorized - Invalid API secret'
+                }, { status: 401 });
+            }
+        }
+
         const body = await request.json();
         const { tool, params = {} } = body;
 

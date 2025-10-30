@@ -1,0 +1,480 @@
+{
+  "company": {
+    "name": "Napoli Pizza Kitchen",
+    "abn": "78 901 234 567",
+    "email": "info@napolipizza.com.au",
+    "phone": "+61 7 3123 4567",
+    "address": "Shop 12, 145 Main Road, Clayfield QLD 4011",
+    "website": "www.napolipizza.com.au",
+    "specializations": ["Wood-Fired Pizza", "Pasta", "Dine-In", "Takeaway", "Delivery", "Catering"]
+  },
+  "integrations": {
+    "pos": "Lightspeed",
+    "accounting": "Xero",
+    "online_ordering": "Mr Yum",
+    "delivery": "Uber Eats, Menulog, DoorDash",
+    "rostering": "Deputy",
+    "inventory": "MarketMan",
+    "voice_agent": "Custom Voice Agent",
+    "file_storage": "OneDrive",
+    "bookings": "OpenTable"
+  },
+  "customers": [
+    {
+      "customer_id": "CUST-001",
+      "name": "Sarah Mitchell",
+      "email": "sarah.m@email.com",
+      "phone": "+61 412 012 345",
+      "loyalty_member": true,
+      "loyalty_points": 850,
+      "total_orders": 42,
+      "total_spent": 1680.00,
+      "favorite_pizzas": ["Margherita", "Diavola"],
+      "dietary_preferences": ["Gluten Free base available"]
+    },
+    {
+      "customer_id": "CUST-002",
+      "name": "David Chen",
+      "email": "david.c@email.com",
+      "phone": "+61 423 123 456",
+      "loyalty_member": true,
+      "loyalty_points": 1250,
+      "total_orders": 68,
+      "total_spent": 2380.00,
+      "favorite_pizzas": ["Meat Lovers", "BBQ Chicken"],
+      "dietary_preferences": []
+    },
+    {
+      "customer_id": "CUST-003",
+      "name": "Brisbane Primary School",
+      "type": "Corporate",
+      "contact_person": "Emma Thompson",
+      "email": "emma.t@brisbaneschool.qld.edu.au",
+      "phone": "+61 434 234 567",
+      "total_orders": 18,
+      "total_spent": 5400.00,
+      "order_type": "Catering",
+      "notes": "School events - usually 50+ pizzas per order"
+    }
+  ],
+  "menu": [
+    {
+      "item_id": "PIZZA-001",
+      "category": "Pizza",
+      "name": "Margherita",
+      "description": "Tomato, mozzarella, basil",
+      "sizes": [
+        {"size": "Small (10 inch)", "price": 16.00, "cost": 4.50},
+        {"size": "Medium (12 inch)", "price": 22.00, "cost": 6.00},
+        {"size": "Large (14 inch)", "price": 28.00, "cost": 7.50}
+      ],
+      "available": true,
+      "dietary_tags": ["Vegetarian", "Gluten Free option"]
+    },
+    {
+      "item_id": "PIZZA-002",
+      "category": "Pizza",
+      "name": "Pepperoni",
+      "description": "Tomato, mozzarella, pepperoni",
+      "sizes": [
+        {"size": "Small (10 inch)", "price": 18.00, "cost": 5.20},
+        {"size": "Medium (12 inch)", "price": 24.00, "cost": 7.00},
+        {"size": "Large (14 inch)", "price": 30.00, "cost": 8.80}
+      ],
+      "available": true,
+      "dietary_tags": ["Gluten Free option"]
+    },
+    {
+      "item_id": "PIZZA-003",
+      "category": "Pizza",
+      "name": "Meat Lovers",
+      "description": "Tomato, mozzarella, pepperoni, ham, bacon, Italian sausage",
+      "sizes": [
+        {"size": "Small (10 inch)", "price": 20.00, "cost": 6.80},
+        {"size": "Medium (12 inch)", "price": 26.00, "cost": 9.00},
+        {"size": "Large (14 inch)", "price": 32.00, "cost": 11.20}
+      ],
+      "available": true,
+      "dietary_tags": ["Gluten Free option"]
+    },
+    {
+      "item_id": "PIZZA-004",
+      "category": "Pizza",
+      "name": "Vegetarian Supreme",
+      "description": "Tomato, mozzarella, mushroom, capsicum, olives, onion, pineapple",
+      "sizes": [
+        {"size": "Small (10 inch)", "price": 18.00, "cost": 5.00},
+        {"size": "Medium (12 inch)", "price": 24.00, "cost": 6.80},
+        {"size": "Large (14 inch)", "price": 30.00, "cost": 8.50}
+      ],
+      "available": true,
+      "dietary_tags": ["Vegetarian", "Vegan option", "Gluten Free option"]
+    },
+    {
+      "item_id": "PASTA-001",
+      "category": "Pasta",
+      "name": "Spaghetti Carbonara",
+      "description": "Bacon, cream, parmesan, egg",
+      "price": 22.00,
+      "cost": 6.50,
+      "available": true,
+      "dietary_tags": ["Gluten Free pasta option"]
+    },
+    {
+      "item_id": "PASTA-002",
+      "category": "Pasta",
+      "name": "Penne Arrabiata",
+      "description": "Spicy tomato sauce, chili, garlic",
+      "price": 20.00,
+      "cost": 5.20,
+      "available": true,
+      "dietary_tags": ["Vegetarian", "Vegan option", "Gluten Free pasta option"]
+    }
+  ],
+  "daily_sales": [
+    {
+      "date": "2024-10-28",
+      "day_of_week": "Monday",
+      "dine_in_transactions": 35,
+      "dine_in_revenue": 1450.00,
+      "takeaway_transactions": 48,
+      "takeaway_revenue": 1920.00,
+      "delivery_transactions": 62,
+      "delivery_revenue": 2480.00,
+      "total_revenue": 5850.00,
+      "top_selling_items": ["Pepperoni Large", "Meat Lovers Large", "Margherita Medium"]
+    },
+    {
+      "date": "2024-10-29",
+      "day_of_week": "Tuesday",
+      "dine_in_transactions": 42,
+      "dine_in_revenue": 1680.00,
+      "takeaway_transactions": 55,
+      "takeaway_revenue": 2200.00,
+      "delivery_transactions": 71,
+      "delivery_revenue": 2840.00,
+      "total_revenue": 6720.00,
+      "top_selling_items": ["Meat Lovers Large", "Pepperoni Large", "Vegetarian Supreme Medium"]
+    },
+    {
+      "date": "2024-10-30",
+      "day_of_week": "Wednesday",
+      "dine_in_transactions": 38,
+      "dine_in_revenue": 1520.00,
+      "takeaway_transactions": 51,
+      "takeaway_revenue": 2040.00,
+      "delivery_transactions": 68,
+      "delivery_revenue": 2720.00,
+      "total_revenue": 6280.00,
+      "top_selling_items": ["Pepperoni Large", "BBQ Chicken Large", "Margherita Large"]
+    }
+  ],
+  "invoices": [
+    {
+      "invoice_id": "INV-2024-0456",
+      "customer_id": "CUST-003",
+      "customer_name": "Brisbane Primary School",
+      "invoice_date": "2024-10-20",
+      "due_date": "2024-11-19",
+      "status": "Sent",
+      "payment_date": null,
+      "subtotal": 1450.00,
+      "gst": 145.00,
+      "total": 1595.00,
+      "description": "Catering - School Sports Day",
+      "xero_invoice_id": "XERO-INV-0456",
+      "line_items": [
+        {
+          "description": "Large Pepperoni Pizza",
+          "quantity": 20,
+          "unit_price": 30.00,
+          "gst": 60.00,
+          "total": 660.00
+        },
+        {
+          "description": "Large Margherita Pizza",
+          "quantity": 15,
+          "unit_price": 28.00,
+          "gst": 42.00,
+          "total": 462.00
+        },
+        {
+          "description": "Large Vegetarian Supreme",
+          "quantity": 15,
+          "unit_price": 30.00,
+          "gst": 45.00,
+          "total": 495.00
+        }
+      ]
+    }
+  ],
+  "bills": [
+    {
+      "bill_id": "BILL-2024-2345",
+      "supplier": "Brisbane Food Distributors",
+      "bill_date": "2024-10-15",
+      "due_date": "2024-11-14",
+      "status": "Unpaid",
+      "payment_date": null,
+      "subtotal": 3850.00,
+      "gst": 385.00,
+      "total": 4235.00,
+      "description": "Pizza ingredients - weekly delivery",
+      "xero_bill_id": "XERO-BILL-2345",
+      "line_items": [
+        {
+          "description": "Mozzarella cheese - 20kg",
+          "quantity": 20,
+          "unit_price": 95.00,
+          "gst": 190.00,
+          "total": 2090.00
+        },
+        {
+          "description": "Italian tomato sauce - 10L",
+          "quantity": 15,
+          "unit_price": 28.00,
+          "gst": 42.00,
+          "total": 462.00
+        },
+        {
+          "description": "Pizza dough flour - 25kg bags",
+          "quantity": 12,
+          "unit_price": 42.00,
+          "gst": 50.40,
+          "total": 554.40
+        },
+        {
+          "description": "Toppings - meats, vegetables",
+          "quantity": 1,
+          "unit_price": 1065.00,
+          "gst": 106.50,
+          "total": 1171.50
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-2367",
+      "supplier": "Uber Eats",
+      "bill_date": "2024-10-20",
+      "due_date": "2024-11-19",
+      "status": "Unpaid",
+      "payment_date": null,
+      "subtotal": 2850.00,
+      "gst": 285.00,
+      "total": 3135.00,
+      "description": "Delivery service fees - October 1-20",
+      "xero_bill_id": "XERO-BILL-2367",
+      "line_items": [
+        {
+          "description": "Delivery commission (35% of delivery sales)",
+          "quantity": 1,
+          "unit_price": 2850.00,
+          "gst": 285.00,
+          "total": 3135.00
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-2378",
+      "supplier": "Menulog",
+      "bill_date": "2024-10-20",
+      "due_date": "2024-11-19",
+      "status": "Unpaid",
+      "payment_date": null,
+      "subtotal": 1950.00,
+      "gst": 195.00,
+      "total": 2145.00,
+      "description": "Delivery service fees - October 1-20",
+      "xero_bill_id": "XERO-BILL-2378",
+      "line_items": [
+        {
+          "description": "Delivery commission",
+          "quantity": 1,
+          "unit_price": 1950.00,
+          "gst": 195.00,
+          "total": 2145.00
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-2389",
+      "supplier": "Lightspeed POS",
+      "bill_date": "2024-10-01",
+      "due_date": "2024-10-31",
+      "status": "Paid",
+      "payment_date": "2024-10-15",
+      "subtotal": 385.00,
+      "gst": 38.50,
+      "total": 423.50,
+      "description": "POS system subscription - October",
+      "xero_bill_id": "XERO-BILL-2389",
+      "line_items": [
+        {
+          "description": "Lightspeed Restaurant POS",
+          "quantity": 1,
+          "unit_price": 385.00,
+          "gst": 38.50,
+          "total": 423.50
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-2401",
+      "supplier": "Origin Energy",
+      "bill_date": "2024-10-10",
+      "due_date": "2024-11-09",
+      "status": "Unpaid",
+      "payment_date": null,
+      "subtotal": 1850.00,
+      "gst": 185.00,
+      "total": 2035.00,
+      "description": "Electricity and gas - September usage",
+      "xero_bill_id": "XERO-BILL-2401",
+      "line_items": [
+        {
+          "description": "Commercial electricity",
+          "quantity": 1,
+          "unit_price": 1185.00,
+          "gst": 118.50,
+          "total": 1303.50
+        },
+        {
+          "description": "Commercial gas (wood-fired oven)",
+          "quantity": 1,
+          "unit_price": 665.00,
+          "gst": 66.50,
+          "total": 731.50
+        }
+      ]
+    }
+  ],
+  "staff": [
+    {
+      "staff_id": "STAFF-001",
+      "name": "Marco Rossi",
+      "role": "Owner / Head Chef",
+      "email": "marco@napolipizza.com.au",
+      "phone": "+61 421 345 678",
+      "qualifications": ["Italian Chef Certified", "Food Safety Supervisor", "RSA"],
+      "employment_type": "Full Time",
+      "employment_start": "2018-03-01"
+    },
+    {
+      "staff_id": "STAFF-002",
+      "name": "Giovanni Marino",
+      "role": "Pizza Chef",
+      "email": "giovanni@napolipizza.com.au",
+      "phone": "+61 432 456 789",
+      "qualifications": ["Pizza Chef Certified", "Food Safety", "RSA"],
+      "employment_type": "Full Time",
+      "hourly_rate": 32.00,
+      "employment_start": "2019-06-15"
+    },
+    {
+      "staff_id": "STAFF-003",
+      "name": "Lisa Park",
+      "role": "Assistant Manager / Wait Staff",
+      "email": "lisa@napolipizza.com.au",
+      "phone": "+61 443 567 890",
+      "qualifications": ["Food Safety", "RSA", "Customer Service Certified"],
+      "employment_type": "Full Time",
+      "hourly_rate": 28.50,
+      "employment_start": "2020-02-10"
+    },
+    {
+      "staff_id": "STAFF-004",
+      "name": "Jake Morrison",
+      "role": "Kitchen Hand",
+      "email": "jake@napolipizza.com.au",
+      "phone": "+61 454 678 901",
+      "qualifications": ["Food Safety"],
+      "employment_type": "Part Time",
+      "hourly_rate": 25.00,
+      "employment_start": "2021-09-01"
+    },
+    {
+      "staff_id": "STAFF-005",
+      "name": "Emma Rodriguez",
+      "role": "Wait Staff",
+      "email": "emma@napolipizza.com.au",
+      "phone": "+61 465 789 012",
+      "qualifications": ["Food Safety", "RSA"],
+      "employment_type": "Part Time",
+      "hourly_rate": 24.50,
+      "employment_start": "2022-03-15"
+    },
+    {
+      "staff_id": "STAFF-006",
+      "name": "Tom Anderson",
+      "role": "Delivery Driver",
+      "email": "tom@napolipizza.com.au",
+      "phone": "+61 476 890 123",
+      "qualifications": ["Valid Driver's Licence", "Food Safety"],
+      "employment_type": "Casual",
+      "hourly_rate": 23.00,
+      "employment_start": "2023-08-01"
+    }
+  ],
+  "onedrive_files": [
+    {
+      "file_id": "OD-LICENSE-001",
+      "file_name": "Food_Business_Licence_2024.pdf",
+      "file_type": "Licence",
+      "file_path": "/Compliance/Licences/",
+      "upload_date": "2024-07-01",
+      "uploaded_by": "Marco Rossi",
+      "description": "Food business licence - Expires 30/06/2025",
+      "file_size": "456 KB"
+    },
+    {
+      "file_id": "OD-MENU-001",
+      "file_name": "Current_Menu_October_2024.pdf",
+      "file_type": "Menu",
+      "file_path": "/Menus/",
+      "upload_date": "2024-10-01",
+      "uploaded_by": "Marco Rossi",
+      "description": "Current dine-in and takeaway menu",
+      "file_size": "3.2 MB"
+    },
+    {
+      "file_id": "OD-STAFF-001",
+      "file_name": "Staff_Certificates_Food_Safety.pdf",
+      "file_type": "Certificates",
+      "file_path": "/Staff/Training/",
+      "upload_date": "2024-08-15",
+      "uploaded_by": "Lisa Park",
+      "description": "All staff food safety and RSA certificates",
+      "file_size": "1.5 MB"
+    },
+    {
+      "file_id": "OD-INSURANCE-001",
+      "file_name": "Public_Liability_Insurance_2024.pdf",
+      "file_type": "Insurance",
+      "file_path": "/Compliance/Insurance/",
+      "upload_date": "2024-07-01",
+      "uploaded_by": "Marco Rossi",
+      "description": "$20M Public Liability - Expires 30/06/2025",
+      "file_size": "678 KB"
+    },
+    {
+      "file_id": "OD-LEASE-001",
+      "file_name": "Shop_Lease_Agreement.pdf",
+      "file_type": "Lease",
+      "file_path": "/Property/",
+      "upload_date": "2023-03-01",
+      "uploaded_by": "Marco Rossi",
+      "description": "Commercial lease - 5 year term",
+      "file_size": "1.9 MB"
+    }
+  ],
+  "metadata": {
+    "data_purpose": "11Labs Voice Agent Knowledge Base",
+    "business_type": "Pizza Restaurant",
+    "data_format": "JSON",
+    "last_updated": "2024-10-30",
+    "currency": "AUD",
+    "timezone": "Australia/Brisbane",
+    "notes": "This is dummy data for demonstration purposes. All customer names, sales data, and financial information are fictional."
+  }
+}
+

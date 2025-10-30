@@ -1,0 +1,627 @@
+{
+  "company": {
+    "name": "FitZone Gym & Fitness",
+    "abn": "89 012 345 678",
+    "email": "info@fitzone.com.au",
+    "phone": "+61 7 3234 5678",
+    "address": "Unit 1-2, 200 Commercial Road, Newstead QLD 4006",
+    "website": "www.fitzone.com.au",
+    "specializations": ["24/7 Gym Access", "Personal Training", "Group Classes", "Nutrition Coaching", "Supplement Store"]
+  },
+  "integrations": {
+    "membership_management": "Mindbody",
+    "accounting": "Xero",
+    "bookings": "Mindbody",
+    "access_control": "GymMaster",
+    "voice_agent": "Custom Voice Agent",
+    "file_storage": "OneDrive",
+    "pos": "Square",
+    "marketing": "Mailchimp"
+  },
+  "members": [
+    {
+      "member_id": "MEM-001",
+      "name": "Sarah Mitchell",
+      "email": "sarah.m@email.com",
+      "phone": "+61 412 123 456",
+      "membership_type": "Premium - 12 Month",
+      "membership_status": "Active",
+      "start_date": "2024-01-15",
+      "expiry_date": "2025-01-14",
+      "monthly_fee": 79.00,
+      "total_paid_ytd": 790.00,
+      "personal_training_sessions": 12,
+      "attendance_avg_per_week": 4.5,
+      "goals": ["Weight Loss", "Strength Training"]
+    },
+    {
+      "member_id": "MEM-002",
+      "name": "David Chen",
+      "email": "david.c@email.com",
+      "phone": "+61 423 234 567",
+      "membership_type": "Standard - Monthly",
+      "membership_status": "Active",
+      "start_date": "2023-06-10",
+      "expiry_date": "Ongoing",
+      "monthly_fee": 59.00,
+      "total_paid_ytd": 590.00,
+      "personal_training_sessions": 0,
+      "attendance_avg_per_week": 3.2,
+      "goals": ["General Fitness", "Cardio"]
+    },
+    {
+      "member_id": "MEM-003",
+      "name": "Emma Thompson",
+      "email": "emma.t@email.com",
+      "phone": "+61 434 345 678",
+      "membership_type": "Premium + PT Package",
+      "membership_status": "Active",
+      "start_date": "2024-08-01",
+      "expiry_date": "2025-07-31",
+      "monthly_fee": 129.00,
+      "total_paid_ytd": 387.00,
+      "personal_training_sessions": 24,
+      "attendance_avg_per_week": 5.1,
+      "goals": ["Strength Training", "Muscle Gain", "Competition Prep"]
+    },
+    {
+      "member_id": "MEM-004",
+      "name": "James Rodriguez",
+      "email": "james.r@email.com",
+      "phone": "+61 445 456 789",
+      "membership_type": "Off-Peak",
+      "membership_status": "Active",
+      "start_date": "2024-03-20",
+      "expiry_date": "Ongoing",
+      "monthly_fee": 45.00,
+      "total_paid_ytd": 315.00,
+      "personal_training_sessions": 0,
+      "attendance_avg_per_week": 3.0,
+      "goals": ["Weight Loss", "General Fitness"]
+    },
+    {
+      "member_id": "MEM-005",
+      "name": "Lisa Park",
+      "email": "lisa.p@email.com",
+      "phone": "+61 456 567 890",
+      "membership_type": "Standard - 6 Month",
+      "membership_status": "Expired - Pending Renewal",
+      "start_date": "2024-04-15",
+      "expiry_date": "2024-10-14",
+      "monthly_fee": 59.00,
+      "total_paid_ytd": 354.00,
+      "personal_training_sessions": 0,
+      "attendance_avg_per_week": 0.0,
+      "goals": ["Yoga", "Flexibility"]
+    }
+  ],
+  "membership_plans": [
+    {
+      "plan_id": "PLAN-001",
+      "name": "Off-Peak",
+      "description": "Access 6am-4pm weekdays only",
+      "monthly_fee": 45.00,
+      "signup_fee": 99.00,
+      "contract_length": "Monthly - No Contract",
+      "inclusions": ["Gym Access", "Basic Classes"],
+      "active_members": 145
+    },
+    {
+      "plan_id": "PLAN-002",
+      "name": "Standard",
+      "description": "24/7 gym access",
+      "monthly_fee": 59.00,
+      "signup_fee": 99.00,
+      "contract_length": "Monthly or 6/12 month",
+      "inclusions": ["24/7 Access", "All Classes", "Guest Passes (2/month)"],
+      "active_members": 385
+    },
+    {
+      "plan_id": "PLAN-003",
+      "name": "Premium",
+      "description": "All access plus extras",
+      "monthly_fee": 79.00,
+      "signup_fee": 0.00,
+      "contract_length": "12 month minimum",
+      "inclusions": ["24/7 Access", "All Classes", "Free Towel Service", "10% Supplement Discount", "Guest Passes (4/month)"],
+      "active_members": 198
+    },
+    {
+      "plan_id": "PLAN-004",
+      "name": "Premium + PT Package",
+      "description": "Premium membership with personal training",
+      "monthly_fee": 129.00,
+      "signup_fee": 0.00,
+      "contract_length": "12 month minimum",
+      "inclusions": ["All Premium Benefits", "2x PT Sessions/week", "Nutrition Coaching", "Body Composition Analysis"],
+      "active_members": 42
+    }
+  ],
+  "classes": [
+    {
+      "class_id": "CLASS-001",
+      "name": "Spin Class",
+      "instructor": "Jake Morrison",
+      "duration_minutes": 45,
+      "max_capacity": 20,
+      "schedule": [
+        {"day": "Monday", "time": "6:00 AM"},
+        {"day": "Wednesday", "time": "6:00 AM"},
+        {"day": "Friday", "time": "6:00 AM"}
+      ],
+      "avg_attendance": 16
+    },
+    {
+      "class_id": "CLASS-002",
+      "name": "HIIT",
+      "instructor": "Emma Rodriguez",
+      "duration_minutes": 30,
+      "max_capacity": 25,
+      "schedule": [
+        {"day": "Monday", "time": "5:30 PM"},
+        {"day": "Tuesday", "time": "6:00 AM"},
+        {"day": "Thursday", "time": "5:30 PM"}
+      ],
+      "avg_attendance": 22
+    },
+    {
+      "class_id": "CLASS-003",
+      "name": "Yoga",
+      "instructor": "Lisa Wilson",
+      "duration_minutes": 60,
+      "max_capacity": 30,
+      "schedule": [
+        {"day": "Tuesday", "time": "6:00 PM"},
+        {"day": "Thursday", "time": "6:00 PM"},
+        {"day": "Saturday", "time": "9:00 AM"}
+      ],
+      "avg_attendance": 24
+    },
+    {
+      "class_id": "CLASS-004",
+      "name": "Boxing Fitness",
+      "instructor": "Tom Anderson",
+      "duration_minutes": 45,
+      "max_capacity": 20,
+      "schedule": [
+        {"day": "Monday", "time": "7:00 PM"},
+        {"day": "Wednesday", "time": "7:00 PM"}
+      ],
+      "avg_attendance": 18
+    }
+  ],
+  "invoices": [
+    {
+      "invoice_id": "INV-2024-1234",
+      "member_id": "MEM-001",
+      "member_name": "Sarah Mitchell",
+      "invoice_date": "2024-10-15",
+      "due_date": "2024-10-15",
+      "status": "Paid",
+      "payment_date": "2024-10-15",
+      "subtotal": 79.00,
+      "gst": 7.90,
+      "total": 86.90,
+      "description": "Monthly membership - November 2024",
+      "xero_invoice_id": "XERO-INV-1234",
+      "line_items": [
+        {
+          "description": "Premium Membership - Monthly",
+          "quantity": 1,
+          "unit_price": 79.00,
+          "gst": 7.90,
+          "total": 86.90
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-2024-1256",
+      "member_id": "MEM-002",
+      "member_name": "David Chen",
+      "invoice_date": "2024-10-15",
+      "due_date": "2024-10-15",
+      "status": "Paid",
+      "payment_date": "2024-10-15",
+      "subtotal": 59.00,
+      "gst": 5.90,
+      "total": 64.90,
+      "description": "Monthly membership - November 2024",
+      "xero_invoice_id": "XERO-INV-1256",
+      "line_items": [
+        {
+          "description": "Standard Membership - Monthly",
+          "quantity": 1,
+          "unit_price": 59.00,
+          "gst": 5.90,
+          "total": 64.90
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-2024-1278",
+      "member_id": "MEM-003",
+      "member_name": "Emma Thompson",
+      "invoice_date": "2024-10-15",
+      "due_date": "2024-10-15",
+      "status": "Paid",
+      "payment_date": "2024-10-16",
+      "subtotal": 129.00,
+      "gst": 12.90,
+      "total": 141.90,
+      "description": "Monthly membership - November 2024",
+      "xero_invoice_id": "XERO-INV-1278",
+      "line_items": [
+        {
+          "description": "Premium + PT Package - Monthly",
+          "quantity": 1,
+          "unit_price": 129.00,
+          "gst": 12.90,
+          "total": 141.90
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-2024-1312",
+      "member_id": "MEM-005",
+      "member_name": "Lisa Park",
+      "invoice_date": "2024-10-20",
+      "due_date": "2024-10-27",
+      "status": "Sent - Overdue",
+      "payment_date": null,
+      "subtotal": 708.00,
+      "gst": 70.80,
+      "total": 778.80,
+      "description": "Membership renewal - 12 month contract",
+      "xero_invoice_id": "XERO-INV-1312",
+      "line_items": [
+        {
+          "description": "Standard Membership - 12 Month Prepay",
+          "quantity": 1,
+          "unit_price": 708.00,
+          "gst": 70.80,
+          "total": 778.80
+        }
+      ]
+    }
+  ],
+  "bills": [
+    {
+      "bill_id": "BILL-2024-3456",
+      "supplier": "Commercial Property Lease",
+      "bill_date": "2024-10-01",
+      "due_date": "2024-10-14",
+      "status": "Paid",
+      "payment_date": "2024-10-10",
+      "subtotal": 12000.00,
+      "gst": 1200.00,
+      "total": 13200.00,
+      "description": "Monthly rent - October 2024",
+      "xero_bill_id": "XERO-BILL-3456",
+      "line_items": [
+        {
+          "description": "Commercial lease - 450sqm facility",
+          "quantity": 1,
+          "unit_price": 12000.00,
+          "gst": 1200.00,
+          "total": 13200.00
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-3478",
+      "supplier": "Fitness Equipment Supplies",
+      "bill_date": "2024-10-15",
+      "due_date": "2024-11-14",
+      "status": "Unpaid",
+      "payment_date": null,
+      "subtotal": 8500.00,
+      "gst": 850.00,
+      "total": 9350.00,
+      "description": "New equipment purchase",
+      "xero_bill_id": "XERO-BILL-3478",
+      "line_items": [
+        {
+          "description": "Commercial treadmill x2",
+          "quantity": 2,
+          "unit_price": 3200.00,
+          "gst": 640.00,
+          "total": 7040.00
+        },
+        {
+          "description": "Dumbbell set 2.5kg-30kg",
+          "quantity": 1,
+          "unit_price": 2100.00,
+          "gst": 210.00,
+          "total": 2310.00
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-3489",
+      "supplier": "Bulk Nutrients Australia",
+      "bill_date": "2024-10-18",
+      "due_date": "2024-11-17",
+      "status": "Unpaid",
+      "payment_date": null,
+      "subtotal": 2850.00,
+      "gst": 285.00,
+      "total": 3135.00,
+      "description": "Supplement stock - wholesale",
+      "xero_bill_id": "XERO-BILL-3489",
+      "line_items": [
+        {
+          "description": "Whey protein powder - 5kg tubs",
+          "quantity": 20,
+          "unit_price": 95.00,
+          "gst": 190.00,
+          "total": 2090.00
+        },
+        {
+          "description": "Pre-workout supplements",
+          "quantity": 15,
+          "unit_price": 42.00,
+          "gst": 63.00,
+          "total": 693.00
+        },
+        {
+          "description": "BCAAs and recovery supplements",
+          "quantity": 1,
+          "unit_price": 320.00,
+          "gst": 32.00,
+          "total": 352.00
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-3501",
+      "supplier": "Mindbody",
+      "bill_date": "2024-10-01",
+      "due_date": "2024-10-31",
+      "status": "Paid",
+      "payment_date": "2024-10-15",
+      "subtotal": 485.00,
+      "gst": 48.50,
+      "total": 533.50,
+      "description": "Membership management software - October",
+      "xero_bill_id": "XERO-BILL-3501",
+      "line_items": [
+        {
+          "description": "Mindbody subscription",
+          "quantity": 1,
+          "unit_price": 485.00,
+          "gst": 48.50,
+          "total": 533.50
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-3512",
+      "supplier": "Origin Energy",
+      "bill_date": "2024-10-10",
+      "due_date": "2024-11-09",
+      "status": "Unpaid",
+      "payment_date": null,
+      "subtotal": 3285.00,
+      "gst": 328.50,
+      "total": 3613.50,
+      "description": "Electricity - September usage",
+      "xero_bill_id": "XERO-BILL-3512",
+      "line_items": [
+        {
+          "description": "Commercial electricity - 24/7 facility",
+          "quantity": 1,
+          "unit_price": 3285.00,
+          "gst": 328.50,
+          "total": 3613.50
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-3523",
+      "supplier": "Commercial Cleaning Services",
+      "bill_date": "2024-10-20",
+      "due_date": "2024-11-19",
+      "status": "Unpaid",
+      "payment_date": null,
+      "subtotal": 1850.00,
+      "gst": 185.00,
+      "total": 2035.00,
+      "description": "Daily cleaning services - October",
+      "xero_bill_id": "XERO-BILL-3523",
+      "line_items": [
+        {
+          "description": "Daily cleaning service - 7 days/week",
+          "quantity": 1,
+          "unit_price": 1850.00,
+          "gst": 185.00,
+          "total": 2035.00
+        }
+      ]
+    }
+  ],
+  "leads": [
+    {
+      "lead_id": "LEAD-2024-456",
+      "name": "Michael Patterson",
+      "email": "m.patterson@email.com",
+      "phone": "+61 421 234 567",
+      "source": "Walk-in Inquiry",
+      "date_created": "2024-10-25",
+      "status": "Tour Completed",
+      "interested_in": "Premium Membership",
+      "notes": "Completed gym tour. Interested in personal training. Following up with pricing.",
+      "last_contact": "2024-10-25",
+      "next_followup": "2024-10-28"
+    },
+    {
+      "lead_id": "LEAD-2024-457",
+      "name": "Rebecca Foster",
+      "email": "rebecca.f@email.com",
+      "phone": "+61 432 345 678",
+      "source": "Facebook Ad",
+      "date_created": "2024-10-26",
+      "status": "Tour Scheduled",
+      "interested_in": "Standard Membership",
+      "notes": "Tour scheduled for Nov 1. Interested in yoga classes.",
+      "last_contact": "2024-10-26",
+      "next_followup": "2024-11-01"
+    },
+    {
+      "lead_id": "LEAD-2024-458",
+      "name": "Carlos Martinez",
+      "email": "carlos.m@email.com",
+      "phone": "+61 443 456 789",
+      "source": "Voice Agent - Inbound Call",
+      "date_created": "2024-10-27",
+      "status": "Initial Contact",
+      "interested_in": "Off-Peak Membership",
+      "notes": "Called via voice agent. Looking for off-peak gym access. Sending info pack.",
+      "last_contact": "2024-10-27",
+      "next_followup": "2024-10-30"
+    },
+    {
+      "lead_id": "LEAD-2024-459",
+      "name": "Brisbane Tech Startup",
+      "type": "Corporate",
+      "contact_person": "Lisa Chen",
+      "email": "lisa@techstartup.com.au",
+      "phone": "+61 454 567 890",
+      "source": "Referral",
+      "date_created": "2024-10-28",
+      "status": "Proposal Sent",
+      "interested_in": "Corporate Membership - 20 staff",
+      "notes": "Corporate package for 20 employees. Proposal sent with 15% discount.",
+      "last_contact": "2024-10-29",
+      "next_followup": "2024-11-05"
+    }
+  ],
+  "staff": [
+    {
+      "staff_id": "STAFF-001",
+      "name": "Tony Wilson",
+      "role": "Owner / Manager",
+      "email": "tony@fitzone.com.au",
+      "phone": "+61 421 456 789",
+      "qualifications": ["Cert IV Fitness", "First Aid", "Business Management"],
+      "employment_type": "Full Time",
+      "employment_start": "2017-01-15"
+    },
+    {
+      "staff_id": "STAFF-002",
+      "name": "Jake Morrison",
+      "role": "Personal Trainer / Class Instructor",
+      "email": "jake@fitzone.com.au",
+      "phone": "+61 432 567 890",
+      "qualifications": ["Cert IV Fitness", "Spin Instructor", "First Aid"],
+      "employment_type": "Full Time",
+      "hourly_rate": 35.00,
+      "employment_start": "2018-06-01"
+    },
+    {
+      "staff_id": "STAFF-003",
+      "name": "Emma Rodriguez",
+      "role": "Personal Trainer / HIIT Instructor",
+      "email": "emma@fitzone.com.au",
+      "phone": "+61 443 678 901",
+      "qualifications": ["Cert IV Fitness", "HIIT Specialist", "Nutrition Coach", "First Aid"],
+      "employment_type": "Full Time",
+      "hourly_rate": 35.00,
+      "employment_start": "2019-03-15"
+    },
+    {
+      "staff_id": "STAFF-004",
+      "name": "Lisa Wilson",
+      "role": "Yoga Instructor",
+      "email": "lisa@fitzone.com.au",
+      "phone": "+61 454 789 012",
+      "qualifications": ["Yoga Teacher Certification 200hr", "First Aid"],
+      "employment_type": "Part Time",
+      "hourly_rate": 32.00,
+      "employment_start": "2020-08-01"
+    },
+    {
+      "staff_id": "STAFF-005",
+      "name": "Tom Anderson",
+      "role": "Boxing Instructor / Personal Trainer",
+      "email": "tom@fitzone.com.au",
+      "phone": "+61 465 890 123",
+      "qualifications": ["Cert IV Fitness", "Boxing Coach Level 1", "First Aid"],
+      "employment_type": "Part Time",
+      "hourly_rate": 33.00,
+      "employment_start": "2021-02-10"
+    },
+    {
+      "staff_id": "STAFF-006",
+      "name": "Sarah Chen",
+      "role": "Membership Coordinator",
+      "email": "sarah@fitzone.com.au",
+      "phone": "+61 476 901 234",
+      "qualifications": ["Cert III Fitness", "Customer Service"],
+      "employment_type": "Part Time",
+      "hourly_rate": 26.00,
+      "employment_start": "2022-09-01"
+    }
+  ],
+  "onedrive_files": [
+    {
+      "file_id": "OD-LICENSE-001",
+      "file_name": "Business_Licence_2024.pdf",
+      "file_type": "Licence",
+      "file_path": "/Compliance/Licences/",
+      "upload_date": "2024-07-01",
+      "uploaded_by": "Tony Wilson",
+      "description": "Business licence - Expires 30/06/2025",
+      "file_size": "456 KB"
+    },
+    {
+      "file_id": "OD-STAFF-001",
+      "file_name": "Staff_Fitness_Certifications.pdf",
+      "file_type": "Certificates",
+      "file_path": "/Staff/Certifications/",
+      "upload_date": "2024-08-15",
+      "uploaded_by": "Tony Wilson",
+      "description": "All trainer certifications and first aid certificates",
+      "file_size": "2.4 MB"
+    },
+    {
+      "file_id": "OD-INSURANCE-001",
+      "file_name": "Public_Liability_Insurance_2024.pdf",
+      "file_type": "Insurance",
+      "file_path": "/Compliance/Insurance/",
+      "upload_date": "2024-07-01",
+      "uploaded_by": "Tony Wilson",
+      "description": "$20M Public Liability - Expires 30/06/2025",
+      "file_size": "678 KB"
+    },
+    {
+      "file_id": "OD-EQUIPMENT-001",
+      "file_name": "Equipment_Maintenance_Schedule.xlsx",
+      "file_type": "Maintenance Log",
+      "file_path": "/Equipment/",
+      "upload_date": "2024-10-01",
+      "uploaded_by": "Jake Morrison",
+      "description": "Equipment maintenance and safety inspection schedule",
+      "file_size": "245 KB"
+    },
+    {
+      "file_id": "OD-LEASE-001",
+      "file_name": "Commercial_Lease_Agreement.pdf",
+      "file_type": "Lease",
+      "file_path": "/Property/",
+      "upload_date": "2022-01-15",
+      "uploaded_by": "Tony Wilson",
+      "description": "Commercial lease - 10 year term",
+      "file_size": "2.1 MB"
+    }
+  ],
+  "metadata": {
+    "data_purpose": "11Labs Voice Agent Knowledge Base",
+    "business_type": "Gym and Fitness Centre",
+    "data_format": "JSON",
+    "last_updated": "2024-10-30",
+    "currency": "AUD",
+    "timezone": "Australia/Brisbane",
+    "notes": "This is dummy data for demonstration purposes. All member names, financial data, and membership information are fictional."
+  }
+}
+
