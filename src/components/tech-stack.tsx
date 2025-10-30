@@ -68,8 +68,8 @@ const techStack: TechStackItem[] = [
       quote: "Our ability to use OpenRouter as an AI gateway allows us to select the best-performing AI model for each specific task, giving you a flexible, cost-effective, and powerful solution that isn't locked into a single provider.",
       name: "OpenRouter",
       title: "AI Gateway",
-      iconSlug: null,
-      faIcon: faOpenid,
+      iconSlug: "openrouter",
+      faIcon: null,
       url: "https://openrouter.ai/",
     },
     {

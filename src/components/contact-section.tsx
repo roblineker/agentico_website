@@ -20,7 +20,7 @@ import { useForm, useFieldArray } from "react-hook-form";
 import { z } from "zod";
 import { useState } from "react";
 import { toast } from "sonner";
-import { Loader2, Plus, X } from "lucide-react";
+import { Loader2, Plus, X, Facebook, Twitter, Linkedin, Instagram, Youtube, Globe } from "lucide-react";
 import { ScrollAnimation } from "@/components/ui/scroll-animation";
 import { useRouter } from "next/navigation";
 
@@ -30,6 +30,10 @@ const contactFormSchema = z.object({
   email: z.string().email("Please enter a valid email address"),
   phone: z.string().min(10, "Please enter a valid phone number"),
   company: z.string().min(2, "Please enter your company name"),
+  website: z.string().url("Please enter a valid URL").optional().or(z.literal("")),
+  socialLinks: z.array(z.object({
+    url: z.string().url("Please enter a valid URL"),
+  })).optional(),
   
   // Business Information
   industry: z.enum([
@@ -146,6 +150,35 @@ const integrationOptions = [
   { id: "custom_software", label: "Custom/Legacy Software" },
 ];
 
+// Helper function to detect social network from URL
+function detectSocialNetwork(url: string): { name: string; icon: React.ComponentType<{ className?: string }> } {
+  const lowerUrl = url.toLowerCase();
+  
+  if (lowerUrl.includes('facebook.com') || lowerUrl.includes('fb.com')) {
+    return { name: 'Facebook', icon: Facebook };
+  }
+  if (lowerUrl.includes('twitter.com') || lowerUrl.includes('x.com')) {
+    return { name: 'Twitter/X', icon: Twitter };
+  }
+  if (lowerUrl.includes('linkedin.com')) {
+    return { name: 'LinkedIn', icon: Linkedin };
+  }
+  if (lowerUrl.includes('instagram.com')) {
+    return { name: 'Instagram', icon: Instagram };
+  }
+  if (lowerUrl.includes('youtube.com') || lowerUrl.includes('youtu.be')) {
+    return { name: 'YouTube', icon: Youtube };
+  }
+  if (lowerUrl.includes('tiktok.com')) {
+    return { name: 'TikTok', icon: Globe };
+  }
+  if (lowerUrl.includes('pinterest.com')) {
+    return { name: 'Pinterest', icon: Globe };
+  }
+  
+  return { name: 'Social Link', icon: Globe };
+}
+
 function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -165,12 +198,19 @@ function ContactForm() {
       automationGoals: [],
       integrationNeeds: [],
       projectIdeas: [],
+      socialLinks: [],
+      website: "",
     },
   });
 
   const { fields, append, remove } = useFieldArray({
     control,
     name: "projectIdeas",
+  });
+
+  const { fields: socialFields, append: appendSocial, remove: removeSocial } = useFieldArray({
+    control,
+    name: "socialLinks",
   });
 
   const selectedAutomationGoals = watch("automationGoals") || [];
@@ -305,6 +345,78 @@ function ContactForm() {
                   />
                   <FieldError>{errors.company?.message}</FieldError>
                 </Field>
+              </div>
+
+              <Field data-invalid={!!errors.website}>
+                <FieldLabel htmlFor="website">Website URL (Optional)</FieldLabel>
+                <Input
+                  id="website"
+                  type="url"
+                  placeholder="https://www.yourcompany.com"
+                  aria-invalid={!!errors.website}
+                  {...register("website")}
+                />
+                <FieldError>{errors.website?.message}</FieldError>
+              </Field>
+
+              <div className="space-y-4">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <FieldLabel>Social Media Links (Optional)</FieldLabel>
+                    <FieldDescription className="mt-1">
+                      Add your social media profiles to help us understand your online presence
+                    </FieldDescription>
+                  </div>
+                  <Button
+                    type="button"
+                    variant="outline"
+                    size="sm"
+                    onClick={() => appendSocial({ url: "" })}
+                  >
+                    <Plus className="h-4 w-4 mr-1" />
+                    Add Social Link
+                  </Button>
+                </div>
+
+                {socialFields.map((field, index) => {
+                  const currentUrl = watch(`socialLinks.${index}.url`);
+                  const socialInfo = currentUrl ? detectSocialNetwork(currentUrl) : null;
+                  const SocialIcon = socialInfo?.icon;
+
+                  return (
+                    <div key={field.id} className="flex gap-2 items-start">
+                      <div className="flex-1">
+                        <Field data-invalid={!!errors.socialLinks?.[index]?.url}>
+                          <div className="flex gap-2">
+                            <Input
+                              id={`socialLinks.${index}.url`}
+                              type="url"
+                              placeholder="https://facebook.com/yourcompany"
+                              aria-invalid={!!errors.socialLinks?.[index]?.url}
+                              {...register(`socialLinks.${index}.url` as const)}
+                            />
+                            {socialInfo && SocialIcon && (
+                              <div className="flex items-center gap-2 px-3 py-2 bg-muted rounded-md border min-w-[140px]">
+                                <SocialIcon className="h-4 w-4 text-primary" />
+                                <span className="text-sm text-muted-foreground">{socialInfo.name}</span>
+                              </div>
+                            )}
+                          </div>
+                          <FieldError>{errors.socialLinks?.[index]?.url?.message}</FieldError>
+                        </Field>
+                      </div>
+                      <Button
+                        type="button"
+                        variant="ghost"
+                        size="sm"
+                        onClick={() => removeSocial(index)}
+                        className="mt-1"
+                      >
+                        <X className="h-4 w-4" />
+                      </Button>
+                    </div>
+                  );
+                })}
               </div>
             </FieldGroup>
           </FieldSet>

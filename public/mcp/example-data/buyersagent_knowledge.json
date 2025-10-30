@@ -1,0 +1,662 @@
+{
+  "company": {
+    "name": "Property Search Partners",
+    "abn": "56 678 901 234",
+    "email": "info@propertysearchpartners.com.au",
+    "phone": "+61 7 3890 1234",
+    "address": "Level 5, 180 Queen Street, Brisbane QLD 4000",
+    "website": "www.propertysearchpartners.com.au",
+    "specializations": ["Buyers Advocacy", "Property Search", "Auction Bidding", "Due Diligence", "Investment Property"]
+  },
+  "integrations": {
+    "crm": "HubSpot",
+    "accounting": "Xero",
+    "research": "CoreLogic, RP Data",
+    "contract_management": "DocuSign",
+    "voice_agent": "Custom Voice Agent",
+    "file_storage": "OneDrive",
+    "project_management": "Asana"
+  },
+  "clients": [
+    {
+      "client_id": "CLI-001",
+      "name": "Sarah & Michael Henderson",
+      "type": "Residential Buyer",
+      "email": "sarah.henderson@email.com",
+      "phone": "+61 412 901 234",
+      "budget_min": 900000.00,
+      "budget_max": 1100000.00,
+      "preferred_suburbs": ["Bardon", "Paddington", "Red Hill"],
+      "property_type": "House",
+      "bedrooms_min": 4,
+      "service_package": "Premium Search & Purchase",
+      "fee": 15000.00,
+      "status": "Active Search",
+      "agent": "David Foster"
+    },
+    {
+      "client_id": "CLI-002",
+      "name": "Emma Thompson",
+      "type": "Investment Buyer",
+      "email": "emma.t@email.com",
+      "phone": "+61 423 012 345",
+      "budget_min": 450000.00,
+      "budget_max": 550000.00,
+      "preferred_suburbs": ["Greenslopes", "Coorparoo", "Woolloongabba"],
+      "property_type": "Apartment",
+      "bedrooms_min": 2,
+      "service_package": "Investment Property Search",
+      "fee": 8500.00,
+      "status": "Under Contract",
+      "agent": "Jennifer Wong"
+    },
+    {
+      "client_id": "CLI-003",
+      "name": "James Rodriguez",
+      "type": "First Home Buyer",
+      "email": "james.r@email.com",
+      "phone": "+61 434 123 456",
+      "budget_min": 550000.00,
+      "budget_max": 700000.00,
+      "preferred_suburbs": ["Ashgrove", "The Gap", "Keperra"],
+      "property_type": "House or Townhouse",
+      "bedrooms_min": 3,
+      "service_package": "Standard Search & Purchase",
+      "fee": 9500.00,
+      "status": "Completed - Settled",
+      "agent": "David Foster"
+    },
+    {
+      "client_id": "CLI-004",
+      "name": "Brisbane Property Investments Pty Ltd",
+      "type": "Commercial Buyer",
+      "contact_person": "Tony Nguyen",
+      "email": "tony@bpi.com.au",
+      "phone": "+61 445 234 567",
+      "budget_min": 2000000.00,
+      "budget_max": 3500000.00,
+      "preferred_suburbs": ["Fortitude Valley", "Newstead", "South Brisbane"],
+      "property_type": "Commercial Office",
+      "service_package": "Commercial Property Search",
+      "fee": 35000.00,
+      "status": "Active Search",
+      "agent": "Jennifer Wong"
+    },
+    {
+      "client_id": "CLI-005",
+      "name": "Rebecca Foster",
+      "type": "Residential Buyer",
+      "email": "rebecca.f@email.com",
+      "phone": "+61 456 345 678",
+      "budget_min": 750000.00,
+      "budget_max": 900000.00,
+      "preferred_suburbs": ["New Farm", "Teneriffe", "Newstead"],
+      "property_type": "Apartment",
+      "bedrooms_min": 2,
+      "service_package": "Auction Bidding Service",
+      "fee": 5500.00,
+      "status": "Active - Auction Campaign",
+      "agent": "David Foster"
+    },
+    {
+      "client_id": "CLI-006",
+      "name": "Carlos & Maria Martinez",
+      "type": "Residential Buyer",
+      "email": "carlos.m@email.com",
+      "phone": "+61 467 456 789",
+      "budget_min": 1200000.00,
+      "budget_max": 1500000.00,
+      "preferred_suburbs": ["Hamilton", "Ascot", "Clayfield"],
+      "property_type": "House",
+      "bedrooms_min": 4,
+      "service_package": "Premium Search & Purchase",
+      "fee": 18000.00,
+      "status": "Active Search",
+      "agent": "Jennifer Wong"
+    },
+    {
+      "client_id": "CLI-007",
+      "name": "Sophie Williams",
+      "type": "Investment Buyer",
+      "email": "sophie.w@email.com",
+      "phone": "+61 478 567 890",
+      "budget_min": 380000.00,
+      "budget_max": 480000.00,
+      "preferred_suburbs": ["Logan", "Beenleigh", "Browns Plains"],
+      "property_type": "House",
+      "bedrooms_min": 3,
+      "service_package": "Investment Property Search",
+      "fee": 7500.00,
+      "status": "Completed - Settled",
+      "agent": "Jennifer Wong"
+    },
+    {
+      "client_id": "CLI-008",
+      "name": "Andrew & Lisa Foster",
+      "type": "Residential Buyer",
+      "email": "andrew.f@email.com",
+      "phone": "+61 489 678 901",
+      "budget_min": 650000.00,
+      "budget_max": 800000.00,
+      "preferred_suburbs": ["Everton Park", "Mitchelton", "Stafford"],
+      "property_type": "House",
+      "bedrooms_min": 3,
+      "service_package": "Standard Search & Purchase",
+      "fee": 10500.00,
+      "status": "Under Contract",
+      "agent": "David Foster"
+    },
+    {
+      "client_id": "CLI-009",
+      "name": "Michael Chen",
+      "type": "Investment Buyer",
+      "email": "michael.c@email.com",
+      "phone": "+61 490 789 012",
+      "budget_min": 500000.00,
+      "budget_max": 650000.00,
+      "preferred_suburbs": ["Sunnybank", "Runcorn", "Macgregor"],
+      "property_type": "Apartment or Townhouse",
+      "bedrooms_min": 2,
+      "service_package": "Investment Property Search",
+      "fee": 8500.00,
+      "status": "Active Search",
+      "agent": "Jennifer Wong"
+    }
+  ],
+  "searches": [
+    {
+      "search_id": "SEARCH-2024-089",
+      "client_id": "CLI-001",
+      "client_name": "Sarah & Michael Henderson",
+      "search_type": "Residential Purchase",
+      "start_date": "2024-09-15",
+      "status": "Active",
+      "properties_inspected": 18,
+      "properties_shortlisted": 4,
+      "offers_made": 1,
+      "buyer_agent": "David Foster",
+      "notes": "Looking for character home with renovation potential. Financing approved."
+    },
+    {
+      "search_id": "SEARCH-2024-102",
+      "client_id": "CLI-002",
+      "client_name": "Emma Thompson",
+      "search_type": "Investment Purchase",
+      "start_date": "2024-08-20",
+      "status": "Under Contract",
+      "properties_inspected": 22,
+      "properties_shortlisted": 6,
+      "offers_made": 3,
+      "contract_property": "Unit 8/45 Main Street, Greenslopes",
+      "contract_price": 485000.00,
+      "settlement_date": "2024-12-10",
+      "buyer_agent": "Jennifer Wong",
+      "notes": "Found suitable investment property. 5.2% rental yield. Settlement Dec 10."
+    },
+    {
+      "search_id": "SEARCH-2024-078",
+      "client_id": "CLI-003",
+      "client_name": "James Rodriguez",
+      "search_type": "First Home Purchase",
+      "start_date": "2024-07-10",
+      "status": "Completed",
+      "properties_inspected": 25,
+      "properties_shortlisted": 7,
+      "offers_made": 2,
+      "purchased_property": "34 Parkview Street, Ashgrove",
+      "purchase_price": 675000.00,
+      "settlement_date": "2024-10-15",
+      "buyer_agent": "David Foster",
+      "notes": "Successfully settled. Client very happy with outcome."
+    }
+  ],
+  "invoices": [
+    {
+      "invoice_id": "INV-2024-5678",
+      "client_id": "CLI-001",
+      "client_name": "Sarah & Michael Henderson",
+      "invoice_date": "2024-09-15",
+      "due_date": "2024-09-29",
+      "status": "Paid",
+      "payment_date": "2024-09-22",
+      "subtotal": 7500.00,
+      "gst": 750.00,
+      "total": 8250.00,
+      "description": "Buyers advocacy deposit - 50%",
+      "xero_invoice_id": "XERO-INV-5678",
+      "line_items": [
+        {
+          "description": "Deposit - Premium Search & Purchase Service",
+          "quantity": 1,
+          "unit_price": 7500.00,
+          "gst": 750.00,
+          "total": 8250.00
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-2024-5701",
+      "client_id": "CLI-002",
+      "client_name": "Emma Thompson",
+      "invoice_date": "2024-10-25",
+      "due_date": "Settlement",
+      "status": "Pending Settlement",
+      "payment_date": null,
+      "subtotal": 4250.00,
+      "gst": 425.00,
+      "total": 4675.00,
+      "description": "Buyers advocacy balance - 50%",
+      "xero_invoice_id": "XERO-INV-5701",
+      "line_items": [
+        {
+          "description": "Balance - Investment Property Search Service",
+          "quantity": 1,
+          "unit_price": 4250.00,
+          "gst": 425.00,
+          "total": 4675.00
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-2024-5723",
+      "client_id": "CLI-003",
+      "client_name": "James Rodriguez",
+      "invoice_date": "2024-10-20",
+      "due_date": "2024-11-19",
+      "status": "Paid",
+      "payment_date": "2024-11-05",
+      "subtotal": 4750.00,
+      "gst": 475.00,
+      "total": 5225.00,
+      "description": "Buyers advocacy balance - 50%",
+      "xero_invoice_id": "XERO-INV-5723",
+      "line_items": [
+        {
+          "description": "Balance - Standard Search & Purchase Service",
+          "quantity": 1,
+          "unit_price": 4750.00,
+          "gst": 475.00,
+          "total": 5225.00
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-2024-5745",
+      "client_id": "CLI-005",
+      "client_name": "Rebecca Foster",
+      "invoice_date": "2024-10-15",
+      "due_date": "2024-10-29",
+      "status": "Paid",
+      "payment_date": "2024-10-25",
+      "subtotal": 5500.00,
+      "gst": 550.00,
+      "total": 6050.00,
+      "description": "Auction bidding service - full payment",
+      "xero_invoice_id": "XERO-INV-5745",
+      "line_items": [
+        {
+          "description": "Auction Bidding Service - due diligence and bidding",
+          "quantity": 1,
+          "unit_price": 5500.00,
+          "gst": 550.00,
+          "total": 6050.00
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-2024-5612",
+      "client_id": "CLI-007",
+      "client_name": "Sophie Williams",
+      "invoice_date": "2024-09-20",
+      "due_date": "2024-10-20",
+      "status": "Paid",
+      "payment_date": "2024-10-15",
+      "subtotal": 3750.00,
+      "gst": 375.00,
+      "total": 4125.00,
+      "description": "Buyers advocacy balance - 50%",
+      "xero_invoice_id": "XERO-INV-5612",
+      "line_items": [
+        {
+          "description": "Balance - Investment Property Search Service",
+          "quantity": 1,
+          "unit_price": 3750.00,
+          "gst": 375.00,
+          "total": 4125.00
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-2024-5767",
+      "client_id": "CLI-008",
+      "client_name": "Andrew & Lisa Foster",
+      "invoice_date": "2024-10-28",
+      "due_date": "Settlement",
+      "status": "Pending Settlement",
+      "payment_date": null,
+      "subtotal": 5250.00,
+      "gst": 525.00,
+      "total": 5775.00,
+      "description": "Buyers advocacy balance - 50%",
+      "xero_invoice_id": "XERO-INV-5767",
+      "line_items": [
+        {
+          "description": "Balance - Standard Search & Purchase Service",
+          "quantity": 1,
+          "unit_price": 5250.00,
+          "gst": 525.00,
+          "total": 5775.00
+        }
+      ]
+    }
+  ],
+  "bills": [
+    {
+      "bill_id": "BILL-2024-9012",
+      "supplier": "CoreLogic",
+      "bill_date": "2024-10-01",
+      "due_date": "2024-10-31",
+      "status": "Paid",
+      "payment_date": "2024-10-15",
+      "subtotal": 895.00,
+      "gst": 89.50,
+      "total": 984.50,
+      "description": "Property data subscription - October",
+      "xero_bill_id": "XERO-BILL-9012",
+      "line_items": [
+        {
+          "description": "CoreLogic RP Data Professional subscription",
+          "quantity": 1,
+          "unit_price": 895.00,
+          "gst": 89.50,
+          "total": 984.50
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-9023",
+      "supplier": "Building & Pest Inspections QLD",
+      "bill_date": "2024-10-18",
+      "due_date": "2024-11-17",
+      "status": "Unpaid",
+      "payment_date": null,
+      "subtotal": 1285.00,
+      "gst": 128.50,
+      "total": 1413.50,
+      "description": "Building inspections - October properties",
+      "xero_bill_id": "XERO-BILL-9023",
+      "line_items": [
+        {
+          "description": "Building and pest inspections",
+          "quantity": 3,
+          "unit_price": 428.33,
+          "gst": 128.50,
+          "total": 1413.50
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-9034",
+      "supplier": "Queensland Conveyancing",
+      "bill_date": "2024-10-20",
+      "due_date": "2024-11-19",
+      "status": "Unpaid",
+      "payment_date": null,
+      "subtotal": 850.00,
+      "gst": 85.00,
+      "total": 935.00,
+      "description": "Contract review services",
+      "xero_bill_id": "XERO-BILL-9034",
+      "line_items": [
+        {
+          "description": "Legal contract reviews",
+          "quantity": 2,
+          "unit_price": 425.00,
+          "gst": 85.00,
+          "total": 935.00
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-9045",
+      "supplier": "HubSpot",
+      "bill_date": "2024-10-01",
+      "due_date": "2024-10-31",
+      "status": "Paid",
+      "payment_date": "2024-10-15",
+      "subtotal": 385.00,
+      "gst": 38.50,
+      "total": 423.50,
+      "description": "CRM software - October",
+      "xero_bill_id": "XERO-BILL-9045",
+      "line_items": [
+        {
+          "description": "HubSpot Professional subscription",
+          "quantity": 1,
+          "unit_price": 385.00,
+          "gst": 38.50,
+          "total": 423.50
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-9056",
+      "supplier": "DocuSign",
+      "bill_date": "2024-10-01",
+      "due_date": "2024-10-31",
+      "status": "Paid",
+      "payment_date": "2024-10-15",
+      "subtotal": 145.00,
+      "gst": 14.50,
+      "total": 159.50,
+      "description": "Digital signature software - October",
+      "xero_bill_id": "XERO-BILL-9056",
+      "line_items": [
+        {
+          "description": "DocuSign subscription",
+          "quantity": 1,
+          "unit_price": 145.00,
+          "gst": 14.50,
+          "total": 159.50
+        }
+      ]
+    }
+  ],
+  "leads": [
+    {
+      "lead_id": "LEAD-2024-901",
+      "name": "Michael & Jennifer Patterson",
+      "type": "Residential Buyer",
+      "email": "michael.p@email.com",
+      "phone": "+61 421 890 123",
+      "budget_max": 1300000.00,
+      "preferred_suburbs": ["Hamilton", "Bulimba"],
+      "source": "Website Inquiry",
+      "date_created": "2024-10-25",
+      "status": "Consultation Booked",
+      "notes": "Looking for waterfront property. Initial consultation scheduled Nov 2.",
+      "last_contact": "2024-10-26",
+      "next_followup": "2024-11-02"
+    },
+    {
+      "lead_id": "LEAD-2024-902",
+      "name": "Lisa Chen Investment Group",
+      "type": "Investment Buyer",
+      "contact_person": "Lisa Chen",
+      "email": "lisa@investment.com.au",
+      "phone": "+61 432 901 234",
+      "budget_max": 2500000.00,
+      "source": "Referral",
+      "date_created": "2024-10-27",
+      "status": "Proposal Sent",
+      "notes": "Looking for portfolio of investment properties. Sent proposal 28/10.",
+      "last_contact": "2024-10-28",
+      "next_followup": "2024-11-05"
+    },
+    {
+      "lead_id": "LEAD-2024-903",
+      "name": "Tony Rodriguez",
+      "type": "First Home Buyer",
+      "email": "tony.r@email.com",
+      "phone": "+61 443 012 345",
+      "budget_max": 650000.00,
+      "preferred_suburbs": ["Calamvale", "Sunnybank Hills"],
+      "source": "Voice Agent - Inbound Call",
+      "date_created": "2024-10-28",
+      "status": "Initial Contact",
+      "notes": "First home buyer. Pre-approval in progress. Sending information pack.",
+      "last_contact": "2024-10-28",
+      "next_followup": "2024-11-03"
+    },
+    {
+      "lead_id": "LEAD-2024-904",
+      "name": "Brisbane Commercial Trust",
+      "type": "Commercial Buyer",
+      "contact_person": "Andrew Foster",
+      "email": "andrew@commercial.com.au",
+      "phone": "+61 454 123 456",
+      "budget_max": 5000000.00,
+      "source": "LinkedIn",
+      "date_created": "2024-10-29",
+      "status": "Meeting Scheduled",
+      "notes": "Looking for commercial office building. Meeting scheduled Nov 7.",
+      "last_contact": "2024-10-30",
+      "next_followup": "2024-11-07"
+    }
+  ],
+  "staff": [
+    {
+      "staff_id": "STAFF-001",
+      "name": "David Foster",
+      "role": "Director / Senior Buyers Agent",
+      "email": "david@propertysearchpartners.com.au",
+      "phone": "+61 421 012 345",
+      "qualifications": ["Real Estate Licence QLD", "Certified Practicing Valuer", "Property Investment Advisor"],
+      "specializations": ["Residential Buyers Advocacy", "Auction Bidding", "Property Analysis"],
+      "active_clients": 12,
+      "ytd_purchases": 24500000.00,
+      "employment_start": "2016-04-01"
+    },
+    {
+      "staff_id": "STAFF-002",
+      "name": "Jennifer Wong",
+      "role": "Senior Buyers Agent",
+      "email": "jennifer@propertysearchpartners.com.au",
+      "phone": "+61 432 123 456",
+      "qualifications": ["Real Estate Licence QLD", "Commercial Property Specialist", "Investment Property Certified"],
+      "specializations": ["Investment Property", "Commercial Property", "Due Diligence"],
+      "active_clients": 10,
+      "ytd_purchases": 18750000.00,
+      "employment_start": "2018-08-15"
+    },
+    {
+      "staff_id": "STAFF-003",
+      "name": "Tom Anderson",
+      "role": "Buyers Agent",
+      "email": "tom@propertysearchpartners.com.au",
+      "phone": "+61 443 234 567",
+      "qualifications": ["Real Estate Licence QLD", "Property Investment Certificate"],
+      "specializations": ["First Home Buyers", "Property Search", "Market Research"],
+      "active_clients": 6,
+      "employment_start": "2021-03-10"
+    },
+    {
+      "staff_id": "STAFF-004",
+      "name": "Emma Rodriguez",
+      "role": "Research Analyst",
+      "email": "emma@propertysearchpartners.com.au",
+      "phone": "+61 454 345 678",
+      "qualifications": ["Bachelor of Property Economics", "Data Analysis Certification"],
+      "specializations": ["Market Research", "Property Analysis", "Data Analytics"],
+      "employment_type": "Full Time",
+      "employment_start": "2022-06-15"
+    },
+    {
+      "staff_id": "STAFF-005",
+      "name": "Sophie Martinez",
+      "role": "Client Services Manager",
+      "email": "sophie@propertysearchpartners.com.au",
+      "phone": "+61 465 456 789",
+      "qualifications": ["Cert IV Business Administration"],
+      "specializations": ["Client Relations", "Administration", "Coordination"],
+      "employment_type": "Full Time",
+      "employment_start": "2019-09-01"
+    }
+  ],
+  "onedrive_files": [
+    {
+      "file_id": "OD-SEARCH-089-001",
+      "search_id": "SEARCH-2024-089",
+      "file_name": "Henderson_Property_Shortlist.pdf",
+      "file_type": "Property Report",
+      "file_path": "/Searches/2024/Henderson/",
+      "upload_date": "2024-10-15",
+      "uploaded_by": "David Foster",
+      "description": "Shortlisted properties with detailed analysis",
+      "file_size": "8.4 MB"
+    },
+    {
+      "file_id": "OD-SEARCH-102-001",
+      "search_id": "SEARCH-2024-102",
+      "file_name": "Thompson_Due_Diligence_Report.pdf",
+      "file_type": "Due Diligence",
+      "file_path": "/Searches/2024/Thompson/",
+      "upload_date": "2024-10-10",
+      "uploaded_by": "Jennifer Wong",
+      "description": "Complete due diligence report for Greenslopes property",
+      "file_size": "4.2 MB"
+    },
+    {
+      "file_id": "OD-SEARCH-102-002",
+      "search_id": "SEARCH-2024-102",
+      "file_name": "Thompson_Building_Inspection.pdf",
+      "file_type": "Inspection Report",
+      "file_path": "/Searches/2024/Thompson/",
+      "upload_date": "2024-10-12",
+      "uploaded_by": "Jennifer Wong",
+      "description": "Building and pest inspection report",
+      "file_size": "2.8 MB"
+    },
+    {
+      "file_id": "OD-SEARCH-078-001",
+      "search_id": "SEARCH-2024-078",
+      "file_name": "Rodriguez_Settlement_Documents.pdf",
+      "file_type": "Settlement",
+      "file_path": "/Searches/2024/Rodriguez/",
+      "upload_date": "2024-10-15",
+      "uploaded_by": "David Foster",
+      "description": "Settlement documents and completion report",
+      "file_size": "3.6 MB"
+    },
+    {
+      "file_id": "OD-LICENSE-001",
+      "file_name": "Agency_Licences_2024.pdf",
+      "file_type": "Licences",
+      "file_path": "/Company/Licences/",
+      "upload_date": "2024-07-01",
+      "uploaded_by": "Sophie Martinez",
+      "description": "Real estate licences for all agents",
+      "file_size": "1.2 MB"
+    },
+    {
+      "file_id": "OD-INSURANCE-001",
+      "file_name": "Professional_Indemnity_Insurance_2024.pdf",
+      "file_type": "Insurance",
+      "file_path": "/Company/Insurance/",
+      "upload_date": "2024-07-01",
+      "uploaded_by": "David Foster",
+      "description": "$20M Professional Indemnity - Expires 30/06/2025",
+      "file_size": "789 KB"
+    }
+  ],
+  "metadata": {
+    "data_purpose": "11Labs Voice Agent Knowledge Base",
+    "business_type": "Buyers Agent / Property Search",
+    "data_format": "JSON",
+    "last_updated": "2024-10-30",
+    "currency": "AUD",
+    "timezone": "Australia/Brisbane",
+    "notes": "This is dummy data for demonstration purposes. All client names, property details, and financial information are fictional."
+  }
+}
+

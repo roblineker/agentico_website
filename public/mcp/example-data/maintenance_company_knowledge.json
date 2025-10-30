@@ -1,0 +1,727 @@
+{
+  "company": {
+    "name": "AllTrade Maintenance Services",
+    "abn": "34 456 789 012",
+    "email": "info@alltrade.com.au",
+    "phone": "+61 7 3678 9012",
+    "address": "Unit 8, 156 Industrial Estate Road, Yatala QLD 4207",
+    "website": "www.alltrade.com.au",
+    "specializations": ["Facility Maintenance", "Equipment Servicing", "Emergency Repairs", "Preventative Maintenance", "Asset Management"]
+  },
+  "integrations": {
+    "job_management": "ServiceM8",
+    "accounting": "Xero",
+    "asset_management": "Uptick",
+    "timesheets": "Deputy",
+    "voice_agent": "Custom Voice Agent",
+    "file_storage": "OneDrive",
+    "parts_inventory": "ServiceM8 Inventory"
+  },
+  "clients": [
+    {
+      "client_id": "CLI-001",
+      "name": "Brisbane Commercial Plaza",
+      "type": "Commercial Property",
+      "contact_person": "David Chen",
+      "email": "david.c@commercialplaza.com.au",
+      "phone": "+61 412 567 890",
+      "address": "123 Queen Street, Brisbane City QLD 4000",
+      "contract_type": "Monthly Maintenance Contract",
+      "contract_start": "2022-03-15",
+      "monthly_retainer": 4500.00,
+      "total_invoiced_ytd": 45000.00,
+      "account_manager": "Tony Rodriguez"
+    },
+    {
+      "client_id": "CLI-002",
+      "name": "FitZone Gym & Fitness",
+      "type": "Commercial Facility",
+      "contact_person": "Tony Wilson",
+      "email": "tony@fitzone.com.au",
+      "phone": "+61 423 678 901",
+      "address": "Unit 1-2, 200 Commercial Road, Newstead QLD 4006",
+      "contract_type": "Quarterly Maintenance",
+      "contract_start": "2023-06-10",
+      "quarterly_fee": 2850.00,
+      "total_invoiced_ytd": 11400.00,
+      "account_manager": "Tony Rodriguez"
+    },
+    {
+      "client_id": "CLI-003",
+      "name": "Brisbane Medical Centre",
+      "type": "Medical Facility",
+      "contact_person": "Dr. Rebecca Walsh",
+      "email": "r.walsh@medicalcentre.com.au",
+      "phone": "+61 434 789 012",
+      "address": "67 Medical Drive, Chermside QLD 4032",
+      "contract_type": "Monthly Maintenance Contract",
+      "contract_start": "2021-09-01",
+      "monthly_retainer": 3200.00,
+      "total_invoiced_ytd": 32000.00,
+      "account_manager": "Mark Stevens"
+    },
+    {
+      "client_id": "CLI-004",
+      "name": "Queensland Property Investments",
+      "type": "Property Portfolio",
+      "contact_person": "Sarah Mitchell",
+      "email": "sarah@qpi.com.au",
+      "phone": "+61 445 890 123",
+      "address": "Level 8, 200 Queen Street, Brisbane QLD 4000",
+      "contract_type": "Portfolio Maintenance",
+      "contract_start": "2020-11-15",
+      "monthly_retainer": 6500.00,
+      "total_invoiced_ytd": 65000.00,
+      "account_manager": "Tony Rodriguez"
+    },
+    {
+      "client_id": "CLI-005",
+      "name": "Emma Thompson - Rental Property",
+      "type": "Residential",
+      "email": "emma.t@email.com",
+      "phone": "+61 456 901 234",
+      "address": "78 Garden Street, Ashgrove QLD 4060",
+      "contract_type": "Ad-hoc Repairs",
+      "contract_start": "2024-03-20",
+      "monthly_retainer": 0.00,
+      "total_invoiced_ytd": 2450.00,
+      "account_manager": "Mark Stevens"
+    },
+    {
+      "client_id": "CLI-006",
+      "name": "Brisbane School District",
+      "type": "Educational Facilities",
+      "contact_person": "Principal Margaret Walsh",
+      "email": "m.walsh@schooldistrict.qld.edu.au",
+      "phone": "+61 467 012 345",
+      "address": "Multiple School Locations",
+      "contract_type": "Annual Service Contract",
+      "contract_start": "2022-01-10",
+      "annual_contract": 85000.00,
+      "total_invoiced_ytd": 63750.00,
+      "account_manager": "Tony Rodriguez"
+    },
+    {
+      "client_id": "CLI-007",
+      "name": "Napoli Pizza Kitchen",
+      "type": "Commercial Kitchen",
+      "contact_person": "Marco Rossi",
+      "email": "marco@napolipizza.com.au",
+      "phone": "+61 478 123 456",
+      "address": "Shop 12, 145 Main Road, Clayfield QLD 4011",
+      "contract_type": "Equipment Maintenance",
+      "contract_start": "2023-08-15",
+      "monthly_retainer": 850.00,
+      "total_invoiced_ytd": 8500.00,
+      "account_manager": "Mark Stevens"
+    },
+    {
+      "client_id": "CLI-008",
+      "name": "James Rodriguez - Emergency Repair",
+      "type": "Residential",
+      "email": "james.r@email.com",
+      "phone": "+61 489 234 567",
+      "address": "156 Riverside Drive, Hamilton QLD 4007",
+      "contract_type": "One-off Service",
+      "contract_start": "2024-10-15",
+      "monthly_retainer": 0.00,
+      "total_invoiced_ytd": 485.00,
+      "account_manager": "Mark Stevens"
+    },
+    {
+      "client_id": "CLI-009",
+      "name": "Brisbane Data Centre",
+      "type": "Data Centre",
+      "contact_person": "Tony Nguyen",
+      "email": "tony@bnedata.com.au",
+      "phone": "+61 490 345 678",
+      "address": "200 Technology Drive, Eight Mile Plains QLD 4113",
+      "contract_type": "24/7 Priority Service",
+      "contract_start": "2021-05-20",
+      "monthly_retainer": 8500.00,
+      "total_invoiced_ytd": 85000.00,
+      "account_manager": "Tony Rodriguez"
+    }
+  ],
+  "jobs": [
+    {
+      "job_id": "JOB-2024-5678",
+      "client_id": "CLI-001",
+      "client_name": "Brisbane Commercial Plaza",
+      "job_type": "Preventative Maintenance",
+      "status": "Completed",
+      "scheduled_date": "2024-10-28",
+      "completion_date": "2024-10-28",
+      "technician": "Mark Stevens",
+      "hours_worked": 6.5,
+      "description": "Monthly building maintenance inspection and minor repairs",
+      "parts_used": ["Air filters x 12", "Light bulbs LED x 8", "Door closer x 1"]
+    },
+    {
+      "job_id": "JOB-2024-5690",
+      "client_id": "CLI-003",
+      "client_name": "Brisbane Medical Centre",
+      "job_type": "HVAC Maintenance",
+      "status": "Completed",
+      "scheduled_date": "2024-10-25",
+      "completion_date": "2024-10-25",
+      "technician": "Jake Morrison",
+      "hours_worked": 4.0,
+      "description": "Quarterly HVAC system inspection and filter replacement",
+      "parts_used": ["HVAC filters x 6", "Refrigerant top-up"]
+    },
+    {
+      "job_id": "JOB-2024-5712",
+      "client_id": "CLI-008",
+      "client_name": "James Rodriguez - Emergency Repair",
+      "job_type": "Emergency Callout",
+      "status": "Completed",
+      "scheduled_date": "2024-10-15",
+      "completion_date": "2024-10-15",
+      "technician": "Luke Stevens",
+      "hours_worked": 2.5,
+      "description": "Emergency hot water system repair - burst relief valve",
+      "parts_used": ["Relief valve", "Pipe fittings"]
+    }
+  ],
+  "invoices": [
+    {
+      "invoice_id": "INV-2024-3456",
+      "client_id": "CLI-001",
+      "client_name": "Brisbane Commercial Plaza",
+      "invoice_date": "2024-10-31",
+      "due_date": "2024-11-30",
+      "status": "Sent",
+      "payment_date": null,
+      "subtotal": 4500.00,
+      "gst": 450.00,
+      "total": 4950.00,
+      "description": "Monthly maintenance contract - October 2024",
+      "xero_invoice_id": "XERO-INV-3456",
+      "line_items": [
+        {
+          "description": "Monthly preventative maintenance service",
+          "quantity": 1,
+          "unit_price": 4500.00,
+          "gst": 450.00,
+          "total": 4950.00
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-2024-3478",
+      "client_id": "CLI-003",
+      "client_name": "Brisbane Medical Centre",
+      "invoice_date": "2024-10-31",
+      "due_date": "2024-11-30",
+      "status": "Sent",
+      "payment_date": null,
+      "subtotal": 3200.00,
+      "gst": 320.00,
+      "total": 3520.00,
+      "description": "Monthly maintenance contract - October 2024",
+      "xero_invoice_id": "XERO-INV-3478",
+      "line_items": [
+        {
+          "description": "Monthly facility maintenance service",
+          "quantity": 1,
+          "unit_price": 3200.00,
+          "gst": 320.00,
+          "total": 3520.00
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-2024-3490",
+      "client_id": "CLI-004",
+      "client_name": "Queensland Property Investments",
+      "invoice_date": "2024-10-31",
+      "due_date": "2024-11-30",
+      "status": "Sent",
+      "payment_date": null,
+      "subtotal": 6500.00,
+      "gst": 650.00,
+      "total": 7150.00,
+      "description": "Portfolio maintenance - October 2024",
+      "xero_invoice_id": "XERO-INV-3490",
+      "line_items": [
+        {
+          "description": "Property portfolio maintenance - 15 properties",
+          "quantity": 1,
+          "unit_price": 6500.00,
+          "gst": 650.00,
+          "total": 7150.00
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-2024-3412",
+      "client_id": "CLI-005",
+      "client_name": "Emma Thompson - Rental Property",
+      "invoice_date": "2024-09-20",
+      "due_date": "2024-10-20",
+      "status": "Paid",
+      "payment_date": "2024-10-15",
+      "subtotal": 685.00,
+      "gst": 68.50,
+      "total": 753.50,
+      "description": "Plumbing repairs and tap replacement",
+      "xero_invoice_id": "XERO-INV-3412",
+      "line_items": [
+        {
+          "description": "Labour - plumbing repairs",
+          "quantity": 3.5,
+          "unit_price": 125.00,
+          "gst": 43.75,
+          "total": 481.25
+        },
+        {
+          "description": "Parts - taps and fittings",
+          "quantity": 1,
+          "unit_price": 247.50,
+          "gst": 24.75,
+          "total": 272.25
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-2024-3501",
+      "client_id": "CLI-007",
+      "client_name": "Napoli Pizza Kitchen",
+      "invoice_date": "2024-10-31",
+      "due_date": "2024-11-30",
+      "status": "Sent",
+      "payment_date": null,
+      "subtotal": 850.00,
+      "gst": 85.00,
+      "total": 935.00,
+      "description": "Commercial kitchen equipment maintenance - October",
+      "xero_invoice_id": "XERO-INV-3501",
+      "line_items": [
+        {
+          "description": "Monthly equipment servicing and inspection",
+          "quantity": 1,
+          "unit_price": 850.00,
+          "gst": 85.00,
+          "total": 935.00
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-2024-3523",
+      "client_id": "CLI-008",
+      "client_name": "James Rodriguez - Emergency Repair",
+      "invoice_date": "2024-10-15",
+      "due_date": "2024-10-29",
+      "status": "Paid",
+      "payment_date": "2024-10-22",
+      "subtotal": 485.00,
+      "gst": 48.50,
+      "total": 533.50,
+      "description": "Emergency hot water system repair",
+      "xero_invoice_id": "XERO-INV-3523",
+      "line_items": [
+        {
+          "description": "Emergency callout and labour",
+          "quantity": 2.5,
+          "unit_price": 145.00,
+          "gst": 36.25,
+          "total": 398.75
+        },
+        {
+          "description": "Parts - relief valve and fittings",
+          "quantity": 1,
+          "unit_price": 122.50,
+          "gst": 12.25,
+          "total": 134.75
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-2024-3545",
+      "client_id": "CLI-009",
+      "client_name": "Brisbane Data Centre",
+      "invoice_date": "2024-10-31",
+      "due_date": "2024-11-30",
+      "status": "Sent",
+      "payment_date": null,
+      "subtotal": 8500.00,
+      "gst": 850.00,
+      "total": 9350.00,
+      "description": "24/7 priority service contract - October 2024",
+      "xero_invoice_id": "XERO-INV-3545",
+      "line_items": [
+        {
+          "description": "Monthly 24/7 priority maintenance service",
+          "quantity": 1,
+          "unit_price": 8500.00,
+          "gst": 850.00,
+          "total": 9350.00
+        }
+      ]
+    }
+  ],
+  "bills": [
+    {
+      "bill_id": "BILL-2024-7890",
+      "supplier": "Reece Plumbing - Yatala",
+      "bill_date": "2024-10-15",
+      "due_date": "2024-11-14",
+      "status": "Unpaid",
+      "payment_date": null,
+      "subtotal": 2850.00,
+      "gst": 285.00,
+      "total": 3135.00,
+      "description": "Plumbing parts and supplies - October",
+      "xero_bill_id": "XERO-BILL-7890",
+      "line_items": [
+        {
+          "description": "Assorted taps and fixtures",
+          "quantity": 1,
+          "unit_price": 1450.00,
+          "gst": 145.00,
+          "total": 1595.00
+        },
+        {
+          "description": "Pipe fittings and valves",
+          "quantity": 1,
+          "unit_price": 985.00,
+          "gst": 98.50,
+          "total": 1083.50
+        },
+        {
+          "description": "Sealants and consumables",
+          "quantity": 1,
+          "unit_price": 415.00,
+          "gst": 41.50,
+          "total": 456.50
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-7912",
+      "supplier": "Electrical Wholesalers",
+      "bill_date": "2024-10-18",
+      "due_date": "2024-11-17",
+      "status": "Unpaid",
+      "payment_date": null,
+      "subtotal": 1650.00,
+      "gst": 165.00,
+      "total": 1815.00,
+      "description": "Electrical parts and supplies",
+      "xero_bill_id": "XERO-BILL-7912",
+      "line_items": [
+        {
+          "description": "LED light bulbs - commercial grade",
+          "quantity": 50,
+          "unit_price": 18.50,
+          "gst": 92.50,
+          "total": 1017.50
+        },
+        {
+          "description": "Switches and power points",
+          "quantity": 1,
+          "unit_price": 725.00,
+          "gst": 72.50,
+          "total": 797.50
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-7923",
+      "supplier": "HVAC Parts Supplier",
+      "bill_date": "2024-10-20",
+      "due_date": "2024-11-19",
+      "status": "Unpaid",
+      "payment_date": null,
+      "subtotal": 1285.00,
+      "gst": 128.50,
+      "total": 1413.50,
+      "description": "HVAC filters and parts",
+      "xero_bill_id": "XERO-BILL-7923",
+      "line_items": [
+        {
+          "description": "Commercial HVAC filters",
+          "quantity": 24,
+          "unit_price": 42.50,
+          "gst": 102.00,
+          "total": 1122.00
+        },
+        {
+          "description": "Refrigerant gas",
+          "quantity": 1,
+          "unit_price": 265.00,
+          "gst": 26.50,
+          "total": 291.50
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-7934",
+      "supplier": "ServiceM8",
+      "bill_date": "2024-10-01",
+      "due_date": "2024-10-31",
+      "status": "Paid",
+      "payment_date": "2024-10-15",
+      "subtotal": 285.00,
+      "gst": 28.50,
+      "total": 313.50,
+      "description": "Job management software - October",
+      "xero_bill_id": "XERO-BILL-7934",
+      "line_items": [
+        {
+          "description": "ServiceM8 monthly subscription - 8 users",
+          "quantity": 1,
+          "unit_price": 285.00,
+          "gst": 28.50,
+          "total": 313.50
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-7945",
+      "supplier": "Uptick",
+      "bill_date": "2024-10-01",
+      "due_date": "2024-10-31",
+      "status": "Paid",
+      "payment_date": "2024-10-15",
+      "subtotal": 195.00,
+      "gst": 19.50,
+      "total": 214.50,
+      "description": "Asset management software - October",
+      "xero_bill_id": "XERO-BILL-7945",
+      "line_items": [
+        {
+          "description": "Uptick monthly subscription",
+          "quantity": 1,
+          "unit_price": 195.00,
+          "gst": 19.50,
+          "total": 214.50
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-7956",
+      "supplier": "BP Fuel Card",
+      "bill_date": "2024-10-25",
+      "due_date": "2024-11-24",
+      "status": "Unpaid",
+      "payment_date": null,
+      "subtotal": 1850.00,
+      "gst": 185.00,
+      "total": 2035.00,
+      "description": "Fuel - October",
+      "xero_bill_id": "XERO-BILL-7956",
+      "line_items": [
+        {
+          "description": "Fuel for service vehicles - October",
+          "quantity": 1,
+          "unit_price": 1850.00,
+          "gst": 185.00,
+          "total": 2035.00
+        }
+      ]
+    }
+  ],
+  "leads": [
+    {
+      "lead_id": "LEAD-2024-789",
+      "name": "Brisbane Shopping Centre",
+      "type": "Commercial Property",
+      "contact_person": "Michael Patterson",
+      "email": "m.patterson@shopping.com.au",
+      "phone": "+61 421 678 901",
+      "source": "Referral",
+      "date_created": "2024-10-24",
+      "status": "Proposal Sent",
+      "service_interested": "Monthly Maintenance Contract",
+      "estimated_annual_value": 72000.00,
+      "notes": "Large shopping centre needs full facility maintenance. Proposal sent 25/10.",
+      "last_contact": "2024-10-25",
+      "next_followup": "2024-11-05"
+    },
+    {
+      "lead_id": "LEAD-2024-790",
+      "name": "Queensland Industrial Park",
+      "type": "Industrial",
+      "contact_person": "Sophie Williams",
+      "email": "sophie@industrial.com.au",
+      "phone": "+61 432 789 012",
+      "source": "Cold Outreach",
+      "date_created": "2024-10-26",
+      "status": "Meeting Scheduled",
+      "service_interested": "Warehouse Maintenance",
+      "estimated_annual_value": 48000.00,
+      "notes": "Multiple warehouses need maintenance services. Meeting scheduled Nov 7.",
+      "last_contact": "2024-10-27",
+      "next_followup": "2024-11-07"
+    },
+    {
+      "lead_id": "LEAD-2024-791",
+      "name": "Carlos Martinez - Property Manager",
+      "type": "Property Portfolio",
+      "email": "carlos.m@property.com.au",
+      "phone": "+61 443 890 123",
+      "source": "Voice Agent - Inbound Call",
+      "date_created": "2024-10-28",
+      "status": "Initial Contact",
+      "service_interested": "Multi-property Maintenance",
+      "estimated_annual_value": 36000.00,
+      "notes": "Property manager with 8 properties. Sending capability statement.",
+      "last_contact": "2024-10-28",
+      "next_followup": "2024-11-02"
+    },
+    {
+      "lead_id": "LEAD-2024-792",
+      "name": "Brisbane Tech Hub",
+      "type": "Commercial Office",
+      "contact_person": "Lisa Chen",
+      "email": "lisa@techhub.com.au",
+      "phone": "+61 454 901 234",
+      "source": "Website Inquiry",
+      "date_created": "2024-10-29",
+      "status": "Quote Preparation",
+      "service_interested": "Office Maintenance",
+      "estimated_annual_value": 28000.00,
+      "notes": "New office space needs maintenance provider. Preparing detailed quote.",
+      "last_contact": "2024-10-29",
+      "next_followup": "2024-11-03"
+    }
+  ],
+  "staff": [
+    {
+      "staff_id": "STAFF-001",
+      "name": "Tony Rodriguez",
+      "role": "Owner / Operations Manager",
+      "email": "tony@alltrade.com.au",
+      "phone": "+61 421 890 123",
+      "qualifications": ["Trade Certificate - Electrical", "Trade Certificate - Plumbing", "Business Management"],
+      "specializations": ["Facility Management", "Client Relations", "Contract Management"],
+      "employment_start": "2017-06-01"
+    },
+    {
+      "staff_id": "STAFF-002",
+      "name": "Mark Stevens",
+      "role": "Lead Technician",
+      "email": "mark@alltrade.com.au",
+      "phone": "+61 432 901 234",
+      "qualifications": ["Trade Certificate - Plumbing", "Electrical Licence", "White Card"],
+      "specializations": ["Plumbing", "General Maintenance", "HVAC"],
+      "employment_type": "Full Time",
+      "hourly_rate": 58.00,
+      "employment_start": "2018-02-15"
+    },
+    {
+      "staff_id": "STAFF-003",
+      "name": "Jake Morrison",
+      "role": "Maintenance Technician",
+      "email": "jake@alltrade.com.au",
+      "phone": "+61 443 012 345",
+      "qualifications": ["Trade Certificate - HVAC", "Refrigerant Handling Licence", "White Card"],
+      "specializations": ["HVAC", "Refrigeration", "Air Conditioning"],
+      "employment_type": "Full Time",
+      "hourly_rate": 55.00,
+      "employment_start": "2019-08-10"
+    },
+    {
+      "staff_id": "STAFF-004",
+      "name": "Luke Stevens",
+      "role": "Maintenance Technician",
+      "email": "luke@alltrade.com.au",
+      "phone": "+61 454 123 456",
+      "qualifications": ["Trade Certificate - Electrical", "White Card"],
+      "specializations": ["Electrical", "General Maintenance"],
+      "employment_type": "Full Time",
+      "hourly_rate": 52.00,
+      "employment_start": "2020-05-20"
+    },
+    {
+      "staff_id": "STAFF-005",
+      "name": "Emma Rodriguez",
+      "role": "Technician / Apprentice",
+      "email": "emma@alltrade.com.au",
+      "phone": "+61 465 234 567",
+      "qualifications": ["Currently completing Electrical Apprenticeship", "White Card"],
+      "specializations": ["General Maintenance", "Learning Electrical"],
+      "employment_type": "Full Time",
+      "hourly_rate": 32.00,
+      "employment_start": "2022-01-15"
+    },
+    {
+      "staff_id": "STAFF-006",
+      "name": "Jennifer Kim",
+      "role": "Office Manager",
+      "email": "jennifer@alltrade.com.au",
+      "phone": "+61 476 345 678",
+      "qualifications": ["Cert IV Business Administration", "Xero Certified"],
+      "specializations": ["Administration", "Scheduling", "Customer Service"],
+      "employment_type": "Part Time",
+      "hourly_rate": 32.00,
+      "employment_start": "2019-09-01"
+    }
+  ],
+  "onedrive_files": [
+    {
+      "file_id": "OD-LICENSE-001",
+      "file_name": "Electrical_Plumbing_Licences.pdf",
+      "file_type": "Licences",
+      "file_path": "/Compliance/Licences/",
+      "upload_date": "2024-07-01",
+      "uploaded_by": "Tony Rodriguez",
+      "description": "Current trade licences for all staff",
+      "file_size": "1.2 MB"
+    },
+    {
+      "file_id": "OD-CLIENT-001",
+      "client_id": "CLI-001",
+      "file_name": "Commercial_Plaza_Service_Agreement.pdf",
+      "file_type": "Contract",
+      "file_path": "/Contracts/Active/",
+      "upload_date": "2022-03-15",
+      "uploaded_by": "Tony Rodriguez",
+      "description": "Signed monthly maintenance contract",
+      "file_size": "890 KB"
+    },
+    {
+      "file_id": "OD-ASSET-001",
+      "client_id": "CLI-009",
+      "file_name": "Data_Centre_Asset_Register.xlsx",
+      "file_type": "Asset Register",
+      "file_path": "/Assets/Brisbane Data Centre/",
+      "upload_date": "2024-06-15",
+      "uploaded_by": "Mark Stevens",
+      "description": "Equipment and asset tracking",
+      "file_size": "345 KB"
+    },
+    {
+      "file_id": "OD-INSURANCE-001",
+      "file_name": "Public_Liability_Insurance_2024.pdf",
+      "file_type": "Insurance",
+      "file_path": "/Compliance/Insurance/",
+      "upload_date": "2024-07-01",
+      "uploaded_by": "Tony Rodriguez",
+      "description": "$20M Public Liability - Expires 30/06/2025",
+      "file_size": "678 KB"
+    },
+    {
+      "file_id": "OD-SAFETY-001",
+      "file_name": "Safety_Management_System.pdf",
+      "file_type": "Safety Documentation",
+      "file_path": "/Compliance/Safety/",
+      "upload_date": "2024-01-15",
+      "uploaded_by": "Tony Rodriguez",
+      "description": "Company safety management system and procedures",
+      "file_size": "2.4 MB"
+    }
+  ],
+  "metadata": {
+    "data_purpose": "11Labs Voice Agent Knowledge Base",
+    "business_type": "Maintenance Services Company",
+    "data_format": "JSON",
+    "last_updated": "2024-10-30",
+    "currency": "AUD",
+    "timezone": "Australia/Brisbane",
+    "notes": "This is dummy data for demonstration purposes. All client names, financial data, and job information are fictional."
+  }
+}
+

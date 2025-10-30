@@ -1,0 +1,690 @@
+{
+  "company": {
+    "name": "Brisbane Prestige Realty",
+    "abn": "45 567 890 123",
+    "email": "info@brisbaneprestige.com.au",
+    "phone": "+61 7 3789 0123",
+    "address": "Level 3, 250 Queen Street, Brisbane QLD 4000",
+    "website": "www.brisbaneprestige.com.au",
+    "specializations": ["Property Sales", "Property Management", "Rental Management", "Investment Properties", "Commercial Real Estate"]
+  },
+  "integrations": {
+    "crm": "REI Forms Live",
+    "accounting": "Xero",
+    "trust_accounting": "MRI Software",
+    "listings": "realestate.com.au, Domain",
+    "voice_agent": "Custom Voice Agent",
+    "file_storage": "OneDrive",
+    "property_management": "PropertyTree",
+    "inspections": "Inspect Real Estate"
+  },
+  "clients": [
+    {
+      "client_id": "CLI-001",
+      "name": "Sarah & Michael Henderson",
+      "type": "Vendor",
+      "email": "sarah.henderson@email.com",
+      "phone": "+61 412 678 901",
+      "property_address": "78 Hillside Crescent, Bardon QLD 4065",
+      "listing_price": 1250000.00,
+      "commission_rate": 2.5,
+      "listing_date": "2024-09-15",
+      "status": "Under Contract",
+      "agent": "David Chen"
+    },
+    {
+      "client_id": "CLI-002",
+      "name": "Emma Thompson - Investment Portfolio",
+      "type": "Property Management",
+      "email": "emma.t@email.com",
+      "phone": "+61 423 789 012",
+      "properties_managed": 3,
+      "total_rental_income": 2850.00,
+      "management_fee_rate": 7.5,
+      "relationship_start": "2022-03-15",
+      "status": "Active",
+      "agent": "Lisa Park"
+    },
+    {
+      "client_id": "CLI-003",
+      "name": "James Rodriguez",
+      "type": "Buyer",
+      "email": "james.r@email.com",
+      "phone": "+61 434 890 123",
+      "budget_max": 850000.00,
+      "preferred_suburbs": ["Paddington", "Red Hill", "Ashgrove"],
+      "property_type": "House",
+      "status": "Active Buyer",
+      "agent": "David Chen"
+    },
+    {
+      "client_id": "CLI-004",
+      "name": "Brisbane Property Investments Pty Ltd",
+      "type": "Commercial Client",
+      "contact_person": "Tony Nguyen",
+      "email": "tony@bpi.com.au",
+      "phone": "+61 445 901 234",
+      "properties_owned": 8,
+      "properties_managed": 8,
+      "relationship_start": "2020-06-10",
+      "status": "Active",
+      "agent": "Jennifer Wong"
+    },
+    {
+      "client_id": "CLI-005",
+      "name": "Rebecca Foster",
+      "type": "Vendor",
+      "email": "rebecca.f@email.com",
+      "phone": "+61 456 012 345",
+      "property_address": "Unit 15/89 Ferry Road, West End QLD 4101",
+      "listing_price": 485000.00,
+      "commission_rate": 2.5,
+      "listing_date": "2024-10-01",
+      "status": "Active Listing",
+      "agent": "Lisa Park"
+    },
+    {
+      "client_id": "CLI-006",
+      "name": "Carlos & Maria Martinez",
+      "type": "Tenant",
+      "email": "carlos.m@email.com",
+      "phone": "+61 467 123 456",
+      "rental_property": "23 Parkview Terrace, Chapel Hill QLD 4069",
+      "weekly_rent": 650.00,
+      "lease_start": "2024-06-15",
+      "lease_end": "2025-06-14",
+      "status": "Active Tenancy",
+      "agent": "Lisa Park"
+    },
+    {
+      "client_id": "CLI-007",
+      "name": "Sophie Williams",
+      "type": "Landlord",
+      "email": "sophie.w@email.com",
+      "phone": "+61 478 234 567",
+      "property_address": "34 Bushland Drive, The Gap QLD 4061",
+      "weekly_rent": 650.00,
+      "management_fee_rate": 7.5,
+      "relationship_start": "2024-05-20",
+      "status": "Active",
+      "agent": "Lisa Park"
+    },
+    {
+      "client_id": "CLI-008",
+      "name": "Andrew & Jennifer Foster",
+      "type": "Buyer",
+      "email": "andrew.f@email.com",
+      "phone": "+61 489 345 678",
+      "budget_max": 1500000.00,
+      "preferred_suburbs": ["Hamilton", "Ascot", "Clayfield"],
+      "property_type": "House",
+      "status": "Active Buyer",
+      "agent": "David Chen"
+    },
+    {
+      "client_id": "CLI-009",
+      "name": "Lisa Chen Property Trust",
+      "type": "Property Management",
+      "contact_person": "Lisa Chen",
+      "email": "lisa.chen@email.com",
+      "phone": "+61 490 456 789",
+      "properties_managed": 5,
+      "total_rental_income": 4250.00,
+      "management_fee_rate": 7.0,
+      "relationship_start": "2023-08-10",
+      "status": "Active",
+      "agent": "Jennifer Wong"
+    }
+  ],
+  "listings": [
+    {
+      "listing_id": "LIST-2024-156",
+      "property_address": "78 Hillside Crescent, Bardon QLD 4065",
+      "vendor": "Sarah & Michael Henderson",
+      "listing_price": 1250000.00,
+      "property_type": "House",
+      "bedrooms": 4,
+      "bathrooms": 2,
+      "parking": 2,
+      "land_size": 607,
+      "listing_date": "2024-09-15",
+      "status": "Under Contract",
+      "contract_price": 1285000.00,
+      "settlement_date": "2024-12-15",
+      "listing_agent": "David Chen",
+      "commission_rate": 2.5,
+      "estimated_commission": 32125.00
+    },
+    {
+      "listing_id": "LIST-2024-189",
+      "property_address": "Unit 15/89 Ferry Road, West End QLD 4101",
+      "vendor": "Rebecca Foster",
+      "listing_price": 485000.00,
+      "property_type": "Apartment",
+      "bedrooms": 2,
+      "bathrooms": 1,
+      "parking": 1,
+      "listing_date": "2024-10-01",
+      "status": "Active",
+      "contract_price": null,
+      "settlement_date": null,
+      "listing_agent": "Lisa Park",
+      "commission_rate": 2.5,
+      "estimated_commission": 12125.00
+    },
+    {
+      "listing_id": "LIST-2024-201",
+      "property_address": "45 Commercial Road, Newstead QLD 4006",
+      "vendor": "Brisbane Property Investments Pty Ltd",
+      "listing_price": 2850000.00,
+      "property_type": "Commercial",
+      "floor_area": 450,
+      "listing_date": "2024-10-15",
+      "status": "Active",
+      "contract_price": null,
+      "settlement_date": null,
+      "listing_agent": "Jennifer Wong",
+      "commission_rate": 2.0,
+      "estimated_commission": 57000.00
+    }
+  ],
+  "rentals": [
+    {
+      "rental_id": "RENT-2024-234",
+      "property_address": "23 Parkview Terrace, Chapel Hill QLD 4069",
+      "landlord": "Sophie Williams",
+      "tenant": "Carlos & Maria Martinez",
+      "weekly_rent": 650.00,
+      "bond_amount": 2600.00,
+      "lease_start": "2024-06-15",
+      "lease_end": "2025-06-14",
+      "status": "Active",
+      "property_manager": "Lisa Park",
+      "management_fee_rate": 7.5
+    },
+    {
+      "rental_id": "RENT-2023-456",
+      "property_address": "78 Garden Street, Ashgrove QLD 4060",
+      "landlord": "Emma Thompson - Investment Portfolio",
+      "tenant": "Current Tenant",
+      "weekly_rent": 750.00,
+      "bond_amount": 3000.00,
+      "lease_start": "2023-09-01",
+      "lease_end": "2024-12-31",
+      "status": "Active",
+      "property_manager": "Lisa Park",
+      "management_fee_rate": 7.5
+    },
+    {
+      "rental_id": "RENT-2024-567",
+      "property_address": "Unit 5/120 Creek Street, Brisbane City QLD 4000",
+      "landlord": "Lisa Chen Property Trust",
+      "tenant": "Current Tenant",
+      "weekly_rent": 950.00,
+      "bond_amount": 3800.00,
+      "lease_start": "2024-03-10",
+      "lease_end": "2025-03-09",
+      "status": "Active",
+      "property_manager": "Jennifer Wong",
+      "management_fee_rate": 7.0
+    }
+  ],
+  "invoices": [
+    {
+      "invoice_id": "INV-2024-4567",
+      "client_id": "CLI-001",
+      "client_name": "Sarah & Michael Henderson",
+      "invoice_date": "2024-11-20",
+      "due_date": "Settlement",
+      "status": "Pending Settlement",
+      "payment_date": null,
+      "subtotal": 32125.00,
+      "gst": 3212.50,
+      "total": 35337.50,
+      "description": "Sales commission - 78 Hillside Crescent",
+      "xero_invoice_id": "XERO-INV-4567",
+      "line_items": [
+        {
+          "description": "Sales commission 2.5% of $1,285,000",
+          "quantity": 1,
+          "unit_price": 32125.00,
+          "gst": 3212.50,
+          "total": 35337.50
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-2024-4589",
+      "client_id": "CLI-002",
+      "client_name": "Emma Thompson - Investment Portfolio",
+      "invoice_date": "2024-10-31",
+      "due_date": "2024-11-14",
+      "status": "Sent",
+      "payment_date": null,
+      "subtotal": 926.25,
+      "gst": 92.63,
+      "total": 1018.88,
+      "description": "Property management - October 2024",
+      "xero_invoice_id": "XERO-INV-4589",
+      "line_items": [
+        {
+          "description": "Management fees - 3 properties (7.5%)",
+          "quantity": 1,
+          "unit_price": 926.25,
+          "gst": 92.63,
+          "total": 1018.88
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-2024-4612",
+      "client_id": "CLI-007",
+      "client_name": "Sophie Williams",
+      "invoice_date": "2024-10-31",
+      "due_date": "2024-11-14",
+      "status": "Sent",
+      "payment_date": null,
+      "subtotal": 211.25,
+      "gst": 21.13,
+      "total": 232.38,
+      "description": "Property management - October 2024",
+      "xero_invoice_id": "XERO-INV-4612",
+      "line_items": [
+        {
+          "description": "Management fee - $650/week (7.5%)",
+          "quantity": 1,
+          "unit_price": 211.25,
+          "gst": 21.13,
+          "total": 232.38
+        }
+      ]
+    },
+    {
+      "invoice_id": "INV-2024-4634",
+      "client_id": "CLI-009",
+      "client_name": "Lisa Chen Property Trust",
+      "invoice_date": "2024-10-31",
+      "due_date": "2024-11-14",
+      "status": "Sent",
+      "payment_date": null,
+      "subtotal": 1288.33,
+      "gst": 128.83,
+      "total": 1417.16,
+      "description": "Property management - October 2024 - 5 properties",
+      "xero_invoice_id": "XERO-INV-4634",
+      "line_items": [
+        {
+          "description": "Management fees - 5 properties (7.0%)",
+          "quantity": 1,
+          "unit_price": 1288.33,
+          "gst": 128.83,
+          "total": 1417.16
+        }
+      ]
+    }
+  ],
+  "bills": [
+    {
+      "bill_id": "BILL-2024-8901",
+      "supplier": "realestate.com.au",
+      "bill_date": "2024-10-15",
+      "due_date": "2024-11-14",
+      "status": "Unpaid",
+      "payment_date": null,
+      "subtotal": 2850.00,
+      "gst": 285.00,
+      "total": 3135.00,
+      "description": "Property advertising - October listings",
+      "xero_bill_id": "XERO-BILL-8901",
+      "line_items": [
+        {
+          "description": "Premium listing - 78 Hillside Crescent",
+          "quantity": 1,
+          "unit_price": 1450.00,
+          "gst": 145.00,
+          "total": 1595.00
+        },
+        {
+          "description": "Premium listing - Unit 15/89 Ferry Road",
+          "quantity": 1,
+          "unit_price": 1400.00,
+          "gst": 140.00,
+          "total": 1540.00
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-8923",
+      "supplier": "Domain",
+      "bill_date": "2024-10-15",
+      "due_date": "2024-11-14",
+      "status": "Unpaid",
+      "payment_date": null,
+      "subtotal": 1850.00,
+      "gst": 185.00,
+      "total": 2035.00,
+      "description": "Property advertising - Domain listings",
+      "xero_bill_id": "XERO-BILL-8923",
+      "line_items": [
+        {
+          "description": "Premium listings - October",
+          "quantity": 2,
+          "unit_price": 925.00,
+          "gst": 185.00,
+          "total": 2035.00
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-8934",
+      "supplier": "Capture Moments Photography",
+      "bill_date": "2024-10-18",
+      "due_date": "2024-11-17",
+      "status": "Unpaid",
+      "payment_date": null,
+      "subtotal": 1200.00,
+      "gst": 120.00,
+      "total": 1320.00,
+      "description": "Property photography - October listings",
+      "xero_bill_id": "XERO-BILL-8934",
+      "line_items": [
+        {
+          "description": "Professional property photography",
+          "quantity": 3,
+          "unit_price": 400.00,
+          "gst": 120.00,
+          "total": 1320.00
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-8945",
+      "supplier": "PropertyTree",
+      "bill_date": "2024-10-01",
+      "due_date": "2024-10-31",
+      "status": "Paid",
+      "payment_date": "2024-10-15",
+      "subtotal": 385.00,
+      "gst": 38.50,
+      "total": 423.50,
+      "description": "Property management software - October",
+      "xero_bill_id": "XERO-BILL-8945",
+      "line_items": [
+        {
+          "description": "PropertyTree subscription",
+          "quantity": 1,
+          "unit_price": 385.00,
+          "gst": 38.50,
+          "total": 423.50
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-8956",
+      "supplier": "REI Forms Live",
+      "bill_date": "2024-10-01",
+      "due_date": "2024-10-31",
+      "status": "Paid",
+      "payment_date": "2024-10-15",
+      "subtotal": 295.00,
+      "gst": 29.50,
+      "total": 324.50,
+      "description": "CRM software - October",
+      "xero_bill_id": "XERO-BILL-8956",
+      "line_items": [
+        {
+          "description": "REI Forms Live subscription",
+          "quantity": 1,
+          "unit_price": 295.00,
+          "gst": 29.50,
+          "total": 324.50
+        }
+      ]
+    },
+    {
+      "bill_id": "BILL-2024-8967",
+      "supplier": "Sparkle Clean Services",
+      "bill_date": "2024-10-20",
+      "due_date": "2024-11-19",
+      "status": "Unpaid",
+      "payment_date": null,
+      "subtotal": 850.00,
+      "gst": 85.00,
+      "total": 935.00,
+      "description": "Property cleaning - vacant properties",
+      "xero_bill_id": "XERO-BILL-8967",
+      "line_items": [
+        {
+          "description": "End of lease cleans",
+          "quantity": 2,
+          "unit_price": 425.00,
+          "gst": 85.00,
+          "total": 935.00
+        }
+      ]
+    }
+  ],
+  "leads": [
+    {
+      "lead_id": "LEAD-2024-890",
+      "name": "Michael & Sophie Patterson",
+      "type": "Vendor",
+      "email": "michael.p@email.com",
+      "phone": "+61 421 789 012",
+      "property_address": "45 Riverside Drive, Hamilton QLD 4007",
+      "estimated_value": 1850000.00,
+      "source": "Website Appraisal",
+      "date_created": "2024-10-25",
+      "status": "Appraisal Booked",
+      "assigned_agent": "David Chen",
+      "notes": "Premium waterfront property. Appraisal scheduled Nov 3.",
+      "last_contact": "2024-10-26",
+      "next_followup": "2024-11-03"
+    },
+    {
+      "lead_id": "LEAD-2024-891",
+      "name": "Tony & Rebecca Rodriguez",
+      "type": "Buyer",
+      "email": "tony.r@email.com",
+      "phone": "+61 432 890 123",
+      "budget_max": 950000.00,
+      "preferred_suburbs": ["Bardon", "Paddington"],
+      "source": "Open Home",
+      "date_created": "2024-10-26",
+      "status": "Active Buyer",
+      "assigned_agent": "David Chen",
+      "notes": "First home buyers. Pre-approved finance. Looking to purchase in next 3 months.",
+      "last_contact": "2024-10-27",
+      "next_followup": "2024-11-02"
+    },
+    {
+      "lead_id": "LEAD-2024-892",
+      "name": "Jennifer Wong",
+      "type": "Landlord",
+      "email": "jennifer.w@email.com",
+      "phone": "+61 443 901 234",
+      "property_address": "89 Hill View Court, Bardon QLD 4065",
+      "source": "Voice Agent - Inbound Call",
+      "date_created": "2024-10-28",
+      "status": "Property Management Quote Sent",
+      "assigned_agent": "Lisa Park",
+      "notes": "Investment property currently self-managed. Sent PM proposal 29/10.",
+      "last_contact": "2024-10-29",
+      "next_followup": "2024-11-05"
+    },
+    {
+      "lead_id": "LEAD-2024-893",
+      "name": "Brisbane Commercial Developers",
+      "type": "Commercial Vendor",
+      "contact_person": "Andrew Foster",
+      "email": "andrew@developers.com.au",
+      "phone": "+61 454 012 345",
+      "property_address": "200 Industrial Drive, Yatala QLD 4207",
+      "estimated_value": 4500000.00,
+      "source": "Referral",
+      "date_created": "2024-10-29",
+      "status": "Proposal Sent",
+      "assigned_agent": "Jennifer Wong",
+      "notes": "Industrial warehouse. Sent commercial sales proposal. Meeting scheduled Nov 8.",
+      "last_contact": "2024-10-30",
+      "next_followup": "2024-11-08"
+    }
+  ],
+  "staff": [
+    {
+      "staff_id": "STAFF-001",
+      "name": "David Chen",
+      "role": "Principal / Sales Agent",
+      "email": "david@brisbaneprestige.com.au",
+      "phone": "+61 421 901 234",
+      "qualifications": ["Real Estate Licence QLD", "Auctioneer Licence"],
+      "specializations": ["Residential Sales", "Prestige Properties", "Auctions"],
+      "active_listings": 8,
+      "ytd_sales": 18500000.00,
+      "employment_start": "2015-01-15"
+    },
+    {
+      "staff_id": "STAFF-002",
+      "name": "Lisa Park",
+      "role": "Property Manager / Sales Agent",
+      "email": "lisa@brisbaneprestige.com.au",
+      "phone": "+61 432 012 345",
+      "qualifications": ["Real Estate Licence QLD", "Property Management Certification"],
+      "specializations": ["Property Management", "Rental Sales", "Tenant Relations"],
+      "properties_managed": 45,
+      "active_listings": 3,
+      "employment_start": "2017-06-10"
+    },
+    {
+      "staff_id": "STAFF-003",
+      "name": "Jennifer Wong",
+      "role": "Commercial Agent / Property Manager",
+      "email": "jennifer@brisbaneprestige.com.au",
+      "phone": "+61 443 123 456",
+      "qualifications": ["Real Estate Licence QLD", "Commercial Real Estate Certification"],
+      "specializations": ["Commercial Sales", "Commercial Leasing", "Investment Properties"],
+      "properties_managed": 28,
+      "active_listings": 5,
+      "employment_start": "2018-03-20"
+    },
+    {
+      "staff_id": "STAFF-004",
+      "name": "Tom Anderson",
+      "role": "Sales Associate",
+      "email": "tom@brisbaneprestige.com.au",
+      "phone": "+61 454 234 567",
+      "qualifications": ["Real Estate Registration QLD"],
+      "specializations": ["Sales Support", "Open Homes", "Buyer Relations"],
+      "employment_type": "Full Time",
+      "employment_start": "2022-08-15"
+    },
+    {
+      "staff_id": "STAFF-005",
+      "name": "Emma Rodriguez",
+      "role": "Property Manager Assistant",
+      "email": "emma@brisbaneprestige.com.au",
+      "phone": "+61 465 345 678",
+      "qualifications": ["Real Estate Registration QLD", "Property Management Certificate"],
+      "specializations": ["Property Inspections", "Tenant Liaison", "Maintenance Coordination"],
+      "employment_type": "Full Time",
+      "employment_start": "2023-02-10"
+    },
+    {
+      "staff_id": "STAFF-006",
+      "name": "Sophie Martinez",
+      "role": "Office Manager",
+      "email": "sophie@brisbaneprestige.com.au",
+      "phone": "+61 476 456 789",
+      "qualifications": ["Trust Account Management Certified"],
+      "specializations": ["Administration", "Trust Accounting", "Client Services"],
+      "employment_type": "Full Time",
+      "employment_start": "2019-09-01"
+    }
+  ],
+  "onedrive_files": [
+    {
+      "file_id": "OD-LIST-156-001",
+      "listing_id": "LIST-2024-156",
+      "file_name": "78_Hillside_Contract_Signed.pdf",
+      "file_type": "Contract",
+      "file_path": "/Listings/2024/Bardon/78 Hillside/",
+      "upload_date": "2024-10-25",
+      "uploaded_by": "David Chen",
+      "description": "Signed contract of sale",
+      "file_size": "2.1 MB"
+    },
+    {
+      "file_id": "OD-LIST-156-002",
+      "listing_id": "LIST-2024-156",
+      "file_name": "78_Hillside_Professional_Photos.zip",
+      "file_type": "Marketing",
+      "file_path": "/Listings/2024/Bardon/78 Hillside/",
+      "upload_date": "2024-09-20",
+      "uploaded_by": "David Chen",
+      "description": "Professional property photography",
+      "file_size": "45.6 MB"
+    },
+    {
+      "file_id": "OD-RENT-234-001",
+      "rental_id": "RENT-2024-234",
+      "file_name": "Chapel_Hill_Lease_Agreement.pdf",
+      "file_type": "Lease",
+      "file_path": "/Rentals/Active/Chapel Hill 23 Parkview/",
+      "upload_date": "2024-06-15",
+      "uploaded_by": "Lisa Park",
+      "description": "Signed residential tenancy agreement",
+      "file_size": "1.8 MB"
+    },
+    {
+      "file_id": "OD-RENT-234-002",
+      "rental_id": "RENT-2024-234",
+      "file_name": "Entry_Condition_Report.pdf",
+      "file_type": "Inspection",
+      "file_path": "/Rentals/Active/Chapel Hill 23 Parkview/",
+      "upload_date": "2024-06-15",
+      "uploaded_by": "Emma Rodriguez",
+      "description": "Entry condition report with photos",
+      "file_size": "8.4 MB"
+    },
+    {
+      "file_id": "OD-LICENSE-001",
+      "file_name": "Agency_Licence_2024.pdf",
+      "file_type": "Licence",
+      "file_path": "/Agency/Licences/",
+      "upload_date": "2024-07-01",
+      "uploaded_by": "Sophie Martinez",
+      "description": "Real estate agency licence - Expires 30/06/2025",
+      "file_size": "567 KB"
+    },
+    {
+      "file_id": "OD-INSURANCE-001",
+      "file_name": "Professional_Indemnity_Insurance_2024.pdf",
+      "file_type": "Insurance",
+      "file_path": "/Agency/Insurance/",
+      "upload_date": "2024-07-01",
+      "uploaded_by": "Sophie Martinez",
+      "description": "$20M Professional Indemnity - Expires 30/06/2025",
+      "file_size": "789 KB"
+    },
+    {
+      "file_id": "OD-TRUST-001",
+      "file_name": "Trust_Account_Audit_2024.pdf",
+      "file_type": "Audit",
+      "file_path": "/Agency/Trust/",
+      "upload_date": "2024-08-30",
+      "uploaded_by": "Sophie Martinez",
+      "description": "Annual trust account audit report",
+      "file_size": "1.2 MB"
+    }
+  ],
+  "metadata": {
+    "data_purpose": "11Labs Voice Agent Knowledge Base",
+    "business_type": "Real Estate Agency",
+    "data_format": "JSON",
+    "last_updated": "2024-10-30",
+    "currency": "AUD",
+    "timezone": "Australia/Brisbane",
+    "notes": "This is dummy data for demonstration purposes. All client names, property details, and financial information are fictional."
+  }
+}
+
