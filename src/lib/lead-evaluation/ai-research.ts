@@ -21,7 +21,6 @@ function initializeOpenAI(): OpenAI | null {
   const apiKey = process.env.OPENAI_API_KEY;
   
   if (!apiKey) {
-    console.warn('OpenAI API key not configured');
     return null;
   }
   
@@ -39,7 +38,6 @@ export async function performDeepResearch(
   const openai = initializeOpenAI();
   
   if (!openai) {
-    console.log('OpenAI not configured - skipping deep research');
     return null;
   }
 
@@ -143,7 +141,6 @@ Keep the tone professional but conversational. Be specific and actionable.`;
 
     return result;
   } catch (error) {
-    console.error('OpenAI research failed:', error);
     return null;
   }
 }
@@ -190,7 +187,6 @@ export async function generateStyleGuides(
   const openai = initializeOpenAI();
   
   if (!openai) {
-    console.log('OpenAI not configured - skipping style guide generation');
     return null;
   }
 
@@ -331,7 +327,6 @@ Make this HIGHLY SPECIFIC to ${data.industry} decision-makers, not generic sales
       contactStyleGuide: contactGuideResponse.choices[0].message.content || '',
     };
   } catch (error) {
-    console.error('Style guide generation failed:', error);
     return null;
   }
 }

@@ -52,15 +52,24 @@ async function sendInstantConfirmation(data: ContactFormData): Promise<boolean> 
   const postmarkToken = process.env.POSTMARK_API_TOKEN;
   
   if (!postmarkToken) {
+    console.error('[EMAIL] POSTMARK_API_TOKEN not configured - instant confirmation email NOT sent');
+    console.error(`[EMAIL] Would have sent to: ${data.email}`);
     return false;
   }
 
   try {
     const client = new postmark.ServerClient(postmarkToken);
     const email = getInstantConfirmationEmail(data);
+    console.log(`[EMAIL] Sending instant confirmation to ${data.email}...`);
     await client.sendEmail(email);
+    console.log(`[EMAIL] ✓ Instant confirmation sent successfully to ${data.email}`);
     return true;
   } catch (error) {
+    console.error('[EMAIL] ✗ Failed to send instant confirmation:', error);
+    console.error(`[EMAIL] Recipient: ${data.email}`);
+    if (error instanceof Error) {
+      console.error(`[EMAIL] Error message: ${error.message}`);
+    }
     return false;
   }
 }
@@ -134,6 +143,8 @@ async function sendSalesNotification(
   const postmarkToken = process.env.POSTMARK_API_TOKEN;
   
   if (!postmarkToken) {
+    console.error('[EMAIL] POSTMARK_API_TOKEN not configured - sales notification email NOT sent');
+    console.error(`[EMAIL] Lead: ${data.company} (${data.email})`);
     return false;
   }
 
@@ -145,9 +156,16 @@ async function sendSalesNotification(
       result.webPresence,
       result.aiResearch ?? undefined
     );
+    console.log(`[EMAIL] Sending sales notification for ${data.company}...`);
     await client.sendEmail(email);
+    console.log(`[EMAIL] ✓ Sales notification sent successfully for ${data.company}`);
     return true;
   } catch (error) {
+    console.error('[EMAIL] ✗ Failed to send sales notification:', error);
+    console.error(`[EMAIL] Lead: ${data.company} (${data.email})`);
+    if (error instanceof Error) {
+      console.error(`[EMAIL] Error message: ${error.message}`);
+    }
     return false;
   }
 }
@@ -166,7 +184,8 @@ export async function evaluateAndProcessLead(
 
   try {
     // Step 1: Send instant confirmation (non-blocking)
-    sendInstantConfirmation(data).catch(() => {
+    sendInstantConfirmation(data).catch((err) => {
+      console.error('[ORCHESTRATOR] Instant confirmation error:', err);
       errors.push('Failed to send instant confirmation');
     });
 
@@ -290,8 +309,12 @@ export async function evaluateAndProcessLead(
 
     // Step 9: Send sales notification
     try {
-      await sendSalesNotification(data, result);
+      const emailSent = await sendSalesNotification(data, result);
+      if (!emailSent) {
+        errors.push('Failed to send sales notification');
+      }
     } catch (error) {
+      console.error('[ORCHESTRATOR] Sales notification error:', error);
       errors.push('Failed to send sales notification');
     }
 

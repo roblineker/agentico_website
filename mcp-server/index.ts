@@ -62,7 +62,6 @@ function searchKnowledgeBase(query: string, category?: string): any[] {
                 });
             }
         } catch (error) {
-            console.error(`Error reading ${file}:`, error);
         }
     }
 
@@ -269,7 +268,6 @@ server.registerTool(
                     });
                 }
             } catch (error) {
-                console.error(`Error reading ${file}:`, error);
             }
         }
         
@@ -339,7 +337,6 @@ app.post('/mcp', async (req, res) => {
             sessionIdGenerator: () => `session-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
             onsessioninitialized: (newSessionId) => {
                 transports[newSessionId] = transport;
-                console.log(`Session initialized: ${newSessionId}`);
             },
             enableDnsRebindingProtection: false  // For local development
         });
@@ -348,7 +345,6 @@ app.post('/mcp', async (req, res) => {
         transport.onclose = () => {
             if (transport.sessionId) {
                 delete transports[transport.sessionId];
-                console.log(`Session closed: ${transport.sessionId}`);
             }
         };
 
@@ -397,10 +393,5 @@ app.delete('/mcp', async (req, res) => {
 // Start server
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
-    console.log(`🚀 Agentico MCP Knowledge Server running on http://localhost:${PORT}`);
-    console.log(`📚 Knowledge base path: ${KNOWLEDGE_BASE_PATH}`);
-    console.log(`📁 Available knowledge files: ${listKnowledgeFiles().length}`);
-    console.log(`\n🔗 MCP Endpoint: http://localhost:${PORT}/mcp`);
-    console.log(`❤️  Health Check: http://localhost:${PORT}/health`);
 });
 

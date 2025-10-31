@@ -48,7 +48,6 @@ export async function POST(request: NextRequest) {
     });
     
   } catch (error) {
-    console.error('Book workshop error:', error);
     
     if (error instanceof z.ZodError) {
       return NextResponse.json(

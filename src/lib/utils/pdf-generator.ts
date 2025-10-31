@@ -215,7 +215,6 @@ export async function generatePDFFromText(
     const pdfBytes = await pdfDoc.save();
     return Buffer.from(pdfBytes).toString('base64');
   } catch (error) {
-    console.error('Failed to generate PDF:', error);
     throw error;
   }
 }

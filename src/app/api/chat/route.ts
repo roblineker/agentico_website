@@ -99,7 +99,6 @@ Always ground your answers in the actual data provided above.`
     });
 
   } catch (error: unknown) {
-    console.error('Chat API Error:', error);
     
     const errorMessage = error instanceof Error ? error.message : 'An error occurred while processing your request';
     const errorDetails = error && typeof error === 'object' && 'response' in error 
@@ -135,7 +134,6 @@ export async function GET() {
 
     return NextResponse.json({ industries });
   } catch (error) {
-    console.error('Error loading industries:', error);
     return NextResponse.json(
       { error: 'Failed to load industries' },
       { status: 500 }

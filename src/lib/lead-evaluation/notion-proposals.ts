@@ -35,11 +35,8 @@ export async function createOrFindClient(
     const clientsDbId = process.env.NOTION_CLIENTS_DB_ID;
     
     if (!clientsDbId) {
-      console.warn('Clients database ID not configured');
       return { success: false, error: 'Database not configured' };
     }
-
-    console.log(`Finding or creating client: ${data.company}...`);
     
     // Search for existing client by name using search API
     const searchResponse = await notion.search({
@@ -60,7 +57,6 @@ export async function createOrFindClient(
 
     // If client exists, return it
     if (existingClient) {
-      console.log(`Found existing client: ${data.company}`);
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const url = (existingClient as any).url || `https://notion.so/${existingClient.id.replace(/-/g, '')}`;
       return { success: true, clientId: existingClient.id, url };
@@ -94,10 +90,8 @@ export async function createOrFindClient(
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const url = (response as any).url || `https://notion.so/${response.id.replace(/-/g, '')}`;
     
-    console.log(`Created new client: ${data.company} - ${url}`);
     return { success: true, clientId: response.id, url };
   } catch (error) {
-    console.error('Failed to create/find client:', error);
     return { success: false, error };
   }
 }
@@ -119,11 +113,8 @@ export async function createEstimates(
     const estimatesDbId = process.env.NOTION_ESTIMATES_DB_ID;
     
     if (!estimatesDbId) {
-      console.warn('Estimates database ID not configured');
       return { success: false, error: 'Database not configured' };
     }
-
-    console.log(`Creating estimates for ${data.company}...`);
     
     const estimateIds: string[] = [];
     const today = new Date().toISOString().split('T')[0];
@@ -158,7 +149,6 @@ export async function createEstimates(
       },
     });
     estimateIds.push(overallEstimate.id);
-    console.log(`Created overall estimate for ${data.company}`);
 
     // Create estimates for each project idea
     if (data.projectIdeas && data.projectIdeas.length > 0) {
@@ -192,13 +182,11 @@ export async function createEstimates(
           },
         });
         estimateIds.push(projectEstimate.id);
-        console.log(`Created estimate for ${idea.title}`);
       }
     }
 
     return { success: true, estimateIds };
   } catch (error) {
-    console.error('Failed to create estimates:', error);
     return { success: false, error };
   }
 }
@@ -222,11 +210,8 @@ export async function createProposal(
     const proposalsDbId = process.env.NOTION_PROPOSALS_DB_ID;
     
     if (!proposalsDbId) {
-      console.warn('Proposals database ID not configured');
       return { success: false, error: 'Database not configured' };
     }
-
-    console.log(`Creating proposal for ${data.company}...`);
     
     const today = new Date().toISOString().split('T')[0];
 
@@ -263,8 +248,6 @@ export async function createProposal(
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const proposalUrl = (response as any).url || `https://notion.so/${response.id.replace(/-/g, '')}`;
     
-    console.log(`Created proposal: ${proposalUrl}`);
-
     // Create estimates linked to this proposal
     const estimatesResult = await createEstimates(data, response.id);
 
@@ -278,7 +261,6 @@ export async function createProposal(
       estimateIds: estimatesResult.estimateIds,
     };
   } catch (error) {
-    console.error('Failed to create proposal:', error);
     return { success: false, error };
   }
 }
@@ -514,10 +496,7 @@ any[] = [
         children: batch,
       });
     }
-
-    console.log(`Added content to proposal page`);
   } catch (error) {
-    console.error('Failed to add proposal content:', error);
     throw error;
   }
 }

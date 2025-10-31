@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu } from "lucide-react";
+import { Menu, Download } from "lucide-react";
 import { ThemeToggle } from "@/components/theme-toggle";
 
 export function Header() {
@@ -16,6 +16,29 @@ export function Header() {
     { href: "#industries", label: "Industries" },
     { href: "#contact", label: "Contact" },
   ];
+
+  const downloadContact = () => {
+    const vCard = `BEGIN:VCARD
+VERSION:3.0
+FN:Rob Lineker
+N:Lineker;Rob;;;
+TITLE:Director
+ORG:Agentico
+TEL;TYPE=CELL:+61468068882
+EMAIL:rob@agentico.com.au
+URL:https://agentico.com.au
+END:VCARD`;
+
+    const blob = new Blob([vCard], { type: 'text/vcard' });
+    const url = window.URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = 'Rob-Lineker-Agentico.vcf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    window.URL.revokeObjectURL(url);
+  };
 
   return (
     <header className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50">
@@ -66,6 +89,18 @@ export function Header() {
           </Button> */}
           <Button asChild className="hidden sm:inline-flex">
             <Link href="#contact">Get Started</Link>
+          </Button>
+
+          {/* Mobile Contact Download */}
+          <Button 
+            variant="ghost" 
+            size="icon" 
+            className="md:hidden"
+            onClick={downloadContact}
+            title="Download Contact"
+          >
+            <Download className="h-5 w-5" />
+            <span className="sr-only">Download Contact</span>
           </Button>
 
           {/* Mobile Theme Toggle */}

@@ -479,8 +479,10 @@ export async function POST(request: NextRequest) {
     // - Sending instant confirmation email
     // - Sending detailed analysis email with style guides
     // - Sending sales notification with full evaluation
-    evaluateAndProcessLead(validatedData, clientId, contactId).catch(() => {
+    console.log(`[CONTACT API] Starting lead evaluation for ${validatedData.company} (${validatedData.email})`);
+    evaluateAndProcessLead(validatedData, clientId, contactId).catch((err) => {
       // Lead evaluation runs in background, errors logged internally
+      console.error('[CONTACT API] Lead evaluation error:', err);
     });
     
     // Get webhook URLs from environment variables
