@@ -1,6 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
 import * as postmark from 'postmark';
+import { emailSendLimiter, checkRateLimit, getRequestIdentifier } from '@/lib/security/rate-limit';
+import { sanitizeText } from '@/lib/security/sanitize';
+import { logger } from '@/lib/security/logger';
+
+// Note: Authentication removed - add ELEVENLABS_API_KEY when you set up voice agents
 
 // Schema for sending booking link
 const sendLinkSchema = z.object({
@@ -138,10 +143,27 @@ agentico.com.au
 
 export async function POST(request: NextRequest) {
   try {
-    const body = await request.json();
+    // 1. Rate limiting check (prevent email abuse)
+    const identifier = getRequestIdentifier(request);
+    const rateLimit = await checkRateLimit(emailSendLimiter, identifier);
     
-    // Validate the request data
+    if (!rateLimit.success) {
+      logger.warn('Rate limit exceeded on email endpoint', { identifier });
+      return NextResponse.json(
+        { error: 'Too many email requests. Please try again later.' },
+        { status: 429, headers: rateLimit.headers }
+      );
+    }
+    
+    // 2. Validate input
+    const body = await request.json();
     const validatedData = sendLinkSchema.parse(body);
+    
+    // 3. Sanitize inputs
+    const sanitizedData = {
+      fullName: sanitizeText(validatedData.fullName),
+      email: validatedData.email,
+    };
     
     const postmarkToken = process.env.POSTMARK_API_TOKEN;
     
@@ -154,35 +176,38 @@ export async function POST(request: NextRequest) {
     }
     
     const client = new postmark.ServerClient(postmarkToken);
-    const emailTemplate = getBookingLinkEmail(validatedData);
+    const emailTemplate = getBookingLinkEmail(sanitizedData);
     
     await client.sendEmail(emailTemplate);
     
-    console.log(`Booking link sent to ${validatedData.email}`);
+    logger.info('Booking link email sent successfully');
     
-    return NextResponse.json({
-      success: true,
-      message: 'Booking link sent successfully',
-      data: {
-        email: validatedData.email,
-        bookingUrl: 'https://koalendar.com/e/discovery-call-with-agentico'
+    return NextResponse.json(
+      {
+        success: true,
+        message: 'Booking link sent successfully',
+        data: {
+          email: sanitizedData.email,
+          bookingUrl: 'https://koalendar.com/e/discovery-call-with-agentico'
+        }
+      },
+      {
+        headers: rateLimit.headers,
       }
-    });
+    );
     
   } catch (error) {
-    console.error('Send booking link error:', error);
-    
     if (error instanceof z.ZodError) {
       return NextResponse.json(
         { 
           error: 'Validation failed', 
-          details: error.issues,
           message: 'Required fields: fullName, email'
         },
         { status: 400 }
       );
     }
     
+    logger.error('Send booking link error', { error });
     return NextResponse.json(
       { error: 'Internal server error' },
       { status: 500 }

@@ -2,6 +2,9 @@ import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
 import { Client } from '@notionhq/client';
 import { evaluateAndProcessLead } from '@/lib/lead-evaluation';
+import { contactFormLimiter, checkRateLimit, getRequestIdentifier } from '@/lib/security/rate-limit';
+import { sanitizeObject } from '@/lib/security/sanitize';
+import { logger } from '@/lib/security/logger';
 
 // Define the same schema as in the form for validation
 const contactFormSchema = z.object({
@@ -459,10 +462,24 @@ async function saveToNotion(data: ContactFormData) {
 
 export async function POST(request: NextRequest) {
   try {
-    const body = await request.json();
+    // 1. Rate limiting check
+    const identifier = getRequestIdentifier(request);
+    const rateLimit = await checkRateLimit(contactFormLimiter, identifier);
     
-    // Validate the form data
+    if (!rateLimit.success) {
+      logger.warn('Rate limit exceeded', { endpoint: '/api/contact', identifier });
+      return NextResponse.json(
+        { error: 'Too many submissions. Please try again in an hour.' },
+        { status: 429, headers: rateLimit.headers }
+      );
+    }
+    
+    // 2. Parse and validate
+    const body = await request.json();
     const validatedData = contactFormSchema.parse(body);
+    
+    // 3. Sanitize inputs (prevent XSS)
+    const sanitizedData = sanitizeObject(validatedData);
     
     // Save to Notion (contact intake form) and get IDs
     const notionResult = await saveToNotion(validatedData);
@@ -485,31 +502,29 @@ export async function POST(request: NextRequest) {
       console.error('[CONTACT API] Lead evaluation error:', err);
     });
     
-    // Get webhook URLs from environment variables
+    // 6. Send to webhooks
     const testWebhookUrl = process.env.N8N_TEST_WEBHOOK_URL;
     const prodWebhookUrl = process.env.N8N_PROD_WEBHOOK_URL;
-    
-    // Determine which environment we're in
     const isProduction = process.env.NODE_ENV === 'production';
     const webhookUrl = isProduction ? prodWebhookUrl : testWebhookUrl;
     
-    // Check if webhook URL is configured and not a placeholder
+    // Validate webhook URL (must be HTTPS in production)
     const isValidWebhookUrl = (url: string | undefined): boolean => {
-      return !!(url && 
-        !url.includes('your-n8n-instance.com') && 
-        !url.includes('placeholder') &&
-        url.startsWith('http'));
+      if (!url) return false;
+      try {
+        const parsed = new URL(url);
+        if (isProduction && parsed.protocol !== 'https:') return false;
+        return !url.includes('placeholder') && !url.includes('example.com');
+      } catch {
+        return false;
+      }
     };
     
-    // Prepare data for webhook(s)
     const webhookData = {
-      ...validatedData,
+      ...sanitizedData,
       submittedAt: new Date().toISOString(),
       source: 'agentico_website',
       environment: isProduction ? 'production' : 'development',
-      // Add any additional metadata you want to send
-      userAgent: request.headers.get('user-agent'),
-      ip: request.headers.get('x-forwarded-for') || request.headers.get('x-real-ip'),
     };
     
     const sendToWebhook = async (url: string, label: string) => {
@@ -523,12 +538,9 @@ export async function POST(request: NextRequest) {
           signal: AbortSignal.timeout(10000), // 10 second timeout
         });
         
-        if (!webhookResponse.ok) {
-          return false;
-        } else {
-          return true;
-        }
+        return webhookResponse.ok;
       } catch (webhookError) {
+        logger.warn('Webhook failed', { label, error: webhookError });
         return false;
       }
     };
@@ -548,26 +560,29 @@ export async function POST(request: NextRequest) {
       ]);
     }
     
-    // Return success response
-    return NextResponse.json({
-      success: true,
-      message: 'Form submitted successfully',
-      redirectTo: '/booking'
-    });
+    // Return success response with rate limit headers
+    return NextResponse.json(
+      {
+        success: true,
+        message: 'Form submitted successfully',
+        redirectTo: '/booking'
+      },
+      {
+        headers: rateLimit.headers,
+      }
+    );
     
   } catch (error) {
     if (error instanceof z.ZodError) {
       return NextResponse.json(
-        { 
-          error: 'Validation failed', 
-          details: error.issues 
-        },
+        { error: 'Invalid form data. Please check your inputs.' },
         { status: 400 }
       );
     }
     
+    logger.error('Contact form error', { error });
     return NextResponse.json(
-      { error: 'Internal server error' },
+      { error: 'Something went wrong. Please try again or contact us directly.' },
       { status: 500 }
     );
   }

@@ -16,9 +16,13 @@ const SERVER_INFO = {
 
 // Helper function to validate API authentication
 function validateAuth(request: NextRequest): { valid: boolean; error?: string } {
-    // If MCP_API_SECRET is not set, warn but allow (for development)
+    // If MCP_API_SECRET is not set, FAIL CLOSED in production
     if (!MCP_API_SECRET) {
-        // WARNING: MCP_API_SECRET is not set. Authentication is disabled.
+        if (process.env.NODE_ENV === 'production') {
+            console.error('CRITICAL: MCP_API_SECRET is not set in production!');
+            return { valid: false, error: 'Authentication not configured' };
+        }
+        console.warn('WARNING: MCP_API_SECRET is not set. Development mode only.');
         return { valid: true };
     }
 
