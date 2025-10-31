@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback, useRef, useEffect } from "react";
+import { useState, useCallback, useRef, useEffect, useMemo, useTransition } from "react";
 import { BoxesCore } from "@/components/ui/background-boxes";
 import { Button } from "@/components/ui/button";
 import { 
@@ -27,8 +27,10 @@ export default function FidgetPage() {
   const [viewableBoxes, setViewableBoxes] = useState(0);
   const [dialogOpen, setDialogOpen] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
+  const [, startTransition] = useTransition();
   const containerRef = useRef<HTMLDivElement>(null);
   const hoveredBoxesRef = useRef<Set<string>>(new Set());
+  const highlightedBoxesVersion = useRef(0);
 
   // Show dialog on first visit
   useEffect(() => {
@@ -50,13 +52,13 @@ export default function FidgetPage() {
     if (!document.fullscreenElement && containerRef.current) {
       try {
         await containerRef.current.requestFullscreen();
-      } catch (error) {
+      } catch {
         // Fullscreen request failed
       }
     } else if (document.fullscreenElement) {
       try {
         await document.exitFullscreen();
-      } catch (error) {
+      } catch {
         // Fullscreen exit failed
       }
     }
@@ -111,27 +113,33 @@ export default function FidgetPage() {
     }
   }, [showHighlighted]);
 
-  const toggleShowHighlighted = () => {
-    setShowHighlighted(prev => {
-      // If we're currently showing and about to hide, clear the memory
-      if (prev) {
-        hoveredBoxesRef.current.clear();
-        setHoveredCount(0);
-      } else {
-        // About to show, update the count
-        setHoveredCount(hoveredBoxesRef.current.size);
-      }
-      return !prev;
+  const toggleShowHighlighted = useCallback(() => {
+    startTransition(() => {
+      setShowHighlighted(prev => {
+        // If we're currently showing and about to hide, clear the memory
+        if (prev) {
+          hoveredBoxesRef.current.clear();
+          setHoveredCount(0);
+        } else {
+          // About to show, update the count
+          setHoveredCount(hoveredBoxesRef.current.size);
+        }
+        highlightedBoxesVersion.current++;
+        return !prev;
+      });
     });
-  };
+  }, []);
 
-  const handleReset = () => {
-    hoveredBoxesRef.current.clear();
-    setHoveredCount(0);
-    setShowHighlighted(false);
-  };
+  const handleReset = useCallback(() => {
+    startTransition(() => {
+      hoveredBoxesRef.current.clear();
+      setHoveredCount(0);
+      setShowHighlighted(false);
+      highlightedBoxesVersion.current++;
+    });
+  }, []);
 
-  const handleShare = async () => {
+  const handleShare = useCallback(async () => {
     const shareUrl = window.location.href;
     const scorePercentage = ((hoveredCount / viewableBoxes) * 100).toFixed(2);
     const shareText = `I scored ${scorePercentage}% on the Fidget Thingy! Can you beat my score?`;
@@ -144,7 +152,7 @@ export default function FidgetPage() {
           text: shareText,
           url: shareUrl,
         });
-      } catch (error) {
+      } catch {
         // User cancelled or error occurred
       }
     } else {
@@ -153,11 +161,18 @@ export default function FidgetPage() {
         const fullMessage = `${shareText}\n${shareUrl}`;
         await navigator.clipboard.writeText(fullMessage);
         alert("Link and score copied to clipboard!");
-      } catch (error) {
+      } catch {
         // Failed to copy link
       }
     }
-  };
+  }, [hoveredCount, viewableBoxes]);
+
+  // Memoize the BoxesCore props to prevent unnecessary re-renders
+  const boxesProps = useMemo(() => ({
+    onBoxHover: handleBoxHover,
+    highlightedBoxes: hoveredBoxesRef.current,
+    showHighlighted,
+  }), [handleBoxHover, showHighlighted]);
 
   return (
     <div 
@@ -174,11 +189,7 @@ export default function FidgetPage() {
     >
       {/* Animated Background Boxes */}
       <div className="absolute inset-0 w-full h-full bg-slate-900/5 dark:bg-slate-900/20 z-0">
-        <BoxesCore 
-          onBoxHover={handleBoxHover}
-          highlightedBoxes={hoveredBoxesRef.current}
-          showHighlighted={showHighlighted}
-        />
+        <BoxesCore {...boxesProps} />
       </div>
       
       {/* Logo and Badge */}

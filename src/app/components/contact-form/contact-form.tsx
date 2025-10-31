@@ -14,6 +14,7 @@ import {
   FieldLabel,
   FieldLegend,
   FieldSet,
+  FieldTitle,
 } from "@/components/ui/field";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm, useFieldArray } from "react-hook-form";
@@ -236,7 +237,11 @@ export function ContactForm() {
           </div>
           {isDev && (
             <Select onValueChange={(value) => fillTestData(value as TestCaseKey)}>
-              <SelectTrigger className="w-[220px] ml-4 shrink-0">
+              <SelectTrigger 
+                id="test-data-selector"
+                className="w-[220px] ml-4 shrink-0" 
+                aria-label="Load test data"
+              >
                 <SelectValue placeholder="🧪 Load Test Data" />
               </SelectTrigger>
               <SelectContent>
@@ -263,6 +268,7 @@ export function ContactForm() {
                     id="fullName"
                     placeholder="John Smith"
                     aria-invalid={!!errors.fullName}
+                    autoComplete="name"
                     {...register("fullName")}
                   />
                   <FieldError>{errors.fullName?.message}</FieldError>
@@ -275,6 +281,7 @@ export function ContactForm() {
                     type="email"
                     placeholder="john@company.com"
                     aria-invalid={!!errors.email}
+                    autoComplete="email"
                     {...register("email")}
                   />
                   <FieldError>{errors.email?.message}</FieldError>
@@ -289,6 +296,7 @@ export function ContactForm() {
                     type="tel"
                     placeholder="+61 4XX XXX XXX"
                     aria-invalid={!!errors.phone}
+                    autoComplete="tel"
                     {...register("phone")}
                   />
                   <FieldError>{errors.phone?.message}</FieldError>
@@ -300,6 +308,7 @@ export function ContactForm() {
                     id="company"
                     placeholder="Your Company Pty Ltd"
                     aria-invalid={!!errors.company}
+                    autoComplete="organization"
                     {...register("company")}
                   />
                   <FieldError>{errors.company?.message}</FieldError>
@@ -313,6 +322,7 @@ export function ContactForm() {
                   type="url"
                   placeholder="https://www.yourcompany.com"
                   aria-invalid={!!errors.website}
+                  autoComplete="url"
                   {...register("website")}
                 />
                 <FieldError>{errors.website?.message}</FieldError>
@@ -321,7 +331,7 @@ export function ContactForm() {
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
                   <div>
-                    <FieldLabel>Social Media Links (Optional)</FieldLabel>
+                    <FieldTitle>Social Media Links (Optional)</FieldTitle>
                     <FieldDescription className="mt-1">
                       Add your social media profiles to help us understand your online presence
                     </FieldDescription>
@@ -331,6 +341,7 @@ export function ContactForm() {
                     variant="outline"
                     size="sm"
                     onClick={() => appendSocial({ url: "" })}
+                    aria-label="Add social media link"
                   >
                     <Plus className="h-4 w-4 mr-1" />
                     Add Social Link
@@ -352,6 +363,8 @@ export function ContactForm() {
                               type="url"
                               placeholder="https://facebook.com/yourcompany"
                               aria-invalid={!!errors.socialLinks?.[index]?.url}
+                              autoComplete="url"
+                              aria-label={`Social media link ${index + 1}`}
                               {...register(`socialLinks.${index}.url` as const)}
                             />
                             {socialInfo && SocialIcon && (
@@ -370,6 +383,7 @@ export function ContactForm() {
                         size="sm"
                         onClick={() => removeSocial(index)}
                         className="mt-1"
+                        aria-label={`Remove social link ${index + 1}`}
                       >
                         <X className="h-4 w-4" />
                       </Button>
@@ -387,7 +401,7 @@ export function ContactForm() {
               <div className="grid md:grid-cols-2 gap-4">
                 <Field data-invalid={!!errors.industry}>
                   <FieldLabel htmlFor="industry">Industry *</FieldLabel>
-                  <Select value={selectedIndustry} onValueChange={(value) => setValue("industry", value as ContactFormData["industry"])}>
+                  <Select name="industry" value={selectedIndustry} onValueChange={(value) => setValue("industry", value as ContactFormData["industry"])}>
                     <SelectTrigger id="industry" aria-invalid={!!errors.industry}>
                       <SelectValue placeholder="Select your industry" />
                     </SelectTrigger>
@@ -474,7 +488,7 @@ export function ContactForm() {
 
                 <Field data-invalid={!!errors.businessSize}>
                   <FieldLabel htmlFor="businessSize">Total Employees *</FieldLabel>
-                  <Select value={selectedBusinessSize} onValueChange={(value) => setValue("businessSize", value as ContactFormData["businessSize"])}>
+                  <Select name="businessSize" value={selectedBusinessSize} onValueChange={(value) => setValue("businessSize", value as ContactFormData["businessSize"])}>
                     <SelectTrigger id="businessSize" aria-invalid={!!errors.businessSize}>
                       <SelectValue placeholder="Select size" />
                     </SelectTrigger>
@@ -505,6 +519,7 @@ export function ContactForm() {
                   placeholder="e.g., Excel for quotes, Gmail for communication, paper-based job tracking..."
                   rows={3}
                   aria-invalid={!!errors.currentSystems}
+                  autoComplete="off"
                   {...register("currentSystems")}
                 />
                 <FieldDescription>
@@ -516,7 +531,7 @@ export function ContactForm() {
               <div className="grid md:grid-cols-2 gap-4">
                 <Field data-invalid={!!errors.monthlyVolume}>
                   <FieldLabel htmlFor="monthlyVolume">Monthly Transaction/Job Volume *</FieldLabel>
-                  <Select value={selectedMonthlyVolume} onValueChange={(value) => setValue("monthlyVolume", value as ContactFormData["monthlyVolume"])}>
+                  <Select name="monthlyVolume" value={selectedMonthlyVolume} onValueChange={(value) => setValue("monthlyVolume", value as ContactFormData["monthlyVolume"])}>
                     <SelectTrigger id="monthlyVolume" aria-invalid={!!errors.monthlyVolume}>
                       <SelectValue placeholder="Select volume" />
                     </SelectTrigger>
@@ -536,7 +551,7 @@ export function ContactForm() {
 
                 <Field data-invalid={!!errors.teamSize}>
                   <FieldLabel htmlFor="teamSize">Team Members Affected *</FieldLabel>
-                  <Select value={selectedTeamSize} onValueChange={(value) => setValue("teamSize", value as ContactFormData["teamSize"])}>
+                  <Select name="teamSize" value={selectedTeamSize} onValueChange={(value) => setValue("teamSize", value as ContactFormData["teamSize"])}>
                     <SelectTrigger id="teamSize" aria-invalid={!!errors.teamSize}>
                       <SelectValue placeholder="Select team size" />
                     </SelectTrigger>
@@ -568,6 +583,7 @@ export function ContactForm() {
                     <Field key={goal.id} orientation="horizontal">
                       <Checkbox
                         id={goal.id}
+                        name={`automationGoals.${goal.id}`}
                         checked={selectedAutomationGoals.includes(goal.id)}
                         onCheckedChange={(checked) => {
                           const current = selectedAutomationGoals;
@@ -602,6 +618,7 @@ export function ContactForm() {
                   placeholder="e.g., When a customer emails a quote request, automatically extract details, generate a quote in our template, and send it back. Or: Automatically log job completion photos from field workers into our project folders..."
                   rows={4}
                   aria-invalid={!!errors.specificProcesses}
+                  autoComplete="off"
                   {...register("specificProcesses")}
                 />
                 <FieldDescription>
@@ -625,6 +642,7 @@ export function ContactForm() {
                   placeholder="e.g., Xero for accounting, Tradify for job management, Gmail, Google Drive, QuickBooks..."
                   rows={3}
                   aria-invalid={!!errors.existingTools}
+                  autoComplete="off"
                   {...register("existingTools")}
                 />
                 <FieldDescription>
@@ -640,6 +658,7 @@ export function ContactForm() {
                     <Field key={integration.id} orientation="horizontal">
                       <Checkbox
                         id={integration.id}
+                        name={`integrationNeeds.${integration.id}`}
                         checked={selectedIntegrations.includes(integration.id)}
                         onCheckedChange={(checked) => {
                           const current = selectedIntegrations;
@@ -666,7 +685,7 @@ export function ContactForm() {
 
               <Field data-invalid={!!errors.dataVolume}>
                 <FieldLabel htmlFor="dataVolume">Data Volume to Process *</FieldLabel>
-                <Select value={selectedDataVolume} onValueChange={(value) => setValue("dataVolume", value as ContactFormData["dataVolume"])}>
+                <Select name="dataVolume" value={selectedDataVolume} onValueChange={(value) => setValue("dataVolume", value as ContactFormData["dataVolume"])}>
                   <SelectTrigger id="dataVolume" aria-invalid={!!errors.dataVolume}>
                     <SelectValue placeholder="Select data volume" />
                   </SelectTrigger>
@@ -698,6 +717,7 @@ export function ContactForm() {
                   placeholder="Summarize the complete vision for this project and how it fits into your business..."
                   rows={4}
                   aria-invalid={!!errors.projectDescription}
+                  autoComplete="off"
                   {...register("projectDescription")}
                 />
                 <FieldError>{errors.projectDescription?.message}</FieldError>
@@ -712,6 +732,7 @@ export function ContactForm() {
                   placeholder="e.g., Reduce quote turnaround from 2 days to 2 hours, save 10 hours/week of admin time, increase customer satisfaction..."
                   rows={3}
                   aria-invalid={!!errors.successMetrics}
+                  autoComplete="off"
                   {...register("successMetrics")}
                 />
                 <FieldDescription>
@@ -723,7 +744,7 @@ export function ContactForm() {
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
                   <div>
-                    <FieldLabel>Project Ideas (Optional)</FieldLabel>
+                    <FieldTitle>Project Ideas (Optional)</FieldTitle>
                     <FieldDescription className="mt-1">
                       Add specific AI tools or automation ideas you&apos;ve considered
                     </FieldDescription>
@@ -733,6 +754,7 @@ export function ContactForm() {
                     variant="outline"
                     size="sm"
                     onClick={() => append({ title: "", description: "", priority: "medium" })}
+                    aria-label="Add project idea"
                   >
                     <Plus className="h-4 w-4 mr-1" />
                     Add Idea
@@ -769,6 +791,7 @@ export function ContactForm() {
                             id={`projectIdeas.${index}.title`}
                             placeholder="e.g., AI-powered quote generator"
                             aria-invalid={!!errors.projectIdeas?.[index]?.title}
+                            autoComplete="off"
                             {...register(`projectIdeas.${index}.title` as const)}
                           />
                           <FieldError>{errors.projectIdeas?.[index]?.title?.message}</FieldError>
@@ -783,6 +806,7 @@ export function ContactForm() {
                             placeholder="Describe what this idea would do and how it would help..."
                             rows={3}
                             aria-invalid={!!errors.projectIdeas?.[index]?.description}
+                            autoComplete="off"
                             {...register(`projectIdeas.${index}.description` as const)}
                           />
                           <FieldError>{errors.projectIdeas?.[index]?.description?.message}</FieldError>
@@ -793,10 +817,14 @@ export function ContactForm() {
                             Priority Level
                           </FieldLabel>
                           <Select
+                            name={`projectIdeas.${index}.priority`}
                             value={watch(`projectIdeas.${index}.priority`)}
                             onValueChange={(value) => setValue(`projectIdeas.${index}.priority` as const, value as "high" | "medium" | "low")}
                           >
-                            <SelectTrigger id={`projectIdeas.${index}.priority`} aria-invalid={!!errors.projectIdeas?.[index]?.priority}>
+                            <SelectTrigger 
+                              id={`projectIdeas.${index}.priority`}
+                              aria-invalid={!!errors.projectIdeas?.[index]?.priority}
+                            >
                               <SelectValue placeholder="Select priority" />
                             </SelectTrigger>
                             <SelectContent>
@@ -816,7 +844,7 @@ export function ContactForm() {
               <div className="grid md:grid-cols-2 gap-4">
                 <Field data-invalid={!!errors.timeline}>
                   <FieldLabel htmlFor="timeline">Timeline *</FieldLabel>
-                  <Select value={selectedTimeline} onValueChange={(value) => setValue("timeline", value as ContactFormData["timeline"])}>
+                  <Select name="timeline" value={selectedTimeline} onValueChange={(value) => setValue("timeline", value as ContactFormData["timeline"])}>
                     <SelectTrigger id="timeline" aria-invalid={!!errors.timeline}>
                       <SelectValue placeholder="When do you need this?" />
                     </SelectTrigger>
@@ -832,7 +860,7 @@ export function ContactForm() {
 
                 <Field data-invalid={!!errors.budget}>
                   <FieldLabel htmlFor="budget">Budget Range *</FieldLabel>
-                  <Select value={selectedBudget} onValueChange={(value) => setValue("budget", value as ContactFormData["budget"])}>
+                  <Select name="budget" value={selectedBudget} onValueChange={(value) => setValue("budget", value as ContactFormData["budget"])}>
                     <SelectTrigger id="budget" aria-invalid={!!errors.budget}>
                       <SelectValue placeholder="Select budget range" />
                     </SelectTrigger>
