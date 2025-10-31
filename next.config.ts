@@ -4,7 +4,7 @@ import type { NextConfig } from "next";
 const securityHeaders = [
   {
     key: 'Content-Security-Policy',
-    value: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://unpkg.com https://elevenlabs.io https://*.elevenlabs.io; style-src 'self' 'unsafe-inline'; img-src 'self' data: https: http: blob:; font-src 'self' data:; connect-src 'self' https://www.agentico.com.au https://*.elevenlabs.io wss://*.elevenlabs.io; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; media-src 'self' https: blob:;",
+    value: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://unpkg.com https://elevenlabs.io https://*.elevenlabs.io https://js.hcaptcha.com https://*.hcaptcha.com; style-src 'self' 'unsafe-inline' https://*.hcaptcha.com; img-src 'self' data: https: http: blob:; font-src 'self' data:; connect-src 'self' https://www.agentico.com.au https://*.elevenlabs.io wss://*.elevenlabs.io https://*.hcaptcha.com; frame-src https://*.hcaptcha.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; media-src 'self' https: blob:;",
   },
   {
     key: 'X-Frame-Options',

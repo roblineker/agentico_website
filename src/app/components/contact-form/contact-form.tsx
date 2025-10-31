@@ -24,6 +24,7 @@ import { Loader2, Plus, X, Facebook, Twitter, Linkedin, Instagram, Youtube, Glob
 import { useRouter } from "next/navigation";
 import { contactFormSchema, type ContactFormData, automationGoalOptions, integrationOptions } from "./types";
 import { testCases, type TestCaseKey } from "./test-data";
+import { Captcha } from "@/components/captcha";
 
 // Helper function to detect social network from URL
 function detectSocialNetwork(url: string): { name: string; icon: React.ComponentType<{ className?: string }> } {
@@ -57,6 +58,7 @@ function detectSocialNetwork(url: string): { name: string; icon: React.Component
 export function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
   const router = useRouter();
   const isDev = process.env.NODE_ENV === 'development';
 
@@ -151,11 +153,19 @@ export function ContactForm() {
   const selectedBudget = watch("budget");
 
   const onSubmit = async (data: ContactFormData) => {
+    if (!captchaToken && process.env.NODE_ENV !== 'development') {
+      toast.error("Please complete the CAPTCHA verification");
+      return;
+    }
+
     setIsSubmitting(true);
     try {
       const response = await fetch('/api/contact', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 
+          'Content-Type': 'application/json',
+          'X-Captcha-Token': captchaToken || 'dev-bypass',
+        },
         body: JSON.stringify(data),
       });
       
@@ -879,7 +889,29 @@ export function ContactForm() {
             </FieldGroup>
           </FieldSet>
 
-          <Button type="submit" size="lg" className="w-full" disabled={isSubmitting}>
+          {/* CAPTCHA Verification */}
+          <div className="space-y-4">
+            <div className="text-center">
+              <p className="text-sm text-muted-foreground mb-4">
+                Please verify you&apos;re human before submitting
+              </p>
+              <Captcha
+                onVerify={(token) => setCaptchaToken(token)}
+                onExpire={() => setCaptchaToken(null)}
+                onError={() => {
+                  setCaptchaToken(null);
+                  toast.error("CAPTCHA verification failed. Please try again.");
+                }}
+              />
+            </div>
+          </div>
+
+          <Button 
+            type="submit" 
+            size="lg" 
+            className="w-full" 
+            disabled={isSubmitting || (!captchaToken && process.env.NODE_ENV !== 'development')}
+          >
             {isSubmitting ? (
               <>
                 <Loader2 className="mr-2 h-4 w-4 animate-spin" />

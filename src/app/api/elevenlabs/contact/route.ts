@@ -3,6 +3,9 @@ import { z } from 'zod';
 import { Client } from '@notionhq/client';
 import * as postmark from 'postmark';
 import { getCallConfirmationEmail } from '@/lib/email-templates/call-confirmation';
+import { contactFormLimiter, checkRateLimit, getRequestIdentifier } from '@/lib/security/rate-limit';
+import { sanitizeObject } from '@/lib/security/sanitize';
+import { logger } from '@/lib/security/logger';
 
 // Flexible schema for ElevenLabs - only requires the basics, everything else is optional
 const elevenlabsContactSchema = z.object({
@@ -468,33 +471,59 @@ async function sendConfirmationEmail(data: ElevenlabsContactData) {
 
 export async function POST(request: NextRequest) {
   try {
-    const body = await request.json();
+    // 1. Optional authentication (only if ELEVENLABS_API_KEY is set)
+    const expectedKey = process.env.ELEVENLABS_API_KEY;
+    if (expectedKey) {
+      const apiKey = request.headers.get('x-api-key') || request.headers.get('authorization')?.replace('Bearer ', '');
+      if (apiKey !== expectedKey) {
+        logger.warn('Invalid API key for ElevenLabs endpoint');
+        return NextResponse.json(
+          { error: 'Unauthorized' },
+          { status: 401 }
+        );
+      }
+    }
     
-    // Validate the form data with flexible schema
+    // 2. Rate limiting
+    const identifier = getRequestIdentifier(request);
+    const rateLimit = await checkRateLimit(contactFormLimiter, identifier);
+    
+    if (!rateLimit.success) {
+      logger.warn('Rate limit exceeded', { endpoint: '/api/elevenlabs/contact' });
+      return NextResponse.json(
+        { error: 'Too many submissions. Please try again later.' },
+        { status: 429, headers: rateLimit.headers }
+      );
+    }
+    
+    // 3. Parse and validate
+    const body = await request.json();
     const validatedData = elevenlabsContactSchema.parse(body);
     
-    // Save to Notion (non-blocking)
-    saveToNotion(validatedData).catch((error) => {
-      console.error('Notion save failed:', error);
+    // 4. Sanitize inputs
+    const sanitizedData = sanitizeObject(validatedData);
+    
+    // 5. Save to Notion (non-blocking)
+    saveToNotion(sanitizedData).catch((error) => {
+      logger.error('Notion save failed', { error });
     });
     
-    // Send confirmation email (non-blocking)
-    sendConfirmationEmail(validatedData).catch((error) => {
-      console.error('Email sending failed:', error);
+    // 6. Send confirmation email (non-blocking)
+    sendConfirmationEmail(sanitizedData).catch((error) => {
+      logger.warn('Email sending failed', { error });
     });
     
-    // Prepare data for webhook(s)
+    // 7. Send to webhook
     const webhookUrl = process.env.N8N_ELEVENLABS_WEBHOOK_URL;
     
-    const webhookData = {
-      ...validatedData,
-      submittedAt: new Date().toISOString(),
-      source: 'elevenlabs_phone_call',
-      environment: process.env.NODE_ENV,
-    };
-    
-    // Send to webhook if configured
-    if (webhookUrl && webhookUrl.startsWith('http')) {
+    if (webhookUrl && webhookUrl.startsWith('https')) {
+      const webhookData = {
+        ...sanitizedData,
+        submittedAt: new Date().toISOString(),
+        source: 'elevenlabs_phone_call',
+        environment: process.env.NODE_ENV,
+      };
+      
       try {
         const webhookResponse = await fetch(webhookUrl, {
           method: 'POST',
@@ -506,40 +535,41 @@ export async function POST(request: NextRequest) {
         });
         
         if (!webhookResponse.ok) {
-          console.error('Failed to send data to webhook:', webhookResponse.status);
-        } else {
-          console.log('Successfully sent data to ElevenLabs webhook');
+          logger.warn('Webhook failed', { status: webhookResponse.status });
         }
       } catch (webhookError) {
-        console.error('Webhook request failed:', webhookError);
+        logger.error('Webhook request failed', { error: webhookError });
       }
     }
     
     // Return success response
-    return NextResponse.json({
-      success: true,
-      message: 'Contact information saved successfully',
-      data: {
-        fullName: validatedData.fullName,
-        email: validatedData.email,
-        company: validatedData.company,
+    return NextResponse.json(
+      {
+        success: true,
+        message: 'Contact information saved successfully',
+        data: {
+          fullName: sanitizedData.fullName,
+          email: sanitizedData.email,
+          company: sanitizedData.company,
+        }
+      },
+      {
+        headers: rateLimit.headers,
       }
-    });
+    );
     
   } catch (error) {
-    console.error('ElevenLabs contact submission error:', error);
-    
     if (error instanceof z.ZodError) {
       return NextResponse.json(
         { 
           error: 'Validation failed', 
-          details: error.issues,
           message: 'Required fields: fullName, email, phone, company'
         },
         { status: 400 }
       );
     }
     
+    logger.error('ElevenLabs contact submission error', { error });
     return NextResponse.json(
       { error: 'Internal server error' },
       { status: 500 }

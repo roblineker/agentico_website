@@ -4,11 +4,11 @@
 
 ---
 
-## 🎯 What You Need to Do (15 minutes total)
+## 🎯 What You Need to Do (20 minutes total)
 
 ### Step 1: Install Dependencies (if not already done)
 ```bash
-npm install @upstash/ratelimit @upstash/redis isomorphic-dompurify
+npm install @upstash/ratelimit @upstash/redis isomorphic-dompurify @hcaptcha/react-hcaptcha
 ```
 
 ### Step 2: Sign Up for Upstash Redis (5 min)
@@ -19,26 +19,40 @@ npm install @upstash/ratelimit @upstash/redis isomorphic-dompurify
    - **UPSTASH_REDIS_REST_URL**
    - **UPSTASH_REDIS_REST_TOKEN**
 
-### Step 3: Generate Secret Key (1 min)
+### Step 3: Sign Up for hCaptcha (5 min)
+1. Go to: **https://dashboard.hcaptcha.com/**
+2. Sign up (FREE - unlimited)
+3. Click "New Site"
+4. Add domains: `agentico.com.au` and `www.agentico.com.au`
+5. Click "Save"
+6. Copy these two values:
+   - **Site Key** (for NEXT_PUBLIC_HCAPTCHA_SITE_KEY)
+   - **Secret Key** (for HCAPTCHA_SECRET_KEY)
+
+### Step 4: Generate Secret Key (1 min)
 Run this command once:
 ```bash
 openssl rand -hex 32
 ```
 Save the output - you'll use it for MCP_API_SECRET.
 
-### Step 4: Add to Vercel (5 min)
+### Step 5: Add to Vercel (5 min)
 Go to: **Vercel Dashboard → Your Project → Settings → Environment Variables**
 
-Add these 3 variables:
+Add these 5 variables:
 ```env
 UPSTASH_REDIS_REST_URL=https://xxxxx.upstash.io
 UPSTASH_REDIS_REST_TOKEN=xxxxxxxxxxxxx
+NEXT_PUBLIC_HCAPTCHA_SITE_KEY=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+HCAPTCHA_SECRET_KEY=0xXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 MCP_API_SECRET=your-generated-secret
 ```
 
-Select "Production" for each, then click Save.
+⚠️ **IMPORTANT:** The CAPTCHA site key MUST start with `NEXT_PUBLIC_` to work!
 
-### Step 5: Deploy (1 min)
+Select "Production" and "Preview" for each, then click Save.
+
+### Step 6: Deploy (1 min)
 ```bash
 git add .
 git commit -m "Security fixes: rate limiting + sanitization"
@@ -51,17 +65,26 @@ Vercel will auto-deploy! ✅
 
 ## 🧪 Test Everything Works
 
-### Test 1: Form still works
+### Test 1: CAPTCHA appears
 - Go to: https://www.agentico.com.au/#contact
-- Fill out form
-- Submit
-- ✅ Should work normally
+- Scroll to bottom of form
+- ✅ Should see hCaptcha checkbox
 
-### Test 2: Rate limiting works
-- Submit form again (6 times rapidly)
+### Test 2: Form works with CAPTCHA
+- Fill out form
+- Complete CAPTCHA (check the box)
+- Submit
+- ✅ Should submit successfully
+
+### Test 3: CAPTCHA required
+- Try to submit without completing CAPTCHA
+- ❌ Should show error: "Please complete the CAPTCHA verification"
+
+### Test 4: Rate limiting works
+- Complete CAPTCHA and submit 6 times rapidly
 - ❌ 6th submission should be blocked: "Too many submissions"
 
-### Test 3: Logs are clean
+### Test 5: Logs are clean
 - Go to Vercel → Functions → Logs
 - Check recent submissions
 - ✅ Should see `[EMAIL_REDACTED]` instead of real emails

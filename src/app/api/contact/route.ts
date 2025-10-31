@@ -6,6 +6,38 @@ import { contactFormLimiter, checkRateLimit, getRequestIdentifier } from '@/lib/
 import { sanitizeObject } from '@/lib/security/sanitize';
 import { logger } from '@/lib/security/logger';
 
+/**
+ * Verify hCaptcha token
+ */
+async function verifyCaptcha(token: string): Promise<boolean> {
+  const secretKey = process.env.HCAPTCHA_SECRET_KEY;
+  
+  if (process.env.NODE_ENV === 'development' && token === 'dev-bypass') {
+    return true;
+  }
+  
+  if (!secretKey) {
+    logger.warn('CAPTCHA secret key not configured');
+    return process.env.NODE_ENV !== 'production';
+  }
+  
+  try {
+    const response = await fetch('https://hcaptcha.com/siteverify', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: `response=${token}&secret=${secretKey}`,
+    });
+    
+    const data = await response.json();
+    return data.success === true;
+  } catch (error) {
+    logger.error('CAPTCHA verification failed', { error });
+    return false;
+  }
+}
+
 // Define the same schema as in the form for validation
 const contactFormSchema = z.object({
   // Contact Information
@@ -474,11 +506,23 @@ export async function POST(request: NextRequest) {
       );
     }
     
-    // 2. Parse and validate
+    // 2. CAPTCHA verification
+    const captchaToken = request.headers.get('x-captcha-token');
+    const captchaValid = await verifyCaptcha(captchaToken || '');
+    
+    if (!captchaValid) {
+      logger.warn('CAPTCHA verification failed', { endpoint: '/api/contact' });
+      return NextResponse.json(
+        { error: 'CAPTCHA verification failed. Please try again.' },
+        { status: 400 }
+      );
+    }
+    
+    // 3. Parse and validate
     const body = await request.json();
     const validatedData = contactFormSchema.parse(body);
     
-    // 3. Sanitize inputs (prevent XSS)
+    // 4. Sanitize inputs (prevent XSS)
     const sanitizedData = sanitizeObject(validatedData);
     
     // Save to Notion (contact intake form) and get IDs
@@ -486,20 +530,10 @@ export async function POST(request: NextRequest) {
     const clientId = notionResult.success ? notionResult.clientPageId : undefined;
     const contactId = notionResult.success ? notionResult.contactPageId : undefined;
     
-    // Perform comprehensive lead evaluation and processing
-    // This includes:
-    // - Lead scoring
-    // - Web presence analysis
-    // - AI research (if configured)
-    // - Proposal and estimate creation (using existing client ID)
-    // - Style guide generation (linked to client and contact)
-    // - Sending instant confirmation email
-    // - Sending detailed analysis email with style guides
-    // - Sending sales notification with full evaluation
-    console.log(`[CONTACT API] Starting lead evaluation for ${validatedData.company} (${validatedData.email})`);
-    evaluateAndProcessLead(validatedData, clientId, contactId).catch((err) => {
-      // Lead evaluation runs in background, errors logged internally
-      console.error('[CONTACT API] Lead evaluation error:', err);
+    // 5. Perform comprehensive lead evaluation and processing (background)
+    logger.info('Starting lead evaluation');
+    evaluateAndProcessLead(sanitizedData, clientId, contactId).catch((err) => {
+      logger.error('Lead evaluation error', { error: err });
     });
     
     // 6. Send to webhooks

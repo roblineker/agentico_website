@@ -1,0 +1,12 @@
+Contact: mailto:security@agentico.com.au
+Contact: mailto:info@agentico.com.au
+Expires: 2026-10-30T12:00:00.000Z
+Preferred-Languages: en
+Canonical: https://www.agentico.com.au/.well-known/security.txt
+Policy: https://www.agentico.com.au/security-policy
+Acknowledgments: https://www.agentico.com.au/security-acknowledgments
+
+# Security Reporting
+# If you discover a security vulnerability, please report it to security@agentico.com.au
+# We appreciate responsible disclosure and will respond within 48 hours
+

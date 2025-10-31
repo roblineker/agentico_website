@@ -504,13 +504,23 @@ export async function POST(request: NextRequest) {
 }
 
 // OPTIONS endpoint - for CORS
-export async function OPTIONS() {
+export async function OPTIONS(request: NextRequest) {
+    const origin = request.headers.get('origin');
+    const allowedOrigins = [
+        'https://www.agentico.com.au',
+        'https://agentico.com.au',
+    ];
+    
+    // Allow if origin is in allowed list, or if no origin (same-origin request)
+    const allowOrigin = origin && allowedOrigins.includes(origin) ? origin : allowedOrigins[0];
+    
     return new NextResponse(null, {
         status: 200,
         headers: {
-            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Origin': allowOrigin,
             'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
             'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+            'Access-Control-Max-Age': '86400',
         },
     });
 }
