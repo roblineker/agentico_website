@@ -195,6 +195,14 @@ export async function evaluateAndProcessLead(
     } catch (error) {
       errors.push('Lead scoring failed');
     }
+    
+    // Step 2.5: Send early sales notification with basic data
+    // This ensures we always get notified, even if later steps fail
+    console.log('[ORCHESTRATOR] Sending early sales notification...');
+    sendSalesNotification(data, result).catch((err) => {
+      console.error('[ORCHESTRATOR] Early sales notification error:', err);
+      errors.push('Failed to send sales notification');
+    });
 
     // Step 3: Evaluate web presence
     try {
@@ -307,16 +315,8 @@ export async function evaluateAndProcessLead(
     //   errors.push('Failed to send detailed analysis');
     // }
 
-    // Step 9: Send sales notification
-    try {
-      const emailSent = await sendSalesNotification(data, result);
-      if (!emailSent) {
-        errors.push('Failed to send sales notification');
-      }
-    } catch (error) {
-      console.error('[ORCHESTRATOR] Sales notification error:', error);
-      errors.push('Failed to send sales notification');
-    }
+    // Step 9: Sales notification already sent early (Step 2.5)
+    // This ensures we get notified even if AI/Notion steps timeout or fail
 
     result.success = errors.length === 0;
     
