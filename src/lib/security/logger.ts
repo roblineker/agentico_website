@@ -9,12 +9,12 @@
 function redact(value: unknown): unknown {
   if (typeof value === 'string') {
     // Redact emails
-    value = value.replace(/[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/g, '[EMAIL_REDACTED]');
+    let sanitized = value.replace(/[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/g, '[EMAIL_REDACTED]');
     // Redact phone numbers
-    value = value.replace(/(\+?\d{1,3}[-.\s]?)?\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}/g, '[PHONE_REDACTED]');
+    sanitized = sanitized.replace(/(\+?\d{1,3}[-.\s]?)?\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}/g, '[PHONE_REDACTED]');
     // Redact API keys
-    value = value.replace(/sk-[a-zA-Z0-9]{32,}/g, '[API_KEY_REDACTED]');
-    return value;
+    sanitized = sanitized.replace(/sk-[a-zA-Z0-9]{32,}/g, '[API_KEY_REDACTED]');
+    return sanitized;
   }
   
   if (typeof value === 'object' && value !== null) {
@@ -42,24 +42,27 @@ function redact(value: unknown): unknown {
  */
 export const logger = {
   info: (message: string, context?: Record<string, unknown>) => {
+    const safeContext = context ? redact(context) as Record<string, unknown> : {};
     console.log(JSON.stringify({
       level: 'info',
       message: redact(message),
-      ...redact(context || {}),
+      ...safeContext,
     }));
   },
   warn: (message: string, context?: Record<string, unknown>) => {
+    const safeContext = context ? redact(context) as Record<string, unknown> : {};
     console.warn(JSON.stringify({
       level: 'warn',
       message: redact(message),
-      ...redact(context || {}),
+      ...safeContext,
     }));
   },
   error: (message: string, context?: Record<string, unknown>) => {
+    const safeContext = context ? redact(context) as Record<string, unknown> : {};
     console.error(JSON.stringify({
       level: 'error',
       message: redact(message),
-      ...redact(context || {}),
+      ...safeContext,
     }));
   },
 };
