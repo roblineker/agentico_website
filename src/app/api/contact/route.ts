@@ -474,7 +474,7 @@ async function saveToNotion(data: ContactFormData) {
           },
         },
       });
-    } catch (budgetError) {
+    } catch {
       // Don't fail the whole operation for this
     }
     

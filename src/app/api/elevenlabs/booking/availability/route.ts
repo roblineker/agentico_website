@@ -32,8 +32,7 @@ export async function GET(request: NextRequest) {
       note: 'Koalendar does not provide a public API for real-time availability. The best approach is to send the booking link via email.'
     });
     
-  } catch (error) {
-    
+  } catch {
     return NextResponse.json(
       { error: 'Failed to check availability' },
       { status: 500 }

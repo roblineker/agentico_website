@@ -3,18 +3,32 @@
  * Sanitizes user input to prevent XSS and injection attacks
  */
 
-import DOMPurify from 'isomorphic-dompurify';
-
 /**
- * Sanitize text input - removes all HTML tags
+ * Sanitize text input - removes all HTML tags and dangerous characters
+ * This is a lightweight server-side sanitization that doesn't require jsdom
  */
 export function sanitizeText(input: string): string {
   if (!input) return input;
   
-  return DOMPurify.sanitize(input, { 
-    ALLOWED_TAGS: [],
-    KEEP_CONTENT: true,
-  }).trim();
+  // Remove HTML tags while preserving content
+  let sanitized = input.replace(/<[^>]*>/g, '');
+  
+  // Decode common HTML entities
+  sanitized = sanitized
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"')
+    .replace(/&#x27;/g, "'")
+    .replace(/&#x2F;/g, '/')
+    .replace(/&amp;/g, '&');
+  
+  // Remove any remaining HTML tags (in case they were entity-encoded)
+  sanitized = sanitized.replace(/<[^>]*>/g, '');
+  
+  // Remove null bytes and other control characters (except newlines and tabs)
+  sanitized = sanitized.replace(/[\x00-\x08\x0B-\x0C\x0E-\x1F\x7F]/g, '');
+  
+  return sanitized.trim();
 }
 
 /**

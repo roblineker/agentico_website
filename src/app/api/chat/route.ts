@@ -133,7 +133,7 @@ export async function GET() {
       });
 
     return NextResponse.json({ industries });
-  } catch (error) {
+  } catch {
     return NextResponse.json(
       { error: 'Failed to load industries' },
       { status: 500 }

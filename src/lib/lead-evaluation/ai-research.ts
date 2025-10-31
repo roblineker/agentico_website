@@ -140,7 +140,7 @@ Keep the tone professional but conversational. Be specific and actionable.`;
     const result = parseAIResponse(responseText);
 
     return result;
-  } catch (error) {
+  } catch {
     return null;
   }
 }
@@ -326,7 +326,7 @@ Make this HIGHLY SPECIFIC to ${data.industry} decision-makers, not generic sales
       companyStyleGuide: companyGuideResponse.choices[0].message.content || '',
       contactStyleGuide: contactGuideResponse.choices[0].message.content || '',
     };
-  } catch (error) {
+  } catch {
     return null;
   }
 }

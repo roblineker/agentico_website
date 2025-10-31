@@ -191,7 +191,7 @@ export function ContactForm() {
         router.push('/booking');
       }, 1500);
       
-    } catch (error) {
+    } catch {
       toast.error("Something went wrong. Please try again or email us directly.");
     } finally {
       setIsSubmitting(false);

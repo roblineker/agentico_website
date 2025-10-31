@@ -59,7 +59,7 @@ export default function BookingPage() {
         
         // Clear the stored data after using it
         sessionStorage.removeItem('bookingContactInfo');
-      } catch (error) {
+      } catch {
         // Error parsing contact info
       }
     }

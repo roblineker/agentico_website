@@ -96,7 +96,7 @@ function searchKnowledgeBase(query: string, maxResults: number = 5): Array<{
                     matchedTerms: matchCount
                 });
             }
-        } catch (error) {
+        } catch {
         }
     }
 
@@ -290,7 +290,7 @@ function handleToolCall(toolName: string, args: Record<string, unknown>) {
                             company: data.company
                         });
                     }
-                } catch (error) {
+                } catch {
                 }
             }
             
@@ -491,7 +491,7 @@ export async function POST(request: NextRequest) {
         const response = handleJsonRpcRequest(body);
         return NextResponse.json(response);
 
-    } catch (error) {
+    } catch {
         return NextResponse.json({
             jsonrpc: '2.0',
             id: null,

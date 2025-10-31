@@ -192,7 +192,7 @@ export async function evaluateAndProcessLead(
     // Step 2: Evaluate lead score
     try {
       result.leadScore = evaluateLead(data);
-    } catch (error) {
+    } catch {
       errors.push('Lead scoring failed');
     }
     
@@ -207,7 +207,7 @@ export async function evaluateAndProcessLead(
     // Step 3: Evaluate web presence
     try {
       result.webPresence = await evaluateWebPresence(data);
-    } catch (error) {
+    } catch {
       errors.push('Web presence evaluation failed');
     }
 
@@ -220,7 +220,7 @@ export async function evaluateAndProcessLead(
           result.webPresence
         );
       }
-    } catch (error) {
+    } catch {
       errors.push('AI research failed');
     }
 
@@ -239,7 +239,7 @@ export async function evaluateAndProcessLead(
             clientUrl: clientResult.url,
           };
         }
-      } catch (error) {
+      } catch {
         errors.push('Client creation/lookup failed');
       }
     } else {
@@ -259,7 +259,7 @@ export async function evaluateAndProcessLead(
             styleGuides.companyStyleGuide,
             styleGuides.contactStyleGuide
           );
-        } catch (pdfError) {
+        } catch {
           errors.push('PDF generation failed');
         }
         
@@ -284,7 +284,7 @@ export async function evaluateAndProcessLead(
           contactGuidePDF: pdfResults?.contactPDF,
         };
       }
-    } catch (error) {
+    } catch {
       errors.push('Style guide generation failed');
     }
 
@@ -304,7 +304,7 @@ export async function evaluateAndProcessLead(
           estimateIds: proposalResult.estimateIds,
         };
       }
-    } catch (error) {
+    } catch {
       errors.push('Proposal creation failed');
     }
 
@@ -321,7 +321,7 @@ export async function evaluateAndProcessLead(
     result.success = errors.length === 0;
     
     return result;
-  } catch (error) {
+  } catch {
     errors.push('Lead evaluation failed');
     result.success = false;
     return result;
